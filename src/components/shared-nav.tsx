@@ -257,29 +257,7 @@ export default function SharedNav({ isScrolled = false, showAnimatedLine = true,
 
       {/* Top Left Floating Nav - Social & Phone */}
       <div className="fixed top-32 left-6 z-[100002] pointer-events-auto flex flex-col gap-4 items-start">
-        {/* Phone Pill - Mobile Numbers (Top) */}
-        <div className="group bg-gray-200 backdrop-blur-md shadow-lg rounded-full p-1.5 flex items-center justify-center transition-all duration-300 hover:pr-6 cursor-pointer">
-          <div className="flex items-center">
-            {/* Single Branded Icon */}
-            <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm text-[#083D77] shrink-0 z-10">
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.44-5.15-3.75-6.59-6.59l1.97-1.57c.27-.28.36-.67.25-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3.3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .69-.63.69-1.19v-3.44c0-.54-.45-.99-.99-.99z" /></svg>
-            </div>
-
-            {/* Numbers Container - Reveal on Hover */}
-            <div className="overflow-hidden w-0 group-hover:w-[120px] transition-all duration-500 ease-in-out flex flex-col justify-center">
-              <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100 pl-3 space-y-1">
-                <a href="tel:+919059450707" className="block text-[12px] font-bold text-gray-700 hover:text-sky-900 transition-colors whitespace-nowrap">
-                  +91 9059450707
-                </a>
-                <a href="tel:+917382314128" className="block text-[12px] font-bold text-gray-700 hover:text-sky-900 transition-colors whitespace-nowrap">
-                  +91 7382314128
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Social Icons Pill - Social Media (Bottom) */}
+        {/* Social Icons Pill - Social Media (Top) */}
         <div className="bg-gray-200 backdrop-blur-md shadow-lg rounded-full px-4 py-2 flex items-center justify-center transform hover:scale-105 transition-transform">
           <div className="flex space-x-3 items-center justify-start text-gray-700">
             {[
@@ -308,6 +286,28 @@ export default function SharedNav({ isScrolled = false, showAnimatedLine = true,
                 />
               </Link>
             ))}
+          </div>
+        </div>
+
+        {/* Phone Pill - Mobile Numbers (Bottom) */}
+        <div className="group bg-gray-200 backdrop-blur-md shadow-lg rounded-full p-1.5 flex items-center justify-center transition-all duration-300 hover:pr-6 cursor-pointer">
+          <div className="flex items-center">
+            {/* Single Branded Icon */}
+            <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm text-[#083D77] shrink-0 z-10">
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.44-5.15-3.75-6.59-6.59l1.97-1.57c.27-.28.36-.67.25-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3.3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .69-.63.69-1.19v-3.44c0-.54-.45-.99-.99-.99z" /></svg>
+            </div>
+
+            {/* Numbers Container - Reveal on Hover */}
+            <div className="overflow-hidden w-0 group-hover:w-[120px] transition-all duration-500 ease-in-out flex flex-col justify-center">
+              <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100 pl-3 space-y-1">
+                <a href="tel:+919059450707" className="block text-[12px] font-bold text-gray-700 hover:text-sky-900 transition-colors whitespace-nowrap">
+                  +91 9059450707
+                </a>
+                <a href="tel:+917382314128" className="block text-[12px] font-bold text-gray-700 hover:text-sky-900 transition-colors whitespace-nowrap">
+                  +91 7382314128
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -10,48 +10,6 @@ import { AUTH_SYSTEM_AVAILABLE } from '@/config/authStatus';
 
 export default function JavaPage() {
   const [activeSection, setActiveSection] = useState('introduction');
-  const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(
-    AUTH_SYSTEM_AVAILABLE ? null : true
-  );
-
-  // Authentication check - runs immediately on mount
-  useEffect(() => {
-    if (!AUTH_SYSTEM_AVAILABLE) {
-      setIsAuthenticated(true);
-      return;
-    }
-    if (typeof window === 'undefined') return;
-    
-    const token = localStorage.getItem('token');
-    if (!token || token.trim() === '' || token === 'null' || token === 'undefined') {
-      const currentPath = window.location.pathname;
-      window.location.replace(`/register?redirect=${encodeURIComponent(currentPath)}`);
-      return;
-    }
-    // Validate JWT token format and expiry
-    try {
-      const parts = token.split('.');
-      if (parts.length !== 3) {
-        localStorage.removeItem('token');
-        const currentPath = window.location.pathname;
-        window.location.replace(`/register?redirect=${encodeURIComponent(currentPath)}`);
-        return;
-      }
-      const payload = JSON.parse(atob(parts[1]));
-      if (payload.exp && payload.exp * 1000 < Date.now()) {
-        localStorage.removeItem('token');
-        const currentPath = window.location.pathname;
-        window.location.replace(`/register?redirect=${encodeURIComponent(currentPath)}`);
-        return;
-      }
-      setIsAuthenticated(true);
-    } catch {
-      localStorage.removeItem('token');
-      const currentPath = window.location.pathname;
-      window.location.replace(`/register?redirect=${encodeURIComponent(currentPath)}`);
-      return;
-    }
-  }, []);
 
   const pageHeadings = [
     { id: 'introduction', title: 'Java Tutorial' },
@@ -119,16 +77,12 @@ export default function JavaPage() {
 
     // Listen for hash changes
     window.addEventListener('hashchange', handleHashChange);
-    
+
     return () => {
       window.removeEventListener('hashchange', handleHashChange);
     };
   }, []);
 
-  // Don't render until authenticated
-  if (isAuthenticated === null || isAuthenticated === false) {
-    return null;
-  }
 
   // Get navigation for current section
   const getNavigation = () => {
@@ -175,22 +129,22 @@ export default function JavaPage() {
                   Java is a popular programming language, created in 1995 by Sun Microsystems (now owned by Oracle).
                 </p>
                 <p className="text-lg text-gray-300 mb-8 text-center max-w-4xl mx-auto">
-                  Master Java programming from fundamentals to advanced enterprise development. 
+                  Master Java programming from fundamentals to advanced enterprise development.
                   Learn to build scalable, maintainable applications used by billions of devices worldwide.
                 </p>
-                
+
                 <div className="flex flex-wrap justify-center gap-4 mb-8">
-                  <button 
+                  <button
                     onClick={() => setActiveSection('basics')}
                     className="bg-rose-600 hover:bg-rose-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
                   >
                     Start Learning Java →
                   </button>
                 </div>
-                
+
                 <div className="glass-card rounded-lg p-6 text-center" style={{ background: 'rgba(225, 29, 72, 0.2)' }}>
                   <p className="text-gray-300 text-lg">
-                    <strong className="text-white">3+ Billion</strong> devices run Java. 
+                    <strong className="text-white">3+ Billion</strong> devices run Java.
                     It's used for mobile apps, web applications, desktop apps, games, and much more!
                   </p>
                 </div>
@@ -282,12 +236,12 @@ export default function JavaPage() {
               <div className="max-w-6xl mx-auto mb-12">
                 <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8">
                   <h2 className="text-3xl font-bold text-white mb-6">Understanding Java Programming Language</h2>
-                  
+
                   <div className="space-y-6 text-gray-300">
                     <p className="text-lg leading-relaxed">
                       <strong className="text-white">Java</strong> is a high-level, class-based, object-oriented programming language developed by <strong className="text-white">James Gosling</strong> and his team at Sun Microsystems (now owned by Oracle Corporation) in 1995. Originally called "Oak" after an oak tree outside Gosling's office, it was later renamed Java, inspired by Java coffee.
                     </p>
-                    
+
                     <p className="text-lg leading-relaxed">
                       Java was designed with the philosophy of <strong className="text-white">"Write Once, Run Anywhere" (WORA)</strong>, meaning that compiled Java code can run on all platforms that support Java without the need for recompilation. This is achieved through the <strong className="text-white">Java Virtual Machine (JVM)</strong>, which serves as an abstraction layer between the compiled code and the underlying hardware.
                     </p>
@@ -326,7 +280,7 @@ export default function JavaPage() {
                       <p className="text-gray-300 mb-4">
                         Understanding Java's architecture is fundamental to grasping how it achieves platform independence and high performance:
                       </p>
-                      
+
                       <div className="space-y-4">
                         <div className="bg-gray-800 p-4 rounded-lg">
                           <h4 className="text-white font-bold mb-2">1. Java Development Kit (JDK)</h4>
@@ -334,14 +288,14 @@ export default function JavaPage() {
                             The complete development environment containing the JRE, compiler (javac), debugger, and development tools needed to create Java applications.
                           </p>
                         </div>
-                        
+
                         <div className="bg-gray-800 p-4 rounded-lg">
                           <h4 className="text-white font-bold mb-2">2. Java Runtime Environment (JRE)</h4>
                           <p className="text-gray-300 text-sm">
                             Provides the libraries, JVM, and other components to run Java applications. It's what end-users need to execute Java programs.
                           </p>
                         </div>
-                        
+
                         <div className="bg-gray-800 p-4 rounded-lg">
                           <h4 className="text-white font-bold mb-2">3. Java Virtual Machine (JVM)</h4>
                           <p className="text-gray-300 text-sm mb-2">
@@ -375,7 +329,7 @@ export default function JavaPage() {
                       <p className="text-gray-300 mb-4">
                         Java isn't just a language—it's a complete ecosystem with various editions and components:
                       </p>
-                      
+
                       <div className="grid md:grid-cols-3 gap-4">
                         <div className="bg-gray-800 p-4 rounded-lg">
                           <h4 className="text-white font-bold mb-2">Java SE</h4>
@@ -383,14 +337,14 @@ export default function JavaPage() {
                             <strong>Standard Edition</strong> - Core Java platform for desktop and server applications. Includes basic libraries and APIs.
                           </p>
                         </div>
-                        
+
                         <div className="bg-gray-800 p-4 rounded-lg">
                           <h4 className="text-white font-bold mb-2">Java EE</h4>
                           <p className="text-gray-300 text-sm">
                             <strong>Enterprise Edition</strong> - Built on SE, adds APIs for large-scale, multi-tiered, scalable, and secure enterprise applications.
                           </p>
                         </div>
-                        
+
                         <div className="bg-gray-800 p-4 rounded-lg">
                           <h4 className="text-white font-bold mb-2">Java ME</h4>
                           <p className="text-gray-300 text-sm">
@@ -399,7 +353,7 @@ export default function JavaPage() {
                         </div>
                       </div>
                     </div>
-                    
+
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-white mb-4">Key Characteristics of Java</h3>
                       <ul className="space-y-3">
@@ -461,7 +415,7 @@ export default function JavaPage() {
                         Android apps are primarily built using Java. Billions of mobile devices run Java.
                       </p>
                     </div>
-                    
+
                     <div className="bg-gray-900/50 border border-rose-500/30 rounded-lg p-6">
                       <div className="text-4xl mb-4">🌐</div>
                       <h3 className="text-xl font-bold text-white mb-3">Web Applications</h3>
@@ -469,7 +423,7 @@ export default function JavaPage() {
                         Build dynamic web apps with frameworks like Spring Boot, JSP, and Servlets.
                       </p>
                     </div>
-                    
+
                     <div className="bg-gray-900/50 border border-purple-500/30 rounded-lg p-6">
                       <div className="text-4xl mb-4">🖥️</div>
                       <h3 className="text-xl font-bold text-purple-400 mb-3">Desktop Applications</h3>
@@ -477,7 +431,7 @@ export default function JavaPage() {
                         Create cross-platform desktop apps using JavaFX and Swing.
                       </p>
                     </div>
-                    
+
                     <div className="bg-gray-900/50 border border-yellow-500/30 rounded-lg p-6">
                       <div className="text-4xl mb-4">🏢</div>
                       <h3 className="text-xl font-bold text-yellow-400 mb-3">Enterprise Software</h3>
@@ -485,7 +439,7 @@ export default function JavaPage() {
                         Power large-scale enterprise applications and servers.
                       </p>
                     </div>
-                    
+
                     <div className="bg-gray-900/50 border border-green-500/30 rounded-lg p-6">
                       <div className="text-4xl mb-4">🎮</div>
                       <h3 className="text-xl font-bold text-green-400 mb-3">Games</h3>
@@ -493,7 +447,7 @@ export default function JavaPage() {
                         Develop games with engines like LibGDX and jMonkeyEngine.
                       </p>
                     </div>
-                    
+
                     <div className="bg-gray-900/50 border border-red-500/30 rounded-lg p-6">
                       <div className="text-4xl mb-4">🗄️</div>
                       <h3 className="text-xl font-bold text-red-400 mb-3">Big Data</h3>
@@ -512,7 +466,7 @@ export default function JavaPage() {
                   <p className="text-lg text-gray-300 mb-6">
                     This tutorial will teach you the basics of Java. It is not necessary to have any prior programming experience.
                   </p>
-                  <button 
+                  <button
                     onClick={() => setActiveSection('basics')}
                     className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors inline-flex items-center gap-2"
                   >
@@ -528,7 +482,7 @@ export default function JavaPage() {
         return (
           <div className="space-y-8">
             <h1 className="text-4xl font-bold text-white mb-4">Java Output</h1>
-            
+
             <div className="bg-gradient-to-r from-rose-600/10 to-red-600/10 border border-rose-500/20 rounded-lg p-8">
               <h2 className="text-3xl font-bold text-white mb-6">Java Output</h2>
               <p className="text-lg text-gray-300 mb-6">
@@ -538,7 +492,7 @@ export default function JavaPage() {
 
             <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8">
               <h2 className="text-3xl font-bold text-white mb-6">Print Statements</h2>
-              
+
               <div className="space-y-6">
                 <div>
                   <h3 className="text-xl font-bold text-white mb-4">System.out.println()</h3>
@@ -588,7 +542,7 @@ export default function JavaPage() {
 
             <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8">
               <h2 className="text-3xl font-bold text-white mb-6">Output Methods Comparison</h2>
-              
+
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse">
                   <thead>
@@ -631,16 +585,16 @@ export default function JavaPage() {
               <p className="text-lg text-gray-300 mb-8 text-center">
                 Master the essential building blocks of Java programming
               </p>
-              
+
               <div className="max-w-6xl mx-auto">
                 {/* Java Syntax Overview */}
                 <div className="bg-gray-800/50 border border-gray-700 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-white mb-6">Java Syntax Overview</h2>
                   <p className="text-lg text-gray-300 mb-6">
-                    Java is a statically-typed, object-oriented programming language with a clear syntax structure. 
+                    Java is a statically-typed, object-oriented programming language with a clear syntax structure.
                     Understanding these fundamentals is crucial for building robust applications.
                   </p>
-                  
+
                   <div className="grid md:grid-cols-3 gap-6">
                     <div className="bg-gray-800 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-green-400 mb-3">📝 Syntax Rules</h3>
@@ -675,15 +629,15 @@ export default function JavaPage() {
                 {/* Data Types and Variables */}
                 <div className="bg-gray-800 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-white mb-6">Data Types and Variables</h2>
-                  
+
                   <div className="grid lg:grid-cols-2 gap-8">
                     <div>
                       <h3 className="text-xl font-bold text-green-400 mb-4">Primitive Data Types</h3>
                       <p className="text-gray-300 mb-4">
-                        Java has 8 primitive data types that store values directly in memory. 
+                        Java has 8 primitive data types that store values directly in memory.
                         These are the building blocks for all other data structures.
                       </p>
-                      
+
                       <div className="bg-gray-900 p-4 rounded-lg mb-4">
                         <div className="grid grid-cols-2 gap-4 text-sm">
                           <div>
@@ -703,14 +657,14 @@ export default function JavaPage() {
                         </div>
                       </div>
                     </div>
-                    
+
                     <div>
                       <h3 className="text-xl font-bold text-purple-400 mb-4">Reference Types</h3>
                       <p className="text-gray-300 mb-4">
-                        Reference types store references to objects in memory. 
+                        Reference types store references to objects in memory.
                         They include classes, interfaces, arrays, and enums.
                       </p>
-                      
+
                       <div className="bg-gray-900 p-4 rounded-lg">
                         <div className="text-sm text-gray-300">
                           <div className="text-yellow-400 font-semibold mb-2">Common Reference Types:</div>
@@ -722,12 +676,12 @@ export default function JavaPage() {
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="mt-8">
                     <h3 className="text-xl font-bold text-white mb-4">Variable Declaration and Initialization</h3>
                     <div className="bg-gray-900 p-6 rounded-lg">
                       <pre className="text-green-400 font-mono text-sm">
-{`// Variable Declaration and Initialization
+                        {`// Variable Declaration and Initialization
 public class VariableExamples {
     public static void main(String[] args) {
         // Primitive variables
@@ -762,18 +716,18 @@ public class VariableExamples {
                 {/* Control Structures */}
                 <div className="bg-gray-800 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-white mb-6">Control Structures</h2>
-                  
+
                   <div className="grid lg:grid-cols-2 gap-8">
                     <div>
                       <h3 className="text-xl font-bold text-green-400 mb-4">Conditional Statements</h3>
                       <p className="text-gray-300 mb-4">
-                        Control the flow of execution based on conditions. 
+                        Control the flow of execution based on conditions.
                         Essential for making decisions in your programs.
                       </p>
-                      
+
                       <div className="bg-gray-900 p-4 rounded-lg">
                         <pre className="text-green-400 font-mono text-sm">
-{`// If-else statements
+                          {`// If-else statements
 int score = 85;
 String grade;
 
@@ -802,17 +756,17 @@ switch (day) {
                         </pre>
                       </div>
                     </div>
-                    
+
                     <div>
                       <h3 className="text-xl font-bold text-purple-400 mb-4">Loop Structures</h3>
                       <p className="text-gray-300 mb-4">
-                        Execute code repeatedly until a condition is met. 
+                        Execute code repeatedly until a condition is met.
                         Choose the right loop for your specific needs.
                       </p>
-                      
+
                       <div className="bg-gray-900 p-4 rounded-lg">
                         <pre className="text-green-400 font-mono text-sm">
-{`// For loop - when you know iterations
+                          {`// For loop - when you know iterations
 for (int i = 0; i < 5; i++) {
     System.out.println("Count: " + i);
 }
@@ -845,18 +799,18 @@ do {
                 {/* Methods and Functions */}
                 <div className="bg-gray-800 p-8 rounded-2xl">
                   <h2 className="text-3xl font-bold text-white mb-6">Methods and Functions</h2>
-                  
+
                   <div className="grid lg:grid-cols-2 gap-8">
                     <div>
                       <h3 className="text-xl font-bold text-green-400 mb-4">Method Declaration</h3>
                       <p className="text-gray-300 mb-4">
-                        Methods are blocks of code that perform specific tasks. 
+                        Methods are blocks of code that perform specific tasks.
                         They promote code reusability and organization.
                       </p>
-                      
+
                       <div className="bg-gray-900 p-4 rounded-lg">
                         <pre className="text-green-400 font-mono text-sm">
-{`// Method syntax
+                          {`// Method syntax
 [access_modifier] [static] return_type method_name(parameters) {
     // method body
     return value; // if return_type is not void
@@ -877,17 +831,17 @@ public static double calculateArea(double radius) {
                         </pre>
                       </div>
                     </div>
-                    
+
                     <div>
                       <h3 className="text-xl font-bold text-purple-400 mb-4">Method Overloading</h3>
                       <p className="text-gray-300 mb-4">
-                        Multiple methods with the same name but different parameters. 
+                        Multiple methods with the same name but different parameters.
                         Java determines which method to call based on arguments.
                       </p>
-                      
+
                       <div className="bg-gray-900 p-4 rounded-lg">
                         <pre className="text-green-400 font-mono text-sm">
-{`// Method overloading examples
+                          {`// Method overloading examples
 public class Calculator {
     // Add two integers
     public static int add(int a, int b) {
@@ -923,7 +877,7 @@ public class Calculator {
         return (
           <div className="space-y-8">
             <h1 className="text-4xl font-bold text-white mb-4">Java Syntax</h1>
-            
+
             <div className="bg-gradient-to-r from-rose-600/10 to-red-600/10 border border-rose-500/20 rounded-lg p-8">
               <h2 className="text-3xl font-bold text-white mb-6">Java Syntax</h2>
               <p className="text-lg text-gray-300 mb-6">
@@ -933,7 +887,7 @@ public class Calculator {
 
             <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8">
               <h2 className="text-3xl font-bold text-white mb-6">Basic Java Syntax</h2>
-              
+
               <div className="space-y-6">
                 <div>
                   <h3 className="text-xl font-bold text-white mb-4">Hello World Example</h3>
@@ -965,7 +919,7 @@ public class Calculator {
         return (
           <div className="space-y-8">
             <h1 className="text-4xl font-bold text-white mb-4">Java Comments</h1>
-            
+
             <div className="bg-gradient-to-r from-rose-600/10 to-red-600/10 border border-rose-500/20 rounded-lg p-8">
               <h2 className="text-3xl font-bold text-white mb-6">Java Comments</h2>
               <p className="text-lg text-gray-300 mb-6">
@@ -975,41 +929,41 @@ public class Calculator {
 
             <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8">
               <h2 className="text-3xl font-bold text-white mb-6">The Importance of Comments in Java</h2>
-              
+
               <div className="space-y-6 text-gray-300">
                 <p className="text-lg leading-relaxed">
                   Comments in Java serve several critical purposes that extend far beyond simple code explanation:
                 </p>
-                
+
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-4">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-4">
                       <h3 className="text-lg font-bold text-white mb-2">📝 Documentation</h3>
                       <p className="text-sm">Comments provide inline documentation that explains what code does, why it does it, and how it works.</p>
                     </div>
-                    
+
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-4">
                       <h3 className="text-lg font-bold text-white mb-2">🔧 Maintenance</h3>
                       <p className="text-sm">Well-commented code is easier to maintain, debug, and modify, especially when working in teams.</p>
                     </div>
-                    
+
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-4">
                       <h3 className="text-lg font-bold text-white mb-2">🎯 Code Clarity</h3>
                       <p className="text-sm">Comments help clarify complex algorithms, business logic, and non-obvious code behavior.</p>
                     </div>
                   </div>
-                  
+
                   <div className="space-y-4">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-4">
                       <h3 className="text-lg font-bold text-white mb-2">📚 Learning Aid</h3>
                       <p className="text-sm">Comments serve as learning tools for new developers joining a project or learning Java.</p>
                     </div>
-                    
+
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-4">
                       <h3 className="text-lg font-bold text-white mb-2">🚫 Debugging</h3>
                       <p className="text-sm">Comments can temporarily disable code during debugging without deleting it.</p>
                     </div>
-                    
+
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-4">
                       <h3 className="text-lg font-bold text-white mb-2">📖 API Documentation</h3>
                       <p className="text-sm">JavaDoc comments generate professional API documentation automatically.</p>
@@ -1021,7 +975,7 @@ public class Calculator {
 
             <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8">
               <h2 className="text-3xl font-bold text-white mb-6">Types of Comments</h2>
-              
+
               <div className="space-y-6">
                 <div>
                   <h3 className="text-xl font-bold text-white mb-4">Single-line Comments</h3>
@@ -1075,7 +1029,7 @@ public String greet(String name) {
         return (
           <div className="space-y-8">
             <h1 className="text-4xl font-bold text-white mb-4">Java Variables</h1>
-            
+
             <div className="bg-gradient-to-r from-rose-600/10 to-red-600/10 border border-rose-500/20 rounded-lg p-8">
               <h2 className="text-3xl font-bold text-white mb-6">Java Variables</h2>
               <p className="text-lg text-gray-300 mb-6">
@@ -1085,12 +1039,12 @@ public String greet(String name) {
 
             <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8">
               <h2 className="text-3xl font-bold text-white mb-6">Understanding Variables in Java</h2>
-              
+
               <div className="space-y-6 text-gray-300">
                 <p className="text-lg leading-relaxed">
                   A variable in Java is a named memory location that stores a value of a specific data type. Think of it as a labeled box where you can store different types of information that your program needs to work with.
                 </p>
-                
+
                 <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                   <h3 className="text-xl font-bold text-white mb-4">Key Characteristics of Java Variables</h3>
                   <ul className="space-y-3">
@@ -1138,7 +1092,7 @@ public String greet(String name) {
 
             <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8">
               <h2 className="text-3xl font-bold text-white mb-6">Variable Types</h2>
-              
+
               <div className="space-y-6">
                 <div>
                   <h3 className="text-xl font-bold text-white mb-4">Local Variables</h3>
@@ -1197,7 +1151,7 @@ public String greet(String name) {
         return (
           <div className="space-y-8">
             <h1 className="text-4xl font-bold text-white mb-4">Java Data Types</h1>
-            
+
             <div className="bg-gradient-to-r from-rose-600/10 to-red-600/10 border border-rose-500/20 rounded-lg p-8">
               <h2 className="text-3xl font-bold text-white mb-6">Java Data Types</h2>
               <p className="text-lg text-gray-300 mb-6">
@@ -1207,12 +1161,12 @@ public String greet(String name) {
 
             <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8">
               <h2 className="text-3xl font-bold text-white mb-6">Understanding Java Data Types</h2>
-              
+
               <div className="space-y-6 text-gray-300">
                 <p className="text-lg leading-relaxed">
                   Java's type system is designed to provide both flexibility and safety. The language categorizes data types into two main groups, each serving different purposes in application development.
                 </p>
-                
+
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                     <h3 className="text-xl font-bold text-white mb-4">Primitive Data Types</h3>
@@ -1226,7 +1180,7 @@ public String greet(String name) {
                       <li>• <strong className="text-white">Value-based:</strong> Compared by value, not reference</li>
                     </ul>
                   </div>
-                  
+
                   <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                     <h3 className="text-xl font-bold text-white mb-4">Non-Primitive Data Types</h3>
                     <p className="text-gray-300 mb-4">
@@ -1264,7 +1218,7 @@ public String greet(String name) {
 
             <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8">
               <h2 className="text-3xl font-bold text-white mb-6">Primitive Data Types</h2>
-              
+
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse">
                   <thead>
@@ -1335,7 +1289,7 @@ public String greet(String name) {
         return (
           <div className="space-y-8">
             <h1 className="text-4xl font-bold text-white mb-4">Java Operators</h1>
-            
+
             <div className="bg-gradient-to-r from-rose-600/10 to-red-600/10 border border-rose-500/20 rounded-lg p-8">
               <h2 className="text-3xl font-bold text-white mb-6">Java Operators</h2>
               <p className="text-lg text-gray-300 mb-6">
@@ -1345,12 +1299,12 @@ public String greet(String name) {
 
             <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8">
               <h2 className="text-3xl font-bold text-white mb-6">Understanding Java Operators</h2>
-              
+
               <div className="space-y-6 text-gray-300">
                 <p className="text-lg leading-relaxed">
                   Java operators are categorized based on the number of operands they work with and the type of operation they perform. This classification helps developers understand when and how to use each operator effectively.
                 </p>
-                
+
                 <div className="grid md:grid-cols-3 gap-6">
                   <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                     <h3 className="text-xl font-bold text-white mb-4">Unary Operators</h3>
@@ -1364,7 +1318,7 @@ public String greet(String name) {
                       <li>• <strong className="text-white">- (unary minus):</strong> Negates numeric value</li>
                     </ul>
                   </div>
-                  
+
                   <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                     <h3 className="text-xl font-bold text-white mb-4">Binary Operators</h3>
                     <p className="text-gray-300 mb-4">
@@ -1377,7 +1331,7 @@ public String greet(String name) {
                       <li>• <strong className="text-white">Assignment:</strong> =, +=, -=, *=, /=</li>
                     </ul>
                   </div>
-                  
+
                   <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                     <h3 className="text-xl font-bold text-white mb-4">Ternary Operator</h3>
                     <p className="text-gray-300 mb-4">
@@ -1415,7 +1369,7 @@ public String greet(String name) {
 
             <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8">
               <h2 className="text-3xl font-bold text-white mb-6">Arithmetic Operators</h2>
-              
+
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse">
                   <thead>
@@ -1458,7 +1412,7 @@ public String greet(String name) {
 
             <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8">
               <h2 className="text-3xl font-bold text-white mb-6">Comparison Operators</h2>
-              
+
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse">
                   <thead>
@@ -1506,7 +1460,7 @@ public String greet(String name) {
 
             <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8">
               <h2 className="text-3xl font-bold text-white mb-6">Example Code</h2>
-              
+
               <pre className="bg-gray-900 p-6 rounded-lg text-sm text-gray-300 overflow-x-auto">
                 <code>{`public class OperatorsExample {
     public static void main(String[] args) {
@@ -1536,7 +1490,7 @@ public String greet(String name) {
         return (
           <div className="space-y-8">
             <h1 className="text-4xl font-bold text-white mb-4">Java Strings</h1>
-            
+
             <div className="bg-gradient-to-r from-rose-600/10 to-red-600/10 border border-rose-500/20 rounded-lg p-8">
               <h2 className="text-3xl font-bold text-white mb-6">Java Strings</h2>
               <p className="text-lg text-gray-300 mb-6">
@@ -1546,12 +1500,12 @@ public String greet(String name) {
 
             <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8">
               <h2 className="text-3xl font-bold text-white mb-6">Understanding Java Strings</h2>
-              
+
               <div className="space-y-6 text-gray-300">
                 <p className="text-lg leading-relaxed">
                   Strings in Java are immutable objects, meaning once created, their content cannot be changed. This design choice has important implications for memory management, performance, and thread safety in Java applications.
                 </p>
-                
+
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                     <h3 className="text-xl font-bold text-white mb-4">String Characteristics</h3>
@@ -1574,7 +1528,7 @@ public String greet(String name) {
                       </li>
                     </ul>
                   </div>
-                  
+
                   <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                     <h3 className="text-xl font-bold text-white mb-4">String Creation Methods</h3>
                     <ul className="space-y-3">
@@ -1621,7 +1575,7 @@ public String greet(String name) {
 
             <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8">
               <h2 className="text-3xl font-bold text-white mb-6">String Examples</h2>
-              
+
               <pre className="bg-gray-900 p-6 rounded-lg text-sm text-gray-300 overflow-x-auto">
                 <code>{`public class StringExample {
     public static void main(String[] args) {
@@ -1650,7 +1604,7 @@ public String greet(String name) {
         return (
           <div className="space-y-8">
             <h1 className="text-4xl font-bold text-white mb-4">Java Math</h1>
-            
+
             <div className="bg-gradient-to-r from-rose-600/10 to-red-600/10 border border-rose-500/20 rounded-lg p-8">
               <h2 className="text-3xl font-bold text-white mb-6">Java Math Class</h2>
               <p className="text-lg text-gray-300 mb-6">
@@ -1660,12 +1614,12 @@ public String greet(String name) {
 
             <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8">
               <h2 className="text-3xl font-bold text-white mb-6">Understanding the Math Class</h2>
-              
+
               <div className="space-y-6 text-gray-300">
                 <p className="text-lg leading-relaxed">
                   The Math class is part of the java.lang package and is automatically imported into every Java program. It provides a wide range of mathematical operations that are commonly needed in programming applications.
                 </p>
-                
+
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                     <h3 className="text-xl font-bold text-white mb-4">Key Features</h3>
@@ -1688,7 +1642,7 @@ public String greet(String name) {
                       </li>
                     </ul>
                   </div>
-                  
+
                   <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                     <h3 className="text-xl font-bold text-white mb-4">Method Categories</h3>
                     <ul className="space-y-3">
@@ -1735,7 +1689,7 @@ public String greet(String name) {
 
             <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8">
               <h2 className="text-3xl font-bold text-white mb-6">Math Methods</h2>
-              
+
               <pre className="bg-gray-900 p-6 rounded-lg text-sm text-gray-300 overflow-x-auto">
                 <code>{`public class MathExample {
     public static void main(String[] args) {
@@ -1761,7 +1715,7 @@ public String greet(String name) {
         return (
           <div className="space-y-8">
             <h1 className="text-4xl font-bold text-white mb-4">Java Booleans</h1>
-            
+
             <div className="bg-gradient-to-r from-rose-600/10 to-red-600/10 border border-rose-500/20 rounded-lg p-8">
               <h2 className="text-3xl font-bold text-white mb-6">Java Booleans</h2>
               <p className="text-lg text-gray-300 mb-6">
@@ -1771,12 +1725,12 @@ public String greet(String name) {
 
             <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8">
               <h2 className="text-3xl font-bold text-white mb-6">Understanding Java Booleans</h2>
-              
+
               <div className="space-y-6 text-gray-300">
                 <p className="text-lg leading-relaxed">
                   Boolean values are essential for implementing logic in Java programs. They enable the program to make decisions based on conditions and control the flow of execution through different code paths.
                 </p>
-                
+
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                     <h3 className="text-xl font-bold text-white mb-4">Boolean Characteristics</h3>
@@ -1799,7 +1753,7 @@ public String greet(String name) {
                       </li>
                     </ul>
                   </div>
-                  
+
                   <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                     <h3 className="text-xl font-bold text-white mb-4">Common Uses</h3>
                     <ul className="space-y-3">
@@ -1850,7 +1804,7 @@ public String greet(String name) {
 
             <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8">
               <h2 className="text-3xl font-bold text-white mb-6">Boolean Examples</h2>
-              
+
               <pre className="bg-gray-900 p-6 rounded-lg text-sm text-gray-300 overflow-x-auto">
                 <code>{`public class BooleanExample {
     public static void main(String[] args) {
@@ -1877,7 +1831,7 @@ public String greet(String name) {
         return (
           <div className="space-y-8">
             <h1 className="text-4xl font-bold text-white mb-4">Java If...Else</h1>
-            
+
             <div className="bg-gradient-to-r from-rose-600/10 to-red-600/10 border border-rose-500/20 rounded-lg p-8">
               <h2 className="text-3xl font-bold text-white mb-6">Java If...Else Statements</h2>
               <p className="text-lg text-gray-300 mb-6">
@@ -1887,12 +1841,12 @@ public String greet(String name) {
 
             <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8">
               <h2 className="text-3xl font-bold text-white mb-6">Understanding Conditional Statements</h2>
-              
+
               <div className="space-y-6 text-gray-300">
                 <p className="text-lg leading-relaxed">
                   Conditional statements form the backbone of program logic, allowing applications to respond differently based on various conditions. They enable programs to make decisions, validate input, handle errors, and create dynamic user experiences.
                 </p>
-                
+
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                     <h3 className="text-xl font-bold text-white mb-4">Key Concepts</h3>
@@ -1915,7 +1869,7 @@ public String greet(String name) {
                       </li>
                     </ul>
                   </div>
-                  
+
                   <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                     <h3 className="text-xl font-bold text-white mb-4">Statement Types</h3>
                     <ul className="space-y-3">
@@ -1962,7 +1916,7 @@ public String greet(String name) {
 
             <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8">
               <h2 className="text-3xl font-bold text-white mb-6">If...Else Examples</h2>
-              
+
               <pre className="bg-gray-900 p-6 rounded-lg text-sm text-gray-300 overflow-x-auto">
                 <code>{`public class IfElseExample {
     public static void main(String[] args) {
@@ -1999,7 +1953,7 @@ public String greet(String name) {
         return (
           <div className="space-y-8">
             <h1 className="text-4xl font-bold text-white mb-4">Java Switch</h1>
-            
+
             <div className="bg-gradient-to-r from-rose-600/10 to-red-600/10 border border-rose-500/20 rounded-lg p-8">
               <h2 className="text-3xl font-bold text-white mb-6">Java Switch Statements</h2>
               <p className="text-lg text-gray-300 mb-6">
@@ -2009,12 +1963,12 @@ public String greet(String name) {
 
             <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8">
               <h2 className="text-3xl font-bold text-white mb-6">Understanding Switch Statements</h2>
-              
+
               <div className="space-y-6 text-gray-300">
                 <p className="text-lg leading-relaxed">
                   Switch statements provide a structured approach to handling multiple conditions by comparing a single expression against multiple constant values. They offer better performance than equivalent if-else chains and improve code organization.
                 </p>
-                
+
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                     <h3 className="text-xl font-bold text-white mb-4">Switch Components</h3>
@@ -2037,7 +1991,7 @@ public String greet(String name) {
                       </li>
                     </ul>
                   </div>
-                  
+
                   <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                     <h3 className="text-xl font-bold text-white mb-4">Supported Data Types</h3>
                     <ul className="space-y-3">
@@ -2092,7 +2046,7 @@ public String greet(String name) {
 
             <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8">
               <h2 className="text-3xl font-bold text-white mb-6">Switch Examples</h2>
-              
+
               <pre className="bg-gray-900 p-6 rounded-lg text-sm text-gray-300 overflow-x-auto">
                 <code>{`public class SwitchExample {
     public static void main(String[] args) {
@@ -2134,7 +2088,7 @@ public String greet(String name) {
         return (
           <div className="space-y-8">
             <h1 className="text-4xl font-bold text-white mb-4">Java Loops</h1>
-            
+
             <div className="bg-gradient-to-r from-rose-600/10 to-red-600/10 border border-rose-500/20 rounded-lg p-8">
               <h2 className="text-3xl font-bold text-white mb-6">Java Loops</h2>
               <p className="text-lg text-gray-300 mb-6">
@@ -2144,12 +2098,12 @@ public String greet(String name) {
 
             <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8">
               <h2 className="text-3xl font-bold text-white mb-6">Understanding Java Loops</h2>
-              
+
               <div className="space-y-6 text-gray-300">
                 <p className="text-lg leading-relaxed">
                   Loops provide a powerful mechanism for automating repetitive tasks and processing collections of data. They help reduce code duplication and enable complex algorithms that require iteration.
                 </p>
-                
+
                 <div className="grid md:grid-cols-3 gap-6">
                   <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                     <h3 className="text-xl font-bold text-white mb-4">For Loop</h3>
@@ -2163,7 +2117,7 @@ public String greet(String name) {
                       <li>• <strong className="text-white">Use Cases:</strong> Array processing, counting</li>
                     </ul>
                   </div>
-                  
+
                   <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                     <h3 className="text-xl font-bold text-white mb-4">While Loop</h3>
                     <p className="text-gray-300 mb-4">
@@ -2176,7 +2130,7 @@ public String greet(String name) {
                       <li>• <strong className="text-white">Use Cases:</strong> User input, file reading</li>
                     </ul>
                   </div>
-                  
+
                   <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                     <h3 className="text-xl font-bold text-white mb-4">Do-While Loop</h3>
                     <p className="text-gray-300 mb-4">
@@ -2214,7 +2168,7 @@ public String greet(String name) {
 
             <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8">
               <h2 className="text-3xl font-bold text-white mb-6">Loop Examples</h2>
-              
+
               <pre className="bg-gray-900 p-6 rounded-lg text-sm text-gray-300 overflow-x-auto">
                 <code>{`public class LoopExample {
     public static void main(String[] args) {
@@ -2250,7 +2204,7 @@ public String greet(String name) {
         return (
           <div className="space-y-8">
             <h1 className="text-4xl font-bold text-white mb-4">Java Arrays</h1>
-            
+
             <div className="bg-gradient-to-r from-rose-600/10 to-red-600/10 border border-rose-500/20 rounded-lg p-8">
               <h2 className="text-3xl font-bold text-white mb-6">Java Arrays</h2>
               <p className="text-lg text-gray-300 mb-6">
@@ -2260,12 +2214,12 @@ public String greet(String name) {
 
             <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8">
               <h2 className="text-3xl font-bold text-white mb-6">Understanding Java Arrays</h2>
-              
+
               <div className="space-y-6 text-gray-300">
                 <p className="text-lg leading-relaxed">
                   Arrays are one of the most fundamental data structures in programming, providing a systematic way to store and access multiple values using a single variable name and an index.
                 </p>
-                
+
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                     <h3 className="text-xl font-bold text-white mb-4">Array Characteristics</h3>
@@ -2288,7 +2242,7 @@ public String greet(String name) {
                       </li>
                     </ul>
                   </div>
-                  
+
                   <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                     <h3 className="text-xl font-bold text-white mb-4">Array Advantages</h3>
                     <ul className="space-y-3">
@@ -2335,7 +2289,7 @@ public String greet(String name) {
 
             <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8">
               <h2 className="text-3xl font-bold text-white mb-6">Array Examples</h2>
-              
+
               <pre className="bg-gray-900 p-6 rounded-lg text-sm text-gray-300 overflow-x-auto">
                 <code>{`public class ArrayExample {
     public static void main(String[] args) {
@@ -2372,7 +2326,7 @@ public String greet(String name) {
         return (
           <div className="space-y-8">
             <h1 className="text-4xl font-bold text-white mb-4">Java Methods</h1>
-            
+
             <div className="bg-gradient-to-r from-rose-600/10 to-red-600/10 border border-rose-500/20 rounded-lg p-8">
               <h2 className="text-3xl font-bold text-white mb-6">Java Methods</h2>
               <p className="text-lg text-gray-300 mb-6">
@@ -2382,12 +2336,12 @@ public String greet(String name) {
 
             <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8">
               <h2 className="text-3xl font-bold text-white mb-6">Understanding Java Methods</h2>
-              
+
               <div className="space-y-6 text-gray-300">
                 <p className="text-lg leading-relaxed">
                   Methods are the building blocks of Java programs, providing a way to encapsulate functionality and create reusable code. They promote code organization, reduce duplication, and make programs easier to understand and maintain.
                 </p>
-                
+
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                     <h3 className="text-xl font-bold text-white mb-4">Method Components</h3>
@@ -2410,7 +2364,7 @@ public String greet(String name) {
                       </li>
                     </ul>
                   </div>
-                  
+
                   <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                     <h3 className="text-xl font-bold text-white mb-4">Method Benefits</h3>
                     <ul className="space-y-3">
@@ -2465,7 +2419,7 @@ public String greet(String name) {
 
             <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8">
               <h2 className="text-3xl font-bold text-white mb-6">Method Examples</h2>
-              
+
               <pre className="bg-gray-900 p-6 rounded-lg text-sm text-gray-300 overflow-x-auto">
                 <code>{`public class MethodExample {
     // Method with no parameters
@@ -2505,7 +2459,7 @@ public String greet(String name) {
               <p className="text-lg text-gray-400 mb-8 text-center">
                 Deepen your understanding with core Java concepts
               </p>
-              
+
               <div className="max-w-6xl mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   <div className="bg-gradient-to-br from-blue-900/50 to-blue-800/50 p-6 rounded-xl border border-rose-500/30 hover:scale-105 transition-transform">
@@ -2520,7 +2474,7 @@ public String greet(String name) {
                       <li>• Abstraction</li>
                     </ul>
                   </div>
-                  
+
                   <div className="bg-gradient-to-br from-purple-900/50 to-purple-800/50 p-6 rounded-xl border border-purple-500/30 hover:scale-105 transition-transform">
                     <div className="text-3xl mb-4">🔑</div>
                     <h3 className="text-xl font-bold text-purple-400 mb-3">Java Keywords</h3>
@@ -2532,7 +2486,7 @@ public String greet(String name) {
                       <li>• this keyword</li>
                     </ul>
                   </div>
-                  
+
                   <div className="bg-gradient-to-br from-green-900/50 to-green-800/50 p-6 rounded-xl border border-green-500/30 hover:scale-105 transition-transform">
                     <div className="text-3xl mb-4">📝</div>
                     <h3 className="text-xl font-bold text-green-400 mb-3">Strings & String Handling</h3>
@@ -2544,7 +2498,7 @@ public String greet(String name) {
                       <li>• String manipulation</li>
                     </ul>
                   </div>
-                  
+
                   <div className="bg-gradient-to-br from-yellow-900/50 to-yellow-800/50 p-6 rounded-xl border border-yellow-500/30 hover:scale-105 transition-transform">
                     <div className="text-3xl mb-4">📊</div>
                     <h3 className="text-xl font-bold text-yellow-400 mb-3">Arrays & Collections</h3>
@@ -2556,7 +2510,7 @@ public String greet(String name) {
                       <li>• HashSet</li>
                     </ul>
                   </div>
-                  
+
                   <div className="bg-gradient-to-br from-red-900/50 to-red-800/50 p-6 rounded-xl border border-red-500/30 hover:scale-105 transition-transform">
                     <div className="text-3xl mb-4">⚠️</div>
                     <h3 className="text-xl font-bold text-red-400 mb-3">Exception Handling</h3>
@@ -2568,7 +2522,7 @@ public String greet(String name) {
                       <li>• Custom exceptions</li>
                     </ul>
                   </div>
-                  
+
                   <div className="bg-gradient-to-br from-indigo-900/50 to-indigo-800/50 p-6 rounded-xl border border-indigo-500/30 hover:scale-105 transition-transform">
                     <div className="text-3xl mb-4">📦</div>
                     <h3 className="text-xl font-bold text-indigo-400 mb-3">Packages & Modules</h3>
@@ -2596,7 +2550,7 @@ public String greet(String name) {
               <p className="text-lg text-gray-400 mb-8 text-center">
                 Master the four pillars of OOP: Encapsulation, Inheritance, Polymorphism, and Abstraction
               </p>
-              
+
               <div className="max-w-6xl mx-auto">
                 {/* What is OOP - Enhanced with detailed theory */}
                 <div className="bg-gradient-to-r from-rose-600/10 to-red-600/10 border border-rose-500/20 p-8 rounded-2xl mb-8">
@@ -2604,7 +2558,7 @@ public String greet(String name) {
                   <p className="text-lg text-gray-300 mb-6 leading-relaxed">
                     <strong className="text-white">Object-Oriented Programming (OOP)</strong> is a programming paradigm that organizes software design around data (objects) rather than functions and logic. It is one of the most powerful and widely-used programming approaches, forming the foundation of modern software development. Java is a pure object-oriented language where everything revolves around objects and classes, making it an ideal language for learning and implementing OOP principles.
                   </p>
-                  
+
                   <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6 mb-6">
                     <h3 className="text-xl font-bold text-white mb-4">The Philosophy Behind OOP</h3>
                     <p className="text-gray-300 mb-4 leading-relaxed">
@@ -2637,7 +2591,7 @@ public String greet(String name) {
                   <p className="text-lg text-gray-300 mb-8 leading-relaxed">
                     Object-Oriented Programming is built on four fundamental principles, often called the "Four Pillars of OOP." These principles work together to create robust, maintainable, and scalable software systems. Understanding these pillars is essential for mastering Java and OOP concepts.
                   </p>
-                  
+
                   <div className="grid md:grid-cols-2 gap-8">
                     <div className="bg-gradient-to-br from-green-900/20 to-gray-800 p-6 rounded-xl border border-green-500/30">
                       <h3 className="text-2xl font-bold text-green-400 mb-4">🔒 1. Encapsulation</h3>
@@ -2786,7 +2740,7 @@ public String greet(String name) {
                 {/* Encapsulation - Enhanced with detailed theory */}
                 <div className="bg-gradient-to-r from-green-600/10 to-emerald-600/10 border border-green-500/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-green-400 mb-6">🔒 Encapsulation - In Depth</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-2xl font-bold text-green-400 mb-4">What is Encapsulation?</h3>
@@ -2913,11 +2867,11 @@ public String greet(String name) {
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="bg-gray-900 p-6 rounded-xl mb-6">
                     <h3 className="text-xl font-bold text-white mb-4">Example: Bank Account with Encapsulation</h3>
                     <pre className="text-green-400 font-mono text-sm">
-{`public class BankAccount {
+                      {`public class BankAccount {
     private String accountNumber;
     private double balance;
     
@@ -2956,7 +2910,7 @@ public String greet(String name) {
 }`}
                     </pre>
                   </div>
-                  
+
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="bg-gray-700 p-6 rounded-xl">
                       <h4 className="text-lg font-bold text-green-400 mb-3">Benefits of Encapsulation</h4>
@@ -2983,14 +2937,14 @@ public String greet(String name) {
                 <div className="bg-gray-800 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-purple-400 mb-6">🧬 Inheritance</h2>
                   <p className="text-lg text-gray-300 mb-6">
-                    Inheritance allows a class to inherit properties and methods from another class. 
+                    Inheritance allows a class to inherit properties and methods from another class.
                     It promotes code reusability and establishes an "is-a" relationship between classes.
                   </p>
-                  
+
                   <div className="bg-gray-900 p-6 rounded-xl mb-6">
                     <h3 className="text-xl font-bold text-white mb-4">Example: Vehicle Inheritance Hierarchy</h3>
                     <pre className="text-green-400 font-mono text-sm">
-{`// Parent class
+                      {`// Parent class
 class Vehicle {
     protected String brand;
     protected int year;
@@ -3039,7 +2993,7 @@ public class InheritanceDemo {
 }`}
                     </pre>
                   </div>
-                  
+
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="bg-gray-700 p-6 rounded-xl">
                       <h4 className="text-lg font-bold text-green-400 mb-3">Types of Inheritance</h4>
@@ -3066,14 +3020,14 @@ public class InheritanceDemo {
                 <div className="bg-gray-800 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-yellow-400 mb-6">🎭 Polymorphism</h2>
                   <p className="text-lg text-gray-300 mb-6">
-                    Polymorphism means "many forms". It allows objects of different types to be treated as objects of a common type. 
+                    Polymorphism means "many forms". It allows objects of different types to be treated as objects of a common type.
                     In Java, this is achieved through method overriding and method overloading.
                   </p>
-                  
+
                   <div className="bg-gray-900 p-6 rounded-xl mb-6">
                     <h3 className="text-xl font-bold text-white mb-4">Example: Runtime Polymorphism</h3>
                     <pre className="text-green-400 font-mono text-sm">
-{`// Base class
+                      {`// Base class
 class Animal {
     public void makeSound() {
         System.out.println("Animal makes a sound");
@@ -3113,13 +3067,13 @@ public class PolymorphismDemo {
 }`}
                     </pre>
                   </div>
-                  
+
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="bg-gray-700 p-6 rounded-xl">
                       <h4 className="text-lg font-bold text-green-400 mb-3">Compile-time Polymorphism</h4>
                       <p className="text-gray-300 mb-3">Method Overloading</p>
                       <pre className="text-green-400 font-mono text-sm">
-{`public class Calculator {
+                        {`public class Calculator {
     public int add(int a, int b) {
         return a + b;
     }
@@ -3138,7 +3092,7 @@ public class PolymorphismDemo {
                       <h4 className="text-lg font-bold text-purple-400 mb-3">Runtime Polymorphism</h4>
                       <p className="text-gray-300 mb-3">Method Overriding</p>
                       <pre className="text-green-400 font-mono text-sm">
-{`class Shape {
+                        {`class Shape {
     public void draw() {
         System.out.println("Drawing shape");
     }
@@ -3159,14 +3113,14 @@ class Circle extends Shape {
                 <div className="bg-gray-800 p-8 rounded-2xl">
                   <h2 className="text-3xl font-bold text-red-400 mb-6">👻 Abstraction</h2>
                   <p className="text-lg text-gray-300 mb-6">
-                    Abstraction hides the complex implementation details and shows only the essential features. 
+                    Abstraction hides the complex implementation details and shows only the essential features.
                     In Java, this is achieved using abstract classes and interfaces.
                   </p>
-                  
+
                   <div className="bg-gray-900 p-6 rounded-xl mb-6">
                     <h3 className="text-xl font-bold text-white mb-4">Example: Abstract Class and Interface</h3>
                     <pre className="text-green-400 font-mono text-sm">
-{`// Abstract class
+                      {`// Abstract class
 abstract class Shape {
     protected String color;
     
@@ -3226,7 +3180,7 @@ public class AbstractionDemo {
 }`}
                     </pre>
                   </div>
-                  
+
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="bg-gray-700 p-6 rounded-xl">
                       <h4 className="text-lg font-bold text-green-400 mb-3">Abstract Classes</h4>
@@ -3273,7 +3227,7 @@ public class AbstractionDemo {
                   <p className="text-gray-300 leading-relaxed">
                     Classes encapsulate data and functions together, while objects are created at runtime to use those definitions. Multiple objects can be created from the same class, each with independent state.
                   </p>
-                  
+
                   <div className="mt-6 space-y-4">
                     <div className="bg-gray-800/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-white mb-3">Theoretical Foundation</h3>
@@ -3307,12 +3261,12 @@ public class AbstractionDemo {
 
                 <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8 mb-8">
                   <h2 className="text-3xl font-bold text-white mb-6">How Classes and Objects Work</h2>
-                  
+
                   <div className="space-y-6 text-gray-300">
                     <p className="text-lg leading-relaxed">
                       Classes serve as templates that define what data an object will contain and what operations it can perform. Objects are runtime instances that have their own memory space and can interact with other objects.
                     </p>
-                    
+
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-white mb-4">Conceptual Understanding</h3>
                       <div className="space-y-4">
@@ -3339,7 +3293,7 @@ public class AbstractionDemo {
                         </ul>
                       </div>
                     </div>
-                    
+
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-white mb-4">Philosophical Perspective</h3>
                       <div className="space-y-4">
@@ -3361,7 +3315,7 @@ public class AbstractionDemo {
                         </p>
                       </div>
                     </div>
-                    
+
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                         <h3 className="text-xl font-bold text-white mb-4">Class Components</h3>
@@ -3384,7 +3338,7 @@ public class AbstractionDemo {
                           </li>
                         </ul>
                       </div>
-                      
+
                       <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                         <h3 className="text-xl font-bold text-white mb-4">Object Lifecycle</h3>
                         <ul className="space-y-3">
@@ -3414,7 +3368,7 @@ public class AbstractionDemo {
                         <p className="text-gray-300">
                           Understanding how objects are stored in memory is crucial for performance optimization and represents a fundamental aspect of computer science:
                         </p>
-                        
+
                         <div className="bg-gray-800/50 border border-gray-500 rounded-lg p-4 mb-4">
                           <h4 className="text-white font-bold mb-3">Theoretical Framework</h4>
                           <p className="text-gray-300 text-sm mb-3">
@@ -3424,7 +3378,7 @@ public class AbstractionDemo {
                             The Java Virtual Machine (JVM) abstracts these complexities through <strong className="text-white">automatic memory management</strong>, but understanding the underlying principles is essential for writing efficient, scalable applications.
                           </p>
                         </div>
-                        
+
                         <div className="grid md:grid-cols-3 gap-4">
                           <div className="bg-gray-800 p-4 rounded-lg">
                             <h4 className="text-white font-bold mb-2">Heap Memory</h4>
@@ -3442,7 +3396,7 @@ public class AbstractionDemo {
                             <p className="text-xs text-gray-400">Indirection mechanism, null safety, garbage collection roots</p>
                           </div>
                         </div>
-                        
+
                         <div className="bg-gray-800/50 border border-gray-500 rounded-lg p-4">
                           <h4 className="text-white font-bold mb-3">Garbage Collection Theory</h4>
                           <p className="text-gray-300 text-sm mb-3">
@@ -3462,7 +3416,7 @@ public class AbstractionDemo {
 
                 <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8 mb-8">
                   <h2 className="text-3xl font-bold text-white mb-6">Advanced Theoretical Concepts</h2>
-                  
+
                   <div className="space-y-6 mb-8">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-white mb-4">Object Identity and Equality</h3>
@@ -3484,7 +3438,7 @@ public class AbstractionDemo {
                         </div>
                       </div>
                     </div>
-                    
+
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-white mb-4">State and Behavior Coupling</h3>
                       <div className="space-y-4">
@@ -3499,7 +3453,7 @@ public class AbstractionDemo {
                         </ul>
                       </div>
                     </div>
-                    
+
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-white mb-4">Design Patterns and Principles</h3>
                       <div className="space-y-4">
@@ -3531,7 +3485,7 @@ public class AbstractionDemo {
 
                 <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8 mb-8">
                   <h2 className="text-3xl font-bold text-white mb-6">Comprehensive Examples</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-white mb-4">Basic Class and Object</h3>
@@ -3682,7 +3636,7 @@ public class BankDemo {
 
                 <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8 mb-8">
                   <h2 className="text-3xl font-bold text-white mb-6">Theoretical Best Practices and Design Philosophy</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-white mb-4">Object-Oriented Design Principles</h3>
@@ -3714,7 +3668,7 @@ public class BankDemo {
                         </div>
                       </div>
                     </div>
-                    
+
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-white mb-4">Memory and Performance Considerations</h3>
                       <div className="space-y-4">
@@ -3730,7 +3684,7 @@ public class BankDemo {
                         </ul>
                       </div>
                     </div>
-                    
+
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="bg-gray-900/50 border border-gray-700 p-6 rounded-xl">
                         <h3 className="text-xl font-bold text-white mb-3">Design Anti-Patterns to Avoid</h3>
@@ -3777,7 +3731,7 @@ public class BankDemo {
                     <li>• <strong className="text-white">Static Fields</strong>: Shared across all objects of a class</li>
                     <li>• <strong className="text-white">Final Fields</strong>: Constants that cannot be reassigned</li>
                   </ul>
-                  
+
                   <div className="mt-6 space-y-4">
                     <div className="bg-gray-800/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-white mb-3">Theoretical Foundation</h3>
@@ -3796,7 +3750,7 @@ public class BankDemo {
 
                 <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8 mb-8">
                   <h2 className="text-3xl font-bold text-white mb-6">Attribute Types and Memory Management</h2>
-                  
+
                   <div className="space-y-6 text-gray-300">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-white mb-4">Instance vs Static Attributes</h3>
@@ -3828,7 +3782,7 @@ public class BankDemo {
                         </div>
                       </div>
                     </div>
-                    
+
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-white mb-4">Memory Allocation Theory</h3>
                       <div className="space-y-4">
@@ -3859,7 +3813,7 @@ public class BankDemo {
 
                 <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8 mb-8">
                   <h2 className="text-3xl font-bold text-white mb-6">Advanced Attribute Concepts</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-white mb-4">Final Attributes and Immutability</h3>
@@ -3875,7 +3829,7 @@ public class BankDemo {
                         </ul>
                       </div>
                     </div>
-                    
+
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-white mb-4">Access Modifiers and Encapsulation</h3>
                       <div className="space-y-4">
@@ -4005,7 +3959,7 @@ public class BankDemo {
                     <li>• Overloading: same name, different parameters</li>
                     <li>• Access: public/protected/(default)/private</li>
                   </ul>
-                  
+
                   <div className="mt-6 space-y-4">
                     <div className="bg-gray-800/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-white mb-3">Theoretical Foundation</h3>
@@ -4024,7 +3978,7 @@ public class BankDemo {
 
                 <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8 mb-8">
                   <h2 className="text-3xl font-bold text-white mb-6">Method Types and Execution Model</h2>
-                  
+
                   <div className="space-y-6 text-gray-300">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-white mb-4">Instance vs Static Methods</h3>
@@ -4056,7 +4010,7 @@ public class BankDemo {
                         </div>
                       </div>
                     </div>
-                    
+
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-white mb-4">Method Overloading Theory</h3>
                       <div className="space-y-4">
@@ -4076,7 +4030,7 @@ public class BankDemo {
 
                 <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8 mb-8">
                   <h2 className="text-3xl font-bold text-white mb-6">Advanced Method Concepts</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-white mb-4">Method Signatures and Contracts</h3>
@@ -4106,7 +4060,7 @@ public class BankDemo {
                         </div>
                       </div>
                     </div>
-                    
+
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-white mb-4">Method Execution and Stack Management</h3>
                       <div className="space-y-4">
@@ -4280,7 +4234,7 @@ public class CalculatorDemo {
                     <li>• Constructor overloading</li>
                     <li>• <code className="text-white">this()</code> and <code className="text-white">super()</code> chaining</li>
                   </ul>
-                  
+
                   <div className="mt-6 space-y-4">
                     <div className="bg-gray-800/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-white mb-3">Theoretical Foundation</h3>
@@ -4299,7 +4253,7 @@ public class CalculatorDemo {
 
                 <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8 mb-8">
                   <h2 className="text-3xl font-bold text-white mb-6">Constructor Types and Initialization</h2>
-                  
+
                   <div className="space-y-6 text-gray-300">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-white mb-4">Constructor Categories</h3>
@@ -4331,7 +4285,7 @@ public class CalculatorDemo {
                         </div>
                       </div>
                     </div>
-                    
+
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-white mb-4">Constructor Chaining Theory</h3>
                       <div className="space-y-4">
@@ -4351,7 +4305,7 @@ public class CalculatorDemo {
 
                 <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8 mb-8">
                   <h2 className="text-3xl font-bold text-white mb-6">Advanced Constructor Concepts</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-white mb-4">Object Initialization Process</h3>
@@ -4378,7 +4332,7 @@ public class CalculatorDemo {
                         </div>
                       </div>
                     </div>
-                    
+
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-white mb-4">Constructor Design Patterns</h3>
                       <div className="space-y-4">
@@ -4580,7 +4534,7 @@ public class ConstructorDemo {
                     <li>• <strong className="text-white">Access Modifiers:</strong> Control visibility and accessibility</li>
                     <li>• <strong className="text-white">Non-access Modifiers:</strong> Control behavior and characteristics</li>
                   </ul>
-                  
+
                   <div className="mt-6 space-y-4">
                     <div className="bg-gray-800/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-white mb-3">Theoretical Foundation</h3>
@@ -4599,7 +4553,7 @@ public class ConstructorDemo {
 
                 <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8 mb-8">
                   <h2 className="text-3xl font-bold text-white mb-6">Access Modifiers - Visibility Control</h2>
-                  
+
                   <div className="space-y-6 text-gray-300">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-white mb-4">Access Levels Hierarchy</h3>
@@ -4651,7 +4605,7 @@ public class ConstructorDemo {
                         </div>
                       </div>
                     </div>
-                    
+
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-white mb-4">Access Control Theory</h3>
                       <div className="space-y-4">
@@ -4671,7 +4625,7 @@ public class ConstructorDemo {
 
                 <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8 mb-8">
                   <h2 className="text-3xl font-bold text-white mb-6">Non-Access Modifiers - Behavior Control</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-white mb-4">Static Modifier</h3>
@@ -4701,7 +4655,7 @@ public class ConstructorDemo {
                         </div>
                       </div>
                     </div>
-                    
+
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-white mb-4">Final Modifier</h3>
                       <div className="space-y-4">
@@ -4727,7 +4681,7 @@ public class ConstructorDemo {
                         </div>
                       </div>
                     </div>
-                    
+
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-white mb-4">Abstract Modifier</h3>
                       <div className="space-y-4">
@@ -4756,7 +4710,7 @@ public class ConstructorDemo {
                         </div>
                       </div>
                     </div>
-                    
+
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-white mb-4">Synchronized Modifier</h3>
                       <div className="space-y-4">
@@ -4771,7 +4725,7 @@ public class ConstructorDemo {
                         </ul>
                       </div>
                     </div>
-                    
+
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-white mb-4">Transient and Volatile Modifiers</h3>
                       <div className="space-y-4">
@@ -4995,12 +4949,12 @@ class DataProcessor implements Serializable {
                 🔒 Java Encapsulation
               </h1>
               <p className="text-lg text-gray-400 mb-8 text-center">Data hiding, access control, getters/setters, and encapsulation best practices</p>
-              
+
               <div className="max-w-6xl mx-auto">
                 {/* What is Encapsulation */}
                 <div className="bg-gradient-to-r from-green-600/10 to-emerald-600/10 border border-green-500/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-green-400 mb-6">🔒 What is Encapsulation?</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-2xl font-bold text-green-400 mb-4">Definition</h3>
@@ -5043,12 +4997,12 @@ class DataProcessor implements Serializable {
                 {/* Access Modifiers */}
                 <div className="bg-gradient-to-r from-blue-600/10 to-cyan-600/10 border border-blue-500/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-blue-400 mb-6">🔑 Access Modifiers</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-2xl font-bold text-blue-400 mb-4">Java Access Modifiers</h3>
                       <p className="text-gray-300 mb-4">Java provides four access modifiers to implement encapsulation:</p>
-                      
+
                       <div className="grid md:grid-cols-2 gap-4">
                         <div className="bg-gray-800 p-4 rounded-lg border border-blue-500/30">
                           <h4 className="text-lg font-bold text-blue-300 mb-2">private</h4>
@@ -5059,7 +5013,7 @@ class DataProcessor implements Serializable {
                             <li>• Used for data hiding</li>
                           </ul>
                         </div>
-                        
+
                         <div className="bg-gray-800 p-4 rounded-lg border border-blue-500/30">
                           <h4 className="text-lg font-bold text-blue-300 mb-2">default (no modifier)</h4>
                           <p className="text-sm text-gray-300 mb-2">Package-level access</p>
@@ -5069,7 +5023,7 @@ class DataProcessor implements Serializable {
                             <li>• Default when no modifier is specified</li>
                           </ul>
                         </div>
-                        
+
                         <div className="bg-gray-800 p-4 rounded-lg border border-blue-500/30">
                           <h4 className="text-lg font-bold text-blue-300 mb-2">protected</h4>
                           <p className="text-sm text-gray-300 mb-2">Inheritance-friendly access</p>
@@ -5079,7 +5033,7 @@ class DataProcessor implements Serializable {
                             <li>• Used for inheritance</li>
                           </ul>
                         </div>
-                        
+
                         <div className="bg-gray-800 p-4 rounded-lg border border-blue-500/30">
                           <h4 className="text-lg font-bold text-blue-300 mb-2">public</h4>
                           <p className="text-sm text-gray-300 mb-2">Least restrictive access</p>
@@ -5097,14 +5051,14 @@ class DataProcessor implements Serializable {
                 {/* Getters and Setters */}
                 <div className="bg-gradient-to-r from-purple-600/10 to-pink-600/10 border border-purple-500/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-purple-400 mb-6">🔧 Getters and Setters</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-2xl font-bold text-purple-400 mb-4">What are Getters and Setters?</h3>
                       <p className="text-gray-300 mb-4">
                         <strong className="text-purple-400">Getters</strong> and <strong className="text-purple-400">Setters</strong> are methods used to access and modify private fields in a controlled manner. They provide a public interface to private data while maintaining encapsulation.
                       </p>
-                      
+
                       <div className="grid md:grid-cols-2 gap-6">
                         <div className="bg-gray-800 p-4 rounded-lg border border-purple-500/30">
                           <h4 className="text-lg font-bold text-purple-300 mb-2">Getter Methods</h4>
@@ -5115,7 +5069,7 @@ class DataProcessor implements Serializable {
                             <li>• Can include validation or formatting</li>
                           </ul>
                         </div>
-                        
+
                         <div className="bg-gray-800 p-4 rounded-lg border border-purple-500/30">
                           <h4 className="text-lg font-bold text-purple-300 mb-2">Setter Methods</h4>
                           <ul className="text-sm text-gray-300 space-y-1">
@@ -5133,15 +5087,15 @@ class DataProcessor implements Serializable {
                 {/* Practical Example */}
                 <div className="bg-gradient-to-r from-yellow-600/10 to-orange-600/10 border border-yellow-500/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-yellow-400 mb-6">💻 Practical Example</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-2xl font-bold text-yellow-400 mb-4">Bank Account Example</h3>
                       <p className="text-gray-300 mb-4">Let's create a BankAccount class that demonstrates proper encapsulation:</p>
-                      
+
                       <div className="bg-gray-800 p-6 rounded-lg">
                         <pre className="text-sm text-gray-300 overflow-x-auto">
-{`public class BankAccount {
+                          {`public class BankAccount {
     // Private fields - data hiding
     private String accountNumber;
     private String accountHolder;
@@ -5225,12 +5179,12 @@ class DataProcessor implements Serializable {
                         </pre>
                       </div>
                     </div>
-                    
+
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-2xl font-bold text-yellow-400 mb-4">Usage Example</h3>
                       <div className="bg-gray-800 p-6 rounded-lg">
                         <pre className="text-sm text-gray-300 overflow-x-auto">
-{`public class BankAccountDemo {
+                          {`public class BankAccountDemo {
     public static void main(String[] args) {
         // Create a new bank account
         BankAccount account = new BankAccount("123456789", "John Doe", "1234");
@@ -5268,36 +5222,36 @@ class DataProcessor implements Serializable {
                 {/* Benefits of Encapsulation */}
                 <div className="bg-gradient-to-r from-red-600/10 to-pink-600/10 border border-red-500/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-red-400 mb-6">🎯 Benefits of Encapsulation</h2>
-                  
+
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-4">
                       <div className="bg-gray-800 p-4 rounded-lg border border-red-500/30">
                         <h4 className="text-lg font-bold text-red-300 mb-2">🛡️ Data Security</h4>
                         <p className="text-sm text-gray-300">Private data cannot be accessed directly, preventing unauthorized modifications</p>
                       </div>
-                      
+
                       <div className="bg-gray-800 p-4 rounded-lg border border-red-500/30">
                         <h4 className="text-lg font-bold text-red-300 mb-2">✅ Data Validation</h4>
                         <p className="text-sm text-gray-300">Setters can validate data before allowing changes</p>
                       </div>
-                      
+
                       <div className="bg-gray-800 p-4 rounded-lg border border-red-500/30">
                         <h4 className="text-lg font-bold text-red-300 mb-2">🔧 Easy Maintenance</h4>
                         <p className="text-sm text-gray-300">Changes to internal implementation don't affect external code</p>
                       </div>
                     </div>
-                    
+
                     <div className="space-y-4">
                       <div className="bg-gray-800 p-4 rounded-lg border border-red-500/30">
                         <h4 className="text-lg font-bold text-red-300 mb-2">🎯 Controlled Interface</h4>
                         <p className="text-sm text-gray-300">Public methods provide a clean, controlled interface</p>
                       </div>
-                      
+
                       <div className="bg-gray-800 p-4 rounded-lg border border-red-500/30">
                         <h4 className="text-lg font-bold text-red-300 mb-2">🔄 Flexibility</h4>
                         <p className="text-sm text-gray-300">Internal implementation can change without affecting users</p>
                       </div>
-                      
+
                       <div className="bg-gray-800 p-4 rounded-lg border border-red-500/30">
                         <h4 className="text-lg font-bold text-red-300 mb-2">🐛 Easier Debugging</h4>
                         <p className="text-sm text-gray-300">Data access is controlled, making it easier to track issues</p>
@@ -5309,32 +5263,32 @@ class DataProcessor implements Serializable {
                 {/* Best Practices */}
                 <div className="bg-gradient-to-r from-indigo-600/10 to-purple-600/10 border border-indigo-500/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-indigo-400 mb-6">⭐ Encapsulation Best Practices</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-2xl font-bold text-indigo-400 mb-4">Guidelines for Good Encapsulation</h3>
-                      
+
                       <div className="space-y-4">
                         <div className="bg-gray-800 p-4 rounded-lg border border-indigo-500/30">
                           <h4 className="text-lg font-bold text-indigo-300 mb-2">1. Make Fields Private</h4>
                           <p className="text-sm text-gray-300">Always make instance variables private unless there's a specific reason to make them public</p>
                         </div>
-                        
+
                         <div className="bg-gray-800 p-4 rounded-lg border border-indigo-500/30">
                           <h4 className="text-lg font-bold text-indigo-300 mb-2">2. Provide Getters for Read Access</h4>
                           <p className="text-sm text-gray-300">Create getter methods for fields that need to be read from outside the class</p>
                         </div>
-                        
+
                         <div className="bg-gray-800 p-4 rounded-lg border border-indigo-500/30">
                           <h4 className="text-lg font-bold text-indigo-300 mb-2">3. Provide Setters for Write Access</h4>
                           <p className="text-sm text-gray-300">Create setter methods with validation for fields that need to be modified</p>
                         </div>
-                        
+
                         <div className="bg-gray-800 p-4 rounded-lg border border-indigo-500/30">
                           <h4 className="text-lg font-bold text-indigo-300 mb-2">4. Validate Input in Setters</h4>
                           <p className="text-sm text-gray-300">Always validate input data in setter methods to maintain data integrity</p>
                         </div>
-                        
+
                         <div className="bg-gray-800 p-4 rounded-lg border border-indigo-500/30">
                           <h4 className="text-lg font-bold text-indigo-300 mb-2">5. Use Business Methods</h4>
                           <p className="text-sm text-gray-300">Provide business methods that perform meaningful operations rather than just getters/setters</p>
@@ -5347,32 +5301,32 @@ class DataProcessor implements Serializable {
                 {/* Real-World Analogy */}
                 <div className="bg-gradient-to-r from-teal-600/10 to-green-600/10 border border-teal-500/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-teal-400 mb-6">🌍 Real-World Analogy</h2>
-                  
+
                   <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                     <h3 className="text-2xl font-bold text-teal-400 mb-4">ATM Machine Analogy</h3>
                     <p className="text-gray-300 mb-4">
                       Think of encapsulation like an <strong className="text-teal-400">ATM machine</strong>:
                     </p>
-                    
+
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-3">
                         <div className="bg-gray-800 p-4 rounded-lg border border-teal-500/30">
                           <h4 className="text-lg font-bold text-teal-300 mb-2">🔒 Hidden Data</h4>
                           <p className="text-sm text-gray-300">The cash, card reader mechanisms, and internal systems are hidden inside the machine (private data)</p>
                         </div>
-                        
+
                         <div className="bg-gray-800 p-4 rounded-lg border border-teal-500/30">
                           <h4 className="text-lg font-bold text-teal-300 mb-2">🖥️ Public Interface</h4>
                           <p className="text-sm text-gray-300">You interact through buttons, screen, and card slot (public methods)</p>
                         </div>
                       </div>
-                      
+
                       <div className="space-y-3">
                         <div className="bg-gray-800 p-4 rounded-lg border border-teal-500/30">
                           <h4 className="text-lg font-bold text-teal-300 mb-2">🔐 Controlled Access</h4>
                           <p className="text-sm text-gray-300">You can't directly access the cash; you must use withdrawal methods with PIN validation</p>
                         </div>
-                        
+
                         <div className="bg-gray-800 p-4 rounded-lg border border-teal-500/30">
                           <h4 className="text-lg font-bold text-teal-300 mb-2">✅ Data Validation</h4>
                           <p className="text-sm text-gray-300">The ATM validates your PIN, checks balance, and enforces withdrawal limits</p>
@@ -5404,7 +5358,7 @@ class DataProcessor implements Serializable {
                     <li>• <strong className="text-white">Organization:</strong> Logical grouping of related classes</li>
                     <li>• <strong className="text-white">Import System:</strong> Selective class importing</li>
                   </ul>
-                  
+
                   <div className="mt-6 space-y-4">
                     <div className="bg-gray-800/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-white mb-3">Theoretical Foundation</h3>
@@ -5423,7 +5377,7 @@ class DataProcessor implements Serializable {
 
                 <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8 mb-8">
                   <h2 className="text-3xl font-bold text-white mb-6">Package Organization and Naming</h2>
-                  
+
                   <div className="space-y-6 text-gray-300">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-white mb-4">Package Naming Conventions</h3>
@@ -5453,7 +5407,7 @@ class DataProcessor implements Serializable {
                         </div>
                       </div>
                     </div>
-                    
+
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-white mb-4">Package Structure Theory</h3>
                       <div className="space-y-4">
@@ -5484,7 +5438,7 @@ class DataProcessor implements Serializable {
 
                 <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8 mb-8">
                   <h2 className="text-3xl font-bold text-white mb-6">Import System and Access Control</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-white mb-4">Import Mechanisms</h3>
@@ -5516,7 +5470,7 @@ class DataProcessor implements Serializable {
                         </div>
                       </div>
                     </div>
-                    
+
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-white mb-4">Package Access Control</h3>
                       <div className="space-y-4">
@@ -5536,7 +5490,7 @@ class DataProcessor implements Serializable {
 
                 <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8 mb-8">
                   <h2 className="text-3xl font-bold text-white mb-6">Advanced Package Concepts</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-white mb-4">Package Design Patterns</h3>
@@ -5566,7 +5520,7 @@ class DataProcessor implements Serializable {
                         </div>
                       </div>
                     </div>
-                    
+
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-white mb-4">Package Dependencies and Coupling</h3>
                       <div className="space-y-4">
@@ -5873,7 +5827,7 @@ public class BankingApplication {
                     <li>• <strong className="text-purple-300">Constructor Chaining:</strong> Superclass constructors called first</li>
                     <li>• <strong className="text-purple-300">Multiple Inheritance:</strong> Achieved through interfaces</li>
                   </ul>
-                  
+
                   <div className="mt-6 space-y-4">
                     <div className="bg-gray-800/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-purple-300 mb-3">Theoretical Foundation</h3>
@@ -5892,7 +5846,7 @@ public class BankingApplication {
 
                 <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8 mb-8">
                   <h2 className="text-3xl font-bold text-purple-400 mb-6">Types of Inheritance</h2>
-                  
+
                   <div className="space-y-6 text-gray-300">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-purple-400 mb-4">Inheritance Hierarchy Types</h3>
@@ -5944,7 +5898,7 @@ public class BankingApplication {
                         </div>
                       </div>
                     </div>
-                    
+
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-purple-400 mb-4">Inheritance vs Composition</h3>
                       <div className="space-y-4">
@@ -5978,7 +5932,7 @@ public class BankingApplication {
 
                 <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8 mb-8">
                   <h2 className="text-3xl font-bold text-purple-400 mb-6">Method Overriding and Polymorphism</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-purple-400 mb-4">Method Overriding Rules</h3>
@@ -5995,7 +5949,7 @@ public class BankingApplication {
                         </ul>
                       </div>
                     </div>
-                    
+
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-purple-400 mb-4">Dynamic Method Dispatch</h3>
                       <div className="space-y-4">
@@ -6026,7 +5980,7 @@ public class BankingApplication {
 
                 <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8 mb-8">
                   <h2 className="text-3xl font-bold text-purple-400 mb-6">Constructor Chaining and Initialization</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-purple-400 mb-4">Constructor Chaining Process</h3>
@@ -6053,7 +6007,7 @@ public class BankingApplication {
                         </div>
                       </div>
                     </div>
-                    
+
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-purple-400 mb-4">Initialization Order</h3>
                       <div className="space-y-4">
@@ -6374,7 +6328,7 @@ public class InheritanceDemo {
 
                 <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8 mb-8">
                   <h2 className="text-3xl font-bold text-purple-400 mb-6">Advanced Inheritance Concepts</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-purple-400 mb-4">Liskov Substitution Principle (LSP)</h3>
@@ -6390,7 +6344,7 @@ public class InheritanceDemo {
                         </ul>
                       </div>
                     </div>
-                    
+
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-purple-400 mb-4">Inheritance Anti-Patterns</h3>
                       <div className="space-y-4">
@@ -6586,7 +6540,7 @@ Op add = (a,b) -> a + b;`}</pre>
                     <li>• <strong className="text-teal-300">Methods:</strong> Can contain methods and fields</li>
                     <li>• <strong className="text-teal-300">Switch Support:</strong> Enhanced switch statements</li>
                   </ul>
-                  
+
                   <div className="mt-6 space-y-4">
                     <div className="bg-gray-800/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-teal-300 mb-3">Theoretical Foundation</h3>
@@ -6605,7 +6559,7 @@ Op add = (a,b) -> a + b;`}</pre>
 
                 <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8 mb-8">
                   <h2 className="text-3xl font-bold text-teal-400 mb-6">Enum Types and Features</h2>
-                  
+
                   <div className="space-y-6 text-gray-300">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-teal-400 mb-4">Basic Enum Structure</h3>
@@ -6627,7 +6581,7 @@ Op add = (a,b) -> a + b;`}</pre>
                         </div>
                       </div>
                     </div>
-                    
+
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-teal-400 mb-4">Enum Methods and Behavior</h3>
                       <div className="space-y-4">
@@ -6647,7 +6601,7 @@ Op add = (a,b) -> a + b;`}</pre>
 
                 <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8 mb-8">
                   <h2 className="text-3xl font-bold text-teal-400 mb-6">Advanced Enum Concepts</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-teal-400 mb-4">Enum Design Patterns</h3>
@@ -6679,7 +6633,7 @@ Op add = (a,b) -> a + b;`}</pre>
                         </div>
                       </div>
                     </div>
-                    
+
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-teal-400 mb-4">Enum Performance and Memory</h3>
                       <div className="space-y-4">
@@ -6987,20 +6941,20 @@ public class EnumDemo {
               <p className="text-lg text-gray-400 mb-8 text-center">
                 Master essential Java keywords and their usage in programming
               </p>
-              
+
               <div className="max-w-6xl mx-auto">
                 {/* static keyword */}
                 <div className="bg-gray-800/50 border border-gray-700 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-white mb-6">static Keyword</h2>
                   <p className="text-lg text-gray-300 mb-6">
-                    The <code className="text-green-400">static</code> keyword is used to create class-level variables and methods 
+                    The <code className="text-green-400">static</code> keyword is used to create class-level variables and methods
                     that belong to the class rather than to any specific instance.
                   </p>
-                  
+
                   <div className="bg-gray-900 p-6 rounded-xl mb-6">
                     <h3 className="text-xl font-bold text-white mb-4">Static Variables and Methods</h3>
                     <pre className="text-green-400 font-mono text-sm">
-{`public class Counter {
+                      {`public class Counter {
     // Static variable - shared across all instances
     private static int count = 0;
     
@@ -7046,7 +7000,7 @@ public class StaticDemo {
 }`}
                     </pre>
                   </div>
-                  
+
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="bg-gray-800 p-6 rounded-xl">
                       <h4 className="text-lg font-bold text-green-400 mb-3">Static Variables</h4>
@@ -7073,14 +7027,14 @@ public class StaticDemo {
                 <div className="bg-gray-800 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-green-400 mb-6">final Keyword</h2>
                   <p className="text-lg text-gray-300 mb-6">
-                    The <code className="text-green-400">final</code> keyword is used to create constants, 
+                    The <code className="text-green-400">final</code> keyword is used to create constants,
                     prevent method overriding, and stop inheritance.
                   </p>
-                  
+
                   <div className="bg-gray-900 p-6 rounded-xl mb-6">
                     <h3 className="text-xl font-bold text-white mb-4">Final Variables, Methods, and Classes</h3>
                     <pre className="text-green-400 font-mono text-sm">
-{`public class FinalDemo {
+                      {`public class FinalDemo {
     // Final variable - constant
     private static final double PI = 3.14159;
     private static final String COMPANY_NAME = "TechCorp";
@@ -7129,7 +7083,7 @@ public class FinalUsage {
 }`}
                     </pre>
                   </div>
-                  
+
                   <div className="grid md:grid-cols-3 gap-6">
                     <div className="bg-gray-700 p-6 rounded-xl">
                       <h4 className="text-lg font-bold text-green-400 mb-3">Final Variables</h4>
@@ -7165,14 +7119,14 @@ public class FinalUsage {
                 <div className="bg-gray-800 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-purple-400 mb-6">super Keyword</h2>
                   <p className="text-lg text-gray-300 mb-6">
-                    The <code className="text-green-400">super</code> keyword is used to refer to the immediate parent class 
+                    The <code className="text-green-400">super</code> keyword is used to refer to the immediate parent class
                     and access its methods, variables, and constructors.
                   </p>
-                  
+
                   <div className="bg-gray-900 p-6 rounded-xl mb-6">
                     <h3 className="text-xl font-bold text-white mb-4">Using super in Inheritance</h3>
                     <pre className="text-green-400 font-mono text-sm">
-{`// Parent class
+                      {`// Parent class
 class Vehicle {
     protected String brand;
     protected int year;
@@ -7233,7 +7187,7 @@ public class SuperDemo {
 }`}
                     </pre>
                   </div>
-                  
+
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="bg-gray-700 p-6 rounded-xl">
                       <h4 className="text-lg font-bold text-green-400 mb-3">super() Constructor</h4>
@@ -7260,14 +7214,14 @@ public class SuperDemo {
                 <div className="bg-gray-800 p-8 rounded-2xl">
                   <h2 className="text-3xl font-bold text-yellow-400 mb-6">this Keyword</h2>
                   <p className="text-lg text-gray-300 mb-6">
-                    The <code className="text-green-400">this</code> keyword refers to the current object and is used 
+                    The <code className="text-green-400">this</code> keyword refers to the current object and is used
                     to distinguish between instance variables and parameters.
                   </p>
-                  
+
                   <div className="bg-gray-900 p-6 rounded-xl mb-6">
                     <h3 className="text-xl font-bold text-white mb-4">Using this in Classes</h3>
                     <pre className="text-green-400 font-mono text-sm">
-{`public class Person {
+                      {`public class Person {
     private String name;
     private int age;
     
@@ -7321,7 +7275,7 @@ public class ThisDemo {
 }`}
                     </pre>
                   </div>
-                  
+
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="bg-gray-700 p-6 rounded-xl">
                       <h4 className="text-lg font-bold text-green-400 mb-3">this for Variables</h4>
@@ -7358,20 +7312,20 @@ public class ThisDemo {
               <p className="text-lg text-gray-400 mb-8 text-center">
                 Master string manipulation, StringBuilder, StringBuffer, and common string operations
               </p>
-              
+
               <div className="max-w-6xl mx-auto">
                 {/* String Basics */}
                 <div className="bg-gradient-to-r from-green-900/20 to-blue-900/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-green-400 mb-6">String Class Fundamentals</h2>
                   <p className="text-lg text-gray-300 mb-6">
-                    Strings in Java are immutable objects that represent a sequence of characters. 
+                    Strings in Java are immutable objects that represent a sequence of characters.
                     Understanding string handling is crucial for effective Java programming.
                   </p>
-                  
+
                   <div className="bg-gray-900 p-6 rounded-xl mb-6">
                     <h3 className="text-xl font-bold text-white mb-4">String Creation and Basic Operations</h3>
                     <pre className="text-green-400 font-mono text-sm">
-{`public class StringBasics {
+                      {`public class StringBasics {
     public static void main(String[] args) {
         // String creation methods
         String str1 = "Hello World";                    // String literal
@@ -7410,7 +7364,7 @@ public class ThisDemo {
 }`}
                     </pre>
                   </div>
-                  
+
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="bg-gray-800 p-6 rounded-xl">
                       <h4 className="text-lg font-bold text-green-400 mb-3">String Creation</h4>
@@ -7439,11 +7393,11 @@ public class ThisDemo {
                   <p className="text-lg text-gray-300 mb-6">
                     The String class provides numerous methods for manipulation, searching, and formatting.
                   </p>
-                  
+
                   <div className="bg-gray-900 p-6 rounded-xl mb-6">
                     <h3 className="text-xl font-bold text-white mb-4">String Manipulation Methods</h3>
                     <pre className="text-green-400 font-mono text-sm">
-{`public class StringMethods {
+                      {`public class StringMethods {
     public static void main(String[] args) {
         String text = "  Java Programming Language  ";
         
@@ -7491,7 +7445,7 @@ public class ThisDemo {
 }`}
                     </pre>
                   </div>
-                  
+
                   <div className="grid md:grid-cols-3 gap-6">
                     <div className="bg-gray-700 p-6 rounded-xl">
                       <h4 className="text-lg font-bold text-green-400 mb-3">Search Methods</h4>
@@ -7530,14 +7484,14 @@ public class ThisDemo {
                 <div className="bg-gray-800 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-purple-400 mb-6">StringBuilder Class</h2>
                   <p className="text-lg text-gray-300 mb-6">
-                    StringBuilder is a mutable sequence of characters, perfect for efficient string concatenation 
+                    StringBuilder is a mutable sequence of characters, perfect for efficient string concatenation
                     and manipulation when you need to modify strings frequently.
                   </p>
-                  
+
                   <div className="bg-gray-900 p-6 rounded-xl mb-6">
                     <h3 className="text-xl font-bold text-white mb-4">StringBuilder Operations</h3>
                     <pre className="text-green-400 font-mono text-sm">
-{`public class StringBuilderDemo {
+                      {`public class StringBuilderDemo {
     public static void main(String[] args) {
         // Creating StringBuilder
         StringBuilder sb = new StringBuilder();
@@ -7590,7 +7544,7 @@ public class ThisDemo {
 }`}
                     </pre>
                   </div>
-                  
+
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="bg-gray-700 p-6 rounded-xl">
                       <h4 className="text-lg font-bold text-green-400 mb-3">StringBuilder Advantages</h4>
@@ -7619,14 +7573,14 @@ public class ThisDemo {
                 <div className="bg-gray-800 p-8 rounded-2xl">
                   <h2 className="text-3xl font-bold text-yellow-400 mb-6">StringBuffer Class</h2>
                   <p className="text-lg text-gray-300 mb-6">
-                    StringBuffer is similar to StringBuilder but is thread-safe (synchronized). 
+                    StringBuffer is similar to StringBuilder but is thread-safe (synchronized).
                     Use it when you need thread safety in multi-threaded environments.
                   </p>
-                  
+
                   <div className="bg-gray-900 p-6 rounded-xl mb-6">
                     <h3 className="text-xl font-bold text-white mb-4">StringBuffer vs StringBuilder</h3>
                     <pre className="text-green-400 font-mono text-sm">
-{`public class StringBufferDemo {
+                      {`public class StringBufferDemo {
     public static void main(String[] args) {
         // StringBuffer is thread-safe
         StringBuffer sb = new StringBuffer("Thread-Safe");
@@ -7671,7 +7625,7 @@ public class ThisDemo {
 }`}
                     </pre>
                   </div>
-                  
+
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="bg-gray-700 p-6 rounded-xl">
                       <h4 className="text-lg font-bold text-green-400 mb-3">StringBuffer Features</h4>
@@ -7708,20 +7662,20 @@ public class ThisDemo {
               <p className="text-lg text-gray-400 mb-8 text-center">
                 Master Java arrays and the Collections Framework for efficient data management
               </p>
-              
+
               <div className="max-w-6xl mx-auto">
                 {/* Arrays */}
                 <div className="bg-gradient-to-r from-green-900/20 to-blue-900/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-green-400 mb-6">Java Arrays</h2>
                   <p className="text-lg text-gray-300 mb-6">
-                    Arrays are fixed-size data structures that store elements of the same type. 
+                    Arrays are fixed-size data structures that store elements of the same type.
                     They provide fast access to elements using index-based addressing.
                   </p>
-                  
+
                   <div className="bg-gray-900 p-6 rounded-xl mb-6">
                     <h3 className="text-xl font-bold text-white mb-4">Array Creation and Operations</h3>
                     <pre className="text-green-400 font-mono text-sm">
-{`public class ArrayBasics {
+                      {`public class ArrayBasics {
     public static void main(String[] args) {
         // Array declaration and initialization
         int[] numbers = {1, 2, 3, 4, 5};
@@ -7782,7 +7736,7 @@ public class ThisDemo {
 }`}
                     </pre>
                   </div>
-                  
+
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="bg-gray-800 p-6 rounded-xl">
                       <h4 className="text-lg font-bold text-green-400 mb-3">Array Characteristics</h4>
@@ -7811,14 +7765,14 @@ public class ThisDemo {
                 <div className="bg-gray-800 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-white mb-6">ArrayList Class</h2>
                   <p className="text-lg text-gray-300 mb-6">
-                    ArrayList is a resizable array implementation of the List interface. 
+                    ArrayList is a resizable array implementation of the List interface.
                     It provides dynamic sizing and many useful methods for list manipulation.
                   </p>
-                  
+
                   <div className="bg-gray-900 p-6 rounded-xl mb-6">
                     <h3 className="text-xl font-bold text-white mb-4">ArrayList Operations</h3>
                     <pre className="text-green-400 font-mono text-sm">
-{`import java.util.ArrayList;
+                      {`import java.util.ArrayList;
 import java.util.Collections;
 
 public class ArrayListDemo {
@@ -7893,7 +7847,7 @@ public class ArrayListDemo {
 }`}
                     </pre>
                   </div>
-                  
+
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="bg-gray-700 p-6 rounded-xl">
                       <h4 className="text-lg font-bold text-green-400 mb-3">ArrayList Advantages</h4>
@@ -7922,14 +7876,14 @@ public class ArrayListDemo {
                 <div className="bg-gray-800 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-purple-400 mb-6">HashMap Class</h2>
                   <p className="text-lg text-gray-300 mb-6">
-                    HashMap is a hash table implementation of the Map interface. 
+                    HashMap is a hash table implementation of the Map interface.
                     It provides fast key-value pair storage and retrieval.
                   </p>
-                  
+
                   <div className="bg-gray-900 p-6 rounded-xl mb-6">
                     <h3 className="text-xl font-bold text-white mb-4">HashMap Operations</h3>
                     <pre className="text-green-400 font-mono text-sm">
-{`import java.util.HashMap;
+                      {`import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
@@ -8027,7 +7981,7 @@ public class HashMapDemo {
 }`}
                     </pre>
                   </div>
-                  
+
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="bg-gray-700 p-6 rounded-xl">
                       <h4 className="text-lg font-bold text-green-400 mb-3">HashMap Features</h4>
@@ -8056,14 +8010,14 @@ public class HashMapDemo {
                 <div className="bg-gray-800 p-8 rounded-2xl">
                   <h2 className="text-3xl font-bold text-yellow-400 mb-6">HashSet Class</h2>
                   <p className="text-lg text-gray-300 mb-6">
-                    HashSet is a hash table implementation of the Set interface. 
+                    HashSet is a hash table implementation of the Set interface.
                     It stores unique elements and provides fast membership testing.
                   </p>
-                  
+
                   <div className="bg-gray-900 p-6 rounded-xl mb-6">
                     <h3 className="text-xl font-bold text-white mb-4">HashSet Operations</h3>
                     <pre className="text-green-400 font-mono text-sm">
-{`import java.util.HashSet;
+                      {`import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -8162,7 +8116,7 @@ public class HashSetDemo {
 }`}
                     </pre>
                   </div>
-                  
+
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="bg-gray-700 p-6 rounded-xl">
                       <h4 className="text-lg font-bold text-green-400 mb-3">HashSet Features</h4>
@@ -8201,20 +8155,20 @@ public class HashSetDemo {
               <p className="text-lg text-gray-400 mb-8 text-center">
                 Master Java exception handling with try-catch, finally, and custom exceptions
               </p>
-              
+
               <div className="max-w-6xl mx-auto">
                 {/* Exception Basics */}
                 <div className="bg-gradient-to-r from-red-900/20 to-orange-900/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-red-400 mb-6">Exception Handling Fundamentals</h2>
                   <p className="text-lg text-gray-300 mb-6">
-                    Exception handling in Java allows you to gracefully handle runtime errors and unexpected conditions. 
+                    Exception handling in Java allows you to gracefully handle runtime errors and unexpected conditions.
                     It prevents your program from crashing and provides meaningful error messages.
                   </p>
-                  
+
                   <div className="bg-gray-900 p-6 rounded-xl mb-6">
                     <h3 className="text-xl font-bold text-white mb-4">Try-Catch-Finally Blocks</h3>
                     <pre className="text-green-400 font-mono text-sm">
-{`public class ExceptionBasics {
+                      {`public class ExceptionBasics {
     public static void main(String[] args) {
         // Basic try-catch
         try {
@@ -8254,7 +8208,7 @@ public class HashSetDemo {
 }`}
                     </pre>
                   </div>
-                  
+
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="bg-gray-800 p-6 rounded-xl">
                       <h4 className="text-lg font-bold text-green-400 mb-3">Exception Types</h4>
@@ -8283,11 +8237,11 @@ public class HashSetDemo {
                   <p className="text-lg text-gray-300 mb-6">
                     Create your own exception classes to handle specific business logic errors and provide meaningful error messages.
                   </p>
-                  
+
                   <div className="bg-gray-900 p-6 rounded-xl mb-6">
                     <h3 className="text-xl font-bold text-white mb-4">Creating and Using Custom Exceptions</h3>
                     <pre className="text-green-400 font-mono text-sm">
-{`// Custom checked exception
+                      {`// Custom checked exception
 class InsufficientFundsException extends Exception {
     private double amount;
     
@@ -8388,7 +8342,7 @@ public class CustomExceptionDemo {
 }`}
                     </pre>
                   </div>
-                  
+
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="bg-gray-700 p-6 rounded-xl">
                       <h4 className="text-lg font-bold text-green-400 mb-3">Custom Exception Benefits</h4>
@@ -8417,11 +8371,11 @@ public class CustomExceptionDemo {
                   <p className="text-lg text-gray-300 mb-6">
                     Try-with-resources automatically manages resource cleanup, ensuring that resources are properly closed even if exceptions occur.
                   </p>
-                  
+
                   <div className="bg-gray-900 p-6 rounded-xl mb-6">
                     <h3 className="text-xl font-bold text-white mb-4">Automatic Resource Management</h3>
                     <pre className="text-green-400 font-mono text-sm">
-{`import java.io.*;
+                      {`import java.io.*;
 import java.util.Scanner;
 
 public class TryWithResourcesDemo {
@@ -8491,7 +8445,7 @@ class MyResource implements AutoCloseable {
 }`}
                     </pre>
                   </div>
-                  
+
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="bg-gray-700 p-6 rounded-xl">
                       <h4 className="text-lg font-bold text-green-400 mb-3">Try-with-Resources Benefits</h4>
@@ -8528,20 +8482,20 @@ class MyResource implements AutoCloseable {
               <p className="text-lg text-gray-400 mb-8 text-center">
                 Organize Java code with packages and explore the Java Platform Module System
               </p>
-              
+
               <div className="max-w-6xl mx-auto">
                 {/* Packages */}
                 <div className="bg-gray-800/50 border border-gray-700 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-white mb-6">Java Packages</h2>
                   <p className="text-lg text-gray-300 mb-6">
-                    Packages in Java provide a way to organize related classes and interfaces into namespaces. 
+                    Packages in Java provide a way to organize related classes and interfaces into namespaces.
                     They help avoid naming conflicts and make code more maintainable.
                   </p>
-                  
+
                   <div className="bg-gray-900 p-6 rounded-xl mb-6">
                     <h3 className="text-xl font-bold text-white mb-4">Creating and Using Packages</h3>
                     <pre className="text-green-400 font-mono text-sm">
-{`// Package declaration (must be first line)
+                      {`// Package declaration (must be first line)
 package com.example.banking;
 
 // Import statements
@@ -8649,7 +8603,7 @@ public class Main {
 }`}
                     </pre>
                   </div>
-                  
+
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="bg-gray-800 p-6 rounded-xl">
                       <h4 className="text-lg font-bold text-green-400 mb-3">Package Benefits</h4>
@@ -8680,11 +8634,11 @@ public class Main {
                   <p className="text-lg text-gray-300 mb-6">
                     Access modifiers control the visibility and accessibility of classes, methods, and variables in Java.
                   </p>
-                  
+
                   <div className="bg-gray-900 p-6 rounded-xl mb-6">
                     <h3 className="text-xl font-bold text-white mb-4">Access Modifier Examples</h3>
                     <pre className="text-green-400 font-mono text-sm">
-{`package com.example.access;
+                      {`package com.example.access;
 
 // Public class - accessible from anywhere
 public class PublicClass {
@@ -8778,7 +8732,7 @@ public class AccessDemo {
 }`}
                     </pre>
                   </div>
-                  
+
                   <div className="grid md:grid-cols-4 gap-6">
                     <div className="bg-gray-700 p-6 rounded-xl">
                       <h4 className="text-lg font-bold text-green-400 mb-3">public</h4>
@@ -8821,11 +8775,11 @@ public class AccessDemo {
                   <p className="text-lg text-gray-300 mb-6">
                     Java 9 introduced the module system to provide better encapsulation and dependency management at the application level.
                   </p>
-                  
+
                   <div className="bg-gray-900 p-6 rounded-xl mb-6">
                     <h3 className="text-xl font-bold text-white mb-4">Creating and Using Modules</h3>
                     <pre className="text-green-400 font-mono text-sm">
-{`// module-info.java (in src/com.example.banking/module-info.java)
+                      {`// module-info.java (in src/com.example.banking/module-info.java)
 module com.example.banking {
     // Export packages to other modules
     exports com.example.banking;
@@ -8933,7 +8887,7 @@ public class Main {
 }`}
                     </pre>
                   </div>
-                  
+
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="bg-gray-700 p-6 rounded-xl">
                       <h4 className="text-lg font-bold text-green-400 mb-3">Module Benefits</h4>
@@ -8970,12 +8924,12 @@ public class Main {
                 🧵 Java Multithreading
               </h1>
               <p className="text-lg text-gray-400 mb-8 text-center">Concurrent programming, thread synchronization, and parallel execution</p>
-              
+
               <div className="max-w-6xl mx-auto">
                 {/* What is Multithreading */}
                 <div className="bg-gradient-to-r from-blue-600/10 to-cyan-600/10 border border-blue-500/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-blue-400 mb-6">🧵 What is Multithreading?</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-2xl font-bold text-blue-400 mb-4">Definition</h3>
@@ -9018,17 +8972,17 @@ public class Main {
                 {/* Thread Creation */}
                 <div className="bg-gradient-to-r from-green-600/10 to-emerald-600/10 border border-green-500/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-green-400 mb-6">🚀 Thread Creation</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-2xl font-bold text-green-400 mb-4">Methods to Create Threads</h3>
-                      
+
                       <div className="space-y-6">
                         <div className="bg-gray-800 p-6 rounded-lg border border-green-500/30">
                           <h4 className="text-xl font-bold text-green-300 mb-4">1. Extending Thread Class</h4>
                           <div className="bg-gray-700 p-4 rounded-lg">
                             <pre className="text-sm text-gray-300 overflow-x-auto">
-{`class MyThread extends Thread {
+                              {`class MyThread extends Thread {
     public void run() {
         for (int i = 0; i < 5; i++) {
             System.out.println("Thread: " + Thread.currentThread().getName() + " - " + i);
@@ -9053,12 +9007,12 @@ public class ThreadExample {
                             </pre>
                           </div>
                         </div>
-                        
+
                         <div className="bg-gray-800 p-6 rounded-lg border border-green-500/30">
                           <h4 className="text-xl font-bold text-green-300 mb-4">2. Implementing Runnable Interface</h4>
                           <div className="bg-gray-700 p-4 rounded-lg">
                             <pre className="text-sm text-gray-300 overflow-x-auto">
-{`class MyRunnable implements Runnable {
+                              {`class MyRunnable implements Runnable {
     public void run() {
         for (int i = 0; i < 5; i++) {
             System.out.println("Runnable: " + Thread.currentThread().getName() + " - " + i);
@@ -9092,38 +9046,38 @@ public class RunnableExample {
                 {/* Thread States */}
                 <div className="bg-gradient-to-r from-purple-600/10 to-pink-600/10 border border-purple-500/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-purple-400 mb-6">🔄 Thread States</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-2xl font-bold text-purple-400 mb-4">Thread Lifecycle</h3>
                       <p className="text-gray-300 mb-4">A thread in Java can be in one of the following states:</p>
-                      
+
                       <div className="grid md:grid-cols-2 gap-4">
                         <div className="bg-gray-800 p-4 rounded-lg border border-purple-500/30">
                           <h4 className="text-lg font-bold text-purple-300 mb-2">🆕 NEW</h4>
                           <p className="text-sm text-gray-300">Thread has been created but not yet started</p>
                         </div>
-                        
+
                         <div className="bg-gray-800 p-4 rounded-lg border border-purple-500/30">
                           <h4 className="text-lg font-bold text-purple-300 mb-2">🏃 RUNNABLE</h4>
                           <p className="text-sm text-gray-300">Thread is executing or ready to execute</p>
                         </div>
-                        
+
                         <div className="bg-gray-800 p-4 rounded-lg border border-purple-500/30">
                           <h4 className="text-lg font-bold text-purple-300 mb-2">⏸️ BLOCKED</h4>
                           <p className="text-sm text-gray-300">Thread is waiting for a monitor lock</p>
                         </div>
-                        
+
                         <div className="bg-gray-800 p-4 rounded-lg border border-purple-500/30">
                           <h4 className="text-lg font-bold text-purple-300 mb-2">⏳ WAITING</h4>
                           <p className="text-sm text-gray-300">Thread is waiting indefinitely for another thread</p>
                         </div>
-                        
+
                         <div className="bg-gray-800 p-4 rounded-lg border border-purple-500/30">
                           <h4 className="text-lg font-bold text-purple-300 mb-2">⏰ TIMED_WAITING</h4>
                           <p className="text-sm text-gray-300">Thread is waiting for a specified time</p>
                         </div>
-                        
+
                         <div className="bg-gray-800 p-4 rounded-lg border border-purple-500/30">
                           <h4 className="text-lg font-bold text-purple-300 mb-2">🏁 TERMINATED</h4>
                           <p className="text-sm text-gray-300">Thread has completed execution</p>
@@ -9136,20 +9090,20 @@ public class RunnableExample {
                 {/* Synchronization */}
                 <div className="bg-gradient-to-r from-yellow-600/10 to-orange-600/10 border border-yellow-500/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-yellow-400 mb-6">🔒 Synchronization</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-2xl font-bold text-yellow-400 mb-4">What is Synchronization?</h3>
                       <p className="text-gray-300 mb-4">
                         <strong className="text-yellow-400">Synchronization</strong> in Java is the capability to control the access of multiple threads to any shared resource. It prevents thread interference and consistency problems.
                       </p>
-                      
+
                       <div className="space-y-6">
                         <div className="bg-gray-800 p-6 rounded-lg border border-yellow-500/30">
                           <h4 className="text-xl font-bold text-yellow-300 mb-4">Synchronized Method</h4>
                           <div className="bg-gray-700 p-4 rounded-lg">
                             <pre className="text-sm text-gray-300 overflow-x-auto">
-{`class Counter {
+                              {`class Counter {
     private int count = 0;
     
     // Synchronized method
@@ -9195,12 +9149,12 @@ public class SynchronizationExample {
                             </pre>
                           </div>
                         </div>
-                        
+
                         <div className="bg-gray-800 p-6 rounded-lg border border-yellow-500/30">
                           <h4 className="text-xl font-bold text-yellow-300 mb-4">Synchronized Block</h4>
                           <div className="bg-gray-700 p-4 rounded-lg">
                             <pre className="text-sm text-gray-300 overflow-x-auto">
-{`class BankAccount {
+                              {`class BankAccount {
     private double balance;
     
     public BankAccount(double initialBalance) {
@@ -9239,19 +9193,19 @@ public class SynchronizationExample {
                 {/* Thread Communication */}
                 <div className="bg-gradient-to-r from-red-600/10 to-pink-600/10 border border-red-500/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-red-400 mb-6">💬 Thread Communication</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-2xl font-bold text-red-400 mb-4">wait(), notify(), and notifyAll()</h3>
                       <p className="text-gray-300 mb-4">
                         These methods are used for inter-thread communication in Java. They are part of the Object class and must be called from within a synchronized context.
                       </p>
-                      
+
                       <div className="bg-gray-800 p-6 rounded-lg border border-red-500/30">
                         <h4 className="text-xl font-bold text-red-300 mb-4">Producer-Consumer Example</h4>
                         <div className="bg-gray-700 p-4 rounded-lg">
                           <pre className="text-sm text-gray-300 overflow-x-auto">
-{`import java.util.LinkedList;
+                            {`import java.util.LinkedList;
 import java.util.Queue;
 
 class MessageQueue {
@@ -9341,19 +9295,19 @@ public class ProducerConsumerExample {
                 {/* Thread Pool */}
                 <div className="bg-gradient-to-r from-indigo-600/10 to-purple-600/10 border border-indigo-500/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-indigo-400 mb-6">🏊 Thread Pool</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-2xl font-bold text-indigo-400 mb-4">Executor Framework</h3>
                       <p className="text-gray-300 mb-4">
                         The Executor framework provides a higher-level replacement for working directly with threads. It manages thread creation, lifecycle, and execution.
                       </p>
-                      
+
                       <div className="bg-gray-800 p-6 rounded-lg border border-indigo-500/30">
                         <h4 className="text-xl font-bold text-indigo-300 mb-4">ThreadPoolExecutor Example</h4>
                         <div className="bg-gray-700 p-4 rounded-lg">
                           <pre className="text-sm text-gray-300 overflow-x-auto">
-{`import java.util.concurrent.ExecutorService;
+                            {`import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
@@ -9409,32 +9363,32 @@ public class ThreadPoolExample {
                 {/* Best Practices */}
                 <div className="bg-gradient-to-r from-teal-600/10 to-green-600/10 border border-teal-500/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-teal-400 mb-6">⭐ Multithreading Best Practices</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-2xl font-bold text-teal-400 mb-4">Guidelines for Safe Multithreading</h3>
-                      
+
                       <div className="space-y-4">
                         <div className="bg-gray-800 p-4 rounded-lg border border-teal-500/30">
                           <h4 className="text-lg font-bold text-teal-300 mb-2">1. Use Synchronization Properly</h4>
                           <p className="text-sm text-gray-300">Always synchronize access to shared resources to prevent race conditions</p>
                         </div>
-                        
+
                         <div className="bg-gray-800 p-4 rounded-lg border border-teal-500/30">
                           <h4 className="text-lg font-bold text-teal-300 mb-2">2. Avoid Deadlocks</h4>
                           <p className="text-sm text-gray-300">Be careful with multiple locks and always acquire them in the same order</p>
                         </div>
-                        
+
                         <div className="bg-gray-800 p-4 rounded-lg border border-teal-500/30">
                           <h4 className="text-lg font-bold text-teal-300 mb-2">3. Use Thread-Safe Collections</h4>
                           <p className="text-sm text-gray-300">Use ConcurrentHashMap, CopyOnWriteArrayList, etc., for thread-safe operations</p>
                         </div>
-                        
+
                         <div className="bg-gray-800 p-4 rounded-lg border border-teal-500/30">
                           <h4 className="text-lg font-bold text-teal-300 mb-2">4. Handle InterruptedException</h4>
                           <p className="text-sm text-gray-300">Always handle InterruptedException properly in your thread code</p>
                         </div>
-                        
+
                         <div className="bg-gray-800 p-4 rounded-lg border border-teal-500/30">
                           <h4 className="text-lg font-bold text-teal-300 mb-2">5. Use Executor Framework</h4>
                           <p className="text-sm text-gray-300">Prefer ExecutorService over manual thread management for better control</p>
@@ -9456,24 +9410,24 @@ public class ThreadPoolExample {
                 ⚡ Java 8 Features
               </h1>
               <p className="text-lg text-gray-400 mb-8 text-center">Lambda expressions, Stream API, Optional, and modern Java features</p>
-              
+
               <div className="max-w-6xl mx-auto">
                 {/* Lambda Expressions */}
                 <div className="bg-gradient-to-r from-blue-600/10 to-cyan-600/10 border border-blue-500/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-blue-400 mb-6">⚡ Lambda Expressions</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-2xl font-bold text-blue-400 mb-4">What are Lambda Expressions?</h3>
                       <p className="text-lg text-gray-300 mb-4 leading-relaxed">
                         <strong className="text-blue-400">Lambda expressions</strong> are a new feature introduced in Java 8 that allows you to treat functionality as a method argument, or code as data. They provide a clear and concise way to represent one method interface using an expression.
                       </p>
-                      
+
                       <div className="bg-gray-800 p-6 rounded-lg border border-blue-500/30">
                         <h4 className="text-xl font-bold text-blue-300 mb-4">Basic Lambda Syntax</h4>
                         <div className="bg-gray-700 p-4 rounded-lg">
                           <pre className="text-sm text-gray-300 overflow-x-auto">
-{`// Traditional way
+                            {`// Traditional way
 Runnable r1 = new Runnable() {
     public void run() {
         System.out.println("Hello World!");
@@ -9504,20 +9458,20 @@ GreetingService greetService2 = (message) -> {
                 {/* Stream API */}
                 <div className="bg-gradient-to-r from-green-600/10 to-emerald-600/10 border border-green-500/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-green-400 mb-6">🌊 Stream API</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-2xl font-bold text-green-400 mb-4">What is Stream API?</h3>
                       <p className="text-gray-300 mb-4">
                         The <strong className="text-green-400">Stream API</strong> is used to process collections of objects. A stream is a sequence of objects that supports various methods which can be pipelined to produce the desired result.
                       </p>
-                      
+
                       <div className="space-y-6">
                         <div className="bg-gray-800 p-6 rounded-lg border border-green-500/30">
                           <h4 className="text-xl font-bold text-green-300 mb-4">Basic Stream Operations</h4>
                           <div className="bg-gray-700 p-4 rounded-lg">
                             <pre className="text-sm text-gray-300 overflow-x-auto">
-{`import java.util.*;
+                              {`import java.util.*;
 import java.util.stream.*;
 
 public class StreamExample {
@@ -9547,15 +9501,15 @@ public class StreamExample {
         firstB.ifPresent(System.out::println); // Bob
     }
 }`}
-                        </pre>
-                      </div>
-                    </div>
+                            </pre>
+                          </div>
+                        </div>
 
                         <div className="bg-gray-800 p-6 rounded-lg border border-green-500/30">
                           <h4 className="text-xl font-bold text-green-300 mb-4">Advanced Stream Operations</h4>
                           <div className="bg-gray-700 p-4 rounded-lg">
                             <pre className="text-sm text-gray-300 overflow-x-auto">
-{`import java.util.*;
+                              {`import java.util.*;
 import java.util.stream.*;
 
 public class AdvancedStreamExample {
@@ -9600,19 +9554,19 @@ public class AdvancedStreamExample {
                 {/* Optional Class */}
                 <div className="bg-gradient-to-r from-purple-600/10 to-pink-600/10 border border-purple-500/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-purple-400 mb-6">📦 Optional Class</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-2xl font-bold text-purple-400 mb-4">What is Optional?</h3>
                       <p className="text-gray-300 mb-4">
                         <strong className="text-purple-400">Optional</strong> is a container object which may or may not contain a non-null value. It helps avoid NullPointerException and makes the code more readable.
                       </p>
-                      
+
                       <div className="bg-gray-800 p-6 rounded-lg border border-purple-500/30">
                         <h4 className="text-xl font-bold text-purple-300 mb-4">Optional Examples</h4>
                         <div className="bg-gray-700 p-4 rounded-lg">
                           <pre className="text-sm text-gray-300 overflow-x-auto">
-{`import java.util.*;
+                            {`import java.util.*;
 
 public class OptionalExample {
     public static void main(String[] args) {
@@ -9649,7 +9603,7 @@ public class OptionalExample {
         chained.ifPresent(System.out::println);
     }
 }`}
-                            </pre>
+                          </pre>
                         </div>
                       </div>
                     </div>
@@ -9659,19 +9613,19 @@ public class OptionalExample {
                 {/* Method References */}
                 <div className="bg-gradient-to-r from-yellow-600/10 to-orange-600/10 border border-yellow-500/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-yellow-400 mb-6">🔗 Method References</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-2xl font-bold text-yellow-400 mb-4">Types of Method References</h3>
                       <p className="text-gray-300 mb-4">
                         Method references provide a way to refer to methods without executing them. They are a shorthand notation for lambda expressions.
                       </p>
-                      
+
                       <div className="bg-gray-800 p-6 rounded-lg border border-yellow-500/30">
                         <h4 className="text-xl font-bold text-yellow-300 mb-4">Method Reference Examples</h4>
                         <div className="bg-gray-700 p-4 rounded-lg">
                           <pre className="text-sm text-gray-300 overflow-x-auto">
-{`import java.util.*;
+                            {`import java.util.*;
 import java.util.stream.*;
 
 public class MethodReferenceExample {
@@ -9710,7 +9664,7 @@ public class MethodReferenceExample {
         return n * n;
     }
 }`}
-                            </pre>
+                          </pre>
                         </div>
                       </div>
                     </div>
@@ -9720,19 +9674,19 @@ public class MethodReferenceExample {
                 {/* Default Methods */}
                 <div className="bg-gradient-to-r from-red-600/10 to-pink-600/10 border border-red-500/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-red-400 mb-6">🔧 Default Methods</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-2xl font-bold text-red-400 mb-4">Interface Default Methods</h3>
                       <p className="text-gray-300 mb-4">
                         <strong className="text-red-400">Default methods</strong> allow you to add new methods to interfaces without breaking the existing implementations.
                       </p>
-                      
+
                       <div className="bg-gray-800 p-6 rounded-lg border border-red-500/30">
                         <h4 className="text-xl font-bold text-red-300 mb-4">Default Method Example</h4>
                         <div className="bg-gray-700 p-4 rounded-lg">
                           <pre className="text-sm text-gray-300 overflow-x-auto">
-{`interface Calculator {
+                            {`interface Calculator {
     int add(int a, int b);
     
     // Default method
@@ -9769,7 +9723,7 @@ public class DefaultMethodExample {
         System.out.println("Subtraction: " + Calculator.subtract(5, 3));
     }
 }`}
-                        </pre>
+                          </pre>
                         </div>
                       </div>
                     </div>
@@ -9779,30 +9733,30 @@ public class DefaultMethodExample {
                 {/* Functional Interfaces */}
                 <div className="bg-gradient-to-r from-indigo-600/10 to-purple-600/10 border border-indigo-500/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-indigo-400 mb-6">🎯 Functional Interfaces</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-2xl font-bold text-indigo-400 mb-4">Built-in Functional Interfaces</h3>
                       <p className="text-gray-300 mb-4">
                         Java 8 provides several built-in functional interfaces in the <code className="text-indigo-400">java.util.function</code> package.
                       </p>
-                      
+
                       <div className="space-y-4">
                         <div className="bg-gray-800 p-4 rounded-lg border border-indigo-500/30">
                           <h4 className="text-lg font-bold text-indigo-300 mb-2">Predicate&lt;T&gt;</h4>
                           <p className="text-sm text-gray-300">Represents a boolean-valued function of one argument</p>
                         </div>
-                        
+
                         <div className="bg-gray-800 p-4 rounded-lg border border-indigo-500/30">
                           <h4 className="text-lg font-bold text-indigo-300 mb-2">Function&lt;T,R&gt;</h4>
                           <p className="text-sm text-gray-300">Represents a function that accepts one argument and produces a result</p>
                         </div>
-                        
+
                         <div className="bg-gray-800 p-4 rounded-lg border border-indigo-500/30">
                           <h4 className="text-lg font-bold text-indigo-300 mb-2">Consumer&lt;T&gt;</h4>
                           <p className="text-sm text-gray-300">Represents an operation that accepts a single input argument and returns no result</p>
                         </div>
-                        
+
                         <div className="bg-gray-800 p-4 rounded-lg border border-indigo-500/30">
                           <h4 className="text-lg font-bold text-indigo-300 mb-2">Supplier&lt;T&gt;</h4>
                           <p className="text-sm text-gray-300">Represents a supplier of results</p>
@@ -9824,19 +9778,19 @@ public class DefaultMethodExample {
                 🧠 Java Memory Management
               </h1>
               <p className="text-lg text-gray-400 mb-8 text-center">Garbage collection, memory allocation, and JVM memory model</p>
-              
+
               <div className="max-w-6xl mx-auto">
                 {/* Memory Overview */}
                 <div className="bg-gradient-to-r from-blue-600/10 to-cyan-600/10 border border-blue-500/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-blue-400 mb-6">🧠 Java Memory Model</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-2xl font-bold text-blue-400 mb-4">Memory Areas in JVM</h3>
                       <p className="text-lg text-gray-300 mb-4 leading-relaxed">
                         The Java Virtual Machine (JVM) divides memory into several areas, each serving specific purposes in the execution of Java programs. Understanding these memory areas is crucial for writing efficient and scalable Java applications.
                       </p>
-                      
+
                       <div className="grid md:grid-cols-2 gap-6">
                         <div className="space-y-4">
                           <div className="bg-gray-800 p-4 rounded-lg border border-blue-500/30">
@@ -9866,20 +9820,20 @@ public class DefaultMethodExample {
                 {/* Garbage Collection */}
                 <div className="bg-gradient-to-r from-green-600/10 to-emerald-600/10 border border-green-500/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-green-400 mb-6">🗑️ Garbage Collection</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-2xl font-bold text-green-400 mb-4">What is Garbage Collection?</h3>
                       <p className="text-gray-300 mb-4">
                         <strong className="text-green-400">Garbage Collection (GC)</strong> is the automatic memory management process in Java. It automatically reclaims memory occupied by objects that are no longer referenced by the program, preventing memory leaks and manual memory management errors.
                       </p>
-                      
+
                       <div className="space-y-6">
                         <div className="bg-gray-800 p-6 rounded-lg border border-green-500/30">
                           <h4 className="text-xl font-bold text-green-300 mb-4">GC Generations</h4>
                           <div className="bg-gray-700 p-4 rounded-lg">
                             <pre className="text-sm text-gray-300 overflow-x-auto">
-{`// Young Generation (Eden, Survivor Spaces)
+                              {`// Young Generation (Eden, Survivor Spaces)
 // - New objects are allocated here
 // - Short-lived objects are collected frequently
 // - Uses Copying GC algorithm
@@ -9913,7 +9867,7 @@ public class MemoryExample {
                             </pre>
                           </div>
                         </div>
-                        
+
                         <div className="bg-gray-800 p-6 rounded-lg border border-green-500/30">
                           <h4 className="text-xl font-bold text-green-300 mb-4">GC Types</h4>
                           <div className="space-y-4">
@@ -9943,44 +9897,44 @@ public class MemoryExample {
                 {/* Memory Leaks */}
                 <div className="bg-gradient-to-r from-red-600/10 to-pink-600/10 border border-red-500/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-red-400 mb-6">⚠️ Memory Leaks</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-2xl font-bold text-red-400 mb-4">Common Memory Leak Causes</h3>
                       <p className="text-gray-300 mb-4">
                         Even with automatic garbage collection, Java applications can still suffer from memory leaks. These occur when objects are no longer needed but are still referenced, preventing GC from reclaiming their memory.
                       </p>
-                      
+
                       <div className="space-y-4">
                         <div className="bg-gray-800 p-4 rounded-lg border border-red-500/30">
                           <h4 className="text-lg font-bold text-red-300 mb-2">1. Static References</h4>
                           <p className="text-sm text-gray-300">Static variables hold references to objects, preventing GC</p>
                         </div>
-                        
+
                         <div className="bg-gray-800 p-4 rounded-lg border border-red-500/30">
                           <h4 className="text-lg font-bold text-red-300 mb-2">2. Unclosed Resources</h4>
                           <p className="text-sm text-gray-300">Files, streams, and database connections not properly closed</p>
                         </div>
-                        
+
                         <div className="bg-gray-800 p-4 rounded-lg border border-red-500/30">
                           <h4 className="text-lg font-bold text-red-300 mb-2">3. Listener References</h4>
                           <p className="text-sm text-gray-300">Event listeners not removed from collections</p>
                         </div>
-                        
+
                         <div className="bg-gray-800 p-4 rounded-lg border border-red-500/30">
                           <h4 className="text-lg font-bold text-red-300 mb-2">4. Thread Local Variables</h4>
                           <p className="text-sm text-gray-300">ThreadLocal variables not cleaned up properly</p>
                         </div>
                       </div>
                     </div>
-                    
+
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-2xl font-bold text-red-400 mb-4">Memory Leak Prevention</h3>
                       <div className="bg-gray-800 p-6 rounded-lg border border-red-500/30">
                         <h4 className="text-xl font-bold text-red-300 mb-4">Best Practices</h4>
                         <div className="bg-gray-700 p-4 rounded-lg">
                           <pre className="text-sm text-gray-300 overflow-x-auto">
-{`// 1. Use try-with-resources for automatic resource management
+                            {`// 1. Use try-with-resources for automatic resource management
 try (FileInputStream fis = new FileInputStream("file.txt");
      BufferedReader reader = new BufferedReader(new InputStreamReader(fis))) {
     // Process file
@@ -10014,20 +9968,20 @@ Map<String, WeakReference<Object>> cache = new HashMap<>();
                 {/* Memory Optimization */}
                 <div className="bg-gradient-to-r from-purple-600/10 to-pink-600/10 border border-purple-500/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-purple-400 mb-6">⚡ Memory Optimization</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-2xl font-bold text-purple-400 mb-4">Optimization Techniques</h3>
                       <p className="text-gray-300 mb-4">
                         Effective memory optimization involves understanding object lifecycle, choosing appropriate data structures, and implementing efficient algorithms.
                       </p>
-                      
+
                       <div className="space-y-6">
                         <div className="bg-gray-800 p-6 rounded-lg border border-purple-500/30">
                           <h4 className="text-xl font-bold text-purple-300 mb-4">Object Pooling</h4>
                           <div className="bg-gray-700 p-4 rounded-lg">
                             <pre className="text-sm text-gray-300 overflow-x-auto">
-{`import java.util.concurrent.ConcurrentLinkedQueue;
+                              {`import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class ObjectPool<T> {
     private final ConcurrentLinkedQueue<T> pool = new ConcurrentLinkedQueue<>();
@@ -10064,7 +10018,7 @@ stringBuilderPool.returnObject(sb);`}
                             </pre>
                           </div>
                         </div>
-                        
+
                         <div className="bg-gray-800 p-6 rounded-lg border border-purple-500/30">
                           <h4 className="text-xl font-bold text-purple-300 mb-4">Memory-Efficient Data Structures</h4>
                           <div className="space-y-4">
@@ -10090,19 +10044,19 @@ stringBuilderPool.returnObject(sb);`}
                 {/* JVM Tuning */}
                 <div className="bg-gradient-to-r from-yellow-600/10 to-orange-600/10 border border-yellow-500/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-yellow-400 mb-6">⚙️ JVM Tuning</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-2xl font-bold text-yellow-400 mb-4">Common JVM Parameters</h3>
                       <p className="text-gray-300 mb-4">
                         JVM tuning involves configuring various parameters to optimize memory usage and garbage collection performance for your specific application needs.
                       </p>
-                      
+
                       <div className="bg-gray-800 p-6 rounded-lg border border-yellow-500/30">
                         <h4 className="text-xl font-bold text-yellow-300 mb-4">Memory Configuration</h4>
                         <div className="bg-gray-700 p-4 rounded-lg">
                           <pre className="text-sm text-gray-300 overflow-x-auto">
-{`# Heap Memory Settings
+                            {`# Heap Memory Settings
 -Xms2g                    # Initial heap size
 -Xmx4g                    # Maximum heap size
 -XX:NewRatio=2            # Ratio of old to young generation
@@ -10135,43 +10089,43 @@ java -Xms2g -Xmx4g -XX:+UseG1GC -XX:MaxGCPauseMillis=200
                 {/* Monitoring Tools */}
                 <div className="bg-gradient-to-r from-teal-600/10 to-green-600/10 border border-teal-500/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-teal-400 mb-6">📊 Memory Monitoring Tools</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-2xl font-bold text-teal-400 mb-4">Essential Monitoring Tools</h3>
                       <p className="text-gray-300 mb-4">
                         Proper monitoring and profiling are essential for understanding memory usage patterns and identifying optimization opportunities.
                       </p>
-                      
+
                       <div className="grid md:grid-cols-2 gap-6">
                         <div className="space-y-4">
                           <div className="bg-gray-800 p-4 rounded-lg border border-teal-500/30">
                             <h4 className="text-lg font-bold text-teal-300 mb-2">🔧 JConsole</h4>
                             <p className="text-sm text-gray-300">Built-in JMX monitoring tool for basic memory and GC monitoring</p>
                           </div>
-                          
+
                           <div className="bg-gray-800 p-4 rounded-lg border border-teal-500/30">
                             <h4 className="text-lg font-bold text-teal-300 mb-2">📈 VisualVM</h4>
                             <p className="text-sm text-gray-300">Advanced profiling tool with heap dump analysis</p>
                           </div>
-                          
+
                           <div className="bg-gray-800 p-4 rounded-lg border border-teal-500/30">
                             <h4 className="text-lg font-bold text-teal-300 mb-2">🔍 Eclipse MAT</h4>
                             <p className="text-sm text-gray-300">Memory Analyzer Tool for detailed heap analysis</p>
                           </div>
                         </div>
-                        
+
                         <div className="space-y-4">
                           <div className="bg-gray-800 p-4 rounded-lg border border-teal-500/30">
                             <h4 className="text-lg font-bold text-teal-300 mb-2">⚡ JProfiler</h4>
                             <p className="text-sm text-gray-300">Commercial profiler with advanced memory analysis</p>
                           </div>
-                          
+
                           <div className="bg-gray-800 p-4 rounded-lg border border-teal-500/30">
                             <h4 className="text-lg font-bold text-teal-300 mb-2">📊 JMC</h4>
                             <p className="text-sm text-gray-300">Java Mission Control for production monitoring</p>
                           </div>
-                          
+
                           <div className="bg-gray-800 p-4 rounded-lg border border-teal-500/30">
                             <h4 className="text-lg font-bold text-teal-300 mb-2">🐳 JStack</h4>
                             <p className="text-sm text-gray-300">Command-line tool for thread and memory analysis</p>
@@ -10196,12 +10150,12 @@ java -Xms2g -Xmx4g -XX:+UseG1GC -XX:MaxGCPauseMillis=200
               <p className="text-lg text-gray-400 mb-8 text-center">
                 Enterprise architecture, design patterns, and advanced development concepts
               </p>
-              
+
               <div className="max-w-6xl mx-auto">
                 {/* Enterprise Architecture */}
                 <div className="bg-gradient-to-r from-blue-600/10 to-cyan-600/10 border border-blue-500/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-blue-400 mb-6">🏢 Enterprise Architecture</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-2xl font-bold text-blue-400 mb-4">Architectural Foundations</h3>
@@ -10252,14 +10206,14 @@ java -Xms2g -Xmx4g -XX:+UseG1GC -XX:MaxGCPauseMillis=200
                 {/* Design Patterns */}
                 <div className="bg-gradient-to-r from-green-600/10 to-emerald-600/10 border border-green-500/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-green-400 mb-6">🎨 Design Patterns</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-2xl font-bold text-green-400 mb-4">Creational Patterns</h3>
                       <p className="text-gray-300 mb-4">
                         Creational patterns deal with object creation mechanisms, trying to create objects in a manner suitable to the situation. These patterns abstract the instantiation process and help make a system independent of how its objects are created, composed, and represented.
                       </p>
-                      
+
                       <div className="grid md:grid-cols-2 gap-6">
                         <div className="bg-gray-800 p-6 rounded-lg border border-green-500/30">
                           <h4 className="text-xl font-bold text-green-300 mb-4">Singleton Pattern</h4>
@@ -10267,7 +10221,7 @@ java -Xms2g -Xmx4g -XX:+UseG1GC -XX:MaxGCPauseMillis=200
                             Ensures a class has only one instance and provides global access to it. This pattern is particularly useful for logging, database connections, and configuration management where a single instance should control the entire application.
                           </p>
                         </div>
-                        
+
                         <div className="bg-gray-800 p-6 rounded-lg border border-green-500/30">
                           <h4 className="text-xl font-bold text-green-300 mb-4">Factory Pattern</h4>
                           <p className="text-sm text-gray-300 mb-4">
@@ -10282,7 +10236,7 @@ java -Xms2g -Xmx4g -XX:+UseG1GC -XX:MaxGCPauseMillis=200
                       <p className="text-gray-300 mb-4">
                         Structural patterns deal with object composition and relationships between entities. They help ensure that when one part of a system changes, the entire structure doesn't need to change, promoting system flexibility and reusability.
                       </p>
-                      
+
                       <div className="grid md:grid-cols-2 gap-6">
                         <div className="bg-gray-800 p-6 rounded-lg border border-green-500/30">
                           <h4 className="text-xl font-bold text-green-300 mb-4">Adapter Pattern</h4>
@@ -10290,7 +10244,7 @@ java -Xms2g -Xmx4g -XX:+UseG1GC -XX:MaxGCPauseMillis=200
                             Allows incompatible interfaces to work together. Acts as a bridge between two incompatible interfaces by wrapping an existing class with a new interface, enabling legacy code integration.
                           </p>
                         </div>
-                        
+
                         <div className="bg-gray-800 p-6 rounded-lg border border-green-500/30">
                           <h4 className="text-xl font-bold text-green-300 mb-4">Decorator Pattern</h4>
                           <p className="text-sm text-gray-300 mb-4">
@@ -10305,7 +10259,7 @@ java -Xms2g -Xmx4g -XX:+UseG1GC -XX:MaxGCPauseMillis=200
                       <p className="text-gray-300 mb-4">
                         Behavioral patterns focus on communication between objects and the assignment of responsibilities between objects. They describe not just patterns of objects or classes but also the patterns of communication between them.
                       </p>
-                      
+
                       <div className="grid md:grid-cols-2 gap-6">
                         <div className="bg-gray-800 p-6 rounded-lg border border-green-500/30">
                           <h4 className="text-xl font-bold text-green-300 mb-4">Observer Pattern</h4>
@@ -10313,7 +10267,7 @@ java -Xms2g -Xmx4g -XX:+UseG1GC -XX:MaxGCPauseMillis=200
                             Defines a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically. This pattern is fundamental in event-driven architectures.
                           </p>
                         </div>
-                        
+
                         <div className="bg-gray-800 p-6 rounded-lg border border-green-500/30">
                           <h4 className="text-xl font-bold text-green-300 mb-4">Strategy Pattern</h4>
                           <p className="text-sm text-gray-300 mb-4">
@@ -10328,14 +10282,14 @@ java -Xms2g -Xmx4g -XX:+UseG1GC -XX:MaxGCPauseMillis=200
                 {/* Enterprise Technologies */}
                 <div className="bg-gradient-to-r from-purple-600/10 to-pink-600/10 border border-purple-500/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-purple-400 mb-6">🔧 Enterprise Technologies</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-2xl font-bold text-purple-400 mb-4">Spring Framework Ecosystem</h3>
                       <p className="text-gray-300 mb-4">
                         The Spring Framework is a comprehensive programming and configuration model for modern Java-based enterprise applications. It addresses many aspects of enterprise development, providing a consistent programming model for different environments while promoting best practices.
                       </p>
-                      
+
                       <div className="space-y-6">
                         <div className="bg-gray-800 p-6 rounded-lg border border-purple-500/30">
                           <h4 className="text-xl font-bold text-purple-300 mb-4">Core Spring Concepts</h4>
@@ -10378,7 +10332,7 @@ java -Xms2g -Xmx4g -XX:+UseG1GC -XX:MaxGCPauseMillis=200
                       <p className="text-gray-300 mb-4">
                         Enterprise applications require robust database integration strategies that ensure data consistency, performance, and scalability. Java provides multiple approaches for database connectivity and data persistence.
                       </p>
-                      
+
                       <div className="space-y-6">
                         <div className="bg-gray-800 p-6 rounded-lg border border-purple-500/30">
                           <h4 className="text-xl font-bold text-purple-300 mb-4">JDBC (Java Database Connectivity)</h4>
@@ -10386,7 +10340,7 @@ java -Xms2g -Xmx4g -XX:+UseG1GC -XX:MaxGCPauseMillis=200
                             JDBC is a Java API that enables Java programs to execute SQL statements. It provides methods to query and update data in a database and is oriented towards relational databases, serving as the foundation for higher-level ORM frameworks.
                           </p>
                         </div>
-                        
+
                         <div className="bg-gray-800 p-6 rounded-lg border border-purple-500/30">
                           <h4 className="text-xl font-bold text-purple-300 mb-4">Hibernate ORM Framework</h4>
                           <p className="text-sm text-gray-300 mb-4">
@@ -10401,14 +10355,14 @@ java -Xms2g -Xmx4g -XX:+UseG1GC -XX:MaxGCPauseMillis=200
                 {/* Microservices Architecture */}
                 <div className="bg-gradient-to-r from-yellow-600/10 to-orange-600/10 border border-yellow-500/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-yellow-400 mb-6">🔗 Microservices Architecture</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-2xl font-bold text-yellow-400 mb-4">Microservices Principles</h3>
                       <p className="text-gray-300 mb-4">
                         Microservices architecture is a method of developing software systems that focuses on building single-function modules with well-defined interfaces and operations. This architectural style approaches developing a single application as a suite of small services, each running in its own process and communicating with lightweight mechanisms.
                       </p>
-                      
+
                       <div className="grid md:grid-cols-2 gap-6">
                         <div className="space-y-4">
                           <div className="bg-gray-800 p-4 rounded-lg border border-yellow-500/30">
@@ -10453,14 +10407,14 @@ java -Xms2g -Xmx4g -XX:+UseG1GC -XX:MaxGCPauseMillis=200
                 {/* Performance Optimization */}
                 <div className="bg-gradient-to-r from-red-600/10 to-pink-600/10 border border-red-500/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-red-400 mb-6">⚡ Performance Optimization</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-2xl font-bold text-red-400 mb-4">JVM Performance Tuning</h3>
                       <p className="text-gray-300 mb-4">
                         Performance optimization in Java enterprise applications involves understanding JVM behavior, garbage collection, memory management, and application-level optimizations. Proper tuning can significantly improve application throughput and reduce latency.
                       </p>
-                      
+
                       <div className="space-y-6">
                         <div className="bg-gray-800 p-6 rounded-lg border border-red-500/30">
                           <h4 className="text-xl font-bold text-red-300 mb-4">Memory Optimization Strategies</h4>
@@ -10503,14 +10457,14 @@ java -Xms2g -Xmx4g -XX:+UseG1GC -XX:MaxGCPauseMillis=200
                 {/* Security Considerations */}
                 <div className="bg-gradient-to-r from-indigo-600/10 to-purple-600/10 border border-indigo-500/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-indigo-400 mb-6">🛡️ Security in Enterprise Java</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-2xl font-bold text-indigo-400 mb-4">Security Best Practices</h3>
                       <p className="text-gray-300 mb-4">
                         Enterprise Java applications must implement comprehensive security measures to protect against various threats including unauthorized access, data breaches, injection attacks, and malicious code execution. Security should be considered at every layer of the application.
                       </p>
-                      
+
                       <div className="grid md:grid-cols-2 gap-6">
                         <div className="space-y-4">
                           <div className="bg-gray-800 p-4 rounded-lg border border-indigo-500/30">
@@ -10555,25 +10509,25 @@ java -Xms2g -Xmx4g -XX:+UseG1GC -XX:MaxGCPauseMillis=200
                 {/* Testing Strategies */}
                 <div className="bg-gradient-to-r from-teal-600/10 to-green-600/10 border border-teal-500/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-teal-400 mb-6">🧪 Testing in Enterprise Applications</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-2xl font-bold text-teal-400 mb-4">Testing Pyramid Strategy</h3>
                       <p className="text-gray-300 mb-4">
                         Enterprise applications require comprehensive testing strategies that cover unit tests, integration tests, and end-to-end tests. The testing pyramid provides a framework for organizing different types of tests, ensuring optimal coverage while maintaining development efficiency.
                       </p>
-                      
+
                       <div className="grid md:grid-cols-3 gap-6">
                         <div className="bg-gray-800 p-6 rounded-lg border border-teal-500/30">
                           <h4 className="text-xl font-bold text-teal-300 mb-4">🔬 Unit Tests</h4>
                           <p className="text-sm text-gray-300 mb-4">Test individual components in isolation using mocks and stubs to ensure each unit works correctly</p>
                         </div>
-                        
+
                         <div className="bg-gray-800 p-6 rounded-lg border border-teal-500/30">
                           <h4 className="text-xl font-bold text-teal-300 mb-4">🔗 Integration Tests</h4>
                           <p className="text-sm text-gray-300 mb-4">Test interactions between components using real database and external services</p>
                         </div>
-                        
+
                         <div className="bg-gray-800 p-6 rounded-lg border border-teal-500/30">
                           <h4 className="text-xl font-bold text-teal-300 mb-4">🌐 End-to-End Tests</h4>
                           <p className="text-sm text-gray-300 mb-4">Test complete user workflows from frontend to backend</p>
@@ -10606,7 +10560,7 @@ java -Xms2g -Xmx4g -XX:+UseG1GC -XX:MaxGCPauseMillis=200
                     <li>• <strong className="text-orange-300">Timezone Support:</strong> Built-in timezone handling</li>
                     <li>• <strong className="text-orange-300">ISO 8601:</strong> Standard date/time format support</li>
                   </ul>
-                  
+
                   <div className="mt-6 space-y-4">
                     <div className="bg-gray-800/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-orange-300 mb-3">Theoretical Foundation</h3>
@@ -10625,7 +10579,7 @@ java -Xms2g -Xmx4g -XX:+UseG1GC -XX:MaxGCPauseMillis=200
 
                 <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8 mb-8">
                   <h2 className="text-3xl font-bold text-orange-400 mb-6">Core Date/Time Classes</h2>
-                  
+
                   <div className="space-y-6 text-gray-300">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-orange-400 mb-4">LocalDate, LocalTime, LocalDateTime</h3>
@@ -10667,7 +10621,7 @@ java -Xms2g -Xmx4g -XX:+UseG1GC -XX:MaxGCPauseMillis=200
                         </div>
                       </div>
                     </div>
-                    
+
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-orange-400 mb-4">ZonedDateTime and Timezone Handling</h3>
                       <div className="space-y-4">
@@ -10922,7 +10876,7 @@ public class DateTimeExample {
                     <li>• <strong className="text-cyan-300">Duplicate Elements:</strong> Allows duplicate values</li>
                     <li>• <strong className="text-cyan-300">Null Values:</strong> Permits null elements</li>
                   </ul>
-                  
+
                   <div className="mt-6 space-y-4">
                     <div className="bg-gray-800/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-cyan-300 mb-3">Theoretical Foundation</h3>
@@ -10941,7 +10895,7 @@ public class DateTimeExample {
 
                 <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8 mb-8">
                   <h2 className="text-3xl font-bold text-cyan-400 mb-6">ArrayList Characteristics</h2>
-                  
+
                   <div className="space-y-6 text-gray-300">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-cyan-400 mb-4">Performance Characteristics</h3>
@@ -10971,7 +10925,7 @@ public class DateTimeExample {
                         </div>
                       </div>
                     </div>
-                    
+
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-cyan-400 mb-4">ArrayList vs Array</h3>
                       <div className="space-y-4">
@@ -11007,7 +10961,7 @@ public class DateTimeExample {
 
                 <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8 mb-8">
                   <h2 className="text-3xl font-bold text-cyan-400 mb-6">ArrayList Operations and Methods</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-cyan-400 mb-4">Core Operations</h3>
@@ -11027,7 +10981,7 @@ public class DateTimeExample {
                         </ul>
                       </div>
                     </div>
-                    
+
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-cyan-400 mb-4">Search and Iteration</h3>
                       <div className="space-y-4">
@@ -11060,14 +11014,14 @@ public class DateTimeExample {
                 </div>
 
                 <h2 className="text-3xl font-bold text-cyan-400 mb-6 mt-8">Step-by-Step Examples</h2>
-                
+
                 {/* Example 1: Creating ArrayList */}
                 <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6 mb-6">
                   <h3 className="text-xl font-bold text-cyan-400 mb-4">📝 Example 1: Creating an ArrayList</h3>
                   <p className="text-gray-300 mb-4">
                     Let's learn how to create ArrayList objects in different ways. ArrayList is a generic class, so you specify the type of elements it will hold using angle brackets.
                   </p>
-                  
+
                   <div className="bg-gray-900 p-4 rounded-lg mb-4">
                     <p className="text-white font-semibold mb-2">Code:</p>
                     <pre className="text-green-400 font-mono text-sm">{`import java.util.ArrayList;
@@ -11090,14 +11044,14 @@ public class CreateArrayList {
     }
 }`}</pre>
                   </div>
-                  
+
                   <div className="bg-gray-800 p-4 rounded-lg">
                     <p className="text-white font-semibold mb-2">Output:</p>
                     <pre className="text-yellow-300 font-mono text-sm">{`Empty fruits list: []
 Numbers list: [1, 2, 3, 4, 5]
 Colors list: []`}</pre>
                   </div>
-                  
+
                   <div className="mt-4 bg-blue-900/20 border border-blue-500/30 p-4 rounded-lg">
                     <p className="text-white font-semibold mb-2">💡 Explanation:</p>
                     <ul className="text-gray-300 text-sm space-y-2">
@@ -11115,7 +11069,7 @@ Colors list: []`}</pre>
                   <p className="text-gray-300 mb-4">
                     ArrayList provides multiple methods to add elements. You can add at the end or insert at a specific position.
                   </p>
-                  
+
                   <div className="bg-gray-900 p-4 rounded-lg mb-4">
                     <p className="text-white font-semibold mb-2">Code:</p>
                     <pre className="text-green-400 font-mono text-sm">{`import java.util.ArrayList;
@@ -11139,14 +11093,14 @@ public class AddElements {
     }
 }`}</pre>
                   </div>
-                  
+
                   <div className="bg-gray-800 p-4 rounded-lg">
                     <p className="text-white font-semibold mb-2">Output:</p>
                     <pre className="text-yellow-300 font-mono text-sm">{`After adding: [Apple, Banana, Orange]
 Size: 3
 After inserting Grape at index 1: [Apple, Grape, Banana, Orange]`}</pre>
                   </div>
-                  
+
                   <div className="mt-4 bg-blue-900/20 border border-blue-500/30 p-4 rounded-lg">
                     <p className="text-white font-semibold mb-2">💡 Explanation:</p>
                     <ul className="text-gray-300 text-sm space-y-2">
@@ -11164,7 +11118,7 @@ After inserting Grape at index 1: [Apple, Grape, Banana, Orange]`}</pre>
                   <p className="text-gray-300 mb-4">
                     Access elements using the get() method with zero-based indexing (first element is at index 0).
                   </p>
-                  
+
                   <div className="bg-gray-900 p-4 rounded-lg mb-4">
                     <p className="text-white font-semibold mb-2">Code:</p>
                     <pre className="text-green-400 font-mono text-sm">{`import java.util.ArrayList;
@@ -11187,14 +11141,14 @@ public class AccessElements {
     }
 }`}</pre>
                   </div>
-                  
+
                   <div className="bg-gray-800 p-4 rounded-lg">
                     <p className="text-white font-semibold mb-2">Output:</p>
                     <pre className="text-yellow-300 font-mono text-sm">{`First fruit: Apple
 Last fruit: Mango
 Second fruit: Banana`}</pre>
                   </div>
-                  
+
                   <div className="mt-4 bg-blue-900/20 border border-blue-500/30 p-4 rounded-lg">
                     <p className="text-white font-semibold mb-2">💡 Explanation:</p>
                     <ul className="text-gray-300 text-sm space-y-2">
@@ -11212,7 +11166,7 @@ Second fruit: Banana`}</pre>
                   <p className="text-gray-300 mb-4">
                     Use the set() method to replace an element at a specific index.
                   </p>
-                  
+
                   <div className="bg-gray-900 p-4 rounded-lg mb-4">
                     <p className="text-white font-semibold mb-2">Code:</p>
                     <pre className="text-green-400 font-mono text-sm">{`import java.util.ArrayList;
@@ -11234,14 +11188,14 @@ public class ModifyElements {
     }
 }`}</pre>
                   </div>
-                  
+
                   <div className="bg-gray-800 p-4 rounded-lg">
                     <p className="text-white font-semibold mb-2">Output:</p>
                     <pre className="text-yellow-300 font-mono text-sm">{`Original list: [Apple, Banana, Orange]
 Replaced 'Banana' with 'Mango'
 Updated list: [Apple, Mango, Orange]`}</pre>
                   </div>
-                  
+
                   <div className="mt-4 bg-blue-900/20 border border-blue-500/30 p-4 rounded-lg">
                     <p className="text-white font-semibold mb-2">💡 Explanation:</p>
                     <ul className="text-gray-300 text-sm space-y-2">
@@ -11259,7 +11213,7 @@ Updated list: [Apple, Mango, Orange]`}</pre>
                   <p className="text-gray-300 mb-4">
                     ArrayList provides two ways to remove elements: by index or by value.
                   </p>
-                  
+
                   <div className="bg-gray-900 p-4 rounded-lg mb-4">
                     <p className="text-white font-semibold mb-2">Code:</p>
                     <pre className="text-green-400 font-mono text-sm">{`import java.util.ArrayList;
@@ -11286,7 +11240,7 @@ public class RemoveElements {
     }
 }`}</pre>
                   </div>
-                  
+
                   <div className="bg-gray-800 p-4 rounded-lg">
                     <p className="text-white font-semibold mb-2">Output:</p>
                     <pre className="text-yellow-300 font-mono text-sm">{`Original: [Apple, Banana, Orange, Mango]
@@ -11295,7 +11249,7 @@ After removal: [Apple, Banana, Mango]
 Removed 'Banana': true
 Final list: [Apple, Mango]`}</pre>
                   </div>
-                  
+
                   <div className="mt-4 bg-blue-900/20 border border-blue-500/30 p-4 rounded-lg">
                     <p className="text-white font-semibold mb-2">💡 Explanation:</p>
                     <ul className="text-gray-300 text-sm space-y-2">
@@ -11314,7 +11268,7 @@ Final list: [Apple, Mango]`}</pre>
                   <p className="text-gray-300 mb-4">
                     Search for elements using contains(), indexOf(), and lastIndexOf() methods.
                   </p>
-                  
+
                   <div className="bg-gray-900 p-4 rounded-lg mb-4">
                     <p className="text-white font-semibold mb-2">Code:</p>
                     <pre className="text-green-400 font-mono text-sm">{`import java.util.ArrayList;
@@ -11342,7 +11296,7 @@ public class SearchElements {
     }
 }`}</pre>
                   </div>
-                  
+
                   <div className="bg-gray-800 p-4 rounded-lg">
                     <p className="text-white font-semibold mb-2">Output:</p>
                     <pre className="text-yellow-300 font-mono text-sm">{`Contains 'Apple': true
@@ -11350,7 +11304,7 @@ Contains 'Grape': false
 First 'Apple' at index: 0
 Last 'Apple' at index: 3`}</pre>
                   </div>
-                  
+
                   <div className="mt-4 bg-blue-900/20 border border-blue-500/30 p-4 rounded-lg">
                     <p className="text-white font-semibold mb-2">💡 Explanation:</p>
                     <ul className="text-gray-300 text-sm space-y-2">
@@ -11368,7 +11322,7 @@ Last 'Apple' at index: 3`}</pre>
                   <p className="text-gray-300 mb-4">
                     There are multiple ways to loop through ArrayList elements. Each method has its use cases.
                   </p>
-                  
+
                   <div className="bg-gray-900 p-4 rounded-lg mb-4">
                     <p className="text-white font-semibold mb-2">Code:</p>
                     <pre className="text-green-400 font-mono text-sm">{`import java.util.ArrayList;
@@ -11400,14 +11354,14 @@ public class IterateArrayList {
     }
 }`}</pre>
                   </div>
-                  
+
                   <div className="bg-gray-800 p-4 rounded-lg">
                     <p className="text-white font-semibold mb-2">Output:</p>
                     <pre className="text-yellow-300 font-mono text-sm">{`Enhanced for: Apple Banana Orange 
 Traditional for: Apple Banana Orange 
 forEach lambda: Apple Banana Orange`}</pre>
                   </div>
-                  
+
                   <div className="mt-4 bg-blue-900/20 border border-blue-500/30 p-4 rounded-lg">
                     <p className="text-white font-semibold mb-2">💡 Explanation:</p>
                     <ul className="text-gray-300 text-sm space-y-2">
@@ -11425,7 +11379,7 @@ forEach lambda: Apple Banana Orange`}</pre>
                   <p className="text-gray-300 mb-4">
                     Sort ArrayList elements using Collections.sort() or the list's sort() method.
                   </p>
-                  
+
                   <div className="bg-gray-900 p-4 rounded-lg mb-4">
                     <p className="text-white font-semibold mb-2">Code:</p>
                     <pre className="text-green-400 font-mono text-sm">{`import java.util.ArrayList;
@@ -11451,14 +11405,14 @@ public class SortArrayList {
     }
 }`}</pre>
                   </div>
-                  
+
                   <div className="bg-gray-800 p-4 rounded-lg">
                     <p className="text-white font-semibold mb-2">Output:</p>
                     <pre className="text-yellow-300 font-mono text-sm">{`Before sorting: [Orange, Apple, Mango, Banana]
 After sorting: [Apple, Banana, Mango, Orange]
 Descending order: [Orange, Mango, Banana, Apple]`}</pre>
                   </div>
-                  
+
                   <div className="mt-4 bg-blue-900/20 border border-blue-500/30 p-4 rounded-lg">
                     <p className="text-white font-semibold mb-2">💡 Explanation:</p>
                     <ul className="text-gray-300 text-sm space-y-2">
@@ -11472,7 +11426,7 @@ Descending order: [Orange, Mango, Banana, Apple]`}</pre>
 
                 {/* Continue with rest of examples in a similar pattern...
                 The key is: smaller chunks, clear explanations, visible outputs */}
-                
+
                 <div className="bg-gray-900 p-6 rounded-xl mb-6">
                   <h3 className="text-xl font-bold text-cyan-400 mb-4">📚 More ArrayList Operations</h3>
                   <p className="text-gray-300 mb-4">
@@ -11573,7 +11527,7 @@ Descending order: [Orange, Mango, Banana, Apple]`}</pre>
                     <li>• <strong className="text-purple-300">Ordered Collection:</strong> Maintains insertion order</li>
                     <li>• <strong className="text-purple-300">Implements Deque:</strong> Can be used as queue, stack, or deque</li>
                   </ul>
-                  
+
                   <div className="mt-6 space-y-4">
                     <div className="bg-gray-800/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-purple-300 mb-3">Theoretical Foundation</h3>
@@ -11592,7 +11546,7 @@ Descending order: [Orange, Mango, Banana, Apple]`}</pre>
 
                 <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8 mb-8">
                   <h2 className="text-3xl font-bold text-purple-400 mb-6">LinkedList Characteristics</h2>
-                  
+
                   <div className="space-y-6 text-gray-300">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-purple-400 mb-4">Performance Characteristics</h3>
@@ -11624,7 +11578,7 @@ Descending order: [Orange, Mango, Banana, Apple]`}</pre>
                         </div>
                       </div>
                     </div>
-                    
+
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-purple-400 mb-4">LinkedList vs ArrayList</h3>
                       <div className="space-y-4">
@@ -11683,7 +11637,7 @@ private static class Node<E> {
 
                 <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8 mb-8">
                   <h2 className="text-3xl font-bold text-purple-400 mb-6">LinkedList Operations and Methods</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-purple-400 mb-4">Core List Operations</h3>
@@ -11701,7 +11655,7 @@ private static class Node<E> {
                         </ul>
                       </div>
                     </div>
-                    
+
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-purple-400 mb-4">Deque Operations (Special Features)</h3>
                       <div className="space-y-4">
@@ -12172,7 +12126,7 @@ public class LinkedListExample {
                     <li>• <strong className="text-emerald-300">Unique Keys:</strong> Keys must be unique</li>
                     <li>• <strong className="text-emerald-300">Null Values:</strong> Allows one null key and multiple null values</li>
                   </ul>
-                  
+
                   <div className="mt-6 space-y-4">
                     <div className="bg-gray-800/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-emerald-300 mb-3">Theoretical Foundation</h3>
@@ -12191,7 +12145,7 @@ public class LinkedListExample {
 
                 <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8 mb-8">
                   <h2 className="text-3xl font-bold text-emerald-400 mb-6">HashMap Characteristics</h2>
-                  
+
                   <div className="space-y-6 text-gray-300">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-emerald-400 mb-4">Performance Characteristics</h3>
@@ -12221,7 +12175,7 @@ public class LinkedListExample {
                         </div>
                       </div>
                     </div>
-                    
+
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-emerald-400 mb-4">Hashing and Collision Resolution</h3>
                       <div className="space-y-4">
@@ -12596,7 +12550,7 @@ public class HashMapExample {
                     <li>• <strong className="text-orange-300">Null Values:</strong> Allows one null element</li>
                     <li>• <strong className="text-orange-300">Fast Operations:</strong> O(1) average time for add, remove, contains</li>
                   </ul>
-                  
+
                   <div className="mt-6 space-y-4">
                     <div className="bg-gray-800/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-orange-300 mb-3">Theoretical Foundation</h3>
@@ -12615,7 +12569,7 @@ public class HashMapExample {
 
                 <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8 mb-8">
                   <h2 className="text-3xl font-bold text-orange-400 mb-6">HashSet Characteristics</h2>
-                  
+
                   <div className="space-y-6 text-gray-300">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-orange-400 mb-4">Performance Characteristics</h3>
@@ -12889,7 +12843,7 @@ public class HashSetExample {
                     <li>• <strong className="text-teal-300">Forward-Only:</strong> Moves in one direction</li>
                     <li>• <strong className="text-teal-300">Fail-Fast:</strong> Throws ConcurrentModificationException if collection modified</li>
                   </ul>
-                  
+
                   <div className="mt-6 space-y-4">
                     <div className="bg-gray-800/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-teal-300 mb-3">Iterator Methods</h3>
@@ -13023,7 +12977,7 @@ public class IteratorExample {
                 <div className="bg-gradient-to-r from-indigo-600/10 to-purple-600/10 border border-indigo-500/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-indigo-400 mb-6">What are Wrapper Classes?</h2>
                   <p className="text-lg text-gray-300 mb-4">Wrapper classes provide a way to use primitive data types as objects. They wrap primitive values in an object so they can be used in contexts that require objects, such as collections.</p>
-                  
+
                   <div className="mt-6 space-y-4">
                     <div className="bg-gray-800/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-indigo-300 mb-3">Primitive to Wrapper Mapping</h3>
@@ -13178,7 +13132,7 @@ public class WrapperExample {
                 <div className="bg-gradient-to-r from-red-600/10 to-orange-600/10 border border-red-500/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-red-400 mb-6">What are Exceptions?</h2>
                   <p className="text-lg text-gray-300 mb-4">Exceptions are events that disrupt the normal flow of program execution. Java provides a robust exception handling mechanism to handle runtime errors and maintain normal application flow.</p>
-                  
+
                   <div className="mt-6 space-y-4">
                     <div className="bg-gray-800/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-red-300 mb-3">Exception Hierarchy</h3>
@@ -13337,7 +13291,7 @@ class InsufficientFundsException extends Exception {
                 <div className="bg-gradient-to-r from-pink-600/10 to-purple-600/10 border border-pink-500/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-pink-400 mb-6">What is RegEx?</h2>
                   <p className="text-lg text-gray-300 mb-4">Regular Expressions (RegEx) are sequences of characters that define search patterns. They're used for string matching, validation, and text processing operations.</p>
-                  
+
                   <div className="mt-6 space-y-4">
                     <div className="bg-gray-800/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-xl font-bold text-pink-300 mb-3">Common RegEx Patterns</h3>
@@ -13489,7 +13443,7 @@ public class RegExExample {
               <p className="text-lg text-gray-400 mb-8 text-center">
                 Build real-world applications to master Java
               </p>
-              
+
               <div className="max-w-6xl mx-auto">
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                   <div className="bg-gradient-to-r from-gray-800/80 to-gray-900/80 p-6 rounded-2xl border border-gray-600">
@@ -13540,7 +13494,7 @@ public class RegExExample {
               <p className="text-lg text-gray-400 mb-8 text-center">
                 Learn Java through comprehensive video tutorials
               </p>
-              
+
               <div className="max-w-6xl mx-auto">
                 <VideoSection videos={[]} title="Java Video Tutorials" />
               </div>
@@ -13552,7 +13506,7 @@ public class RegExExample {
         return (
           <div className="space-y-8">
             <h1 className="text-4xl font-bold text-white mb-4">Java Collections</h1>
-            
+
             <div className="bg-gradient-to-r from-rose-600/10 to-red-600/10 border border-rose-500/20 rounded-lg p-8">
               <h2 className="text-3xl font-bold text-white mb-6">Collections in Java</h2>
               <p className="text-lg text-gray-300 mb-6">
@@ -13565,7 +13519,7 @@ public class RegExExample {
               <p className="text-gray-300 mb-6">
                 The root interface in the collection hierarchy. A collection represents a group of objects, known as its elements.
               </p>
-              
+
               <div className="bg-gray-900/50 border border-emerald-500/30 rounded p-6">
                 <h3 className="text-xl font-bold text-white mb-4">Key Methods</h3>
                 <div className="overflow-x-auto">
@@ -13608,7 +13562,7 @@ public class RegExExample {
               <p className="text-gray-300 mb-6">
                 The Collections class consists exclusively of static methods that operate on or return collections.
               </p>
-              
+
               <pre className="bg-gray-900 p-6 rounded-lg text-sm text-gray-300 overflow-x-auto">
                 <code>{`import java.util.*;
 
@@ -13648,7 +13602,7 @@ public class CollectionsDemo {
               <p className="text-gray-300 mb-6">
                 An Iterator is an interface that provides methods to iterate over any Collection.
               </p>
-              
+
               <pre className="bg-gray-900 p-6 rounded-lg text-sm text-gray-300 overflow-x-auto">
                 <code>{`import java.util.*;
 
@@ -13680,7 +13634,7 @@ public class IteratorDemo {
               <p className="text-gray-300 mb-6">
                 A functional interface used for ordering objects of user-defined classes.
               </p>
-              
+
               <pre className="bg-gray-900 p-6 rounded-lg text-sm text-gray-300 overflow-x-auto">
                 <code>{`import java.util.*;
 

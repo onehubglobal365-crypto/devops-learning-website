@@ -6,6 +6,9 @@ import ScrollAnimate from './ScrollAnimate';
 const isoImages = [
   { id: 1, src: '/images/iso1.jpg', alt: 'ISO Certification 1', caption: 'Certified by ISO 9001:2015' },
   { id: 3, src: '/images/iso5.jpg', alt: 'ISO Certification 3', caption: 'Certified by ISO 21001:2018' },
+  { id: 4, src: '/WhatsApp Image 2026-01-07 at 10.19.32 PM (1).jpeg', alt: 'Certification 4', caption: 'Globally Recognized' },
+  { id: 5, src: '/WhatsApp Image 2026-01-07 at 10.19.32 PM.jpeg', alt: 'Certification 5', caption: 'Expert Led Training' },
+  { id: 6, src: '/WhatsApp Image 2026-01-07 at 10.19.31 PM.jpeg', alt: 'Certification 6', caption: 'Career Focused' },
 ];
 
 export default function CompactTrusted() {

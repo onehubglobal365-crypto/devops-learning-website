@@ -93,19 +93,7 @@ export default function CoursesPage() {
 
   const handleCourseClick = (e: React.MouseEvent, href: string) => {
     e.preventDefault();
-
-    if (!AUTH_SYSTEM_AVAILABLE) {
-      router.push(href);
-      return;
-    }
-
-    const token = localStorage.getItem('token');
-    if (token) {
-      // Basic token validation could be added here
-      router.push(href);
-    } else {
-      router.push(`/login?redirect=${encodeURIComponent(href)}`);
-    }
+    router.push(href);
   };
 
   return (

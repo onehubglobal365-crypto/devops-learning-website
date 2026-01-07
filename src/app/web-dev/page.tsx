@@ -7,53 +7,6 @@ import { AUTH_SYSTEM_AVAILABLE } from '@/config/authStatus';
 
 export default function WebDevPage() {
   const [activeSection, setActiveSection] = useState('introduction');
-  const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(
-    AUTH_SYSTEM_AVAILABLE ? null : true
-  );
-
-  // Authentication check - runs immediately on mount
-  useEffect(() => {
-    if (!AUTH_SYSTEM_AVAILABLE) {
-      setIsAuthenticated(true);
-      return;
-    }
-    if (typeof window === 'undefined') return;
-    
-    const token = localStorage.getItem('token');
-    if (!token || token.trim() === '' || token === 'null' || token === 'undefined') {
-      const currentPath = window.location.pathname;
-      window.location.replace(`/register?redirect=${encodeURIComponent(currentPath)}`);
-      return;
-    }
-    // Validate JWT token format and expiry
-    try {
-      const parts = token.split('.');
-      if (parts.length !== 3) {
-        localStorage.removeItem('token');
-        const currentPath = window.location.pathname;
-        window.location.replace(`/register?redirect=${encodeURIComponent(currentPath)}`);
-        return;
-      }
-      const payload = JSON.parse(atob(parts[1]));
-      if (payload.exp && payload.exp * 1000 < Date.now()) {
-        localStorage.removeItem('token');
-        const currentPath = window.location.pathname;
-        window.location.replace(`/register?redirect=${encodeURIComponent(currentPath)}`);
-        return;
-      }
-      setIsAuthenticated(true);
-    } catch {
-      localStorage.removeItem('token');
-      const currentPath = window.location.pathname;
-      window.location.replace(`/register?redirect=${encodeURIComponent(currentPath)}`);
-      return;
-    }
-  }, []);
-
-  // Don't render until authenticated
-  if (isAuthenticated === null || isAuthenticated === false) {
-    return null;
-  }
 
   const pageHeadings = [
     { id: 'introduction', title: 'Web Development Learning Hub' },
@@ -108,12 +61,12 @@ export default function WebDevPage() {
               <p className="text-lg text-gray-400 mb-8 text-center">
                 Master modern web development with comprehensive frontend, backend, and full-stack technologies
               </p>
-              
+
               <div className="max-w-6xl mx-auto">
                 {/* Overview */}
                 <div id="overview" className="bg-gradient-to-r from-blue-600/10 to-cyan-600/10 border border-blue-500/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-blue-400 mb-6">🚀 Web Development Overview</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-2xl font-bold text-blue-400 mb-4">What is Web Development?</h3>
@@ -148,7 +101,7 @@ export default function WebDevPage() {
                 {/* Career Paths */}
                 <div className="bg-gradient-to-r from-green-600/10 to-emerald-600/10 border border-green-500/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-green-400 mb-6">💼 Career Paths in Web Development</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-2xl font-bold text-green-400 mb-4">Frontend Developer</h3>
@@ -242,7 +195,7 @@ export default function WebDevPage() {
                 {/* Technology Stack */}
                 <div className="bg-gradient-to-r from-purple-600/10 to-pink-600/10 border border-purple-500/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-purple-400 mb-6">🛠️ Modern Technology Stack</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-2xl font-bold text-purple-400 mb-4">Frontend Technologies</h3>
@@ -353,12 +306,12 @@ export default function WebDevPage() {
               <p className="text-lg text-gray-400 mb-8 text-center">
                 Master the core technologies that power modern web interfaces
               </p>
-              
+
               <div className="max-w-6xl mx-auto">
                 {/* HTML Fundamentals */}
                 <div className="bg-gradient-to-r from-orange-600/10 to-red-600/10 border border-orange-500/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-orange-400 mb-6">📝 HTML5 Fundamentals</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-2xl font-bold text-orange-400 mb-4">What is HTML?</h3>
@@ -423,7 +376,7 @@ export default function WebDevPage() {
                 {/* CSS Fundamentals */}
                 <div className="bg-gradient-to-r from-blue-600/10 to-cyan-600/10 border border-blue-500/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-blue-400 mb-6">🎨 CSS3 Fundamentals</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-2xl font-bold text-blue-400 mb-4">What is CSS?</h3>
@@ -490,7 +443,7 @@ export default function WebDevPage() {
                 {/* JavaScript Fundamentals */}
                 <div className="bg-gradient-to-r from-yellow-600/10 to-orange-600/10 border border-yellow-500/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-yellow-400 mb-6">⚡ JavaScript Fundamentals</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900/50 border border-gray-600 rounded-lg p-6">
                       <h3 className="text-2xl font-bold text-yellow-400 mb-4">What is JavaScript?</h3>

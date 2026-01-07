@@ -10,48 +10,6 @@ import { AUTH_SYSTEM_AVAILABLE } from '@/config/authStatus';
 
 export default function SQLPage() {
   const [activeSection, setActiveSection] = useState('introduction');
-  const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(
-    AUTH_SYSTEM_AVAILABLE ? null : true
-  );
-
-  // Authentication check - runs immediately on mount
-  useEffect(() => {
-    if (!AUTH_SYSTEM_AVAILABLE) {
-      setIsAuthenticated(true);
-      return;
-    }
-    if (typeof window === 'undefined') return;
-    
-    const token = localStorage.getItem('token');
-    if (!token || token.trim() === '' || token === 'null' || token === 'undefined') {
-      const currentPath = window.location.pathname;
-      window.location.replace(`/register?redirect=${encodeURIComponent(currentPath)}`);
-      return;
-    }
-    // Validate JWT token format and expiry
-    try {
-      const parts = token.split('.');
-      if (parts.length !== 3) {
-        localStorage.removeItem('token');
-        const currentPath = window.location.pathname;
-        window.location.replace(`/register?redirect=${encodeURIComponent(currentPath)}`);
-        return;
-      }
-      const payload = JSON.parse(atob(parts[1]));
-      if (payload.exp && payload.exp * 1000 < Date.now()) {
-        localStorage.removeItem('token');
-        const currentPath = window.location.pathname;
-        window.location.replace(`/register?redirect=${encodeURIComponent(currentPath)}`);
-        return;
-      }
-      setIsAuthenticated(true);
-    } catch {
-      localStorage.removeItem('token');
-      const currentPath = window.location.pathname;
-      window.location.replace(`/register?redirect=${encodeURIComponent(currentPath)}`);
-      return;
-    }
-  }, []);
 
   const pageHeadings = [
     { id: 'introduction', title: 'Introduction' },
@@ -93,10 +51,6 @@ export default function SQLPage() {
     };
   }, []);
 
-  // Don't render until authenticated
-  if (isAuthenticated === null || isAuthenticated === false) {
-    return null;
-  }
 
   // Get navigation for current section
   const getNavigation = () => {
@@ -140,7 +94,7 @@ export default function SQLPage() {
               <p className="text-lg text-gray-400 mb-8 text-center">
                 Master SQL for database management and data analysis
               </p>
-              
+
               <div className="max-w-6xl mx-auto">
                 {/* Overview Section */}
                 <div id="overview" className="bg-gray-800/50 border border-gray-600 p-8 rounded-lg mb-8">
@@ -182,8 +136,8 @@ export default function SQLPage() {
                     <div className="bg-blue-900/20 border border-blue-500/30 p-6 rounded-lg">
                       <h4 className="text-xl font-bold text-blue-300 mb-4">🎯 Database Fundamentals</h4>
                       <p className="text-lg text-gray-300 leading-relaxed mb-4">
-                        A <strong className="text-white">database</strong> is an organized collection of structured data stored electronically in a computer system. 
-                        It&apos;s designed to efficiently store, retrieve, manage, and update large amounts of information. Think of it as an intelligent digital filing 
+                        A <strong className="text-white">database</strong> is an organized collection of structured data stored electronically in a computer system.
+                        It&apos;s designed to efficiently store, retrieve, manage, and update large amounts of information. Think of it as an intelligent digital filing
                         cabinet that not only stores your data but also helps you find, sort, and analyze it quickly.
                       </p>
                       <div className="bg-gray-700/50 p-4 rounded-lg">
@@ -197,7 +151,7 @@ export default function SQLPage() {
                         </ul>
                       </div>
                     </div>
-                    
+
                     <div className="bg-gray-800 p-6 rounded-xl">
                       <h4 className="text-lg font-bold text-yellow-400 mb-4">Why Do We Need Databases?</h4>
                       <div className="space-y-3 text-gray-300">
@@ -208,7 +162,7 @@ export default function SQLPage() {
                         <p><strong className="text-white">5. Scalability:</strong> Databases can handle growth from hundreds to millions of records efficiently.</p>
                       </div>
                     </div>
-                    
+
                     <div className="grid md:grid-cols-2 gap-6 mb-6">
                       <div className="bg-gray-800 p-6 rounded-xl">
                         <h3 className="text-xl font-bold text-yellow-400 mb-4">Types of Databases</h3>
@@ -280,8 +234,8 @@ export default function SQLPage() {
                     <div className="bg-blue-900/20 border border-blue-500/30 p-6 rounded-xl">
                       <h4 className="text-lg font-bold text-blue-300 mb-3">💡 Real-Life Analogy</h4>
                       <p className="text-gray-300">
-                        Imagine a library: Books are your data, shelves are your tables, the catalog system is your database management system, 
-                        and the librarian is SQL helping you find exactly what you need. Just as a library organizes thousands of books for easy access, 
+                        Imagine a library: Books are your data, shelves are your tables, the catalog system is your database management system,
+                        and the librarian is SQL helping you find exactly what you need. Just as a library organizes thousands of books for easy access,
                         a database organizes millions of data records for efficient retrieval!
                       </p>
                     </div>
@@ -295,7 +249,7 @@ export default function SQLPage() {
                     <div className="bg-purple-900/20 border border-purple-500/30 p-6 rounded-lg mb-6">
                       <h4 className="text-xl font-bold text-purple-300 mb-4">🔍 SQL - The Universal Database Language</h4>
                       <p className="text-lg text-gray-300 leading-relaxed mb-4">
-                        <strong className="text-white">SQL (Structured Query Language)</strong> is a standardized programming language specifically designed for managing and manipulating relational databases. 
+                        <strong className="text-white">SQL (Structured Query Language)</strong> is a standardized programming language specifically designed for managing and manipulating relational databases.
                         Originally developed at IBM in the early 1970s by Donald D. Chamberlin and Raymond F. Boyce, SQL has become the universal language for database communication.
                       </p>
                       <div className="bg-gray-700/50 p-4 rounded-lg">
@@ -309,7 +263,7 @@ export default function SQLPage() {
                         </ul>
                       </div>
                     </div>
-                    
+
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h4 className="text-lg font-bold text-yellow-400 mb-4">History and Evolution</h4>
                       <div className="space-y-3 text-gray-300">
@@ -318,7 +272,7 @@ export default function SQLPage() {
                         <p><strong className="text-white">Today:</strong> SQL is supported by all major database systems including MySQL, PostgreSQL, Oracle, SQL Server, and SQLite. Despite minor syntax variations, the core SQL remains consistent across platforms.</p>
                       </div>
                     </div>
-                    
+
                     <div className="grid md:grid-cols-2 gap-6 mb-6">
                       <div className="bg-gray-700 p-6 rounded-xl">
                         <h3 className="text-xl font-bold text-yellow-400 mb-4">Key Features of SQL</h3>
@@ -482,68 +436,68 @@ export default function SQLPage() {
                   <h2 className="text-3xl font-bold text-white mb-6">🗂️ What is RDBMS?</h2>
                   <div className="space-y-6">
                     <p className="text-lg text-gray-300 leading-relaxed">
-                      An <strong className="text-white">RDBMS (Relational Database Management System)</strong> is a software system that manages relational databases and provides an interface for users to interact with the data using SQL. 
+                      An <strong className="text-white">RDBMS (Relational Database Management System)</strong> is a software system that manages relational databases and provides an interface for users to interact with the data using SQL.
                       The "relational" part means that data is stored in tables (also called relations) that can be linked to each other based on common fields.
                     </p>
-                    
+
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h4 className="text-lg font-bold text-yellow-400 mb-4">Understanding the Relational Model</h4>
                       <p className="text-gray-300 mb-4">
-                        The relational model was introduced by Edgar F. Codd in 1970 while working at IBM. His groundbreaking paper "A Relational Model of Data for Large Shared Data Banks" revolutionized how we think about data storage. 
+                        The relational model was introduced by Edgar F. Codd in 1970 while working at IBM. His groundbreaking paper "A Relational Model of Data for Large Shared Data Banks" revolutionized how we think about data storage.
                         The key insight was organizing data into tables where each row represents a record and each column represents an attribute.
                       </p>
                       <p className="text-gray-300">
-                        Unlike earlier database models (hierarchical and network), the relational model&apos;s simplicity and mathematical foundation made it intuitive and powerful. 
+                        Unlike earlier database models (hierarchical and network), the relational model&apos;s simplicity and mathematical foundation made it intuitive and powerful.
                         Today, relational databases power the majority of business applications worldwide.
                       </p>
                     </div>
-                  
+
                     <div className="bg-gray-900 p-6 rounded-xl mb-6">
                       <h3 className="text-xl font-bold text-white mb-4">Core Characteristics of RDBMS</h3>
                       <div className="space-y-4">
                         <div>
                           <p className="font-bold text-yellow-400 mb-2">1. Tables (Relations)</p>
                           <p className="text-gray-300 text-sm pl-4">
-                            Data is organized in two-dimensional tables consisting of rows (records/tuples) and columns (fields/attributes). 
+                            Data is organized in two-dimensional tables consisting of rows (records/tuples) and columns (fields/attributes).
                             Each table represents an entity like "Customers", "Products", or "Orders". For example, a Students table might have columns for StudentID, Name, Email, and Age.
                           </p>
                         </div>
                         <div>
                           <p className="font-bold text-yellow-400 mb-2">2. Primary Key</p>
                           <p className="text-gray-300 text-sm pl-4">
-                            A unique identifier for each row in a table. No two rows can have the same primary key value, and it cannot be NULL. 
+                            A unique identifier for each row in a table. No two rows can have the same primary key value, and it cannot be NULL.
                             Think of it like your social security number or student ID - it uniquely identifies you in the system. In a Students table, StudentID would be the primary key.
                           </p>
                         </div>
                         <div>
                           <p className="font-bold text-yellow-400 mb-2">3. Foreign Key</p>
                           <p className="text-gray-300 text-sm pl-4">
-                            A field in one table that refers to the primary key in another table, creating relationships between tables. 
-                            This is how we connect related data. For example, an Orders table might have a CustomerID foreign key that links to the Customers table, 
+                            A field in one table that refers to the primary key in another table, creating relationships between tables.
+                            This is how we connect related data. For example, an Orders table might have a CustomerID foreign key that links to the Customers table,
                             showing which customer placed each order.
                           </p>
                         </div>
                         <div>
                           <p className="font-bold text-yellow-400 mb-2">4. Relationships</p>
                           <p className="text-gray-300 text-sm pl-4">
-                            RDBMS supports three types of relationships: <strong className="text-white">One-to-One</strong> (one person has one passport), 
-                            <strong className="text-white"> One-to-Many</strong> (one customer places many orders), and 
+                            RDBMS supports three types of relationships: <strong className="text-white">One-to-One</strong> (one person has one passport),
+                            <strong className="text-white"> One-to-Many</strong> (one customer places many orders), and
                             <strong className="text-white"> Many-to-Many</strong> (students enroll in many courses, courses have many students - requires a junction table).
                           </p>
                         </div>
                         <div>
                           <p className="font-bold text-yellow-400 mb-2">5. Normalization</p>
                           <p className="text-gray-300 text-sm pl-4">
-                            The process of organizing data to reduce redundancy and improve data integrity. Instead of storing customer name in every order record, 
+                            The process of organizing data to reduce redundancy and improve data integrity. Instead of storing customer name in every order record,
                             we store it once in a Customers table and reference it by CustomerID. This saves space and ensures consistency.
                           </p>
                         </div>
                         <div>
                           <p className="font-bold text-yellow-400 mb-2">6. ACID Properties</p>
                           <p className="text-gray-300 text-sm pl-4">
-                            Guarantees that database transactions are processed reliably: <strong className="text-white">Atomicity</strong> (all or nothing), 
-                            <strong className="text-white"> Consistency</strong> (valid state to valid state), 
-                            <strong className="text-white"> Isolation</strong> (concurrent transactions don&apos;t interfere), and 
+                            Guarantees that database transactions are processed reliably: <strong className="text-white">Atomicity</strong> (all or nothing),
+                            <strong className="text-white"> Consistency</strong> (valid state to valid state),
+                            <strong className="text-white"> Isolation</strong> (concurrent transactions don&apos;t interfere), and
                             <strong className="text-white"> Durability</strong> (committed data is never lost). Critical for banking, e-commerce, and any system requiring data reliability.
                           </p>
                         </div>
@@ -559,7 +513,7 @@ export default function SQLPage() {
                         <div className="bg-gray-800 p-4 rounded">
                           <p className="font-bold text-white mb-2">Students Table</p>
                           <pre className="text-gray-300 font-mono text-xs">
-{`StudentID | Name          | Age | Email
+                            {`StudentID | Name          | Age | Email
 ----------|---------------|-----|-------------------
 1         | Alice Johnson | 20  | alice@uni.edu
 2         | Bob Smith     | 21  | bob@uni.edu
@@ -569,7 +523,7 @@ export default function SQLPage() {
                         <div className="bg-gray-800 p-4 rounded">
                           <p className="font-bold text-white mb-2">Courses Table</p>
                           <pre className="text-gray-300 font-mono text-xs">
-{`CourseID | CourseName           | Credits
+                            {`CourseID | CourseName           | Credits
 ---------|----------------------|--------
 101      | Database Systems     | 4
 102      | Web Development      | 3
@@ -579,7 +533,7 @@ export default function SQLPage() {
                         <div className="bg-gray-800 p-4 rounded">
                           <p className="font-bold text-white mb-2">Enrollments Table (Junction Table)</p>
                           <pre className="text-gray-300 font-mono text-xs">
-{`EnrollmentID | StudentID | CourseID | Grade
+                            {`EnrollmentID | StudentID | CourseID | Grade
 -------------|-----------|----------|------
 1            | 1         | 101      | A
 2            | 1         | 102      | B+
@@ -588,8 +542,8 @@ export default function SQLPage() {
                           </pre>
                         </div>
                         <p className="text-gray-300 mt-4">
-                          <strong className="text-white">Explanation:</strong> StudentID in Enrollments table is a foreign key referencing Students table. 
-                          CourseID is a foreign key referencing Courses table. This structure allows us to track which students are enrolled in which courses, 
+                          <strong className="text-white">Explanation:</strong> StudentID in Enrollments table is a foreign key referencing Students table.
+                          CourseID is a foreign key referencing Courses table. This structure allows us to track which students are enrolled in which courses,
                           without duplicating student or course information. If we need to update a student&apos;s email, we only update it in one place!
                         </p>
                       </div>
@@ -603,7 +557,7 @@ export default function SQLPage() {
                   <p className="text-lg text-gray-300 mb-6">
                     SQL is essential across various technologies and industries:
                   </p>
-                  
+
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div className="bg-gray-800 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-yellow-400 mb-3">Data Science & Analytics</h3>
@@ -635,7 +589,7 @@ export default function SQLPage() {
                 {/* Popular SQL Databases */}
                 <div className="bg-gray-800 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-white mb-6">💾 Popular SQL Databases</h2>
-                  
+
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="bg-gray-700 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-yellow-400 mb-3">MySQL</h3>
@@ -666,7 +620,7 @@ export default function SQLPage() {
                 {/* Advantages & Disadvantages */}
                 <div className="bg-gray-800 p-8 rounded-2xl">
                   <h2 className="text-3xl font-bold text-white mb-6">⚖️ Advantages & Disadvantages</h2>
-                  
+
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="bg-green-900/20 border border-green-500 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-green-400 mb-4">✅ Advantages</h3>
@@ -706,12 +660,12 @@ export default function SQLPage() {
               <p className="text-lg text-gray-400 mb-8 text-center">
                 Master fundamental SQL concepts and basic database operations
               </p>
-              
+
               <div className="max-w-6xl mx-auto">
                 {/* SQL Fundamentals */}
                 <div className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-white mb-6">🔧 SQL Basic Commands & Operations</h2>
-                  
+
                   <div className="bg-blue-900/20 border border-blue-500/30 p-6 rounded-lg mb-6">
                     <h4 className="text-xl font-bold text-blue-300 mb-4">🎯 Understanding SQL Command Structure</h4>
                     <p className="text-lg text-gray-300 leading-relaxed mb-4">
@@ -771,11 +725,11 @@ export default function SQLPage() {
                       </ul>
                     </div>
                   </div>
-                  
+
                   <div className="bg-gray-900 p-6 rounded-xl mb-6">
                     <h3 className="text-xl font-bold text-white mb-4">Basic SELECT Operations</h3>
                     <pre className="text-white font-mono text-sm overflow-x-auto">
-{`-- Select all columns from a table
+                      {`-- Select all columns from a table
 SELECT * FROM Students;
 
 -- Select specific columns
@@ -826,10 +780,10 @@ SELECT * FROM Students LIMIT 10 OFFSET 20;`}
                       </ul>
                     </div>
                   </div>
-                  
+
                   <div className="bg-gray-900 p-6 rounded-xl mb-6">
                     <pre className="text-white font-mono text-sm overflow-x-auto">
-{`-- Basic WHERE conditions
+                      {`-- Basic WHERE conditions
 SELECT * FROM Students WHERE Age > 18;
 
 -- Multiple conditions with AND/OR
@@ -889,10 +843,10 @@ WHERE Age BETWEEN 18 AND 25;`}
                   <p className="text-lg text-gray-300 mb-6">
                     The ORDER BY clause sorts results in ascending (ASC) or descending (DESC) order.
                   </p>
-                  
+
                   <div className="bg-gray-900 p-6 rounded-xl mb-6">
                     <pre className="text-white font-mono text-sm overflow-x-auto">
-{`-- Sort by single column (ascending by default)
+                      {`-- Sort by single column (ascending by default)
 SELECT * FROM Students ORDER BY Name;
 
 -- Sort in descending order
@@ -917,10 +871,10 @@ LIMIT 5;`}
                   <p className="text-lg text-gray-300 mb-6">
                     Aggregate functions perform calculations on multiple rows and return a single result.
                   </p>
-                  
+
                   <div className="bg-gray-900 p-6 rounded-xl mb-6">
                     <pre className="text-white font-mono text-sm overflow-x-auto">
-{`-- COUNT() - Count number of rows
+                      {`-- COUNT() - Count number of rows
 SELECT COUNT(*) FROM Students;
 SELECT COUNT(DISTINCT department) FROM Students;
 
@@ -974,10 +928,10 @@ FROM Students;`}
                     GROUP BY groups rows and allows aggregate functions on each group.
                     HAVING filters groups after aggregation.
                   </p>
-                  
+
                   <div className="bg-gray-900 p-6 rounded-xl mb-6">
                     <pre className="text-white font-mono text-sm overflow-x-auto">
-{`-- GROUP BY - Group data by column
+                      {`-- GROUP BY - Group data by column
 SELECT CourseID, COUNT(*) AS StudentCount
 FROM Students
 GROUP BY CourseID;
@@ -1017,10 +971,10 @@ HAVING AVG(salary) > 60000;`}
                   <p className="text-lg text-gray-300 mb-6">
                     Learn to insert, update, and delete data in database tables.
                   </p>
-                  
+
                   <div className="bg-gray-900 p-6 rounded-xl mb-6">
                     <pre className="text-white font-mono text-sm overflow-x-auto">
-{`-- INSERT - Add new rows
+                      {`-- INSERT - Add new rows
 INSERT INTO Students (StudentID, Name, Age)
 VALUES (1, 'John', 20);
 
@@ -1083,16 +1037,16 @@ DELETE FROM Students;`}
               <p className="text-lg text-gray-400 mb-8 text-center">
                 Master joins, subqueries, and advanced querying techniques
               </p>
-              
+
               <div className="max-w-6xl mx-auto">
                 {/* Introduction to JOINS */}
                 <div className="bg-gradient-to-r from-green-900/20 to-blue-900/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-white mb-6">🔗 Advanced SQL JOINs & Relationships</h2>
-                  
+
                   <div className="bg-blue-900/20 border border-blue-500/30 p-6 rounded-lg mb-6">
                     <h4 className="text-xl font-bold text-blue-300 mb-4">🎯 Understanding Relational Database Theory</h4>
                     <p className="text-lg text-gray-300 leading-relaxed mb-4">
-                      JOINs are the cornerstone of relational database operations, enabling the combination of data from multiple tables based on logical relationships. 
+                      JOINs are the cornerstone of relational database operations, enabling the combination of data from multiple tables based on logical relationships.
                       Understanding JOIN theory is essential for efficient data retrieval and complex business logic implementation.
                     </p>
                     <div className="bg-gray-700/50 p-4 rounded-lg">
@@ -1109,26 +1063,26 @@ DELETE FROM Students;`}
 
                   <div className="space-y-6">
                     <p className="text-lg text-gray-300 leading-relaxed">
-                      One of the most powerful features of relational databases is the ability to establish relationships between tables. 
-                      <strong className="text-white"> SQL JOINs</strong> are the mechanism that allows us to combine data from two or more tables based on related columns between them. 
+                      One of the most powerful features of relational databases is the ability to establish relationships between tables.
+                      <strong className="text-white"> SQL JOINs</strong> are the mechanism that allows us to combine data from two or more tables based on related columns between them.
                       This is the essence of "relational" in Relational Database Management System (RDBMS).
                     </p>
-                    
+
                     <div className="bg-gray-800 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-yellow-400 mb-4">Why Do We Need JOINs?</h3>
                       <div className="space-y-4 text-gray-300">
                         <p className="leading-relaxed">
-                          In a well-designed database, we follow the principle of <strong className="text-white">normalization</strong> - storing each piece of information only once to avoid redundancy. 
-                          This means related data is split across multiple tables. For example, instead of storing customer details (name, address, phone) with every order, 
+                          In a well-designed database, we follow the principle of <strong className="text-white">normalization</strong> - storing each piece of information only once to avoid redundancy.
+                          This means related data is split across multiple tables. For example, instead of storing customer details (name, address, phone) with every order,
                           we store customer information in a Customers table and just reference the CustomerID in the Orders table.
                         </p>
                         <p className="leading-relaxed">
-                          However, when we need to retrieve meaningful information like "Show me all orders with customer names and addresses", 
+                          However, when we need to retrieve meaningful information like "Show me all orders with customer names and addresses",
                           we need to <strong className="text-white">JOIN</strong> the Orders table with the Customers table. This is where JOINs become essential.
                         </p>
                       </div>
                     </div>
-                  
+
                     <div className="bg-gray-800 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-yellow-400 mb-3">Real-World Analogy</h3>
                       <p className="text-gray-300 mb-4">
@@ -1139,7 +1093,7 @@ DELETE FROM Students;`}
                         <li>• <strong className="text-white">List B:</strong> Student IDs and their course enrollments</li>
                       </ul>
                       <p className="text-gray-300 mt-3">
-                        To find out which student is enrolled in which course, you need to <strong className="text-white">match</strong> the Student ID from both lists. 
+                        To find out which student is enrolled in which course, you need to <strong className="text-white">match</strong> the Student ID from both lists.
                         That&apos;s exactly what a JOIN does - it matches records from different tables based on a common field!
                       </p>
                     </div>
@@ -1147,7 +1101,7 @@ DELETE FROM Students;`}
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-yellow-400 mb-4">Understanding the JOIN Condition</h3>
                       <p className="text-gray-300 mb-4">
-                        The <code className="text-white bg-gray-800 px-2 py-1 rounded">ON</code> clause specifies how tables should be matched. 
+                        The <code className="text-white bg-gray-800 px-2 py-1 rounded">ON</code> clause specifies how tables should be matched.
                         Typically, you join on a <strong className="text-white">foreign key</strong> (in one table) that references a <strong className="text-white">primary key</strong> (in another table).
                       </p>
                       <div className="bg-gray-800 p-4 rounded">
@@ -1156,7 +1110,7 @@ DELETE FROM Students;`}
                           <div>
                             <p className="text-white font-bold mb-2">Students Table</p>
                             <pre className="text-gray-300 font-mono text-xs">
-{`StudentID | Name
+                              {`StudentID | Name
 ----------|------------
 1         | Alice
 2         | Bob
@@ -1166,7 +1120,7 @@ DELETE FROM Students;`}
                           <div>
                             <p className="text-white font-bold mb-2">Enrollments Table</p>
                             <pre className="text-gray-300 font-mono text-xs">
-{`StudentID | CourseName
+                              {`StudentID | CourseName
 ----------|------------
 1         | Math
 1         | Physics
@@ -1175,7 +1129,7 @@ DELETE FROM Students;`}
                           </div>
                         </div>
                         <p className="text-gray-300 mt-4 text-sm">
-                          <strong className="text-white">Key Point:</strong> StudentID appears in both tables - this is our <strong className="text-white">join column</strong>. 
+                          <strong className="text-white">Key Point:</strong> StudentID appears in both tables - this is our <strong className="text-white">join column</strong>.
                           We use it to connect related information from both tables.
                         </p>
                       </div>
@@ -1199,10 +1153,10 @@ DELETE FROM Students;`}
                   <h2 className="text-3xl font-bold text-white mb-6">1. INNER JOIN - The Most Common JOIN</h2>
                   <div className="space-y-6">
                     <p className="text-lg text-gray-300 leading-relaxed">
-                      <strong className="text-white">INNER JOIN</strong> (often just called JOIN) returns only the rows where there is a match in BOTH tables based on the join condition. 
+                      <strong className="text-white">INNER JOIN</strong> (often just called JOIN) returns only the rows where there is a match in BOTH tables based on the join condition.
                       If a row in the left table has no matching row in the right table (or vice versa), that row will NOT appear in the result set.
                     </p>
-                    
+
                     <div className="bg-blue-900/20 border border-blue-500/30 p-6 rounded-xl">
                       <h4 className="text-lg font-bold text-blue-300 mb-3">🎯 When to Use INNER JOIN</h4>
                       <p className="text-gray-300 mb-3">Use INNER JOIN when you want to find records that have relationships in both tables. Common scenarios:</p>
@@ -1213,7 +1167,7 @@ DELETE FROM Students;`}
                         <li>• Find employees assigned to departments (exclude unassigned employees)</li>
                       </ul>
                     </div>
-                  
+
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-yellow-400 mb-4">Basic INNER JOIN Example</h3>
                       <p className="text-gray-300 mb-4">
@@ -1221,7 +1175,7 @@ DELETE FROM Students;`}
                       </p>
                       <div className="bg-gray-950 p-4 rounded mb-3">
                         <pre className="text-white font-mono text-sm">
-{`SELECT Students.Name, Enrollments.CourseName
+                          {`SELECT Students.Name, Enrollments.CourseName
 FROM Students
 INNER JOIN Enrollments ON Students.StudentID = Enrollments.StudentID;`}
                         </pre>
@@ -1229,7 +1183,7 @@ INNER JOIN Enrollments ON Students.StudentID = Enrollments.StudentID;`}
                       <div className="bg-green-900/20 border border-green-500/30 p-4 rounded">
                         <p className="text-sm text-green-300 font-bold mb-2">📊 Output:</p>
                         <pre className="text-green-200 font-mono text-xs">
-{`Name          | CourseName
+                          {`Name          | CourseName
 --------------|------------------
 Alice         | Database Systems
 Alice         | Web Development
@@ -1250,12 +1204,12 @@ Explanation:
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-yellow-400 mb-4">INNER JOIN with Table Aliases</h3>
                       <p className="text-gray-300 mb-4">
-                        Table aliases (short names like &apos;s&apos; for Students, &apos;e&apos; for Enrollments) make queries shorter and more readable. 
+                        Table aliases (short names like &apos;s&apos; for Students, &apos;e&apos; for Enrollments) make queries shorter and more readable.
                         This is especially important when joining multiple tables or when table names are long.
                       </p>
                       <div className="bg-gray-950 p-4 rounded mb-3">
                         <pre className="text-white font-mono text-sm">
-{`SELECT s.Name, s.Age, e.CourseName, e.Grade
+                          {`SELECT s.Name, s.Age, e.CourseName, e.Grade
 FROM Students s
 INNER JOIN Enrollments e ON s.StudentID = e.StudentID
 WHERE s.Age > 18;`}
@@ -1264,7 +1218,7 @@ WHERE s.Age > 18;`}
                       <div className="bg-green-900/20 border border-green-500/30 p-4 rounded">
                         <p className="text-sm text-green-300 font-bold mb-2">📊 Output:</p>
                         <pre className="text-green-200 font-mono text-xs">
-{`Name          | Age | CourseName         | Grade
+                          {`Name          | Age | CourseName         | Grade
 --------------|-----|--------------------|------
 Alice         | 20  | Database Systems   | A
 Alice         | 20  | Web Development    | B+
@@ -1284,12 +1238,12 @@ Explanation:
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-yellow-400 mb-4">Joining Multiple Tables</h3>
                       <p className="text-gray-300 mb-4">
-                        Real-world databases often require joining three or more tables. For example, to show student names, course names, and instructor names, 
+                        Real-world databases often require joining three or more tables. For example, to show student names, course names, and instructor names,
                         you might join Students → Enrollments → Courses → Instructors. Each JOIN connects two tables at a time.
                       </p>
                       <div className="bg-gray-950 p-4 rounded mb-3">
                         <pre className="text-white font-mono text-sm">
-{`SELECT s.Name AS StudentName, 
+                          {`SELECT s.Name AS StudentName, 
        c.CourseName, 
        i.InstructorName
 FROM Students s
@@ -1301,7 +1255,7 @@ INNER JOIN Instructors i ON c.InstructorID = i.InstructorID;`}
                       <div className="bg-green-900/20 border border-green-500/30 p-4 rounded">
                         <p className="text-sm text-green-300 font-bold mb-2">📊 Output:</p>
                         <pre className="text-green-200 font-mono text-xs">
-{`StudentName   | CourseName         | InstructorName
+                          {`StudentName   | CourseName         | InstructorName
 --------------|--------------------|-----------------
 Alice         | Database Systems   | Dr. Smith
 Alice         | Web Development    | Prof. Johnson
@@ -1337,14 +1291,14 @@ Only rows with matches in ALL four tables appear in final result`}
                   <h2 className="text-3xl font-bold text-white mb-6">2. LEFT JOIN (LEFT OUTER JOIN)</h2>
                   <div className="space-y-6">
                     <p className="text-lg text-gray-300 leading-relaxed">
-                      <strong className="text-white">LEFT JOIN</strong> (also called LEFT OUTER JOIN) returns ALL rows from the left table (the table mentioned first), 
+                      <strong className="text-white">LEFT JOIN</strong> (also called LEFT OUTER JOIN) returns ALL rows from the left table (the table mentioned first),
                       and the matching rows from the right table. When there&apos;s no match in the right table, NULL values are returned for all right table columns.
                     </p>
-                    
+
                     <div className="bg-purple-900/20 border border-purple-500/30 p-6 rounded-xl">
                       <h4 className="text-lg font-bold text-purple-300 mb-3">🎯 When to Use LEFT JOIN</h4>
                       <p className="text-gray-300 mb-3">
-                        Use LEFT JOIN when you want to preserve all records from the primary (left) table, regardless of whether they have matching records in the secondary (right) table. 
+                        Use LEFT JOIN when you want to preserve all records from the primary (left) table, regardless of whether they have matching records in the secondary (right) table.
                         This is crucial for:
                       </p>
                       <ul className="text-gray-300 space-y-2 pl-4">
@@ -1354,7 +1308,7 @@ Only rows with matches in ALL four tables appear in final result`}
                         <li>• Maintaining the full context from the primary table</li>
                       </ul>
                     </div>
-                  
+
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-yellow-400 mb-4">Basic LEFT JOIN Example</h3>
                       <p className="text-gray-300 mb-4">
@@ -1362,7 +1316,7 @@ Only rows with matches in ALL four tables appear in final result`}
                       </p>
                       <div className="bg-gray-950 p-4 rounded mb-3">
                         <pre className="text-white font-mono text-sm">
-{`SELECT Students.Name, Enrollments.CourseName
+                          {`SELECT Students.Name, Enrollments.CourseName
 FROM Students
 LEFT JOIN Enrollments ON Students.StudentID = Enrollments.StudentID;`}
                         </pre>
@@ -1370,7 +1324,7 @@ LEFT JOIN Enrollments ON Students.StudentID = Enrollments.StudentID;`}
                       <div className="bg-green-900/20 border border-green-500/30 p-4 rounded">
                         <p className="text-sm text-green-300 font-bold mb-2">📊 Output:</p>
                         <pre className="text-green-200 font-mono text-xs">
-{`Name          | CourseName
+                          {`Name          | CourseName
 --------------|------------------
 Alice         | Database Systems
 Alice         | Web Development
@@ -1394,12 +1348,12 @@ Explanation:
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-yellow-400 mb-4">Finding Non-Matching Records</h3>
                       <p className="text-gray-300 mb-4">
-                        A powerful use of LEFT JOIN is to find records that DON&apos;T have matches. By checking for NULL values in the right table&apos;s columns, 
+                        A powerful use of LEFT JOIN is to find records that DON&apos;T have matches. By checking for NULL values in the right table&apos;s columns,
                         we can identify orphaned or unrelated records. This is commonly used for data quality checks and finding gaps.
                       </p>
                       <div className="bg-gray-950 p-4 rounded mb-3">
                         <pre className="text-white font-mono text-sm">
-{`-- Find students who are NOT enrolled in any course
+                          {`-- Find students who are NOT enrolled in any course
 SELECT s.Name, s.Email
 FROM Students s
 LEFT JOIN Enrollments e ON s.StudentID = e.StudentID
@@ -1409,7 +1363,7 @@ WHERE e.StudentID IS NULL;`}
                       <div className="bg-green-900/20 border border-green-500/30 p-4 rounded">
                         <p className="text-sm text-green-300 font-bold mb-2">📊 Output:</p>
                         <pre className="text-green-200 font-mono text-xs">
-{`Name          | Email
+                          {`Name          | Email
 --------------|-------------------
 Carol         | carol@uni.edu
 David         | david@uni.edu
@@ -1428,12 +1382,12 @@ Explanation:
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-yellow-400 mb-4">LEFT JOIN with Aggregate Functions</h3>
                       <p className="text-gray-300 mb-4">
-                        You can combine LEFT JOIN with COUNT to show how many related records each main record has, including zero counts. 
+                        You can combine LEFT JOIN with COUNT to show how many related records each main record has, including zero counts.
                         This is perfect for reports showing "Number of orders per customer" or "Number of courses per student".
                       </p>
                       <div className="bg-gray-950 p-4 rounded mb-3">
                         <pre className="text-white font-mono text-sm">
-{`SELECT s.Name, COUNT(e.CourseID) AS CourseCount
+                          {`SELECT s.Name, COUNT(e.CourseID) AS CourseCount
 FROM Students s
 LEFT JOIN Enrollments e ON s.StudentID = e.StudentID
 GROUP BY s.StudentID, s.Name
@@ -1443,7 +1397,7 @@ ORDER BY CourseCount DESC;`}
                       <div className="bg-green-900/20 border border-green-500/30 p-4 rounded">
                         <p className="text-sm text-green-300 font-bold mb-2">📊 Output:</p>
                         <pre className="text-green-200 font-mono text-xs">
-{`Name          | CourseCount
+                          {`Name          | CourseCount
 --------------|-------------
 Alice         | 2
 Bob           | 2
@@ -1479,19 +1433,19 @@ Explanation:
                   <h2 className="text-3xl font-bold text-white mb-6">3. RIGHT JOIN (RIGHT OUTER JOIN)</h2>
                   <div className="space-y-6">
                     <p className="text-lg text-gray-300 leading-relaxed">
-                      <strong className="text-white">RIGHT JOIN</strong> is the mirror opposite of LEFT JOIN. It returns ALL rows from the right table (the table mentioned second), 
+                      <strong className="text-white">RIGHT JOIN</strong> is the mirror opposite of LEFT JOIN. It returns ALL rows from the right table (the table mentioned second),
                       and the matching rows from the left table. When there&apos;s no match in the left table, NULL values are returned for all left table columns.
                     </p>
-                    
+
                     <div className="bg-orange-900/20 border border-orange-500/30 p-6 rounded-xl">
                       <h4 className="text-lg font-bold text-orange-300 mb-3">💡 Important Note</h4>
                       <p className="text-gray-300">
-                        RIGHT JOIN is less commonly used than LEFT JOIN because you can achieve the same result by swapping the table order and using LEFT JOIN. 
-                        For example, <code className="text-white bg-gray-800 px-2 py-1 rounded">A RIGHT JOIN B</code> is equivalent to <code className="text-white bg-gray-800 px-2 py-1 rounded">B LEFT JOIN A</code>. 
+                        RIGHT JOIN is less commonly used than LEFT JOIN because you can achieve the same result by swapping the table order and using LEFT JOIN.
+                        For example, <code className="text-white bg-gray-800 px-2 py-1 rounded">A RIGHT JOIN B</code> is equivalent to <code className="text-white bg-gray-800 px-2 py-1 rounded">B LEFT JOIN A</code>.
                         However, understanding RIGHT JOIN helps you read queries written by others and provides flexibility in query construction.
                       </p>
                     </div>
-                  
+
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-yellow-400 mb-4">RIGHT JOIN Example</h3>
                       <p className="text-gray-300 mb-4">
@@ -1499,7 +1453,7 @@ Explanation:
                       </p>
                       <div className="bg-gray-950 p-4 rounded mb-3">
                         <pre className="text-white font-mono text-sm">
-{`SELECT e.CourseName, s.Name AS StudentName
+                          {`SELECT e.CourseName, s.Name AS StudentName
 FROM Students s
 RIGHT JOIN Enrollments e ON s.StudentID = e.StudentID;`}
                         </pre>
@@ -1507,7 +1461,7 @@ RIGHT JOIN Enrollments e ON s.StudentID = e.StudentID;`}
                       <div className="bg-green-900/20 border border-green-500/30 p-4 rounded">
                         <p className="text-sm text-green-300 font-bold mb-2">📊 Output:</p>
                         <pre className="text-green-200 font-mono text-xs">
-{`CourseName         | StudentName
+                          {`CourseName         | StudentName
 -------------------|-------------
 Database Systems   | Alice
 Web Development    | Alice
@@ -1535,7 +1489,7 @@ Explanation:
                       </p>
                       <div className="bg-gray-950 p-4 rounded mb-3">
                         <pre className="text-white font-mono text-sm">
-{`-- Find courses with NO students enrolled
+                          {`-- Find courses with NO students enrolled
 SELECT e.CourseName, e.Credits
 FROM Students s
 RIGHT JOIN Enrollments e ON s.StudentID = e.StudentID
@@ -1545,7 +1499,7 @@ WHERE s.StudentID IS NULL;`}
                       <div className="bg-green-900/20 border border-green-500/30 p-4 rounded">
                         <p className="text-sm text-green-300 font-bold mb-2">📊 Output:</p>
                         <pre className="text-green-200 font-mono text-xs">
-{`CourseName         | Credits
+                          {`CourseName         | Credits
 -------------------|--------
 Machine Learning   | 4
 Calculus II        | 3
@@ -1579,11 +1533,11 @@ Explanation:
                   <h2 className="text-3xl font-bold text-white mb-6">4. FULL OUTER JOIN - Complete Data View</h2>
                   <div className="space-y-6">
                     <p className="text-lg text-gray-300 leading-relaxed">
-                      <strong className="text-white">FULL OUTER JOIN</strong> (or simply FULL JOIN) is the most inclusive type of JOIN. 
-                      It returns ALL rows from BOTH tables - combining the results of LEFT JOIN and RIGHT JOIN. When there&apos;s no match, 
+                      <strong className="text-white">FULL OUTER JOIN</strong> (or simply FULL JOIN) is the most inclusive type of JOIN.
+                      It returns ALL rows from BOTH tables - combining the results of LEFT JOIN and RIGHT JOIN. When there&apos;s no match,
                       NULL values are returned for the non-matching table&apos;s columns.
                     </p>
-                    
+
                     <div className="bg-purple-900/20 border border-purple-500/30 p-6 rounded-xl">
                       <h4 className="text-lg font-bold text-purple-300 mb-3">🎯 When to Use FULL OUTER JOIN</h4>
                       <p className="text-gray-300 mb-3">Use FULL OUTER JOIN when you need a complete picture of all data from both tables:</p>
@@ -1594,7 +1548,7 @@ Explanation:
                         <li>• Identifying orphaned records in either table</li>
                       </ul>
                     </div>
-                  
+
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-yellow-400 mb-4">FULL OUTER JOIN Example</h3>
                       <p className="text-gray-300 mb-4">
@@ -1602,7 +1556,7 @@ Explanation:
                       </p>
                       <div className="bg-gray-950 p-4 rounded mb-3">
                         <pre className="text-white font-mono text-sm">
-{`SELECT s.Name AS StudentName, e.CourseName
+                          {`SELECT s.Name AS StudentName, e.CourseName
 FROM Students s
 FULL OUTER JOIN Enrollments e ON s.StudentID = e.StudentID;`}
                         </pre>
@@ -1610,7 +1564,7 @@ FULL OUTER JOIN Enrollments e ON s.StudentID = e.StudentID;`}
                       <div className="bg-green-900/20 border border-green-500/30 p-4 rounded">
                         <p className="text-sm text-green-300 font-bold mb-2">📊 Output:</p>
                         <pre className="text-green-200 font-mono text-xs">
-{`StudentName   | CourseName
+                          {`StudentName   | CourseName
 --------------|------------------
 Alice         | Database Systems
 Alice         | Web Development
@@ -1640,7 +1594,7 @@ Explanation:
                       </p>
                       <div className="bg-gray-950 p-4 rounded mt-3">
                         <pre className="text-white font-mono text-sm">
-{`-- FULL OUTER JOIN workaround for MySQL
+                          {`-- FULL OUTER JOIN workaround for MySQL
 SELECT s.Name, e.CourseName FROM Students s
 LEFT JOIN Enrollments e ON s.StudentID = e.StudentID
 UNION
@@ -1668,15 +1622,15 @@ RIGHT JOIN Enrollments e ON s.StudentID = e.StudentID;`}
                   <h2 className="text-3xl font-bold text-white mb-6">5. CROSS JOIN - Cartesian Product</h2>
                   <div className="space-y-6">
                     <p className="text-lg text-gray-300 leading-relaxed">
-                      <strong className="text-white">CROSS JOIN</strong> produces the <strong className="text-white">Cartesian product</strong> of two tables. 
-                      This means every row from the first table is combined with every row from the second table. If Table A has 3 rows and Table B has 4 rows, 
+                      <strong className="text-white">CROSS JOIN</strong> produces the <strong className="text-white">Cartesian product</strong> of two tables.
+                      This means every row from the first table is combined with every row from the second table. If Table A has 3 rows and Table B has 4 rows,
                       the result will have 3 × 4 = 12 rows!
                     </p>
-                    
+
                     <div className="bg-red-900/20 border border-red-500/30 p-6 rounded-xl">
                       <h4 className="text-lg font-bold text-red-300 mb-3">⚠️ Warning: CROSS JOIN Can Be Dangerous!</h4>
                       <p className="text-gray-300 mb-3">
-                        CROSS JOIN doesn&apos;t use an ON clause because it doesn&apos;t match rows - it combines ALL possible pairs. 
+                        CROSS JOIN doesn&apos;t use an ON clause because it doesn&apos;t match rows - it combines ALL possible pairs.
                         This can result in HUGE result sets. For example:
                       </p>
                       <ul className="text-gray-300 space-y-2 pl-4">
@@ -1686,7 +1640,7 @@ RIGHT JOIN Enrollments e ON s.StudentID = e.StudentID;`}
                         <li>• Use with extreme caution</li>
                       </ul>
                     </div>
-                  
+
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-yellow-400 mb-4">CROSS JOIN Example</h3>
                       <p className="text-gray-300 mb-4">
@@ -1694,7 +1648,7 @@ RIGHT JOIN Enrollments e ON s.StudentID = e.StudentID;`}
                       </p>
                       <div className="bg-gray-950 p-4 rounded mb-3">
                         <pre className="text-white font-mono text-sm">
-{`SELECT s.Name, c.CourseName
+                          {`SELECT s.Name, c.CourseName
 FROM Students s
 CROSS JOIN Courses c;`}
                         </pre>
@@ -1702,7 +1656,7 @@ CROSS JOIN Courses c;`}
                       <div className="bg-green-900/20 border border-green-500/30 p-4 rounded">
                         <p className="text-sm text-green-300 font-bold mb-2">📊 Output (assuming 3 students and 4 courses):</p>
                         <pre className="text-green-200 font-mono text-xs">
-{`Name          | CourseName
+                          {`Name          | CourseName
 --------------|------------------
 Alice         | Database Systems
 Alice         | Web Development
@@ -1738,7 +1692,7 @@ Explanation:
                           <p className="text-white font-bold mb-2">1. Generating Test Data</p>
                           <p className="text-gray-300 text-sm mb-3">Create all possible combinations for testing scenarios</p>
                           <pre className="text-white font-mono text-xs">
-{`-- Generate all size-color combinations for products
+                            {`-- Generate all size-color combinations for products
 SELECT s.size, c.color
 FROM sizes s CROSS JOIN colors c;
 
@@ -1749,7 +1703,7 @@ FROM sizes s CROSS JOIN colors c;
                           <p className="text-white font-bold mb-2">2. Calendar Generation</p>
                           <p className="text-gray-300 text-sm mb-3">Create a complete date range by combining dates with time slots</p>
                           <pre className="text-white font-mono text-xs">
-{`-- Generate hourly schedule for a week
+                            {`-- Generate hourly schedule for a week
 SELECT d.date, t.time_slot
 FROM dates d CROSS JOIN time_slots t;`}
                           </pre>
@@ -1776,10 +1730,10 @@ FROM dates d CROSS JOIN time_slots t;`}
                   <p className="text-lg text-gray-300 mb-6">
                     You can join more than two tables in a single query.
                   </p>
-                  
+
                   <div className="bg-gray-900 p-6 rounded-xl mb-6">
                     <pre className="text-white font-mono text-sm overflow-x-auto">
-{`-- Join three tables
+                      {`-- Join three tables
 SELECT 
     s.Name,
     c.CourseName,
@@ -1809,7 +1763,7 @@ WHERE e.salary > 60000;`}
                     A <strong>Subquery</strong> (or nested query) is a query inside another SQL query.
                     It helps break complex problems into smaller steps.
                   </p>
-                  
+
                   <div className="bg-gray-800 p-6 rounded-xl">
                     <ul className="text-gray-300 space-y-2">
                       <li>• <strong>Outer Query:</strong> The main query</li>
@@ -1825,10 +1779,10 @@ WHERE e.salary > 60000;`}
                   <p className="text-lg text-gray-300 mb-6">
                     Used for filtering based on another query's result.
                   </p>
-                  
+
                   <div className="bg-gray-900 p-6 rounded-xl mb-6">
                     <pre className="text-white font-mono text-sm overflow-x-auto">
-{`-- Find students with above-average marks
+                      {`-- Find students with above-average marks
 SELECT Name, Marks
 FROM Students
 WHERE Marks > (SELECT AVG(Marks) FROM Students);
@@ -1860,10 +1814,10 @@ WHERE EXISTS (
                   <p className="text-lg text-gray-300 mb-6">
                     Compute values on the fly for each row.
                   </p>
-                  
+
                   <div className="bg-gray-900 p-6 rounded-xl mb-6">
                     <pre className="text-white font-mono text-sm overflow-x-auto">
-{`-- Count enrolled courses for each student
+                      {`-- Count enrolled courses for each student
 SELECT 
     Name,
     (SELECT COUNT(*) 
@@ -1888,10 +1842,10 @@ FROM employees;`}
                   <p className="text-lg text-gray-300 mb-6">
                     Acts like a temporary table (also called inline view or derived table).
                   </p>
-                  
+
                   <div className="bg-gray-900 p-6 rounded-xl mb-6">
                     <pre className="text-white font-mono text-sm overflow-x-auto">
-{`-- Use subquery result as a table
+                      {`-- Use subquery result as a table
 SELECT Temp.StudentID, Temp.TotalCourses
 FROM (
     SELECT StudentID, COUNT(*) AS TotalCourses
@@ -1918,14 +1872,14 @@ WHERE avg_salary > 60000;`}
                 {/* Correlated vs Non-Correlated */}
                 <div className="bg-gray-800 p-8 rounded-2xl">
                   <h2 className="text-3xl font-bold text-white mb-6">Correlated vs Non-Correlated Subqueries</h2>
-                  
+
                   <div className="grid md:grid-cols-2 gap-6 mb-6">
                     <div className="bg-gray-700 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-yellow-400 mb-4">Non-Correlated Subquery</h3>
                       <p className="text-gray-300 mb-3">Independent query. Executes once.</p>
                       <div className="bg-gray-900 p-4 rounded">
                         <pre className="text-white font-mono text-sm overflow-x-auto">
-{`SELECT Name
+                          {`SELECT Name
 FROM Students
 WHERE Age > (
     SELECT AVG(Age) 
@@ -1940,7 +1894,7 @@ WHERE Age > (
                       <p className="text-gray-300 mb-3">Dependent on outer query. Runs per row.</p>
                       <div className="bg-gray-900 p-4 rounded">
                         <pre className="text-white font-mono text-sm overflow-x-auto">
-{`SELECT Name
+                          {`SELECT Name
 FROM Students s
 WHERE EXISTS (
     SELECT 1
@@ -1972,15 +1926,15 @@ WHERE EXISTS (
               <p className="text-lg text-gray-300 mb-8 text-center">
                 Master advanced SQL concepts including Window Functions, CTEs, Set Operations, and more
               </p>
-              
+
               <div className="max-w-6xl mx-auto">
                 {/* Window Functions */}
                 <div className="bg-gradient-to-r from-purple-900/20 to-blue-900/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-white mb-6">🔮 Window Functions - Advanced Analytics</h2>
                   <div className="space-y-6">
                     <p className="text-lg text-gray-300 leading-relaxed">
-                      <strong className="text-white">Window functions</strong> (also called <strong className="text-white">analytic functions</strong>) are one of the most powerful features in modern SQL. 
-                      They perform calculations across a set of table rows that are somehow related to the current row, similar to aggregate functions, 
+                      <strong className="text-white">Window functions</strong> (also called <strong className="text-white">analytic functions</strong>) are one of the most powerful features in modern SQL.
+                      They perform calculations across a set of table rows that are somehow related to the current row, similar to aggregate functions,
                       but <strong className="text-white">WITHOUT collapsing rows into groups</strong>. This means you can see both individual row details AND aggregate calculations in the same result set!
                     </p>
 
@@ -2039,11 +1993,11 @@ WHERE EXISTS (
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="bg-gray-800 p-8 rounded-2xl mb-8">
                     <h3 className="text-2xl font-bold text-white mb-6">Ranking Window Functions</h3>
                     <p className="text-gray-300 mb-6 leading-relaxed">
-                      Ranking functions assign a rank or row number to each row within a partition of a result set. They are essential for finding &quot;top N&quot; records, 
+                      Ranking functions assign a rank or row number to each row within a partition of a result set. They are essential for finding &quot;top N&quot; records,
                       handling ties, and creating leaderboards or rankings.
                     </p>
 
@@ -2076,7 +2030,7 @@ WHERE EXISTS (
                       </p>
                       <div className="bg-gray-950 p-4 rounded mb-3">
                         <pre className="text-white font-mono text-sm">
-{`SELECT 
+                          {`SELECT 
     first_name,
     salary,
     ROW_NUMBER() OVER (ORDER BY salary DESC) AS row_num,
@@ -2089,7 +2043,7 @@ FROM employees;`}
                       <div className="bg-green-900/20 border border-green-500/30 p-4 rounded">
                         <p className="text-sm text-green-300 font-bold mb-2">📊 Output:</p>
                         <pre className="text-green-200 font-mono text-xs">
-{`first_name | salary | row_num | rank | dense_rank | quartile
+                          {`first_name | salary | row_num | rank | dense_rank | quartile
 -----------|--------|---------|------|------------|----------
 Alice      | 95000  | 1       | 1    | 1          | 1
 Bob        | 90000  | 2       | 2    | 2          | 1
@@ -2115,12 +2069,12 @@ Notice: Bob and Charlie have same salary (90000) - see how each function handles
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h4 className="text-xl font-bold text-yellow-400 mb-4">PARTITION BY - Grouping Without Collapsing</h4>
                       <p className="text-gray-300 mb-4">
-                        PARTITION BY divides the result set into partitions and the window function is applied to each partition independently. 
+                        PARTITION BY divides the result set into partitions and the window function is applied to each partition independently.
                         Think of it as creating separate &quot;mini-tables&quot; for each group, then ranking within each group.
                       </p>
                       <div className="bg-gray-950 p-4 rounded mb-3">
                         <pre className="text-white font-mono text-sm">
-{`-- Rank employees within their department
+                          {`-- Rank employees within their department
 SELECT 
     department,
     first_name,
@@ -2132,7 +2086,7 @@ FROM employees;`}
                       <div className="bg-green-900/20 border border-green-500/30 p-4 rounded">
                         <p className="text-sm text-green-300 font-bold mb-2">📊 Output:</p>
                         <pre className="text-green-200 font-mono text-xs">
-{`department  | first_name | salary | dept_rank
+                          {`department  | first_name | salary | dept_rank
 ------------|------------|--------|----------
 Engineering | Alice      | 95000  | 1
 Engineering | Bob        | 90000  | 2
@@ -2160,7 +2114,7 @@ Explanation:
                     <h3 className="text-2xl font-bold text-white mb-6">Aggregate Window Functions</h3>
                     <div className="space-y-6">
                       <p className="text-gray-300 leading-relaxed mb-4">
-                        You can use traditional aggregate functions (SUM, AVG, COUNT, MIN, MAX) as window functions. The key difference is that with window functions, 
+                        You can use traditional aggregate functions (SUM, AVG, COUNT, MIN, MAX) as window functions. The key difference is that with window functions,
                         <strong className="text-white"> you keep all the individual rows</strong> while also showing aggregate calculations. This is impossible with regular GROUP BY.
                       </p>
 
@@ -2181,7 +2135,7 @@ Explanation:
                         </p>
                         <div className="bg-gray-950 p-4 rounded mb-3">
                           <pre className="text-white font-mono text-sm">
-{`SELECT 
+                            {`SELECT 
     first_name,
     salary,
     department,
@@ -2193,7 +2147,7 @@ FROM employees;`}
                         <div className="bg-green-900/20 border border-green-500/30 p-4 rounded">
                           <p className="text-sm text-green-300 font-bold mb-2">📊 Output:</p>
                           <pre className="text-green-200 font-mono text-xs">
-{`first_name | salary | department  | dept_avg | diff_from_avg
+                            {`first_name | salary | department  | dept_avg | diff_from_avg
 -----------|--------|-------------|----------|---------------
 Alice      | 95000  | Engineering | 90000    | +5000
 Bob        | 90000  | Engineering | 90000    | 0
@@ -2219,12 +2173,12 @@ Explanation:
                       <div className="bg-gray-900 p-6 rounded-xl">
                         <h4 className="text-xl font-bold text-yellow-400 mb-4">Running Total (Cumulative Sum)</h4>
                         <p className="text-gray-300 mb-4">
-                          A running total shows the cumulative sum up to the current row. Perfect for tracking cumulative sales, expenses, or any sequential accumulation. 
+                          A running total shows the cumulative sum up to the current row. Perfect for tracking cumulative sales, expenses, or any sequential accumulation.
                           This is achieved by ordering rows and summing from the first row to the current row.
                         </p>
                         <div className="bg-gray-950 p-4 rounded mb-3">
                           <pre className="text-white font-mono text-sm">
-{`SELECT 
+                            {`SELECT 
     order_date,
     amount,
     SUM(amount) OVER (ORDER BY order_date) AS running_total
@@ -2234,7 +2188,7 @@ FROM orders;`}
                         <div className="bg-green-900/20 border border-green-500/30 p-4 rounded">
                           <p className="text-sm text-green-300 font-bold mb-2">📊 Output:</p>
                           <pre className="text-green-200 font-mono text-xs">
-{`order_date  | amount | running_total
+                            {`order_date  | amount | running_total
 ------------|--------|---------------
 2024-01-01  | 100    | 100
 2024-01-02  | 150    | 250
@@ -2261,7 +2215,7 @@ Explanation:
                     <h3 className="text-2xl font-bold text-white mb-6">Value Window Functions (LAG, LEAD, FIRST_VALUE, LAST_VALUE)</h3>
                     <div className="space-y-6">
                       <p className="text-gray-300 leading-relaxed mb-4">
-                        Value window functions allow you to access data from other rows in the result set without using a self-join. 
+                        Value window functions allow you to access data from other rows in the result set without using a self-join.
                         This is extremely powerful for comparing current row values with previous/next rows or with the first/last values in a partition.
                       </p>
 
@@ -2281,7 +2235,7 @@ Explanation:
                         </p>
                         <div className="bg-gray-950 p-4 rounded mb-3">
                           <pre className="text-white font-mono text-sm">
-{`SELECT 
+                            {`SELECT 
     month,
     sales,
     LAG(sales, 1) OVER (ORDER BY month) AS prev_month_sales,
@@ -2292,7 +2246,7 @@ FROM monthly_sales;`}
                         <div className="bg-green-900/20 border border-green-500/30 p-4 rounded">
                           <p className="text-sm text-green-300 font-bold mb-2">📊 Output:</p>
                           <pre className="text-green-200 font-mono text-xs">
-{`month   | sales  | prev_month_sales | growth
+                            {`month   | sales  | prev_month_sales | growth
 --------|--------|------------------|--------
 2024-01 | 10000  | NULL             | NULL
 2024-02 | 12000  | 10000            | +2000
@@ -2315,12 +2269,12 @@ Explanation:
                       <div className="bg-gray-900 p-6 rounded-xl">
                         <h4 className="text-xl font-bold text-yellow-400 mb-4">FIRST_VALUE and LAST_VALUE</h4>
                         <p className="text-gray-300 mb-4">
-                          These functions return the first or last value in an ordered partition. Useful for comparing each row against the highest/lowest value, 
+                          These functions return the first or last value in an ordered partition. Useful for comparing each row against the highest/lowest value,
                           or finding the difference from the baseline (first value).
                         </p>
                         <div className="bg-gray-950 p-4 rounded mb-3">
                           <pre className="text-white font-mono text-sm">
-{`SELECT 
+                            {`SELECT 
     first_name,
     salary,
     FIRST_VALUE(salary) OVER (ORDER BY salary DESC) AS highest_salary,
@@ -2338,7 +2292,7 @@ FROM employees;`}
                         <div className="bg-green-900/20 border border-green-500/30 p-4 rounded">
                           <p className="text-sm text-green-300 font-bold mb-2">📊 Output:</p>
                           <pre className="text-green-200 font-mono text-xs">
-{`first_name | salary | highest_salary | lowest_salary | difference_from_lowest
+                            {`first_name | salary | highest_salary | lowest_salary | difference_from_lowest
 -----------|--------|----------------|---------------|----------------------
 Alice      | 95000  | 95000          | 65000         | 30000
 Bob        | 90000  | 95000          | 65000         | 25000
@@ -2390,7 +2344,7 @@ Explanation:
                   <h2 className="text-3xl font-bold text-white mb-6">📝 Common Table Expressions (CTEs)</h2>
                   <div className="space-y-6">
                     <p className="text-lg text-gray-300 leading-relaxed">
-                      A <strong className="text-white">Common Table Expression (CTE)</strong> is a temporary named result set that you can reference within a SELECT, INSERT, UPDATE, or DELETE statement. 
+                      A <strong className="text-white">Common Table Expression (CTE)</strong> is a temporary named result set that you can reference within a SELECT, INSERT, UPDATE, or DELETE statement.
                       CTEs are defined using the <code className="text-white bg-gray-800 px-2 py-1 rounded">WITH</code> clause and exist only for the duration of the query.
                     </p>
 
@@ -2409,29 +2363,29 @@ Explanation:
                       <div className="grid md:grid-cols-3 gap-4 text-sm">
                         <div className="bg-gray-800 p-3 rounded">
                           <p className="font-bold text-white mb-1">CTE</p>
-                          <p className="text-gray-300">• Exists only during query<br/>• More readable<br/>• Can be recursive<br/>• Not stored physically</p>
+                          <p className="text-gray-300">• Exists only during query<br />• More readable<br />• Can be recursive<br />• Not stored physically</p>
                         </div>
                         <div className="bg-gray-800 p-3 rounded">
                           <p className="font-bold text-white mb-1">Subquery</p>
-                          <p className="text-gray-300">• Inline, anonymous<br/>• Can be hard to read<br/>• No recursion<br/>• Used once</p>
+                          <p className="text-gray-300">• Inline, anonymous<br />• Can be hard to read<br />• No recursion<br />• Used once</p>
                         </div>
                         <div className="bg-gray-800 p-3 rounded">
                           <p className="font-bold text-white mb-1">Temp Table</p>
-                          <p className="text-gray-300">• Physically stored<br/>• Persists in session<br/>• Can be indexed<br/>• More overhead</p>
+                          <p className="text-gray-300">• Physically stored<br />• Persists in session<br />• Can be indexed<br />• More overhead</p>
                         </div>
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="bg-gray-900 p-6 rounded-xl mb-6">
                     <h3 className="text-xl font-bold text-yellow-400 mb-4">Basic CTE Example</h3>
                     <p className="text-gray-300 mb-4">
-                      A basic CTE allows you to define a named subquery at the beginning of your SQL statement, then reference it as if it were a table. 
+                      A basic CTE allows you to define a named subquery at the beginning of your SQL statement, then reference it as if it were a table.
                       This makes complex queries much more readable by separating logic into distinct, named steps.
                     </p>
                     <div className="bg-gray-950 p-4 rounded mb-3">
                       <pre className="text-white font-mono text-sm">
-{`WITH department_stats AS (
+                        {`WITH department_stats AS (
     SELECT 
         department,
         COUNT(*) AS employee_count,
@@ -2453,7 +2407,7 @@ ORDER BY avg_salary DESC;`}
                     <div className="bg-green-900/20 border border-green-500/30 p-4 rounded">
                       <p className="text-sm text-green-300 font-bold mb-2">📊 Output:</p>
                       <pre className="text-green-200 font-mono text-xs">
-{`department  | employee_count | avg_salary | max_salary
+                        {`department  | employee_count | avg_salary | max_salary
 ------------|----------------|------------|------------
 Engineering | 15             | 85000.00   | 120000
 Sales       | 12             | 72000.00   | 95000
@@ -2474,12 +2428,12 @@ Step 2: Main query filters departments with avg > 60000
                   <div className="bg-gray-900 p-6 rounded-xl mb-6">
                     <h3 className="text-xl font-bold text-yellow-400 mb-4">Multiple CTEs - Chaining Logic</h3>
                     <p className="text-gray-300 mb-4">
-                      You can define multiple CTEs in a single query, separated by commas. Each CTE can reference CTEs defined before it, 
+                      You can define multiple CTEs in a single query, separated by commas. Each CTE can reference CTEs defined before it,
                       allowing you to build complex logic step-by-step. This creates a clear data transformation pipeline.
                     </p>
                     <div className="bg-gray-950 p-4 rounded mb-3">
                       <pre className="text-white font-mono text-sm">
-{`WITH 
+                        {`WITH 
     -- Step 1: Filter high earners
     high_earners AS (
         SELECT * FROM employees WHERE salary > 80000
@@ -2505,7 +2459,7 @@ ORDER BY dt.high_earner_count DESC;`}
                     <div className="bg-green-900/20 border border-green-500/30 p-4 rounded">
                       <p className="text-sm text-green-300 font-bold mb-2">📊 Output:</p>
                       <pre className="text-green-200 font-mono text-xs">
-{`department  | high_earner_count | avg_salary
+                        {`department  | high_earner_count | avg_salary
 ------------|-------------------|------------
 Engineering | 8                 | 95000.00
 Sales       | 5                 | 87500.00
@@ -2529,8 +2483,8 @@ Step 3: Final SELECT queries department_totals and sorts by count
                     <h3 className="text-xl font-bold text-yellow-400 mb-4">Recursive CTE - Hierarchical Data</h3>
                     <div className="space-y-4">
                       <p className="text-gray-300 leading-relaxed">
-                        <strong className="text-white">Recursive CTEs</strong> are one of SQL&apos;s most powerful features. They allow you to query hierarchical or tree-structured data 
-                        by <strong className="text-white">calling themselves</strong> repeatedly until a condition is met. This is essential for organizational charts, bill of materials, 
+                        <strong className="text-white">Recursive CTEs</strong> are one of SQL&apos;s most powerful features. They allow you to query hierarchical or tree-structured data
+                        by <strong className="text-white">calling themselves</strong> repeatedly until a condition is met. This is essential for organizational charts, bill of materials,
                         file systems, category trees, and any parent-child relationships.
                       </p>
 
@@ -2547,7 +2501,7 @@ Step 3: Final SELECT queries department_totals and sorts by count
                       <div className="bg-gray-950 p-4 rounded mb-3">
                         <p className="text-gray-400 text-sm mb-2">Example: Build organizational hierarchy showing reporting structure</p>
                         <pre className="text-white font-mono text-sm">
-{`WITH RECURSIVE employee_hierarchy AS (
+                          {`WITH RECURSIVE employee_hierarchy AS (
     -- Base case: CEO and top executives (no manager)
     SELECT 
         employee_id,
@@ -2578,7 +2532,7 @@ ORDER BY level, first_name;`}
                       <div className="bg-green-900/20 border border-green-500/30 p-4 rounded">
                         <p className="text-sm text-green-300 font-bold mb-2">📊 Output:</p>
                         <pre className="text-green-200 font-mono text-xs">
-{`level | first_name | hierarchy_path
+                          {`level | first_name | hierarchy_path
 ------|------------|--------------------------------
 0     | John       | John
 1     | Alice      | John -> Alice
@@ -2631,7 +2585,7 @@ Iteration 5: No more employees → recursion stops
                   <h2 className="text-3xl font-bold text-white mb-6">🔢 SQL Set Operations</h2>
                   <div className="space-y-6">
                     <p className="text-lg text-gray-300 leading-relaxed">
-                      <strong className="text-white">Set operations</strong> in SQL are based on mathematical set theory and allow you to combine, compare, or contrast the results of two or more SELECT queries. 
+                      <strong className="text-white">Set operations</strong> in SQL are based on mathematical set theory and allow you to combine, compare, or contrast the results of two or more SELECT queries.
                       Think of sets as collections of unique items - set operations let you find unions (combine), intersections (common items), and differences between these collections.
                     </p>
 
@@ -2666,7 +2620,7 @@ Iteration 5: No more employees → recursion stops
                     <h3 className="text-2xl font-bold text-white mb-6">1. UNION - Combining Sets</h3>
                     <div className="space-y-6">
                       <p className="text-gray-300 leading-relaxed">
-                        <strong className="text-white">UNION</strong> combines the results of two or more SELECT statements and <strong className="text-white">removes duplicate rows</strong>. 
+                        <strong className="text-white">UNION</strong> combines the results of two or more SELECT statements and <strong className="text-white">removes duplicate rows</strong>.
                         It&apos;s like merging two lists and ensuring each item appears only once, even if it was in both original lists.
                       </p>
 
@@ -2677,7 +2631,7 @@ Iteration 5: No more employees → recursion stops
                         </p>
                         <div className="bg-gray-950 p-4 rounded mb-3">
                           <pre className="text-white font-mono text-sm">
-{`SELECT city FROM customers
+                            {`SELECT city FROM customers
 UNION
 SELECT city FROM suppliers;`}
                           </pre>
@@ -2685,7 +2639,7 @@ SELECT city FROM suppliers;`}
                         <div className="bg-green-900/20 border border-green-500/30 p-4 rounded">
                           <p className="text-sm text-green-300 font-bold mb-2">📊 Output:</p>
                           <pre className="text-green-200 font-mono text-xs">
-{`city
+                            {`city
 -------------
 New York      (in both customers AND suppliers)
 Los Angeles   (only in customers)
@@ -2715,7 +2669,7 @@ Explanation:
                     <h3 className="text-2xl font-bold text-white mb-6">2. UNION ALL - Including Duplicates</h3>
                     <div className="space-y-6">
                       <p className="text-gray-300 leading-relaxed">
-                        <strong className="text-white">UNION ALL</strong> combines results just like UNION, but <strong className="text-white">keeps all duplicate rows</strong>. 
+                        <strong className="text-white">UNION ALL</strong> combines results just like UNION, but <strong className="text-white">keeps all duplicate rows</strong>.
                         This is significantly faster than UNION because it doesn&apos;t need to identify and remove duplicates. Use UNION ALL when you know there are no duplicates or when you want to keep them.
                       </p>
 
@@ -2726,7 +2680,7 @@ Explanation:
                         </p>
                         <div className="bg-gray-950 p-4 rounded mb-3">
                           <pre className="text-white font-mono text-sm">
-{`SELECT city FROM customers
+                            {`SELECT city FROM customers
 UNION ALL
 SELECT city FROM suppliers;`}
                           </pre>
@@ -2734,7 +2688,7 @@ SELECT city FROM suppliers;`}
                         <div className="bg-green-900/20 border border-green-500/30 p-4 rounded">
                           <p className="text-sm text-green-300 font-bold mb-2">📊 Output:</p>
                           <pre className="text-green-200 font-mono text-xs">
-{`city
+                            {`city
 -------------
 New York      (from customers)
 Los Angeles   (from customers)
@@ -2768,7 +2722,7 @@ Explanation:
                           <p><strong className="text-white">UNION:</strong> Slower - Must sort and compare all rows to remove duplicates</p>
                           <p><strong className="text-white">UNION ALL:</strong> Faster - Simply appends result sets without checking for duplicates</p>
                           <p className="text-sm mt-3">
-                            💡 Best Practice: Use UNION ALL when possible, and only use UNION when you specifically need to eliminate duplicates. 
+                            💡 Best Practice: Use UNION ALL when possible, and only use UNION when you specifically need to eliminate duplicates.
                             For large datasets, UNION can be significantly slower.
                           </p>
                         </div>
@@ -2780,8 +2734,8 @@ Explanation:
                     <h3 className="text-2xl font-bold text-white mb-6">3. INTERSECT - Finding Common Elements</h3>
                     <div className="space-y-6">
                       <p className="text-gray-300 leading-relaxed">
-                        <strong className="text-white">INTERSECT</strong> returns only the rows that are present in BOTH query results - the intersection of two sets. 
-                        This is perfect for finding commonalities: customers who are also suppliers, students enrolled in both Spring AND Fall semesters, 
+                        <strong className="text-white">INTERSECT</strong> returns only the rows that are present in BOTH query results - the intersection of two sets.
+                        This is perfect for finding commonalities: customers who are also suppliers, students enrolled in both Spring AND Fall semesters,
                         products available in both online AND physical stores.
                       </p>
 
@@ -2792,7 +2746,7 @@ Explanation:
                         </p>
                         <div className="bg-gray-950 p-4 rounded mb-3">
                           <pre className="text-white font-mono text-sm">
-{`SELECT city FROM customers
+                            {`SELECT city FROM customers
 INTERSECT
 SELECT city FROM suppliers;`}
                           </pre>
@@ -2800,7 +2754,7 @@ SELECT city FROM suppliers;`}
                         <div className="bg-green-900/20 border border-green-500/30 p-4 rounded">
                           <p className="text-sm text-green-300 font-bold mb-2">📊 Output:</p>
                           <pre className="text-green-200 font-mono text-xs">
-{`city
+                            {`city
 -------------
 New York
 Chicago
@@ -2842,7 +2796,7 @@ Explanation:
                     <h3 className="text-2xl font-bold text-white mb-6">4. EXCEPT (MINUS) - Finding Differences</h3>
                     <div className="space-y-6">
                       <p className="text-gray-300 leading-relaxed">
-                        <strong className="text-white">EXCEPT</strong> (called <strong className="text-white">MINUS</strong> in Oracle) returns rows from the first query that are NOT present in the second query. 
+                        <strong className="text-white">EXCEPT</strong> (called <strong className="text-white">MINUS</strong> in Oracle) returns rows from the first query that are NOT present in the second query.
                         This is the set difference operation - finding what&apos;s unique to the first set. Essential for identifying gaps, missing data, or exclusive records.
                       </p>
 
@@ -2853,7 +2807,7 @@ Explanation:
                         </p>
                         <div className="bg-gray-950 p-4 rounded mb-3">
                           <pre className="text-white font-mono text-sm">
-{`SELECT city FROM customers
+                            {`SELECT city FROM customers
 EXCEPT
 SELECT city FROM suppliers;`}
                           </pre>
@@ -2861,7 +2815,7 @@ SELECT city FROM suppliers;`}
                         <div className="bg-green-900/20 border border-green-500/30 p-4 rounded">
                           <p className="text-sm text-green-300 font-bold mb-2">📊 Output:</p>
                           <pre className="text-green-200 font-mono text-xs">
-{`city
+                            {`city
 -------------
 Los Angeles
 Phoenix
@@ -2895,14 +2849,14 @@ Business Insight: These are potential markets to find new suppliers!`}
                           <div className="bg-gray-950 p-4 rounded">
                             <p className="text-white font-bold mb-2">Customers EXCEPT Suppliers</p>
                             <pre className="text-green-200 font-mono text-xs">
-{`Result: Los Angeles, Phoenix, Miami
+                              {`Result: Los Angeles, Phoenix, Miami
 (Cities with customers but no suppliers)`}
                             </pre>
                           </div>
                           <div className="bg-gray-950 p-4 rounded">
                             <p className="text-white font-bold mb-2">Suppliers EXCEPT Customers</p>
                             <pre className="text-green-200 font-mono text-xs">
-{`Result: Houston, Seattle
+                              {`Result: Houston, Seattle
 (Cities with suppliers but no customers)`}
                             </pre>
                           </div>
@@ -2915,8 +2869,8 @@ Business Insight: These are potential markets to find new suppliers!`}
                       <div className="bg-yellow-900/20 border border-yellow-500/30 p-6 rounded-xl">
                         <h4 className="text-lg font-bold text-yellow-300 mb-3">💡 Database Compatibility Note</h4>
                         <p className="text-gray-300 text-sm">
-                          <strong className="text-white">MySQL:</strong> Does NOT support INTERSECT or EXCEPT. Use INNER JOIN or NOT EXISTS as workarounds.<br/>
-                          <strong className="text-white">Oracle:</strong> Uses MINUS instead of EXCEPT (same functionality).<br/>
+                          <strong className="text-white">MySQL:</strong> Does NOT support INTERSECT or EXCEPT. Use INNER JOIN or NOT EXISTS as workarounds.<br />
+                          <strong className="text-white">Oracle:</strong> Uses MINUS instead of EXCEPT (same functionality).<br />
                           <strong className="text-white">PostgreSQL, SQL Server:</strong> Support all set operations natively.
                         </p>
                       </div>
@@ -2947,8 +2901,8 @@ Business Insight: These are potential markets to find new suppliers!`}
                   <h2 className="text-3xl font-bold text-white mb-6">📝 SQL String Functions - Text Manipulation</h2>
                   <div className="space-y-6">
                     <p className="text-lg text-gray-300 leading-relaxed">
-                      <strong className="text-white">String functions</strong> are built-in SQL functions for manipulating and analyzing text data. 
-                      They&apos;re essential for data cleaning (removing extra spaces), formatting output (creating full names), searching within text, and transforming string values. 
+                      <strong className="text-white">String functions</strong> are built-in SQL functions for manipulating and analyzing text data.
+                      They&apos;re essential for data cleaning (removing extra spaces), formatting output (creating full names), searching within text, and transforming string values.
                       Every database provides these functions, though syntax may vary between MySQL, PostgreSQL, SQL Server, and Oracle.
                     </p>
 
@@ -2969,7 +2923,7 @@ Business Insight: These are potential markets to find new suppliers!`}
                       </p>
                       <div className="bg-gray-950 p-4 rounded mb-3">
                         <pre className="text-white font-mono text-sm">
-{`SELECT 
+                          {`SELECT 
     first_name,
     last_name,
     CONCAT(first_name, ' ', last_name) AS full_name
@@ -2979,7 +2933,7 @@ FROM employees;`}
                       <div className="bg-green-900/20 border border-green-500/30 p-4 rounded">
                         <p className="text-sm text-green-300 font-bold mb-2">📊 Output:</p>
                         <pre className="text-green-200 font-mono text-xs">
-{`first_name | last_name | full_name
+                          {`first_name | last_name | full_name
 -----------|-----------|-------------
 John       | Doe       | John Doe
 Jane       | Smith     | Jane Smith
@@ -2996,13 +2950,13 @@ Jane       | Smith     | Jane Smith
                       </p>
                       <div className="bg-gray-950 p-4 rounded mb-3">
                         <pre className="text-white font-mono text-sm">
-{`SELECT SUBSTRING('Database Systems', 1, 8) AS result;`}
+                          {`SELECT SUBSTRING('Database Systems', 1, 8) AS result;`}
                         </pre>
                       </div>
                       <div className="bg-green-900/20 border border-green-500/30 p-4 rounded">
                         <p className="text-sm text-green-300 font-bold mb-2">📊 Output:</p>
                         <pre className="text-green-200 font-mono text-xs">
-{`result
+                          {`result
 --------
 Database
 
@@ -3018,13 +2972,13 @@ Database
                       </p>
                       <div className="bg-gray-950 p-4 rounded mb-3">
                         <pre className="text-white font-mono text-sm">
-{`SELECT TRIM('   SQL   ') AS result;`}
+                          {`SELECT TRIM('   SQL   ') AS result;`}
                         </pre>
                       </div>
                       <div className="bg-green-900/20 border border-green-500/30 p-4 rounded">
                         <p className="text-sm text-green-300 font-bold mb-2">📊 Output:</p>
                         <pre className="text-green-200 font-mono text-xs">
-{`result
+                          {`result
 -----
 SQL
 
@@ -3040,7 +2994,7 @@ SQL
                       </p>
                       <div className="bg-gray-950 p-4 rounded mb-3">
                         <pre className="text-white font-mono text-sm">
-{`SELECT 
+                          {`SELECT 
     email,
     LOWER(email) AS standardized
 FROM users;`}
@@ -3049,7 +3003,7 @@ FROM users;`}
                       <div className="bg-green-900/20 border border-green-500/30 p-4 rounded">
                         <p className="text-sm text-green-300 font-bold mb-2">📊 Output:</p>
                         <pre className="text-green-200 font-mono text-xs">
-{`email           | standardized
+                          {`email           | standardized
 ----------------|------------------
 John@Email.COM  | john@email.com
 JANE@email.com  | jane@email.com
@@ -3067,10 +3021,10 @@ JANE@email.com  | jane@email.com
                   <p className="text-lg text-gray-300 mb-6">
                     Date and time functions are used for handling and manipulating dates and times.
                   </p>
-                  
+
                   <div className="bg-gray-900 p-6 rounded-xl mb-6">
                     <pre className="text-white font-mono text-sm overflow-x-auto">
-{`-- NOW() - Current date and time
+                      {`-- NOW() - Current date and time
 SELECT NOW();
 -- Example: 2025-08-24 09:30:00
 
@@ -3132,11 +3086,11 @@ SELECT DATE_FORMAT(NOW(), '%Y-%m-%d %H:%i:%s') AS formatted_date;`}
                   <p className="text-lg text-gray-300 mb-6">
                     CASE is like an IF-ELSE statement inside SQL queries. It implements conditional logic.
                   </p>
-                  
+
                   <div className="bg-gray-900 p-6 rounded-xl mb-6">
                     <h3 className="text-xl font-bold text-white mb-4">Basic CASE Syntax</h3>
                     <pre className="text-white font-mono text-sm overflow-x-auto">
-{`-- Simple CASE statement
+                      {`-- Simple CASE statement
 SELECT 
     name,
     salary,
@@ -3207,7 +3161,7 @@ GROUP BY department;`}
               <p className="text-lg text-gray-400 mb-8 text-center">
                 Build real-world database applications
               </p>
-              
+
               <div className="max-w-6xl mx-auto">
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                   <div className="bg-gradient-to-r from-gray-800/80 to-gray-900/80 p-6 rounded-2xl border border-gray-600">
@@ -3258,17 +3212,17 @@ GROUP BY department;`}
               <p className="text-lg text-gray-400 mb-8 text-center">
                 Learn about SQL data types and constraints for proper database design
               </p>
-              
+
               <div className="max-w-6xl mx-auto">
                 {/* SQL Data Types */}
                 <div className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-white mb-6">📘 SQL Data Types & Database Design</h2>
-                  
+
                   <div className="bg-blue-900/20 border border-blue-500/30 p-6 rounded-lg mb-6">
                     <h4 className="text-xl font-bold text-blue-300 mb-4">🎯 Understanding Data Types in Database Design</h4>
                     <p className="text-lg text-gray-300 leading-relaxed mb-4">
-                      Data types are the foundation of database schema design. They define what kind of data can be stored in each column, 
-                      how much space it will occupy, and what operations can be performed on it. Choosing appropriate data types is crucial 
+                      Data types are the foundation of database schema design. They define what kind of data can be stored in each column,
+                      how much space it will occupy, and what operations can be performed on it. Choosing appropriate data types is crucial
                       for data integrity, performance optimization, and storage efficiency.
                     </p>
                     <div className="bg-gray-700/50 p-4 rounded-lg">
@@ -3306,13 +3260,13 @@ GROUP BY department;`}
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="grid md:grid-cols-2 gap-6 mb-6">
                     <div className="bg-gray-800 p-6 rounded-xl">
                       <div className="bg-green-900/20 border border-green-500/30 p-4 rounded-lg mb-4">
                         <h3 className="text-xl font-bold text-green-300 mb-3">🔢 Numeric Data Types</h3>
                         <p className="text-gray-300 text-sm mb-3">
-                          Numeric types are fundamental for mathematical operations, financial calculations, and data analysis. 
+                          Numeric types are fundamental for mathematical operations, financial calculations, and data analysis.
                           Understanding precision, scale, and storage requirements is crucial for accurate data representation.
                         </p>
                         <div className="bg-gray-700/50 p-3 rounded-lg">
@@ -3337,7 +3291,7 @@ GROUP BY department;`}
                       <div className="bg-blue-900/20 border border-blue-500/30 p-4 rounded-lg mb-4">
                         <h3 className="text-xl font-bold text-blue-300 mb-3">📝 String Data Types</h3>
                         <p className="text-gray-300 text-sm mb-3">
-                          String types handle textual data with different storage and performance characteristics. 
+                          String types handle textual data with different storage and performance characteristics.
                           Choosing between fixed and variable length affects storage efficiency and query performance.
                         </p>
                         <div className="bg-gray-700/50 p-3 rounded-lg">
@@ -3364,7 +3318,7 @@ GROUP BY department;`}
                       <div className="bg-purple-900/20 border border-purple-500/30 p-4 rounded-lg mb-4">
                         <h3 className="text-xl font-bold text-purple-300 mb-3">📅 Date & Time Types</h3>
                         <p className="text-gray-300 text-sm mb-3">
-                          Temporal data types handle dates, times, and timestamps with different precision levels. 
+                          Temporal data types handle dates, times, and timestamps with different precision levels.
                           Understanding timezone handling and temporal calculations is essential for business applications.
                         </p>
                         <div className="bg-gray-700/50 p-3 rounded-lg">
@@ -3388,7 +3342,7 @@ GROUP BY department;`}
                       <div className="bg-orange-900/20 border border-orange-500/30 p-4 rounded-lg mb-4">
                         <h3 className="text-xl font-bold text-orange-300 mb-3">🔘 Boolean & Specialized Types</h3>
                         <p className="text-gray-300 text-sm mb-3">
-                          Specialized data types handle boolean logic, structured data, and unique identifiers. 
+                          Specialized data types handle boolean logic, structured data, and unique identifiers.
                           These types provide semantic meaning and validation for specific use cases.
                         </p>
                         <div className="bg-gray-700/50 p-3 rounded-lg">
@@ -3416,7 +3370,7 @@ GROUP BY department;`}
                   <div className="bg-red-900/20 border border-red-500/30 p-6 rounded-lg mb-6">
                     <h2 className="text-3xl font-bold text-red-300 mb-4">🔒 SQL Constraints - Data Integrity Guardians</h2>
                     <p className="text-lg text-gray-300 leading-relaxed mb-4">
-                      Constraints are rules that enforce data integrity and business logic at the database level. They act as guardians 
+                      Constraints are rules that enforce data integrity and business logic at the database level. They act as guardians
                       ensuring that data remains consistent, valid, and follows the intended design patterns throughout the database lifecycle.
                     </p>
                     <div className="bg-gray-700/50 p-4 rounded-lg">
@@ -3433,7 +3387,7 @@ GROUP BY department;`}
                   <p className="text-lg text-gray-300 mb-6">
                     Constraints are rules applied to columns that ensure data integrity and consistency.
                   </p>
-                  
+
                   <div className="bg-gray-900 p-6 rounded-xl mb-6">
                     <h3 className="text-xl font-bold text-white mb-4">Common Constraints</h3>
                     <div className="space-y-4">
@@ -3441,7 +3395,7 @@ GROUP BY department;`}
                         <h4 className="text-lg font-bold text-yellow-400 mb-2">PRIMARY KEY</h4>
                         <p className="text-gray-300 mb-2">Uniquely identifies each row in a table.</p>
                         <pre className="text-white font-mono text-sm">
-{`CREATE TABLE Students (
+                          {`CREATE TABLE Students (
     StudentID INT PRIMARY KEY,
     Name VARCHAR(50),
     Age INT
@@ -3453,7 +3407,7 @@ GROUP BY department;`}
                         <h4 className="text-lg font-bold text-yellow-400 mb-2">FOREIGN KEY</h4>
                         <p className="text-gray-300 mb-2">Links tables and maintains referential integrity.</p>
                         <pre className="text-white font-mono text-sm">
-{`CREATE TABLE Orders (
+                          {`CREATE TABLE Orders (
     OrderID INT PRIMARY KEY,
     CustomerID INT,
     OrderDate DATE,
@@ -3466,7 +3420,7 @@ GROUP BY department;`}
                         <h4 className="text-lg font-bold text-yellow-400 mb-2">NOT NULL</h4>
                         <p className="text-gray-300 mb-2">Ensures a column cannot have NULL values.</p>
                         <pre className="text-white font-mono text-sm">
-{`CREATE TABLE Employees (
+                          {`CREATE TABLE Employees (
     EmployeeID INT PRIMARY KEY,
     FirstName VARCHAR(50) NOT NULL,
     LastName VARCHAR(50) NOT NULL,
@@ -3479,7 +3433,7 @@ GROUP BY department;`}
                         <h4 className="text-lg font-bold text-yellow-400 mb-2">UNIQUE</h4>
                         <p className="text-gray-300 mb-2">Ensures all values in a column are unique.</p>
                         <pre className="text-white font-mono text-sm">
-{`CREATE TABLE Users (
+                          {`CREATE TABLE Users (
     UserID INT PRIMARY KEY,
     Username VARCHAR(50) UNIQUE,
     Email VARCHAR(100) UNIQUE
@@ -3491,7 +3445,7 @@ GROUP BY department;`}
                         <h4 className="text-lg font-bold text-yellow-400 mb-2">CHECK</h4>
                         <p className="text-gray-300 mb-2">Ensures values meet specific conditions.</p>
                         <pre className="text-white font-mono text-sm">
-{`CREATE TABLE Products (
+                          {`CREATE TABLE Products (
     ProductID INT PRIMARY KEY,
     ProductName VARCHAR(100),
     Price DECIMAL(10,2) CHECK (Price > 0),
@@ -3504,7 +3458,7 @@ GROUP BY department;`}
                         <h4 className="text-lg font-bold text-yellow-400 mb-2">DEFAULT</h4>
                         <p className="text-gray-300 mb-2">Sets a default value for a column.</p>
                         <pre className="text-white font-mono text-sm">
-{`CREATE TABLE Orders (
+                          {`CREATE TABLE Orders (
     OrderID INT PRIMARY KEY,
     OrderDate DATE DEFAULT CURRENT_DATE,
     Status VARCHAR(20) DEFAULT 'Pending'
@@ -3518,7 +3472,7 @@ GROUP BY department;`}
                 {/* Best Practices */}
                 <div className="bg-gray-800 p-8 rounded-2xl">
                   <h2 className="text-3xl font-bold text-white mb-6">💡 Best Practices</h2>
-                  
+
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="bg-green-900/20 border border-green-500 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-green-400 mb-4">✅ Data Type Selection</h3>
@@ -3558,7 +3512,7 @@ GROUP BY department;`}
               <p className="text-lg text-gray-400 mb-8 text-center">
                 Learn how to create and manage database tables using DDL commands
               </p>
-              
+
               <div className="max-w-6xl mx-auto">
                 {/* CREATE TABLE */}
                 <div className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 p-8 rounded-2xl mb-8">
@@ -3567,11 +3521,11 @@ GROUP BY department;`}
                     The CREATE TABLE statement is used to create new tables in the database.
                     You must specify column names, data types, and constraints.
                   </p>
-                  
+
                   <div className="bg-gray-800 p-6 rounded-xl mb-6">
                     <h3 className="text-xl font-bold text-yellow-400 mb-4">Basic Syntax</h3>
                     <pre className="text-white font-mono text-sm">
-{`CREATE TABLE table_name (
+                      {`CREATE TABLE table_name (
     column1 datatype constraints,
     column2 datatype constraints,
     column3 datatype constraints,
@@ -3584,7 +3538,7 @@ GROUP BY department;`}
                     <div className="bg-gray-800 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-yellow-400 mb-4">Example: Students Table</h3>
                       <pre className="text-white font-mono text-sm">
-{`CREATE TABLE Students (
+                        {`CREATE TABLE Students (
     StudentID INT PRIMARY KEY,
     FirstName VARCHAR(50) NOT NULL,
     LastName VARCHAR(50) NOT NULL,
@@ -3597,7 +3551,7 @@ GROUP BY department;`}
                     <div className="bg-gray-800 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-yellow-400 mb-4">Example: Courses Table</h3>
                       <pre className="text-white font-mono text-sm">
-{`CREATE TABLE Courses (
+                        {`CREATE TABLE Courses (
     CourseID INT PRIMARY KEY,
     CourseName VARCHAR(100) NOT NULL,
     Credits INT CHECK (Credits BETWEEN 1 AND 6),
@@ -3616,12 +3570,12 @@ GROUP BY department;`}
                     The ALTER TABLE statement is used to modify the structure of existing tables.
                     You can add, modify, or drop columns and constraints.
                   </p>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-white mb-4">Adding Columns</h3>
                       <pre className="text-white font-mono text-sm mb-4">
-{`-- Add a single column
+                        {`-- Add a single column
 ALTER TABLE Students 
 ADD Phone VARCHAR(15);
 
@@ -3635,7 +3589,7 @@ ADD Address VARCHAR(200);`}
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-white mb-4">Modifying Columns</h3>
                       <pre className="text-white font-mono text-sm mb-4">
-{`-- Change column data type
+                        {`-- Change column data type
 ALTER TABLE Students 
 ALTER COLUMN Age INT;
 
@@ -3652,7 +3606,7 @@ ADD CONSTRAINT CHK_Age CHECK (Age >= 16);`}
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-white mb-4">Dropping Columns</h3>
                       <pre className="text-white font-mono text-sm mb-4">
-{`-- Drop a single column
+                        {`-- Drop a single column
 ALTER TABLE Students 
 DROP COLUMN Phone;
 
@@ -3666,7 +3620,7 @@ DROP COLUMN Address;`}
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-white mb-4">Managing Constraints</h3>
                       <pre className="text-white font-mono text-sm mb-4">
-{`-- Add foreign key constraint
+                        {`-- Add foreign key constraint
 ALTER TABLE Students 
 ADD CONSTRAINT FK_Department 
 FOREIGN KEY (DeptID) REFERENCES Departments(DeptID);
@@ -3690,11 +3644,11 @@ RENAME TO StudentRecords;`}
                     The DROP TABLE statement is used to completely remove a table and all its data from the database.
                     This action cannot be undone!
                   </p>
-                  
+
                   <div className="bg-gray-900 p-6 rounded-xl mb-6">
                     <h3 className="text-xl font-bold text-white mb-4">Syntax</h3>
                     <pre className="text-white font-mono text-sm">
-{`-- Drop a single table
+                      {`-- Drop a single table
 DROP TABLE table_name;
 
 -- Drop multiple tables
@@ -3723,11 +3677,11 @@ DROP TABLE table_name CASCADE;`}
                     The TRUNCATE TABLE statement removes all rows from a table but keeps the table structure intact.
                     It's faster than DELETE for removing all rows.
                   </p>
-                  
+
                   <div className="bg-gray-900 p-6 rounded-xl mb-6">
                     <h3 className="text-xl font-bold text-white mb-4">Syntax</h3>
                     <pre className="text-white font-mono text-sm">
-{`-- Remove all rows from a table
+                      {`-- Remove all rows from a table
 TRUNCATE TABLE table_name;
 
 -- Example
@@ -3761,7 +3715,7 @@ TRUNCATE TABLE Students;`}
                 {/* Best Practices */}
                 <div className="bg-gray-800 p-8 rounded-2xl">
                   <h2 className="text-3xl font-bold text-white mb-6">💡 Best Practices</h2>
-                  
+
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="bg-green-900/20 border border-green-500 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-green-400 mb-4">✅ Table Design</h3>
@@ -3801,7 +3755,7 @@ TRUNCATE TABLE Students;`}
               <p className="text-lg text-gray-400 mb-8 text-center">
                 Learn how to insert, update, and delete data using DML commands
               </p>
-              
+
               <div className="max-w-6xl mx-auto">
                 {/* INSERT Statement */}
                 <div className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 p-8 rounded-2xl mb-8">
@@ -3810,12 +3764,12 @@ TRUNCATE TABLE Students;`}
                     The INSERT statement is used to add new rows of data to a table.
                     You can insert single rows or multiple rows at once.
                   </p>
-                  
+
                   <div className="grid md:grid-cols-2 gap-6 mb-6">
                     <div className="bg-gray-800 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-yellow-400 mb-4">Insert Single Row</h3>
                       <pre className="text-white font-mono text-sm">
-{`-- Insert with all columns
+                        {`-- Insert with all columns
 INSERT INTO Students 
 VALUES (1, 'John', 'Doe', 'john@email.com', 20, '2024-01-15');
 
@@ -3827,7 +3781,7 @@ VALUES (2, 'Jane', 'Smith', 19);`}
                     <div className="bg-gray-800 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-yellow-400 mb-4">Insert Multiple Rows</h3>
                       <pre className="text-white font-mono text-sm">
-{`INSERT INTO Students (StudentID, FirstName, LastName, Age)
+                        {`INSERT INTO Students (StudentID, FirstName, LastName, Age)
 VALUES 
     (3, 'Alice', 'Johnson', 21),
     (4, 'Bob', 'Brown', 22),
@@ -3839,7 +3793,7 @@ VALUES
                   <div className="bg-gray-900 p-6 rounded-xl">
                     <h3 className="text-xl font-bold text-white mb-4">Insert from Another Table</h3>
                     <pre className="text-white font-mono text-sm">
-{`-- Copy data from one table to another
+                      {`-- Copy data from one table to another
 INSERT INTO GraduatedStudents (StudentID, FirstName, LastName)
 SELECT StudentID, FirstName, LastName
 FROM Students
@@ -3864,12 +3818,12 @@ GROUP BY StudentID;`}
                     The UPDATE statement is used to modify existing data in a table.
                     Always use WHERE clause to avoid updating all rows accidentally.
                   </p>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-white mb-4">Update Single Column</h3>
                       <pre className="text-white font-mono text-sm">
-{`-- Update specific student's email
+                        {`-- Update specific student's email
 UPDATE Students 
 SET Email = 'newemail@example.com'
 WHERE StudentID = 1;
@@ -3884,7 +3838,7 @@ WHERE EnrollmentDate < '2023-01-01';`}
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-white mb-4">Update Multiple Columns</h3>
                       <pre className="text-white font-mono text-sm">
-{`-- Update multiple columns for specific student
+                        {`-- Update multiple columns for specific student
 UPDATE Students 
 SET FirstName = 'Johnny',
     LastName = 'Smith',
@@ -3902,7 +3856,7 @@ WHERE OrderStatus = 'Pending';`}
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-white mb-4">Update with Subquery</h3>
                       <pre className="text-white font-mono text-sm">
-{`-- Update based on data from another table
+                        {`-- Update based on data from another table
 UPDATE Students 
 SET Department = 'Computer Science'
 WHERE StudentID IN (
@@ -3940,12 +3894,12 @@ SET StudentCount = (
                     The DELETE statement is used to remove rows from a table.
                     Always use WHERE clause to avoid deleting all data accidentally.
                   </p>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-white mb-4">Delete Specific Rows</h3>
                       <pre className="text-white font-mono text-sm">
-{`-- Delete specific student
+                        {`-- Delete specific student
 DELETE FROM Students 
 WHERE StudentID = 1;
 
@@ -3963,7 +3917,7 @@ WHERE OrderDate < '2023-01-01'
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-white mb-4">Delete with Subquery</h3>
                       <pre className="text-white font-mono text-sm">
-{`-- Delete students who haven't enrolled in any courses
+                        {`-- Delete students who haven't enrolled in any courses
 DELETE FROM Students 
 WHERE StudentID NOT IN (
     SELECT DISTINCT StudentID 
@@ -3983,7 +3937,7 @@ WHERE CustomerID IN (
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-white mb-4">Delete All Rows</h3>
                       <pre className="text-white font-mono text-sm">
-{`-- Delete all rows from table (DANGEROUS!)
+                        {`-- Delete all rows from table (DANGEROUS!)
 DELETE FROM Students;
 
 -- Safer alternative: TRUNCATE TABLE
@@ -4007,7 +3961,7 @@ TRUNCATE TABLE Students;`}
                 {/* Best Practices */}
                 <div className="bg-gray-800 p-8 rounded-2xl">
                   <h2 className="text-3xl font-bold text-white mb-6">💡 Best Practices</h2>
-                  
+
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="bg-green-900/20 border border-green-500 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-green-400 mb-4">✅ Safe Operations</h3>
@@ -4047,7 +4001,7 @@ TRUNCATE TABLE Students;`}
               <p className="text-lg text-gray-400 mb-8 text-center">
                 Master WHERE clause filtering and ORDER BY sorting in SQL queries
               </p>
-              
+
               <div className="max-w-6xl mx-auto">
                 {/* WHERE Clause */}
                 <div className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 p-8 rounded-2xl mb-8">
@@ -4056,11 +4010,11 @@ TRUNCATE TABLE Students;`}
                     The WHERE clause is used to filter rows based on specified conditions.
                     It allows you to retrieve only the data that meets your criteria.
                   </p>
-                  
+
                   <div className="bg-gray-800 p-6 rounded-xl mb-6">
                     <h3 className="text-xl font-bold text-yellow-400 mb-4">Basic Syntax</h3>
                     <pre className="text-white font-mono text-sm">
-{`SELECT column1, column2, ...
+                      {`SELECT column1, column2, ...
 FROM table_name
 WHERE condition;`}
                     </pre>
@@ -4119,7 +4073,7 @@ WHERE condition;`}
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-white mb-4">Basic Filtering Examples</h3>
                       <pre className="text-white font-mono text-sm">
-{`-- Find students older than 20
+                        {`-- Find students older than 20
 SELECT * FROM Students WHERE Age > 20;
 
 -- Find students in specific age range
@@ -4137,7 +4091,7 @@ WHERE Age > 18 AND Department = 'Computer Science';`}
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-white mb-4">Advanced Filtering</h3>
                       <pre className="text-white font-mono text-sm">
-{`-- IN operator - multiple values
+                        {`-- IN operator - multiple values
 SELECT * FROM Students 
 WHERE Department IN ('Computer Science', 'Mathematics', 'Physics');
 
@@ -4165,11 +4119,11 @@ WHERE (Age > 20 AND Department = 'CS')
                     The ORDER BY clause is used to sort the result set in ascending or descending order.
                     You can sort by one or more columns.
                   </p>
-                  
+
                   <div className="bg-gray-900 p-6 rounded-xl mb-6">
                     <h3 className="text-xl font-bold text-white mb-4">Basic Syntax</h3>
                     <pre className="text-white font-mono text-sm">
-{`SELECT column1, column2, ...
+                      {`SELECT column1, column2, ...
 FROM table_name
 WHERE condition
 ORDER BY column1 ASC|DESC, column2 ASC|DESC;`}
@@ -4180,7 +4134,7 @@ ORDER BY column1 ASC|DESC, column2 ASC|DESC;`}
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-white mb-4">Single Column Sorting</h3>
                       <pre className="text-white font-mono text-sm">
-{`-- Sort by age ascending (default)
+                        {`-- Sort by age ascending (default)
 SELECT * FROM Students ORDER BY Age;
 
 -- Sort by age descending
@@ -4194,7 +4148,7 @@ SELECT * FROM Students ORDER BY FirstName ASC;`}
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-white mb-4">Multiple Column Sorting</h3>
                       <pre className="text-white font-mono text-sm">
-{`-- Sort by department first, then by age
+                        {`-- Sort by department first, then by age
 SELECT * FROM Students 
 ORDER BY Department ASC, Age DESC;
 
@@ -4208,7 +4162,7 @@ ORDER BY Department, LastName, FirstName;`}
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-white mb-4">Sorting with Functions</h3>
                       <pre className="text-white font-mono text-sm">
-{`-- Sort by calculated values
+                        {`-- Sort by calculated values
 SELECT FirstName, LastName, Age, 
        (Age * 12) AS AgeInMonths
 FROM Students 
@@ -4230,12 +4184,12 @@ ORDER BY LENGTH(FirstName), LENGTH(LastName);`}
                     LIMIT (MySQL/PostgreSQL) or TOP (SQL Server) is used to restrict the number of rows returned.
                     Very useful for pagination and getting top results.
                   </p>
-                  
+
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-yellow-400 mb-4">MySQL/PostgreSQL - LIMIT</h3>
                       <pre className="text-white font-mono text-sm">
-{`-- Get top 5 students by age
+                        {`-- Get top 5 students by age
 SELECT * FROM Students 
 ORDER BY Age DESC 
 LIMIT 5;
@@ -4254,7 +4208,7 @@ LIMIT 5, 5;  -- Skip 5, take 5`}
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-yellow-400 mb-4">SQL Server - TOP</h3>
                       <pre className="text-white font-mono text-sm">
-{`-- Get top 5 students by age
+                        {`-- Get top 5 students by age
 SELECT TOP 5 * FROM Students 
 ORDER BY Age DESC;
 
@@ -4273,7 +4227,7 @@ ORDER BY Age DESC;`}
                 {/* Best Practices */}
                 <div className="bg-gray-800 p-8 rounded-2xl">
                   <h2 className="text-3xl font-bold text-white mb-6">💡 Best Practices</h2>
-                  
+
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="bg-green-900/20 border border-green-500 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-green-400 mb-4">✅ WHERE Clause Tips</h3>
@@ -4313,7 +4267,7 @@ ORDER BY Age DESC;`}
               <p className="text-lg text-gray-400 mb-8 text-center">
                 Master SQL aggregate functions, GROUP BY, and HAVING clause for data analysis
               </p>
-              
+
               <div className="max-w-6xl mx-auto">
                 {/* Aggregate Functions */}
                 <div className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 p-8 rounded-2xl mb-8">
@@ -4322,13 +4276,13 @@ ORDER BY Age DESC;`}
                     Aggregate functions perform calculations on multiple rows and return a single result.
                     They are essential for data analysis and reporting.
                   </p>
-                  
+
                   <div className="grid md:grid-cols-2 gap-6 mb-6">
                     <div className="bg-gray-800 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-yellow-400 mb-4">COUNT() Function</h3>
                       <p className="text-gray-300 mb-4">Returns the number of rows in a table or group.</p>
                       <pre className="text-white font-mono text-sm">
-{`-- Count all rows
+                        {`-- Count all rows
 SELECT COUNT(*) FROM Students;
 
 -- Count non-NULL values
@@ -4342,7 +4296,7 @@ SELECT COUNT(DISTINCT Department) FROM Students;`}
                       <h3 className="text-xl font-bold text-yellow-400 mb-4">SUM() Function</h3>
                       <p className="text-gray-300 mb-4">Returns the total of a numeric column.</p>
                       <pre className="text-white font-mono text-sm">
-{`-- Sum all salaries
+                        {`-- Sum all salaries
 SELECT SUM(Salary) FROM Employees;
 
 -- Sum with condition
@@ -4360,7 +4314,7 @@ SELECT SUM(DISTINCT Salary) FROM Employees;`}
                       <h3 className="text-xl font-bold text-yellow-400 mb-4">AVG() Function</h3>
                       <p className="text-gray-300 mb-4">Returns the average value of a numeric column.</p>
                       <pre className="text-white font-mono text-sm">
-{`-- Average age of students
+                        {`-- Average age of students
 SELECT AVG(Age) FROM Students;
 
 -- Average with rounding
@@ -4375,7 +4329,7 @@ WHERE Salary IS NOT NULL;`}
                       <h3 className="text-xl font-bold text-yellow-400 mb-4">MIN() & MAX() Functions</h3>
                       <p className="text-gray-300 mb-4">Return the smallest and largest values.</p>
                       <pre className="text-white font-mono text-sm">
-{`-- Find youngest and oldest
+                        {`-- Find youngest and oldest
 SELECT MIN(Age), MAX(Age) FROM Students;
 
 -- Highest and lowest salaries
@@ -4398,11 +4352,11 @@ FROM Students;`}
                     The GROUP BY clause groups rows that have the same values in specified columns.
                     It allows you to apply aggregate functions to each group separately.
                   </p>
-                  
+
                   <div className="bg-gray-900 p-6 rounded-xl mb-6">
                     <h3 className="text-xl font-bold text-white mb-4">Basic Syntax</h3>
                     <pre className="text-white font-mono text-sm">
-{`SELECT column1, AGGREGATE_FUNCTION(column2)
+                      {`SELECT column1, AGGREGATE_FUNCTION(column2)
 FROM table_name
 WHERE condition
 GROUP BY column1
@@ -4414,7 +4368,7 @@ ORDER BY column1;`}
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-white mb-4">Group by Single Column</h3>
                       <pre className="text-white font-mono text-sm">
-{`-- Count students by department
+                        {`-- Count students by department
 SELECT Department, COUNT(*) AS StudentCount
 FROM Students
 GROUP BY Department;
@@ -4429,7 +4383,7 @@ GROUP BY Department;`}
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-white mb-4">Group by Multiple Columns</h3>
                       <pre className="text-white font-mono text-sm">
-{`-- Count by department and year
+                        {`-- Count by department and year
 SELECT Department, 
        YEAR(EnrollmentDate) AS Year,
        COUNT(*) AS StudentCount
@@ -4448,7 +4402,7 @@ GROUP BY ProductID, Region;`}
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-white mb-4">Multiple Aggregate Functions</h3>
                       <pre className="text-white font-mono text-sm">
-{`-- Comprehensive department stats
+                        {`-- Comprehensive department stats
 SELECT Department,
        COUNT(*) AS EmployeeCount,
        AVG(Salary) AS AvgSalary,
@@ -4469,7 +4423,7 @@ GROUP BY Department;`}
                     The HAVING clause is used to filter groups after aggregation.
                     It's like WHERE clause but for grouped results.
                   </p>
-                  
+
                   <div className="bg-gray-900 p-6 rounded-xl mb-6">
                     <h3 className="text-xl font-bold text-white mb-4">Key Differences</h3>
                     <div className="grid md:grid-cols-2 gap-6">
@@ -4498,7 +4452,7 @@ GROUP BY Department;`}
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-white mb-4">Basic HAVING Examples</h3>
                       <pre className="text-white font-mono text-sm">
-{`-- Departments with more than 10 employees
+                        {`-- Departments with more than 10 employees
 SELECT Department, COUNT(*) AS EmployeeCount
 FROM Employees
 GROUP BY Department
@@ -4515,7 +4469,7 @@ HAVING AVG(Salary) > 50000;`}
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-white mb-4">Complex HAVING Conditions</h3>
                       <pre className="text-white font-mono text-sm">
-{`-- Multiple conditions with HAVING
+                        {`-- Multiple conditions with HAVING
 SELECT Department, 
        COUNT(*) AS EmployeeCount,
        AVG(Salary) AS AvgSalary
@@ -4539,12 +4493,12 @@ HAVING SUM(Quantity) > 100
                 {/* Complete Examples */}
                 <div className="bg-gray-800 p-8 rounded-2xl mb-8">
                   <h2 className="text-3xl font-bold text-white mb-6">🎯 Complete Examples</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-white mb-4">Business Analysis Query</h3>
                       <pre className="text-white font-mono text-sm">
-{`-- Top performing departments
+                        {`-- Top performing departments
 SELECT d.DepartmentName,
        COUNT(e.EmployeeID) AS EmployeeCount,
        AVG(e.Salary) AS AvgSalary,
@@ -4563,7 +4517,7 @@ ORDER BY TotalSales DESC;`}
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-white mb-4">Student Performance Analysis</h3>
                       <pre className="text-white font-mono text-sm">
-{`-- Course performance summary
+                        {`-- Course performance summary
 SELECT c.CourseName,
        COUNT(DISTINCT e.StudentID) AS StudentCount,
        AVG(e.Grade) AS AvgGrade,
@@ -4583,7 +4537,7 @@ ORDER BY AvgGrade DESC;`}
                 {/* Best Practices */}
                 <div className="bg-gray-800 p-8 rounded-2xl">
                   <h2 className="text-3xl font-bold text-white mb-6">💡 Best Practices</h2>
-                  
+
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="bg-green-900/20 border border-green-500 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-green-400 mb-4">✅ Performance Tips</h3>
@@ -4623,7 +4577,7 @@ ORDER BY AvgGrade DESC;`}
               <p className="text-lg text-gray-400 mb-8 text-center">
                 Understanding nested queries and their powerful applications in data retrieval
               </p>
-              
+
               <div className="max-w-6xl mx-auto space-y-8">
                 {/* Introduction */}
                 <div className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 p-8 rounded-2xl border border-blue-500/30">
@@ -4654,7 +4608,7 @@ ORDER BY AvgGrade DESC;`}
                   <p className="text-gray-300 mb-6 text-lg">
                     The most common use of subqueries is in the WHERE clause to filter rows based on values computed from other queries. This allows you to make comparisons with aggregated data or data from related tables.
                   </p>
-                  
+
                   <div className="space-y-6">
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-yellow-400 mb-4">Single Value Subquery</h3>
@@ -4664,7 +4618,7 @@ ORDER BY AvgGrade DESC;`}
                       <div className="bg-gray-950 p-4 rounded mb-3">
                         <p className="text-sm text-gray-400 mb-2">Example: Find all employees who earn more than the average salary</p>
                         <pre className="text-white font-mono text-sm">
-{`SELECT name, salary
+                          {`SELECT name, salary
 FROM employees
 WHERE salary > (SELECT AVG(salary) FROM employees);`}
                         </pre>
@@ -4672,7 +4626,7 @@ WHERE salary > (SELECT AVG(salary) FROM employees);`}
                       <div className="bg-green-900/20 border border-green-500/30 p-4 rounded">
                         <p className="text-sm text-green-300 font-bold mb-2">📊 Output:</p>
                         <pre className="text-green-200 font-mono text-sm">
-{`name          | salary
+                          {`name          | salary
 --------------+---------
 Alice         | 85000
 Bob           | 92000
@@ -4689,7 +4643,7 @@ Then outer query finds all employees with salary > 65000`}
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-yellow-400 mb-4">Multiple Value Subquery (IN)</h3>
                       <pre className="text-white font-mono text-sm bg-gray-950 p-4 rounded">
-{`-- Find employees in Sales department
+                        {`-- Find employees in Sales department
 SELECT name, salary
 FROM employees
 WHERE dept_id IN (SELECT dept_id FROM departments WHERE dept_name = 'Sales');
@@ -4704,7 +4658,7 @@ WHERE student_id IN (SELECT student_id FROM enrollments WHERE course_name = 'CS'
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-yellow-400 mb-4">EXISTS Operator</h3>
                       <pre className="text-white font-mono text-sm bg-gray-950 p-4 rounded">
-{`-- Find customers who placed orders
+                        {`-- Find customers who placed orders
 SELECT customer_name
 FROM customers c
 WHERE EXISTS (SELECT 1 FROM orders o WHERE o.customer_id = c.customer_id);
@@ -4723,7 +4677,7 @@ WHERE NOT EXISTS (SELECT 1 FROM order_items oi WHERE oi.product_id = p.product_i
                   <h2 className="text-3xl font-bold text-white mb-6">Subquery in SELECT Clause</h2>
                   <div className="bg-gray-900 p-6 rounded-xl">
                     <pre className="text-white font-mono text-sm bg-gray-950 p-4 rounded">
-{`-- Calculate columns using subqueries
+                      {`-- Calculate columns using subqueries
 SELECT 
     name,
     salary,
@@ -4745,7 +4699,7 @@ FROM customers c;`}
                   <h2 className="text-3xl font-bold text-white mb-6">Subquery in FROM Clause (Derived Table)</h2>
                   <div className="bg-gray-900 p-6 rounded-xl">
                     <pre className="text-white font-mono text-sm bg-gray-950 p-4 rounded">
-{`-- Use subquery result as temporary table
+                      {`-- Use subquery result as temporary table
 SELECT dept, avg_sal
 FROM (
     SELECT department AS dept, AVG(salary) AS avg_sal
@@ -4776,7 +4730,7 @@ WHERE total_value > 1000;`}
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <p className="text-gray-300 mb-4">References outer query in inner query - executes for each row</p>
                       <pre className="text-white font-mono text-sm bg-gray-950 p-4 rounded">
-{`-- Find employees earning more than their department average
+                        {`-- Find employees earning more than their department average
 SELECT e1.name, e1.salary, e1.department
 FROM employees e1
 WHERE e1.salary > (
@@ -4803,7 +4757,7 @@ WHERE (
                   <h2 className="text-3xl font-bold text-white mb-6">Nested Subqueries</h2>
                   <div className="bg-gray-900 p-6 rounded-xl">
                     <pre className="text-white font-mono text-sm bg-gray-950 p-4 rounded">
-{`-- Multiple levels of nesting
+                      {`-- Multiple levels of nesting
 SELECT name
 FROM employees
 WHERE salary > (
@@ -4873,16 +4827,16 @@ WHERE category_id IN (
               <p className="text-lg text-gray-400 mb-8 text-center">
                 Master the art of designing efficient, scalable, and maintainable database schemas
               </p>
-              
+
               <div className="max-w-6xl mx-auto space-y-8">
                 {/* Introduction */}
                 <div className="bg-gradient-to-r from-purple-900/20 to-blue-900/20 p-8 rounded-2xl border border-purple-500/30">
                   <h2 className="text-3xl font-bold text-white mb-6">🏗️ Advanced Database Design & Architecture</h2>
-                  
+
                   <div className="bg-blue-900/20 border border-blue-500/30 p-6 rounded-lg mb-6">
                     <h4 className="text-xl font-bold text-blue-300 mb-4">🎯 Database Design Theory & Principles</h4>
                     <p className="text-lg text-gray-300 leading-relaxed mb-4">
-                      Database design is both an art and a science, combining theoretical foundations with practical implementation considerations. 
+                      Database design is both an art and a science, combining theoretical foundations with practical implementation considerations.
                       It requires understanding of data modeling, normalization theory, performance optimization, and scalability patterns.
                     </p>
                     <div className="bg-gray-700/50 p-4 rounded-lg">
@@ -4899,12 +4853,12 @@ WHERE category_id IN (
 
                   <div className="space-y-4 text-gray-300">
                     <p className="text-lg leading-relaxed">
-                      <strong className="text-white">Database design</strong> is the process of creating a detailed data model of a database. 
-                      It involves deciding how data will be organized, what tables will exist, how they&apos;ll be related, and what constraints will ensure data integrity. 
+                      <strong className="text-white">Database design</strong> is the process of creating a detailed data model of a database.
+                      It involves deciding how data will be organized, what tables will exist, how they&apos;ll be related, and what constraints will ensure data integrity.
                       Think of it as the architectural blueprint for your data - get it right, and everything else becomes easier.
                     </p>
                     <p className="text-lg leading-relaxed">
-                      Good database design follows the principle of <strong className="text-white">normalization</strong> - organizing data to minimize redundancy and dependency, 
+                      Good database design follows the principle of <strong className="text-white">normalization</strong> - organizing data to minimize redundancy and dependency,
                       while ensuring data integrity and eliminating anomalies. It&apos;s about creating a structure that supports both current needs and future growth.
                     </p>
                     <div className="bg-gray-800 p-6 rounded-xl mt-4">
@@ -4927,7 +4881,7 @@ WHERE category_id IN (
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-yellow-400 mb-4">One-to-One Relationship</h3>
                       <pre className="text-white font-mono text-sm bg-gray-950 p-4 rounded">
-{`-- Each person has one passport
+                        {`-- Each person has one passport
 CREATE TABLE persons (
     person_id INT PRIMARY KEY,
     name VARCHAR(100),
@@ -4946,7 +4900,7 @@ CREATE TABLE passports (
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-yellow-400 mb-4">One-to-Many Relationship</h3>
                       <pre className="text-white font-mono text-sm bg-gray-950 p-4 rounded">
-{`-- One author writes many books
+                        {`-- One author writes many books
 CREATE TABLE authors (
     author_id INT PRIMARY KEY,
     name VARCHAR(100)
@@ -4964,7 +4918,7 @@ CREATE TABLE books (
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-yellow-400 mb-4">Many-to-Many Relationship</h3>
                       <pre className="text-white font-mono text-sm bg-gray-950 p-4 rounded">
-{`-- Students enroll in many courses, courses have many students
+                        {`-- Students enroll in many courses, courses have many students
 CREATE TABLE students (
     student_id INT PRIMARY KEY,
     name VARCHAR(100)
@@ -4996,7 +4950,7 @@ CREATE TABLE enrollments (
                       <h3 className="text-xl font-bold text-yellow-400 mb-4">1NF (First Normal Form)</h3>
                       <p className="text-gray-300 mb-3">Each column contains atomic values, no repeating groups</p>
                       <pre className="text-white font-mono text-sm bg-gray-950 p-4 rounded">
-{`-- BAD (Not 1NF)
+                        {`-- BAD (Not 1NF)
 CREATE TABLE orders (
     order_id INT,
     products VARCHAR(500)  -- 'Apple,Banana,Orange'
@@ -5018,7 +4972,7 @@ CREATE TABLE order_items (
                       <h3 className="text-xl font-bold text-yellow-400 mb-4">2NF (Second Normal Form)</h3>
                       <p className="text-gray-300 mb-3">1NF + No partial dependencies (all non-key columns depend on entire primary key)</p>
                       <pre className="text-white font-mono text-sm bg-gray-950 p-4 rounded">
-{`-- BAD (Not 2NF)
+                        {`-- BAD (Not 2NF)
 CREATE TABLE order_items (
     order_id INT,
     product_id INT,
@@ -5046,7 +5000,7 @@ CREATE TABLE order_items (
                       <h3 className="text-xl font-bold text-yellow-400 mb-4">3NF (Third Normal Form)</h3>
                       <p className="text-gray-300 mb-3">2NF + No transitive dependencies</p>
                       <pre className="text-white font-mono text-sm bg-gray-950 p-4 rounded">
-{`-- BAD (Not 3NF)
+                        {`-- BAD (Not 3NF)
 CREATE TABLE employees (
     emp_id INT PRIMARY KEY,
     name VARCHAR(100),
@@ -5111,7 +5065,7 @@ CREATE TABLE employees (
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-yellow-400 mb-4">Audit Trail Pattern</h3>
                       <pre className="text-white font-mono text-sm bg-gray-950 p-4 rounded">
-{`CREATE TABLE users (
+                        {`CREATE TABLE users (
     user_id INT PRIMARY KEY,
     username VARCHAR(50),
     email VARCHAR(100),
@@ -5126,7 +5080,7 @@ CREATE TABLE employees (
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-yellow-400 mb-4">Soft Delete Pattern</h3>
                       <pre className="text-white font-mono text-sm bg-gray-950 p-4 rounded">
-{`CREATE TABLE products (
+                        {`CREATE TABLE products (
     product_id INT PRIMARY KEY,
     product_name VARCHAR(100),
     price DECIMAL(10,2),
@@ -5145,7 +5099,7 @@ SELECT * FROM products WHERE is_deleted = FALSE;`}
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-yellow-400 mb-4">Versioning Pattern</h3>
                       <pre className="text-white font-mono text-sm bg-gray-950 p-4 rounded">
-{`CREATE TABLE document_versions (
+                        {`CREATE TABLE document_versions (
     version_id INT PRIMARY KEY,
     document_id INT,
     version_number INT,
@@ -5173,12 +5127,12 @@ SELECT * FROM products WHERE is_deleted = FALSE;`}
               <p className="text-lg text-gray-400 mb-8 text-center">
                 Master database indexing strategies and query optimization techniques for lightning-fast performance
               </p>
-              
+
               <div className="max-w-6xl mx-auto space-y-8">
                 {/* Introduction */}
                 <div className="bg-gradient-to-r from-green-900/20 to-blue-900/20 p-8 rounded-2xl border border-green-500/30">
                   <h2 className="text-3xl font-bold text-white mb-6">🚀 Database Performance & Indexing Mastery</h2>
-                  
+
                   <div className="bg-blue-900/20 border border-blue-500/30 p-6 rounded-lg mb-6">
                     <h4 className="text-xl font-bold text-blue-300 mb-4">🎯 Understanding Database Performance</h4>
                     <p className="text-lg text-gray-300 leading-relaxed mb-4">
@@ -5198,12 +5152,12 @@ SELECT * FROM products WHERE is_deleted = FALSE;`}
 
                   <div className="space-y-4 text-gray-300">
                     <p className="text-lg leading-relaxed">
-                      A <strong className="text-white">database index</strong> is a data structure that improves the speed of data retrieval operations on a database table. 
-                      Think of it like an index in a book - instead of reading every page to find information about "SQL", 
+                      A <strong className="text-white">database index</strong> is a data structure that improves the speed of data retrieval operations on a database table.
+                      Think of it like an index in a book - instead of reading every page to find information about "SQL",
                       you can look it up in the index and jump directly to the relevant pages.
                     </p>
                     <p className="text-lg leading-relaxed">
-                      Without indexes, the database must perform a <strong className="text-white">full table scan</strong> - examining every single row to find matching data. 
+                      Without indexes, the database must perform a <strong className="text-white">full table scan</strong> - examining every single row to find matching data.
                       With proper indexes, the database can quickly locate the exact rows that match your query conditions, dramatically improving performance.
                     </p>
                     <div className="bg-gray-800 p-6 rounded-xl mt-4">
@@ -5221,11 +5175,11 @@ SELECT * FROM products WHERE is_deleted = FALSE;`}
                 {/* Query Optimization */}
                 <div className="bg-gray-800 p-8 rounded-2xl">
                   <h2 className="text-3xl font-bold text-white mb-6">🔧 Query Optimization Techniques</h2>
-                  
+
                   <div className="bg-purple-900/20 border border-purple-500/30 p-6 rounded-lg mb-6">
                     <h4 className="text-xl font-bold text-purple-300 mb-4">🎯 Understanding Query Optimization</h4>
                     <p className="text-lg text-gray-300 leading-relaxed mb-4">
-                      Query optimization is the process of improving the performance of SQL queries by analyzing execution plans, 
+                      Query optimization is the process of improving the performance of SQL queries by analyzing execution plans,
                       identifying bottlenecks, and applying various optimization techniques.
                     </p>
                     <div className="bg-gray-700/50 p-4 rounded-lg">
@@ -5247,7 +5201,7 @@ SELECT * FROM products WHERE is_deleted = FALSE;`}
                         <div className="bg-gray-800 p-4 rounded-lg">
                           <h4 className="font-bold text-white mb-2">EXPLAIN Statement</h4>
                           <pre className="text-white font-mono text-sm bg-gray-950 p-3 rounded">
-{`-- Analyze query execution plan
+                            {`-- Analyze query execution plan
 EXPLAIN SELECT * FROM employees 
 WHERE department = 'IT' AND salary > 50000;
 
@@ -5301,12 +5255,12 @@ WHERE department = 'IT';`}
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-yellow-400 mb-4">1. Single Column Index</h3>
                       <p className="text-gray-300 mb-4">
-                        The most common type of index, created on a single column. Perfect for WHERE clauses that filter on one column, 
+                        The most common type of index, created on a single column. Perfect for WHERE clauses that filter on one column,
                         ORDER BY operations, and JOIN conditions. The database creates a sorted structure that allows fast lookups.
                       </p>
                       <div className="bg-gray-950 p-4 rounded mb-3">
                         <pre className="text-white font-mono text-sm">
-{`-- Create index on single column
+                          {`-- Create index on single column
 CREATE INDEX idx_lastname ON employees(last_name);
 
 -- Query that benefits from this index
@@ -5319,7 +5273,7 @@ SHOW INDEX FROM employees;`}
                       <div className="bg-green-900/20 border border-green-500/30 p-4 rounded">
                         <p className="text-sm text-green-300 font-bold mb-2">📊 Performance Impact:</p>
                         <pre className="text-green-200 font-mono text-xs">
-{`Without Index:
+                          {`Without Index:
 - Full table scan: 1,000,000 rows examined
 - Query time: 2.5 seconds
 - I/O operations: 10,000 disk reads
@@ -5340,12 +5294,12 @@ Explanation:
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-yellow-400 mb-4">2. Composite Index (Multi-Column)</h3>
                       <p className="text-gray-300 mb-4">
-                        A composite index is created on multiple columns. The order of columns is crucial - it follows the <strong className="text-white">leftmost prefix rule</strong>. 
+                        A composite index is created on multiple columns. The order of columns is crucial - it follows the <strong className="text-white">leftmost prefix rule</strong>.
                         The index is sorted first by the first column, then by the second column within each group of the first column, and so on.
                       </p>
                       <div className="bg-gray-950 p-4 rounded mb-3">
                         <pre className="text-white font-mono text-sm">
-{`-- Index on multiple columns (order matters!)
+                          {`-- Index on multiple columns (order matters!)
 CREATE INDEX idx_name ON employees(last_name, first_name);
 
 -- This query uses index efficiently (both columns)
@@ -5361,7 +5315,7 @@ SELECT * FROM employees WHERE first_name = 'John';`}
                       <div className="bg-green-900/20 border border-green-500/30 p-4 rounded">
                         <p className="text-sm text-green-300 font-bold mb-2">📊 Composite Index Structure:</p>
                         <pre className="text-green-200 font-mono text-xs">
-{`Index: idx_name (last_name, first_name)
+                          {`Index: idx_name (last_name, first_name)
 
 Sorted Structure:
 Adams    | Alice
@@ -5385,7 +5339,7 @@ You can find "Smith, John" quickly, but not "John" without "Smith".`}
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-yellow-400 mb-4">Unique Index</h3>
                       <pre className="text-white font-mono text-sm bg-gray-950 p-4 rounded">
-{`-- Ensures column values are unique
+                        {`-- Ensures column values are unique
 CREATE UNIQUE INDEX idx_email ON users(email);
 
 -- Automatically created with UNIQUE constraint
@@ -5396,7 +5350,7 @@ ALTER TABLE users ADD CONSTRAINT uq_email UNIQUE (email);`}
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-yellow-400 mb-4">Full-Text Index</h3>
                       <pre className="text-white font-mono text-sm bg-gray-950 p-4 rounded">
-{`-- For text searching
+                        {`-- For text searching
 CREATE FULLTEXT INDEX idx_content ON articles(title, content);
 
 -- Use with MATCH AGAINST
@@ -5414,7 +5368,7 @@ WHERE MATCH(title, content) AGAINST('database optimization');`}
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-yellow-400 mb-4">Use EXPLAIN</h3>
                       <pre className="text-white font-mono text-sm bg-gray-950 p-4 rounded">
-{`-- Analyze query execution plan
+                        {`-- Analyze query execution plan
 EXPLAIN SELECT * FROM employees WHERE last_name = 'Smith';
 
 -- Detailed analysis
@@ -5425,7 +5379,7 @@ EXPLAIN ANALYZE SELECT * FROM employees WHERE salary > 50000;`}
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-yellow-400 mb-4">Select Only Needed Columns</h3>
                       <pre className="text-white font-mono text-sm bg-gray-950 p-4 rounded">
-{`-- BAD - Fetches all columns
+                        {`-- BAD - Fetches all columns
 SELECT * FROM employees WHERE dept_id = 5;
 
 -- GOOD - Only needed columns
@@ -5436,7 +5390,7 @@ SELECT id, first_name, last_name FROM employees WHERE dept_id = 5;`}
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-yellow-400 mb-4">Avoid Functions on Indexed Columns</h3>
                       <pre className="text-white font-mono text-sm bg-gray-950 p-4 rounded">
-{`-- BAD - Index not used
+                        {`-- BAD - Index not used
 SELECT * FROM employees WHERE YEAR(hire_date) = 2024;
 
 -- GOOD - Index used
@@ -5448,7 +5402,7 @@ WHERE hire_date BETWEEN '2024-01-01' AND '2024-12-31';`}
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-yellow-400 mb-4">Use LIMIT for Large Result Sets</h3>
                       <pre className="text-white font-mono text-sm bg-gray-950 p-4 rounded">
-{`-- Without LIMIT - returns all rows
+                        {`-- Without LIMIT - returns all rows
 SELECT * FROM orders ORDER BY order_date DESC;
 
 -- With LIMIT - returns only needed rows
@@ -5501,7 +5455,7 @@ SELECT * FROM orders ORDER BY order_date DESC LIMIT 20 OFFSET 40;`}
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-yellow-400 mb-4">N+1 Query Problem</h3>
                       <pre className="text-white font-mono text-sm bg-gray-950 p-4 rounded">
-{`-- BAD - N+1 queries (1 + N where N = number of authors)
+                        {`-- BAD - N+1 queries (1 + N where N = number of authors)
 SELECT * FROM books; -- 1 query
 -- Then for each book:
 SELECT * FROM authors WHERE id = book.author_id; -- N queries
@@ -5516,7 +5470,7 @@ JOIN authors a ON b.author_id = a.id;`}
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-yellow-400 mb-4">Missing Index</h3>
                       <pre className="text-white font-mono text-sm bg-gray-950 p-4 rounded">
-{`-- Check slow query log
+                        {`-- Check slow query log
 SHOW VARIABLES LIKE 'slow_query_log';
 
 -- Identify missing indexes with EXPLAIN
@@ -5543,16 +5497,16 @@ CREATE INDEX idx_customer ON orders(customer_id);`}
               <p className="text-lg text-gray-400 mb-8 text-center">
                 Master transaction management and ACID properties to ensure data consistency and reliability
               </p>
-              
+
               <div className="max-w-6xl mx-auto space-y-8">
                 {/* Introduction */}
                 <div className="bg-gradient-to-r from-red-900/20 to-purple-900/20 p-8 rounded-2xl border border-red-500/30">
                   <h2 className="text-3xl font-bold text-white mb-6">🔒 Database Transactions & ACID Properties</h2>
-                  
+
                   <div className="bg-blue-900/20 border border-blue-500/30 p-6 rounded-lg mb-6">
                     <h4 className="text-xl font-bold text-blue-300 mb-4">🎯 Transaction Theory & Database Reliability</h4>
                     <p className="text-lg text-gray-300 leading-relaxed mb-4">
-                      Transactions are the fundamental mechanism ensuring database reliability and consistency. They provide the theoretical foundation 
+                      Transactions are the fundamental mechanism ensuring database reliability and consistency. They provide the theoretical foundation
                       for building robust, fault-tolerant database systems that can handle concurrent access and system failures gracefully.
                     </p>
                     <div className="bg-gray-700/50 p-4 rounded-lg">
@@ -5569,11 +5523,11 @@ CREATE INDEX idx_customer ON orders(customer_id);`}
 
                   <div className="space-y-4 text-gray-300">
                     <p className="text-lg leading-relaxed">
-                      A <strong className="text-white">transaction</strong> is a sequence of database operations that are treated as a single unit of work. 
+                      A <strong className="text-white">transaction</strong> is a sequence of database operations that are treated as a single unit of work.
                       Either all operations succeed (commit), or if any operation fails, all operations are rolled back to maintain data consistency.
                     </p>
                     <p className="text-lg leading-relaxed">
-                      Think of a transaction like a bank transfer: you want to deduct money from Account A and add it to Account B. 
+                      Think of a transaction like a bank transfer: you want to deduct money from Account A and add it to Account B.
                       If the deduction succeeds but the addition fails, you&apos;re in trouble! Transactions ensure both operations happen together or neither happens.
                     </p>
                     <div className="bg-gray-800 p-6 rounded-xl mt-4">
@@ -5710,7 +5664,7 @@ CREATE INDEX idx_customer ON orders(customer_id);`}
                       </p>
                       <div className="bg-gray-950 p-4 rounded mb-3">
                         <pre className="text-white font-mono text-sm">
-{`-- Bank Transfer Transaction
+                          {`-- Bank Transfer Transaction
 BEGIN;
 UPDATE accounts SET balance = balance - 100 WHERE account_id = 1;
 UPDATE accounts SET balance = balance + 100 WHERE account_id = 2;
@@ -5730,10 +5684,10 @@ COMMIT;`}
                   </div>
                 </div>
 
-                    <div className="bg-gray-900 p-6 rounded-xl">
-                      <h3 className="text-xl font-bold text-yellow-400 mb-4">Bank Transfer Example</h3>
-                      <pre className="text-white font-mono text-sm bg-gray-950 p-4 rounded">
-{`-- Money transfer between accounts
+                <div className="bg-gray-900 p-6 rounded-xl">
+                  <h3 className="text-xl font-bold text-yellow-400 mb-4">Bank Transfer Example</h3>
+                  <pre className="text-white font-mono text-sm bg-gray-950 p-4 rounded">
+                    {`-- Money transfer between accounts
 BEGIN;
 
 -- Deduct from sender
@@ -5754,13 +5708,13 @@ INSERT INTO transactions (from_account, to_account, amount, date)
 VALUES (101, 202, 500, NOW());
 
 COMMIT;  -- Save all changes`}
-                      </pre>
-                    </div>
+                  </pre>
+                </div>
 
-                    <div className="bg-gray-900 p-6 rounded-xl">
-                      <h3 className="text-xl font-bold text-yellow-400 mb-4">SAVEPOINT</h3>
-                      <pre className="text-white font-mono text-sm bg-gray-950 p-4 rounded">
-{`BEGIN;
+                <div className="bg-gray-900 p-6 rounded-xl">
+                  <h3 className="text-xl font-bold text-yellow-400 mb-4">SAVEPOINT</h3>
+                  <pre className="text-white font-mono text-sm bg-gray-950 p-4 rounded">
+                    {`BEGIN;
 
 UPDATE products SET stock = stock - 1 WHERE product_id = 1;
 SAVEPOINT sp1;
@@ -5775,117 +5729,117 @@ ROLLBACK TO sp2;
 
 -- Or commit all
 COMMIT;`}
-                      </pre>
+                  </pre>
+                </div>
+              </div>
+            </div>
+
+            {/* ACID Properties Deep Dive */}
+            <div className="bg-gray-800 p-8 rounded-2xl">
+              <h2 className="text-3xl font-bold text-white mb-6">🧪 ACID Properties - The Foundation of Reliability</h2>
+
+              <div className="bg-gradient-to-r from-green-900/20 to-blue-900/20 p-6 rounded-xl border border-green-500/30 mb-6">
+                <h3 className="text-2xl font-bold text-white mb-4">🔬 What Makes ACID Special?</h3>
+                <p className="text-gray-300 mb-4">
+                  ACID is not just an acronym - it&apos;s a set of guarantees that make databases reliable and trustworthy.
+                  These properties ensure that your data remains consistent and accurate, even when multiple users are
+                  accessing and modifying it simultaneously, or when system failures occur.
+                </p>
+                <p className="text-gray-300">
+                  Think of ACID as the "quality assurance" for database operations - it guarantees that your data
+                  will never be in an inconsistent or corrupted state, no matter what happens.
+                </p>
+              </div>
+
+              <div className="space-y-6">
+                <div className="bg-gray-900 p-6 rounded-xl">
+                  <h3 className="text-xl font-bold text-yellow-400 mb-4">⚛️ Atomicity - The "All or Nothing" Guarantee</h3>
+                  <p className="text-gray-300 mb-4">
+                    <strong className="text-white">Atomicity</strong> ensures that a transaction is treated as a single, indivisible unit of work.
+                    Either all operations within the transaction succeed, or none of them do. There&apos;s no middle ground.
+                  </p>
+                  <div className="bg-blue-900/20 border border-blue-500/30 p-6 rounded-xl mb-4">
+                    <h4 className="text-lg font-bold text-blue-300 mb-3">🔬 Deep Dive: How Atomicity Works</h4>
+                    <div className="space-y-3 text-gray-300">
+                      <div>
+                        <strong className="text-white">Transaction Logging:</strong> Every operation is logged before execution. If any operation fails,
+                        the database uses these logs to undo (rollback) all previous operations in the transaction.
+                      </div>
+                      <div>
+                        <strong className="text-white">Write-Ahead Logging (WAL):</strong> Changes are written to a transaction log before being applied
+                        to the actual data files. This ensures that rollback is always possible.
+                      </div>
+                      <div>
+                        <strong className="text-white">Two-Phase Commit:</strong> In distributed systems, atomicity ensures that all participating
+                        databases either commit or rollback together.
+                      </div>
                     </div>
                   </div>
-                </div>
-
-                {/* ACID Properties Deep Dive */}
-                <div className="bg-gray-800 p-8 rounded-2xl">
-                  <h2 className="text-3xl font-bold text-white mb-6">🧪 ACID Properties - The Foundation of Reliability</h2>
-                  
-                  <div className="bg-gradient-to-r from-green-900/20 to-blue-900/20 p-6 rounded-xl border border-green-500/30 mb-6">
-                    <h3 className="text-2xl font-bold text-white mb-4">🔬 What Makes ACID Special?</h3>
-                    <p className="text-gray-300 mb-4">
-                      ACID is not just an acronym - it&apos;s a set of guarantees that make databases reliable and trustworthy. 
-                      These properties ensure that your data remains consistent and accurate, even when multiple users are 
-                      accessing and modifying it simultaneously, or when system failures occur.
-                    </p>
-                    <p className="text-gray-300">
-                      Think of ACID as the "quality assurance" for database operations - it guarantees that your data 
-                      will never be in an inconsistent or corrupted state, no matter what happens.
-                    </p>
-                  </div>
-
-                  <div className="space-y-6">
-                    <div className="bg-gray-900 p-6 rounded-xl">
-                      <h3 className="text-xl font-bold text-yellow-400 mb-4">⚛️ Atomicity - The "All or Nothing" Guarantee</h3>
-                      <p className="text-gray-300 mb-4">
-                        <strong className="text-white">Atomicity</strong> ensures that a transaction is treated as a single, indivisible unit of work. 
-                        Either all operations within the transaction succeed, or none of them do. There&apos;s no middle ground.
-                      </p>
-                      <div className="bg-blue-900/20 border border-blue-500/30 p-6 rounded-xl mb-4">
-                        <h4 className="text-lg font-bold text-blue-300 mb-3">🔬 Deep Dive: How Atomicity Works</h4>
-                        <div className="space-y-3 text-gray-300">
-                          <div>
-                            <strong className="text-white">Transaction Logging:</strong> Every operation is logged before execution. If any operation fails, 
-                            the database uses these logs to undo (rollback) all previous operations in the transaction.
-                          </div>
-                          <div>
-                            <strong className="text-white">Write-Ahead Logging (WAL):</strong> Changes are written to a transaction log before being applied 
-                            to the actual data files. This ensures that rollback is always possible.
-                          </div>
-                          <div>
-                            <strong className="text-white">Two-Phase Commit:</strong> In distributed systems, atomicity ensures that all participating 
-                            databases either commit or rollback together.
-                          </div>
-                        </div>
-                      </div>
-                      <div className="bg-gray-950 p-4 rounded mb-3">
-                        <pre className="text-white font-mono text-sm">
-{`-- Example: Bank Transfer (Atomic)
+                  <div className="bg-gray-950 p-4 rounded mb-3">
+                    <pre className="text-white font-mono text-sm">
+                      {`-- Example: Bank Transfer (Atomic)
 BEGIN;
 UPDATE accounts SET balance = balance - 100 WHERE id = 1;
 UPDATE accounts SET balance = balance + 100 WHERE id = 2;
 COMMIT;`}
-                        </pre>
+                    </pre>
+                  </div>
+                  <div className="bg-green-900/20 border border-green-500/30 p-4 rounded">
+                    <p className="text-sm text-green-300 font-bold mb-2">📊 Atomicity in Action:</p>
+                    <div className="text-green-200 text-xs space-y-1">
+                      <div>✅ Success: Both accounts updated, money transferred</div>
+                      <div>❌ Failure: Neither account changed, no money lost</div>
+                      <div>🚫 Never: One account updated, other unchanged</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-gray-900 p-6 rounded-xl">
+                  <h3 className="text-xl font-bold text-blue-400 mb-4">⚖️ Consistency - The Rule Keeper</h3>
+                  <p className="text-gray-300 mb-4">
+                    <strong className="text-white">Consistency</strong> ensures that a database transitions from one valid state to another.
+                    The database will never be left in an inconsistent state where business rules or constraints are violated.
+                  </p>
+                  <div className="bg-purple-900/20 border border-purple-500/30 p-6 rounded-xl mb-4">
+                    <h4 className="text-lg font-bold text-purple-300 mb-3">🛡️ How Consistency is Maintained</h4>
+                    <div className="space-y-3 text-gray-300">
+                      <div>
+                        <strong className="text-white">Constraint Enforcement:</strong> Database constraints (CHECK, FOREIGN KEY, NOT NULL)
+                        prevent invalid data from being stored, ensuring data integrity.
                       </div>
-                      <div className="bg-green-900/20 border border-green-500/30 p-4 rounded">
-                        <p className="text-sm text-green-300 font-bold mb-2">📊 Atomicity in Action:</p>
-                        <div className="text-green-200 text-xs space-y-1">
-                          <div>✅ Success: Both accounts updated, money transferred</div>
-                          <div>❌ Failure: Neither account changed, no money lost</div>
-                          <div>🚫 Never: One account updated, other unchanged</div>
-                        </div>
+                      <div>
+                        <strong className="text-white">Business Rule Validation:</strong> Complex business logic can be enforced through
+                        triggers, stored procedures, and application-level validation.
+                      </div>
+                      <div>
+                        <strong className="text-white">Referential Integrity:</strong> Foreign key relationships ensure that related data
+                        remains consistent across tables.
                       </div>
                     </div>
-
-                    <div className="bg-gray-900 p-6 rounded-xl">
-                      <h3 className="text-xl font-bold text-blue-400 mb-4">⚖️ Consistency - The Rule Keeper</h3>
-                      <p className="text-gray-300 mb-4">
-                        <strong className="text-white">Consistency</strong> ensures that a database transitions from one valid state to another. 
-                        The database will never be left in an inconsistent state where business rules or constraints are violated.
-                      </p>
-                      <div className="bg-purple-900/20 border border-purple-500/30 p-6 rounded-xl mb-4">
-                        <h4 className="text-lg font-bold text-purple-300 mb-3">🛡️ How Consistency is Maintained</h4>
-                        <div className="space-y-3 text-gray-300">
-                          <div>
-                            <strong className="text-white">Constraint Enforcement:</strong> Database constraints (CHECK, FOREIGN KEY, NOT NULL) 
-                            prevent invalid data from being stored, ensuring data integrity.
-                          </div>
-                          <div>
-                            <strong className="text-white">Business Rule Validation:</strong> Complex business logic can be enforced through 
-                            triggers, stored procedures, and application-level validation.
-                          </div>
-                          <div>
-                            <strong className="text-white">Referential Integrity:</strong> Foreign key relationships ensure that related data 
-                            remains consistent across tables.
-                          </div>
-                        </div>
-                      </div>
-                      <div className="bg-gray-950 p-4 rounded mb-3">
-                        <pre className="text-white font-mono text-sm">
-{`-- Example: Balance Constraint
+                  </div>
+                  <div className="bg-gray-950 p-4 rounded mb-3">
+                    <pre className="text-white font-mono text-sm">
+                      {`-- Example: Balance Constraint
 ALTER TABLE accounts ADD CONSTRAINT chk_balance CHECK (balance >= 0);
 -- This transaction will be rejected if it violates constraints
 UPDATE accounts SET balance = balance - 1000 WHERE id = 1;`}
-                        </pre>
-                      </div>
-                      <div className="bg-green-900/20 border border-green-500/30 p-4 rounded">
-                        <p className="text-sm text-green-300 font-bold mb-2">📊 Consistency in Action:</p>
-                        <div className="text-green-200 text-xs space-y-1">
-                          <div>✅ Valid: Balance remains ≥ 0, transaction commits</div>
-                          <div>❌ Invalid: Balance would go negative, transaction rejected</div>
-                          <div>🛡️ Protection: Database never allows invalid states</div>
-                        </div>
-                      </div>
+                    </pre>
+                  </div>
+                  <div className="bg-green-900/20 border border-green-500/30 p-4 rounded">
+                    <p className="text-sm text-green-300 font-bold mb-2">📊 Consistency in Action:</p>
+                    <div className="text-green-200 text-xs space-y-1">
+                      <div>✅ Valid: Balance remains ≥ 0, transaction commits</div>
+                      <div>❌ Invalid: Balance would go negative, transaction rejected</div>
+                      <div>🛡️ Protection: Database never allows invalid states</div>
                     </div>
+                  </div>
+                </div>
 
-                    <div className="bg-gray-900 p-6 rounded-xl">
-                      <h3 className="text-xl font-bold text-purple-400 mb-4">Isolation</h3>
-                      <p className="text-gray-300 mb-3">Concurrent transactions don&apos;t interfere with each other</p>
-                      <pre className="text-white font-mono text-sm bg-gray-950 p-4 rounded">
-{`-- Set isolation level
+                <div className="bg-gray-900 p-6 rounded-xl">
+                  <h3 className="text-xl font-bold text-purple-400 mb-4">Isolation</h3>
+                  <p className="text-gray-300 mb-3">Concurrent transactions don&apos;t interfere with each other</p>
+                  <pre className="text-white font-mono text-sm bg-gray-950 p-4 rounded">
+                    {`-- Set isolation level
 SET TRANSACTION ISOLATION LEVEL 
 READ COMMITTED;
 
@@ -5893,104 +5847,104 @@ BEGIN;
 SELECT * FROM products WHERE id = 1;
 -- Other transactions can't modify this row
 COMMIT;`}
-                      </pre>
-                    </div>
+                  </pre>
+                </div>
 
-                    <div className="bg-gray-900 p-6 rounded-xl">
-                      <h3 className="text-xl font-bold text-yellow-400 mb-4">Durability</h3>
-                      <p className="text-gray-300 mb-3">Committed transactions are permanently saved</p>
-                      <pre className="text-white font-mono text-sm bg-gray-950 p-4 rounded">
-{`BEGIN;
+                <div className="bg-gray-900 p-6 rounded-xl">
+                  <h3 className="text-xl font-bold text-yellow-400 mb-4">Durability</h3>
+                  <p className="text-gray-300 mb-3">Committed transactions are permanently saved</p>
+                  <pre className="text-white font-mono text-sm bg-gray-950 p-4 rounded">
+                    {`BEGIN;
 INSERT INTO orders VALUES (1, 'Product A', 100);
 COMMIT;
 -- Even if server crashes,
 -- this data is preserved`}
-                      </pre>
-                    </div>
-                  </div>
+                  </pre>
                 </div>
+              </div>
+            </div>
 
-                {/* Isolation Levels */}
-                <div className="bg-gray-800 p-8 rounded-2xl">
-                  <h2 className="text-3xl font-bold text-white mb-6">Isolation Levels</h2>
-                  <div className="space-y-6">
-                    <div className="bg-gray-900 p-6 rounded-xl">
-                      <h3 className="text-xl font-bold text-yellow-400 mb-4">READ UNCOMMITTED</h3>
-                      <p className="text-gray-300 mb-3">Lowest isolation - can read uncommitted changes (dirty reads)</p>
-                      <pre className="text-white font-mono text-sm bg-gray-950 p-4 rounded">
-{`SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;
+            {/* Isolation Levels */}
+            <div className="bg-gray-800 p-8 rounded-2xl">
+              <h2 className="text-3xl font-bold text-white mb-6">Isolation Levels</h2>
+              <div className="space-y-6">
+                <div className="bg-gray-900 p-6 rounded-xl">
+                  <h3 className="text-xl font-bold text-yellow-400 mb-4">READ UNCOMMITTED</h3>
+                  <p className="text-gray-300 mb-3">Lowest isolation - can read uncommitted changes (dirty reads)</p>
+                  <pre className="text-white font-mono text-sm bg-gray-950 p-4 rounded">
+                    {`SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;
 BEGIN;
 SELECT * FROM products;  -- May see uncommitted changes
 COMMIT;`}
-                      </pre>
-                    </div>
+                  </pre>
+                </div>
 
-                    <div className="bg-gray-900 p-6 rounded-xl">
-                      <h3 className="text-xl font-bold text-yellow-400 mb-4">READ COMMITTED (Default)</h3>
-                      <p className="text-gray-300 mb-3">Only reads committed data - prevents dirty reads</p>
-                      <pre className="text-white font-mono text-sm bg-gray-950 p-4 rounded">
-{`SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+                <div className="bg-gray-900 p-6 rounded-xl">
+                  <h3 className="text-xl font-bold text-yellow-400 mb-4">READ COMMITTED (Default)</h3>
+                  <p className="text-gray-300 mb-3">Only reads committed data - prevents dirty reads</p>
+                  <pre className="text-white font-mono text-sm bg-gray-950 p-4 rounded">
+                    {`SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
 BEGIN;
 SELECT * FROM products;  -- Only sees committed data
 COMMIT;`}
-                      </pre>
-                    </div>
+                  </pre>
+                </div>
 
-                    <div className="bg-gray-900 p-6 rounded-xl">
-                      <h3 className="text-xl font-bold text-yellow-400 mb-4">REPEATABLE READ</h3>
-                      <p className="text-gray-300 mb-3">Same query returns same results - prevents non-repeatable reads</p>
-                      <pre className="text-white font-mono text-sm bg-gray-950 p-4 rounded">
-{`SET TRANSACTION ISOLATION LEVEL REPEATABLE READ;
+                <div className="bg-gray-900 p-6 rounded-xl">
+                  <h3 className="text-xl font-bold text-yellow-400 mb-4">REPEATABLE READ</h3>
+                  <p className="text-gray-300 mb-3">Same query returns same results - prevents non-repeatable reads</p>
+                  <pre className="text-white font-mono text-sm bg-gray-950 p-4 rounded">
+                    {`SET TRANSACTION ISOLATION LEVEL REPEATABLE READ;
 BEGIN;
 SELECT * FROM products WHERE id = 1;
 -- Even if others UPDATE, same SELECT returns same result
 SELECT * FROM products WHERE id = 1;
 COMMIT;`}
-                      </pre>
-                    </div>
+                  </pre>
+                </div>
 
-                    <div className="bg-gray-900 p-6 rounded-xl">
-                      <h3 className="text-xl font-bold text-yellow-400 mb-4">SERIALIZABLE</h3>
-                      <p className="text-gray-300 mb-3">Highest isolation - full isolation like serial execution</p>
-                      <pre className="text-white font-mono text-sm bg-gray-950 p-4 rounded">
-{`SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+                <div className="bg-gray-900 p-6 rounded-xl">
+                  <h3 className="text-xl font-bold text-yellow-400 mb-4">SERIALIZABLE</h3>
+                  <p className="text-gray-300 mb-3">Highest isolation - full isolation like serial execution</p>
+                  <pre className="text-white font-mono text-sm bg-gray-950 p-4 rounded">
+                    {`SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
 BEGIN;
 SELECT * FROM products;  -- Locks rows, prevents all anomalies
 COMMIT;`}
-                      </pre>
-                    </div>
-                  </div>
+                  </pre>
                 </div>
+              </div>
+            </div>
 
-                {/* Best Practices */}
-                <div className="bg-gray-800 p-8 rounded-2xl">
-                  <h2 className="text-3xl font-bold text-white mb-6">Transaction Best Practices</h2>
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="bg-gray-900 p-6 rounded-xl">
-                      <h3 className="text-lg font-bold text-green-400 mb-3">✅ Do</h3>
-                      <ul className="text-gray-300 space-y-2">
-                        <li>• Keep transactions short</li>
-                        <li>• Use appropriate isolation level</li>
-                        <li>• Always handle errors (try-catch)</li>
-                        <li>• Use COMMIT/ROLLBACK explicitly</li>
-                        <li>• Test transaction logic thoroughly</li>
-                        <li>• Use SAVEPOINT for partial rollback</li>
-                        <li>• Monitor deadlocks</li>
-                      </ul>
-                    </div>
-                    <div className="bg-gray-900 p-6 rounded-xl">
-                      <h3 className="text-lg font-bold text-red-400 mb-3">❌ Don&apos;t</h3>
-                      <ul className="text-gray-300 space-y-2">
-                        <li>• Keep transactions open too long</li>
-                        <li>• Use highest isolation always (performance cost)</li>
-                        <li>• Forget to handle errors</li>
-                        <li>• Mix DDL and DML in transactions</li>
-                        <li>• Lock more rows than needed</li>
-                        <li>• Perform slow operations in transactions</li>
-                        <li>• Ignore transaction timeouts</li>
-                      </ul>
-                    </div>
-                  </div>
+            {/* Best Practices */}
+            <div className="bg-gray-800 p-8 rounded-2xl">
+              <h2 className="text-3xl font-bold text-white mb-6">Transaction Best Practices</h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-gray-900 p-6 rounded-xl">
+                  <h3 className="text-lg font-bold text-green-400 mb-3">✅ Do</h3>
+                  <ul className="text-gray-300 space-y-2">
+                    <li>• Keep transactions short</li>
+                    <li>• Use appropriate isolation level</li>
+                    <li>• Always handle errors (try-catch)</li>
+                    <li>• Use COMMIT/ROLLBACK explicitly</li>
+                    <li>• Test transaction logic thoroughly</li>
+                    <li>• Use SAVEPOINT for partial rollback</li>
+                    <li>• Monitor deadlocks</li>
+                  </ul>
+                </div>
+                <div className="bg-gray-900 p-6 rounded-xl">
+                  <h3 className="text-lg font-bold text-red-400 mb-3">❌ Don&apos;t</h3>
+                  <ul className="text-gray-300 space-y-2">
+                    <li>• Keep transactions open too long</li>
+                    <li>• Use highest isolation always (performance cost)</li>
+                    <li>• Forget to handle errors</li>
+                    <li>• Mix DDL and DML in transactions</li>
+                    <li>• Lock more rows than needed</li>
+                    <li>• Perform slow operations in transactions</li>
+                    <li>• Ignore transaction timeouts</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </main>
         );
@@ -6005,7 +5959,7 @@ COMMIT;`}
               <p className="text-lg text-gray-400 mb-8 text-center">
                 Essential SQL commands and best practices at a glance
               </p>
-              
+
               <div className="max-w-6xl mx-auto space-y-8">
                 {/* Command Categories */}
                 <div className="bg-gray-800 p-8 rounded-2xl">
@@ -6014,7 +5968,7 @@ COMMIT;`}
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-green-400 mb-4">DDL (Data Definition)</h3>
                       <pre className="text-white font-mono text-sm bg-gray-950 p-4 rounded">
-{`CREATE TABLE, ALTER TABLE
+                        {`CREATE TABLE, ALTER TABLE
 DROP TABLE, TRUNCATE TABLE
 CREATE INDEX, DROP INDEX`}
                       </pre>
@@ -6022,7 +5976,7 @@ CREATE INDEX, DROP INDEX`}
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-blue-400 mb-4">DML (Data Manipulation)</h3>
                       <pre className="text-white font-mono text-sm bg-gray-950 p-4 rounded">
-{`INSERT INTO
+                        {`INSERT INTO
 UPDATE SET WHERE
 DELETE FROM WHERE`}
                       </pre>
@@ -6030,7 +5984,7 @@ DELETE FROM WHERE`}
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-yellow-400 mb-4">DQL (Data Query)</h3>
                       <pre className="text-white font-mono text-sm bg-gray-950 p-4 rounded">
-{`SELECT FROM WHERE
+                        {`SELECT FROM WHERE
 ORDER BY, GROUP BY
 HAVING, LIMIT`}
                       </pre>
@@ -6038,7 +5992,7 @@ HAVING, LIMIT`}
                     <div className="bg-gray-900 p-6 rounded-xl">
                       <h3 className="text-xl font-bold text-purple-400 mb-4">TCL (Transaction Control)</h3>
                       <pre className="text-white font-mono text-sm bg-gray-950 p-4 rounded">
-{`BEGIN, COMMIT
+                        {`BEGIN, COMMIT
 ROLLBACK, SAVEPOINT`}
                       </pre>
                     </div>
@@ -6051,7 +6005,7 @@ ROLLBACK, SAVEPOINT`}
                   <div className="space-y-4">
                     <div className="bg-gray-900 p-4 rounded-xl">
                       <pre className="text-white font-mono text-sm">
-{`-- Query data
+                        {`-- Query data
 SELECT column1, column2 FROM table WHERE condition ORDER BY column DESC LIMIT 10;
 
 -- Insert data
@@ -6123,25 +6077,25 @@ BEGIN; UPDATE...; INSERT...; COMMIT;`}
                     <div className="bg-gray-900 p-4 rounded-xl">
                       <h3 className="text-lg font-bold text-yellow-400 mb-2">Pagination</h3>
                       <pre className="text-white font-mono text-sm bg-gray-950 p-3 rounded">
-{`SELECT * FROM products ORDER BY id LIMIT 20 OFFSET 40;`}
+                        {`SELECT * FROM products ORDER BY id LIMIT 20 OFFSET 40;`}
                       </pre>
                     </div>
                     <div className="bg-gray-900 p-4 rounded-xl">
                       <h3 className="text-lg font-bold text-yellow-400 mb-2">Top N per Group</h3>
                       <pre className="text-white font-mono text-sm bg-gray-950 p-3 rounded">
-{`SELECT * FROM (SELECT *, ROW_NUMBER() OVER (PARTITION BY category ORDER BY sales DESC) as rn FROM products) WHERE rn <= 3;`}
+                        {`SELECT * FROM (SELECT *, ROW_NUMBER() OVER (PARTITION BY category ORDER BY sales DESC) as rn FROM products) WHERE rn <= 3;`}
                       </pre>
                     </div>
                     <div className="bg-gray-900 p-4 rounded-xl">
                       <h3 className="text-lg font-bold text-yellow-400 mb-2">Running Total</h3>
                       <pre className="text-white font-mono text-sm bg-gray-950 p-3 rounded">
-{`SELECT date, amount, SUM(amount) OVER (ORDER BY date) as running_total FROM transactions;`}
+                        {`SELECT date, amount, SUM(amount) OVER (ORDER BY date) as running_total FROM transactions;`}
                       </pre>
                     </div>
                     <div className="bg-gray-900 p-4 rounded-xl">
                       <h3 className="text-lg font-bold text-yellow-400 mb-2">Find Duplicates</h3>
                       <pre className="text-white font-mono text-sm bg-gray-950 p-3 rounded">
-{`SELECT email, COUNT(*) FROM users GROUP BY email HAVING COUNT(*) > 1;`}
+                        {`SELECT email, COUNT(*) FROM users GROUP BY email HAVING COUNT(*) > 1;`}
                       </pre>
                     </div>
                   </div>
@@ -6204,7 +6158,7 @@ BEGIN; UPDATE...; INSERT...; COMMIT;`}
               <p className="text-lg text-gray-400 mb-8 text-center">
                 Learn SQL through comprehensive video tutorials
               </p>
-              
+
               <div className="max-w-6xl mx-auto">
                 <VideoSection videos={[]} title="SQL Video Tutorials" />
               </div>
