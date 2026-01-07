@@ -40,17 +40,18 @@ export default function AuthGuard({ children }: { children: React.ReactNode }) {
       return;
     }
 
-    // Check if current route is exactly the root or one of the auth pages
-    const isPublicRoute = publicRoutes.some(route =>
-      route === "/" ? pathname === "/" : (pathname === route || pathname.startsWith(route))
-    );
-
     // Root page is ALWAYS public and NEVER shows modal
+    // Check this FIRST before any other logic to be absolutely sure
     if (pathname === "/") {
       setIsAuthenticated(true);
       setShowAuthModal(false);
       return;
     }
+
+    // Check if current route is one of the auth pages or other public routes
+    const isPublicRoute = publicRoutes.some(route =>
+      route === "/" ? pathname === "/" : (pathname === route || pathname.startsWith(route))
+    );
 
     if (isPublicRoute) {
       setIsAuthenticated(true);
@@ -104,7 +105,7 @@ export default function AuthGuard({ children }: { children: React.ReactNode }) {
     <>
       {children}
       <AuthModal
-        isOpen={showAuthModal}
+        isOpen={showAuthModal && pathname !== "/"}
         onClose={() => {
           // If user closes it without a token, redirect to home to enforce "required" sign up
           const token = localStorage.getItem("token");

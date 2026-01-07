@@ -256,7 +256,7 @@ export default function SharedNav({ isScrolled = false, showAnimatedLine = true,
       </div>
 
       {/* Top Left Floating Nav - Social & Phone */}
-      <div className="fixed top-32 left-6 z-[100002] pointer-events-auto flex flex-col gap-4 items-start">
+      <div className="fixed top-16 left-6 z-[100002] pointer-events-auto flex flex-col gap-4 items-start">
         {/* Social Icons Pill - Social Media (Top) */}
         <div className="bg-gray-200 backdrop-blur-md shadow-lg rounded-full px-4 py-2 flex items-center justify-center transform hover:scale-105 transition-transform">
           <div className="flex space-x-3 items-center justify-start text-gray-700">
