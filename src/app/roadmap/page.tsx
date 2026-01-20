@@ -5,9 +5,9 @@ import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import { roadmaps } from '@/data/roadmaps';
 import Link from 'next/link';
 import { ArrowLeft, Calendar } from 'lucide-react';
-import { useRef } from 'react';
+import { useRef, Suspense } from 'react';
 
-export default function RoadmapPage() {
+function RoadmapContent() {
     const searchParams = useSearchParams();
     const router = useRouter();
     const courseId = searchParams.get('courseId');
@@ -284,5 +284,13 @@ export default function RoadmapPage() {
                 </div>
             </div>
         </div>
+    );
+}
+
+export default function RoadmapPage() {
+    return (
+        <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-gray-50">Loading Roadmap...</div>}>
+            <RoadmapContent />
+        </Suspense>
     );
 }
