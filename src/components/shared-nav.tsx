@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import MenuDropdown from '@/components/menu-dropdown';
 import MobileMenu from '@/components/mobile-menu';
-import SearchBar from '@/components/search-bar';
+
 import { useTheme } from '@/hooks/useTheme';
 import UserMenu from '@/components/user-menu';
 
@@ -279,10 +279,7 @@ export default function SharedNav({ isScrolled = false, showAnimatedLine = true,
             {/* Divider */}
             <div className="hidden md:block w-px h-6 bg-[#083D77]/20 mx-2"></div>
 
-            {/* Search */}
-            <div className="hidden sm:block">
-              <SearchBar />
-            </div>
+
 
             {/* Mobile Menu Button  */}
             <button

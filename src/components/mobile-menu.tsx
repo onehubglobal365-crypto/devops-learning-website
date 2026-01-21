@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Stethoscope, Code, GraduationCap, Home, BookOpen, Map, Rocket, Library, Briefcase, Users, HelpCircle, Terminal, Trophy } from 'lucide-react';
 import menuConfig from '@/data/menu-config.json';
-import SearchBar from './search-bar';
+
 
 
 interface MobileMenuProps {
@@ -116,10 +116,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             </button>
           </div>
 
-          {/* Search */}
-          <div className="p-4 border-b border-[#083D77]/10">
-            <SearchBar alwaysOpen={true} />
-          </div>
+
 
           {/* Menu Items */}
           <nav className="flex-1 p-4 pb-24 space-y-1" role="menu">
@@ -266,6 +263,17 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               >
                 <Terminal className="w-5 h-5 mr-3" />
                 Terminal
+              </Link>
+              <Link
+                href="https://konnecthere.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={onClose}
+                className="block px-4 py-3 bg-orange-500 text-white font-bold rounded-xl hover:bg-orange-600 shadow-md hover:shadow-lg transition-all duration-300 min-h-[44px] flex items-center justify-center"
+                role="menuitem"
+              >
+                <Briefcase className="w-5 h-5 mr-2" />
+                Apply Jobs
               </Link>
               <Link
                 href="/login"
