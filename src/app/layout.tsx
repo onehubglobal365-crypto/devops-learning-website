@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Orbitron } from "next/font/google"; // Import Orbitron
 import "./globals.css";
-import { ConditionalNav } from "@/components/conditional-nav";
-import AuthGuard from "@/components/auth-guard";
-import GlobalContinuePrompt from "@/components/global-continue-prompt";
-import { SiteNavigationJSONLD } from "@/components/seo-metadata";
+import { ConditionalNav } from '@/components/layout/conditional-nav';
+import AuthGuard from '@/components/auth/auth-guard';
+import GlobalContinuePrompt from '@/components/auth/global-continue-prompt';
+import { SiteNavigationJSONLD } from '@/components/seo/seo-metadata';
 import { AUTH_SYSTEM_AVAILABLE } from "@/config/authStatus";
-import { ThemeProvider } from "@/components/theme-provider";
-import GlobalBackButton from "@/components/GlobalBackButton";
+import { ThemeProvider } from '@/components/common/theme-provider';
+import GlobalBackButton from '@/components/common/GlobalBackButton';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

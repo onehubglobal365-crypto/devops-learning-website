@@ -1,6 +1,6 @@
 'use client';
 
-import TechLayout from '@/components/tech-layout';
+import TechLayout from '@/components/layout/tech-layout';
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import courseSections from '@/data/azure-basics-course.json';

@@ -2,8 +2,8 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import MultiTerminal from '@/components/multi-terminal';
-import CodeEditor from '@/components/code-editor';
+import MultiTerminal from '@/components/code/multi-terminal';
+import CodeEditor from '@/components/code/code-editor';
 
 import { Terminal, Code2, FileCode, Database, Rocket, FolderOpen, Search, Lightbulb } from 'lucide-react';
 
@@ -22,14 +22,8 @@ export default function TerminalPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white transition-colors duration-300 relative overflow-x-hidden">
-      {/* Static Vibrant Background */}
-      {isMounted && (
-        <div className="fixed inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-[-20%] right-[-10%] w-[70%] h-[80%] rounded-full bg-gradient-to-bl from-violet-400 via-fuchsia-400 to-pink-400 opacity-25 blur-[120px]" />
-          <div className="absolute bottom-[-20%] left-[-10%] w-[60%] h-[60%] rounded-full bg-gradient-to-tr from-cyan-400 via-sky-400 to-blue-400 opacity-25 blur-[100px]" />
-        </div>
-      )}
+    <div className="min-h-screen transition-colors duration-300 relative overflow-x-hidden" style={{ background: 'linear-gradient(to bottom right, #dcfce7, #d1fae5, #ccfbf1)' }}>
+      {/* Static Vibrant Background - Removed */}
 
       <div className="relative z-10 max-w-7xl mx-auto px-8 py-16">
         <div className="text-center mb-12">

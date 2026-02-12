@@ -1,6 +1,6 @@
 'use client';
 
-import TechLayout from '@/components/tech-layout';
+import TechLayout from '@/components/layout/tech-layout';
 
 const PAGE_HEADINGS = [
   { id: 'coming-soon', title: 'Coming Soon' }

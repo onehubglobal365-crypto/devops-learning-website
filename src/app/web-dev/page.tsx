@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import TechLayout from '@/components/tech-layout';
+import TechLayout from '@/components/layout/tech-layout';
 import { AUTH_SYSTEM_AVAILABLE } from '@/config/authStatus';
 
 export default function WebDevPage() {
@@ -10,13 +10,7 @@ export default function WebDevPage() {
 
   const pageHeadings = [
     { id: 'introduction', title: 'Web Development Learning Hub' },
-    { id: 'frontend-fundamentals', title: 'Frontend Fundamentals' },
-    { id: 'advanced-frontend', title: 'Advanced Frontend' },
-    { id: 'backend-development', title: 'Backend Development' },
-    { id: 'full-stack-architecture', title: 'Full-Stack Architecture' },
-    { id: 'performance-optimization', title: 'Performance & Optimization' },
-    { id: 'modern-frameworks', title: 'Modern Frameworks' },
-    { id: 'learning-path', title: 'Complete Learning Path' }
+    { id: 'frontend-fundamentals', title: 'Frontend Fundamentals' }
   ];
 
   // Get navigation for current section

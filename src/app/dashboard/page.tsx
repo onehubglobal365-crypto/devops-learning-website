@@ -3,8 +3,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { User, Phone, Save, Camera, Lock, X, FileText, Upload } from 'lucide-react';
-import SharedNav from '@/components/shared-nav';
+import { User, Phone, Save, Camera, Lock, X, FileText, Upload, GraduationCap } from 'lucide-react';
+import SharedNav from '@/components/layout/shared-nav';
 
 interface UserProfile {
     username: string;
@@ -12,6 +12,7 @@ interface UserProfile {
     mobile: string;
     photo: string | null;
     resume?: string | null;
+    preferredCourse?: string;
 }
 
 export default function DashboardPage() {
@@ -21,19 +22,27 @@ export default function DashboardPage() {
         nickname: '',
         mobile: '',
         photo: null,
-        resume: null
+        resume: null,
+        preferredCourse: ''
     });
     const [activeTab, setActiveTab] = useState<'details' | 'password'>('details');
     const fileInputRef = useRef<HTMLInputElement>(null);
     const [isSaving, setIsSaving] = useState(false);
 
     useEffect(() => {
+        // Check for authentication
+        const token = localStorage.getItem('token');
+        if (!token) {
+            router.push('/login?redirect=/dashboard');
+            return;
+        }
+
         // Load profile from localStorage
         const savedProfile = localStorage.getItem('userProfile');
         if (savedProfile) {
             setProfile(JSON.parse(savedProfile));
         }
-    }, []);
+    }, [router]);
 
     const handlePhotoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0];
@@ -102,7 +111,8 @@ export default function DashboardPage() {
                         </div>
 
                         {/* Avatar */}
-                        <div className="absolute -bottom-16 left-8 md:left-12 group z-20">
+                        {/* Moved down by changing -bottom-16 to -bottom-24 */}
+                        <div className="absolute -bottom-24 left-8 md:left-12 group z-20">
                             <div className="w-32 h-32 rounded-full border-4 border-white shadow-lg overflow-hidden bg-gray-100 flex items-center justify-center text-4xl font-bold text-[#083D77]">
                                 {profile.photo ? (
                                     <Image src={profile.photo} alt="Profile" width={128} height={128} className="w-full h-full object-cover" />
@@ -128,7 +138,8 @@ export default function DashboardPage() {
                     </div>
 
                     {/* Content Section */}
-                    <div className="pt-20 px-8 md:px-12 pb-12">
+                    {/* Increased padding-top to accommodate lower avatar: pt-20 -> pt-28 */}
+                    <div className="pt-28 px-8 md:px-12 pb-12">
 
                         {/* Name Display */}
                         <div className="mb-8">
@@ -179,6 +190,24 @@ export default function DashboardPage() {
                                             className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#083D77] focus:ring-2 focus:ring-[#083D77]/20 outline-none transition-all bg-gray-50 focus:bg-white text-gray-900"
                                             placeholder="+91"
                                         />
+                                    </div>
+                                    <div className="space-y-2">
+                                        <label className="text-sm font-bold text-gray-700 flex items-center gap-2">
+                                            <GraduationCap className="w-4 h-4 text-purple-600" /> Preferred Course
+                                        </label>
+                                        <select
+                                            value={profile.preferredCourse || ''}
+                                            onChange={(e) => setProfile({ ...profile, preferredCourse: e.target.value })}
+                                            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#083D77] focus:ring-2 focus:ring-[#083D77]/20 outline-none transition-all bg-gray-50 focus:bg-white text-gray-900"
+                                        >
+                                            <option value="">Select a course</option>
+                                            <option value="DevOps">DevOps</option>
+                                            <option value="Python">Python</option>
+                                            <option value="Java">Java</option>
+                                            <option value="Data Science">Data Science</option>
+                                            <option value="Web Development">Web Development</option>
+                                            <option value="AWS Cloud">AWS Cloud</option>
+                                        </select>
                                     </div>
                                     <div className="space-y-2">
                                         <label className="text-sm font-bold text-gray-700 flex items-center gap-2">

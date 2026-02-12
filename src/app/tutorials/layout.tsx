@@ -1,6 +1,6 @@
 'use client';
 
-import TutorialAuthGuard from '@/components/tutorial-auth-guard';
+import TutorialAuthGuard from '@/components/auth/tutorial-auth-guard';
 
 export default function TutorialsLayout({
   children,

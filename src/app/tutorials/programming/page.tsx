@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { AUTH_SYSTEM_AVAILABLE } from '@/config/authStatus';
-import { TechnologyCard, CardGrid } from '@/components/ui/technology-card';
+import { TechnologyCard, CardGrid } from '@/components/common/technology-card';
 import { Rocket, Coffee, FileCode, Database, Globe, BarChart, Stethoscope } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -151,68 +151,8 @@ export default function ProgrammingPage() {
   }
 
   return (
-    <main className="min-h-screen pb-20 pt-[120px] bg-[var(--bg-primary)] overflow-hidden relative">
-      {/* Animated Background */}
-      {isMounted && (
-        <div className="fixed inset-0 overflow-hidden pointer-events-none">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{
-              opacity: 0.8,
-              x: [0, 150, 0],
-              y: [0, -80, 0],
-              scale: [1, 1.4, 1]
-            }}
-            transition={{
-              opacity: { duration: 0.5 },
-              default: {
-                duration: 12,
-                repeat: Infinity,
-                repeatType: "reverse"
-              }
-            }}
-            className="absolute -top-40 -right-40 w-96 h-96 bg-orange-400/60 rounded-full blur-3xl"
-          />
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{
-              opacity: 0.7,
-              x: [0, -150, 0],
-              y: [0, 80, 0],
-              scale: [1, 1.8, 1]
-            }}
-            transition={{
-              opacity: { duration: 0.5 },
-              default: {
-                duration: 15,
-                repeat: Infinity,
-                repeatType: "reverse",
-                delay: 1
-              }
-            }}
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-300/50 rounded-full blur-[100px]"
-          />
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{
-              opacity: 0.8,
-              x: [0, 80, 0],
-              y: [0, -120, 0],
-              scale: [1, 1.3, 1]
-            }}
-            transition={{
-              opacity: { duration: 0.5 },
-              default: {
-                duration: 10,
-                repeat: Infinity,
-                repeatType: "reverse",
-                delay: 2
-              }
-            }}
-            className="absolute -bottom-40 -left-40 w-96 h-96 bg-rose-400/50 rounded-full blur-3xl"
-          />
-        </div>
-      )}
+    <main className="min-h-screen pb-20 pt-[120px] overflow-hidden relative" style={{ background: 'linear-gradient(to bottom right, #dcfce7, #d1fae5, #ccfbf1)' }}>
+      {/* Animated Background - Removed */}
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-8">
@@ -228,7 +168,7 @@ export default function ProgrammingPage() {
             title="DevOps"
             description="Learn containerization, CI/CD, infrastructure automation, and cloud platforms"
             icon={<Rocket className="w-12 h-12 text-rose-500" />}
-            link="/roadmap?courseId=devops"
+            link="/devops"
             gradient="from-rose-500 to-red-600"
             iconBg="bg-white"
           />
@@ -236,7 +176,7 @@ export default function ProgrammingPage() {
             title="Java"
             description="Master Java programming, Spring Framework, and enterprise development"
             icon={<Coffee className="w-12 h-12 text-orange-500" />}
-            link="/roadmap?courseId=java-fullstack"
+            link="/java"
             gradient="from-orange-500 to-red-500"
             iconBg="bg-white"
           />
@@ -244,7 +184,7 @@ export default function ProgrammingPage() {
             title="Python"
             description="Learn Python programming, data science, web development, and automation"
             icon={<FileCode className="w-12 h-12 text-yellow-500" />}
-            link="/roadmap?courseId=python-fullstack"
+            link="/python"
             gradient="from-yellow-500 to-amber-500"
             iconBg="bg-white"
           />
@@ -252,7 +192,7 @@ export default function ProgrammingPage() {
             title="SQL & Databases"
             description="Database design, SQL queries, optimization, and modern database technologies"
             icon={<Database className="w-12 h-12 text-purple-500" />}
-            link="/roadmap?courseId=sql"
+            link="/sql"
             gradient="from-purple-500 to-indigo-600"
             iconBg="bg-white"
           />
@@ -260,7 +200,7 @@ export default function ProgrammingPage() {
             title="Web Development"
             description="HTML, CSS, JavaScript, React, and full-stack web development"
             icon={<Globe className="w-12 h-12 text-green-500" />}
-            link="/roadmap?courseId=web-dev"
+            link="/web-dev"
             gradient="from-green-500 to-teal-500"
             iconBg="bg-white"
           />
@@ -268,7 +208,7 @@ export default function ProgrammingPage() {
             title="Data Science"
             description="Data analysis, machine learning, statistics, and visualization"
             icon={<BarChart className="w-12 h-12 text-blue-500" />}
-            link="/roadmap?courseId=data-science"
+            link="/data-science"
             gradient="from-blue-500 to-cyan-500"
             iconBg="bg-white"
           />
@@ -276,7 +216,7 @@ export default function ProgrammingPage() {
             title="Medical Coding"
             description="Healthcare basics, ICD-10-CM, CPT Coding, and certification prep"
             icon={<Stethoscope className="w-12 h-12 text-teal-500" />}
-            link="/roadmap?courseId=medical-coding"
+            link="/tutorials/medical-coding"
             gradient="from-teal-400 to-cyan-500"
             iconBg="bg-white"
           />

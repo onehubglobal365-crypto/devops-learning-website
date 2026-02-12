@@ -2,6 +2,7 @@
 
 import { useState, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { motion } from "framer-motion";
 import {
   Eye,
   EyeOff,
@@ -155,11 +156,14 @@ function ActiveLoginForm() {
         // Store email for "continue with account" feature
         localStorage.setItem("registeredEmail", formData.email);
 
+        // Notify other components (like SharedNav)
+        window.dispatchEvent(new Event('auth-change'));
+
         // Redirect based on role or redirect parameter
         if (redirectTo && redirectTo !== "/" && redirectTo !== "/login" && redirectTo !== "/signup") {
           router.push(redirectTo);
         } else {
-          router.push("/");
+          router.push("/dashboard");
         }
       }
     } catch (error) {
@@ -171,15 +175,21 @@ function ActiveLoginForm() {
   };
 
   return (
-    <div className="fixed inset-0 z-[100000] flex items-center justify-center bg-black/50 backdrop-blur-md p-4 overflow-y-auto animate-in fade-in duration-300">
+    <div className="fixed inset-0 z-[100000] flex items-center justify-center bg-black/50 backdrop-blur-md p-4 overflow-y-auto perspective-[2000px]">
       {/* Close Button - Placed outside the card to avoid clipping by overflow-hidden/transforms */}
       <Link href="/" className="fixed top-6 right-6 z-[100001] p-3 rounded-full bg-white shadow-xl border border-gray-100 hover:bg-gray-100 transition-all text-gray-900" aria-label="Close">
         <X className="w-6 h-6" />
       </Link>
 
-      <div className="w-full max-w-6xl grid lg:grid-cols-2 rounded-[25px] overflow-hidden shadow-2xl bg-white min-h-[600px] relative z-10 animate-in zoom-in-90 fade-in slide-in-from-bottom-8 duration-500 ease-out">
+      <motion.div
+        initial={{ rotateY: -90, opacity: 0 }}
+        animate={{ rotateY: 0, opacity: 1 }}
+        transition={{ duration: 0.8, type: "spring", bounce: 0.3 }}
+        className="w-full max-w-4xl grid lg:grid-cols-2 rounded-[25px] overflow-hidden shadow-2xl bg-white min-h-[500px] relative z-10"
+        style={{ transformStyle: "preserve-3d" }}
+      >
         {/* Left Panel - Sky Blue Branding */}
-        <div className="hidden lg:flex flex-col justify-center px-12 xl:px-24 py-12 bg-[#0ea5e9] relative overflow-hidden">
+        <div className="hidden lg:flex flex-col justify-center px-8 xl:px-12 py-8 bg-[#0ea5e9] relative overflow-hidden">
           {/* Decorative Background */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
@@ -239,7 +249,7 @@ function ActiveLoginForm() {
         </div>
 
         {/* Right Panel - Login Form */}
-        <div className="flex flex-col justify-center items-center px-4 sm:px-12 lg:px-24 py-12 bg-white relative">
+        <div className="flex flex-col justify-center items-center px-6 py-8 bg-white relative">
           <div className="w-full max-w-md space-y-8">
             <div className="text-center lg:text-left">
               <h2 className="text-3xl font-bold text-gray-900 tracking-tight">Welcome Back</h2>
@@ -254,39 +264,33 @@ function ActiveLoginForm() {
             )}
 
             <form onSubmit={handleSubmit} className="space-y-5">
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
-                <div className="relative">
-                  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                  <input
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    placeholder="john@example.com"
-                    className={`w-full pl-10 pr-4 py-3 bg-gray-50 border ${errors.email ? 'border-red-500' : 'border-gray-200'} rounded-lg focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent outline-none transition-all`}
-                  />
-                </div>
-                {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>}
+              <div className="inputBox">
+                <input
+                  name="email"
+                  type="email"
+                  required
+                  placeholder=" "
+                  value={formData.email}
+                  onChange={handleInputChange}
+                />
+                <span>Email Address</span>
+                {errors.email && <p className="mt-1 text-sm text-red-500 absolute -bottom-5 left-0 text-xs">{errors.email}</p>}
               </div>
 
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Password</label>
-                <div className="relative">
-                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                  <input
-                    name="password"
-                    type={showPassword ? "text" : "password"}
-                    value={formData.password}
-                    onChange={handleInputChange}
-                    placeholder="Enter your password"
-                    className={`w-full pl-10 pr-12 py-3 bg-gray-50 border ${errors.password ? 'border-red-500' : 'border-gray-200'} rounded-lg focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent outline-none transition-all`}
-                  />
-                  <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600">
-                    {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
-                  </button>
-                </div>
-                {errors.password && <p className="mt-1 text-sm text-red-500">{errors.password}</p>}
+              <div className="inputBox">
+                <input
+                  name="password"
+                  type={showPassword ? "text" : "password"}
+                  required
+                  placeholder=" "
+                  value={formData.password}
+                  onChange={handleInputChange}
+                />
+                <span>Password</span>
+                <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-0 top-3 text-gray-400 hover:text-gray-600 z-10 p-1">
+                  {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                </button>
+                {errors.password && <p className="mt-1 text-sm text-red-500 absolute -bottom-5 left-0 text-xs">{errors.password}</p>}
               </div>
 
               <div className="flex items-center justify-end">
@@ -316,7 +320,7 @@ function ActiveLoginForm() {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

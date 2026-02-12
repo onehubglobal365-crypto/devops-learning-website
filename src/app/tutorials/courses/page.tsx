@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import React from 'react';
 import { AUTH_SYSTEM_AVAILABLE } from '@/config/authStatus';
-import { TechnologyCard, CardGrid } from '@/components/ui/technology-card';
+import { TechnologyCard, CardGrid } from '@/components/common/technology-card';
 
 export default function CoursesPage() {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(

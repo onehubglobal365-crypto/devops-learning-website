@@ -1,122 +1,128 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import TechLayout from '@/components/tech-layout';
-import VideoSection from '@/components/VideoSection';
+import TechLayout from '@/components/layout/tech-layout';
+import VideoSection from '@/components/video/VideoSection';
 import { getVideosForTopic } from '@/data/videoTutorials';
 import { AUTH_SYSTEM_AVAILABLE } from '@/config/authStatus';
+
+const pageHeadings = [
+  { id: 'introduction', title: 'Python Tutorial' },
+  { id: 'basics', title: 'Python Basics' },
+  { id: 'syntax', title: 'Python Syntax' },
+  { id: 'comments', title: 'Python Comments' },
+  { id: 'variables', title: 'Python Variables' },
+  { id: 'data-types', title: 'Python Data Types' },
+  { id: 'numbers', title: 'Python Numbers' },
+  { id: 'casting', title: 'Python Casting' },
+  { id: 'strings', title: 'Python Strings' },
+  { id: 'booleans', title: 'Python Booleans' },
+  { id: 'operators', title: 'Python Operators' },
+  { id: 'lists', title: 'Python Lists' },
+  { id: 'tuples', title: 'Python Tuples' },
+  { id: 'sets', title: 'Python Sets' },
+  { id: 'dictionaries', title: 'Python Dictionaries' },
+  { id: 'if-else', title: 'Python If...Else' },
+  { id: 'while-loops', title: 'Python While Loops' },
+  { id: 'for-loops', title: 'Python For Loops' },
+  { id: 'functions', title: 'Python Functions' },
+  { id: 'lambda', title: 'Python Lambda' },
+  { id: 'arrays', title: 'Python Arrays' },
+  { id: 'classes-objects', title: 'Python Classes/Objects' },
+  { id: 'inheritance', title: 'Python Inheritance' },
+  { id: 'iterators', title: 'Python Iterators' },
+  { id: 'scope', title: 'Python Scope' },
+  { id: 'modules', title: 'Python Modules' },
+  { id: 'dates', title: 'Python Dates' },
+  { id: 'json', title: 'Python JSON' },
+  { id: 'regex', title: 'Python RegEx' },
+  { id: 'pip', title: 'Python PIP' },
+  { id: 'try-except', title: 'Python Try...Except' },
+  { id: 'file-handling', title: 'Python File Handling' },
+  { id: 'advanced', title: 'Python Advanced' },
+  { id: 'practice-projects', title: 'Practice Projects' },
+  { id: 'video-tutorials', title: 'Video Tutorials' },
+  { id: 'python-versions', title: 'Python Versions & Installation' },
+  { id: 'virtual-environments', title: 'Virtual Environments' },
+  { id: 'string-methods', title: 'Python String Methods' },
+  { id: 'list-methods', title: 'Python List Methods' },
+  { id: 'dict-methods', title: 'Python Dictionary Methods' },
+  { id: 'set-methods', title: 'Python Set Methods' },
+  { id: 'tuple-methods', title: 'Python Tuple Methods' },
+  { id: 'built-in-functions', title: 'Python Built-in Functions' },
+  { id: 'user-input', title: 'Python User Input' },
+  { id: 'math-operations', title: 'Python Math Operations' },
+  { id: 'random-module', title: 'Python Random Module' },
+  { id: 'datetime-module', title: 'Python DateTime Module' },
+  { id: 'os-module', title: 'Python OS Module' },
+  { id: 'sys-module', title: 'Python Sys Module' },
+  { id: 'collections-module', title: 'Python Collections Module' },
+  { id: 'itertools-module', title: 'Python Itertools Module' },
+  { id: 'functools-module', title: 'Python Functools Module' },
+  { id: 'generators', title: 'Python Generators' },
+  { id: 'decorators', title: 'Python Decorators' },
+  { id: 'context-managers', title: 'Python Context Managers' },
+  { id: 'metaclasses', title: 'Python Metaclasses' },
+  { id: 'descriptors', title: 'Python Descriptors' },
+  { id: 'properties', title: 'Python Properties' },
+  { id: 'abstract-base-classes', title: 'Python Abstract Base Classes' },
+  { id: 'protocols', title: 'Python Protocols' },
+  { id: 'dataclasses', title: 'Python Dataclasses' },
+  { id: 'enums', title: 'Python Enums' },
+  { id: 'typing-module', title: 'Python Typing Module' },
+  { id: 'type-hints', title: 'Python Type Hints' },
+  { id: 'pathlib', title: 'Python Pathlib' },
+  { id: 'logging', title: 'Python Logging' },
+  { id: 'unittest', title: 'Python Unit Testing' },
+  { id: 'pytest', title: 'Python Pytest' },
+  { id: 'asyncio', title: 'Python AsyncIO' },
+  { id: 'multiprocessing', title: 'Python Multiprocessing' },
+  { id: 'threading', title: 'Python Threading' },
+  { id: 'concurrent-futures', title: 'Python Concurrent Futures' },
+  { id: 'queue-module', title: 'Python Queue Module' },
+  { id: 'socket-programming', title: 'Python Socket Programming' },
+  { id: 'http-requests', title: 'Python HTTP Requests' },
+  { id: 'web-scraping', title: 'Python Web Scraping' },
+  { id: 'data-analysis', title: 'Python Data Analysis' },
+  { id: 'machine-learning', title: 'Python Machine Learning' },
+  { id: 'career-path', title: 'Python Career Path' },
+  { id: 'resources', title: 'Python Learning Resources' }
+];
 
 export default function PythonPage() {
   const [activeSection, setActiveSection] = useState('introduction');
 
-  const pageHeadings = [
-    { id: 'introduction', title: 'Python Tutorial' },
-    { id: 'basics', title: 'Python Basics' },
-    { id: 'syntax', title: 'Python Syntax' },
-    { id: 'comments', title: 'Python Comments' },
-    { id: 'variables', title: 'Python Variables' },
-    { id: 'data-types', title: 'Python Data Types' },
-    { id: 'numbers', title: 'Python Numbers' },
-    { id: 'casting', title: 'Python Casting' },
-    { id: 'strings', title: 'Python Strings' },
-    { id: 'booleans', title: 'Python Booleans' },
-    { id: 'operators', title: 'Python Operators' },
-    { id: 'lists', title: 'Python Lists' },
-    { id: 'tuples', title: 'Python Tuples' },
-    { id: 'sets', title: 'Python Sets' },
-    { id: 'dictionaries', title: 'Python Dictionaries' },
-    { id: 'if-else', title: 'Python If...Else' },
-    { id: 'while-loops', title: 'Python While Loops' },
-    { id: 'for-loops', title: 'Python For Loops' },
-    { id: 'functions', title: 'Python Functions' },
-    { id: 'lambda', title: 'Python Lambda' },
-    { id: 'arrays', title: 'Python Arrays' },
-    { id: 'classes-objects', title: 'Python Classes/Objects' },
-    { id: 'inheritance', title: 'Python Inheritance' },
-    { id: 'iterators', title: 'Python Iterators' },
-    { id: 'scope', title: 'Python Scope' },
-    { id: 'modules', title: 'Python Modules' },
-    { id: 'dates', title: 'Python Dates' },
-    { id: 'json', title: 'Python JSON' },
-    { id: 'regex', title: 'Python RegEx' },
-    { id: 'pip', title: 'Python PIP' },
-    { id: 'try-except', title: 'Python Try...Except' },
-    { id: 'file-handling', title: 'Python File Handling' },
-    { id: 'advanced', title: 'Python Advanced' },
-    { id: 'practice-projects', title: 'Practice Projects' },
-    { id: 'video-tutorials', title: 'Video Tutorials' },
-    // New comprehensive sections
-    { id: 'python-versions', title: 'Python Versions & Installation' },
-    { id: 'virtual-environments', title: 'Virtual Environments' },
-    { id: 'string-methods', title: 'Python String Methods' },
-    { id: 'list-methods', title: 'Python List Methods' },
-    { id: 'dict-methods', title: 'Python Dictionary Methods' },
-    { id: 'set-methods', title: 'Python Set Methods' },
-    { id: 'tuple-methods', title: 'Python Tuple Methods' },
-    { id: 'built-in-functions', title: 'Python Built-in Functions' },
-    { id: 'user-input', title: 'Python User Input' },
-    { id: 'math-operations', title: 'Python Math Operations' },
-    { id: 'random-module', title: 'Python Random Module' },
-    { id: 'datetime-module', title: 'Python DateTime Module' },
-    { id: 'os-module', title: 'Python OS Module' },
-    { id: 'sys-module', title: 'Python Sys Module' },
-    { id: 'collections-module', title: 'Python Collections Module' },
-    { id: 'itertools-module', title: 'Python Itertools Module' },
-    { id: 'functools-module', title: 'Python Functools Module' },
-    { id: 'generators', title: 'Python Generators' },
-    { id: 'decorators', title: 'Python Decorators' },
-    { id: 'context-managers', title: 'Python Context Managers' },
-    { id: 'metaclasses', title: 'Python Metaclasses' },
-    { id: 'descriptors', title: 'Python Descriptors' },
-    { id: 'properties', title: 'Python Properties' },
-    { id: 'abstract-base-classes', title: 'Python Abstract Base Classes' },
-    { id: 'protocols', title: 'Python Protocols' },
-    { id: 'dataclasses', title: 'Python Dataclasses' },
-    { id: 'enums', title: 'Python Enums' },
-    { id: 'typing-module', title: 'Python Typing Module' },
-    { id: 'type-hints', title: 'Python Type Hints' },
-    { id: 'pathlib', title: 'Python Pathlib' },
-    { id: 'logging', title: 'Python Logging' },
-    { id: 'unittest', title: 'Python Unit Testing' },
-    { id: 'pytest', title: 'Python Pytest' },
-    { id: 'asyncio', title: 'Python AsyncIO' },
-    { id: 'multiprocessing', title: 'Python Multiprocessing' },
-    { id: 'threading', title: 'Python Threading' },
-    { id: 'concurrent-futures', title: 'Python Concurrent Futures' },
-    { id: 'queue-module', title: 'Python Queue Module' },
-    { id: 'socket-programming', title: 'Python Socket Programming' },
-    { id: 'http-requests', title: 'Python HTTP Requests' },
-    { id: 'web-scraping', title: 'Python Web Scraping' },
-    { id: 'data-analysis', title: 'Python Data Analysis' },
-    { id: 'machine-learning', title: 'Python Machine Learning' },
-    { id: 'web-frameworks', title: 'Python Web Frameworks' },
-    { id: 'database-connectivity', title: 'Python Database Connectivity' },
-    { id: 'gui-programming', title: 'Python GUI Programming' },
-    { id: 'game-development', title: 'Python Game Development' },
-    { id: 'automation-scripts', title: 'Python Automation Scripts' },
-    { id: 'devops-tools', title: 'Python DevOps Tools' },
-    { id: 'performance-optimization', title: 'Python Performance Optimization' },
-    { id: 'memory-management', title: 'Python Memory Management' },
-    { id: 'profiling', title: 'Python Profiling' },
-    { id: 'debugging', title: 'Python Debugging' },
-    { id: 'packaging', title: 'Python Packaging' },
-    { id: 'distribution', title: 'Python Distribution' },
-    { id: 'best-practices', title: 'Python Best Practices' },
-    { id: 'code-style', title: 'Python Code Style (PEP 8)' },
-    { id: 'documentation', title: 'Python Documentation' },
-    { id: 'error-handling', title: 'Python Error Handling' },
-    { id: 'security', title: 'Python Security' },
-    { id: 'intermediate-projects', title: 'Intermediate Python Projects' },
-    { id: 'advanced-projects', title: 'Advanced Python Projects' },
-    { id: 'real-world-applications', title: 'Real-World Python Applications' },
-    { id: 'career-path', title: 'Python Career Path' },
-    { id: 'resources', title: 'Python Learning Resources' }
-  ];
+  // Handle Hash Navigation (Deep Linking)
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace('#', '');
+      if (hash && pageHeadings.some(h => h.id === hash)) {
+        setActiveSection(hash);
+      }
+    };
+
+    // Check on mount
+    handleHashChange();
+
+    // Listen for hash changes
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
+  // Update hash when section changes
+  useEffect(() => {
+    if (activeSection) {
+      const newHash = `#${activeSection}`;
+      if (window.location.hash !== newHash) {
+        window.history.pushState(null, '', newHash);
+      }
+    }
+  }, [activeSection]);
 
   const pythonVideos = getVideosForTopic('python');
 
   // Get navigation for current section
-  const getNavigation = () => {
+  const navigation = (() => {
     const currentIndex = pageHeadings.findIndex(h => h.id === activeSection);
     const previousSection = currentIndex > 0 ? pageHeadings[currentIndex - 1] : null;
     const nextSection = currentIndex < pageHeadings.length - 1 ? pageHeadings[currentIndex + 1] : null;
@@ -141,9 +147,7 @@ export default function PythonPage() {
         isSection: false
       }
     };
-  };
-
-  const navigation = getNavigation();
+  })();
 
   const renderContent = () => {
     switch (activeSection) {

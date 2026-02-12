@@ -1,20 +1,22 @@
 'use client';
 
 import { useEffect } from 'react';
-import HeroWithNav from '@/components/home-2/HeroWithNav';
-import ProcessPath from '@/components/home-2/ProcessPath';
-import CompactTechnologies from '@/components/home-2/CompactTechnologies';
-import CompactStats from '@/components/home-2/CompactStats';
-import CompactCourses from '@/components/home-2/CompactCourses';
-import CompactAlumni from '@/components/home-2/CompactAlumni';
-import VisionRoadmap from '@/components/home-2/VisionRoadmap';
-import CompactFeatures from '@/components/home-2/CompactFeatures';
-import CompactCertifications from '@/components/home-2/CompactCertifications';
-import CompactWeeklyTests from '@/components/home-2/CompactWeeklyTests';
-import CompactTrusted from '@/components/home-2/CompactTrusted';
-import CompactFooter from '@/components/home-2/CompactFooter';
-import ScrollAnimate from '@/components/home-2/ScrollAnimate';
-import ScholarshipPromo from '@/components/home-2/ScholarshipPromo'; // Import
+import HeroWithNav from '@/components/landing/home-2/HeroWithNav';
+import ProcessPath from '@/components/landing/home-2/ProcessPath';
+import CompactTechnologies from '@/components/landing/home-2/CompactTechnologies';
+import CompactCourseCards from '@/components/landing/home-2/CompactCourseCards';
+import CompactStats from '@/components/landing/home-2/CompactStats';
+import CompactCourses from '@/components/landing/home-2/CompactCourses';
+import CompactAlumni from '@/components/landing/home-2/CompactAlumni';
+import VisionRoadmap from '@/components/landing/home-2/VisionRoadmap';
+import Gallery from '@/components/landing/home-2/Gallery';
+import CompactFeatures from '@/components/landing/home-2/CompactFeatures';
+import CompactCertifications from '@/components/landing/home-2/CompactCertifications';
+import CompactWeeklyTests from '@/components/landing/home-2/CompactWeeklyTests';
+import CompactTrusted from '@/components/landing/home-2/CompactTrusted';
+import CompactFooter from '@/components/landing/home-2/CompactFooter';
+import ScrollAnimate from '@/components/landing/home-2/ScrollAnimate';
+import ScholarshipPromo from '@/components/landing/home-2/ScholarshipPromo'; // Import
 import { useTheme } from '@/hooks/useTheme';
 
 export default function HomePage() {
@@ -49,6 +51,18 @@ export default function HomePage() {
         </div>
       </ScrollAnimate>
 
+      <ScrollAnimate animation="fade-up" delay={300} triggerOnce={true}>
+        <div className="section-wrapper py-0">
+          <CompactCourses />
+        </div>
+      </ScrollAnimate>
+
+      <ScrollAnimate animation="fade-up" delay={250} triggerOnce={true}>
+        <div className="section-wrapper py-0">
+          <CompactCourseCards />
+        </div>
+      </ScrollAnimate>
+
       <ScrollAnimate animation="fade-scale" delay={300} triggerOnce={true}>
         <div id="vision" className="section-wrapper py-0">
           <VisionRoadmap />
@@ -60,6 +74,8 @@ export default function HomePage() {
           <ProcessPath />
         </div>
       </ScrollAnimate>
+
+
 
       <ScrollAnimate animation="fade-up" delay={250} triggerOnce={true}>
         <div className="section-wrapper py-0">
@@ -85,10 +101,8 @@ export default function HomePage() {
         </div>
       </ScrollAnimate>
 
-      <ScrollAnimate animation="fade-up" delay={300} triggerOnce={true}>
-        <div className="section-wrapper py-0">
-          <CompactCourses />
-        </div>
+      <ScrollAnimate animation="fade-up" delay={200} triggerOnce={true}>
+        <Gallery />
       </ScrollAnimate>
 
       <ScrollAnimate animation="fade-scale" delay={250} triggerOnce={true}>

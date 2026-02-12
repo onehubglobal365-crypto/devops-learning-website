@@ -1,4 +1,4 @@
-import DocsLayout from '@/components/docs-layout';
+import DocsLayout from '@/components/layout/docs-layout';
 
 export default function ScriptingPage() {
   const pageHeadings = [

@@ -859,6 +859,8 @@ body {
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
+/* Removed decorative line that caused straight line artifacts between curved sections */
+/*
 .section-wrapper::before {
   content: '';
   position: absolute;
@@ -877,6 +879,8 @@ body {
 .section-wrapper:hover::before {
   opacity: 1;
 }
+*/
+
 
 /* Enhanced Fade Animations */
 @keyframes fadeInUpEnhanced {
@@ -2231,4 +2235,332 @@ body {
 
 .animate-float-y {
   animation: float-y 3s ease-in-out infinite;
+}
+
+/* Input Style from Uiverse.io by JkHuger */
+/* Input Style from Uiverse.io by JkHuger */
+.inputBox,
+.inputBox1 {
+  position: relative;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.inputBox input,
+.inputBox1 input {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border: none;
+  color: #000;
+  font-size: 1em;
+  background: transparent;
+  border-left: 2px solid #000;
+  border-bottom: 2px solid #000;
+  transition: 0.1s;
+  border-bottom-left-radius: 8px;
+}
+
+.inputBox span,
+.inputBox1 span {
+  margin-top: 5px;
+  position: absolute;
+  left: 0;
+  transform: translateY(-4px);
+  margin-left: 10px;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 12px;
+  color: #000;
+  text-transform: uppercase;
+  transition: 0.5s;
+  letter-spacing: 3px;
+  border-radius: 8px;
+}
+
+/* Adjusted for responsive width: Labels move to top-right on focus/valid/not-empty */
+.inputBox input:valid~span,
+.inputBox input:focus~span,
+.inputBox input:not(:placeholder-shown)~span,
+.inputBox1 input:valid~span,
+.inputBox1 input:focus~span,
+.inputBox1 input:not(:placeholder-shown)~span {
+  transform: translateY(-28px);
+  font-size: 0.75em;
+  padding: 2px 8px;
+  background: #000;
+  letter-spacing: 0.1em;
+  color: #fff;
+  border: 2px solid #000;
+  left: auto;
+  right: 0;
+  border-radius: 4px;
+}
+
+.inputBox input:valid,
+.inputBox input:focus,
+.inputBox input:not(:placeholder-shown),
+.inputBox1 input:valid,
+.inputBox1 input:focus,
+.inputBox1 input:not(:placeholder-shown) {
+  border: 2px solid #000;
+  border-radius: 8px;
+}
+
+/* Button Effect from Uiverse.io by JkHuger - Adapted for Theme Colors */
+.enter-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 2px solid #0ea5e9;
+  cursor: pointer;
+  background-color: transparent;
+  transition: all 0.5s ease;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #0ea5e9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 1rem;
+}
+
+.enter-btn:hover {
+  background-color: #0ea5e9;
+  color: white;
+  box-shadow: 0 4px 15px rgba(14, 165, 233, 0.4);
+  transform: translateY(-2px);
+}
+
+.enter-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+  display: flex;
+  width: max-content;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Scattered Social Media Icons CSS (Uiverse.io Tsiangana) */
+.tooltip-container {
+  background: rgb(8, 61, 119);
+  background: linear-gradient(138deg,
+      rgba(8, 61, 119, 1) 15%,
+      rgba(14, 165, 233, 1) 65%);
+  position: relative;
+  cursor: pointer;
+  font-size: 17px;
+  padding: 0.8em;
+  border-radius: 50px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  z-index: 100004;
+}
+
+.tooltip-container:hover {
+  background: #fff;
+  transform: scale(1.1);
+}
+
+.tooltip-container .main-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: #fff;
+  transition: all 0.3s;
+}
+
+.tooltip-container:hover .main-icon {
+  fill: rgb(8, 61, 119);
+}
+
+/* Tooltip base style */
+.tooltip-social {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  background: #fff;
+  padding: 10px;
+  border-radius: 50px;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  z-index: -1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+}
+
+.tooltip-container:hover .tooltip-social {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+}
+
+/* Specific Positions */
+/* Instagram - Bottom */
+.tooltip-social.instagram {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  fill: #e1306c;
+}
+
+.tooltip-container:hover .tooltip-social.instagram {
+  top: 140%;
+}
+
+/* LinkedIn - Top */
+.tooltip-social.linkedin {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  fill: #0077b5;
+}
+
+.tooltip-container:hover .tooltip-social.linkedin {
+  top: -120%;
+}
+
+/* X (Twitter) - Bottom Right */
+.tooltip-social.x {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  fill: #000;
+}
+
+.tooltip-container:hover .tooltip-social.x {
+  top: 105%;
+  left: 170%;
+}
+
+/* Facebook - Top Left */
+.tooltip-social.facebook {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  fill: #1877f2;
+}
+
+.tooltip-container:hover .tooltip-social.facebook {
+  top: -100%;
+  left: -80%;
+}
+
+/* YouTube - Top Right */
+.tooltip-social.youtube {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  fill: #ff0000;
+}
+
+.tooltip-container:hover .tooltip-social.youtube {
+  top: -100%;
+  left: 170%;
+}
+
+/* Phone - Bottom Left */
+.tooltip-social.phone {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  fill: #083d77;
+}
+
+.tooltip-container:hover .tooltip-social.phone {
+  top: 105%;
+  left: -80%;
+}
+
+.tooltip-social:hover {
+  background: var(--social-hover-bg) !important;
+}
+
+.tooltip-social:hover svg path {
+  fill: #fff !important;
+}
+
+/* Pulse glow background */
+.tooltip-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(8, 61, 119, 0.2);
+  border-radius: 50%;
+  z-index: -2;
+  transition: all 0.5s;
+  opacity: 0;
+}
+
+.tooltip-container:hover .tooltip-glow {
+  transform: scale(2.5);
+  opacity: 1;
+}
+
+/* Marquee Animation Support */
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+
+.animate-marquee-reverse {
+  display: flex;
+  width: max-content;
+  animation: marquee-reverse 40s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-33.33%);
+  }
+}
+
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(-33.33%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-marquee:hover,
+.animate-marquee-reverse:hover {
+  animation-play-state: paused;
 }

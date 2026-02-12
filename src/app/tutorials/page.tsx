@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { AUTH_SYSTEM_AVAILABLE } from '@/config/authStatus';
-import { TechnologyCard, CardGrid } from '@/components/ui/technology-card';
+import { TechnologyCard, CardGrid } from '@/components/common/technology-card';
 import {
   Stethoscope, ClipboardList, Building2, BookOpen,
   Code2, Rocket, Coffee, FileCode, Database, Globe, BarChart2, Terminal, Server, Command,
@@ -53,15 +53,8 @@ export default function TutorialsPage() {
   }
 
   return (
-    <main className="min-h-screen overflow-x-hidden bg-[var(--bg-primary)] transition-colors duration-300 relative" style={{ paddingTop: '120px' }}>
-      {/* Animated Background */}
-      {/* Static Vibrant Background */}
-      {isMounted && (
-        <div className="fixed inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-[-20%] right-[-10%] w-[70%] h-[80%] rounded-full bg-gradient-to-bl from-violet-400 via-fuchsia-400 to-pink-400 opacity-25 blur-[120px]" />
-          <div className="absolute bottom-[-20%] left-[-10%] w-[60%] h-[60%] rounded-full bg-gradient-to-tr from-cyan-400 via-sky-400 to-blue-400 opacity-25 blur-[100px]" />
-        </div>
-      )}
+    <main className="min-h-screen overflow-x-hidden transition-colors duration-300 relative" style={{ background: 'linear-gradient(to bottom right, #dcfce7, #d1fae5, #ccfbf1)', paddingTop: '120px' }}>
+      {/* Animated Background - Removed */}
       <div className="relative z-10">
         {/* Hero Section */}
         <section className="relative text-center py-20 px-4 overflow-hidden bg-gradient-to-r from-emerald-100 via-teal-100 to-cyan-100 rounded-full max-w-7xl mx-auto mt-8 shadow-2xl border border-white/50">

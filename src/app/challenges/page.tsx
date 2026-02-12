@@ -81,14 +81,8 @@ export default function ChallengesPage() {
   const progress = userCode ? getTotalProgress(userCode) : null;
 
   return (
-    <div className="min-h-screen bg-[var(--bg-primary)] transition-colors duration-300">
-      {/* Animated Background */}
-      {/* Background Pattern - Subtle for Light Mode */}
-      {/* Animated Background - Dynamic and Alive */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-[-20%] right-[-10%] w-[70%] h-[80%] rounded-full bg-gradient-to-bl from-violet-400 via-fuchsia-400 to-pink-400 opacity-25 blur-[120px]" />
-        <div className="absolute bottom-[-20%] left-[-10%] w-[60%] h-[60%] rounded-full bg-gradient-to-tr from-cyan-400 via-sky-400 to-blue-400 opacity-25 blur-[100px]" />
-      </div>
+    <div className="min-h-screen transition-colors duration-300" style={{ background: 'linear-gradient(to bottom right, #dcfce7, #d1fae5, #ccfbf1)' }}>
+      {/* Animated Background - Removed */}
 
       <div className="relative z-10 container mx-auto px-4 pt-32 pb-12">
         {/* Header */}

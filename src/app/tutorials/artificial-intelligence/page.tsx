@@ -1,6 +1,6 @@
 'use client';
 
-import TechLayout from '@/components/tech-layout';
+import TechLayout from '@/components/layout/tech-layout';
 import Link from 'next/link';
 
 export default function ArtificialIntelligenceLandingPage() {

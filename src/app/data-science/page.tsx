@@ -2,21 +2,14 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import TechLayout from '@/components/tech-layout';
+import TechLayout from '@/components/layout/tech-layout';
 
 export default function DataSciencePage() {
   const [activeSection, setActiveSection] = useState('introduction');
 
   const pageHeadings = [
     { id: 'introduction', title: 'Data Science Learning Hub' },
-    { id: 'foundations', title: 'Mathematical Foundations' },
-    { id: 'programming-tools', title: 'Programming & Tools' },
-    { id: 'data-analysis', title: 'Data Analysis & Visualization' },
-    { id: 'machine-learning', title: 'Machine Learning' },
-    { id: 'deep-learning', title: 'Deep Learning & AI' },
-    { id: 'big-data', title: 'Big Data & Cloud' },
-    { id: 'specializations', title: 'Specializations' },
-    { id: 'learning-path', title: 'Complete Learning Path' }
+    { id: 'foundations', title: 'Mathematical Foundations' }
   ];
 
   // Get navigation for current section

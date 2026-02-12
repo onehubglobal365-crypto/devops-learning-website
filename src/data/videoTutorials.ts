@@ -374,8 +374,37 @@ export const videoTutorialsData: TopicVideos[] = [
         tags: ['sre', 'reliability', 'engineering']
       }
     ]
+  },
+  {
+    topicId: 'sql',
+    topicName: 'SQL',
+    videos: [
+      {
+        id: 'sql-intro-1',
+        title: 'SQL Tutorial for Beginners',
+        description: 'Learn SQL basics including SELECT, FROM, WHERE, and more.',
+        duration: '15:20',
+        thumbnail: 'https://img.youtube.com/vi/HXV3zeQKqGY/maxresdefault.jpg',
+        videoUrl: 'https://www.youtube.com/watch?v=HXV3zeQKqGY',
+        platform: 'youtube',
+        difficulty: 'beginner',
+        tags: ['sql', 'basics', 'database']
+      },
+      {
+        id: 'sql-intro-2',
+        title: 'SQL Joins Explained',
+        description: 'Understand INNER JOIN, LEFT JOIN, RIGHT JOIN, and FULL JOIN with visual examples.',
+        duration: '12:45',
+        thumbnail: 'https://img.youtube.com/vi/9yeOJ0ZMUYw/maxresdefault.jpg',
+        videoUrl: 'https://www.youtube.com/watch?v=9yeOJ0ZMUYw',
+        platform: 'youtube',
+        difficulty: 'intermediate',
+        tags: ['sql', 'joins', 'relationships']
+      }
+    ]
   }
 ];
+
 
 // Helper function to get videos for a specific topic
 export function getVideosForTopic(topicId: string): VideoTutorial[] {

@@ -1,5 +1,5 @@
-import DocsLayout from '@/components/docs-layout';
-import VideoSection from '@/components/VideoSection';
+import DocsLayout from '@/components/layout/docs-layout';
+import VideoSection from '@/components/video/VideoSection';
 import { getVideosForTopic } from '@/data/videoTutorials';
 
 

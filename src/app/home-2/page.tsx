@@ -1,19 +1,19 @@
 'use client';
 
 import { useEffect } from 'react';
-import HeroWithNav from '@/components/home-2/HeroWithNav';
-import ProcessPath from '@/components/home-2/ProcessPath';
-import CompactTechnologies from '@/components/home-2/CompactTechnologies';
-import CompactStats from '@/components/home-2/CompactStats';
-import CompactCourses from '@/components/home-2/CompactCourses';
-import CompactAlumni from '@/components/home-2/CompactAlumni';
-import VisionRoadmap from '@/components/home-2/VisionRoadmap';
-import CompactFeatures from '@/components/home-2/CompactFeatures';
-import CompactCertifications from '@/components/home-2/CompactCertifications';
-import CompactWeeklyTests from '@/components/home-2/CompactWeeklyTests';
-import CompactTrusted from '@/components/home-2/CompactTrusted';
-import CompactFooter from '@/components/home-2/CompactFooter';
-import ScrollAnimate from '@/components/home-2/ScrollAnimate';
+import HeroWithNav from '@/components/landing/home-2/HeroWithNav';
+import ProcessPath from '@/components/landing/home-2/ProcessPath';
+import CompactTechnologies from '@/components/landing/home-2/CompactTechnologies';
+import CompactStats from '@/components/landing/home-2/CompactStats';
+import CompactCourses from '@/components/landing/home-2/CompactCourses';
+import CompactAlumni from '@/components/landing/home-2/CompactAlumni';
+import VisionRoadmap from '@/components/landing/home-2/VisionRoadmap';
+import CompactFeatures from '@/components/landing/home-2/CompactFeatures';
+import CompactCertifications from '@/components/landing/home-2/CompactCertifications';
+import CompactWeeklyTests from '@/components/landing/home-2/CompactWeeklyTests';
+import CompactTrusted from '@/components/landing/home-2/CompactTrusted';
+import CompactFooter from '@/components/landing/home-2/CompactFooter';
+import ScrollAnimate from '@/components/landing/home-2/ScrollAnimate';
 import { useTheme } from '@/hooks/useTheme';
 
 export default function Home2Page() {

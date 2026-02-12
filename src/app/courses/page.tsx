@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { FileText, Laptop, Landmark, Cloud, Code2, Coffee, Layout, Database, BarChart3, Terminal } from 'lucide-react';
-import UniqueHero from '@/components/unique-hero';
+import UniqueHero from '@/components/landing/unique-hero';
 import { AUTH_SYSTEM_AVAILABLE } from '@/config/authStatus';
 
 interface Course {
@@ -15,75 +15,70 @@ interface Course {
   gradient: string;
 }
 
+import Image from 'next/image';
+
 const courses: Course[] = [
-  {
-    title: 'Programming',
-    description: 'Software Development & Technologies',
-    icon: <Laptop className="w-8 h-8 text-rose-600 dark:text-rose-400" />,
-    href: '/roadmap?courseId=programming',
-    gradient: 'from-rose-500 to-red-500',
-  },
-  {
-    title: 'Medical Coding',
-    description: 'Healthcare IT & Coding Systems',
-    icon: <FileText className="w-8 h-8 text-blue-600 dark:text-blue-400" />,
-    href: '/roadmap?courseId=medical-coding',
-    gradient: 'from-blue-500 to-cyan-500',
-  },
-  {
-    title: 'DevOps',
-    description: 'AWS, Azure & GCP - Containerization, CI/CD, Infrastructure Automation',
-    icon: <Cloud className="w-8 h-8 text-blue-600 dark:text-blue-400" />,
-    href: '/roadmap?courseId=devops',
-    gradient: 'from-blue-500 to-indigo-600',
-  },
-  {
-    title: 'Python Full Stack',
-    description: 'Build Modern Web Applications with Django, Flask, React',
-    icon: <Code2 className="w-8 h-8 text-green-600 dark:text-green-400" />,
-    href: '/roadmap?courseId=python-fullstack',
-    gradient: 'from-green-500 to-emerald-600',
-  },
   {
     title: 'Java Full Stack',
     description: 'Enterprise-Grade Development with Spring Boot, React, Microservices',
-    icon: <Coffee className="w-8 h-8 text-orange-600 dark:text-orange-400" />,
+    icon: <div className="p-1 w-full h-full relative"><Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" fill className="object-contain" unoptimized /></div>,
     href: '/roadmap?courseId=java-fullstack',
     gradient: 'from-orange-500 to-red-600',
   },
   {
+    title: 'Python Full Stack',
+    description: 'Build Modern Web Applications with Django, Flask, React',
+    icon: <div className="p-1 w-full h-full relative"><Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" fill className="object-contain" unoptimized /></div>,
+    href: '/roadmap?courseId=python-fullstack',
+    gradient: 'from-green-500 to-emerald-600',
+  },
+  {
     title: 'Web Development',
     description: 'Create Stunning Websites with React, Node.js',
-    icon: <Layout className="w-8 h-8 text-purple-600 dark:text-purple-400" />,
+    icon: <div className="p-1 w-full h-full relative"><Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="Web Dev" fill className="object-contain" unoptimized /></div>,
     href: '/roadmap?courseId=web-dev',
     gradient: 'from-purple-500 to-pink-600',
   },
   {
-    title: 'SQL & Databases',
-    description: 'SQL & NoSQL Mastery - Database Design and Management',
-    icon: <Database className="w-8 h-8 text-cyan-600 dark:text-cyan-400" />,
-    href: '/roadmap?courseId=sql',
-    gradient: 'from-cyan-500 to-blue-600',
+    title: 'DevOps',
+    description: 'AWS, Azure & GCP - Containerization, CI/CD, Infrastructure Automation',
+    icon: <div className="p-1 w-full h-full relative"><Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuredevops/azuredevops-original.svg" alt="DevOps" fill className="object-contain" unoptimized /></div>,
+    href: '/roadmap?courseId=devops',
+    gradient: 'from-blue-500 to-indigo-600',
   },
   {
     title: 'Data Science',
     description: 'Data Analysis, Machine Learning, and AI',
-    icon: <BarChart3 className="w-8 h-8 text-violet-600 dark:text-violet-400" />,
+    icon: <div className="p-1 w-full h-full relative"><Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Data Science" fill className="object-contain" unoptimized /></div>,
     href: '/roadmap?courseId=data-science',
     gradient: 'from-violet-500 to-purple-600',
   },
   {
+    title: 'SQL & Databases',
+    description: 'SQL & NoSQL Mastery - Database Design and Management',
+    icon: <div className="p-1 w-full h-full relative"><Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" fill className="object-contain" unoptimized /></div>,
+    href: '/roadmap?courseId=sql',
+    gradient: 'from-cyan-500 to-blue-600',
+  },
+  {
     title: 'Linux',
     description: 'Linux Administration and Command Line Mastery',
-    icon: <Terminal className="w-8 h-8 text-yellow-600 dark:text-yellow-400" />,
+    icon: <div className="p-1 w-full h-full relative"><Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" fill className="object-contain" unoptimized /></div>,
     href: '/roadmap?courseId=linux',
     gradient: 'from-yellow-500 to-orange-500',
+  },
+  {
+    title: 'Medical Coding',
+    description: 'Healthcare IT & Coding Systems',
+    icon: <div className="p-1 w-full h-full relative"><Image src="/medical-coding-logo-v2.jpg" alt="Medical Coding" fill className="object-contain rounded-xl" unoptimized /></div>,
+    href: '/roadmap?courseId=medical-coding',
+    gradient: 'from-blue-500 to-cyan-500',
   },
 ];
 
 import { motion } from 'framer-motion';
 
-import { TechnologyCard, CardGrid } from '@/components/ui/technology-card';
+import { TechnologyCard, CardGrid } from '@/components/common/technology-card';
 
 // ... (imports remain)
 
@@ -96,14 +91,8 @@ export default function CoursesPage() {
   }, []);
 
   return (
-    <main className="min-h-screen overflow-x-hidden bg-white transition-colors duration-300 relative">
-      {/* Static Vibrant Background */}
-      {isMounted && (
-        <div className="fixed inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-[-20%] right-[-10%] w-[70%] h-[80%] rounded-full bg-gradient-to-bl from-violet-400 via-fuchsia-400 to-pink-400 opacity-25 blur-[120px]" />
-          <div className="absolute bottom-[-20%] left-[-10%] w-[60%] h-[60%] rounded-full bg-gradient-to-tr from-cyan-400 via-sky-400 to-blue-400 opacity-25 blur-[100px]" />
-        </div>
-      )}
+    <main className="min-h-screen overflow-x-hidden transition-colors duration-300 relative" style={{ background: 'linear-gradient(to bottom right, #dcfce7, #d1fae5, #ccfbf1)' }}>
+      {/* Static Vibrant Background - Removed */}
 
       <div className="relative z-10">
         {/* Hero Carousel */}

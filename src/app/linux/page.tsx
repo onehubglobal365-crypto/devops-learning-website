@@ -1,8 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import TechLayout from '@/components/tech-layout';
-import VideoSection from '@/components/VideoSection';
+import TechLayout from '@/components/layout/tech-layout';
+import VideoSection from '@/components/video/VideoSection';
 import { getVideosForTopic } from '@/data/videoTutorials';
 
 export default function LinuxPage() {

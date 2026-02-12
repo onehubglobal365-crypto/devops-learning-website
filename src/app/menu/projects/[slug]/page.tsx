@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import MenuPageTemplate from '@/components/menu-page-template';
+import MenuPageTemplate from '@/components/layout/menu-page-template';
 import menuPagesData from '@/data/menu-pages.json';
 
 interface PageProps {

@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import TechLayout from '@/components/tech-layout';
-import VideoSection from '@/components/VideoSection';
+import TechLayout from '@/components/layout/tech-layout';
+import VideoSection from '@/components/video/VideoSection';
 import { getVideosForTopic } from '@/data/videoTutorials';
 import { AUTH_SYSTEM_AVAILABLE } from '@/config/authStatus';
 import { Rocket, Target, Search, Check, Layers, User, Zap, Terminal, GitBranch, Server, Box, Activity, ZoomIn, Settings, FileJson, RefreshCcw, BookOpen, Code, Users, Brain, Lightbulb, ChevronsRight, MessageSquare, FlaskConical, ClipboardList, CheckCircle, CloudUpload, Infinity, Shield, Workflow, Lock, Key, Siren, Globe, Cpu, BarChart, LineChart, GitCommit, ChevronsLeft, Package, ShieldCheck, AlertTriangle, TrendingUp, Info, List, Heart, FileCode, FileText, ListChecks, ClipboardCheck, Calendar, RefreshCw, GitMerge, Network, Database, Play, Layout, HardDrive, Award, Tag, Image as ImageIcon, History as HistoryIcon, ArrowRightLeft, ShoppingCart, CreditCard, Scale, Wrench, Hammer, Star, Monitor, PlusSquare, Bug, Hexagon, Copy, XCircle, Briefcase, FilePlus, Filter, Cloud } from 'lucide-react';

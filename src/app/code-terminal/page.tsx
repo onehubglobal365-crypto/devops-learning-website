@@ -1,5 +1,5 @@
-import CodeExecutionTerminal from '@/components/code-execution-terminal';
-import TechLayout from '@/components/tech-layout';
+import CodeExecutionTerminal from '@/components/code/code-execution-terminal';
+import TechLayout from '@/components/layout/tech-layout';
 import { Terminal, Code, Coffee, Database, FileCode } from 'lucide-react';
 
 export default function CodeTerminalPage() {

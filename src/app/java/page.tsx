@@ -2,8 +2,8 @@
 
 // src/app/java/page.tsx
 import Link from 'next/link';
-import TechLayout from '@/components/tech-layout';
-import VideoSection from '@/components/VideoSection';
+import TechLayout from '@/components/layout/tech-layout';
+import VideoSection from '@/components/video/VideoSection';
 import { videoTutorialsData } from '@/data/videoTutorials';
 import { useState, useEffect } from 'react';
 import { AUTH_SYSTEM_AVAILABLE } from '@/config/authStatus';
