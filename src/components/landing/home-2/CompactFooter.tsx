@@ -16,7 +16,6 @@ export default function CompactFooter() {
     resources: [
       { name: 'Documentation', href: '/docs/what-is-devops' },
       { name: 'Tutorials', href: '/tutorials' },
-      { name: 'Courses', href: '/tutorials' },
       { name: 'Scholarship Test', href: 'https://ohg-aptitude-test.vercel.app/' },
     ],
     support: [
@@ -91,7 +90,7 @@ export default function CompactFooter() {
 
   return (
     <footer
-      className="relative py-8 md:py-12 lg:py-16 overflow-hidden"
+      className="relative py-[var(--space-lg)] lg:py-[var(--space-xl)] overflow-hidden"
       style={{
         background: 'linear-gradient(180deg, #3b82f6 0%, #2563eb 100%)', // Brighter Blue Gradient
         borderColor: 'rgba(255, 255, 255, 0.1)',
@@ -99,30 +98,12 @@ export default function CompactFooter() {
       }}
     >
       {/* Liquid Wave Background - mimicking the image */}
-      < div className="absolute inset-0 z-0 w-full h-full pointer-events-none" >
+      <div className="absolute inset-0 z-0 w-full h-full pointer-events-none" >
         {/* Top Dark Section - Highlighted to match */}
-        < div className="absolute top-0 left-0 w-full h-1/3 bg-transparent" ></div >
+        <div className="absolute top-0 left-0 w-full h-1/3 bg-transparent" ></div >
 
-        {/* Wave Animation Container */}
         {/* Wave Animation Container */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
-
-          {/* Wave Layer 1 (Back/Slow) - Scaled Vertically */}
-          {/* <div className="absolute bottom-0 left-0 w-full h-full animate-swell" style={{ animationDuration: '7s', transform: 'scaleY(1.5)', transformOrigin: 'bottom' }}>
-            <div className="absolute bottom-0 left-0 w-[200%] h-full animate-wave" style={{ animationDuration: '20s', opacity: 0.6 }}>
-              <svg
-                viewBox="0 0 1440 320"
-                className="w-full h-full block"
-                preserveAspectRatio="none"
-              >
-                <path
-                  fill="#1e40af"
-                  fillOpacity="1"
-                  d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-                ></path>
-              </svg>
-            </div>
-          </div> */}
 
           {/* Wave Layer 2 (Front/Fast) - Scaled Vertically */}
           <div className="absolute bottom-0 left-0 w-full h-full animate-swell" style={{ animationDuration: '5s', animationDelay: '-2s', transform: 'scaleY(1.3)', transformOrigin: 'bottom' }}>
@@ -143,14 +124,14 @@ export default function CompactFooter() {
         </div >
 
         {/* Bottom Blue Section (Extension of the wave) */}
-        < div className="absolute bottom-0 left-0 w-full h-[60%] bg-[#2563eb]" ></div >
+        <div className="absolute bottom-0 left-0 w-full h-[60%] bg-[#2563eb]" ></div >
 
         {/* Overlay Gradient to match the glow in image */}
-        < div className="absolute inset-0 bg-gradient-to-b from-[#0f172a] via-transparent to-[#2563eb] opacity-80" ></div >
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a] via-transparent to-[#2563eb] opacity-80" ></div >
       </div >
 
-      <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+      <div className="w-full max-w-7xl mx-auto px-[var(--space-md)] lg:px-[var(--space-lg)] relative z-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[var(--space-md)] lg:gap-[var(--space-lg)] mb-[var(--space-md)]">
           {/* Brand Section */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center space-x-2 mb-4">
@@ -164,30 +145,30 @@ export default function CompactFooter() {
                 />
               </div>
               <div className="flex flex-col">
-                <span className="text-lg font-bold text-white">OHG365</span>
-                <span className="text-xs leading-tight text-blue-100">One Hub Global</span>
+                <span className="text-lg font-bold text-white uppercase tracking-wider">OHG365</span>
+                <span className="text-[10px] leading-tight text-blue-100 font-medium">One Hub Global</span>
               </div>
             </Link>
-            <p className="text-xs leading-relaxed mb-4 text-blue-100">
-              Your gateway to mastering modern technology and transforming your career.
+            <p className="leading-relaxed mb-6 text-blue-100" style={{ fontSize: 'clamp(0.75rem, 2vw, 0.8125rem)' }}>
+              Your gateway to mastering modern technology and transforming your career through industry-standard training and mentorship.
             </p>
-            <div className="flex flex-col gap-3 mb-4">
-              <h4 className="text-sm font-bold text-white mb-2">Contact Info:</h4>
-              <div className="flex items-center gap-2">
+            <div className="flex flex-col gap-4 mb-6">
+              <h4 className="text-xs font-bold text-white uppercase tracking-widest opacity-80">Contact Info:</h4>
+              <div className="flex items-center gap-3">
                 <svg className="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
-                <a href="tel:+919059450707" className="text-sm font-semibold hover:text-white transition-colors underline decoration-green-400/50 underline-offset-4 text-blue-100">+91 9059450707</a>
+                <a href="tel:+919059450707" className="text-xs font-semibold hover:text-white transition-colors underline decoration-green-400/30 underline-offset-4 text-blue-100 tracking-wide">+91 9059450707</a>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-3">
                 <svg className="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
-                <a href="tel:+917382314128" className="text-sm font-semibold hover:text-white transition-colors underline decoration-green-400/50 underline-offset-4 text-blue-100">+91 7382314128</a>
+                <a href="tel:+917382314128" className="text-xs font-semibold hover:text-white transition-colors underline decoration-green-400/30 underline-offset-4 text-blue-100 tracking-wide">+91 7382314128</a>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-3">
                 <svg className="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-                <a href="mailto:onehubglobal365@gmail.com" className="text-sm font-semibold hover:text-white transition-colors underline decoration-green-400/50 underline-offset-4 text-blue-100 break-all">onehubglobal365@gmail.com</a>
+                <a href="mailto:onehubglobal365@gmail.com" className="text-xs font-semibold hover:text-white transition-colors underline decoration-green-400/30 underline-offset-4 text-blue-100 break-all">onehubglobal365@gmail.com</a>
               </div>
-              <div className="flex items-start gap-2">
+              <div className="flex items-start gap-3">
                 <svg className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-                <span className="text-xs font-medium leading-relaxed text-blue-100">
+                <span className="text-[10px] md:text-xs font-medium leading-relaxed text-blue-100/90">
                   4th floor, 25/529, Rd Number 1, opp. GHMC Park, above HDFC BANK, Kukatpally Housing Board Colony, Kukatpally, Hyderabad, Telangana 500072
                 </span>
               </div>
@@ -218,8 +199,8 @@ export default function CompactFooter() {
 
 
           {/* Company Links */}
-          <div>
-            <h4 className="font-bold text-sm mb-4 text-white">
+          <div className="lg:pl-8">
+            <h4 className="font-bold text-sm mb-4 text-white uppercase tracking-widest opacity-90">
               Company
             </h4>
             <ul className="space-y-2">
@@ -227,7 +208,7 @@ export default function CompactFooter() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-xs transition-colors duration-300 hover:underline text-blue-100 hover:text-white"
+                    className="text-xs transition-colors duration-300 hover:underline text-blue-100 hover:text-white font-medium"
                   >
                     {link.name}
                   </Link>
@@ -237,8 +218,8 @@ export default function CompactFooter() {
           </div>
 
           {/* Resources Links */}
-          <div>
-            <h4 className="font-bold text-sm mb-4 text-white">
+          <div className="lg:pl-4">
+            <h4 className="font-bold text-sm mb-4 text-white uppercase tracking-widest opacity-90">
               Resources
             </h4>
             <ul className="space-y-2">
@@ -248,7 +229,7 @@ export default function CompactFooter() {
                     href={link.href}
                     target={link.href.startsWith('http') ? '_blank' : undefined}
                     rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    className="text-xs transition-colors duration-300 hover:underline text-blue-100 hover:text-white"
+                    className="text-xs transition-colors duration-300 hover:underline text-blue-100 hover:text-white font-medium"
                   >
                     {link.name}
                   </Link>
@@ -259,7 +240,7 @@ export default function CompactFooter() {
 
           {/* Support Links */}
           <div>
-            <h4 className="font-bold text-sm mb-4 text-white">
+            <h4 className="font-bold text-sm mb-4 text-white uppercase tracking-widest opacity-90">
               Support
             </h4>
             <ul className="space-y-2">
@@ -267,7 +248,7 @@ export default function CompactFooter() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-xs transition-colors duration-300 hover:underline text-blue-100 hover:text-white"
+                    className="text-xs transition-colors duration-300 hover:underline text-blue-100 hover:text-white font-medium"
                   >
                     {link.name}
                   </Link>
@@ -281,8 +262,8 @@ export default function CompactFooter() {
         <div
           className="pt-6 border-t border-white/10 text-center"
         >
-          <p className="text-xs text-blue-100">
-            © {currentYear} OHG365. All rights reserved.
+          <p className="text-[10px] md:text-xs text-blue-100 font-medium tracking-wide">
+            © {currentYear} OHG365. All rights reserved. Professional EdTech Training Solutions.
           </p>
         </div>
       </div>

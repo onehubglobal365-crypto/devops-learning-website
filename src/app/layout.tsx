@@ -8,7 +8,7 @@ import GlobalContinuePrompt from '@/components/auth/global-continue-prompt';
 import { SiteNavigationJSONLD } from '@/components/seo/seo-metadata';
 import { AUTH_SYSTEM_AVAILABLE } from "@/config/authStatus";
 import { ThemeProvider } from '@/components/common/theme-provider';
-import GlobalBackButton from '@/components/common/GlobalBackButton';
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -91,11 +91,11 @@ export default function RootLayout({
         >
           <SiteNavigationJSONLD />
           {/* <AuthGuard> */}
-          <GlobalBackButton />
+
           {/* <GlobalContinuePrompt /> */}
-          {/* <Suspense fallback={null}>
+          <Suspense fallback={null}>
             <ConditionalNav />
-          </Suspense> */}
+          </Suspense>
           {children}
           {/* </AuthGuard> */}
         </ThemeProvider>

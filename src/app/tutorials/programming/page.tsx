@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 import { AUTH_SYSTEM_AVAILABLE } from '@/config/authStatus';
 import { TechnologyCard, CardGrid } from '@/components/common/technology-card';
 import { Rocket, Coffee, FileCode, Database, Globe, BarChart, Stethoscope } from 'lucide-react';
@@ -159,14 +160,14 @@ export default function ProgrammingPage() {
   }
 
   return (
-    <main className="min-h-screen pb-20 pt-[120px] overflow-hidden relative" style={{ background: 'linear-gradient(to bottom right, #dcfce7, #d1fae5, #ccfbf1)' }}>
+    <main className="min-h-screen pb-20 pt-[120px] overflow-hidden relative bg-white">
       {/* Animated Background - Removed */}
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-8">
 
           <h1 className="text-5xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
-            Programming <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-red-500">Tutorials</span>
+            Programming <span className="text-gray-900">Tutorials</span>
           </h1>
           <p className="text-xl" style={{ color: 'var(--text-secondary)' }}>Master programming languages, frameworks, and development tools</p>
         </div>
@@ -197,11 +198,19 @@ export default function ProgrammingPage() {
             iconBg="bg-white"
           />
           <TechnologyCard
-            title="SQL & Databases"
+            title="SQL"
             description="Database design, SQL queries, optimization, and modern database technologies"
             icon={<Database className="w-12 h-12 text-purple-500" />}
             link="/sql"
             gradient="from-purple-500 to-indigo-600"
+            iconBg="bg-white"
+          />
+          <TechnologyCard
+            title="Power BI"
+            description="Master Data Visualization and Business Intelligence with Power BI"
+            icon={<div className="p-1 w-full h-full relative"><Image src="/images/powerbi.jpg" alt="Power BI" fill className="object-contain" unoptimized /></div>}
+            link="/powerbi"
+            gradient="from-yellow-400 to-yellow-600"
             iconBg="bg-white"
           />
           <TechnologyCard
@@ -220,16 +229,9 @@ export default function ProgrammingPage() {
             gradient="from-blue-500 to-cyan-500"
             iconBg="bg-white"
           />
-          <TechnologyCard
-            title="Medical Coding"
-            description="Healthcare basics, ICD-10-CM, CPT Coding, and certification prep"
-            icon={<Stethoscope className="w-12 h-12 text-teal-500" />}
-            link="/tutorials/medical-coding"
-            gradient="from-teal-400 to-cyan-500"
-            iconBg="bg-white"
-          />
         </CardGrid>
       </div>
     </main>
   );
 }
+

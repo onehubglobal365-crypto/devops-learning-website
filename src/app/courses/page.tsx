@@ -54,11 +54,18 @@ const courses: Course[] = [
     gradient: 'from-violet-500 to-purple-600',
   },
   {
-    title: 'SQL & Databases',
+    title: 'SQL',
     description: 'SQL & NoSQL Mastery - Database Design and Management',
     icon: <div className="p-1 w-full h-full relative"><Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" fill className="object-contain" unoptimized /></div>,
     href: '/roadmap?courseId=sql',
     gradient: 'from-cyan-500 to-blue-600',
+  },
+  {
+    title: 'Power BI',
+    description: 'Master Data Visualization and Business Intelligence with Power BI',
+    icon: <div className="p-1 w-full h-full relative"><Image src="/images/powerbicard.png" alt="Power BI" fill className="object-contain" unoptimized /></div>,
+    href: '/roadmap?courseId=powerbi',
+    gradient: 'from-yellow-400 to-yellow-600',
   },
   {
     title: 'Linux',
@@ -73,6 +80,13 @@ const courses: Course[] = [
     icon: <div className="p-1 w-full h-full relative"><Image src="/medical-coding-logo-v2.jpg" alt="Medical Coding" fill className="object-contain rounded-xl" unoptimized /></div>,
     href: '/roadmap?courseId=medical-coding',
     gradient: 'from-blue-500 to-cyan-500',
+  },
+  {
+    title: 'Azure Data Engineer',
+    description: 'Master Azure data engineering, data pipelines, and cloud data solutions',
+    icon: <div className="p-1 w-full h-full relative"><Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure" fill className="object-contain" unoptimized /></div>,
+    href: '/tutorials/azure-data-engineer',
+    gradient: 'from-blue-600 to-cyan-600',
   },
 ];
 
@@ -111,14 +125,14 @@ export default function CoursesPage() {
           <UniqueHero />
         </section>
 
-        <section className="container mx-auto px-4 py-16">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center justify-center space-x-4 mb-6 px-8 py-4 bg-[#d4d4d4] rounded-full shadow-sm mx-auto">
-              <h2 className="text-4xl font-bold text-gray-900">
+        <section className="container mx-auto px-[var(--space-sm)] py-[var(--space-xl)]">
+          <div className="text-center mb-[var(--space-xl)]">
+            <div className="inline-flex items-center justify-center mb-6 px-[var(--space-lg)] py-4 bg-[#d4d4d4]/50 backdrop-blur-md rounded-full shadow-sm mx-auto border border-white/20">
+              <h2 className="font-bold text-gray-900 tracking-tight" style={{ fontSize: 'clamp(1.75rem, 5vw, 3rem)' }}>
                 Explore Our Courses
               </h2>
             </div>
-            <p className="text-gray-600 text-xl mt-4">Choose your learning path and start your journey today</p>
+            <p className="text-gray-600 mt-4 font-medium" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>Choose your learning path and start your journey today</p>
           </div>
 
           <CardGrid>
@@ -138,4 +152,5 @@ export default function CoursesPage() {
     </main>
   );
 }
+
 

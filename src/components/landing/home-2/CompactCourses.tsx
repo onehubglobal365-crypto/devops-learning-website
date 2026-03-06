@@ -24,27 +24,29 @@ export default function CompactCourses() {
       backgroundColor="var(--bg-secondary)"
       stagger={true}
     >
-      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4 max-w-5xl mx-auto px-4">
-        {courses.map((course) => (
-          <div
-            key={course.title}
-            className="group flex flex-col items-center justify-center bg-white rounded-2xl p-3 shadow-sm border border-gray-100 aspect-square cursor-default transition-all hover:shadow-lg hover:border-blue-100 hover:-translate-y-1 duration-300"
-          >
-            <div className={`relative ${course.title === 'DevOps Tutorial' ? 'w-12 h-12 md:w-16 md:h-16' : 'w-8 h-8 md:w-12 md:h-12'} mb-3`}>
-              <Image
-                src={course.image}
-                alt={course.title}
-                fill
-                className="object-contain transition-transform duration-500 group-hover:scale-110"
-                sizes="(max-width: 768px) 48px, 64px"
-                unoptimized
-              />
+      <div className="w-full max-w-7xl mx-auto px-[var(--space-md)] lg:px-[var(--space-lg)]">
+        <div className="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-[var(--space-sm)] md:gap-[var(--space-md)]">
+          {courses.map((course) => (
+            <div
+              key={course.title}
+              className="group flex flex-col items-center justify-center bg-white rounded-2xl p-3 shadow-sm border border-gray-100 aspect-square cursor-default transition-all hover:shadow-lg hover:border-blue-100 hover:-translate-y-1 duration-300"
+            >
+              <div className={`relative ${course.title === 'DevOps Tutorial' ? 'w-12 h-12 md:w-16 md:h-16' : 'w-8 h-8 md:w-12 md:h-12'} mb-3`}>
+                <Image
+                  src={course.image}
+                  alt={course.title}
+                  fill
+                  className="object-contain transition-transform duration-500 group-hover:scale-110"
+                  sizes="(max-width: 768px) 48px, 64px"
+                  unoptimized
+                />
+              </div>
+              <h3 className="font-bold text-slate-800 text-center text-[10px] md:text-xs leading-tight transition-colors group-hover:text-blue-600">
+                {course.title}
+              </h3>
             </div>
-            <h3 className="font-bold text-slate-800 text-center text-[10px] md:text-xs leading-tight transition-colors group-hover:text-blue-600">
-              {course.title}
-            </h3>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </CompactSection>
   );

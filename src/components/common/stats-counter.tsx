@@ -55,11 +55,11 @@ function StatItem({ end, duration, label, suffix = '', prefix = '', color = 'var
   }, [end, duration, isVisible]);
 
   return (
-    <div ref={ref} className="aspect-square bg-white rounded-full shadow-lg flex flex-col items-center justify-center p-3 transition-transform hover:scale-105">
-      <div className="text-2xl md:text-3xl font-black mb-1" style={{ color }}>
+    <div ref={ref} className="aspect-square bg-white rounded-full shadow-lg flex flex-col items-center justify-center p-[var(--space-xs)] transition-transform hover:scale-105 border border-gray-100">
+      <div className="font-black mb-1" style={{ color, fontSize: 'clamp(1.25rem, 4vw, 2rem)' }}>
         {prefix}{count}{suffix}
       </div>
-      <div className="text-xs md:text-sm font-bold text-gray-800 text-center leading-tight">{label}</div>
+      <div className="font-bold text-gray-800 text-center leading-tight px-2" style={{ fontSize: 'clamp(0.7rem, 2vw, 0.875rem)' }}>{label}</div>
     </div>
   );
 }
@@ -71,7 +71,7 @@ interface StatsCounterProps {
 export default function StatsCounter({ className = '' }: StatsCounterProps) {
   return (
     <div className={className}>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-3xl mx-auto">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-[var(--space-md)] md:gap-[var(--space-lg)] w-full max-w-4xl mx-auto py-[var(--space-md)] px-4">
         <StatItem end={100} duration={2000} label="Technologies" suffix="+" color="#fbbf24" />
         <StatItem end={150} duration={2000} label="Video Tutorials" suffix="+" color="#ef4444" />
         <StatItem end={100} duration={2000} label="Hours of Content" suffix="+" color="#3b82f6" />

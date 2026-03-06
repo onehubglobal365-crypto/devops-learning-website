@@ -26,7 +26,7 @@ export default function WebDevPage() {
         isSection: true
       } : {
         href: '/sql',
-        title: 'SQL & Databases',
+        title: 'SQL Tutorial',
         isSection: false
       },
       next: nextSection ? {
@@ -520,13 +520,13 @@ export default function WebDevPage() {
   return (
     <TechLayout onThisPage={pageHeadings} technology="web-dev" activeSection={activeSection} setActiveSection={setActiveSection} background="white">
       <div
-        className="min-h-screen rounded-3xl p-8 text-slate-900 border transition-all duration-300"
+        className="min-h-screen rounded-none p-8 text-slate-900 border transition-all duration-300"
         style={{
           backgroundColor: 'rgba(255, 255, 255, 0.7)',
           backdropFilter: 'blur(12px)',
           WebkitBackdropFilter: 'blur(12px)',
-          borderColor: 'rgba(255, 255, 255, 0.5)',
-          boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.15)'
+          borderColor: 'black',
+
         }}
       >
         {renderContent()}

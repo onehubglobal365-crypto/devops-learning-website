@@ -106,10 +106,9 @@ export default function Sidebar({ items, onThisPage: _onThisPage, activeSection,
       : (theme === 'light' ? 'text-gray-500' : 'text-gray-400');
 
     // Active style based on theme
-    // Active style based on theme
     const activeClass = theme === 'light'
       ? 'bg-[#d4edda] text-[#155724] border-l-4 border-[#155724] font-bold'
-      : 'bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white border border-white/10 shadow-lg shadow-purple-500/20 scale-105 rounded-lg';
+      : 'bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white border border-white/10 scale-105 rounded-lg';
 
     // Item container style based on theme
     const containerClass = theme === 'light'
@@ -174,14 +173,10 @@ export default function Sidebar({ items, onThisPage: _onThisPage, activeSection,
     <div className="flex flex-col h-full relative z-[60]">
       {/* Navigation - independent scroll container */}
       <nav
-        className={`flex-1 overflow-y-auto overscroll-contain ${theme === 'light' ? 'py-2' : 'p-4'}`}
+        className={`flex-1 overflow-y-auto overscroll-contain hide-scrollbar ${theme === 'light' ? 'py-2' : 'p-4'}`}
         onWheel={(e) => {
           // Prevent sidebar scroll from propagating to window
           e.stopPropagation();
-        }}
-        style={{
-          scrollbarWidth: 'thin',
-          scrollbarColor: 'rgba(255, 255, 255, 0.3) rgba(26, 26, 26, 0.5)'
         }}
       >
         <div className="space-y-1">

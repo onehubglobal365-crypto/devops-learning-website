@@ -46,7 +46,7 @@ const slides = [
   },
   {
     id: 5,
-    title: 'SQL & Databases',
+    title: 'SQL',
     subtitle: '< SQL & NoSQL Mastery',
     description: 'Master database design, optimization, and management. Learn SQL, NoSQL databases, data modeling, and advanced querying techniques.',
     buttonText: 'Explore Databases',

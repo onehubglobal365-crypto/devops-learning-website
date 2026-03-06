@@ -24,3 +24,4 @@ export default function ContactPage() {
   return <MenuPageTemplate pageData={pageData} />;
 }
 
+

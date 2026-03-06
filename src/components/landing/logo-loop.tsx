@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react';
 import {
   Github, Box, Triangle, Zap, Atom, Server, Terminal, Coffee,
-  FileCode, Globe, Palette, Database, Cloud, Settings, Code2, Layers
+  FileCode, Globe, Palette, Database, Cloud, Settings, Code2, Layers, BarChart3
 } from 'lucide-react';
 
 interface LogoLoopProps {
@@ -70,7 +70,8 @@ export default function LogoLoop({
     { name: 'Redis', icon: <Database className="w-8 h-8 text-red-500 dark:text-red-400" /> },
     { name: 'AWS', icon: <Cloud className="w-8 h-8 text-orange-500 dark:text-orange-400" /> },
     { name: 'Kubernetes', icon: <Settings className="w-8 h-8 text-blue-600 dark:text-blue-400" /> },
-    { name: 'Linux', icon: <Terminal className="w-8 h-8 text-amber-600 dark:text-amber-400" /> }
+    { name: 'Linux', icon: <Terminal className="w-8 h-8 text-amber-600 dark:text-amber-400" /> },
+    { name: 'Power BI', icon: <BarChart3 className="w-8 h-8 text-yellow-600 dark:text-yellow-400" /> }
   ];
 
   return (

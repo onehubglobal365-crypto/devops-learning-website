@@ -293,7 +293,7 @@ function GalleryInner() {
                     {selectedMainImages.map((src, index) => (
                         <div
                             key={index}
-                            className="relative aspect-square cursor-pointer overflow-hidden rounded-2xl md:rounded-3xl border-2 border-white shadow-md hover:shadow-2xl transition-all duration-500 hover:scale-105"
+                            className="relative aspect-square cursor-pointer overflow-hidden rounded-2xl md:rounded-3xl hover:shadow-2xl transition-all duration-500 hover:scale-105"
                             onClick={() => setShowModal(true)}
                         >
                             <Image

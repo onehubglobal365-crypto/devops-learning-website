@@ -110,16 +110,16 @@ export default function MobileMenu({ isOpen, onClose, triggerRef, isLoggedIn, on
       {/* Slide-out menu */}
       <div
         ref={menuRef}
-        className={`fixed top-0 left-0 h-full w-80 bg-gradient-to-b from-white to-sky-200 shadow-2xl border-r border-white/50 z-[200000] transform transition-transform duration-300 ease-in-out md:hidden ${isOpen ? 'translate-x-0' : '-translate-x-full'
+        className={`fixed top-0 left-0 h-[100dvh] w-[85vw] max-w-[320px] bg-gradient-to-b from-white to-sky-200 shadow-2xl border-r border-white/50 z-[200000] transform transition-transform duration-300 ease-in-out md:hidden ${isOpen ? 'translate-x-0' : '-translate-x-full'
           }`}
         role="navigation"
         aria-label="Mobile navigation"
       >
         <div className="flex flex-col h-full overflow-y-auto">
           {/* Header */}
-          <div className="flex items-center justify-between p-4 border-b border-[#083D77]/10 bg-white/50 backdrop-blur-sm">
+          <div className="flex items-center justify-between p-[var(--space-md)] border-b border-[#083D77]/10 bg-white/50 backdrop-blur-sm">
             <Link href={isLoggedIn ? "/dashboard" : "/"} onClick={onClose} className="flex items-center gap-3 flex-1 min-w-0">
-              <div className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center p-1 shrink-0 border border-[#083D77]/10 overflow-hidden">
+              <div className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center p-1.5 shrink-0 border border-[#083D77]/10 overflow-hidden">
                 {isLoggedIn && profile.name ? (
                   <div className="w-full h-full bg-[#083D77] text-white flex items-center justify-center font-bold text-lg rounded-full">
                     {profile.initial}
@@ -137,7 +137,7 @@ export default function MobileMenu({ isOpen, onClose, triggerRef, isLoggedIn, on
               <div className="flex flex-col min-w-0">
                 {isLoggedIn && profile.name ? (
                   <>
-                    <div className="text-[#083D77] font-bold truncate">
+                    <div className="text-[#083D77] font-bold truncate text-[clamp(0.875rem,2.5vw,1rem)]">
                       {profile.name}
                     </div>
                     <div className="text-[10px] text-gray-500 font-bold uppercase tracking-wider">
@@ -147,15 +147,15 @@ export default function MobileMenu({ isOpen, onClose, triggerRef, isLoggedIn, on
                 ) : (
                   <>
                     <div
-                      className="flex items-center text-lg font-black tracking-tight leading-none whitespace-nowrap"
-                      style={{ fontFamily: 'var(--font-orbitron), sans-serif', letterSpacing: '0.05em' }}
+                      className="flex items-center font-black tracking-tight leading-none whitespace-nowrap"
+                      style={{ fontFamily: 'var(--font-orbitron), sans-serif', letterSpacing: '0.05em', fontSize: 'clamp(0.875rem, 3vw, 1.125rem)' }}
                     >
                       <span className="text-[#083D77]">ONE</span>
                       <span className="text-orange-500">HUB</span>
                     </div>
                     <div
-                      className="flex items-center text-sm font-bold tracking-[0.2em] leading-none text-cyan-500 mt-0.5"
-                      style={{ fontFamily: 'var(--font-orbitron), sans-serif' }}
+                      className="flex items-center font-bold tracking-[0.2em] leading-none text-cyan-500 mt-0.5"
+                      style={{ fontFamily: 'var(--font-orbitron), sans-serif', fontSize: 'clamp(0.65rem, 2vw, 0.75rem)' }}
                     >
                       GLOBAL
                     </div>
@@ -177,11 +177,11 @@ export default function MobileMenu({ isOpen, onClose, triggerRef, isLoggedIn, on
 
 
           {/* Menu Items */}
-          <nav className="flex-1 p-4 pb-24 space-y-1" role="menu">
+          <nav className="flex-1 p-[var(--space-md)] pb-24 space-y-1.5" role="menu">
             <Link
               href="/"
               onClick={onClose}
-              className={`block px-4 py-3 rounded-xl transition-all duration-200 mb-2 min-h-[44px] flex items-center font-medium ${pathname === '/' ? 'bg-white shadow-md text-[#083D77]' : 'text-[#083D77] hover:bg-white hover:shadow-sm'}`}
+              className={`block px-[var(--space-md)] py-3 rounded-2xl transition-all duration-200 mb-2 min-h-[44px] flex items-center font-bold text-[clamp(0.875rem,2.5vw,1rem)] ${pathname === '/' ? 'bg-white shadow-lg text-orange-500' : 'text-[#083D77] hover:bg-white hover:shadow-sm'}`}
               role="menuitem"
             >
               <Home className="w-5 h-5 mr-3" />
@@ -192,7 +192,7 @@ export default function MobileMenu({ isOpen, onClose, triggerRef, isLoggedIn, on
             <div className="mb-2">
               <button
                 onClick={() => setActiveSubmenu(activeSubmenu === 'about' ? null : 'about')}
-                className={`w-full px-4 py-3 text-left rounded-xl transition-all duration-200 flex items-center justify-between min-h-[44px] focus:outline-none font-medium ${activeSubmenu === 'about' ? 'bg-white/50 text-[#083D77]' : 'text-[#083D77] hover:bg-white hover:shadow-sm'}`}
+                className={`w-full px-[var(--space-md)] py-3 text-left rounded-2xl transition-all duration-200 flex items-center justify-between min-h-[44px] focus:outline-none font-bold text-[clamp(0.875rem,2.5vw,1rem)] ${activeSubmenu === 'about' ? 'bg-white/70 text-orange-500 shadow-sm' : 'text-[#083D77] hover:bg-white hover:shadow-sm'}`}
                 aria-expanded={activeSubmenu === 'about'}
                 aria-haspopup="true"
               >
@@ -201,7 +201,7 @@ export default function MobileMenu({ isOpen, onClose, triggerRef, isLoggedIn, on
                   <span>About Us</span>
                 </div>
                 <svg
-                  className={`w-4 h-4 transition-transform duration-200 ${activeSubmenu === 'about' ? 'rotate-90' : ''}`}
+                  className={`w-4 h-4 transition-transform duration-300 ${activeSubmenu === 'about' ? 'rotate-90' : ''}`}
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -263,7 +263,7 @@ export default function MobileMenu({ isOpen, onClose, triggerRef, isLoggedIn, on
             <Link
               href="/about/branches"
               onClick={onClose}
-              className={`block px-4 py-3 rounded-xl transition-all duration-200 mb-2 min-h-[44px] flex items-center font-medium ${pathname === '/about/branches' ? 'bg-white shadow-md text-[#083D77]' : 'text-[#083D77] hover:bg-white hover:shadow-sm'}`}
+              className={`block px-[var(--space-md)] py-3 rounded-2xl transition-all duration-200 mb-2 min-h-[44px] flex items-center font-bold text-[clamp(0.875rem,2.5vw,1rem)] ${pathname === '/about/branches' ? 'bg-white shadow-lg text-orange-500' : 'text-[#083D77] hover:bg-white hover:shadow-sm'}`}
               role="menuitem"
             >
               <Building2 className="w-5 h-5 mr-3" />
@@ -273,7 +273,7 @@ export default function MobileMenu({ isOpen, onClose, triggerRef, isLoggedIn, on
             <Link
               href="/courses"
               onClick={onClose}
-              className={`block px-4 py-3 rounded-xl transition-all duration-200 mb-2 min-h-[44px] flex items-center font-medium ${pathname === '/courses' ? 'bg-white shadow-md text-[#083D77]' : 'text-[#083D77] hover:bg-white hover:shadow-sm'}`}
+              className={`block px-[var(--space-md)] py-3 rounded-2xl transition-all duration-200 mb-2 min-h-[44px] flex items-center font-bold text-[clamp(0.875rem,2.5vw,1rem)] ${pathname === '/courses' ? 'bg-white shadow-lg text-orange-500' : 'text-[#083D77] hover:bg-white hover:shadow-sm'}`}
               role="menuitem"
             >
               <GraduationCap className="w-5 h-5 mr-3" />
@@ -287,7 +287,7 @@ export default function MobileMenu({ isOpen, onClose, triggerRef, isLoggedIn, on
                   <>
                     <button
                       onClick={() => setActiveSubmenu(activeSubmenu === item.slug ? null : item.slug)}
-                      className={`w-full px-4 py-3 text-left rounded-xl transition-all duration-200 flex items-center justify-between min-h-[44px] focus:outline-none font-medium ${activeSubmenu === item.slug ? 'bg-white/50 text-[#083D77]' : 'text-[#083D77] hover:bg-white hover:shadow-sm'}`}
+                      className={`w-full px-[var(--space-md)] py-3 text-left rounded-2xl transition-all duration-200 flex items-center justify-between min-h-[44px] focus:outline-none font-bold text-[clamp(0.875rem,2.5vw,1rem)] ${activeSubmenu === item.slug ? 'bg-white/70 text-orange-500 shadow-sm' : 'text-[#083D77] hover:bg-white hover:shadow-sm'}`}
                       aria-expanded={activeSubmenu === item.slug}
                       aria-haspopup="true"
                     >
@@ -302,7 +302,7 @@ export default function MobileMenu({ isOpen, onClose, triggerRef, isLoggedIn, on
                         <span>{item.label}</span>
                       </div>
                       <svg
-                        className={`w-4 h-4 transition-transform duration-200 ${activeSubmenu === item.slug ? 'rotate-90' : ''}`}
+                        className={`w-4 h-4 transition-transform duration-300 ${activeSubmenu === item.slug ? 'rotate-90' : ''}`}
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -332,7 +332,7 @@ export default function MobileMenu({ isOpen, onClose, triggerRef, isLoggedIn, on
                   <Link
                     href={`/menu/${item.slug}`}
                     onClick={onClose}
-                    className={`block px-4 py-3 rounded-xl transition-all duration-200 min-h-[44px] flex items-center font-medium ${pathname === `/menu/${item.slug}` ? 'bg-white shadow-md text-[#083D77]' : 'text-[#083D77] hover:bg-white hover:shadow-sm'}`}
+                    className={`block px-[var(--space-md)] py-3 rounded-2xl transition-all duration-200 min-h-[44px] flex items-center font-bold text-[clamp(0.875rem,2.5vw,1rem)] ${pathname === `/menu/${item.slug}` ? 'bg-white shadow-lg text-orange-500' : 'text-[#083D77] hover:bg-white hover:shadow-sm'}`}
                     role="menuitem"
                   >
                     {item.label}
@@ -342,67 +342,24 @@ export default function MobileMenu({ isOpen, onClose, triggerRef, isLoggedIn, on
             ))}
 
             {/* Tutorials Dropdown */}
-            <div className="mb-2">
-              <button
-                onClick={() => setActiveSubmenu(activeSubmenu === 'tutorials' ? null : 'tutorials')}
-                className={`w-full px-4 py-3 text-left rounded-xl transition-all duration-200 flex items-center justify-between min-h-[44px] focus:outline-none font-medium ${activeSubmenu === 'tutorials' ? 'bg-white/50 text-[#083D77]' : 'text-[#083D77] hover:bg-white hover:shadow-sm'}`}
-                aria-expanded={activeSubmenu === 'tutorials'}
-                aria-haspopup="true"
-              >
-                <div className="flex items-center">
-                  <BookOpen className="w-5 h-5 mr-3" />
-                  <span>Tutorials</span>
-                </div>
-                <svg
-                  className={`w-4 h-4 transition-transform duration-200 ${activeSubmenu === 'tutorials' ? 'rotate-90' : ''}`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-              {activeSubmenu === 'tutorials' && (
-                <div className="ml-4 mt-2 space-y-1 border-l-2 border-[#083D77]/10 pl-2">
-                  <Link
-                    href="/roadmap?courseId=medical-coding"
-                    onClick={onClose}
-                    className="block px-4 py-3 text-[#083D77]/80 hover:text-[#083D77] hover:bg-white/60 rounded-lg transition-all duration-200 min-h-[44px] flex items-center"
-                    role="menuitem"
-                  >
-                    <Stethoscope className="w-4 h-4 mr-3" />
-                    Medical Coding
-                  </Link>
-                  <Link
-                    href="/roadmap?courseId=programming"
-                    onClick={onClose}
-                    className="block px-4 py-3 text-[#083D77]/80 hover:text-[#083D77] hover:bg-white/60 rounded-lg transition-all duration-200 min-h-[44px] flex items-center"
-                    role="menuitem"
-                  >
-                    <Code className="w-4 h-4 mr-3" />
-                    Programming
-                  </Link>
-                  <Link
-                    href="/courses"
-                    onClick={onClose}
-                    className="block px-4 py-3 text-[#083D77]/80 hover:text-[#083D77] hover:bg-white/60 rounded-lg transition-all duration-200 min-h-[44px] flex items-center"
-                    role="menuitem"
-                  >
-                    <GraduationCap className="w-4 h-4 mr-3" />
-                    Courses
-                  </Link>
-                </div>
-              )}
-            </div>
+            <Link
+              href="/tutorials"
+              onClick={onClose}
+              className={`block px-[var(--space-md)] py-3 rounded-2xl transition-all duration-200 mb-2 min-h-[44px] flex items-center font-bold text-[clamp(0.875rem,2.5vw,1rem)] ${pathname === '/tutorials' ? 'bg-white shadow-lg text-orange-500' : 'text-[#083D77] hover:bg-white hover:shadow-sm'}`}
+              role="menuitem"
+            >
+              <BookOpen className="w-5 h-5 mr-3" />
+              Tutorials
+            </Link>
 
             {/* Additional Links */}
-            <div className="mt-4 pt-4 border-t border-[#083D77]/10 space-y-3">
+            <div className="mt-4 pt-4 border-t border-[#083D77]/10 space-y-3 px-[var(--space-sm)]">
               <Link
                 href="https://ohg-ai-interviewer.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={onClose}
-                className="block px-4 py-3 rounded-xl transition-all duration-200 min-h-[44px] flex items-center font-medium text-[#083D77] hover:bg-white hover:shadow-sm"
+                className="block px-4 py-3 rounded-2xl transition-all duration-200 min-h-[44px] flex items-center font-bold text-[#083D77] hover:bg-white hover:shadow-sm"
                 role="menuitem"
               >
                 <Rocket className="w-5 h-5 mr-3" />
@@ -411,7 +368,7 @@ export default function MobileMenu({ isOpen, onClose, triggerRef, isLoggedIn, on
               <Link
                 href="/terminal"
                 onClick={onClose}
-                className={`block px-4 py-3 rounded-xl transition-all duration-200 min-h-[44px] flex items-center font-medium ${pathname === '/terminal' ? 'bg-white shadow-md text-[#083D77]' : 'text-[#083D77] hover:bg-white hover:shadow-sm'}`}
+                className={`block px-4 py-3 rounded-2xl transition-all duration-200 min-h-[44px] flex items-center font-bold ${pathname === '/terminal' ? 'bg-white shadow-lg text-orange-500' : 'text-[#083D77] hover:bg-white hover:shadow-sm'}`}
                 role="menuitem"
               >
                 <Terminal className="w-5 h-5 mr-3" />
@@ -422,7 +379,7 @@ export default function MobileMenu({ isOpen, onClose, triggerRef, isLoggedIn, on
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={onClose}
-                className="block px-4 py-3 bg-[#95D26D] text-white font-bold rounded-xl hover:bg-[#85c25d] shadow-md hover:shadow-lg transition-all duration-300 min-h-[44px] flex items-center justify-center"
+                className="block px-4 py-3 bg-[#95D26D] text-white font-black rounded-2xl hover:bg-[#85c25d] shadow-lg hover:shadow-green-500/30 transition-all duration-300 min-h-[44px] flex items-center justify-center"
                 role="menuitem"
               >
                 <Briefcase className="w-5 h-5 mr-2" />
@@ -473,7 +430,7 @@ export default function MobileMenu({ isOpen, onClose, triggerRef, isLoggedIn, on
               <Link
                 href="/challenges"
                 onClick={onClose}
-                className="block px-4 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold rounded-xl hover:from-purple-500 hover:to-pink-500 shadow-md hover:shadow-lg transition-all duration-300 min-h-[44px] flex items-center justify-center"
+                className="block px-4 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-black rounded-2xl hover:scale-[1.02] shadow-lg hover:shadow-purple-500/30 transition-all duration-300 min-h-[44px] flex items-center justify-center"
                 role="menuitem"
               >
                 <Trophy className="w-5 h-5 mr-2" />

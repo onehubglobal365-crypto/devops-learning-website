@@ -116,13 +116,13 @@ export default function DashboardPage() {
                 <SharedNav hasGradientBlueNav hideThemeToggle={false} />
             </Suspense>
 
-            <div className="container mx-auto px-4 pt-32 pb-12 flex-grow flex flex-col items-center">
+            <div className="container mx-auto px-[var(--space-sm)] pt-[calc(var(--space-xl)*2)] pb-[var(--space-xl)] flex-grow flex flex-col items-center">
 
                 {/* Dashboard Card */}
-                <div className="bg-white rounded-3xl shadow-xl w-full max-w-3xl overflow-hidden border border-gray-100 relative">
+                <div className="bg-white rounded-[2.5rem] md:rounded-[3rem] shadow-xl w-full max-w-[var(--container-md)] overflow-hidden border border-gray-100 relative">
 
                     {/* Header Banner */}
-                    <div className="bg-gradient-to-r from-[#083D77] to-cyan-600 p-8 md:p-12 text-white relative">
+                    <div className="bg-gradient-to-r from-[#083D77] to-cyan-600 p-[var(--space-md)] md:p-[var(--space-xl)] text-white relative">
                         {/* Close Button */}
                         <button
                             onClick={() => router.back()}
@@ -133,8 +133,8 @@ export default function DashboardPage() {
                         </button>
 
                         <div className="z-10 relative">
-                            <h1 className="text-3xl md:text-4xl font-bold mb-2">My Dashboard</h1>
-                            <p className="opacity-90 text-lg">Manage your personal information and account settings.</p>
+                            <h1 className="font-bold mb-2 tracking-tight" style={{ fontSize: 'clamp(1.75rem, 5vw, 2.5rem)' }}>My Dashboard</h1>
+                            <p className="opacity-90 font-medium" style={{ fontSize: 'clamp(0.875rem, 2.5vw, 1.125rem)' }}>Manage your personal information and account settings.</p>
                         </div>
 
                         {/* Decorative background element */}
@@ -171,11 +171,11 @@ export default function DashboardPage() {
 
                     {/* Content Section */}
                     {/* Increased padding-top to accommodate lower avatar: pt-20 -> pt-28 */}
-                    <div className="pt-28 px-8 md:px-12 pb-12">
+                    <div className="pt-[var(--space-2xl)] px-[var(--space-md)] md:px-[var(--space-xl)] pb-[var(--space-xl)]">
 
                         {/* Name Display */}
                         <div className="mb-8">
-                            <h2 className="text-2xl md:text-3xl font-bold text-gray-800">{profile.nickname || profile.username || 'User'}</h2>
+                            <h2 className="font-bold text-gray-800 tracking-tight" style={{ fontSize: 'clamp(1.5rem, 4vw, 2rem)' }}>{profile.nickname || profile.username || 'User'}</h2>
                             <span className="inline-block mt-1 px-3 py-1 bg-blue-50 text-blue-700 text-xs font-bold uppercase tracking-wider rounded-full">Student Member</span>
                         </div>
 
@@ -305,3 +305,4 @@ export default function DashboardPage() {
         </div>
     );
 }
+

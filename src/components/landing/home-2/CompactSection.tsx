@@ -41,37 +41,40 @@ export default function CompactSection({
         }}
       />
 
-      <div className="container mx-auto px-4 lg:px-8 relative z-10">
+      <div className="w-full max-w-7xl mx-auto px-[var(--space-md)] lg:px-[var(--space-lg)] relative z-10">
         {(title || subtitle) && (
           <ScrollAnimate animation="fade-up" triggerOnce={false}>
-            <div className="text-center mb-6">
+            <div className="text-center mb-[var(--space-md)]">
               {title && (
-                <div className="relative inline-block mb-3">
+                <div className="relative inline-block mb-3 px-4">
                   <h2
                     className="compact-heading font-bold mb-2 relative z-10"
                     style={{
                       color: 'var(--text-primary)',
-                      fontSize: '1.5rem',
-                      fontWeight: 700,
+                      fontSize: 'clamp(1.5rem, 4vw, 2.5rem)',
+                      fontWeight: 800,
                       letterSpacing: '-0.02em',
+                      lineHeight: '1.2'
                     }}
                   >
                     {title}
                   </h2>
                   {/* Underline decoration */}
                   <div
-                    className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-1 w-16 rounded-full"
+                    className="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2 h-1.5 w-24 rounded-full"
                     style={{
-                      background: 'linear-gradient(90deg, rgba(8, 61, 119, 0.3), rgba(122, 148, 165, 0.5), rgba(8, 61, 119, 0.3))',
+                      background: 'linear-gradient(90deg, #083D77, #7A94A5, #083D77)',
+                      boxShadow: '0 2px 4px rgba(8, 61, 119, 0.2)'
                     }}
                   />
                 </div>
               )}
               {subtitle && (
                 <p
-                  className="compact-text text-sm max-w-2xl mx-auto leading-relaxed"
+                  className="compact-text text-sm max-w-2xl mx-auto leading-relaxed font-semibold"
                   style={{
-                    color: 'var(--text-secondary)',
+                    color: 'var(--text-primary)',
+                    opacity: 0.7,
                     fontSize: '0.9375rem',
                     lineHeight: '1.6',
                   }}

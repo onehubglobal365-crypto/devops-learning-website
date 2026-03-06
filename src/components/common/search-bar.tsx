@@ -20,8 +20,8 @@ const searchData: SearchResult[] = [
   { title: 'Java Full Stack', path: '/tutorials/java-fullstack', description: 'Spring Boot, React, microservices, full stack development' },
   { title: 'Python', path: '/python', description: 'Python programming, Django, Flask, data science' },
   { title: 'Python Full Stack', path: '/tutorials/python-fullstack', description: 'Django, Flask, React, full stack web development' },
-  { title: 'SQL', path: '/sql', description: 'Database design, SQL queries, NoSQL databases' },
-  { title: 'SQL & Databases', path: '/sql', description: 'SQL, NoSQL, data modeling, database management' },
+  { title: 'SQL', path: '/sql', description: 'SQL, NoSQL, data modeling, database management, and database design' },
+  { title: 'Power BI', path: '/powerbi', description: 'Data visualization, business intelligence, DAX, Power Query, and report design' },
   { title: 'Web Development', path: '/web-dev', description: 'HTML, CSS, JavaScript, React, Node.js' },
   { title: 'Linux', path: '/linux', description: 'Linux commands, shell scripting, system administration' },
 

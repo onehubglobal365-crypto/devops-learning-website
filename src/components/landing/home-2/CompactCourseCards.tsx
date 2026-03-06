@@ -69,7 +69,7 @@ const courses = [
             { name: 'Python', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
             { name: 'Spark', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg' },
             { name: 'Databricks', logo: 'data:image/png;base64,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' },
-            { name: 'PowerBI', logo: 'https://upload.wikimedia.org/wikipedia/commons/c/c9/Power_bi_logo_black.svg' }
+            { name: 'PowerBI', logo: '/images/powerbicard.png' }
         ]
     }
 ];
@@ -81,43 +81,43 @@ export default function CompactCourseCards() {
             subtitle="Follow the structured learning journey designed by industry experts"
             backgroundColor="#ffffff"
         >
-            <div className="flex flex-wrap gap-8 md:gap-12 justify-center max-w-7xl mx-auto px-4 py-8">
+            <div className="flex flex-wrap gap-[var(--space-md)] md:gap-[var(--space-lg)] justify-center w-full max-w-7xl mx-auto px-[var(--space-md)] py-[var(--space-lg)]">
                 {courses.map((course) => (
                     <a
                         key={course.id}
                         href={course.brochureLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group relative bg-white p-2 transition-all duration-500 hover:scale-[1.02] w-full max-w-[450px]"
+                        className="group relative bg-white p-2 transition-all duration-500 hover:scale-[1.02] w-full md:w-[calc(50%-var(--space-md))] lg:w-[calc(33.333%-var(--space-lg))] max-w-[450px]"
                     >
                         {/* The Image-style Container */}
-                        <div className="relative w-full aspect-[16/10] border-2 rounded-[20px] md:rounded-[30px] flex flex-col items-center justify-center p-4 md:p-8 bg-white shadow-sm group-hover:shadow-2xl transition-all duration-500 overflow-visible border-blue-400">
+                        <div className="relative w-full aspect-[16/10] border-2 rounded-[clamp(1.25rem,3vw,2rem)] flex flex-col items-center justify-center p-[var(--space-sm)] md:p-[var(--space-md)] bg-white shadow-sm group-hover:shadow-2xl transition-all duration-500 overflow-visible border-blue-400">
 
                             {/* Top Left Integrated Header - Centered on Mobile, Left on Desktop */}
-                            <div className="absolute top-[-24px] md:top-[-28px] left-1/2 md:left-8 -translate-x-1/2 md:translate-x-0 bg-white px-4 md:px-6 py-2 flex items-center gap-3 md:gap-4 z-10 transition-all group-hover:-translate-y-1 rounded-2xl shadow-md border border-gray-100 w-[max-content]">
-                                <div className="w-8 h-8 md:w-10 md:h-10 relative">
+                            <div className="absolute top-[-20px] md:top-[-28px] left-1/2 md:left-8 -translate-x-1/2 md:translate-x-0 bg-white px-[var(--space-sm)] md:px-[var(--space-md)] py-2 flex items-center gap-2 md:gap-4 z-10 transition-all group-hover:-translate-y-1 rounded-2xl shadow-md border border-gray-100 w-[max-content]">
+                                <div className="w-8 h-8 md:w-10 md:h-10 relative shrink-0">
                                     <Image src={course.logo} alt={course.category} fill className="object-contain transition-transform group-hover:rotate-12" unoptimized />
                                 </div>
-                                <div className="flex flex-col">
+                                <div className="flex flex-col min-w-0">
                                     <span className={`text-[10px] md:text-xs font-black uppercase tracking-[0.2em] ${course.categoryColor}`}>
                                         {course.category}
                                     </span>
-                                    <span className="text-lg md:text-xl font-black text-gray-900 tracking-tight whitespace-nowrap">
+                                    <span className="text-base md:text-lg lg:text-xl font-black text-gray-900 tracking-tight whitespace-nowrap">
                                         {course.mainTitle}
                                     </span>
                                 </div>
                             </div>
 
                             {/* Tech Stack Centered Grid - Text on Main Card Hover */}
-                            <div className="grid grid-cols-3 gap-x-4 md:gap-x-8 gap-y-4 md:gap-y-6 px-2 md:px-6 py-2 md:py-4 relative z-20">
+                            <div className="grid grid-cols-3 gap-x-[var(--space-sm)] md:gap-x-[var(--space-md)] gap-y-[var(--space-sm)] md:gap-y-[var(--space-md)] px-2 md:px-6 py-2 md:py-4 relative z-20">
                                 {course.techStack.map((tech, idx) => (
                                     <div key={idx} className="flex flex-col items-center justify-center">
-                                        <div className="w-14 h-14 bg-white rounded-2xl shadow-sm border border-gray-100 p-3 flex items-center justify-center relative">
-                                            <div className="relative w-9 h-9">
+                                        <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-white rounded-2xl shadow-sm border border-gray-100 p-2 md:p-3 flex items-center justify-center relative">
+                                            <div className="relative w-6 h-6 sm:w-8 sm:h-8 md:w-9 md:h-9">
                                                 <Image src={tech.logo} alt={tech.name} fill className="object-contain" unoptimized />
                                             </div>
                                         </div>
-                                        <span className="text-[10px] font-black text-blue-600 mt-2 uppercase tracking-tighter bg-white px-2 py-0.5 rounded shadow-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                        <span className="text-[9px] md:text-[10px] font-black text-blue-600 mt-2 uppercase tracking-tighter bg-white px-2 py-0.5 rounded shadow-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                                             {tech.name}
                                         </span>
                                     </div>

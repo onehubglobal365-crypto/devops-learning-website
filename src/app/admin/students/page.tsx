@@ -192,7 +192,7 @@ export default function StudentsPage() {
 
             {/* Success View for Newly Created User */}
             {newlyCreatedUser && (
-                <div className="bg-green-50 border border-green-200 rounded-3xl p-8 relative overflow-hidden animate-in slide-in-from-top duration-500">
+                <div className="bg-green-50 border border-green-200 rounded-none p-8 relative overflow-hidden animate-in slide-in-from-top duration-500">
                     <div className="absolute top-0 right-0 p-4">
                         <button
                             onClick={() => setNewlyCreatedUser(null)}
@@ -240,7 +240,7 @@ export default function StudentsPage() {
             )}
 
             {/* List and Filters */}
-            <div className="bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden min-h-[400px]">
+            <div className="bg-white rounded-none border border-gray-100 shadow-sm overflow-hidden min-h-[400px]">
                 <div className="p-6 border-b border-gray-50 flex flex-col md:flex-row md:items-center justify-between gap-4">
                     <div className="relative flex-1 max-w-md">
                         <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
@@ -338,7 +338,7 @@ export default function StudentsPage() {
                                                     <option value="web-dev">Web Development</option>
                                                     <option value="devops">DevOps Engineering</option>
                                                     <option value="data-science">Data Science</option>
-                                                    <option value="sql">SQL & Databases</option>
+                                                    <option value="sql">SQL</option>
                                                     <option value="linux">Linux Mastery</option>
                                                     <option value="medical-coding">Medical Coding</option>
                                                 </select>
@@ -425,7 +425,7 @@ export default function StudentsPage() {
                                         <option value="web-dev">Web Development</option>
                                         <option value="devops">DevOps Engineering</option>
                                         <option value="data-science">Data Science</option>
-                                        <option value="sql">SQL & Databases</option>
+                                        <option value="sql">SQL</option>
                                         <option value="linux">Linux Mastery</option>
                                         <option value="medical-coding">Medical Coding</option>
                                     </select>
@@ -507,7 +507,7 @@ export default function StudentsPage() {
                                         <UserIcon className="w-4 h-4" /> Identity & Contact
                                     </h3>
                                     <div className="space-y-4">
-                                        <div className="bg-gray-50 p-5 rounded-3xl border border-gray-100">
+                                        <div className="bg-gray-50 p-5 rounded-none border border-gray-100">
                                             <div className="text-[10px] uppercase font-black text-gray-400 mb-1">Nickname</div>
                                             {editMode ? (
                                                 <input className="w-full bg-white border border-gray-200 mt-1 px-3 py-2 rounded-xl text-sm font-bold" value={editData.nickname} onChange={(e) => setEditData({ ...editData, nickname: e.target.value })} />
@@ -515,11 +515,11 @@ export default function StudentsPage() {
                                                 <div className="text-gray-900 font-bold">{selectedUser.nickname || 'Not Set'}</div>
                                             )}
                                         </div>
-                                        <div className="bg-gray-50 p-5 rounded-3xl border border-gray-100">
+                                        <div className="bg-gray-50 p-5 rounded-none border border-gray-100">
                                             <div className="text-[10px] uppercase font-black text-gray-400 mb-1">Email Connection</div>
                                             <div className="text-gray-900 font-bold">{selectedUser.email}</div>
                                         </div>
-                                        <div className="bg-gray-50 p-5 rounded-3xl border border-gray-100">
+                                        <div className="bg-gray-50 p-5 rounded-none border border-gray-100">
                                             <div className="text-[10px] uppercase font-black text-gray-400 mb-1">Mobile Access</div>
                                             {editMode ? (
                                                 <input className="w-full bg-white border border-gray-200 mt-1 px-3 py-2 rounded-xl text-sm font-bold" value={editData.mobile} onChange={(e) => setEditData({ ...editData, mobile: e.target.value })} />
@@ -536,7 +536,7 @@ export default function StudentsPage() {
                                         <GraduationCap className="w-4 h-4" /> Course Assignment
                                     </h3>
                                     <div className="space-y-4">
-                                        <div className={`p-5 rounded-3xl border transition-all ${editMode ? "bg-blue-50 border-blue-200 shadow-md" : "bg-gray-50 border-gray-100"}`}>
+                                        <div className={`p-5 rounded-none border transition-all ${editMode ? "bg-blue-50 border-blue-200 shadow-md" : "bg-gray-50 border-gray-100"}`}>
                                             <div className={`text-[10px] uppercase font-black mb-1 ${editMode ? "text-blue-600" : "text-gray-400"}`}>Currently Assigned Course</div>
                                             {editMode ? (
                                                 <select className="w-full bg-white border border-gray-200 mt-2 px-3 py-2 rounded-xl text-sm font-bold" value={editData.preferredCourse} onChange={(e) => setEditData({ ...editData, preferredCourse: e.target.value })}>
@@ -546,7 +546,7 @@ export default function StudentsPage() {
                                                     <option value="web-dev">Web Development</option>
                                                     <option value="devops">DevOps Engineering</option>
                                                     <option value="data-science">Data Science</option>
-                                                    <option value="sql">SQL & Databases</option>
+                                                    <option value="sql">SQL</option>
                                                     <option value="linux">Linux Mastery</option>
                                                     <option value="medical-coding">Medical Coding</option>
                                                 </select>
@@ -558,7 +558,7 @@ export default function StudentsPage() {
                                             )}
                                         </div>
 
-                                        <div className="bg-orange-50 p-5 rounded-3xl border border-orange-100">
+                                        <div className="bg-orange-50 p-5 rounded-none border border-orange-100">
                                             <div className="text-[10px] uppercase font-black text-orange-600 mb-1">Security: Stored Hash</div>
                                             <div className="text-orange-950 font-mono text-[10px] break-all italic bg-white/50 p-2 rounded-xl mt-2 select-all">
                                                 {selectedUser.password}
@@ -599,3 +599,4 @@ export default function StudentsPage() {
         </div>
     );
 }
+

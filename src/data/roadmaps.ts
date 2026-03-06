@@ -73,7 +73,7 @@ export const roadmaps: Record<string, RoadmapData> = {
     },
     'sql': {
         id: 'sql',
-        title: 'SQL & Databases',
+        title: 'SQL',
         description: 'Master database design, optimization, and management. Learn SQL, NoSQL databases, data modeling, and advanced querying techniques.',
         buttonText: 'Explore Databases',
         buttonLink: '/sql',
@@ -83,6 +83,20 @@ export const roadmaps: Record<string, RoadmapData> = {
             { time: 'Week 5-6', title: 'Database Design', description: 'Normalization, Indexing, Performance' },
             { time: 'Week 7-9', title: 'NoSQL Databases', description: 'MongoDB, Redis, Cassandra concepts' },
             { time: 'Week 10-12', title: 'Capstone Project', description: 'Designing a complex schema, Optimization' }
+        ]
+    },
+    'powerbi': {
+        id: 'powerbi',
+        title: 'Power BI',
+        description: 'Master data visualization, business intelligence, and analytics with Power BI. Learn Power Query, DAX, and report design.',
+        buttonText: 'Start Power BI',
+        buttonLink: '/powerbi',
+        roadmap: [
+            { time: 'Module 1-2', title: 'Foundations', description: 'Introduction, installation, and interface overview' },
+            { time: 'Module 3-4', title: 'Data Prep', description: 'Datasource connections and Power Query transformations' },
+            { time: 'Module 5-6', title: 'Modeling', description: 'Data modeling, relationships, and schema design' },
+            { time: 'Module 7', title: 'DAX', description: 'Calculations, measures, and analytical expressions' },
+            { time: 'Module 8', title: 'Visualization', description: 'Designing impactful reports and dashboards' }
         ]
     },
     'data-science': {

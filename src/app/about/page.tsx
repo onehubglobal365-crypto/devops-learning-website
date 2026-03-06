@@ -24,3 +24,4 @@ export default function AboutPage() {
   return <MenuPageTemplate pageData={pageData} />;
 }
 
+

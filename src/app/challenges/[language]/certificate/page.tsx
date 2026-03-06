@@ -260,7 +260,7 @@ function MasterCertificateContent() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 }}
-            className="mt-12 p-8 bg-gradient-to-r from-yellow-500/10 via-orange-500/10 to-yellow-500/10 rounded-3xl border border-yellow-500/20"
+            className="mt-12 p-8 bg-gradient-to-r from-yellow-500/10 via-orange-500/10 to-yellow-500/10 rounded-none border border-yellow-500/20"
           >
             <h3 className="text-2xl font-bold text-yellow-400 mb-4">🎉 Congratulations, {userName}!</h3>
             <p className="text-white/70 max-w-2xl mx-auto">

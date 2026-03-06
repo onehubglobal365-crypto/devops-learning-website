@@ -1,18 +1,52 @@
 @import "tailwindcss";
 @import "./theme-variables.css";
 
-/* Global Theme Enforcement */
+/* Global Theme Enforcement & Fluid Typography */
+:root {
+  /* Fluid Spacing Variables */
+  --space-xs: clamp(0.25rem, 0.5vw, 0.5rem);
+  --space-sm: clamp(0.5rem, 1vw, 1rem);
+  --space-md: clamp(1rem, 2vw, 1.5rem);
+  --space-lg: clamp(1.5rem, 3vw, 2.5rem);
+  --space-xl: clamp(2.5rem, 5vw, 4rem);
+  --space-2xl: clamp(4rem, 8vw, 6rem);
+}
+
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 1.5rem;
+}
+
 body {
   color: var(--text-primary);
   background: #f8f9fa;
   /* Solid fallback */
   transition: color 0.3s ease;
   min-height: 100vh;
-  /* Fluid typography handling */
-  font-size: 100%;
-  /* Base 16px usually */
-  line-height: 1.5;
+  /* Fluid typography handling (scaling smoothly between 320px and 1280px viewports) */
+  font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1.125rem);
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Global media constraints */
+img,
+picture,
+video,
+canvas,
+svg,
+iframe {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 body::before {
@@ -33,16 +67,11 @@ body::before {
   justify-content: center;
 }
 
-@media (min-width: 1920px) {
-  body {
-    font-size: 1.125rem;
-    /* Slightly larger on huge screens 18px */
-  }
-}
+/* Note: The old 1920px font-size breakpoint is superceded by clamp() above */
 
 /* Ensure content doesn't scroll under fixed navbar */
 [id] {
-  scroll-margin-top: 120px;
+  scroll-margin-top: calc(80px + var(--space-md));
 }
 
 /* Glassmorphism Utility Classes */
@@ -2366,6 +2395,13 @@ body::before {
   width: max-content;
 }
 
+@media (max-width: 768px) {
+  .animate-marquee {
+    animation-duration: 40s;
+    /* Faster on mobile if needed, or slower */
+  }
+}
+
 .animate-marquee:hover {
   animation-play-state: paused;
 }
@@ -2536,7 +2572,7 @@ body::before {
   opacity: 1;
 }
 
-/* Marquee Animation Support */
+/* Marquee Animation Support - Consolidated */
 .animate-marquee {
   display: flex;
   width: max-content;

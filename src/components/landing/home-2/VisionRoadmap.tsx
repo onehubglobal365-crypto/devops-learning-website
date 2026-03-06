@@ -68,15 +68,14 @@ export default function VisionRoadmap() {
       subtitle="Charting the path to excellence in tech education"
       backgroundColor="#ffffff"
     >
-      <div className="max-w-6xl mx-auto py-8">
+      <div className="w-full max-w-7xl mx-auto py-[var(--space-md)] lg:py-[var(--space-lg)]">
         <ScrollAnimate animation="fade-up" triggerOnce={false} stagger={true}>
           <div className="relative">
-            {/* Milestones - Horizontal Layout */}
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 relative">
+            {/* Milestones - Responsive Layout */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[var(--space-lg)] md:gap-[var(--space-xl)] relative px-4">
               {milestones.map((milestone, index) => {
                 const isHovered = hoveredMilestone === milestone.id;
                 const isActive = isHovered;
-                const isFirst = index === 0;
                 const isLast = index === milestones.length - 1;
 
                 return (
@@ -86,13 +85,13 @@ export default function VisionRoadmap() {
                     onMouseEnter={() => setHoveredMilestone(milestone.id)}
                     onMouseLeave={() => setHoveredMilestone(null)}
                   >
-                    {/* Connection Line - Starts from first milestone (2025), positioned above icon circles */}
+                    {/* Connection Line - Positioned above icon circles */}
                     {!isLast && (
                       <div
-                        className="hidden md:block absolute top-8 left-1/2 w-full h-0.5 z-0"
+                        className="hidden lg:block absolute top-8 left-1/2 h-0.5 z-0 transition-colors duration-500"
                         style={{
                           backgroundColor: isActive ? '#0ea5e9' : 'rgba(122, 148, 165, 0.4)',
-                          width: 'calc(100% + 4rem)',
+                          width: 'calc(100% + var(--space-xl))',
                         }}
                       >
                         {/* Arrow at the end of connection */}
@@ -108,7 +107,7 @@ export default function VisionRoadmap() {
                     )}
 
                     {/* Road Marker / Milestone Point */}
-                    <div className="relative z-20 mb-6">
+                    <div className="relative z-20 mb-[var(--space-md)]">
                       <div
                         className="w-16 h-16 rounded-full flex items-center justify-center transition-all duration-300 shadow-md"
                         style={{
@@ -129,7 +128,7 @@ export default function VisionRoadmap() {
                       </div>
                       {/* Year Badge */}
                       <div
-                        className="absolute -bottom-6 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all duration-300 shadow-sm border"
+                        className="absolute -bottom-6 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full text-[10px] md:text-xs font-bold whitespace-nowrap transition-all duration-300 shadow-sm border uppercase tracking-wider"
                         style={{
                           backgroundColor: isActive ? '#0ea5e9' : '#ffffff',
                           color: isActive ? '#ffffff' : '#64748b',
@@ -143,24 +142,24 @@ export default function VisionRoadmap() {
 
                     {/* Content Card */}
                     <div
-                      className={`bg-white rounded-2xl p-7 transition-all duration-500 cursor-pointer w-full group ${isActive ? 'shadow-[0_25px_50px_rgba(0,0,0,0.1)] border-blue-500' : 'shadow-lg border-gray-100'
+                      className={`bg-white rounded-[2rem] p-[var(--space-md)] transition-all duration-500 cursor-pointer w-full group ${isActive ? 'shadow-[0_25px_50px_rgba(0,0,0,0.1)]' : 'shadow-lg'
                         }`}
                       style={{
                         borderWidth: '2px',
                         borderStyle: 'solid',
                         borderColor: isActive ? '#083D77' : '#f1f5f9',
                         transform: isActive ? 'translateY(-12px)' : 'translateY(0)',
-                        minHeight: '200px',
+                        minHeight: 'clamp(180px, 25vh, 220px)',
                       }}
                     >
                       <div className="flex flex-col items-center text-center h-full">
                         {/* Title */}
-                        <h3 className="font-bold mb-4 text-gray-900 text-lg transition-colors group-hover:text-blue-700">
+                        <h3 className="font-bold mb-4 text-gray-900 leading-tight transition-colors group-hover:text-blue-700" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>
                           {milestone.title}
                         </h3>
 
                         {/* Description */}
-                        <p className="text-gray-500 text-sm leading-relaxed flex-1">
+                        <p className="text-gray-500 leading-relaxed flex-1" style={{ fontSize: 'clamp(0.8rem, 2vw, 0.875rem)' }}>
                           {milestone.description}
                         </p>
                       </div>

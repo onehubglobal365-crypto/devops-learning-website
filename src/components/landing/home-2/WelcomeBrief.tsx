@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 export default function WelcomeBrief() {
     return (
-        <section className="py-6 bg-white relative overflow-hidden">
+        <section className="py-[var(--space-md)] lg:py-[var(--space-xl)] bg-white relative overflow-hidden">
             {/* Decorative Geometric Shapes (matching the image style) */}
             <div className="absolute bottom-0 left-0 w-64 h-64 opacity-10 pointer-events-none">
                 <svg viewBox="0 0 200 200" className="w-full h-full text-blue-100">
@@ -20,32 +20,36 @@ export default function WelcomeBrief() {
                 <div className="w-12 h-12 bg-blue-300 ml-12 rounded-xl"></div>
             </div>
 
-            <div className="container mx-auto px-4 md:px-8">
-                <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
+            <div className="w-full max-w-7xl mx-auto px-[var(--space-md)] lg:px-[var(--space-lg)]">
+                <div className="flex flex-col lg:flex-row items-center gap-[var(--space-lg)] lg:gap-[var(--space-xl)]">
 
                     {/* Left Side: Image Container */}
-                    <div className="w-full lg:w-[55%] relative">
-                        <div className="relative h-[300px] md:h-[500px] lg:h-[650px] w-full rounded-2xl overflow-hidden shadow-2xl z-20">
-                            <Image
-                                src="/hero section/ohg image.jpeg"
-                                alt="Students learning at One Hub Global"
-                                fill
-                                className="object-cover"
-                            />
+                    <div className="w-full lg:w-[50%] relative">
+                        <div className="max-w-6xl mx-auto">
+                            <div className="relative aspect-[4/3] md:aspect-[16/10] lg:h-[clamp(500px,60vh,700px)] lg:aspect-auto w-full rounded-2xl md:rounded-3xl overflow-hidden">
+                                <Image
+                                    src="/hero section/ohg image.jpeg"
+                                    alt="Students learning at One Hub Global"
+                                    fill
+                                    className="object-cover"
+                                    sizes="(max-width: 1024px) 100vw, 50vw"
+                                    priority
+                                />
+                            </div>
                         </div>
                         {/* Subtle floating accent under image */}
                         <div className="absolute -bottom-4 md:-bottom-6 -right-4 md:-right-6 w-1/2 h-1/2 bg-blue-600/10 rounded-3xl -z-10"></div>
                     </div>
 
                     {/* Right Side: Content Container */}
-                    <div className="w-full lg:w-[45%] flex flex-col items-start pt-4 lg:pt-0">
-                        <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6 leading-tight">
+                    <div className="w-full lg:w-[50%] flex flex-col items-start pt-4 lg:pt-0">
+                        <h2 className="font-bold text-gray-800 mb-6 leading-tight" style={{ fontSize: 'clamp(1.75rem, 5vw, 3rem)' }}>
                             About <span className="text-orange-500">OHG 365</span>
                         </h2>
 
-                        <div className="space-y-6 text-gray-600 leading-relaxed text-base">
+                        <div className="space-y-6 text-gray-600 leading-relaxed" style={{ fontSize: 'clamp(0.875rem, 2vw, 1rem)' }}>
                             <p>
-                                <span className="text-orange-500 font-semibold underline decoration-orange-200">
+                                <span className="text-orange-500 font-semibold">
                                     OHG 365 is one of the leading EdTech and software training institutes located in KPHB, Hyderabad.
                                 </span> We are committed to delivering high-quality, industry-oriented training along with real-time project exposure, placement assistance, and consultancy services. Our goal is to help students and working professionals build strong technical foundations and achieve successful careers in today’s competitive job market.
                             </p>
@@ -63,8 +67,8 @@ export default function WelcomeBrief() {
                             </p>
                         </div>
 
-                        <Link href="/about" className="mt-8 inline-block">
-                            <button className="px-10 py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-lg shadow-lg hover:shadow-orange-500/30 transition-all duration-300 hover:-translate-y-1 active:scale-95">
+                        <Link href="/about" className="mt-8 inline-block w-full sm:w-auto">
+                            <button className="w-full sm:w-auto px-10 py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl shadow-lg hover:shadow-orange-500/30 transition-all duration-300 hover:-translate-y-1 active:scale-95 text-base md:text-lg">
                                 Know More
                             </button>
                         </Link>

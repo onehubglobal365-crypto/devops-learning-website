@@ -47,23 +47,23 @@ export function TechnologyCard({ title, description, icon, link, gradient, iconB
 
   return (
     <>
-      <div onClick={handleClick} className="block group h-full mt-6 cursor-pointer" role="button" tabIndex={0}>
-        <div className="relative bg-[#FFFDD0] rounded-[40px] p-8 transition-all duration-500 border border-gray-100 dark:border-white/10 hover:border-sky-500 hover:shadow-2xl hover:shadow-sky-500/20 hover:-translate-y-2 overflow-visible h-full flex flex-col shadow-lg">
+      <div onClick={handleClick} className="block group h-full cursor-pointer" role="button" tabIndex={0}>
+        <div className="relative bg-white rounded-[2.5rem] p-[var(--space-md)] transition-all duration-500 border border-gray-100 dark:border-white/10 hover:border-sky-500 hover:shadow-2xl hover:shadow-sky-500/20 hover:-translate-y-2 overflow-visible h-full flex flex-col shadow-lg">
           {/* Hover Gradient Background */}
-          <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-[40px]`}></div>
+          <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-[2.5rem]`}></div>
 
           {/* Floating Icon Container */}
-          <div className={`absolute -top-6 -left-6 w-20 h-20 rounded-2xl flex items-center justify-center ${iconBg || 'bg-white'} shadow-xl border border-gray-100 dark:border-gray-800 z-20 transform group-hover:scale-110 transition-transform duration-500`}>
+          <div className={`absolute -top-6 -left-4 sm:-left-6 w-16 h-16 sm:w-20 sm:h-20 rounded-2xl flex items-center justify-center ${iconBg || 'bg-white'} shadow-xl border border-gray-100 dark:border-gray-800 z-20 transform group-hover:scale-110 transition-transform duration-500`}>
             <div className="flex items-center justify-center w-full h-full p-4 animate-pulse">
-              {typeof icon === 'string' ? <span className="text-3xl">{icon}</span> : icon}
+              {typeof icon === 'string' ? <span className="text-2xl sm:text-3xl">{icon}</span> : icon}
             </div>
           </div>
 
-          <div className="relative z-10 text-left flex flex-col flex-1 mt-8 ml-2">
-            <h3 className="text-2xl font-bold mb-3 transition-colors duration-300 text-gray-900">
+          <div className="relative z-10 text-left flex flex-col flex-1 mt-6 sm:mt-8 ml-2">
+            <h3 className="font-bold mb-3 transition-colors duration-300 text-gray-900" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.5rem)' }}>
               {title}
             </h3>
-            <p className="transition-colors duration-300 flex-1 min-h-[60px] text-gray-600">
+            <p className="transition-colors duration-300 flex-1 min-h-[60px] text-gray-600 font-medium" style={{ fontSize: 'clamp(0.875rem, 2.2vw, 1rem)' }}>
               {description}
             </p>
 
@@ -91,13 +91,13 @@ interface CardGridProps {
 
 export function CardGrid({ children, columns = 3, className = '' }: CardGridProps) {
   const colsClass = {
-    2: 'md:grid-cols-2',
-    3: 'md:grid-cols-2 lg:grid-cols-3',
-    4: 'md:grid-cols-2 lg:grid-cols-4',
+    2: 'grid-cols-1 md:grid-cols-2',
+    3: 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3',
+    4: 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4',
   };
 
   return (
-    <div className={`grid grid-cols-1 ${colsClass[columns]} gap-10 ${className}`}>
+    <div className={`grid ${colsClass[columns]} gap-[var(--space-md)] lg:gap-[var(--space-lg)] ${className}`}>
       {children}
     </div>
   );

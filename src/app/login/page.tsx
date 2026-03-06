@@ -355,17 +355,7 @@ function ActiveLoginForm() {
 }
 
 export default function GlobalLogin() {
-  const router = useRouter();
-
-  useEffect(() => {
-    router.replace('/?auth=login');
-  }, [router]);
-
-  return (
-    <div className="min-h-screen bg-[#f3f4f6] flex items-center justify-center">
-      <div className="w-10 h-10 border-4 border-blue-500 border-t-transparent rounded-full animate-spin" />
-    </div>
-  );
+  return <LoginForm />;
 }
 
 function LoginForm() {
@@ -378,3 +368,4 @@ function LoginForm() {
     </Suspense>
   );
 }
+

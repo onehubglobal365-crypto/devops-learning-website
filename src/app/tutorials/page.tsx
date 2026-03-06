@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { AUTH_SYSTEM_AVAILABLE } from '@/config/authStatus';
 import { TechnologyCard, CardGrid } from '@/components/common/technology-card';
 import {
@@ -55,96 +56,52 @@ export default function TutorialsPage() {
   }
 
   return (
-    <main className="min-h-screen overflow-x-hidden transition-colors duration-300 relative" style={{ background: 'linear-gradient(to bottom right, #dcfce7, #d1fae5, #ccfbf1)', paddingTop: '120px' }}>
-      {/* Animated Background - Removed */}
-      <div className="relative z-10">
+    <main className="min-h-screen overflow-x-hidden transition-colors duration-300 relative bg-[#f8fafc]" style={{ paddingTop: 'calc(var(--space-xl) * 1.2)' }}>
+      {/* Premium Background Decoration */}
+      <div className="absolute top-0 left-0 w-full h-[1000px] bg-gradient-to-br from-blue-50 via-sky-50 to-transparent pointer-events-none -z-10"></div>
+
+      <div className="relative z-10 px-[var(--space-sm)]">
         {/* Hero Section */}
-        <section className="relative text-center py-20 px-4 overflow-hidden bg-gradient-to-r from-emerald-100 via-teal-100 to-cyan-100 rounded-full max-w-7xl mx-auto mt-8 shadow-2xl border border-white/50">
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute top-10 left-10 w-72 h-72 bg-rose-500/10 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-10 right-10 w-96 h-96 bg-red-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-          </div>
-
+        <section className="relative text-center py-[var(--space-lg)] px-[var(--space-md)] overflow-hidden bg-white/80 backdrop-blur-md rounded-[3rem] max-w-7xl mx-auto border border-white">
           <div className="container mx-auto relative z-10">
-
-
-            <h1 className="text-5xl md:text-7xl font-extrabold mb-6">
-              <span className="text-gray-900">
+            <h1 className="font-extrabold mb-4 tracking-tight leading-tight" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.75rem)' }}>
+              <span className="text-gray-900 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-blue-900 to-gray-800">
                 Explore All Technologies
               </span>
             </h1>
-
-            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              Browse through our comprehensive collection of tutorials across Medical Coding, Programming, and Government Jobs preparation
+            <p className="mb-0 max-w-2xl mx-auto font-medium text-gray-500 leading-relaxed" style={{ fontSize: 'clamp(0.875rem, 1.8vw, 1.1rem)' }}>
+              Browse through our comprehensive collection of tutorials across Medical Coding, Programming, and Data Engineering preparation
             </p>
           </div>
         </section>
 
-        {/* Medical Coding Category */}
-        <section className="container mx-auto px-4 py-16 bg-gradient-to-br from-lime-200 via-green-200 to-emerald-200 rounded-3xl shadow-sm border border-green-300/50 my-8">
-          <div className="mb-12">
-            <div className="inline-flex items-center space-x-4 mb-6 px-8 py-4 bg-[#d4d4d4] rounded-full shadow-sm">
-              <Building2 className="w-10 h-10 text-blue-500" />
-              <h2 className="text-4xl font-bold text-gray-900">
-                Medical Coding
-              </h2>
-            </div>
-            <p className="text-gray-600 text-lg">Learn medical coding, healthcare IT, and related technologies</p>
-          </div>
-
-          <CardGrid columns={3} className="mb-8">
-            <TechnologyCard
-              title="Medical Coding Basics"
-              description="Introduction to ICD-10, CPT, and HCPCS coding systems"
-              icon={<ClipboardList className="w-12 h-12 text-cyan-500" />}
-              link="/roadmap?courseId=medical-coding"
-              gradient="from-blue-500 to-cyan-500"
-            />
-            <TechnologyCard
-              title="Healthcare IT"
-              description="Electronic Health Records (EHR) and healthcare information systems"
-              icon={<Stethoscope className="w-12 h-12 text-teal-500" />}
-              link="/roadmap?courseId=medical-coding"
-              gradient="from-green-500 to-teal-500"
-            />
-            <TechnologyCard
-              title="Medical Terminology"
-              description="Essential medical terms and anatomy for coders"
-              icon={<BookOpen className="w-12 h-12 text-pink-500" />}
-              link="/roadmap?courseId=medical-coding"
-              gradient="from-purple-500 to-pink-500"
-            />
-          </CardGrid>
-
-          <div className="text-center mt-16">
-            <Link
-              href="/tutorials/medical-coding"
-              className="inline-block px-8 py-3 bg-gradient-to-r from-white to-sky-400 hover:from-sky-50 hover:to-sky-500 text-sky-900 font-bold rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
-            >
-              View All Medical Coding Tutorials →
-            </Link>
-          </div>
-        </section>
-
         {/* Programming Category */}
-        <section className="container mx-auto px-4 py-16 bg-gradient-to-br from-rose-200 via-pink-200 to-red-200 border border-rose-300/50 shadow-sm rounded-3xl my-8">
-          <div className="mb-12">
-            <div className="inline-flex items-center space-x-4 mb-6 px-8 py-4 bg-[#d4d4d4] rounded-full shadow-sm">
-              <Code2 className="w-10 h-10 text-rose-500" />
-              <h2 className="text-4xl font-bold text-gray-900">
+        <section className="container mx-auto px-[var(--space-md)] py-[var(--space-xl)] bg-white border border-gray-100 rounded-[3rem] my-[var(--space-xl)] shadow-lg relative pt-12 mt-20">
+          {/* Floating Category Header */}
+          <div className="absolute -top-10 left-1/2 -translate-x-1/2 md:left-12 md:translate-x-0 bg-white px-8 py-5 rounded-3xl shadow-xl border border-gray-100 flex items-center gap-4 z-20 min-w-[280px]">
+            <div className="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-blue-500/30">
+              <Code2 className="w-7 h-7" />
+            </div>
+            <div className="flex flex-col">
+              <span className="text-[10px] uppercase font-black tracking-[0.2em] text-blue-600">Category</span>
+              <h2 className="font-black text-gray-900 tracking-tight text-xl md:text-2xl">
                 Programming
               </h2>
             </div>
-            <p className="text-gray-600 text-lg">Master programming languages, frameworks, and development tools</p>
           </div>
 
-          <CardGrid columns={3} className="mb-8">
+          <div className="mb-12">
+            <p className="text-gray-500 font-medium max-w-2xl" style={{ fontSize: 'clamp(1rem, 2vw, 1.125rem)' }}>Master programming languages, frameworks, and development tools with industry-leading methodologies.</p>
+          </div>
+
+          <CardGrid columns={3} className="mb-12">
             <TechnologyCard
               title="DevOps"
               description="Learn containerization, CI/CD, infrastructure automation, and cloud platforms"
               icon={<Rocket className="w-12 h-12 text-rose-500" />}
               link="/roadmap?courseId=devops"
               gradient="from-rose-500 to-red-600"
+              iconBg="bg-rose-50"
             />
             <TechnologyCard
               title="Java"
@@ -152,64 +109,144 @@ export default function TutorialsPage() {
               icon={<Coffee className="w-12 h-12 text-orange-500" />}
               link="/roadmap?courseId=java-fullstack"
               gradient="from-orange-500 to-red-500"
+              iconBg="bg-orange-50"
             />
             <TechnologyCard
               title="Python"
               description="Learn Python programming, data science, web development, and automation"
               icon={<FileCode className="w-12 h-12 text-yellow-500" />}
               link="/roadmap?courseId=python-fullstack"
-              gradient="from-yellow-500 to-green-500"
+              gradient="from-yellow-500 to-amber-500"
+              iconBg="bg-yellow-50"
             />
             <TechnologyCard
-              title="SQL & Databases"
+              title="SQL"
               description="Database design, SQL queries, optimization, and modern database technologies"
-              icon={<Database className="w-12 h-12 text-indigo-500" />}
+              icon={<Database className="w-12 h-12 text-purple-500" />}
               link="/roadmap?courseId=sql"
-              gradient="from-purple-500 to-indigo-500"
+              gradient="from-purple-500 to-indigo-600"
+              iconBg="bg-purple-50"
+            />
+            <TechnologyCard
+              title="Power BI"
+              description="Master Data Visualization and Business Intelligence with Power BI"
+              icon={<div className="p-1 w-full h-full relative"><Image src="/images/powerbicard.png" alt="Power BI" fill className="object-contain" unoptimized /></div>}
+              link="/roadmap?courseId=powerbi"
+              gradient="from-yellow-400 to-yellow-600"
+              iconBg="bg-yellow-50"
             />
             <TechnologyCard
               title="Web Development"
               description="HTML, CSS, JavaScript, React, and full-stack web development"
-              icon={<Globe className="w-12 h-12 text-teal-500" />}
+              icon={<Globe className="w-12 h-12 text-green-500" />}
               link="/roadmap?courseId=web-dev"
               gradient="from-green-500 to-teal-500"
+              iconBg="bg-green-50"
+            />
+            <TechnologyCard
+              title="Excel"
+              description="Master Microsoft Excel for data entry, analysis, and visualization"
+              icon={<Calculator className="w-12 h-12 text-emerald-600" />}
+              link="/excel"
+              gradient="from-emerald-500 to-green-600"
+              iconBg="bg-emerald-50"
             />
             <TechnologyCard
               title="Data Science"
               description="Data analysis, machine learning, statistics, and visualization"
-              icon={<BarChart2 className="w-12 h-12 text-pink-500" />}
+              icon={<BarChart2 className="w-12 h-12 text-blue-500" />}
               link="/roadmap?courseId=data-science"
-              gradient="from-pink-500 to-purple-500"
+              gradient="from-blue-500 to-cyan-500"
+              iconBg="bg-blue-50"
             />
-            <TechnologyCard
+            {/* <TechnologyCard
               title="Code Terminal"
               description="Write, edit, and execute code online for Python, JavaScript, Java, SQL, and Bash"
-              icon={<Terminal className="w-12 h-12 text-cyan-500" />}
+              icon={<Terminal className="w-12 h-12 text-emerald-500" />}
               link="/code-terminal"
-              gradient="from-cyan-500 to-blue-500"
-            />
-            <TechnologyCard
+              gradient="from-emerald-500 to-teal-600"
+              iconBg="bg-emerald-50"
+            /> */}
+            {/* <TechnologyCard
               title="Linux"
               description="Linux system administration, commands, and shell scripting"
-              icon={<Server className="w-12 h-12 text-slate-600" />}
+              icon={<Server className="w-12 h-12 text-slate-700" />}
               link="/roadmap?courseId=linux"
-              gradient="from-gray-500 to-slate-600"
+              gradient="from-slate-700 to-gray-900"
+              iconBg="bg-slate-50"
             />
             <TechnologyCard
               title="Terminal"
               description="Interactive terminal environment for practicing commands and shell scripting"
-              icon={<Command className="w-12 h-12 text-emerald-500" />}
+              icon={<Command className="w-12 h-12 text-gray-700" />}
               link="/terminal"
-              gradient="from-green-500 to-emerald-500"
+              gradient="from-gray-700 to-black"
+              iconBg="bg-gray-100"
+            /> */}
+          </CardGrid>
+
+          <div className="text-center mt-12">
+            <Link
+              href="/tutorials/programming"
+              className="inline-block px-12 py-5 bg-blue-600 text-white font-black rounded-2xl shadow-xl shadow-blue-500/20 hover:bg-blue-700 transform hover:-translate-y-1 transition-all duration-300 uppercase tracking-widest text-xs"
+            >
+              View All Programming Tutorials →
+            </Link>
+          </div>
+        </section>
+
+        {/* Medical Coding Category */}
+        <section className="container mx-auto px-[var(--space-md)] py-[var(--space-xl)] bg-white border border-gray-100 rounded-[3rem] my-[var(--space-xl)] shadow-lg relative pt-12 mt-28">
+          {/* Floating Category Header */}
+          <div className="absolute -top-10 left-1/2 -translate-x-1/2 md:left-12 md:translate-x-0 bg-white px-8 py-5 rounded-3xl shadow-xl border border-gray-100 flex items-center gap-4 z-20 min-w-[280px]">
+            <div className="w-12 h-12 bg-teal-500 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-teal-500/30">
+              <Building2 className="w-7 h-7" />
+            </div>
+            <div className="flex flex-col">
+              <span className="text-[10px] uppercase font-black tracking-[0.2em] text-teal-600">Category</span>
+              <h2 className="font-black text-gray-900 tracking-tight text-xl md:text-2xl">
+                Medical Coding
+              </h2>
+            </div>
+          </div>
+
+          <div className="mb-12">
+            <p className="text-gray-500 font-medium max-w-2xl" style={{ fontSize: 'clamp(1rem, 2vw, 1.125rem)' }}>Learn medical coding, healthcare IT, and related technologies with expert guidance.</p>
+          </div>
+
+          <CardGrid columns={3} className="mb-12">
+            <TechnologyCard
+              title="Medical Coding Basics"
+              description="Introduction to ICD-10, CPT, and HCPCS coding systems"
+              icon={<ClipboardList className="w-12 h-12 text-sky-500" />}
+              link="/roadmap?courseId=medical-coding"
+              gradient="from-sky-400 to-blue-500"
+              iconBg="bg-sky-50"
+            />
+            <TechnologyCard
+              title="Healthcare IT"
+              description="Electronic Health Records (EHR) and healthcare information systems"
+              icon={<Stethoscope className="w-12 h-12 text-teal-500" />}
+              link="/roadmap?courseId=medical-coding"
+              gradient="from-teal-400 to-emerald-500"
+              iconBg="bg-teal-50"
+            />
+            <TechnologyCard
+              title="Medical Terminology"
+              description="Essential medical terms and anatomy for coders"
+              icon={<BookOpen className="w-12 h-12 text-indigo-500" />}
+              link="/roadmap?courseId=medical-coding"
+              gradient="from-indigo-400 to-purple-500"
+              iconBg="bg-indigo-50"
             />
           </CardGrid>
 
-          <div className="text-center mt-16">
+          <div className="text-center mt-12">
             <Link
-              href="/tutorials/programming"
-              className="inline-block px-8 py-3 bg-gradient-to-r from-white to-sky-400 hover:from-sky-50 hover:to-sky-500 text-sky-900 font-bold rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+              href="/tutorials/medical-coding"
+              className="inline-block px-12 py-5 bg-teal-600 text-white font-black rounded-2xl shadow-xl shadow-teal-500/20 hover:bg-teal-700 transform hover:-translate-y-1 transition-all duration-300 uppercase tracking-widest text-xs"
             >
-              View All Programming Tutorials →
+              View All Medical Coding Tutorials →
             </Link>
           </div>
         </section>
@@ -286,3 +323,4 @@ export default function TutorialsPage() {
     </main>
   );
 }
+

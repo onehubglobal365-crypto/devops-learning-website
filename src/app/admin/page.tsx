@@ -85,7 +85,7 @@ export default function AdminDashboard() {
             </div>
 
             {/* Session Tracking Table (NEW) */}
-            <div className="bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden">
+            <div className="bg-white rounded-none border border-gray-100 shadow-sm overflow-hidden">
                 <div className="p-6 border-b border-gray-50 flex items-center justify-between">
                     <div className="flex items-center gap-3">
                         <div className="w-10 h-10 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center">
@@ -167,7 +167,7 @@ export default function AdminDashboard() {
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 {/* Recent Placements Table */}
-                <div className="lg:col-span-2 bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden">
+                <div className="lg:col-span-2 bg-white rounded-none border border-gray-100 shadow-sm overflow-hidden">
                     <div className="p-6 border-b border-gray-50 flex items-center justify-between">
                         <h2 className="font-bold text-lg text-gray-900">Recent Success Stories</h2>
                         <button className="text-blue-600 text-sm font-bold hover:underline">View All</button>
@@ -217,7 +217,7 @@ export default function AdminDashboard() {
                 </div>
 
                 {/* Activity Feed */}
-                <div className="bg-white rounded-3xl border border-gray-100 shadow-sm p-6">
+                <div className="bg-white rounded-none border border-gray-100 shadow-sm p-6">
                     <h2 className="font-bold text-lg text-gray-900 mb-6">Live Activity</h2>
                     <div className="space-y-6">
                         {[1, 2, 3, 4, 5].map((_, i) => (
@@ -243,3 +243,4 @@ export default function AdminDashboard() {
         </div>
     );
 }
+

@@ -43,126 +43,126 @@ export default function HomePage() {
       <Suspense fallback={null}>
         <HeroWithNav />
       </Suspense>
-      {/* ... other components ... */}
-      <ScholarshipPromo /> {/* Floating Promo */}
 
-      <ScrollAnimate animation="fade-up" delay={200} triggerOnce={true}>
-        <div className="section-wrapper py-0">
-          <CompactTrusted />
-        </div>
-      </ScrollAnimate>
-
-
-      <ScrollAnimate animation="fade-up" delay={200} triggerOnce={true}>
-        <div className="section-wrapper py-0">
-          <WelcomeBrief />
-        </div>
-      </ScrollAnimate>
-
-      <HiringPartners />
-
-      {/* <ScrollAnimate animation="fade-up" delay={200} triggerOnce={true}>
-        <div className="section-wrapper py-0">
-          <WelcomeBrief />
-        </div>
-      </ScrollAnimate> */}
-
-
-
-      <ScrollAnimate animation="fade-up" delay={200} triggerOnce={true}>
-        <div className="section-wrapper py-0">
-          <CompactAlumni />
-        </div>
-      </ScrollAnimate>
-
-
-
-
-      <ScrollAnimate animation="fade-up" delay={300} triggerOnce={true}>
-        <div className="section-wrapper py-0">
-          <CompactCourses />
-        </div>
-      </ScrollAnimate>
-
-
-
-      <ScrollAnimate animation="fade-left" delay={200} triggerOnce={true}>
-        <div className="section-wrapper py-0">
-          <ProcessPath />
-        </div>
-      </ScrollAnimate>
-
-
-
-      <ScrollAnimate animation="fade-up" delay={250} triggerOnce={true}>
-        <div className="section-wrapper py-0">
-          <CompactCourseCards />
-        </div>
-      </ScrollAnimate>
-
-      {/* Temporarily hidden 
-      <ScrollAnimate animation="fade-scale" delay={300} triggerOnce={true}>
-        <div id="vision" className="section-wrapper py-0">
-          <VisionRoadmap />
-        </div>
-      </ScrollAnimate>
-      */}
-
-      {/* <ScrollAnimate animation="fade-left" delay={200} triggerOnce={true}>
-        <div className="section-wrapper py-0">
-          <ProcessPath />
-        </div>
-      </ScrollAnimate> */}
-
-
-
-      {/* <ScrollAnimate animation="fade-up" delay={250} triggerOnce={true}>
-        <div className="section-wrapper py-0">
-          <CompactTechnologies />
-        </div>
-      </ScrollAnimate> */}
-
-      {/* <ScrollAnimate animation="fade-scale" delay={200} triggerOnce={true}>
-        <div className="section-wrapper py-0">
-          <CompactStats />
-        </div>
-      </ScrollAnimate> */}
-
-      {/* <ScrollAnimate animation="fade-up" delay={200} triggerOnce={true}>
-        <div className="section-wrapper py-0">
-          <CompactAlumni />
-        </div>
-      </ScrollAnimate> */}
-
-      <ScrollAnimate animation="fade-right" delay={250} triggerOnce={true}>
-        <div className="section-wrapper py-0">
-          <CompactFeatures />
-        </div>
-      </ScrollAnimate>
-
-      <div id="gallery">
+      <div className="relative z-10 bg-white shadow-2xl">
         <ScrollAnimate animation="fade-up" delay={200} triggerOnce={true}>
-          <Suspense fallback={null}>
-            <Gallery />
-          </Suspense>
+          <div className="section-wrapper py-0">
+            <CompactTrusted />
+          </div>
+        </ScrollAnimate>
+
+
+        <ScrollAnimate animation="fade-up" delay={200} triggerOnce={true}>
+          <div className="section-wrapper py-0">
+            <WelcomeBrief />
+          </div>
+        </ScrollAnimate>
+
+        <HiringPartners />
+
+        {/* <ScrollAnimate animation="fade-up" delay={200} triggerOnce={true}>
+          <div className="section-wrapper py-0">
+            <WelcomeBrief />
+          </div>
+        </ScrollAnimate> */}
+
+
+
+        <ScrollAnimate animation="fade-up" delay={200} triggerOnce={true}>
+          <div className="section-wrapper py-0">
+            <CompactAlumni />
+          </div>
+        </ScrollAnimate>
+
+
+
+
+        <ScrollAnimate animation="fade-up" delay={300} triggerOnce={true}>
+          <div className="section-wrapper py-0">
+            <CompactCourses />
+          </div>
+        </ScrollAnimate>
+
+
+
+        <ScrollAnimate animation="fade-left" delay={200} triggerOnce={true}>
+          <div className="section-wrapper py-0">
+            <ProcessPath />
+          </div>
+        </ScrollAnimate>
+
+
+
+        <ScrollAnimate animation="fade-up" delay={250} triggerOnce={true}>
+          <div className="section-wrapper py-0">
+            <CompactCourseCards />
+          </div>
+        </ScrollAnimate>
+
+        {/* <ScrollAnimate animation="fade-scale" delay={300} triggerOnce={true}>
+          <div id="vision" className="section-wrapper py-0">
+            <VisionRoadmap />
+          </div>
+        </ScrollAnimate> */}
+
+        {/* <ScrollAnimate animation="fade-left" delay={200} triggerOnce={true}>
+          <div className="section-wrapper py-0">
+            <ProcessPath />
+          </div>
+        </ScrollAnimate> */}
+
+
+
+        {/* <ScrollAnimate animation="fade-up" delay={250} triggerOnce={true}>
+          <div className="section-wrapper py-0">
+            <CompactTechnologies />
+          </div>
+        </ScrollAnimate> */}
+
+        {/* <ScrollAnimate animation="fade-scale" delay={200} triggerOnce={true}>
+          <div className="section-wrapper py-0">
+            <CompactStats />
+          </div>
+        </ScrollAnimate> */}
+
+        {/* <ScrollAnimate animation="fade-up" delay={200} triggerOnce={true}>
+          <div className="section-wrapper py-0">
+            <CompactAlumni />
+          </div>
+        </ScrollAnimate> */}
+
+        <ScrollAnimate animation="fade-right" delay={250} triggerOnce={true}>
+          <div className="section-wrapper py-0">
+            <CompactFeatures />
+          </div>
+        </ScrollAnimate>
+
+        <div id="gallery">
+          <ScrollAnimate animation="fade-up" delay={200} triggerOnce={true}>
+            <Suspense fallback={null}>
+              <Gallery />
+            </Suspense>
+          </ScrollAnimate>
+        </div>
+
+        {/* <ScrollAnimate animation="fade-up" delay={200} triggerOnce={true}>
+          <div className="section-wrapper py-0">
+            <CompactWeeklyTests />
+          </div>
+        </ScrollAnimate> */}
+
+        {/* <ScrollAnimate animation="fade-scale" delay={250} triggerOnce={true}>
+          <div className="section-wrapper py-0">
+            <CompactCertifications />
+          </div>
+        </ScrollAnimate> */}
+
+        <ScrollAnimate animation="fade-up" delay={100} triggerOnce={true}>
+          <CompactFooter />
         </ScrollAnimate>
       </div>
 
-      {/* <ScrollAnimate animation="fade-up" delay={200} triggerOnce={true}>
-        <div className="section-wrapper py-0">
-          <CompactWeeklyTests />
-        </div>
-      </ScrollAnimate> */}
-
-      {/* <ScrollAnimate animation="fade-scale" delay={250} triggerOnce={true}>
-        <div className="section-wrapper py-0">
-          <CompactCertifications />
-        </div>
-      </ScrollAnimate> */}
-
-      <ScrollAnimate animation="fade-up" delay={100} triggerOnce={true}>
-        <CompactFooter />
-      </ScrollAnimate>
+      <ScholarshipPromo /> {/* Floating Promo */}
     </main>
   );
 }

@@ -105,7 +105,7 @@ export default function TerminalPage() {
 
       {/* Terminal Section */}
       <div ref={terminalRef} className="relative z-10 max-w-[1400px] mx-auto px-8 pb-16">
-        <div className="bg-white rounded-3xl border border-gray-200 shadow-2xl overflow-hidden">
+        <div className="bg-white rounded-none border border-gray-200 shadow-2xl overflow-hidden">
           <div className="bg-gray-50 px-8 py-6 border-b border-gray-200">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-6">
@@ -441,4 +441,5 @@ export default function TerminalPage() {
     </div >
   );
 }
+
 

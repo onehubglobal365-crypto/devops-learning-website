@@ -90,45 +90,45 @@ export default function AlumniScrollingGallery({ hideHeader = false }: AlumniScr
                 </svg>
                 Our Success Stories
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
+              <h2 className="font-bold mb-4" style={{ color: 'var(--text-primary)', fontSize: 'clamp(2rem, 5vw, 3rem)' }}>
                 Meet Our <span style={{ color: 'var(--corp-accent)' }}>Placed Students</span>
               </h2>
-              <p className="text-lg max-w-2xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
+              <p className="max-w-2xl mx-auto" style={{ color: 'var(--text-secondary)', fontSize: 'clamp(1rem, 2.5vw, 1.125rem)' }}>
                 Real people, real success stories. See how our students have transformed their careers.
               </p>
             </div>
           </div>
         )}
 
-        <div className="container mx-auto px-4 mb-8">
+        <div className="container mx-auto px-4 mb-[var(--space-md)] lg:mb-[var(--space-lg)]">
           <div className={`text-center ${hideHeader ? 'mt-0' : 'mt-4'}`}>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 max-w-2xl mx-auto">
-              <div className="aspect-square bg-white border border-gray-100 rounded-[1.5rem] md:rounded-[2rem] shadow-md flex flex-col items-center justify-center p-2 md:p-3 transition-all hover:scale-105 hover:shadow-lg hover:border-blue-200"
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-[var(--space-sm)] md:gap-[var(--space-md)] max-w-3xl mx-auto">
+              <div className="aspect-square bg-white border border-gray-100 rounded-[2rem] shadow-md flex flex-col items-center justify-center p-[var(--space-sm)] transition-all hover:scale-105 hover:shadow-lg hover:border-blue-200"
                 style={{ backgroundColor: '#E0F7FA' }}
               >
-                <div className="text-sm md:text-2xl font-black mb-0.5" style={{ color: '#083D77' }}>100+</div>
-                <div className="text-[8px] md:text-[10px] font-black text-gray-800 text-center leading-tight tracking-tight uppercase whitespace-normal px-1">Students Placed In Top MNC's</div>
+                <div className="font-black mb-0.5" style={{ color: '#083D77', fontSize: 'clamp(1.25rem, 4vw, 1.75rem)' }}>100+</div>
+                <div className="font-black text-gray-800 text-center leading-tight tracking-tight uppercase whitespace-normal px-1" style={{ fontSize: 'clamp(0.6rem, 1.5vw, 0.65rem)' }}>Students Placed In Top MNC's</div>
               </div>
 
-              <div className="aspect-square border border-gray-100 rounded-[1.5rem] md:rounded-[2rem] shadow-md flex flex-col items-center justify-center p-2 md:p-3 transition-all hover:scale-105 hover:shadow-lg hover:border-blue-200"
+              <div className="aspect-square border border-gray-100 rounded-[2rem] shadow-md flex flex-col items-center justify-center p-[var(--space-sm)] transition-all hover:scale-105 hover:shadow-lg hover:border-blue-200"
                 style={{ backgroundColor: '#E8F5E9' }}
               >
-                <div className="text-sm md:text-2xl font-black mb-0.5" style={{ color: '#2E7D32' }}>1000+</div>
-                <div className="text-[8px] md:text-[10px] font-black text-gray-800 text-center leading-tight tracking-tight uppercase px-1">Students Placed</div>
+                <div className="font-black mb-0.5" style={{ color: '#2E7D32', fontSize: 'clamp(1.25rem, 4vw, 1.75rem)' }}>1000+</div>
+                <div className="font-black text-gray-800 text-center leading-tight tracking-tight uppercase px-1" style={{ fontSize: 'clamp(0.6rem, 1.5vw, 0.65rem)' }}>Students Placed</div>
               </div>
 
-              <div className="aspect-square bg-white border border-gray-100 rounded-[1.5rem] md:rounded-[2rem] shadow-md flex flex-col items-center justify-center p-2 md:p-3 transition-all hover:scale-105 hover:shadow-lg hover:border-blue-200"
+              <div className="aspect-square bg-white border border-gray-100 rounded-[2rem] shadow-md flex flex-col items-center justify-center p-[var(--space-sm)] transition-all hover:scale-105 hover:shadow-lg hover:border-blue-200"
                 style={{ backgroundColor: '#F1F8E9' }}
               >
-                <div className="text-sm md:text-2xl font-black mb-0.5" style={{ color: '#558B2F' }}>3.5-25LPA</div>
-                <div className="text-[8px] md:text-[10px] font-black text-gray-800 text-center leading-tight tracking-tight uppercase px-1">Package Range</div>
+                <div className="font-black mb-0.5" style={{ color: '#558B2F', fontSize: 'clamp(1.25rem, 4vw, 1.75rem)' }}>3.5-25L</div>
+                <div className="font-black text-gray-800 text-center leading-tight tracking-tight uppercase px-1" style={{ fontSize: 'clamp(0.6rem, 1.5vw, 0.65rem)' }}>Package Range</div>
               </div>
 
-              <div className="aspect-square bg-white border border-gray-100 rounded-[1.5rem] md:rounded-[2rem] shadow-md flex flex-col items-center justify-center p-2 md:p-3 transition-all hover:scale-105 hover:shadow-lg hover:border-blue-200"
+              <div className="aspect-square bg-white border border-gray-100 rounded-[2rem] shadow-md flex flex-col items-center justify-center p-[var(--space-sm)] transition-all hover:scale-105 hover:shadow-lg hover:border-blue-200"
                 style={{ backgroundColor: '#E3F2FD' }}
               >
-                <div className="text-sm md:text-2xl font-black mb-0.5" style={{ color: '#1565C0' }}>95%</div>
-                <div className="text-[8px] md:text-[10px] font-black text-gray-800 text-center leading-tight tracking-tight uppercase px-1">Success Rate</div>
+                <div className="font-black mb-0.5" style={{ color: '#1565C0', fontSize: 'clamp(1.25rem, 4vw, 1.75rem)' }}>95%</div>
+                <div className="font-black text-gray-800 text-center leading-tight tracking-tight uppercase px-1" style={{ fontSize: 'clamp(0.6rem, 1.5vw, 0.65rem)' }}>Success Rate</div>
               </div>
             </div>
           </div>

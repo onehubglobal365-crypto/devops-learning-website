@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import CompactSection from './CompactSection';
 
 interface Feature {
@@ -62,42 +63,46 @@ export default function CompactFeatures() {
     <CompactSection
       title="Key Features"
       subtitle="Industry-leading methodologies and comprehensive career growth paths"
-      backgroundColor="#ffffff"
+      backgroundColor="#f8fafc" // Light slate background for contrast
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 max-w-7xl mx-auto px-4 py-8">
-        {features.map((feature) => {
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[var(--space-lg)] w-full max-w-7xl mx-auto px-[var(--space-md)] py-[var(--space-xl)]">
+        {features.map((feature, index) => {
+          // Define unique colors for each card based on its index
+          const colors = [
+            { border: 'border-orange-200', text: 'text-orange-600', bg: 'bg-orange-50', hover: 'group-hover:border-orange-500', glow: 'shadow-orange-500/20' },
+            { border: 'border-cyan-200', text: 'text-cyan-600', bg: 'bg-cyan-50', hover: 'group-hover:border-cyan-500', glow: 'shadow-cyan-500/20' },
+            { border: 'border-blue-200', text: 'text-blue-600', bg: 'bg-blue-50', hover: 'group-hover:border-blue-500', glow: 'shadow-blue-500/20' },
+            { border: 'border-purple-200', text: 'text-purple-600', bg: 'bg-purple-50', hover: 'group-hover:border-purple-500', glow: 'shadow-purple-500/20' },
+          ][index % 4];
+
           return (
             <div
               key={feature.id}
-              className="group relative bg-white p-2 transition-all duration-500 hover:scale-[1.02] w-full"
+              className="group relative h-full transition-all duration-500 pt-8"
             >
-              {/* The Styled Border Container */}
-              <div className="relative w-full min-h-[280px] border-2 rounded-[30px] flex flex-col items-center justify-center p-8 bg-white shadow-sm group-hover:shadow-2xl transition-all duration-500 overflow-visible border-blue-400">
+              <div className={`h-full bg-white border-2 ${colors.border} ${colors.hover} rounded-[2rem] p-[var(--space-lg)] flex flex-col items-center text-center transition-all duration-500 shadow-sm hover:shadow-2xl ${colors.glow} hover:-translate-y-2 relative overflow-visible`}>
 
-                {/* Floating Integrated Header - Centered on Mobile */}
-                <div className="absolute top-[-24px] md:top-[-30px] left-1/2 md:left-6 -translate-x-1/2 md:translate-x-0 bg-white px-4 md:px-5 py-2 flex items-center gap-3 z-10 transition-all group-hover:-translate-y-1 rounded-2xl shadow-md border border-gray-100 w-[max-content]">
-                  <div className="w-8 h-8 md:w-10 md:h-10 bg-blue-50 rounded-xl flex items-center justify-center transition-all duration-500 group-hover:bg-blue-600 shadow-inner">
-                    <div className="transition-colors duration-500 group-hover:text-white transform scale-75">
-                      {feature.icon}
-                    </div>
+                {/* Floating Badge Header */}
+                <div className={`absolute -top-10 left-1/2 -translate-x-1/2 bg-white px-6 py-4 rounded-3xl shadow-xl border ${colors.border} flex items-center gap-4 z-20 min-w-[210px] justify-center transition-all duration-500 group-hover:scale-105 ring-8 ring-white`}>
+                  <div className={`w-12 h-12 ${colors.bg} rounded-2xl flex items-center justify-center transition-all duration-500 ${index === 0 ? 'group-hover:bg-orange-500' : index === 1 ? 'group-hover:bg-cyan-500' : index === 2 ? 'group-hover:bg-blue-500' : 'group-hover:bg-purple-500'} group-hover:text-white`}>
+                    {feature.icon && React.cloneElement(feature.icon as any, {
+                      className: "w-7 h-7 transition-colors duration-500"
+                    })}
                   </div>
-                  <h3 className="text-xs md:text-sm font-black text-gray-900 tracking-tight whitespace-nowrap">
+                  <span className={`text-xs md:text-sm font-black uppercase tracking-[0.1em] ${colors.text}`}>
                     {feature.title}
-                  </h3>
+                  </span>
                 </div>
 
-                {/* Content Area */}
-                <div className="text-center pt-4">
-                  <p className="text-gray-500 text-sm leading-relaxed px-2">
+                {/* Content */}
+                <div className="mt-6 flex-1 flex flex-col justify-center">
+                  <p className="text-gray-600 font-medium leading-relaxed" style={{ fontSize: 'clamp(0.875rem, 2vw, 1rem)' }}>
                     {feature.description}
                   </p>
                 </div>
 
-                {/* Decorative Line Path - Matching Roadmap Style */}
-                <div className="absolute top-0 left-[160px] right-8 h-0.5 bg-blue-400 hidden lg:block opacity-20 group-hover:opacity-100 transition-opacity">
-                  <div className="absolute right-0 top-[-3px] w-2 h-2 border-t-2 border-r-2 border-blue-400 rotate-45" />
-                  <div className="absolute left-[-2px] bottom-[-2px] w-2 h-2 border-l-2 border-t-2 border-blue-400 -rotate-45" />
-                </div>
+                {/* Bottom Accent Decor */}
+                <div className={`mt-6 w-12 h-1 rounded-full ${colors.bg} transition-all duration-500 group-hover:w-24 group-hover:bg-current ${colors.text}`}></div>
               </div>
             </div>
           );

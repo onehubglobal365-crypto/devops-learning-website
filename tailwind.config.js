@@ -7,13 +7,12 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        'xs': '360px',
-        'sm': '640px', // Default
-        'md': '768px', // Tablet
-        'lg': '1024px', // Tablet landscape/Small Laptop
-        'xl': '1280px', // Laptop
-        '2xl': '1440px', // Desktop start
-        '3xl': '1920px', // Large Desktop
+        'xs': '320px',
+        'sm': '480px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+        '2xl': '1440px',
       },
       colors: {
         // Shadcn Theme Colors

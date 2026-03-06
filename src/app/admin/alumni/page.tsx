@@ -120,7 +120,7 @@ export default function AlumniAdmin({ isDark = false }: AlumniAdminProps) {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="md:col-span-1 space-y-4">
-                <div className="aspect-square bg-gray-100 dark:bg-gray-700 rounded-3xl overflow-hidden flex items-center justify-center relative group">
+                <div className="aspect-square bg-gray-100 dark:bg-gray-700 rounded-none overflow-hidden flex items-center justify-center relative group">
                   {newAlumni.profileImage ? (
                     <Image src={newAlumni.profileImage} alt="Preview" fill className="object-cover" />
                   ) : (
@@ -301,7 +301,7 @@ export default function AlumniAdmin({ isDark = false }: AlumniAdminProps) {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {/* Profile Image Column */}
                 <div className="md:col-span-1 space-y-6">
-                  <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl relative group bg-gray-100 dark:bg-gray-700">
+                  <div className="aspect-square rounded-none overflow-hidden shadow-2xl relative group bg-gray-100 dark:bg-gray-700">
                     {editFormData.profileImage ? (
                       <Image src={editFormData.profileImage} alt="Preview" fill className="object-cover" />
                     ) : (
@@ -440,3 +440,4 @@ export default function AlumniAdmin({ isDark = false }: AlumniAdminProps) {
     </div>
   );
 }
+

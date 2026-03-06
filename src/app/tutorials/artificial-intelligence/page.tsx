@@ -35,22 +35,18 @@ export default function ArtificialIntelligenceLandingPage() {
       background="white"
     >
       <div
-        className="min-h-screen rounded-3xl p-8 text-slate-900 border transition-all duration-300"
+        className="min-h-screen rounded-none p-8 text-slate-900 border transition-all duration-300 bg-white"
         style={{
-          backgroundColor: 'rgba(255, 255, 255, 0.7)',
-          backdropFilter: 'blur(12px)',
-          WebkitBackdropFilter: 'blur(12px)',
-          borderColor: 'rgba(255, 255, 255, 0.5)',
-          boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.15)'
+          border: '1px solid #e2e8f0',
         }}
       >
         {/* Header */}
         <div className="text-center mb-16">
 
-          <h1 className="text-5xl font-bold text-white mb-4">
-            Artificial Intelligence <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">Course</span>
+          <h1 className="text-5xl font-bold text-gray-900 mb-4">
+            Artificial Intelligence <span className="text-gray-600">Course</span>
           </h1>
-          <p className="text-gray-400 text-xl">Master AI concepts, machine learning, and advanced AI technologies</p>
+          <p className="text-gray-500 text-xl">Master AI concepts, machine learning, and advanced AI technologies</p>
         </div>
 
         {/* Modules Grid */}
@@ -59,15 +55,15 @@ export default function ArtificialIntelligenceLandingPage() {
             <Link
               key={module.id}
               href={module.href}
-              className="group relative bg-[#1a1a1a] rounded-xl p-8 border border-gray-700 hover:border-purple-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/10 h-full flex flex-col"
+              className="group relative bg-gray-50 rounded-xl p-8 border border-gray-200 hover:border-purple-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/10 h-full flex flex-col"
             >
               <div className="flex items-start space-x-4 mb-4">
                 <div className="text-4xl flex-shrink-0">{module.icon}</div>
                 <div className="flex-1">
-                  <h2 className="text-2xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">
+                  <h2 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-purple-400 transition-colors">
                     {module.title}
                   </h2>
-                  <p className="text-gray-400 text-sm mb-4 min-h-[40px]">
+                  <p className="text-gray-600 text-sm mb-4 min-h-[40px]">
                     {module.description}
                   </p>
                 </div>
@@ -77,7 +73,7 @@ export default function ArtificialIntelligenceLandingPage() {
                 <h3 className="text-sm font-semibold text-gray-500 mb-3 uppercase tracking-wide">Topics Covered</h3>
                 <ul className="space-y-2">
                   {module.topics.map((topic, index) => (
-                    <li key={index} className="flex items-center text-gray-300 text-sm">
+                    <li key={index} className="flex items-center text-gray-600 text-sm">
                       <svg className="w-4 h-4 mr-2 text-purple-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
@@ -98,12 +94,12 @@ export default function ArtificialIntelligenceLandingPage() {
         </div>
 
         {/* Course Overview */}
-        <div className="bg-[#1a1a1a] rounded-xl p-8 border border-gray-700">
-          <h2 className="text-3xl font-bold text-white mb-6">Course Overview</h2>
+        <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Course Overview</h2>
           <div className="grid md:grid-cols-2 gap-6">
             <div>
-              <h3 className="text-xl font-semibold text-white mb-3">What You'll Learn</h3>
-              <ul className="space-y-2 text-gray-300">
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">What You'll Learn</h3>
+              <ul className="space-y-2 text-gray-600">
                 <li className="flex items-start">
                   <span className="text-purple-400 mr-2">✓</span>
                   <span>Large Language Models (LLMs) fundamentals</span>
@@ -131,18 +127,18 @@ export default function ArtificialIntelligenceLandingPage() {
               </ul>
             </div>
             <div>
-              <h3 className="text-xl font-semibold text-white mb-3">Prerequisites</h3>
-              <ul className="space-y-2 text-gray-300">
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Prerequisites</h3>
+              <ul className="space-y-2 text-gray-600">
                 <li className="flex items-start">
                   <span className="text-purple-400 mr-2">•</span>
                   <span>Basic understanding of machine learning concepts</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-purple-400 mr-2">•</span>
+                  <span className="text-gray-400 mr-2">•</span>
                   <span>Familiarity with Python programming</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-purple-400 mr-2">•</span>
+                  <span className="text-gray-400 mr-2">•</span>
                   <span>Basic knowledge of neural networks (helpful but not required)</span>
                 </li>
               </ul>
@@ -153,4 +149,5 @@ export default function ArtificialIntelligenceLandingPage() {
     </TechLayout>
   );
 }
+
 

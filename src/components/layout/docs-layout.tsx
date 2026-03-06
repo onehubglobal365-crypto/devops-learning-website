@@ -130,28 +130,34 @@ export default function DocsLayout({ children, onThisPage }: DocsLayoutProps) {
 
       {/* Sidebar */}
       <aside className={`
-        fixed left-0 z-[60] shadow-2xl
+        fixed left-0 z-[60]
         transform transition-transform duration-300 ease-in-out
-        top-0 h-screen w-80
-        lg:w-[320px]
-        lg:top-[120px] lg:h-[calc(100vh-140px)]
-        lg:left-4 lg:rounded-[30px]
+        top-0 h-screen w-full sm:w-80
+        lg:w-[var(--sidebar-width)]
+        lg:top-0 lg:h-screen
+        lg:left-0 lg:rounded-none
         ${sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
         overflow-hidden
         will-change-transform
       `}
-        style={{ backgroundColor: 'rgba(255, 255, 255, 0.65)', border: '1px solid rgba(255, 255, 255, 0.5)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.15)' }}>
+        style={{
+          backgroundColor: 'rgba(255, 255, 255, 0.65)',
+          border: '1px solid rgba(255, 255, 255, 0.5)',
+          backdropFilter: 'blur(12px)',
+          WebkitBackdropFilter: 'blur(12px)',
+          '--sidebar-width': 'clamp(280px, 20vw, 320px)'
+        } as React.CSSProperties}>
         <Sidebar items={navigationItems} onThisPage={onThisPage} theme="light" />
       </aside>
 
       {/* Main Content */}
-      <div className="flex-1 flex flex-col min-h-screen lg:ml-[350px]">
+      <div className="flex-1 flex flex-col min-h-screen lg:ml-[clamp(280px,20vw,320px)]">
         {/* Mobile header */}
-        <header className="lg:hidden bg-gradient-to-r from-gray-900 to-black shadow-lg border-b border-gray-700">
+        <header className="lg:hidden bg-gradient-to-r from-gray-900 to-black border-b border-gray-700">
           <div className="flex items-center justify-between px-4 py-4">
             <button
               onClick={() => setSidebarOpen(true)}
-              className="p-3 rounded-xl text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-300 hover:scale-110 hover:shadow-lg"
+              className="p-3 rounded-xl text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-300 hover:scale-110"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
@@ -163,9 +169,9 @@ export default function DocsLayout({ children, onThisPage }: DocsLayoutProps) {
         </header>
 
         {/* Content area */}
-        <main className="flex-1 overflow-y-auto relative z-10" style={{ paddingTop: '120px' }}>
-          <div className="max-w-5xl 2xl:max-w-7xl mx-auto px-6 sm:px-8 2xl:px-12 py-12 transition-all duration-300">
-            <article className="prose prose-lg max-w-none text-gray-900">
+        <main className="flex-1 overflow-y-auto relative z-10" style={{ paddingTop: 'calc(var(--space-xl)*2)' }}>
+          <div className="max-w-[var(--container-xl)] mx-auto px-[var(--space-md)] md:px-[var(--space-lg)] py-[var(--space-lg)] transition-all duration-300">
+            <article className="prose prose-lg max-w-none text-gray-900" style={{ fontSize: 'clamp(1rem, 2.2vw, 1.125rem)' }}>
               {children}
             </article>
           </div>
@@ -174,18 +180,18 @@ export default function DocsLayout({ children, onThisPage }: DocsLayoutProps) {
 
       {/* Right sidebar for desktop - Table of Contents */}
       {onThisPage.length > 0 && (
-        <aside className="hidden xl:block w-80 bg-gradient-to-b from-gray-900 to-black shadow-2xl border-l border-gray-700 sticky top-0 h-screen overflow-y-auto z-20">
-          <div className="p-6">
-            <h3 className="text-lg font-bold text-white mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">On this page</h3>
-            <nav className="space-y-2">
+        <aside className="hidden xl:block w-[clamp(240px,18vw,300px)] bg-gradient-to-b from-gray-900 to-black border-l border-gray-700 sticky top-0 h-screen overflow-y-auto z-20">
+          <div className="p-[var(--space-md)]">
+            <h3 className="font-bold text-white mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent uppercase tracking-wider" style={{ fontSize: 'clamp(0.875rem, 2vw, 1rem)' }}>On this page</h3>
+            <nav className="space-y-[var(--space-xs)]">
               {onThisPage.map(item => (
                 <a
                   key={item.id}
                   href={`#${item.id}`}
                   onClick={(e) => handleSectionClick(e, item.id)}
-                  className={`block px-4 py-3 text-sm rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:ring-opacity-50 ${activeSection === item.id
-                    ? 'bg-gradient-to-r from-rose-600/20 to-purple-600/20 text-white border border-rose-500/30 shadow-blue-500/20 font-semibold'
-                    : 'text-gray-300 hover:bg-gradient-to-r hover:from-gray-800/50 hover:to-gray-700/50 hover:text-white hover:shadow-gray-500/20 hover:ring-2 hover:ring-blue-500/30 hover:ring-opacity-50'
+                  className={`block px-4 py-3 text-sm rounded-xl transition-all duration-300 hover:scale-105 cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:ring-opacity-50 ${activeSection === item.id
+                    ? 'bg-gradient-to-r from-rose-600/20 to-purple-600/20 text-white border border-rose-500/30 font-semibold'
+                    : 'text-gray-300 hover:bg-gradient-to-r hover:from-gray-800/50 hover:to-gray-700/50 hover:text-white hover:ring-2 hover:ring-blue-500/30 hover:ring-opacity-50'
                     }`}
                 >
                   {item.title}

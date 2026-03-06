@@ -85,7 +85,7 @@ const slides = [
     },
     {
         id: 5,
-        title: 'SQL & Databases',
+        title: 'SQL',
         subtitle: '< SQL & NoSQL Mastery',
         description: 'Master database design, optimization, and management. Learn SQL, NoSQL databases, data modeling, and advanced querying techniques.',
         buttonText: 'Explore Databases',
@@ -335,7 +335,7 @@ export default function UniqueHero() {
 
     return (
         <div
-            className="relative w-full min-h-[650px] md:min-h-[550px] md:h-[600px] overflow-hidden flex items-center justify-center font-sans transition-colors duration-700 ease-in-out rounded-br-[60px] md:rounded-br-[220px] pb-12 md:pb-0"
+            className="relative w-full min-h-[clamp(500px,60vh,650px)] overflow-hidden flex items-center justify-center font-sans transition-colors duration-700 ease-in-out rounded-br-[clamp(60px,15vw,220px)] pb-[var(--space-md)] md:pb-0"
             style={{ backgroundColor: currentData.color }}
         >
             <style>{`
@@ -363,10 +363,10 @@ export default function UniqueHero() {
             {/* Full Screen Mirror Shine Effect */}
             <div className="hero-shine-element"></div>
 
-            <div className={`container mx-auto px-6 md:px-4 z-10 flex flex-col md:flex-row items-center justify-between gap-12 transition-all duration-500 pt-24 md:pt-0 ${showRoadmap ? 'blur-sm scale-95 opacity-50' : ''}`}>
+            <div className={`container mx-auto px-[var(--space-sm)] z-10 flex flex-col md:flex-row items-center justify-between gap-[var(--space-lg)] transition-all duration-500 pt-[calc(var(--space-xl)*2)] md:pt-0 ${showRoadmap ? 'blur-sm scale-95 opacity-50' : ''}`}>
 
                 {/* Left Content - Text */}
-                <div className="w-full md:flex-1 text-left space-y-4 md:pl-20">
+                <div className="w-full md:flex-1 text-left space-y-[var(--space-sm)] md:pl-[var(--space-xl)]">
                     <AnimatePresence mode="wait">
                         <motion.div
                             key={currentSlide}
@@ -380,15 +380,15 @@ export default function UniqueHero() {
                                 {/* Removed Featured Course Label */}
                             </div>
 
-                            <h1 className="text-4xl md:text-6xl font-black text-white leading-tight mb-2 tracking-tight">
+                            <h1 className="font-black text-white leading-tight mb-2 tracking-tight" style={{ fontSize: 'clamp(2.5rem, 6vw, 4rem)' }}>
                                 {currentData.title}
                             </h1>
 
-                            <p className="text-lg md:text-xl text-white/90 font-light mb-6 max-w-lg border-l-4 border-white pl-4">
+                            <p className="text-white/90 font-light mb-6 max-w-lg border-l-4 border-white pl-4" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>
                                 {currentData.subtitle.replace('< ', '')}
                             </p>
 
-                            <p className="text-white/80 text-base max-w-xl leading-relaxed mb-6">
+                            <p className="text-white/80 max-w-xl leading-relaxed mb-6 font-medium" style={{ fontSize: 'clamp(0.875rem, 2vw, 1rem)' }}>
                                 {currentData.description}
                             </p>
 
@@ -437,7 +437,7 @@ export default function UniqueHero() {
                             rotateY: rotateY,
                             transformStyle: "preserve-3d",
                         }}
-                        className="relative w-full aspect-square rounded-3xl rounded-br-[100px] shadow-2xl p-5 flex flex-col justify-between overflow-hidden group"
+                        className="relative w-full aspect-square rounded-[2.5rem] rounded-br-[clamp(60px,10vw,100px)] shadow-2xl p-[var(--space-md)] flex flex-col justify-between overflow-hidden group"
                     >
                         {/* Floating Elements inside 3D Card */}
                         <div style={{ transform: "translateZ(50px)" }} className="absolute -right-20 -top-20 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl pointer-events-none"></div>
@@ -517,7 +517,7 @@ export default function UniqueHero() {
                             initial={{ opacity: 0, scale: 0.9, y: 20 }}
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                            className="relative w-full max-w-4xl bg-[#0f172a] border border-white/10 rounded-2xl shadow-2xl p-6 md:p-8 max-h-[90%] overflow-hidden flex flex-col"
+                            className="relative w-full max-w-4xl bg-[#0f172a] border border-white/10 rounded-[2.5rem] shadow-2xl p-[var(--space-md)] md:p-[var(--space-lg)] max-h-[90%] overflow-hidden flex flex-col"
                         >
                             <button
                                 onClick={() => setShowRoadmap(false)}

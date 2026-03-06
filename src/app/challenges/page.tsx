@@ -141,7 +141,7 @@ export default function ChallengesPage() {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => setMode('new')}
-                  className="relative bg-white rounded-3xl p-8 border border-purple-100 text-left hover:border-purple-300 transition-all group shadow-lg overflow-visible mt-4"
+                  className="relative bg-white rounded-none p-8 border border-purple-100 text-left hover:border-purple-300 transition-all group shadow-lg overflow-visible mt-4"
                 >
                   <div className="absolute -top-6 -left-6 bg-purple-100 w-20 h-20 rounded-2xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
                     <UserPlus className="w-10 h-10 text-purple-600" />
@@ -160,7 +160,7 @@ export default function ChallengesPage() {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => setMode('continue')}
-                  className="relative bg-white rounded-3xl p-8 border border-cyan-100 text-left hover:border-cyan-300 transition-all group shadow-lg overflow-visible mt-4"
+                  className="relative bg-white rounded-none p-8 border border-cyan-100 text-left hover:border-cyan-300 transition-all group shadow-lg overflow-visible mt-4"
                 >
                   <div className="absolute -top-6 -left-6 bg-cyan-100 w-20 h-20 rounded-2xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
                     <LogIn className="w-10 h-10 text-cyan-600" />
@@ -186,7 +186,7 @@ export default function ChallengesPage() {
               exit={{ opacity: 0, x: -20 }}
               className="max-w-md mx-auto"
             >
-              <div className="bg-white rounded-3xl p-8 border border-gray-200 shadow-xl">
+              <div className="bg-white rounded-none p-8 border border-gray-200 shadow-xl">
                 <button
                   onClick={() => setMode('choice')}
                   className="text-gray-500 hover:text-gray-900 transition-colors mb-6 flex items-center gap-2"
@@ -251,7 +251,7 @@ export default function ChallengesPage() {
               exit={{ opacity: 0, x: -20 }}
               className="max-w-md mx-auto"
             >
-              <div className="bg-white rounded-3xl p-8 border border-gray-200 shadow-xl">
+              <div className="bg-white rounded-none p-8 border border-gray-200 shadow-xl">
                 <button
                   onClick={() => setMode('choice')}
                   className="text-gray-500 hover:text-gray-900 transition-colors mb-6 flex items-center gap-2"
@@ -336,7 +336,7 @@ export default function ChallengesPage() {
                 )}
               </div>
 
-              <div className="bg-white rounded-3xl p-8 border border-gray-200 shadow-xl">
+              <div className="bg-white rounded-none p-8 border border-gray-200 shadow-xl">
                 <div className="flex items-center justify-between mb-6">
                   <button
                     onClick={() => {
@@ -440,3 +440,4 @@ export default function ChallengesPage() {
     </div>
   );
 }
+

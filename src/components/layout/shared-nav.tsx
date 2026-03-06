@@ -41,6 +41,11 @@ export default function SharedNav({ isScrolled = false, showAnimatedLine = true,
   const aboutButtonRef = useRef<HTMLDivElement>(null);
   const aboutTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
+  const [showBranchDropdown, setShowBranchDropdown] = useState(false);
+  const [branchDropdownPosition, setBranchDropdownPosition] = useState<{ top: number; left: number } | null>(null);
+  const branchButtonRef = useRef<HTMLDivElement>(null);
+  const branchTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
   // Auth Modal State
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [authView, setAuthView] = useState<'login' | 'signup'>('login');
@@ -89,32 +94,7 @@ export default function SharedNav({ isScrolled = false, showAnimatedLine = true,
 
 
 
-  // Close tutorials dropdown function
-  const closeTutorialsDropdown = useCallback(() => {
-    if (tutorialsTimeoutRef.current) clearTimeout(tutorialsTimeoutRef.current);
-    setShowDropdown(false);
-    setDropdownPosition(null);
-  }, []);
-
-  const openTutorialsDropdown = useCallback(() => {
-    if (tutorialsTimeoutRef.current) clearTimeout(tutorialsTimeoutRef.current);
-    setShowDropdown(true);
-    if (tutorialsButtonRef.current) {
-      const rect = tutorialsButtonRef.current.getBoundingClientRect();
-      setDropdownPosition({
-        top: rect.bottom + 12,
-        left: rect.left,
-      });
-    }
-  }, []);
-
-  const closeTutorialsWithDelay = useCallback(() => {
-    if (tutorialsTimeoutRef.current) clearTimeout(tutorialsTimeoutRef.current);
-    tutorialsTimeoutRef.current = setTimeout(() => {
-      closeTutorialsDropdown();
-    }, 200);
-  }, [closeTutorialsDropdown]);
-
+  // About Dropdown logic
   // About Dropdown logic
   const closeAboutDropdown = useCallback(() => {
     if (aboutTimeoutRef.current) clearTimeout(aboutTimeoutRef.current);
@@ -141,35 +121,32 @@ export default function SharedNav({ isScrolled = false, showAnimatedLine = true,
     }, 200);
   }, [closeAboutDropdown]);
 
+  // Branch Dropdown logic
+  const closeBranchDropdown = useCallback(() => {
+    if (branchTimeoutRef.current) clearTimeout(branchTimeoutRef.current);
+    setShowBranchDropdown(false);
+    setBranchDropdownPosition(null);
+  }, []);
 
-  // Close tutorials dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      // Check if click is on button (to avoid conflict with onClick toggle)
-      if (tutorialsButtonRef.current?.contains(event.target as Node)) return;
-
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        // Also check if click is outside the dropdown menu itself
-        const dropdownMenu = document.querySelector('[data-tutorials-dropdown]');
-        const isOutsideDropdown = !dropdownMenu || !dropdownMenu.contains(event.target as Node);
-
-        if (isOutsideDropdown) {
-          closeTutorialsDropdown();
-        }
-      }
-    };
-
-    if (showDropdown) {
-      const timeoutId = setTimeout(() => {
-        document.addEventListener('mousedown', handleClickOutside);
-      }, 100);
-
-      return () => {
-        clearTimeout(timeoutId);
-        document.removeEventListener('mousedown', handleClickOutside);
-      };
+  const openBranchDropdown = useCallback(() => {
+    if (branchTimeoutRef.current) clearTimeout(branchTimeoutRef.current);
+    setShowBranchDropdown(true);
+    if (branchButtonRef.current) {
+      const rect = branchButtonRef.current.getBoundingClientRect();
+      setBranchDropdownPosition({
+        top: rect.bottom + 12,
+        left: rect.left,
+      });
     }
-  }, [showDropdown, closeTutorialsDropdown]);
+  }, []);
+
+  const closeBranchWithDelay = useCallback(() => {
+    if (branchTimeoutRef.current) clearTimeout(branchTimeoutRef.current);
+    branchTimeoutRef.current = setTimeout(() => {
+      closeBranchDropdown();
+    }, 200);
+  }, [closeBranchDropdown]);
+
 
   // Close About dropdown when clicking outside
   useEffect(() => {
@@ -200,6 +177,35 @@ export default function SharedNav({ isScrolled = false, showAnimatedLine = true,
     }
   }, [showAboutDropdown, closeAboutDropdown]);
 
+  // Close Branch dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (branchButtonRef.current?.contains(event.target as Node)) return;
+
+      const dropdownMenu = document.querySelector('[data-branch-dropdown]');
+      if (dropdownMenu && !dropdownMenu.contains(event.target as Node)) {
+        closeBranchDropdown();
+      }
+    };
+
+    if (showBranchDropdown) {
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => document.removeEventListener('mousedown', handleClickOutside);
+    }
+  }, [showBranchDropdown, closeBranchDropdown]);
+
+  // Close Branch dropdown when scrolling
+  useEffect(() => {
+    const handleScroll = () => {
+      if (showBranchDropdown) closeBranchDropdown();
+    };
+
+    if (showBranchDropdown) {
+      window.addEventListener('scroll', handleScroll, true);
+      return () => window.removeEventListener('scroll', handleScroll, true);
+    }
+  }, [showBranchDropdown, closeBranchDropdown]);
+
 
 
   // Internal scroll state for global consistency
@@ -223,13 +229,6 @@ export default function SharedNav({ isScrolled = false, showAnimatedLine = true,
 
   const contentScrolled = isScrolled || internalScrolled;
 
-  const tutorialLinks = [
-    { href: '/tutorials/programming', label: 'Programming', icon: <Code className="w-4 h-4" /> },
-    { href: '/roadmap?courseId=medical-coding', label: 'Medical Coding', icon: <Stethoscope className="w-4 h-4" /> },
-    { href: '/courses', label: 'Courses', icon: <GraduationCap className="w-4 h-4" /> },
-    { href: '/challenges', label: 'Challenges', icon: <Trophy className="w-4 h-4" /> },
-  ];
-
   const aboutLinks = [
     { href: '/about', label: 'About Us', icon: <Info className="w-4 h-4" /> },
     { href: '/?open=true#gallery', label: 'Gallery', icon: <ImageIcon className="w-4 h-4" /> },
@@ -241,17 +240,24 @@ export default function SharedNav({ isScrolled = false, showAnimatedLine = true,
   // Determine if we are on a "content" page (tutorial/course view)
   const isHomePage = pathname === '/';
 
+  // Normalize pathname (remove trailing slash for comparison)
+  const normalizedPath = pathname.endsWith('/') && pathname.length > 1 ? pathname.slice(0, -1) : pathname;
+
   // This triggers the simplified "Logo-only + Burger Menu" layout
   const isContentPage =
-    pathname.startsWith('/python') ||
-    pathname.startsWith('/java') ||
-    pathname.startsWith('/sql') ||
-    pathname.startsWith('/web-dev') ||
-    pathname.startsWith('/devops') ||
-    pathname.startsWith('/linux') ||
-    pathname.startsWith('/data-science') ||
-    pathname.startsWith('/tutorials') ||
-    pathname.startsWith('/roadmap');
+    normalizedPath === '/python' ||
+    normalizedPath === '/java' ||
+    normalizedPath === '/sql' ||
+    normalizedPath === '/web-dev' ||
+    normalizedPath === '/devops' ||
+    normalizedPath === '/linux' ||
+    normalizedPath === '/data-science' ||
+    normalizedPath === '/code-terminal' ||
+    normalizedPath === '/powerbi' ||
+    normalizedPath === '/excel' ||
+    normalizedPath === '/medical-coding' ||
+    normalizedPath === '/tutorials/azure-data-engineer' ||
+    pathname.startsWith('/docs/');
 
   return (
     <>
@@ -261,13 +267,13 @@ export default function SharedNav({ isScrolled = false, showAnimatedLine = true,
         {/* Top Bar - Only on Desktop Home Page and not scrolled */}
         {(!contentScrolled && isHomePage) && (
           <div className="bg-white border-b border-gray-100 py-2 hidden md:block transition-all duration-300 opacity-100">
-            <div className="container mx-auto flex items-center justify-between px-4 lg:px-6 pointer-events-auto">
-              <div className="flex items-center gap-6 text-sm font-bold text-[#083D77]">
-                <div className="flex items-center gap-2 hover:text-orange-500 transition-colors">
+            <div className="container mx-auto flex flex-wrap items-center justify-between px-4 lg:px-[var(--space-md)] py-2 gap-4 pointer-events-auto">
+              <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 text-sm font-bold text-[#083D77] mx-auto md:mx-0">
+                <div className="flex items-center justify-center gap-2 hover:text-orange-500 transition-colors">
                   <Phone className="w-4 h-4" />
                   <a href="tel:+919059450707">+91 9059450707</a>
                 </div>
-                <div className="flex items-center gap-2 hover:text-orange-500 transition-colors">
+                <div className="flex items-center justify-center gap-2 hover:text-orange-500 transition-colors">
                   <Phone className="w-4 h-4" />
                   <a href="tel:+917382314128">+91 7382314128</a>
                 </div>
@@ -290,7 +296,7 @@ export default function SharedNav({ isScrolled = false, showAnimatedLine = true,
 
               <a
                 href="tel:+919059450707"
-                className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full text-sm font-black shadow-lg shadow-orange-500/30 transition-all uppercase tracking-wider"
+                className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full text-sm font-black transition-all uppercase tracking-wider"
               >
                 Career Guidance
               </a>
@@ -299,18 +305,17 @@ export default function SharedNav({ isScrolled = false, showAnimatedLine = true,
         )}
 
         {/* Main Navbar Area (Logo + Navigation) - Sticky to top */}
-        <div className={`flex items-center justify-between px-4 py-2 w-full relative transition-all duration-300 pointer-events-auto ${(contentScrolled || !isHomePage) ? 'bg-white shadow-xl mt-0 border-b border-gray-100' : 'bg-transparent mt-0'}`}>
+        <div className={`flex flex-row items-center justify-between px-[var(--space-sm)] md:px-[var(--space-md)] py-2 w-full relative transition-all duration-300 pointer-events-auto ${(contentScrolled || !isHomePage) ? 'bg-white mt-0 border-b border-gray-100' : 'bg-transparent mt-0'}`}>
           {/* Logo - Separate & Fixed Left */}
           <Link
             href="/"
-            className={`flex items-center gap-3 hover:opacity-95 transition-all group z-[150002] rounded-full p-1.5 pr-2 pl-2 ${!(contentScrolled || !isHomePage) ? 'bg-white shadow-lg border border-white/50' : ''}`}
+            className={`flex items-center gap-2 sm:gap-3 hover:opacity-95 transition-all group z-[150002] rounded-full p-1.5 pr-2 pl-2 shrink-0 ${!(contentScrolled || !isHomePage) ? 'bg-white border border-white/50' : ''}`}
           >
-            <div className="flex items-center justify-center w-12 h-12 rounded-full overflow-hidden relative bg-white shadow-inner">
+            <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden relative bg-white shadow-inner shrink-0">
               <Image
                 src="/logo_new.jpg"
                 alt="OHG365 Logo"
-                width={48}
-                height={48}
+                fill
                 className="object-contain"
                 priority
               />
@@ -374,15 +379,27 @@ export default function SharedNav({ isScrolled = false, showAnimatedLine = true,
                   </button>
                 </div>
 
-                <Link
-                  href="/about/branches"
-                  className={`px-4 py-2 rounded-full font-bold transition-all duration-300 ${pathname === '/about/branches'
-                    ? 'text-orange-500 bg-orange-50 shadow-sm'
-                    : `${(contentScrolled || !isHomePage) ? 'text-[#083D77] hover:text-orange-500 hover:bg-orange-50' : 'text-white hover:bg-white/20'} active:scale-95`
-                    }`}
+                {/* Branches Dropdown Trigger */}
+                <div
+                  className="relative"
+                  ref={branchButtonRef}
+                  onMouseEnter={openBranchDropdown}
+                  onMouseLeave={closeBranchWithDelay}
                 >
-                  Branches
-                </Link>
+                  <button
+                    onClick={() => {
+                      if (showBranchDropdown) closeBranchDropdown();
+                      else openBranchDropdown();
+                    }}
+                    className={`flex items-center gap-1 px-4 py-2 rounded-full font-bold transition-all duration-300 ${pathname === '/about/branches'
+                      ? 'text-orange-500 bg-orange-50 shadow-sm'
+                      : `${(contentScrolled || !isHomePage) ? 'text-[#083D77] hover:text-orange-500 hover:bg-orange-50' : 'text-white hover:bg-white/20'} active:scale-95`
+                      }`}
+                  >
+                    Branches
+                    <ChevronDown className={`w-4 h-4 transition-colors ${(contentScrolled || !isHomePage) ? 'text-[#083D77]' : 'text-white'}`} />
+                  </button>
+                </div>
 
                 <Link
                   href="/courses"
@@ -397,27 +414,15 @@ export default function SharedNav({ isScrolled = false, showAnimatedLine = true,
                 <MenuDropdown scrolled={contentScrolled || !isHomePage} />
 
                 {/* Tutorials Dropdown Trigger */}
-                <div
-                  className="relative"
-                  ref={dropdownRef}
-                  onMouseEnter={openTutorialsDropdown}
-                  onMouseLeave={closeTutorialsWithDelay}
+                <Link
+                  href="/tutorials"
+                  className={`px-4 py-2 rounded-full font-bold transition-all duration-300 ${(pathname.startsWith('/tutorials') || pathname.startsWith('/java') || pathname.startsWith('/python') || pathname.startsWith('/sql') || pathname.startsWith('/web-dev') || pathname.startsWith('/devops') || pathname.startsWith('/linux') || pathname.startsWith('/data-science') || pathname.startsWith('/code-terminal') || pathname.startsWith('/challenges'))
+                    ? 'text-orange-500 bg-orange-50 shadow-sm'
+                    : `${(contentScrolled || !isHomePage) ? 'text-[#083D77] hover:text-orange-500 hover:bg-orange-50' : 'text-white hover:bg-white/20'} active:scale-95`
+                    }`}
                 >
-                  <button
-                    ref={tutorialsButtonRef}
-                    onClick={() => {
-                      if (showDropdown) closeTutorialsDropdown();
-                      else openTutorialsDropdown();
-                    }}
-                    className={`flex items-center gap-1 px-4 py-2 rounded-full font-bold transition-all duration-300 ${(pathname.startsWith('/tutorials') || pathname.startsWith('/java') || pathname.startsWith('/python') || pathname.startsWith('/sql') || pathname.startsWith('/web-dev') || pathname.startsWith('/devops') || pathname.startsWith('/linux') || pathname.startsWith('/data-science') || pathname.startsWith('/code-terminal') || pathname.startsWith('/challenges'))
-                      ? 'text-orange-500 bg-orange-50 shadow-sm'
-                      : `${(contentScrolled || !isHomePage) ? 'text-[#083D77] hover:text-orange-500 hover:bg-orange-50' : 'text-white hover:bg-white/20'} active:scale-95`
-                      }`}
-                  >
-                    Tutorials
-                    <ChevronDown className={`w-4 h-4 transition-colors ${(contentScrolled || !isHomePage) ? 'text-[#083D77]' : 'text-white'}`} />
-                  </button>
-                </div>
+                  Tutorials
+                </Link>
 
                 {/* <Link
                   href="/terminal"
@@ -452,7 +457,7 @@ export default function SharedNav({ isScrolled = false, showAnimatedLine = true,
                   href="https://konnecthere.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 rounded-full bg-[#95D26D] text-white shadow-lg shadow-green-500/20 hover:bg-[#85c25d] transition-all ml-2"
+                  className="px-4 py-2 rounded-full bg-[#95D26D] text-white hover:bg-[#85c25d] transition-all ml-2"
                 >
                   Apply Jobs
                 </Link>
@@ -508,13 +513,13 @@ export default function SharedNav({ isScrolled = false, showAnimatedLine = true,
       </div>
 
       {/* Top Left Floating Nav - Removed since we have Top Bar now, but keeping container for consistency loop if needed */}
-      < div className="fixed left-24 z-[100001] pointer-events-auto top-40 md:top-36 scale-90 md:scale-100 origin-top-left hidden" >
-      </div >
+      <div className="fixed left-24 z-[100001] pointer-events-auto top-40 md:top-36 scale-90 md:scale-100 origin-top-left hidden" >
+      </div>
 
 
 
       {/* Separated WhatsApp at Bottom Right - Metallic Style */}
-      < div className="fixed bottom-6 right-6 z-[100000]" >
+      <div className="fixed bottom-6 right-6 z-[100000]" >
         <Link
           href="https://wa.me/919059450707"
           className="whatsapp-btn group"
@@ -529,51 +534,10 @@ export default function SharedNav({ isScrolled = false, showAnimatedLine = true,
             </div>
           </div>
         </Link>
-      </div >
+      </div>
 
 
-      {/* Tutorials Dropdown Portal logic */}
-      {
-        isMounted && showDropdown && dropdownPosition && createPortal(
-          <div
-            data-tutorials-dropdown
-            className="fixed w-72 bg-gray-50/90 backdrop-blur-xl rounded-3xl shadow-2xl p-3 border border-white/40 ring-1 ring-black/5"
-            style={{
-              top: `${dropdownPosition.top}px`,
-              left: `${dropdownPosition.left}px`,
-              position: 'fixed',
-              zIndex: 100001,
-            }}
-            onMouseEnter={() => {
-              if (tutorialsTimeoutRef.current) clearTimeout(tutorialsTimeoutRef.current);
-              setShowDropdown(true);
-            }}
-            onMouseLeave={() => {
-              closeTutorialsWithDelay();
-            }}
-          >
-            <div className="flex flex-col gap-1">
-              {tutorialLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => {
-                    setShowDropdown(false);
-                    setDropdownPosition(null);
-                  }}
-                  className="group relative flex items-center gap-4 px-4 py-3.5 rounded-2xl text-gray-600 transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-white hover:text-black hover:shadow-xl hover:scale-105 hover:z-10"
-                >
-                  <div className="flex items-center justify-center w-6 h-6 text-gray-500 group-hover:text-black transition-colors duration-200">
-                    {link.icon}
-                  </div>
-                  <span className="font-semibold text-[15px] tracking-wide">{link.label}</span>
-                </Link>
-              ))}
-            </div>
-          </div>,
-          document.body
-        )
-      }
+      {/* Tutorials Dropdown Portal logic Removed */}
 
       {/* About Dropdown Portal */}
       {
@@ -612,6 +576,59 @@ export default function SharedNav({ isScrolled = false, showAnimatedLine = true,
                   <span className="font-semibold text-[15px] tracking-wide">{link.label}</span>
                 </Link>
               ))}
+            </div>
+          </div>,
+          document.body
+        )
+      }
+
+      {/* Branch Dropdown Portal */}
+      {
+        isMounted && showBranchDropdown && branchDropdownPosition && createPortal(
+          <div
+            data-branch-dropdown
+            className="fixed w-[380px] bg-white/95 backdrop-blur-2xl rounded-[2.5rem] shadow-2xl p-5 border border-blue-50 ring-1 ring-black/5"
+            style={{
+              top: `${branchDropdownPosition.top}px`,
+              left: `${branchDropdownPosition.left}px`,
+              position: 'fixed',
+              zIndex: 100001,
+            }}
+            onMouseEnter={() => {
+              if (branchTimeoutRef.current) clearTimeout(branchTimeoutRef.current);
+              setShowBranchDropdown(true);
+            }}
+            onMouseLeave={() => {
+              closeBranchWithDelay();
+            }}
+          >
+            <div className="flex flex-col gap-5">
+              {/* Hyderabad Box */}
+              <div className="group relative p-5 rounded-3xl bg-gradient-to-br from-blue-50/50 to-white border border-blue-100/50 shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="flex items-center gap-3 mb-2.5">
+                  <div className="w-2.5 h-2.5 bg-[#083D77] rounded-full animate-pulse shadow-[0_0_8px_rgba(8,61,119,0.5)]" />
+                  <h4 className="text-[#083D77] font-black text-sm uppercase tracking-widest">
+                    Hyderabad Address
+                  </h4>
+                </div>
+                <p className="text-gray-600 text-[13px] leading-relaxed font-semibold">
+                  3rd floor, 25/529, Rd Number 1, opp. GHMC Park, above HDFC BANK, Kukatpally Housing Board Colony, KPHB Phase 2, Kukatpally, Hyderabad, Telangana 500072
+                </p>
+              </div>
+
+              {/* Warangal Box */}
+              <div className="group relative p-5 rounded-3xl bg-gradient-to-br from-orange-50/50 to-white border border-orange-100/50 shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="flex items-center gap-3 mb-2.5">
+                  <div className="w-2.5 h-2.5 bg-orange-500 rounded-full animate-pulse shadow-[0_0_8px_rgba(249,115,22,0.5)]" />
+                  <h4 className="text-orange-600 font-black text-sm uppercase tracking-widest">
+                    Warangal Address
+                  </h4>
+                </div>
+                <div className="text-gray-600 text-[13px] leading-relaxed font-semibold">
+                  <p className="font-extrabold text-[#083D77] mb-1">IQ Technologies Building</p>
+                  <p>Pochamma Maidan, Vasavi Colony, Kothawada, Jakotias Grand Central, Warangal, Telangana 506002</p>
+                </div>
+              </div>
             </div>
           </div>,
           document.body

@@ -145,7 +145,7 @@ export default function AuthModal({ isOpen, onClose, initialView = 'login' }: Au
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.9, y: 20 }}
                         transition={{ duration: 0.3, ease: 'easeOut' }}
-                        className="w-full max-w-4xl grid lg:grid-cols-2 rounded-[40px] overflow-hidden bg-[#f3f4f6] shadow-2xl relative border border-white/20"
+                        className="w-full max-w-4xl grid lg:grid-cols-2 rounded-[2.5rem] md:rounded-[3.5rem] overflow-hidden bg-[#f3f4f6] shadow-2xl relative border border-white/20"
                         onClick={(e) => e.stopPropagation()}
                     >
                         {/* Close Button */}
@@ -157,16 +157,16 @@ export default function AuthModal({ isOpen, onClose, initialView = 'login' }: Au
                         </button>
 
                         {/* Left Panel - Branding */}
-                        <div className="hidden lg:flex flex-col justify-center px-12 py-10 bg-gradient-to-br from-[#0ea5e9] to-[#083D77] relative overflow-hidden">
+                        <div className="hidden lg:flex flex-col justify-center px-[var(--space-lg)] py-[var(--space-lg)] bg-gradient-to-br from-[#0ea5e9] to-[#083D77] relative overflow-hidden">
                             <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
                             <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
 
                             <div className="relative z-10 text-white">
-                                <div className="flex items-center gap-3 mb-12">
+                                <div className="flex items-center gap-3 mb-10">
                                     <div className="w-12 h-12 rounded-full overflow-hidden bg-white p-1">
                                         <Image src="/logo_new.jpg" alt="Logo" width={40} height={40} className="object-contain" />
                                     </div>
-                                    <div className="font-orbitron font-black text-xl tracking-wider">
+                                    <div className="font-orbitron font-black tracking-wider" style={{ fontSize: 'clamp(1rem, 2vw, 1.25rem)' }}>
                                         <span className="text-white">ONEHUB</span>
                                         <span className="text-orange-400">GLOBAL</span>
                                     </div>
@@ -194,20 +194,20 @@ export default function AuthModal({ isOpen, onClose, initialView = 'login' }: Au
                         </div>
 
                         {/* Right Panel - Form */}
-                        <div className="flex flex-col justify-center px-8 lg:px-12 py-12 bg-[#f3f4f6]">
+                        <div className="flex flex-col justify-center px-[var(--space-md)] lg:px-[var(--space-lg)] py-[var(--space-lg)] bg-[#f3f4f6]">
                             {!AUTH_SYSTEM_AVAILABLE ? (
                                 <div className="text-center space-y-4">
-                                    <h2 className="text-2xl font-bold text-gray-900">{AUTH_STATUS_HEADING}</h2>
-                                    <p className="text-gray-600 text-sm">{AUTH_STATUS_MESSAGE}</p>
+                                    <h2 className="font-bold text-gray-900" style={{ fontSize: 'clamp(1.5rem, 4vw, 2.25rem)' }}>{AUTH_STATUS_HEADING}</h2>
+                                    <p className="text-gray-600 font-medium" style={{ fontSize: 'clamp(0.875rem, 2vw, 1rem)' }}>{AUTH_STATUS_MESSAGE}</p>
                                     <p className="text-gray-500 text-xs">{AUTH_STATUS_DETAILS}</p>
                                 </div>
                             ) : (
-                                <div className="w-full max-w-sm mx-auto space-y-8">
+                                <div className="w-full max-w-sm mx-auto space-y-6 md:space-y-8">
                                     <div className="text-center lg:text-left">
-                                        <h2 className="text-3xl font-bold text-gray-900 tracking-tight">
+                                        <h2 className="font-bold text-gray-900 tracking-tight leading-tight" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)' }}>
                                             {view === 'login' ? 'Welcome Back' : 'Create Account'}
                                         </h2>
-                                        <p className="mt-2 text-gray-500 text-sm">
+                                        <p className="mt-2 text-gray-500 font-medium" style={{ fontSize: 'clamp(0.875rem, 2vw, 1rem)' }}>
                                             {view === 'login' ? 'Sign in to your account' : 'Join OneHubGlobal today'}
                                         </p>
                                     </div>

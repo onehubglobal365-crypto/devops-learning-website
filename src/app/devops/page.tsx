@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
@@ -145,10 +145,10 @@ export default function DevOpsPage() {
                   <div className="bg-blue-50 border border-blue-200 p-6 rounded-xl">
                     <h3 className="text-xl font-bold text-blue-700 mb-3">What You'll Achieve</h3>
                     <ul className="text-slate-700 space-y-2">
-                      <li>• <strong className="text-slate-900">Cultural Transformation:</strong> Learn to break down silos and foster collaboration</li>
-                      <li>• <strong className="text-slate-900">Automation Mastery:</strong> Build robust CI/CD pipelines and infrastructure automation</li>
-                      <li>• <strong className="text-slate-900">Tool Proficiency:</strong> Master industry-standard DevOps tools and platforms</li>
-                      <li>• <strong className="text-slate-900">Real-World Application:</strong> Apply DevOps principles to solve actual business problems</li>
+                      <li>� <strong className="text-slate-900">Cultural Transformation:</strong> Learn to break down silos and foster collaboration</li>
+                      <li>� <strong className="text-slate-900">Automation Mastery:</strong> Build robust CI/CD pipelines and infrastructure automation</li>
+                      <li>� <strong className="text-slate-900">Tool Proficiency:</strong> Master industry-standard DevOps tools and platforms</li>
+                      <li>� <strong className="text-slate-900">Real-World Application:</strong> Apply DevOps principles to solve actual business problems</li>
                     </ul>
                   </div>
                 </div>
@@ -162,27 +162,27 @@ export default function DevOpsPage() {
                     <div>
                       <h3 className="text-xl font-bold text-blue-700 mb-4">What You'll Learn</h3>
                       <ul className="text-slate-700 space-y-2 font-medium">
-                        <li>• Linux fundamentals and command line</li>
-                        <li>• Docker containerization</li>
-                        <li>• Kubernetes orchestration</li>
-                        <li>• CI/CD pipeline development</li>
-                        <li>• Infrastructure as Code (IaC)</li>
-                        <li>• Cloud platforms (AWS, Azure, GCP)</li>
-                        <li>• Monitoring and observability</li>
-                        <li>• Security and compliance</li>
+                        <li>� Linux fundamentals and command line</li>
+                        <li>� Docker containerization</li>
+                        <li>� Kubernetes orchestration</li>
+                        <li>� CI/CD pipeline development</li>
+                        <li>� Infrastructure as Code (IaC)</li>
+                        <li>� Cloud platforms (AWS, Azure, GCP)</li>
+                        <li>� Monitoring and observability</li>
+                        <li>� Security and compliance</li>
                       </ul>
                     </div>
                     <div>
                       <h3 className="text-xl font-bold text-blue-700 mb-4">Career Opportunities</h3>
                       <ul className="text-slate-700 space-y-2 font-medium">
-                        <li>• DevOps Engineer</li>
-                        <li>• Site Reliability Engineer (SRE)</li>
-                        <li>• Cloud Engineer</li>
-                        <li>• Platform Engineer</li>
-                        <li>• Infrastructure Engineer</li>
-                        <li>• Automation Engineer</li>
-                        <li>• Release Manager</li>
-                        <li>• Technical Consultant</li>
+                        <li>� DevOps Engineer</li>
+                        <li>� Site Reliability Engineer (SRE)</li>
+                        <li>� Cloud Engineer</li>
+                        <li>� Platform Engineer</li>
+                        <li>� Infrastructure Engineer</li>
+                        <li>� Automation Engineer</li>
+                        <li>� Release Manager</li>
+                        <li>� Technical Consultant</li>
                       </ul>
                     </div>
                   </div>
@@ -213,10 +213,10 @@ export default function DevOpsPage() {
                             Historical Context
                           </h4>
                           <ul className="text-slate-700 space-y-2 text-sm">
-                            <li>• <strong>2009:</strong> Term "DevOps" coined by Patrick Debois</li>
-                            <li>• <strong>2010:</strong> DevOpsDays conference series begins</li>
-                            <li>• <strong>2012:</strong> "The Phoenix Project" popularizes DevOps</li>
-                            <li>• <strong>2016:</strong> DevOps becomes mainstream enterprise practice</li>
+                            <li>� <strong>2009:</strong> Term "DevOps" coined by Patrick Debois</li>
+                            <li>� <strong>2010:</strong> DevOpsDays conference series begins</li>
+                            <li>� <strong>2012:</strong> "The Phoenix Project" popularizes DevOps</li>
+                            <li>� <strong>2016:</strong> DevOps becomes mainstream enterprise practice</li>
                           </ul>
                         </div>
                         <div className="bg-white border border-blue-100 p-4 rounded-lg shadow-sm">
@@ -225,10 +225,10 @@ export default function DevOpsPage() {
                             Core Philosophy
                           </h4>
                           <ul className="text-slate-700 space-y-2 text-sm">
-                            <li>• <strong>Collaboration:</strong> Break down traditional silos</li>
-                            <li>• <strong>Automation:</strong> Eliminate manual, error-prone processes</li>
-                            <li>• <strong>Continuous Improvement:</strong> Learn from failures and successes</li>
-                            <li>• <strong>Customer Focus:</strong> Deliver value faster and more reliably</li>
+                            <li>� <strong>Collaboration:</strong> Break down traditional silos</li>
+                            <li>� <strong>Automation:</strong> Eliminate manual, error-prone processes</li>
+                            <li>� <strong>Continuous Improvement:</strong> Learn from failures and successes</li>
+                            <li>� <strong>Customer Focus:</strong> Deliver value faster and more reliably</li>
                           </ul>
                         </div>
                       </div>
@@ -251,10 +251,10 @@ export default function DevOpsPage() {
                             Speed to Market
                           </h4>
                           <ul className="text-slate-700 space-y-2 text-sm">
-                            <li>• Faster feature delivery</li>
-                            <li>• Reduced time-to-market</li>
-                            <li>• Competitive advantage</li>
-                            <li>• Customer satisfaction</li>
+                            <li>� Faster feature delivery</li>
+                            <li>� Reduced time-to-market</li>
+                            <li>� Competitive advantage</li>
+                            <li>� Customer satisfaction</li>
                           </ul>
                         </div>
                         <div className="bg-white border border-green-100 p-4 rounded-lg shadow-sm">
@@ -263,10 +263,10 @@ export default function DevOpsPage() {
                             Reliability & Quality
                           </h4>
                           <ul className="text-slate-700 space-y-2 text-sm">
-                            <li>• Fewer production failures</li>
-                            <li>• Faster recovery from incidents</li>
-                            <li>• Consistent deployments</li>
-                            <li>• Improved system stability</li>
+                            <li>� Fewer production failures</li>
+                            <li>� Faster recovery from incidents</li>
+                            <li>� Consistent deployments</li>
+                            <li>� Improved system stability</li>
                           </ul>
                         </div>
                         <div className="bg-white border border-green-100 p-4 rounded-lg shadow-sm">
@@ -275,10 +275,10 @@ export default function DevOpsPage() {
                             Team Collaboration
                           </h4>
                           <ul className="text-slate-700 space-y-2 text-sm">
-                            <li>• Breaking down silos</li>
-                            <li>• Shared responsibility</li>
-                            <li>• Improved communication</li>
-                            <li>• Knowledge sharing</li>
+                            <li>� Breaking down silos</li>
+                            <li>� Shared responsibility</li>
+                            <li>� Improved communication</li>
+                            <li>� Knowledge sharing</li>
                           </ul>
                         </div>
                       </div>
@@ -297,12 +297,12 @@ export default function DevOpsPage() {
                             Traditional IT (Waterfall)
                           </h4>
                           <ul className="text-slate-700 space-y-2 text-sm">
-                            <li>• <strong>Siloed teams:</strong> Dev and Ops work separately</li>
-                            <li>• <strong>Manual processes:</strong> Error-prone deployments</li>
-                            <li>• <strong>Infrequent releases:</strong> Months between deployments</li>
-                            <li>• <strong>Blame culture:</strong> Finger-pointing when issues arise</li>
-                            <li>• <strong>Reactive approach:</strong> Fix problems after they occur</li>
-                            <li>• <strong>Documentation-heavy:</strong> Extensive manual documentation</li>
+                            <li>� <strong>Siloed teams:</strong> Dev and Ops work separately</li>
+                            <li>� <strong>Manual processes:</strong> Error-prone deployments</li>
+                            <li>� <strong>Infrequent releases:</strong> Months between deployments</li>
+                            <li>� <strong>Blame culture:</strong> Finger-pointing when issues arise</li>
+                            <li>� <strong>Reactive approach:</strong> Fix problems after they occur</li>
+                            <li>� <strong>Documentation-heavy:</strong> Extensive manual documentation</li>
                           </ul>
                         </div>
                         <div className="bg-white border border-red-100 p-4 rounded-lg shadow-sm">
@@ -311,12 +311,12 @@ export default function DevOpsPage() {
                             DevOps Approach
                           </h4>
                           <ul className="text-slate-700 space-y-2 text-sm">
-                            <li>• <strong>Collaborative teams:</strong> Dev and Ops work together</li>
-                            <li>• <strong>Automated processes:</strong> Reliable, repeatable deployments</li>
-                            <li>• <strong>Continuous delivery:</strong> Multiple deployments per day</li>
-                            <li>• <strong>Learning culture:</strong> Learn from failures together</li>
-                            <li>• <strong>Proactive approach:</strong> Prevent problems before they occur</li>
-                            <li>• <strong>Code as documentation:</strong> Infrastructure and processes in code</li>
+                            <li>� <strong>Collaborative teams:</strong> Dev and Ops work together</li>
+                            <li>� <strong>Automated processes:</strong> Reliable, repeatable deployments</li>
+                            <li>� <strong>Continuous delivery:</strong> Multiple deployments per day</li>
+                            <li>� <strong>Learning culture:</strong> Learn from failures together</li>
+                            <li>� <strong>Proactive approach:</strong> Prevent problems before they occur</li>
+                            <li>� <strong>Code as documentation:</strong> Infrastructure and processes in code</li>
                           </ul>
                         </div>
                       </div>
@@ -417,45 +417,45 @@ export default function DevOpsPage() {
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-4">
                         <div className="bg-blue-50/50 p-4 rounded-lg border border-blue-100 hover:shadow-md transition-shadow">
-                          <h4 className="text-lg font-bold text-blue-700 mb-2">🤝 Collaboration & Trust</h4>
+                          <h4 className="text-lg font-bold text-blue-700 mb-2">?? Collaboration & Trust</h4>
                           <ul className="text-slate-600 space-y-2 text-sm">
-                            <li>• <strong>Psychological Safety:</strong> Team members feel safe to speak up and take risks</li>
-                            <li>• <strong>Cross-functional teams:</strong> Diverse skills and perspectives working together</li>
-                            <li>• <strong>Shared goals and objectives:</strong> Aligned incentives and common purpose</li>
-                            <li>• <strong>Open communication channels:</strong> Transparent information sharing</li>
-                            <li>• <strong>Breaking down silos:</strong> Eliminating "us vs them" mentality</li>
+                            <li>� <strong>Psychological Safety:</strong> Team members feel safe to speak up and take risks</li>
+                            <li>� <strong>Cross-functional teams:</strong> Diverse skills and perspectives working together</li>
+                            <li>� <strong>Shared goals and objectives:</strong> Aligned incentives and common purpose</li>
+                            <li>� <strong>Open communication channels:</strong> Transparent information sharing</li>
+                            <li>� <strong>Breaking down silos:</strong> Eliminating "us vs them" mentality</li>
                           </ul>
                         </div>
                         <div className="bg-purple-50/50 p-4 rounded-lg border border-purple-100 hover:shadow-md transition-shadow">
-                          <h4 className="text-lg font-bold text-purple-700 mb-2">🤲 Shared Responsibility</h4>
+                          <h4 className="text-lg font-bold text-purple-700 mb-2">?? Shared Responsibility</h4>
                           <ul className="text-slate-600 space-y-2 text-sm">
-                            <li>• <strong>Collective ownership:</strong> Everyone owns the entire system</li>
-                            <li>• <strong>Shared accountability:</strong> Success and failure are team experiences</li>
-                            <li>• <strong>Joint problem-solving:</strong> Collaborative troubleshooting</li>
-                            <li>• <strong>Mutual support:</strong> Helping each other succeed</li>
-                            <li>• <strong>No-blame postmortems:</strong> Learning from failures together</li>
+                            <li>� <strong>Collective ownership:</strong> Everyone owns the entire system</li>
+                            <li>� <strong>Shared accountability:</strong> Success and failure are team experiences</li>
+                            <li>� <strong>Joint problem-solving:</strong> Collaborative troubleshooting</li>
+                            <li>� <strong>Mutual support:</strong> Helping each other succeed</li>
+                            <li>� <strong>No-blame postmortems:</strong> Learning from failures together</li>
                           </ul>
                         </div>
                       </div>
                       <div className="space-y-4">
                         <div className="bg-yellow-50/50 p-4 rounded-lg border border-yellow-100 hover:shadow-md transition-shadow">
-                          <h4 className="text-lg font-bold text-yellow-700 mb-2">📈 Continuous Improvement</h4>
+                          <h4 className="text-lg font-bold text-yellow-700 mb-2">?? Continuous Improvement</h4>
                           <ul className="text-slate-600 space-y-2 text-sm">
-                            <li>• <strong>Kaizen mindset:</strong> Small, incremental improvements daily</li>
-                            <li>• <strong>Regular retrospectives:</strong> Structured reflection and learning</li>
-                            <li>• <strong>Experimentation and learning:</strong> Safe-to-fail experiments</li>
-                            <li>• <strong>Process optimization:</strong> Continuous refinement of workflows</li>
-                            <li>• <strong>Innovation time:</strong> Dedicated time for exploring new ideas</li>
+                            <li>� <strong>Kaizen mindset:</strong> Small, incremental improvements daily</li>
+                            <li>� <strong>Regular retrospectives:</strong> Structured reflection and learning</li>
+                            <li>� <strong>Experimentation and learning:</strong> Safe-to-fail experiments</li>
+                            <li>� <strong>Process optimization:</strong> Continuous refinement of workflows</li>
+                            <li>� <strong>Innovation time:</strong> Dedicated time for exploring new ideas</li>
                           </ul>
                         </div>
                         <div className="bg-red-50/50 p-4 rounded-lg border border-red-100 hover:shadow-md transition-shadow">
-                          <h4 className="text-lg font-bold text-red-700 mb-2">📚 Learning Culture</h4>
+                          <h4 className="text-lg font-bold text-red-700 mb-2">?? Learning Culture</h4>
                           <ul className="text-slate-600 space-y-2 text-sm">
-                            <li>• <strong>Knowledge sharing:</strong> Regular tech talks and documentation</li>
-                            <li>• <strong>Cross-training:</strong> Team members learn multiple skills</li>
-                            <li>• <strong>Documentation practices:</strong> Living, breathing documentation</li>
-                            <li>• <strong>Mentoring programs:</strong> Senior team members guide juniors</li>
-                            <li>• <strong>Learning budgets:</strong> Investment in team development</li>
+                            <li>� <strong>Knowledge sharing:</strong> Regular tech talks and documentation</li>
+                            <li>� <strong>Cross-training:</strong> Team members learn multiple skills</li>
+                            <li>� <strong>Documentation practices:</strong> Living, breathing documentation</li>
+                            <li>� <strong>Mentoring programs:</strong> Senior team members guide juniors</li>
+                            <li>� <strong>Learning budgets:</strong> Investment in team development</li>
                           </ul>
                         </div>
                       </div>
@@ -464,24 +464,24 @@ export default function DevOpsPage() {
 
                   {/* Cultural Transformation Challenges */}
                   <div className="bg-red-50 border border-red-200 p-6 rounded-xl">
-                    <h3 className="text-xl font-bold text-red-800 mb-4">🚧 Common Cultural Transformation Challenges</h3>
+                    <h3 className="text-xl font-bold text-red-800 mb-4">?? Common Cultural Transformation Challenges</h3>
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="bg-white p-4 rounded-lg border border-red-100 shadow-sm">
-                        <h4 className="text-lg font-bold text-red-600 mb-3">⛔ Resistance to Change</h4>
+                        <h4 className="text-lg font-bold text-red-600 mb-3">? Resistance to Change</h4>
                         <ul className="text-slate-600 space-y-2 text-sm">
-                          <li>• <strong>Fear of job loss:</strong> Automation anxiety</li>
-                          <li>• <strong>Comfort with status quo:</strong> "This is how we've always done it"</li>
-                          <li>• <strong>Lack of understanding:</strong> Unclear benefits of change</li>
-                          <li>• <strong>Skill gaps:</strong> Fear of not being able to adapt</li>
+                          <li>� <strong>Fear of job loss:</strong> Automation anxiety</li>
+                          <li>� <strong>Comfort with status quo:</strong> "This is how we've always done it"</li>
+                          <li>� <strong>Lack of understanding:</strong> Unclear benefits of change</li>
+                          <li>� <strong>Skill gaps:</strong> Fear of not being able to adapt</li>
                         </ul>
                       </div>
                       <div className="bg-white p-4 rounded-lg border border-green-100 shadow-sm">
-                        <h4 className="text-lg font-bold text-green-600 mb-3">✅ Overcoming Resistance</h4>
+                        <h4 className="text-lg font-bold text-green-600 mb-3">? Overcoming Resistance</h4>
                         <ul className="text-slate-600 space-y-2 text-sm">
-                          <li>• <strong>Clear communication:</strong> Explain the "why" behind changes</li>
-                          <li>• <strong>Training and support:</strong> Provide learning opportunities</li>
-                          <li>• <strong>Early wins:</strong> Showcase quick successes</li>
-                          <li>• <strong>Leadership commitment:</strong> Visible support from management</li>
+                          <li>� <strong>Clear communication:</strong> Explain the "why" behind changes</li>
+                          <li>� <strong>Training and support:</strong> Provide learning opportunities</li>
+                          <li>� <strong>Early wins:</strong> Showcase quick successes</li>
+                          <li>� <strong>Leadership commitment:</strong> Visible support from management</li>
                         </ul>
                       </div>
                     </div>
@@ -511,28 +511,28 @@ export default function DevOpsPage() {
                     </p>
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="bg-white p-4 rounded-lg border border-blue-100 shadow-sm">
-                        <h4 className="text-lg font-bold text-blue-600 mb-3">📋 Core Principles</h4>
+                        <h4 className="text-lg font-bold text-blue-600 mb-3">?? Core Principles</h4>
                         <ul className="text-slate-600 space-y-2 text-sm">
-                          <li>• <strong>Visualize work:</strong> Make work visible using Kanban boards</li>
-                          <li>• <strong>Reduce batch sizes:</strong> Work in small, manageable chunks</li>
-                          <li>• <strong>Build quality in:</strong> Prevent defects from entering the system</li>
-                          <li>• <strong>Optimize for fast feedback:</strong> Get feedback quickly and frequently</li>
-                          <li>• <strong>Eliminate waste:</strong> Remove non-value-adding activities</li>
+                          <li>� <strong>Visualize work:</strong> Make work visible using Kanban boards</li>
+                          <li>� <strong>Reduce batch sizes:</strong> Work in small, manageable chunks</li>
+                          <li>� <strong>Build quality in:</strong> Prevent defects from entering the system</li>
+                          <li>� <strong>Optimize for fast feedback:</strong> Get feedback quickly and frequently</li>
+                          <li>� <strong>Eliminate waste:</strong> Remove non-value-adding activities</li>
                         </ul>
                       </div>
                       <div className="bg-white p-4 rounded-lg border border-blue-100 shadow-sm">
-                        <h4 className="text-lg font-bold text-blue-600 mb-3">🛠️ Implementation Practices</h4>
+                        <h4 className="text-lg font-bold text-blue-600 mb-3">??? Implementation Practices</h4>
                         <ul className="text-slate-600 space-y-2 text-sm">
-                          <li>• <strong>Continuous Integration:</strong> Integrate code frequently</li>
-                          <li>• <strong>Continuous Deployment:</strong> Deploy to production frequently</li>
-                          <li>• <strong>Infrastructure as Code:</strong> Manage infrastructure programmatically</li>
-                          <li>• <strong>Version Control:</strong> Everything in version control</li>
-                          <li>• <strong>Automated Testing:</strong> Comprehensive test automation</li>
+                          <li>� <strong>Continuous Integration:</strong> Integrate code frequently</li>
+                          <li>� <strong>Continuous Deployment:</strong> Deploy to production frequently</li>
+                          <li>� <strong>Infrastructure as Code:</strong> Manage infrastructure programmatically</li>
+                          <li>� <strong>Version Control:</strong> Everything in version control</li>
+                          <li>� <strong>Automated Testing:</strong> Comprehensive test automation</li>
                         </ul>
                       </div>
                     </div>
                     <div className="bg-blue-900/10 p-4 rounded-lg mt-4 border border-blue-200">
-                      <h4 className="text-lg font-bold text-blue-900 mb-2">🏢 Real-World Example</h4>
+                      <h4 className="text-lg font-bold text-blue-900 mb-2">?? Real-World Example</h4>
                       <p className="text-slate-700 text-sm">
                         A team implementing the First Way might reduce their deployment batch size from monthly releases
                         to daily deployments, implement automated testing to catch issues early, and use infrastructure
@@ -553,28 +553,28 @@ export default function DevOpsPage() {
                     </p>
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="bg-white p-4 rounded-lg border border-green-100 shadow-sm">
-                        <h4 className="text-lg font-bold text-green-600 mb-3">💬 Feedback Types</h4>
+                        <h4 className="text-lg font-bold text-green-600 mb-3">?? Feedback Types</h4>
                         <ul className="text-slate-600 space-y-2 text-sm">
-                          <li>• <strong>Development feedback:</strong> Unit tests, code reviews, static analysis</li>
-                          <li>• <strong>Build feedback:</strong> Build failures, compilation errors</li>
-                          <li>• <strong>Test feedback:</strong> Integration tests, performance tests</li>
-                          <li>• <strong>Production feedback:</strong> Monitoring, alerting, user feedback</li>
-                          <li>• <strong>Business feedback:</strong> Customer satisfaction, business metrics</li>
+                          <li>� <strong>Development feedback:</strong> Unit tests, code reviews, static analysis</li>
+                          <li>� <strong>Build feedback:</strong> Build failures, compilation errors</li>
+                          <li>� <strong>Test feedback:</strong> Integration tests, performance tests</li>
+                          <li>� <strong>Production feedback:</strong> Monitoring, alerting, user feedback</li>
+                          <li>� <strong>Business feedback:</strong> Customer satisfaction, business metrics</li>
                         </ul>
                       </div>
                       <div className="bg-white p-4 rounded-lg border border-green-100 shadow-sm">
-                        <h4 className="text-lg font-bold text-green-600 mb-3">🔊 Amplification Techniques</h4>
+                        <h4 className="text-lg font-bold text-green-600 mb-3">?? Amplification Techniques</h4>
                         <ul className="text-slate-600 space-y-2 text-sm">
-                          <li>• <strong>Make work visible:</strong> Dashboards, monitoring, alerting</li>
-                          <li>• <strong>Fast detection:</strong> Real-time monitoring and alerting</li>
-                          <li>• <strong>Fast recovery:</strong> Automated rollbacks, quick fixes</li>
-                          <li>• <strong>Shared understanding:</strong> Postmortems, knowledge sharing</li>
-                          <li>• <strong>Learning from failures:</strong> Blameless postmortems</li>
+                          <li>� <strong>Make work visible:</strong> Dashboards, monitoring, alerting</li>
+                          <li>� <strong>Fast detection:</strong> Real-time monitoring and alerting</li>
+                          <li>� <strong>Fast recovery:</strong> Automated rollbacks, quick fixes</li>
+                          <li>� <strong>Shared understanding:</strong> Postmortems, knowledge sharing</li>
+                          <li>� <strong>Learning from failures:</strong> Blameless postmortems</li>
                         </ul>
                       </div>
                     </div>
                     <div className="bg-green-900/10 p-4 rounded-lg mt-4 border border-green-200">
-                      <h4 className="text-lg font-bold text-green-900 mb-2">🏢 Real-World Example</h4>
+                      <h4 className="text-lg font-bold text-green-900 mb-2">?? Real-World Example</h4>
                       <p className="text-slate-700 text-sm">
                         A team implementing the Second Way might set up comprehensive monitoring with immediate alerts,
                         conduct blameless postmortems after incidents, and create automated rollback capabilities
@@ -595,28 +595,28 @@ export default function DevOpsPage() {
                     </p>
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="bg-white p-4 rounded-lg border border-purple-100 shadow-sm">
-                        <h4 className="text-lg font-bold text-purple-600 mb-3">🧪 Experimentation Culture</h4>
+                        <h4 className="text-lg font-bold text-purple-600 mb-3">?? Experimentation Culture</h4>
                         <ul className="text-slate-600 space-y-2 text-sm">
-                          <li>• <strong>Foster experimentation:</strong> Encourage trying new approaches</li>
-                          <li>• <strong>Risk-taking:</strong> Safe-to-fail experiments</li>
-                          <li>• <strong>Learning from failures:</strong> Failures as learning opportunities</li>
-                          <li>• <strong>Innovation time:</strong> Dedicated time for exploration</li>
-                          <li>• <strong>Hypothesis-driven:</strong> Test assumptions with experiments</li>
+                          <li>� <strong>Foster experimentation:</strong> Encourage trying new approaches</li>
+                          <li>� <strong>Risk-taking:</strong> Safe-to-fail experiments</li>
+                          <li>� <strong>Learning from failures:</strong> Failures as learning opportunities</li>
+                          <li>� <strong>Innovation time:</strong> Dedicated time for exploration</li>
+                          <li>� <strong>Hypothesis-driven:</strong> Test assumptions with experiments</li>
                         </ul>
                       </div>
                       <div className="bg-white p-4 rounded-lg border border-purple-100 shadow-sm">
-                        <h4 className="text-lg font-bold text-purple-600 mb-3">📖 Knowledge Sharing</h4>
+                        <h4 className="text-lg font-bold text-purple-600 mb-3">?? Knowledge Sharing</h4>
                         <ul className="text-slate-600 space-y-2 text-sm">
-                          <li>• <strong>Share knowledge:</strong> Documentation, tech talks</li>
-                          <li>• <strong>Cross-training:</strong> Team members learn multiple skills</li>
-                          <li>• <strong>Mentoring:</strong> Senior team members guide juniors</li>
-                          <li>• <strong>Community of practice:</strong> Regular knowledge sharing sessions</li>
-                          <li>• <strong>Invest in development:</strong> Training, conferences, certifications</li>
+                          <li>� <strong>Share knowledge:</strong> Documentation, tech talks</li>
+                          <li>� <strong>Cross-training:</strong> Team members learn multiple skills</li>
+                          <li>� <strong>Mentoring:</strong> Senior team members guide juniors</li>
+                          <li>� <strong>Community of practice:</strong> Regular knowledge sharing sessions</li>
+                          <li>� <strong>Invest in development:</strong> Training, conferences, certifications</li>
                         </ul>
                       </div>
                     </div>
                     <div className="bg-purple-900/10 p-4 rounded-lg mt-4 border border-purple-200">
-                      <h4 className="text-lg font-bold text-purple-900 mb-2">🏢 Real-World Example</h4>
+                      <h4 className="text-lg font-bold text-purple-900 mb-2">?? Real-World Example</h4>
                       <p className="text-slate-700 text-sm">
                         A team implementing the Third Way might dedicate 20% of their time to innovation projects,
                         conduct regular "failure parties" to learn from mistakes, and implement chaos engineering
@@ -641,33 +641,33 @@ export default function DevOpsPage() {
                     <h3 className="text-xl font-bold text-slate-800 mb-4">CI/CD Pipeline Stages</h3>
                     <div className="grid md:grid-cols-3 gap-6">
                       <div className="bg-white p-6 rounded-xl border border-blue-100 shadow-sm hover:shadow-md transition-shadow">
-                        <h4 className="text-lg font-bold text-blue-700 mb-3">🔄 Continuous Integration</h4>
+                        <h4 className="text-lg font-bold text-blue-700 mb-3">?? Continuous Integration</h4>
                         <ul className="text-slate-600 space-y-2 text-sm">
-                          <li>• <strong>Source Control:</strong> Git repositories</li>
-                          <li>• <strong>Build Automation:</strong> Automated compilation</li>
-                          <li>• <strong>Testing:</strong> Unit, integration tests</li>
-                          <li>• <strong>Code Quality:</strong> Static analysis</li>
-                          <li>• <strong>Artifact Creation:</strong> Build artifacts</li>
+                          <li>� <strong>Source Control:</strong> Git repositories</li>
+                          <li>� <strong>Build Automation:</strong> Automated compilation</li>
+                          <li>� <strong>Testing:</strong> Unit, integration tests</li>
+                          <li>� <strong>Code Quality:</strong> Static analysis</li>
+                          <li>� <strong>Artifact Creation:</strong> Build artifacts</li>
                         </ul>
                       </div>
                       <div className="bg-white p-6 rounded-xl border border-green-100 shadow-sm hover:shadow-md transition-shadow">
-                        <h4 className="text-lg font-bold text-green-700 mb-3">🚀 Continuous Deployment</h4>
+                        <h4 className="text-lg font-bold text-green-700 mb-3">?? Continuous Deployment</h4>
                         <ul className="text-slate-600 space-y-2 text-sm">
-                          <li>• <strong>Environment Promotion:</strong> Dev → Staging → Prod</li>
-                          <li>• <strong>Automated Deployment:</strong> Zero-downtime deployments</li>
-                          <li>• <strong>Rollback Capability:</strong> Quick rollback if needed</li>
-                          <li>• <strong>Feature Flags:</strong> Controlled feature releases</li>
-                          <li>• <strong>Monitoring:</strong> Real-time health checks</li>
+                          <li>� <strong>Environment Promotion:</strong> Dev ? Staging ? Prod</li>
+                          <li>� <strong>Automated Deployment:</strong> Zero-downtime deployments</li>
+                          <li>� <strong>Rollback Capability:</strong> Quick rollback if needed</li>
+                          <li>� <strong>Feature Flags:</strong> Controlled feature releases</li>
+                          <li>� <strong>Monitoring:</strong> Real-time health checks</li>
                         </ul>
                       </div>
                       <div className="bg-white p-6 rounded-xl border border-purple-100 shadow-sm hover:shadow-md transition-shadow">
-                        <h4 className="text-lg font-bold text-purple-700 mb-3">📊 Continuous Monitoring</h4>
+                        <h4 className="text-lg font-bold text-purple-700 mb-3">?? Continuous Monitoring</h4>
                         <ul className="text-slate-600 space-y-2 text-sm">
-                          <li>• <strong>Application Metrics:</strong> Performance monitoring</li>
-                          <li>• <strong>Infrastructure Metrics:</strong> System health</li>
-                          <li>• <strong>Log Aggregation:</strong> Centralized logging</li>
-                          <li>• <strong>Alerting:</strong> Proactive notifications</li>
-                          <li>• <strong>Feedback Loop:</strong> Continuous improvement</li>
+                          <li>� <strong>Application Metrics:</strong> Performance monitoring</li>
+                          <li>� <strong>Infrastructure Metrics:</strong> System health</li>
+                          <li>� <strong>Log Aggregation:</strong> Centralized logging</li>
+                          <li>� <strong>Alerting:</strong> Proactive notifications</li>
+                          <li>� <strong>Feedback Loop:</strong> Continuous improvement</li>
                         </ul>
                       </div>
                     </div>
@@ -690,41 +690,41 @@ export default function DevOpsPage() {
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-4">
                         <div className="bg-white p-4 rounded-lg border border-blue-100 shadow-sm hover:shadow-md transition-shadow">
-                          <h4 className="text-lg font-bold text-blue-700 mb-2">🤖 Automation</h4>
+                          <h4 className="text-lg font-bold text-blue-700 mb-2">?? Automation</h4>
                           <ul className="text-slate-600 space-y-2 text-sm">
-                            <li>• Automated provisioning</li>
-                            <li>• Consistent environments</li>
-                            <li>• Reduced manual errors</li>
-                            <li>• Faster deployments</li>
+                            <li>� Automated provisioning</li>
+                            <li>� Consistent environments</li>
+                            <li>� Reduced manual errors</li>
+                            <li>� Faster deployments</li>
                           </ul>
                         </div>
                         <div className="bg-white p-4 rounded-lg border border-purple-100 shadow-sm hover:shadow-md transition-shadow">
-                          <h4 className="text-lg font-bold text-purple-700 mb-2">📜 Version Control</h4>
+                          <h4 className="text-lg font-bold text-purple-700 mb-2">?? Version Control</h4>
                           <ul className="text-slate-600 space-y-2 text-sm">
-                            <li>• Infrastructure history</li>
-                            <li>• Change tracking</li>
-                            <li>• Rollback capabilities</li>
-                            <li>• Collaboration</li>
+                            <li>� Infrastructure history</li>
+                            <li>� Change tracking</li>
+                            <li>� Rollback capabilities</li>
+                            <li>� Collaboration</li>
                           </ul>
                         </div>
                       </div>
                       <div className="space-y-4">
                         <div className="bg-white p-4 rounded-lg border border-green-100 shadow-sm hover:shadow-md transition-shadow">
-                          <h4 className="text-lg font-bold text-green-700 mb-2">🧪 Testing</h4>
+                          <h4 className="text-lg font-bold text-green-700 mb-2">?? Testing</h4>
                           <ul className="text-slate-600 space-y-2 text-sm">
-                            <li>• Infrastructure testing</li>
-                            <li>• Validation scripts</li>
-                            <li>• Compliance checking</li>
-                            <li>• Security scanning</li>
+                            <li>� Infrastructure testing</li>
+                            <li>� Validation scripts</li>
+                            <li>� Compliance checking</li>
+                            <li>� Security scanning</li>
                           </ul>
                         </div>
                         <div className="bg-white p-4 rounded-lg border border-yellow-100 shadow-sm hover:shadow-md transition-shadow">
-                          <h4 className="text-lg font-bold text-yellow-700 mb-2">🔄 Reproducibility</h4>
+                          <h4 className="text-lg font-bold text-yellow-700 mb-2">?? Reproducibility</h4>
                           <ul className="text-slate-600 space-y-2 text-sm">
-                            <li>• Identical environments</li>
-                            <li>• Disaster recovery</li>
-                            <li>• Environment cloning</li>
-                            <li>• Scaling capabilities</li>
+                            <li>� Identical environments</li>
+                            <li>� Disaster recovery</li>
+                            <li>� Environment cloning</li>
+                            <li>� Scaling capabilities</li>
                           </ul>
                         </div>
                       </div>
@@ -737,28 +737,28 @@ export default function DevOpsPage() {
                       <div className="bg-white p-6 rounded-xl border border-purple-100 shadow-sm">
                         <h4 className="text-lg font-bold text-purple-700 mb-3">Terraform</h4>
                         <ul className="text-slate-600 space-y-2 text-sm">
-                          <li>• Multi-cloud support</li>
-                          <li>• Declarative syntax</li>
-                          <li>• State management</li>
-                          <li>• Provider ecosystem</li>
+                          <li>� Multi-cloud support</li>
+                          <li>� Declarative syntax</li>
+                          <li>� State management</li>
+                          <li>� Provider ecosystem</li>
                         </ul>
                       </div>
                       <div className="bg-white p-6 rounded-xl border border-red-100 shadow-sm">
                         <h4 className="text-lg font-bold text-red-700 mb-3">Ansible</h4>
                         <ul className="text-slate-600 space-y-2 text-sm">
-                          <li>• Agentless architecture</li>
-                          <li>• YAML-based playbooks</li>
-                          <li>• Configuration management</li>
-                          <li>• Idempotent operations</li>
+                          <li>� Agentless architecture</li>
+                          <li>� YAML-based playbooks</li>
+                          <li>� Configuration management</li>
+                          <li>� Idempotent operations</li>
                         </ul>
                       </div>
                       <div className="bg-white p-6 rounded-xl border border-orange-100 shadow-sm">
                         <h4 className="text-lg font-bold text-orange-700 mb-3">CloudFormation</h4>
                         <ul className="text-slate-600 space-y-2 text-sm">
-                          <li>• AWS-native</li>
-                          <li>• JSON/YAML templates</li>
-                          <li>• Stack management</li>
-                          <li>• Change sets</li>
+                          <li>� AWS-native</li>
+                          <li>� JSON/YAML templates</li>
+                          <li>� Stack management</li>
+                          <li>� Change sets</li>
                         </ul>
                       </div>
                     </div>
@@ -839,7 +839,7 @@ export default function DevOpsPage() {
                     The Automation Mindset
                   </h2>
                   <p className="text-lg text-slate-700 mb-6">
-                    Automation is not just about tools—it's a mindset that transforms how we approach work.
+                    Automation is not just about tools�it's a mindset that transforms how we approach work.
                     The goal is to automate everything that can be automated, freeing human creativity for higher-value activities.
                   </p>
 
@@ -856,11 +856,11 @@ export default function DevOpsPage() {
                             Automate Everything Possible
                           </h4>
                           <ul className="text-slate-700 space-y-2 text-sm">
-                            <li>• <strong>Repetitive tasks:</strong> Build, test, deploy, monitor</li>
-                            <li>• <strong>Environment provisioning:</strong> Infrastructure setup</li>
-                            <li>• <strong>Configuration management:</strong> System configuration</li>
-                            <li>• <strong>Backup and recovery:</strong> Data protection</li>
-                            <li>• <strong>Scaling operations:</strong> Auto-scaling based on demand</li>
+                            <li>� <strong>Repetitive tasks:</strong> Build, test, deploy, monitor</li>
+                            <li>� <strong>Environment provisioning:</strong> Infrastructure setup</li>
+                            <li>� <strong>Configuration management:</strong> System configuration</li>
+                            <li>� <strong>Backup and recovery:</strong> Data protection</li>
+                            <li>� <strong>Scaling operations:</strong> Auto-scaling based on demand</li>
                           </ul>
                         </div>
                         <div className="bg-white border border-green-100 p-4 rounded-lg shadow-sm">
@@ -869,11 +869,11 @@ export default function DevOpsPage() {
                             Speed & Reliability
                           </h4>
                           <ul className="text-slate-700 space-y-2 text-sm">
-                            <li>• <strong>Eliminate human error:</strong> Consistent, repeatable processes</li>
-                            <li>• <strong>Faster execution:</strong> Machines work 24/7 without breaks</li>
-                            <li>• <strong>Scalable operations:</strong> Handle increased load automatically</li>
-                            <li>• <strong>Predictable outcomes:</strong> Same input = same output</li>
-                            <li>• <strong>Reduced manual effort:</strong> Focus on creative problem-solving</li>
+                            <li>� <strong>Eliminate human error:</strong> Consistent, repeatable processes</li>
+                            <li>� <strong>Faster execution:</strong> Machines work 24/7 without breaks</li>
+                            <li>� <strong>Scalable operations:</strong> Handle increased load automatically</li>
+                            <li>� <strong>Predictable outcomes:</strong> Same input = same output</li>
+                            <li>� <strong>Reduced manual effort:</strong> Focus on creative problem-solving</li>
                           </ul>
                         </div>
                       </div>
@@ -884,11 +884,11 @@ export default function DevOpsPage() {
                             Quality & Consistency
                           </h4>
                           <ul className="text-slate-700 space-y-2 text-sm">
-                            <li>• <strong>Standardized processes:</strong> Everyone follows the same procedures</li>
-                            <li>• <strong>Compliance automation:</strong> Ensure regulatory requirements</li>
-                            <li>• <strong>Testing automation:</strong> Comprehensive test coverage</li>
-                            <li>• <strong>Security scanning:</strong> Automated vulnerability detection</li>
-                            <li>• <strong>Code quality gates:</strong> Automated code review checks</li>
+                            <li>� <strong>Standardized processes:</strong> Everyone follows the same procedures</li>
+                            <li>� <strong>Compliance automation:</strong> Ensure regulatory requirements</li>
+                            <li>� <strong>Testing automation:</strong> Comprehensive test coverage</li>
+                            <li>� <strong>Security scanning:</strong> Automated vulnerability detection</li>
+                            <li>� <strong>Code quality gates:</strong> Automated code review checks</li>
                           </ul>
                         </div>
                         <div className="bg-white border border-yellow-100 p-4 rounded-lg shadow-sm">
@@ -897,11 +897,11 @@ export default function DevOpsPage() {
                             Monitoring & Feedback
                           </h4>
                           <ul className="text-slate-700 space-y-2 text-sm">
-                            <li>• <strong>Automated alerting:</strong> Proactive issue detection</li>
-                            <li>• <strong>Performance monitoring:</strong> Continuous system health checks</li>
-                            <li>• <strong>Log aggregation:</strong> Centralized log management</li>
-                            <li>• <strong>Metrics collection:</strong> Business and technical metrics</li>
-                            <li>• <strong>Automated reporting:</strong> Regular status and performance reports</li>
+                            <li>� <strong>Automated alerting:</strong> Proactive issue detection</li>
+                            <li>� <strong>Performance monitoring:</strong> Continuous system health checks</li>
+                            <li>� <strong>Log aggregation:</strong> Centralized log management</li>
+                            <li>� <strong>Metrics collection:</strong> Business and technical metrics</li>
+                            <li>� <strong>Automated reporting:</strong> Regular status and performance reports</li>
                           </ul>
                         </div>
                       </div>
@@ -966,7 +966,7 @@ export default function DevOpsPage() {
                   </h2>
                   <p className="text-lg text-slate-900 mb-6">
                     Orchestration is the automated coordination and management of complex systems and workflows.
-                    It's like conducting an orchestra—ensuring all components work together harmoniously to achieve the desired outcome.
+                    It's like conducting an orchestra�ensuring all components work together harmoniously to achieve the desired outcome.
                   </p>
 
                   <div className="grid md:grid-cols-2 gap-6">
@@ -976,11 +976,11 @@ export default function DevOpsPage() {
                         Workflow Orchestration
                       </h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• <strong>Pipeline orchestration:</strong> Coordinate CI/CD stages</li>
-                        <li>• <strong>Multi-service coordination:</strong> Manage microservices interactions</li>
-                        <li>• <strong>Data pipeline orchestration:</strong> ETL/ELT process management</li>
-                        <li>• <strong>Cross-platform workflows:</strong> Integrate different systems</li>
-                        <li>• <strong>Event-driven orchestration:</strong> React to system events</li>
+                        <li>� <strong>Pipeline orchestration:</strong> Coordinate CI/CD stages</li>
+                        <li>� <strong>Multi-service coordination:</strong> Manage microservices interactions</li>
+                        <li>� <strong>Data pipeline orchestration:</strong> ETL/ELT process management</li>
+                        <li>� <strong>Cross-platform workflows:</strong> Integrate different systems</li>
+                        <li>� <strong>Event-driven orchestration:</strong> React to system events</li>
                       </ul>
                     </div>
                     <div className="bg-slate-50 border border-slate-200 p-6 rounded-xl">
@@ -989,11 +989,11 @@ export default function DevOpsPage() {
                         Infrastructure Orchestration
                       </h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• <strong>Container orchestration:</strong> Manage containerized applications</li>
-                        <li>• <strong>Service mesh management:</strong> Handle service-to-service communication</li>
-                        <li>• <strong>Multi-cloud coordination:</strong> Manage resources across clouds</li>
-                        <li>• <strong>Hybrid cloud orchestration:</strong> Bridge on-premises and cloud</li>
-                        <li>• <strong>Edge computing orchestration:</strong> Manage distributed edge resources</li>
+                        <li>� <strong>Container orchestration:</strong> Manage containerized applications</li>
+                        <li>� <strong>Service mesh management:</strong> Handle service-to-service communication</li>
+                        <li>� <strong>Multi-cloud coordination:</strong> Manage resources across clouds</li>
+                        <li>� <strong>Hybrid cloud orchestration:</strong> Bridge on-premises and cloud</li>
+                        <li>� <strong>Edge computing orchestration:</strong> Manage distributed edge resources</li>
                       </ul>
                     </div>
                   </div>
@@ -1042,11 +1042,11 @@ export default function DevOpsPage() {
                           Shift Left Security
                         </h4>
                         <ul className="text-slate-700 space-y-2 text-sm">
-                          <li>• <strong>Early integration:</strong> Security from day one</li>
-                          <li>• <strong>Developer education:</strong> Security awareness training</li>
-                          <li>• <strong>Secure coding practices:</strong> Built-in security patterns</li>
-                          <li>• <strong>Threat modeling:</strong> Identify risks early</li>
-                          <li>• <strong>Security requirements:</strong> Define security criteria upfront</li>
+                          <li>� <strong>Early integration:</strong> Security from day one</li>
+                          <li>� <strong>Developer education:</strong> Security awareness training</li>
+                          <li>� <strong>Secure coding practices:</strong> Built-in security patterns</li>
+                          <li>� <strong>Threat modeling:</strong> Identify risks early</li>
+                          <li>� <strong>Security requirements:</strong> Define security criteria upfront</li>
                         </ul>
                       </div>
                       <div className="bg-white border border-blue-100 p-4 rounded-lg shadow-sm">
@@ -1055,11 +1055,11 @@ export default function DevOpsPage() {
                           Continuous Security
                         </h4>
                         <ul className="text-slate-700 space-y-2 text-sm">
-                          <li>• <strong>Automated scanning:</strong> Continuous vulnerability assessment</li>
-                          <li>• <strong>Security testing:</strong> SAST, DAST, IAST integration</li>
-                          <li>• <strong>Compliance checking:</strong> Automated compliance validation</li>
-                          <li>• <strong>Policy enforcement:</strong> Security gates in pipelines</li>
-                          <li>• <strong>Real-time monitoring:</strong> Continuous security monitoring</li>
+                          <li>� <strong>Automated scanning:</strong> Continuous vulnerability assessment</li>
+                          <li>� <strong>Security testing:</strong> SAST, DAST, IAST integration</li>
+                          <li>� <strong>Compliance checking:</strong> Automated compliance validation</li>
+                          <li>� <strong>Policy enforcement:</strong> Security gates in pipelines</li>
+                          <li>� <strong>Real-time monitoring:</strong> Continuous security monitoring</li>
                         </ul>
                       </div>
                       <div className="bg-white border border-green-100 p-4 rounded-lg shadow-sm">
@@ -1068,11 +1068,11 @@ export default function DevOpsPage() {
                           Shared Responsibility
                         </h4>
                         <ul className="text-slate-700 space-y-2 text-sm">
-                          <li>• <strong>Security champions:</strong> Security advocates in teams</li>
-                          <li>• <strong>Cross-team collaboration:</strong> Dev, Ops, and Security alignment</li>
-                          <li>• <strong>Security training:</strong> Regular security education</li>
-                          <li>• <strong>Incident response:</strong> Collaborative incident handling</li>
-                          <li>• <strong>Security metrics:</strong> Shared security KPIs</li>
+                          <li>� <strong>Security champions:</strong> Security advocates in teams</li>
+                          <li>� <strong>Cross-team collaboration:</strong> Dev, Ops, and Security alignment</li>
+                          <li>� <strong>Security training:</strong> Regular security education</li>
+                          <li>� <strong>Incident response:</strong> Collaborative incident handling</li>
+                          <li>� <strong>Security metrics:</strong> Shared security KPIs</li>
                         </ul>
                       </div>
                     </div>
@@ -1102,10 +1102,10 @@ export default function DevOpsPage() {
                           1. Commit Stage Security
                         </h4>
                         <ul className="text-slate-700 space-y-2 text-sm">
-                          <li>• <strong>Pre-commit hooks:</strong> Local security checks before commit</li>
-                          <li>• <strong>Secret scanning:</strong> Detect hardcoded secrets and credentials</li>
-                          <li>• <strong>Code quality gates:</strong> Security-focused code review criteria</li>
-                          <li>• <strong>Dependency scanning:</strong> Check for vulnerable dependencies</li>
+                          <li>� <strong>Pre-commit hooks:</strong> Local security checks before commit</li>
+                          <li>� <strong>Secret scanning:</strong> Detect hardcoded secrets and credentials</li>
+                          <li>� <strong>Code quality gates:</strong> Security-focused code review criteria</li>
+                          <li>� <strong>Dependency scanning:</strong> Check for vulnerable dependencies</li>
                         </ul>
                       </div>
                       <div className="bg-white border border-green-100 p-4 rounded-lg shadow-sm">
@@ -1114,10 +1114,10 @@ export default function DevOpsPage() {
                           2. Build Stage Security
                         </h4>
                         <ul className="text-slate-700 space-y-2 text-sm">
-                          <li>• <strong>Static Application Security Testing (SAST):</strong> Analyze source code for vulnerabilities</li>
-                          <li>• <strong>Software Composition Analysis (SCA):</strong> Scan third-party components</li>
-                          <li>• <strong>Container scanning:</strong> Analyze container images for vulnerabilities</li>
-                          <li>• <strong>License compliance:</strong> Ensure proper software licensing</li>
+                          <li>� <strong>Static Application Security Testing (SAST):</strong> Analyze source code for vulnerabilities</li>
+                          <li>� <strong>Software Composition Analysis (SCA):</strong> Scan third-party components</li>
+                          <li>� <strong>Container scanning:</strong> Analyze container images for vulnerabilities</li>
+                          <li>� <strong>License compliance:</strong> Ensure proper software licensing</li>
                         </ul>
                       </div>
                       <div className="bg-white border border-purple-100 p-4 rounded-lg shadow-sm">
@@ -1126,10 +1126,10 @@ export default function DevOpsPage() {
                           3. Test Stage Security
                         </h4>
                         <ul className="text-slate-700 space-y-2 text-sm">
-                          <li>• <strong>Dynamic Application Security Testing (DAST):</strong> Test running applications</li>
-                          <li>• <strong>Interactive Application Security Testing (IAST):</strong> Real-time vulnerability detection</li>
-                          <li>• <strong>Infrastructure testing:</strong> Validate infrastructure security configuration</li>
-                          <li>• <strong>Penetration testing:</strong> Automated security penetration tests</li>
+                          <li>� <strong>Dynamic Application Security Testing (DAST):</strong> Test running applications</li>
+                          <li>� <strong>Interactive Application Security Testing (IAST):</strong> Real-time vulnerability detection</li>
+                          <li>� <strong>Infrastructure testing:</strong> Validate infrastructure security configuration</li>
+                          <li>� <strong>Penetration testing:</strong> Automated security penetration tests</li>
                         </ul>
                       </div>
                       <div className="bg-white border border-yellow-100 p-4 rounded-lg shadow-sm">
@@ -1138,10 +1138,10 @@ export default function DevOpsPage() {
                           4. Deploy Stage Security
                         </h4>
                         <ul className="text-slate-700 space-y-2 text-sm">
-                          <li>• <strong>Runtime security:</strong> Monitor applications in production</li>
-                          <li>• <strong>Network security:</strong> Validate network configurations</li>
-                          <li>• <strong>Access control:</strong> Ensure proper authentication and authorization</li>
-                          <li>• <strong>Compliance validation:</strong> Verify regulatory compliance</li>
+                          <li>� <strong>Runtime security:</strong> Monitor applications in production</li>
+                          <li>� <strong>Network security:</strong> Validate network configurations</li>
+                          <li>� <strong>Access control:</strong> Ensure proper authentication and authorization</li>
+                          <li>� <strong>Compliance validation:</strong> Verify regulatory compliance</li>
                         </ul>
                       </div>
                     </div>
@@ -1191,11 +1191,11 @@ export default function DevOpsPage() {
                           Amazon Web Services (AWS)
                         </h4>
                         <ul className="text-slate-700 space-y-2 text-sm">
-                          <li>• <strong>Market leader:</strong> Largest cloud provider globally</li>
-                          <li>• <strong>Comprehensive services:</strong> 200+ services available</li>
-                          <li>• <strong>Global infrastructure:</strong> 25+ regions worldwide</li>
-                          <li>• <strong>Enterprise focus:</strong> Strong enterprise adoption</li>
-                          <li>• <strong>Innovation pace:</strong> Rapid service development</li>
+                          <li>� <strong>Market leader:</strong> Largest cloud provider globally</li>
+                          <li>� <strong>Comprehensive services:</strong> 200+ services available</li>
+                          <li>� <strong>Global infrastructure:</strong> 25+ regions worldwide</li>
+                          <li>� <strong>Enterprise focus:</strong> Strong enterprise adoption</li>
+                          <li>� <strong>Innovation pace:</strong> Rapid service development</li>
                         </ul>
                       </div>
                       <div className="bg-white border border-green-100 p-4 rounded-lg shadow-sm">
@@ -1204,11 +1204,11 @@ export default function DevOpsPage() {
                           Microsoft Azure
                         </h4>
                         <ul className="text-slate-700 space-y-2 text-sm">
-                          <li>• <strong>Enterprise integration:</strong> Strong Microsoft ecosystem integration</li>
-                          <li>• <strong>Hybrid cloud:</strong> Excellent on-premises connectivity</li>
-                          <li>• <strong>AI/ML services:</strong> Advanced artificial intelligence capabilities</li>
-                          <li>• <strong>Compliance:</strong> Strong regulatory compliance offerings</li>
-                          <li>• <strong>Developer tools:</strong> Comprehensive development platform</li>
+                          <li>� <strong>Enterprise integration:</strong> Strong Microsoft ecosystem integration</li>
+                          <li>� <strong>Hybrid cloud:</strong> Excellent on-premises connectivity</li>
+                          <li>� <strong>AI/ML services:</strong> Advanced artificial intelligence capabilities</li>
+                          <li>� <strong>Compliance:</strong> Strong regulatory compliance offerings</li>
+                          <li>� <strong>Developer tools:</strong> Comprehensive development platform</li>
                         </ul>
                       </div>
                       <div className="bg-white border border-orange-100 p-4 rounded-lg shadow-sm">
@@ -1217,11 +1217,11 @@ export default function DevOpsPage() {
                           Google Cloud Platform (GCP)
                         </h4>
                         <ul className="text-slate-700 space-y-2 text-sm">
-                          <li>• <strong>Data analytics:</strong> Industry-leading big data services</li>
-                          <li>• <strong>Machine learning:</strong> Advanced ML and AI capabilities</li>
-                          <li>• <strong>Kubernetes native:</strong> Google created Kubernetes</li>
-                          <li>• <strong>Open source friendly:</strong> Strong open source ecosystem</li>
-                          <li>• <strong>Pricing model:</strong> Competitive and transparent pricing</li>
+                          <li>� <strong>Data analytics:</strong> Industry-leading big data services</li>
+                          <li>� <strong>Machine learning:</strong> Advanced ML and AI capabilities</li>
+                          <li>� <strong>Kubernetes native:</strong> Google created Kubernetes</li>
+                          <li>� <strong>Open source friendly:</strong> Strong open source ecosystem</li>
+                          <li>� <strong>Pricing model:</strong> Competitive and transparent pricing</li>
                         </ul>
                       </div>
                     </div>
@@ -1241,11 +1241,11 @@ export default function DevOpsPage() {
                         Compute Services
                       </h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• <strong>Virtual Machines:</strong> EC2, Azure VMs, Compute Engine</li>
-                        <li>• <strong>Container Services:</strong> ECS, AKS, GKE</li>
-                        <li>• <strong>Serverless:</strong> Lambda, Azure Functions, Cloud Functions</li>
-                        <li>• <strong>Batch Processing:</strong> Batch, Azure Batch, Cloud Batch</li>
-                        <li>• <strong>Edge Computing:</strong> Lambda@Edge, Azure IoT Edge</li>
+                        <li>� <strong>Virtual Machines:</strong> EC2, Azure VMs, Compute Engine</li>
+                        <li>� <strong>Container Services:</strong> ECS, AKS, GKE</li>
+                        <li>� <strong>Serverless:</strong> Lambda, Azure Functions, Cloud Functions</li>
+                        <li>� <strong>Batch Processing:</strong> Batch, Azure Batch, Cloud Batch</li>
+                        <li>� <strong>Edge Computing:</strong> Lambda@Edge, Azure IoT Edge</li>
                       </ul>
                     </div>
                     <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
@@ -1254,11 +1254,11 @@ export default function DevOpsPage() {
                         Storage & Database
                       </h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• <strong>Object Storage:</strong> S3, Blob Storage, Cloud Storage</li>
-                        <li>• <strong>Block Storage:</strong> EBS, Azure Disks, Persistent Disk</li>
-                        <li>• <strong>File Systems:</strong> EFS, Azure Files, Filestore</li>
-                        <li>• <strong>Databases:</strong> RDS, Azure SQL, Cloud SQL</li>
-                        <li>• <strong>NoSQL:</strong> DynamoDB, Cosmos DB, Firestore</li>
+                        <li>� <strong>Object Storage:</strong> S3, Blob Storage, Cloud Storage</li>
+                        <li>� <strong>Block Storage:</strong> EBS, Azure Disks, Persistent Disk</li>
+                        <li>� <strong>File Systems:</strong> EFS, Azure Files, Filestore</li>
+                        <li>� <strong>Databases:</strong> RDS, Azure SQL, Cloud SQL</li>
+                        <li>� <strong>NoSQL:</strong> DynamoDB, Cosmos DB, Firestore</li>
                       </ul>
                     </div>
                   </div>
@@ -1300,11 +1300,11 @@ export default function DevOpsPage() {
                         Traditional Monitoring
                       </h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• <strong>Reactive approach:</strong> Respond to known issues</li>
-                        <li>• <strong>Predefined metrics:</strong> Monitor specific KPIs</li>
-                        <li>• <strong>Threshold-based alerts:</strong> Alert when metrics exceed limits</li>
-                        <li>• <strong>Dashboard-centric:</strong> Focus on visualization</li>
-                        <li>• <strong>Known unknowns:</strong> Monitor for expected problems</li>
+                        <li>� <strong>Reactive approach:</strong> Respond to known issues</li>
+                        <li>� <strong>Predefined metrics:</strong> Monitor specific KPIs</li>
+                        <li>� <strong>Threshold-based alerts:</strong> Alert when metrics exceed limits</li>
+                        <li>� <strong>Dashboard-centric:</strong> Focus on visualization</li>
+                        <li>� <strong>Known unknowns:</strong> Monitor for expected problems</li>
                       </ul>
                     </div>
                     <div className="bg-white border border-green-100 p-6 rounded-xl shadow-sm">
@@ -1313,11 +1313,11 @@ export default function DevOpsPage() {
                         Modern Observability
                       </h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• <strong>Proactive approach:</strong> Understand system behavior</li>
-                        <li>• <strong>Flexible exploration:</strong> Investigate any question</li>
-                        <li>• <strong>Context-rich insights:</strong> Understand the "why"</li>
-                        <li>• <strong>Data-driven debugging:</strong> Use telemetry for troubleshooting</li>
-                        <li>• <strong>Unknown unknowns:</strong> Discover unexpected issues</li>
+                        <li>� <strong>Proactive approach:</strong> Understand system behavior</li>
+                        <li>� <strong>Flexible exploration:</strong> Investigate any question</li>
+                        <li>� <strong>Context-rich insights:</strong> Understand the "why"</li>
+                        <li>� <strong>Data-driven debugging:</strong> Use telemetry for troubleshooting</li>
+                        <li>� <strong>Unknown unknowns:</strong> Discover unexpected issues</li>
                       </ul>
                     </div>
                   </div>
@@ -1336,11 +1336,11 @@ export default function DevOpsPage() {
                         Metrics
                       </h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• <strong>Performance metrics:</strong> CPU, memory, disk usage</li>
-                        <li>• <strong>Business metrics:</strong> User registrations, sales</li>
-                        <li>• <strong>Application metrics:</strong> Response times, error rates</li>
-                        <li>• <strong>Infrastructure metrics:</strong> Network, storage performance</li>
-                        <li>• <strong>Custom metrics:</strong> Application-specific measurements</li>
+                        <li>� <strong>Performance metrics:</strong> CPU, memory, disk usage</li>
+                        <li>� <strong>Business metrics:</strong> User registrations, sales</li>
+                        <li>� <strong>Application metrics:</strong> Response times, error rates</li>
+                        <li>� <strong>Infrastructure metrics:</strong> Network, storage performance</li>
+                        <li>� <strong>Custom metrics:</strong> Application-specific measurements</li>
                       </ul>
                     </div>
                     <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
@@ -1349,11 +1349,11 @@ export default function DevOpsPage() {
                         Logs
                       </h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• <strong>Application logs:</strong> Debug, info, error messages</li>
-                        <li>• <strong>System logs:</strong> OS and kernel events</li>
-                        <li>• <strong>Access logs:</strong> Web server and API requests</li>
-                        <li>• <strong>Audit logs:</strong> Security and compliance events</li>
-                        <li>• <strong>Structured logging:</strong> JSON-formatted log entries</li>
+                        <li>� <strong>Application logs:</strong> Debug, info, error messages</li>
+                        <li>� <strong>System logs:</strong> OS and kernel events</li>
+                        <li>� <strong>Access logs:</strong> Web server and API requests</li>
+                        <li>� <strong>Audit logs:</strong> Security and compliance events</li>
+                        <li>� <strong>Structured logging:</strong> JSON-formatted log entries</li>
                       </ul>
                     </div>
                     <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
@@ -1362,11 +1362,11 @@ export default function DevOpsPage() {
                         Traces
                       </h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• <strong>Distributed tracing:</strong> Track requests across services</li>
-                        <li>• <strong>Performance analysis:</strong> Identify bottlenecks</li>
-                        <li>• <strong>Dependency mapping:</strong> Understand service relationships</li>
-                        <li>• <strong>Error propagation:</strong> Track error sources</li>
-                        <li>• <strong>Latency analysis:</strong> Measure request processing time</li>
+                        <li>� <strong>Distributed tracing:</strong> Track requests across services</li>
+                        <li>� <strong>Performance analysis:</strong> Identify bottlenecks</li>
+                        <li>� <strong>Dependency mapping:</strong> Understand service relationships</li>
+                        <li>� <strong>Error propagation:</strong> Track error sources</li>
+                        <li>� <strong>Latency analysis:</strong> Measure request processing time</li>
                       </ul>
                     </div>
                   </div>
@@ -1400,7 +1400,7 @@ export default function DevOpsPage() {
                   <p className="text-lg text-slate-700 mb-6">
                     The DevOps ecosystem consists of hundreds of tools, each serving specific purposes in the software delivery lifecycle.
                     Understanding which tools to use and when is crucial for building effective DevOps practices.
-                    <strong className="text-slate-900">There's no single "best" toolchain—the right tools depend on your specific needs, team skills, and organizational context.</strong>
+                    <strong className="text-slate-900">There's no single "best" toolchain�the right tools depend on your specific needs, team skills, and organizational context.</strong>
                   </p>
 
                   <div className="bg-blue-50 p-6 rounded-xl border border-blue-200 mb-6">
@@ -1415,12 +1415,12 @@ export default function DevOpsPage() {
                           Evaluation Factors
                         </h4>
                         <ul className="text-slate-700 space-y-2 text-sm">
-                          <li>• <strong>Team expertise:</strong> Does your team have the skills to use this tool?</li>
-                          <li>• <strong>Integration capabilities:</strong> How well does it integrate with existing tools?</li>
-                          <li>• <strong>Scalability:</strong> Can it grow with your organization?</li>
-                          <li>• <strong>Community support:</strong> Is there active community and documentation?</li>
-                          <li>• <strong>Cost:</strong> What's the total cost of ownership (TCO)?</li>
-                          <li>• <strong>Vendor lock-in:</strong> How easy is it to migrate away?</li>
+                          <li>� <strong>Team expertise:</strong> Does your team have the skills to use this tool?</li>
+                          <li>� <strong>Integration capabilities:</strong> How well does it integrate with existing tools?</li>
+                          <li>� <strong>Scalability:</strong> Can it grow with your organization?</li>
+                          <li>� <strong>Community support:</strong> Is there active community and documentation?</li>
+                          <li>� <strong>Cost:</strong> What's the total cost of ownership (TCO)?</li>
+                          <li>� <strong>Vendor lock-in:</strong> How easy is it to migrate away?</li>
                         </ul>
                       </div>
                       <div className="bg-white border border-green-100 p-4 rounded-lg shadow-sm">
@@ -1429,12 +1429,12 @@ export default function DevOpsPage() {
                           Best Practices
                         </h4>
                         <ul className="text-slate-700 space-y-2 text-sm">
-                          <li>• <strong>Start simple:</strong> Begin with essential tools, add complexity gradually</li>
-                          <li>• <strong>Standardize where possible:</strong> Reduce tooling sprawl</li>
-                          <li>• <strong>Automate everything:</strong> Every tool should support automation</li>
-                          <li>• <strong>Measure effectiveness:</strong> Track metrics to validate tool choices</li>
-                          <li>• <strong>Regular review:</strong> Continuously evaluate and optimize your toolchain</li>
-                          <li>• <strong>Open source first:</strong> Prefer open source for flexibility and cost</li>
+                          <li>� <strong>Start simple:</strong> Begin with essential tools, add complexity gradually</li>
+                          <li>� <strong>Standardize where possible:</strong> Reduce tooling sprawl</li>
+                          <li>� <strong>Automate everything:</strong> Every tool should support automation</li>
+                          <li>� <strong>Measure effectiveness:</strong> Track metrics to validate tool choices</li>
+                          <li>� <strong>Regular review:</strong> Continuously evaluate and optimize your toolchain</li>
+                          <li>� <strong>Open source first:</strong> Prefer open source for flexibility and cost</li>
                         </ul>
                       </div>
                     </div>
@@ -1459,18 +1459,18 @@ export default function DevOpsPage() {
                         Git - The Industry Standard
                       </h3>
                       <ul className="text-slate-700 space-y-2 text-sm mb-4">
-                        <li>• <strong>Distributed architecture:</strong> Every developer has full repository history</li>
-                        <li>• <strong>Branching model:</strong> Powerful branching and merging capabilities</li>
-                        <li>• <strong>Performance:</strong> Fast operations for local commits and branches</li>
-                        <li>• <strong>Data integrity:</strong> SHA-1 checksums ensure data consistency</li>
-                        <li>• <strong>Staging area:</strong> Flexible commit composition</li>
+                        <li>� <strong>Distributed architecture:</strong> Every developer has full repository history</li>
+                        <li>� <strong>Branching model:</strong> Powerful branching and merging capabilities</li>
+                        <li>� <strong>Performance:</strong> Fast operations for local commits and branches</li>
+                        <li>� <strong>Data integrity:</strong> SHA-1 checksums ensure data consistency</li>
+                        <li>� <strong>Staging area:</strong> Flexible commit composition</li>
                       </ul>
                       <div className="bg-white border border-slate-200 p-4 rounded-lg">
                         <p className="text-xs text-slate-700 mb-2"><strong>Popular Platforms:</strong></p>
                         <ul className="text-slate-700 text-xs space-y-1">
-                          <li>• <strong>GitHub:</strong> Largest code hosting platform, excellent collaboration features</li>
-                          <li>• <strong>GitLab:</strong> Complete DevOps platform with built-in CI/CD</li>
-                          <li>• <strong>Bitbucket:</strong> Integrates well with Atlassian suite (Jira, Confluence)</li>
+                          <li>� <strong>GitHub:</strong> Largest code hosting platform, excellent collaboration features</li>
+                          <li>� <strong>GitLab:</strong> Complete DevOps platform with built-in CI/CD</li>
+                          <li>� <strong>Bitbucket:</strong> Integrates well with Atlassian suite (Jira, Confluence)</li>
                         </ul>
                       </div>
                     </div>
@@ -1480,18 +1480,18 @@ export default function DevOpsPage() {
                         Git Workflows
                       </h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• <strong>GitFlow:</strong> Feature branches, develop, release, hotfix branches</li>
-                        <li>• <strong>GitHub Flow:</strong> Simple workflow with feature branches and main</li>
-                        <li>• <strong>Trunk-Based Development:</strong> Short-lived feature branches, frequent integration</li>
-                        <li>• <strong>Forking Workflow:</strong> Popular in open source projects</li>
+                        <li>� <strong>GitFlow:</strong> Feature branches, develop, release, hotfix branches</li>
+                        <li>� <strong>GitHub Flow:</strong> Simple workflow with feature branches and main</li>
+                        <li>� <strong>Trunk-Based Development:</strong> Short-lived feature branches, frequent integration</li>
+                        <li>� <strong>Forking Workflow:</strong> Popular in open source projects</li>
                       </ul>
                       <div className="bg-white border border-slate-200 p-4 rounded-lg mt-4">
                         <p className="text-xs text-slate-700 mb-2"><strong>Best Practices:</strong></p>
                         <ul className="text-slate-700 text-xs space-y-1">
-                          <li>• Commit early, commit often with meaningful messages</li>
-                          <li>• Use feature branches for new work</li>
-                          <li>• Pull request reviews before merging</li>
-                          <li>• Keep commits atomic and focused</li>
+                          <li>� Commit early, commit often with meaningful messages</li>
+                          <li>� Use feature branches for new work</li>
+                          <li>� Pull request reviews before merging</li>
+                          <li>� Keep commits atomic and focused</li>
                         </ul>
                       </div>
                     </div>
@@ -1516,11 +1516,11 @@ export default function DevOpsPage() {
                         Jenkins
                       </h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• <strong>Open source leader:</strong> Most widely used CI/CD tool</li>
-                        <li>• <strong>Plugin ecosystem:</strong> 1,800+ plugins available</li>
-                        <li>• <strong>Pipeline as Code:</strong> Jenkinsfile for version control</li>
-                        <li>• <strong>Distributed builds:</strong> Master-agent architecture</li>
-                        <li>• <strong>Flexibility:</strong> Highly customizable workflows</li>
+                        <li>� <strong>Open source leader:</strong> Most widely used CI/CD tool</li>
+                        <li>� <strong>Plugin ecosystem:</strong> 1,800+ plugins available</li>
+                        <li>� <strong>Pipeline as Code:</strong> Jenkinsfile for version control</li>
+                        <li>� <strong>Distributed builds:</strong> Master-agent architecture</li>
+                        <li>� <strong>Flexibility:</strong> Highly customizable workflows</li>
                       </ul>
                       <div className="bg-white border border-blue-100 p-3 rounded mt-3 shadow-sm">
                         <p className="text-xs text-blue-600"><strong>Best For:</strong> Complex enterprise workflows, on-premises deployments</p>
@@ -1532,11 +1532,11 @@ export default function DevOpsPage() {
                         GitHub Actions
                       </h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• <strong>Native integration:</strong> Built into GitHub</li>
-                        <li>• <strong>Marketplace:</strong> Thousands of pre-built actions</li>
-                        <li>• <strong>Matrix builds:</strong> Test across multiple platforms</li>
-                        <li>• <strong>Container support:</strong> Run jobs in Docker containers</li>
-                        <li>• <strong>Free tier:</strong> Generous free minutes for public repos</li>
+                        <li>� <strong>Native integration:</strong> Built into GitHub</li>
+                        <li>� <strong>Marketplace:</strong> Thousands of pre-built actions</li>
+                        <li>� <strong>Matrix builds:</strong> Test across multiple platforms</li>
+                        <li>� <strong>Container support:</strong> Run jobs in Docker containers</li>
+                        <li>� <strong>Free tier:</strong> Generous free minutes for public repos</li>
                       </ul>
                       <div className="bg-white border border-green-100 p-3 rounded mt-3 shadow-sm">
                         <p className="text-xs text-green-600"><strong>Best For:</strong> GitHub-hosted projects, quick setup, modern workflows</p>
@@ -1548,11 +1548,11 @@ export default function DevOpsPage() {
                         GitLab CI/CD
                       </h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• <strong>Complete platform:</strong> Source control + CI/CD + monitoring</li>
-                        <li>• <strong>Auto DevOps:</strong> Automated pipeline creation</li>
-                        <li>• <strong>Kubernetes native:</strong> Excellent container support</li>
-                        <li>• <strong>Security scanning:</strong> Built-in security features</li>
-                        <li>• <strong>Self-hosted option:</strong> Full control over infrastructure</li>
+                        <li>� <strong>Complete platform:</strong> Source control + CI/CD + monitoring</li>
+                        <li>� <strong>Auto DevOps:</strong> Automated pipeline creation</li>
+                        <li>� <strong>Kubernetes native:</strong> Excellent container support</li>
+                        <li>� <strong>Security scanning:</strong> Built-in security features</li>
+                        <li>� <strong>Self-hosted option:</strong> Full control over infrastructure</li>
                       </ul>
                       <div className="bg-white border border-orange-100 p-3 rounded mt-3 shadow-sm">
                         <p className="text-xs text-orange-600"><strong>Best For:</strong> Complete DevOps platform, Kubernetes deployments</p>
@@ -1579,19 +1579,19 @@ export default function DevOpsPage() {
                         Docker - Container Runtime
                       </h3>
                       <ul className="text-slate-700 space-y-2 text-sm mb-4">
-                        <li>• <strong>Lightweight virtualization:</strong> Share host OS kernel</li>
-                        <li>• <strong>Dockerfile:</strong> Declarative container image definition</li>
-                        <li>• <strong>Image layering:</strong> Efficient storage and distribution</li>
-                        <li>• <strong>Docker Compose:</strong> Multi-container applications</li>
-                        <li>• <strong>Registry:</strong> Docker Hub for image sharing</li>
+                        <li>� <strong>Lightweight virtualization:</strong> Share host OS kernel</li>
+                        <li>� <strong>Dockerfile:</strong> Declarative container image definition</li>
+                        <li>� <strong>Image layering:</strong> Efficient storage and distribution</li>
+                        <li>� <strong>Docker Compose:</strong> Multi-container applications</li>
+                        <li>� <strong>Registry:</strong> Docker Hub for image sharing</li>
                       </ul>
                       <div className="bg-white border border-slate-200 p-4 rounded-lg">
                         <p className="text-xs text-slate-700 mb-2"><strong>Why Docker Revolutionized Development:</strong></p>
                         <ul className="text-slate-700 text-xs space-y-1">
-                          <li>• "Works on my machine" problem solved</li>
-                          <li>• Consistent environments from dev to production</li>
-                          <li>• Fast startup times (seconds vs minutes for VMs)</li>
-                          <li>• Efficient resource utilization</li>
+                          <li>� "Works on my machine" problem solved</li>
+                          <li>� Consistent environments from dev to production</li>
+                          <li>� Fast startup times (seconds vs minutes for VMs)</li>
+                          <li>� Efficient resource utilization</li>
                         </ul>
                       </div>
                     </div>
@@ -1601,19 +1601,19 @@ export default function DevOpsPage() {
                         Kubernetes - Orchestration Leader
                       </h3>
                       <ul className="text-slate-700 space-y-2 text-sm mb-4">
-                        <li>• <strong>Automatic scheduling:</strong> Optimal container placement</li>
-                        <li>• <strong>Self-healing:</strong> Automatic restart and replacement</li>
-                        <li>• <strong>Horizontal scaling:</strong> Scale based on demand</li>
-                        <li>• <strong>Service discovery:</strong> Built-in load balancing</li>
-                        <li>• <strong>Rolling updates:</strong> Zero-downtime deployments</li>
+                        <li>� <strong>Automatic scheduling:</strong> Optimal container placement</li>
+                        <li>� <strong>Self-healing:</strong> Automatic restart and replacement</li>
+                        <li>� <strong>Horizontal scaling:</strong> Scale based on demand</li>
+                        <li>� <strong>Service discovery:</strong> Built-in load balancing</li>
+                        <li>� <strong>Rolling updates:</strong> Zero-downtime deployments</li>
                       </ul>
                       <div className="bg-white border border-slate-200 p-4 rounded-lg">
                         <p className="text-xs text-slate-700 mb-2"><strong>Kubernetes Distributions:</strong></p>
                         <ul className="text-slate-700 text-xs space-y-1">
-                          <li>• <strong>EKS:</strong> Amazon's managed Kubernetes</li>
-                          <li>• <strong>GKE:</strong> Google's managed Kubernetes</li>
-                          <li>• <strong>AKS:</strong> Azure's managed Kubernetes</li>
-                          <li>• <strong>Rancher:</strong> Multi-cluster management</li>
+                          <li>� <strong>EKS:</strong> Amazon's managed Kubernetes</li>
+                          <li>� <strong>GKE:</strong> Google's managed Kubernetes</li>
+                          <li>� <strong>AKS:</strong> Azure's managed Kubernetes</li>
+                          <li>� <strong>Rancher:</strong> Multi-cluster management</li>
                         </ul>
                       </div>
                     </div>
@@ -1651,20 +1651,20 @@ export default function DevOpsPage() {
                       <div className="grid md:grid-cols-2 gap-6">
                         <div>
                           <ul className="text-slate-700 space-y-2 text-sm">
-                            <li>• <strong>Provider ecosystem:</strong> Support for 3,000+ providers</li>
-                            <li>• <strong>Declarative syntax:</strong> HCL (HashiCorp Configuration Language)</li>
-                            <li>• <strong>State management:</strong> Track infrastructure state</li>
-                            <li>• <strong>Plan and apply:</strong> Preview changes before applying</li>
-                            <li>• <strong>Module system:</strong> Reusable infrastructure components</li>
+                            <li>� <strong>Provider ecosystem:</strong> Support for 3,000+ providers</li>
+                            <li>� <strong>Declarative syntax:</strong> HCL (HashiCorp Configuration Language)</li>
+                            <li>� <strong>State management:</strong> Track infrastructure state</li>
+                            <li>� <strong>Plan and apply:</strong> Preview changes before applying</li>
+                            <li>� <strong>Module system:</strong> Reusable infrastructure components</li>
                           </ul>
                         </div>
                         <div className="bg-white border border-slate-200 p-4 rounded-lg">
                           <p className="text-xs text-slate-700 mb-2"><strong>Use Cases:</strong></p>
                           <ul className="text-slate-700 text-xs space-y-1">
-                            <li>• Multi-cloud infrastructure provisioning</li>
-                            <li>• Kubernetes cluster setup</li>
-                            <li>• Network infrastructure management</li>
-                            <li>• SaaS resource management (Datadog, PagerDuty)</li>
+                            <li>� Multi-cloud infrastructure provisioning</li>
+                            <li>� Kubernetes cluster setup</li>
+                            <li>� Network infrastructure management</li>
+                            <li>� SaaS resource management (Datadog, PagerDuty)</li>
                           </ul>
                         </div>
                       </div>
@@ -1678,20 +1678,20 @@ export default function DevOpsPage() {
                       <div className="grid md:grid-cols-2 gap-6">
                         <div>
                           <ul className="text-slate-700 space-y-2 text-sm">
-                            <li>• <strong>Agentless:</strong> No agent installation required</li>
-                            <li>• <strong>YAML playbooks:</strong> Human-readable configuration</li>
-                            <li>• <strong>Idempotent:</strong> Safe to run multiple times</li>
-                            <li>• <strong>SSH-based:</strong> Uses existing SSH infrastructure</li>
-                            <li>• <strong>Ansible Galaxy:</strong> Community roles and modules</li>
+                            <li>� <strong>Agentless:</strong> No agent installation required</li>
+                            <li>� <strong>YAML playbooks:</strong> Human-readable configuration</li>
+                            <li>� <strong>Idempotent:</strong> Safe to run multiple times</li>
+                            <li>� <strong>SSH-based:</strong> Uses existing SSH infrastructure</li>
+                            <li>� <strong>Ansible Galaxy:</strong> Community roles and modules</li>
                           </ul>
                         </div>
                         <div className="bg-white border border-slate-200 p-4 rounded-lg">
                           <p className="text-xs text-slate-700 mb-2"><strong>Use Cases:</strong></p>
                           <ul className="text-slate-700 text-xs space-y-1">
-                            <li>• Server configuration management</li>
-                            <li>• Application deployment automation</li>
-                            <li>• Security compliance enforcement</li>
-                            <li>• Multi-tier application orchestration</li>
+                            <li>� Server configuration management</li>
+                            <li>� Application deployment automation</li>
+                            <li>� Security compliance enforcement</li>
+                            <li>� Multi-tier application orchestration</li>
                           </ul>
                         </div>
                       </div>
@@ -1717,11 +1717,11 @@ export default function DevOpsPage() {
                         <strong>Grafana:</strong> Visualization and dashboarding platform.
                       </p>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• <strong>Pull-based model:</strong> Scrapes metrics from targets</li>
-                        <li>• <strong>PromQL:</strong> Powerful query language</li>
-                        <li>• <strong>Alertmanager:</strong> Flexible alerting system</li>
-                        <li>• <strong>Service discovery:</strong> Automatic target discovery</li>
-                        <li>• <strong>Grafana dashboards:</strong> Beautiful visualizations</li>
+                        <li>� <strong>Pull-based model:</strong> Scrapes metrics from targets</li>
+                        <li>� <strong>PromQL:</strong> Powerful query language</li>
+                        <li>� <strong>Alertmanager:</strong> Flexible alerting system</li>
+                        <li>� <strong>Service discovery:</strong> Automatic target discovery</li>
+                        <li>� <strong>Grafana dashboards:</strong> Beautiful visualizations</li>
                       </ul>
                     </div>
                     <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
@@ -1732,11 +1732,11 @@ export default function DevOpsPage() {
                         <strong>Kibana:</strong> Visualization.
                       </p>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• <strong>Centralized logging:</strong> Aggregate logs from all sources</li>
-                        <li>• <strong>Full-text search:</strong> Search across all log data</li>
-                        <li>• <strong>Real-time analysis:</strong> Analyze logs as they arrive</li>
-                        <li>• <strong>Kibana dashboards:</strong> Visual log analysis</li>
-                        <li>• <strong>Alerting:</strong> Alert on log patterns</li>
+                        <li>� <strong>Centralized logging:</strong> Aggregate logs from all sources</li>
+                        <li>� <strong>Full-text search:</strong> Search across all log data</li>
+                        <li>� <strong>Real-time analysis:</strong> Analyze logs as they arrive</li>
+                        <li>� <strong>Kibana dashboards:</strong> Visual log analysis</li>
+                        <li>� <strong>Alerting:</strong> Alert on log patterns</li>
                       </ul>
                     </div>
                   </div>
@@ -1759,14 +1759,14 @@ export default function DevOpsPage() {
                         Tool Categories
                       </h4>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• <strong>Version Control:</strong> Git, GitHub, GitLab, Bitbucket</li>
-                        <li>• <strong>CI/CD:</strong> Jenkins, GitHub Actions, GitLab CI, CircleCI</li>
-                        <li>• <strong>Containers:</strong> Docker, Podman, containerd</li>
-                        <li>• <strong>Orchestration:</strong> Kubernetes, Docker Swarm, Nomad</li>
-                        <li>• <strong>IaC:</strong> Terraform, Ansible, Pulumi, CloudFormation</li>
-                        <li>• <strong>Monitoring:</strong> Prometheus, Datadog, New Relic</li>
-                        <li>• <strong>Logging:</strong> ELK Stack, Splunk, Loki</li>
-                        <li>• <strong>Security:</strong> Vault, SonarQube, Snyk, Aqua Security</li>
+                        <li>� <strong>Version Control:</strong> Git, GitHub, GitLab, Bitbucket</li>
+                        <li>� <strong>CI/CD:</strong> Jenkins, GitHub Actions, GitLab CI, CircleCI</li>
+                        <li>� <strong>Containers:</strong> Docker, Podman, containerd</li>
+                        <li>� <strong>Orchestration:</strong> Kubernetes, Docker Swarm, Nomad</li>
+                        <li>� <strong>IaC:</strong> Terraform, Ansible, Pulumi, CloudFormation</li>
+                        <li>� <strong>Monitoring:</strong> Prometheus, Datadog, New Relic</li>
+                        <li>� <strong>Logging:</strong> ELK Stack, Splunk, Loki</li>
+                        <li>� <strong>Security:</strong> Vault, SonarQube, Snyk, Aqua Security</li>
                       </ul>
                     </div>
                     <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
@@ -1775,12 +1775,12 @@ export default function DevOpsPage() {
                         Building Your Toolchain
                       </h4>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• <strong>Start with basics:</strong> Git + CI/CD + Monitoring</li>
-                        <li>• <strong>Add gradually:</strong> Introduce tools as needed</li>
-                        <li>• <strong>Standardize:</strong> Consistent tools across teams</li>
-                        <li>• <strong>Automate integration:</strong> Tools should work together seamlessly</li>
-                        <li>• <strong>Measure success:</strong> Track adoption and effectiveness</li>
-                        <li>• <strong>Continuous evaluation:</strong> Review and optimize regularly</li>
+                        <li>� <strong>Start with basics:</strong> Git + CI/CD + Monitoring</li>
+                        <li>� <strong>Add gradually:</strong> Introduce tools as needed</li>
+                        <li>� <strong>Standardize:</strong> Consistent tools across teams</li>
+                        <li>� <strong>Automate integration:</strong> Tools should work together seamlessly</li>
+                        <li>� <strong>Measure success:</strong> Track adoption and effectiveness</li>
+                        <li>� <strong>Continuous evaluation:</strong> Review and optimize regularly</li>
                       </ul>
                     </div>
                   </div>
@@ -1815,7 +1815,7 @@ export default function DevOpsPage() {
                     Learning DevOps: A Mindset Shift
                   </h2>
                   <p className="text-lg text-slate-700 mb-6">
-                    DevOps isn't just about learning tools—it's about developing a problem-solving mindset,
+                    DevOps isn't just about learning tools�it's about developing a problem-solving mindset,
                     understanding systems thinking, and embracing continuous learning.
                     <strong className="text-purple-700">The journey is as important as the destination.</strong>
                   </p>
@@ -1883,12 +1883,12 @@ export default function DevOpsPage() {
                                 Core Topics
                               </h4>
                               <ul className="text-slate-700 text-xs space-y-1">
-                                <li>• Command-line navigation and file operations</li>
-                                <li>• File permissions and ownership (chmod, chown)</li>
-                                <li>• Process management (ps, top, kill, systemd)</li>
-                                <li>• Package management (apt, yum, dnf)</li>
-                                <li>• Text processing (grep, sed, awk, cut)</li>
-                                <li>• Shell scripting (bash, variables, loops, functions)</li>
+                                <li>� Command-line navigation and file operations</li>
+                                <li>� File permissions and ownership (chmod, chown)</li>
+                                <li>� Process management (ps, top, kill, systemd)</li>
+                                <li>� Package management (apt, yum, dnf)</li>
+                                <li>� Text processing (grep, sed, awk, cut)</li>
+                                <li>� Shell scripting (bash, variables, loops, functions)</li>
                               </ul>
                             </div>
                             <div className="bg-white border border-green-100 p-4 rounded-lg shadow-sm">
@@ -1897,11 +1897,11 @@ export default function DevOpsPage() {
                                 Practical Projects
                               </h4>
                               <ul className="text-slate-700 text-xs space-y-1">
-                                <li>• Set up a Linux VM (Ubuntu or CentOS)</li>
-                                <li>• Write backup scripts using bash</li>
-                                <li>• Configure SSH key-based authentication</li>
-                                <li>• Set up a web server (Apache/Nginx)</li>
-                                <li>• Monitor system resources and logs</li>
+                                <li>� Set up a Linux VM (Ubuntu or CentOS)</li>
+                                <li>� Write backup scripts using bash</li>
+                                <li>� Configure SSH key-based authentication</li>
+                                <li>� Set up a web server (Apache/Nginx)</li>
+                                <li>� Monitor system resources and logs</li>
                               </ul>
                             </div>
                           </div>
@@ -1930,12 +1930,12 @@ export default function DevOpsPage() {
                                 Core Topics
                               </h4>
                               <ul className="text-slate-700 text-xs space-y-1">
-                                <li>• Git basics (init, add, commit, push, pull)</li>
-                                <li>• Branching strategies (GitFlow, GitHub Flow)</li>
-                                <li>• Merging and resolving conflicts</li>
-                                <li>• Rebasing and cherry-picking</li>
-                                <li>• Git hooks and automation</li>
-                                <li>• Pull requests and code reviews</li>
+                                <li>� Git basics (init, add, commit, push, pull)</li>
+                                <li>� Branching strategies (GitFlow, GitHub Flow)</li>
+                                <li>� Merging and resolving conflicts</li>
+                                <li>� Rebasing and cherry-picking</li>
+                                <li>� Git hooks and automation</li>
+                                <li>� Pull requests and code reviews</li>
                               </ul>
                             </div>
                             <div className="bg-white border border-green-100 p-4 rounded-lg shadow-sm">
@@ -1944,11 +1944,11 @@ export default function DevOpsPage() {
                                 Practical Projects
                               </h4>
                               <ul className="text-slate-700 text-xs space-y-1">
-                                <li>• Create and manage GitHub repositories</li>
-                                <li>• Contribute to open source projects</li>
-                                <li>• Implement GitFlow workflow in a project</li>
-                                <li>• Set up pre-commit hooks for code quality</li>
-                                <li>• Practice resolving merge conflicts</li>
+                                <li>� Create and manage GitHub repositories</li>
+                                <li>� Contribute to open source projects</li>
+                                <li>� Implement GitFlow workflow in a project</li>
+                                <li>� Set up pre-commit hooks for code quality</li>
+                                <li>� Practice resolving merge conflicts</li>
                               </ul>
                             </div>
                           </div>
@@ -1977,12 +1977,12 @@ export default function DevOpsPage() {
                                 Core Topics
                               </h4>
                               <ul className="text-slate-700 text-xs space-y-1">
-                                <li>• OSI and TCP/IP models</li>
-                                <li>• IP addressing and subnetting</li>
-                                <li>• DNS, HTTP/HTTPS protocols</li>
-                                <li>• Load balancing and reverse proxies</li>
-                                <li>• Firewalls and security groups</li>
-                                <li>• VPNs and network security</li>
+                                <li>� OSI and TCP/IP models</li>
+                                <li>� IP addressing and subnetting</li>
+                                <li>� DNS, HTTP/HTTPS protocols</li>
+                                <li>� Load balancing and reverse proxies</li>
+                                <li>� Firewalls and security groups</li>
+                                <li>� VPNs and network security</li>
                               </ul>
                             </div>
                             <div className="bg-white border border-green-100 p-4 rounded-lg shadow-sm">
@@ -1991,11 +1991,11 @@ export default function DevOpsPage() {
                                 Practical Projects
                               </h4>
                               <ul className="text-slate-700 text-xs space-y-1">
-                                <li>• Configure Nginx as reverse proxy</li>
-                                <li>• Set up SSL/TLS certificates</li>
-                                <li>• Implement basic firewall rules (iptables)</li>
-                                <li>• Configure DNS for a domain</li>
-                                <li>• Set up VPN server (OpenVPN/WireGuard)</li>
+                                <li>� Configure Nginx as reverse proxy</li>
+                                <li>� Set up SSL/TLS certificates</li>
+                                <li>� Implement basic firewall rules (iptables)</li>
+                                <li>� Configure DNS for a domain</li>
+                                <li>� Set up VPN server (OpenVPN/WireGuard)</li>
                               </ul>
                             </div>
                           </div>
@@ -2037,12 +2037,12 @@ export default function DevOpsPage() {
                                 Core Topics
                               </h4>
                               <ul className="text-slate-700 text-xs space-y-1">
-                                <li>• Docker architecture and concepts</li>
-                                <li>• Writing efficient Dockerfiles</li>
-                                <li>• Docker networking and volumes</li>
-                                <li>• Docker Compose for multi-container apps</li>
-                                <li>• Image optimization and best practices</li>
-                                <li>• Container security fundamentals</li>
+                                <li>� Docker architecture and concepts</li>
+                                <li>� Writing efficient Dockerfiles</li>
+                                <li>� Docker networking and volumes</li>
+                                <li>� Docker Compose for multi-container apps</li>
+                                <li>� Image optimization and best practices</li>
+                                <li>� Container security fundamentals</li>
                               </ul>
                             </div>
                             <div className="bg-white border border-green-100 p-4 rounded-lg shadow-sm">
@@ -2051,11 +2051,11 @@ export default function DevOpsPage() {
                                 Practical Projects
                               </h4>
                               <ul className="text-slate-700 text-xs space-y-1">
-                                <li>• Containerize a web application</li>
-                                <li>• Build multi-stage Docker images</li>
-                                <li>• Create Docker Compose stack (app + DB + cache)</li>
-                                <li>• Set up private Docker registry</li>
-                                <li>• Implement health checks and logging</li>
+                                <li>� Containerize a web application</li>
+                                <li>� Build multi-stage Docker images</li>
+                                <li>� Create Docker Compose stack (app + DB + cache)</li>
+                                <li>� Set up private Docker registry</li>
+                                <li>� Implement health checks and logging</li>
                               </ul>
                             </div>
                           </div>
@@ -2084,12 +2084,12 @@ export default function DevOpsPage() {
                                 Core Topics
                               </h4>
                               <ul className="text-slate-700 text-xs space-y-1">
-                                <li>• CI/CD concepts and benefits</li>
-                                <li>• Jenkins architecture and pipelines</li>
-                                <li>• GitHub Actions workflows</li>
-                                <li>• GitLab CI/CD configuration</li>
-                                <li>• Automated testing in pipelines</li>
-                                <li>• Deployment strategies (blue-green, canary)</li>
+                                <li>� CI/CD concepts and benefits</li>
+                                <li>� Jenkins architecture and pipelines</li>
+                                <li>� GitHub Actions workflows</li>
+                                <li>� GitLab CI/CD configuration</li>
+                                <li>� Automated testing in pipelines</li>
+                                <li>� Deployment strategies (blue-green, canary)</li>
                               </ul>
                             </div>
                             <div className="bg-white border border-green-100 p-4 rounded-lg shadow-sm">
@@ -2098,11 +2098,11 @@ export default function DevOpsPage() {
                                 Practical Projects
                               </h4>
                               <ul className="text-slate-700 text-xs space-y-1">
-                                <li>• Build Jenkins pipeline with Jenkinsfile</li>
-                                <li>• Create GitHub Actions workflow</li>
-                                <li>• Implement automated testing (unit, integration)</li>
-                                <li>• Set up automated deployments</li>
-                                <li>• Integrate security scanning (SAST, DAST)</li>
+                                <li>� Build Jenkins pipeline with Jenkinsfile</li>
+                                <li>� Create GitHub Actions workflow</li>
+                                <li>� Implement automated testing (unit, integration)</li>
+                                <li>� Set up automated deployments</li>
+                                <li>� Integrate security scanning (SAST, DAST)</li>
                               </ul>
                             </div>
                           </div>
@@ -2131,12 +2131,12 @@ export default function DevOpsPage() {
                                 Core Topics
                               </h4>
                               <ul className="text-slate-700 text-xs space-y-1">
-                                <li>• IaC principles and benefits</li>
-                                <li>• Terraform HCL syntax and providers</li>
-                                <li>• Terraform state management</li>
-                                <li>• Ansible playbooks and roles</li>
-                                <li>• Configuration management best practices</li>
-                                <li>• Testing infrastructure code</li>
+                                <li>� IaC principles and benefits</li>
+                                <li>� Terraform HCL syntax and providers</li>
+                                <li>� Terraform state management</li>
+                                <li>� Ansible playbooks and roles</li>
+                                <li>� Configuration management best practices</li>
+                                <li>� Testing infrastructure code</li>
                               </ul>
                             </div>
                             <div className="bg-white border border-green-100 p-4 rounded-lg shadow-sm">
@@ -2145,11 +2145,11 @@ export default function DevOpsPage() {
                                 Practical Projects
                               </h4>
                               <ul className="text-slate-700 text-xs space-y-1">
-                                <li>• Provision cloud infrastructure with Terraform</li>
-                                <li>• Create reusable Terraform modules</li>
-                                <li>• Write Ansible playbooks for server config</li>
-                                <li>• Implement infrastructure testing (Terratest)</li>
-                                <li>• Set up remote state management</li>
+                                <li>� Provision cloud infrastructure with Terraform</li>
+                                <li>� Create reusable Terraform modules</li>
+                                <li>� Write Ansible playbooks for server config</li>
+                                <li>� Implement infrastructure testing (Terratest)</li>
+                                <li>� Set up remote state management</li>
                               </ul>
                             </div>
                           </div>
@@ -2191,12 +2191,12 @@ export default function DevOpsPage() {
                                 Core Topics
                               </h4>
                               <ul className="text-slate-700 text-xs space-y-1">
-                                <li>• Kubernetes architecture (pods, services, deployments)</li>
-                                <li>• kubectl commands and operations</li>
-                                <li>• ConfigMaps and Secrets management</li>
-                                <li>• Helm charts for package management</li>
-                                <li>• Ingress controllers and networking</li>
-                                <li>• StatefulSets and persistent storage</li>
+                                <li>� Kubernetes architecture (pods, services, deployments)</li>
+                                <li>� kubectl commands and operations</li>
+                                <li>� ConfigMaps and Secrets management</li>
+                                <li>� Helm charts for package management</li>
+                                <li>� Ingress controllers and networking</li>
+                                <li>� StatefulSets and persistent storage</li>
                               </ul>
                             </div>
                             <div className="bg-white border border-green-100 p-4 rounded-lg shadow-sm">
@@ -2205,11 +2205,11 @@ export default function DevOpsPage() {
                                 Practical Projects
                               </h4>
                               <ul className="text-slate-700 text-xs space-y-1">
-                                <li>• Deploy application to Kubernetes cluster</li>
-                                <li>• Create Helm charts for applications</li>
-                                <li>• Implement auto-scaling (HPA, VPA)</li>
-                                <li>• Set up Ingress with SSL/TLS</li>
-                                <li>• Practice disaster recovery scenarios</li>
+                                <li>� Deploy application to Kubernetes cluster</li>
+                                <li>� Create Helm charts for applications</li>
+                                <li>� Implement auto-scaling (HPA, VPA)</li>
+                                <li>� Set up Ingress with SSL/TLS</li>
+                                <li>� Practice disaster recovery scenarios</li>
                               </ul>
                             </div>
                           </div>
@@ -2238,12 +2238,12 @@ export default function DevOpsPage() {
                                 Core Topics
                               </h4>
                               <ul className="text-slate-700 text-xs space-y-1">
-                                <li>• Three pillars: Metrics, Logs, Traces</li>
-                                <li>• Prometheus and PromQL</li>
-                                <li>• Grafana dashboards and alerts</li>
-                                <li>• ELK/EFK stack for log management</li>
-                                <li>• Distributed tracing (Jaeger, Zipkin)</li>
-                                <li>• SLOs, SLIs, and SLAs</li>
+                                <li>� Three pillars: Metrics, Logs, Traces</li>
+                                <li>� Prometheus and PromQL</li>
+                                <li>� Grafana dashboards and alerts</li>
+                                <li>� ELK/EFK stack for log management</li>
+                                <li>� Distributed tracing (Jaeger, Zipkin)</li>
+                                <li>� SLOs, SLIs, and SLAs</li>
                               </ul>
                             </div>
                             <div className="bg-white border border-green-100 p-4 rounded-lg shadow-sm">
@@ -2252,11 +2252,11 @@ export default function DevOpsPage() {
                                 Practical Projects
                               </h4>
                               <ul className="text-slate-700 text-xs space-y-1">
-                                <li>• Set up Prometheus + Grafana stack</li>
-                                <li>• Create custom Grafana dashboards</li>
-                                <li>• Implement centralized logging (ELK)</li>
-                                <li>• Configure alerting and on-call rotation</li>
-                                <li>• Implement distributed tracing</li>
+                                <li>� Set up Prometheus + Grafana stack</li>
+                                <li>� Create custom Grafana dashboards</li>
+                                <li>� Implement centralized logging (ELK)</li>
+                                <li>� Configure alerting and on-call rotation</li>
+                                <li>� Implement distributed tracing</li>
                               </ul>
                             </div>
                           </div>
@@ -2285,12 +2285,12 @@ export default function DevOpsPage() {
                                 Core Topics
                               </h4>
                               <ul className="text-slate-700 text-xs space-y-1">
-                                <li>• Cloud computing fundamentals (IaaS, PaaS, SaaS)</li>
-                                <li>• AWS/Azure/GCP core services</li>
-                                <li>• Serverless computing (Lambda, Cloud Functions)</li>
-                                <li>• Managed databases and storage</li>
-                                <li>• Cloud networking and security</li>
-                                <li>• Cost optimization strategies</li>
+                                <li>� Cloud computing fundamentals (IaaS, PaaS, SaaS)</li>
+                                <li>� AWS/Azure/GCP core services</li>
+                                <li>� Serverless computing (Lambda, Cloud Functions)</li>
+                                <li>� Managed databases and storage</li>
+                                <li>� Cloud networking and security</li>
+                                <li>� Cost optimization strategies</li>
                               </ul>
                             </div>
                             <div className="bg-white border border-green-100 p-4 rounded-lg shadow-sm">
@@ -2299,11 +2299,11 @@ export default function DevOpsPage() {
                                 Practical Projects
                               </h4>
                               <ul className="text-slate-700 text-xs space-y-1">
-                                <li>• Deploy 3-tier application on cloud</li>
-                                <li>• Build serverless application</li>
-                                <li>• Implement cloud-native CI/CD</li>
-                                <li>• Set up multi-region deployment</li>
-                                <li>• Prepare for cloud certification (AWS/Azure/GCP)</li>
+                                <li>� Deploy 3-tier application on cloud</li>
+                                <li>� Build serverless application</li>
+                                <li>� Implement cloud-native CI/CD</li>
+                                <li>� Set up multi-region deployment</li>
+                                <li>� Prepare for cloud certification (AWS/Azure/GCP)</li>
                               </ul>
                             </div>
                           </div>
@@ -2333,11 +2333,11 @@ export default function DevOpsPage() {
                         DevSecOps Engineer
                       </h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• Security scanning and compliance</li>
-                        <li>• Secrets management (Vault, Secrets Manager)</li>
-                        <li>• Security testing (SAST, DAST, SCA)</li>
-                        <li>• Container security and hardening</li>
-                        <li>• Compliance automation (SOC2, GDPR)</li>
+                        <li>� Security scanning and compliance</li>
+                        <li>� Secrets management (Vault, Secrets Manager)</li>
+                        <li>� Security testing (SAST, DAST, SCA)</li>
+                        <li>� Container security and hardening</li>
+                        <li>� Compliance automation (SOC2, GDPR)</li>
                       </ul>
                     </div>
                     <div className="bg-white border border-green-100 p-6 rounded-xl shadow-sm">
@@ -2346,11 +2346,11 @@ export default function DevOpsPage() {
                         Platform Engineer
                       </h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• Internal developer platforms</li>
-                        <li>• Service mesh (Istio, Linkerd)</li>
-                        <li>• GitOps workflows (ArgoCD, Flux)</li>
-                        <li>• Platform automation and self-service</li>
-                        <li>• Developer experience optimization</li>
+                        <li>� Internal developer platforms</li>
+                        <li>� Service mesh (Istio, Linkerd)</li>
+                        <li>� GitOps workflows (ArgoCD, Flux)</li>
+                        <li>� Platform automation and self-service</li>
+                        <li>� Developer experience optimization</li>
                       </ul>
                     </div>
                     <div className="bg-white border border-purple-100 p-6 rounded-xl shadow-sm">
@@ -2359,11 +2359,11 @@ export default function DevOpsPage() {
                         Site Reliability Engineer
                       </h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• SLO/SLI definition and tracking</li>
-                        <li>• Incident management and on-call</li>
-                        <li>• Chaos engineering practices</li>
-                        <li>• Performance optimization</li>
-                        <li>• Capacity planning and forecasting</li>
+                        <li>� SLO/SLI definition and tracking</li>
+                        <li>� Incident management and on-call</li>
+                        <li>� Chaos engineering practices</li>
+                        <li>� Performance optimization</li>
+                        <li>� Capacity planning and forecasting</li>
                       </ul>
                     </div>
                     <div className="bg-white border border-yellow-100 p-6 rounded-xl shadow-sm">
@@ -2372,11 +2372,11 @@ export default function DevOpsPage() {
                         Cloud Architect
                       </h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• Multi-cloud strategy and architecture</li>
-                        <li>• Cloud cost optimization</li>
-                        <li>• Disaster recovery and business continuity</li>
-                        <li>• Cloud security and compliance</li>
-                        <li>• Migration strategies (lift-and-shift, refactor)</li>
+                        <li>� Multi-cloud strategy and architecture</li>
+                        <li>� Cloud cost optimization</li>
+                        <li>� Disaster recovery and business continuity</li>
+                        <li>� Cloud security and compliance</li>
+                        <li>� Migration strategies (lift-and-shift, refactor)</li>
                       </ul>
                     </div>
                   </div>
@@ -2395,11 +2395,11 @@ export default function DevOpsPage() {
                         Books
                       </h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• The Phoenix Project</li>
-                        <li>• The DevOps Handbook</li>
-                        <li>• Site Reliability Engineering</li>
-                        <li>• Accelerate</li>
-                        <li>• Continuous Delivery</li>
+                        <li>� The Phoenix Project</li>
+                        <li>� The DevOps Handbook</li>
+                        <li>� Site Reliability Engineering</li>
+                        <li>� Accelerate</li>
+                        <li>� Continuous Delivery</li>
                       </ul>
                     </div>
                     <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
@@ -2408,11 +2408,11 @@ export default function DevOpsPage() {
                         Certifications
                       </h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• AWS Solutions Architect</li>
-                        <li>• Kubernetes (CKA, CKAD, CKS)</li>
-                        <li>• HashiCorp Terraform Associate</li>
-                        <li>• Azure Administrator</li>
-                        <li>• Google Cloud Engineer</li>
+                        <li>� AWS Solutions Architect</li>
+                        <li>� Kubernetes (CKA, CKAD, CKS)</li>
+                        <li>� HashiCorp Terraform Associate</li>
+                        <li>� Azure Administrator</li>
+                        <li>� Google Cloud Engineer</li>
                       </ul>
                     </div>
                     <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
@@ -2421,11 +2421,11 @@ export default function DevOpsPage() {
                         Communities
                       </h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• DevOps subreddit</li>
-                        <li>• CNCF Slack channels</li>
-                        <li>• DevOps Institute</li>
-                        <li>• Local DevOps meetups</li>
-                        <li>• Cloud Native Computing Foundation</li>
+                        <li>� DevOps subreddit</li>
+                        <li>� CNCF Slack channels</li>
+                        <li>� DevOps Institute</li>
+                        <li>� Local DevOps meetups</li>
+                        <li>� Cloud Native Computing Foundation</li>
                       </ul>
                     </div>
                   </div>
@@ -2471,11 +2471,11 @@ export default function DevOpsPage() {
                         Cultural Transformation
                       </h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• Break down silos between Dev and Ops</li>
-                        <li>• Foster collaboration and shared responsibility</li>
-                        <li>• Create a learning culture that embraces failure</li>
-                        <li>• Implement blameless postmortems</li>
-                        <li>• Encourage experimentation and innovation</li>
+                        <li>� Break down silos between Dev and Ops</li>
+                        <li>� Foster collaboration and shared responsibility</li>
+                        <li>� Create a learning culture that embraces failure</li>
+                        <li>� Implement blameless postmortems</li>
+                        <li>� Encourage experimentation and innovation</li>
                       </ul>
                     </div>
                     <div className="bg-white border border-green-100 p-6 rounded-xl shadow-sm">
@@ -2484,11 +2484,11 @@ export default function DevOpsPage() {
                         Automation First
                       </h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• Automate repetitive tasks and processes</li>
-                        <li>• Implement CI/CD pipelines for delivery</li>
-                        <li>• Use Infrastructure as Code for infrastructure</li>
-                        <li>• Automate testing at all levels</li>
-                        <li>• Build self-service platforms for teams</li>
+                        <li>� Automate repetitive tasks and processes</li>
+                        <li>� Implement CI/CD pipelines for delivery</li>
+                        <li>� Use Infrastructure as Code for infrastructure</li>
+                        <li>� Automate testing at all levels</li>
+                        <li>� Build self-service platforms for teams</li>
                       </ul>
                     </div>
                     <div className="bg-white border border-purple-100 p-6 rounded-xl shadow-sm">
@@ -2497,11 +2497,11 @@ export default function DevOpsPage() {
                         Measure Everything
                       </h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• Track deployment frequency and lead time</li>
-                        <li>• Monitor MTTR (Mean Time To Recovery)</li>
-                        <li>• Measure change failure rate</li>
-                        <li>• Implement comprehensive observability</li>
-                        <li>• Use data to drive continuous improvement</li>
+                        <li>� Track deployment frequency and lead time</li>
+                        <li>� Monitor MTTR (Mean Time To Recovery)</li>
+                        <li>� Measure change failure rate</li>
+                        <li>� Implement comprehensive observability</li>
+                        <li>� Use data to drive continuous improvement</li>
                       </ul>
                     </div>
                   </div>
@@ -2568,10 +2568,10 @@ export default function DevOpsPage() {
                           Foundation Tools
                         </h3>
                         <ul className="text-slate-700 space-y-2 text-sm">
-                          <li>• <strong>Version Control:</strong> Git (GitHub/GitLab/Bitbucket)</li>
-                          <li>• <strong>Operating System:</strong> Linux (Ubuntu, CentOS, RHEL)</li>
-                          <li>• <strong>Scripting:</strong> Bash, Python</li>
-                          <li>• <strong>Networking:</strong> DNS, HTTP/HTTPS, Load Balancers</li>
+                          <li>� <strong>Version Control:</strong> Git (GitHub/GitLab/Bitbucket)</li>
+                          <li>� <strong>Operating System:</strong> Linux (Ubuntu, CentOS, RHEL)</li>
+                          <li>� <strong>Scripting:</strong> Bash, Python</li>
+                          <li>� <strong>Networking:</strong> DNS, HTTP/HTTPS, Load Balancers</li>
                         </ul>
                       </div>
                       <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
@@ -2580,10 +2580,10 @@ export default function DevOpsPage() {
                           Build & Deploy
                         </h3>
                         <ul className="text-slate-700 space-y-2 text-sm">
-                          <li>• <strong>CI/CD:</strong> Jenkins, GitHub Actions, GitLab CI</li>
-                          <li>• <strong>Build Tools:</strong> Maven, Gradle, npm, Docker</li>
-                          <li>• <strong>Artifact Management:</strong> Nexus, Artifactory, Docker Registry</li>
-                          <li>• <strong>Deployment:</strong> Blue-Green, Canary, Rolling updates</li>
+                          <li>� <strong>CI/CD:</strong> Jenkins, GitHub Actions, GitLab CI</li>
+                          <li>� <strong>Build Tools:</strong> Maven, Gradle, npm, Docker</li>
+                          <li>� <strong>Artifact Management:</strong> Nexus, Artifactory, Docker Registry</li>
+                          <li>� <strong>Deployment:</strong> Blue-Green, Canary, Rolling updates</li>
                         </ul>
                       </div>
                       <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
@@ -2592,10 +2592,10 @@ export default function DevOpsPage() {
                           Infrastructure
                         </h3>
                         <ul className="text-slate-700 space-y-2 text-sm">
-                          <li>• <strong>Containers:</strong> Docker, Podman</li>
-                          <li>• <strong>Orchestration:</strong> Kubernetes, Docker Swarm</li>
-                          <li>• <strong>IaC:</strong> Terraform, Ansible, CloudFormation</li>
-                          <li>• <strong>Cloud Platforms:</strong> AWS, Azure, GCP</li>
+                          <li>� <strong>Containers:</strong> Docker, Podman</li>
+                          <li>� <strong>Orchestration:</strong> Kubernetes, Docker Swarm</li>
+                          <li>� <strong>IaC:</strong> Terraform, Ansible, CloudFormation</li>
+                          <li>� <strong>Cloud Platforms:</strong> AWS, Azure, GCP</li>
                         </ul>
                       </div>
                       <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
@@ -2604,10 +2604,10 @@ export default function DevOpsPage() {
                           Observability
                         </h3>
                         <ul className="text-slate-700 space-y-2 text-sm">
-                          <li>• <strong>Metrics:</strong> Prometheus, Datadog, CloudWatch</li>
-                          <li>• <strong>Logging:</strong> ELK Stack, Splunk, Loki</li>
-                          <li>• <strong>Tracing:</strong> Jaeger, Zipkin, OpenTelemetry</li>
-                          <li>• <strong>Visualization:</strong> Grafana, Kibana</li>
+                          <li>� <strong>Metrics:</strong> Prometheus, Datadog, CloudWatch</li>
+                          <li>� <strong>Logging:</strong> ELK Stack, Splunk, Loki</li>
+                          <li>� <strong>Tracing:</strong> Jaeger, Zipkin, OpenTelemetry</li>
+                          <li>� <strong>Visualization:</strong> Grafana, Kibana</li>
                         </ul>
                       </div>
                     </div>
@@ -2618,10 +2618,10 @@ export default function DevOpsPage() {
                           Security (DevSecOps)
                         </h3>
                         <ul className="text-slate-700 space-y-2 text-sm">
-                          <li>• <strong>Secret Management:</strong> HashiCorp Vault, AWS Secrets Manager</li>
-                          <li>• <strong>SAST:</strong> SonarQube, Checkmarx</li>
-                          <li>• <strong>DAST:</strong> OWASP ZAP, Burp Suite</li>
-                          <li>• <strong>Container Security:</strong> Aqua, Twistlock, Snyk</li>
+                          <li>� <strong>Secret Management:</strong> HashiCorp Vault, AWS Secrets Manager</li>
+                          <li>� <strong>SAST:</strong> SonarQube, Checkmarx</li>
+                          <li>� <strong>DAST:</strong> OWASP ZAP, Burp Suite</li>
+                          <li>� <strong>Container Security:</strong> Aqua, Twistlock, Snyk</li>
                         </ul>
                       </div>
                       <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
@@ -2630,10 +2630,10 @@ export default function DevOpsPage() {
                           Collaboration
                         </h3>
                         <ul className="text-slate-700 space-y-2 text-sm">
-                          <li>• <strong>Communication:</strong> Slack, Microsoft Teams</li>
-                          <li>• <strong>Issue Tracking:</strong> Jira, GitHub Issues</li>
-                          <li>• <strong>Documentation:</strong> Confluence, Notion, Wiki</li>
-                          <li>• <strong>Incident Management:</strong> PagerDuty, Opsgenie</li>
+                          <li>� <strong>Communication:</strong> Slack, Microsoft Teams</li>
+                          <li>� <strong>Issue Tracking:</strong> Jira, GitHub Issues</li>
+                          <li>� <strong>Documentation:</strong> Confluence, Notion, Wiki</li>
+                          <li>� <strong>Incident Management:</strong> PagerDuty, Opsgenie</li>
                         </ul>
                       </div>
                       <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
@@ -2642,10 +2642,10 @@ export default function DevOpsPage() {
                           Advanced Topics
                         </h3>
                         <ul className="text-slate-700 space-y-2 text-sm">
-                          <li>• <strong>Service Mesh:</strong> Istio, Linkerd, Consul</li>
-                          <li>• <strong>GitOps:</strong> ArgoCD, Flux</li>
-                          <li>• <strong>Chaos Engineering:</strong> Chaos Monkey, Gremlin</li>
-                          <li>• <strong>Policy as Code:</strong> Open Policy Agent, Sentinel</li>
+                          <li>� <strong>Service Mesh:</strong> Istio, Linkerd, Consul</li>
+                          <li>� <strong>GitOps:</strong> ArgoCD, Flux</li>
+                          <li>� <strong>Chaos Engineering:</strong> Chaos Monkey, Gremlin</li>
+                          <li>� <strong>Policy as Code:</strong> Open Policy Agent, Sentinel</li>
                         </ul>
                       </div>
                     </div>
@@ -2674,10 +2674,10 @@ export default function DevOpsPage() {
                       <div className="bg-slate-50 p-4 rounded border border-slate-200">
                         <p className="text-xs text-slate-700 mb-2"><strong>Benchmarks:</strong></p>
                         <ul className="text-slate-700 text-xs space-y-1">
-                          <li>• <strong className="text-green-600">Elite:</strong> On-demand (multiple deployments per day)</li>
-                          <li>• <strong className="text-blue-600">High:</strong> Between once per day and once per week</li>
-                          <li>• <strong className="text-yellow-600">Medium:</strong> Between once per week and once per month</li>
-                          <li>• <strong className="text-red-600">Low:</strong> Fewer than once per month</li>
+                          <li>� <strong className="text-green-600">Elite:</strong> On-demand (multiple deployments per day)</li>
+                          <li>� <strong className="text-blue-600">High:</strong> Between once per day and once per week</li>
+                          <li>� <strong className="text-yellow-600">Medium:</strong> Between once per week and once per month</li>
+                          <li>� <strong className="text-red-600">Low:</strong> Fewer than once per month</li>
                         </ul>
                       </div>
                     </div>
@@ -2693,10 +2693,10 @@ export default function DevOpsPage() {
                       <div className="bg-slate-50 p-4 rounded border border-slate-200">
                         <p className="text-xs text-slate-700 mb-2"><strong>Benchmarks:</strong></p>
                         <ul className="text-slate-700 text-xs space-y-1">
-                          <li>• <strong className="text-green-600">Elite:</strong> Less than one hour</li>
-                          <li>• <strong className="text-blue-600">High:</strong> Between one day and one week</li>
-                          <li>• <strong className="text-yellow-600">Medium:</strong> Between one week and one month</li>
-                          <li>• <strong className="text-red-600">Low:</strong> More than one month</li>
+                          <li>� <strong className="text-green-600">Elite:</strong> Less than one hour</li>
+                          <li>� <strong className="text-blue-600">High:</strong> Between one day and one week</li>
+                          <li>� <strong className="text-yellow-600">Medium:</strong> Between one week and one month</li>
+                          <li>� <strong className="text-red-600">Low:</strong> More than one month</li>
                         </ul>
                       </div>
                     </div>
@@ -2712,10 +2712,10 @@ export default function DevOpsPage() {
                       <div className="bg-slate-50 p-4 rounded border border-slate-200">
                         <p className="text-xs text-slate-700 mb-2"><strong>Benchmarks:</strong></p>
                         <ul className="text-slate-700 text-xs space-y-1">
-                          <li>• <strong className="text-green-600">Elite:</strong> Less than one hour</li>
-                          <li>• <strong className="text-blue-600">High:</strong> Less than one day</li>
-                          <li>• <strong className="text-yellow-600">Medium:</strong> Between one day and one week</li>
-                          <li>• <strong className="text-red-600">Low:</strong> More than one week</li>
+                          <li>� <strong className="text-green-600">Elite:</strong> Less than one hour</li>
+                          <li>� <strong className="text-blue-600">High:</strong> Less than one day</li>
+                          <li>� <strong className="text-yellow-600">Medium:</strong> Between one day and one week</li>
+                          <li>� <strong className="text-red-600">Low:</strong> More than one week</li>
                         </ul>
                       </div>
                     </div>
@@ -2731,10 +2731,10 @@ export default function DevOpsPage() {
                       <div className="bg-slate-50 p-4 rounded border border-slate-200">
                         <p className="text-xs text-slate-700 mb-2"><strong>Benchmarks:</strong></p>
                         <ul className="text-slate-700 text-xs space-y-1">
-                          <li>• <strong className="text-green-600">Elite:</strong> 0-15%</li>
-                          <li>• <strong className="text-blue-600">High:</strong> 16-30%</li>
-                          <li>• <strong className="text-yellow-600">Medium:</strong> 31-45%</li>
-                          <li>• <strong className="text-red-600">Low:</strong> 46-60%</li>
+                          <li>� <strong className="text-green-600">Elite:</strong> 0-15%</li>
+                          <li>� <strong className="text-blue-600">High:</strong> 16-30%</li>
+                          <li>� <strong className="text-yellow-600">Medium:</strong> 31-45%</li>
+                          <li>� <strong className="text-red-600">Low:</strong> 46-60%</li>
                         </ul>
                       </div>
                     </div>
@@ -2754,14 +2754,14 @@ export default function DevOpsPage() {
                         Do These
                       </h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• <strong>Start small:</strong> Implement DevOps practices incrementally</li>
-                        <li>• <strong>Automate incrementally:</strong> Begin with low-hanging fruit</li>
-                        <li>• <strong>Measure success:</strong> Track metrics from day one</li>
-                        <li>• <strong>Foster culture:</strong> Invest in team development and collaboration</li>
-                        <li>• <strong>Learn from failures:</strong> Conduct blameless postmortems</li>
-                        <li>• <strong>Document everything:</strong> Make knowledge accessible</li>
-                        <li>• <strong>Test thoroughly:</strong> Comprehensive automated testing</li>
-                        <li>• <strong>Monitor proactively:</strong> Observability before incidents</li>
+                        <li>� <strong>Start small:</strong> Implement DevOps practices incrementally</li>
+                        <li>� <strong>Automate incrementally:</strong> Begin with low-hanging fruit</li>
+                        <li>� <strong>Measure success:</strong> Track metrics from day one</li>
+                        <li>� <strong>Foster culture:</strong> Invest in team development and collaboration</li>
+                        <li>� <strong>Learn from failures:</strong> Conduct blameless postmortems</li>
+                        <li>� <strong>Document everything:</strong> Make knowledge accessible</li>
+                        <li>� <strong>Test thoroughly:</strong> Comprehensive automated testing</li>
+                        <li>� <strong>Monitor proactively:</strong> Observability before incidents</li>
                       </ul>
                     </div>
                     <div className="bg-red-50 p-6 rounded-xl border border-red-100">
@@ -2770,14 +2770,14 @@ export default function DevOpsPage() {
                         Avoid These
                       </h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• <strong>Don't skip culture:</strong> Tools alone won't fix organizational issues</li>
-                        <li>• <strong>Don't over-engineer:</strong> Start simple, add complexity gradually</li>
-                        <li>• <strong>Don't ignore security:</strong> Integrate security from the start</li>
-                        <li>• <strong>Don't work in silos:</strong> Break down barriers between teams</li>
-                        <li>• <strong>Don't deploy manually:</strong> Automate all deployments</li>
-                        <li>• <strong>Don't skip testing:</strong> Testing is not optional</li>
-                        <li>• <strong>Don't blame individuals:</strong> Focus on system improvements</li>
-                        <li>• <strong>Don't stop learning:</strong> DevOps is a continuous journey</li>
+                        <li>� <strong>Don't skip culture:</strong> Tools alone won't fix organizational issues</li>
+                        <li>� <strong>Don't over-engineer:</strong> Start simple, add complexity gradually</li>
+                        <li>� <strong>Don't ignore security:</strong> Integrate security from the start</li>
+                        <li>� <strong>Don't work in silos:</strong> Break down barriers between teams</li>
+                        <li>� <strong>Don't deploy manually:</strong> Automate all deployments</li>
+                        <li>� <strong>Don't skip testing:</strong> Testing is not optional</li>
+                        <li>� <strong>Don't blame individuals:</strong> Focus on system improvements</li>
+                        <li>� <strong>Don't stop learning:</strong> DevOps is a continuous journey</li>
                       </ul>
                     </div>
                   </div>
@@ -2923,11 +2923,11 @@ export default function DevOpsPage() {
                         Continue Learning
                       </h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• Explore the detailed sections on this website</li>
-                        <li>• Read "The Phoenix Project" and "The DevOps Handbook"</li>
-                        <li>• Join DevOps communities and forums</li>
-                        <li>• Attend DevOps conferences and meetups</li>
-                        <li>• Contribute to open source DevOps projects</li>
+                        <li>� Explore the detailed sections on this website</li>
+                        <li>� Read "The Phoenix Project" and "The DevOps Handbook"</li>
+                        <li>� Join DevOps communities and forums</li>
+                        <li>� Attend DevOps conferences and meetups</li>
+                        <li>� Contribute to open source DevOps projects</li>
                       </ul>
                     </div>
                     <div className="bg-white p-6 rounded-xl border border-green-100 shadow-sm">
@@ -2936,11 +2936,11 @@ export default function DevOpsPage() {
                         Practice & Build
                       </h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• Set up your own CI/CD pipeline</li>
-                        <li>• Deploy applications to Kubernetes</li>
-                        <li>• Implement Infrastructure as Code projects</li>
-                        <li>• Build comprehensive monitoring dashboards</li>
-                        <li>• Pursue relevant certifications (AWS, Kubernetes, etc.)</li>
+                        <li>� Set up your own CI/CD pipeline</li>
+                        <li>� Deploy applications to Kubernetes</li>
+                        <li>� Implement Infrastructure as Code projects</li>
+                        <li>� Build comprehensive monitoring dashboards</li>
+                        <li>� Pursue relevant certifications (AWS, Kubernetes, etc.)</li>
                       </ul>
                     </div>
                   </div>
@@ -3003,12 +3003,12 @@ export default function DevOpsPage() {
                           Why Docker Matters
                         </h4>
                         <ul className="text-slate-700 space-y-2 text-sm">
-                          <li>• <strong>Consistency:</strong> Identical environments everywhere</li>
-                          <li>• <strong>Isolation:</strong> Apps don't interfere with each other</li>
-                          <li>• <strong>Portability:</strong> Run anywhere Docker runs</li>
-                          <li>• <strong>Scalability:</strong> Easy horizontal scaling</li>
-                          <li>• <strong>Efficiency:</strong> Shared OS kernel, minimal overhead</li>
-                          <li>• <strong>CI/CD Integration:</strong> Seamless deployment pipelines</li>
+                          <li>� <strong>Consistency:</strong> Identical environments everywhere</li>
+                          <li>� <strong>Isolation:</strong> Apps don't interfere with each other</li>
+                          <li>� <strong>Portability:</strong> Run anywhere Docker runs</li>
+                          <li>� <strong>Scalability:</strong> Easy horizontal scaling</li>
+                          <li>� <strong>Efficiency:</strong> Shared OS kernel, minimal overhead</li>
+                          <li>� <strong>CI/CD Integration:</strong> Seamless deployment pipelines</li>
                         </ul>
                       </div>
                       <div>
@@ -3017,12 +3017,12 @@ export default function DevOpsPage() {
                           Core Concepts
                         </h4>
                         <ul className="text-slate-700 space-y-2 text-sm">
-                          <li>• <strong>Container:</strong> Running instance of an image</li>
-                          <li>• <strong>Image:</strong> Read-only template for containers</li>
-                          <li>• <strong>Dockerfile:</strong> Instructions to build images</li>
-                          <li>• <strong>Registry:</strong> Repository for Docker images</li>
-                          <li>• <strong>Volume:</strong> Persistent data storage</li>
-                          <li>• <strong>Network:</strong> Container communication</li>
+                          <li>� <strong>Container:</strong> Running instance of an image</li>
+                          <li>� <strong>Image:</strong> Read-only template for containers</li>
+                          <li>� <strong>Dockerfile:</strong> Instructions to build images</li>
+                          <li>� <strong>Registry:</strong> Repository for Docker images</li>
+                          <li>� <strong>Volume:</strong> Persistent data storage</li>
+                          <li>� <strong>Network:</strong> Container communication</li>
                         </ul>
                       </div>
                     </div>
@@ -3049,9 +3049,9 @@ export default function DevOpsPage() {
                           </h4>
                           <p className="text-slate-700 text-sm mb-2">Background service managing containers</p>
                           <ul className="text-slate-600 text-xs space-y-1">
-                            <li>• Manages container lifecycle</li>
-                            <li>• Handles image storage</li>
-                            <li>• Manages networking</li>
+                            <li>� Manages container lifecycle</li>
+                            <li>� Handles image storage</li>
+                            <li>� Manages networking</li>
                           </ul>
                         </div>
                         <div className="bg-white p-4 rounded-lg border border-blue-100 shadow-sm">
@@ -3061,9 +3061,9 @@ export default function DevOpsPage() {
                           </h4>
                           <p className="text-slate-700 text-sm mb-2">Command-line interface for Docker</p>
                           <ul className="text-slate-600 text-xs space-y-1">
-                            <li>• Sends commands to daemon</li>
-                            <li>• CLI and API interface</li>
-                            <li>• Can connect to remote daemon</li>
+                            <li>� Sends commands to daemon</li>
+                            <li>� CLI and API interface</li>
+                            <li>� Can connect to remote daemon</li>
                           </ul>
                         </div>
                         <div className="bg-white p-4 rounded-lg border border-blue-100 shadow-sm">
@@ -3073,9 +3073,9 @@ export default function DevOpsPage() {
                           </h4>
                           <p className="text-slate-700 text-sm mb-2">Repository for Docker images</p>
                           <ul className="text-slate-600 text-xs space-y-1">
-                            <li>• Docker Hub (public)</li>
-                            <li>• Private registries</li>
-                            <li>• Image versioning</li>
+                            <li>� Docker Hub (public)</li>
+                            <li>� Private registries</li>
+                            <li>� Image versioning</li>
                           </ul>
                         </div>
                       </div>
@@ -3093,11 +3093,11 @@ export default function DevOpsPage() {
                             Containers (Docker)
                           </h4>
                           <ul className="text-slate-700 space-y-2 text-sm">
-                            <li>• <strong>Lightweight:</strong> Share host OS kernel</li>
-                            <li>• <strong>Fast startup:</strong> Seconds to start</li>
-                            <li>• <strong>Resource efficient:</strong> Lower memory footprint</li>
-                            <li>• <strong>Portable:</strong> Run anywhere</li>
-                            <li>• <strong>Microservices ready:</strong> Perfect for modern apps</li>
+                            <li>� <strong>Lightweight:</strong> Share host OS kernel</li>
+                            <li>� <strong>Fast startup:</strong> Seconds to start</li>
+                            <li>� <strong>Resource efficient:</strong> Lower memory footprint</li>
+                            <li>� <strong>Portable:</strong> Run anywhere</li>
+                            <li>� <strong>Microservices ready:</strong> Perfect for modern apps</li>
                           </ul>
                         </div>
                         <div>
@@ -3106,11 +3106,11 @@ export default function DevOpsPage() {
                             Virtual Machines
                           </h4>
                           <ul className="text-slate-700 space-y-2 text-sm">
-                            <li>• <strong>Heavy:</strong> Full OS per VM</li>
-                            <li>• <strong>Slow startup:</strong> Minutes to boot</li>
-                            <li>• <strong>Resource intensive:</strong> High memory usage</li>
-                            <li>• <strong>Platform specific:</strong> Hypervisor dependent</li>
-                            <li>• <strong>Legacy approach:</strong> Traditional virtualization</li>
+                            <li>� <strong>Heavy:</strong> Full OS per VM</li>
+                            <li>� <strong>Slow startup:</strong> Minutes to boot</li>
+                            <li>� <strong>Resource intensive:</strong> High memory usage</li>
+                            <li>� <strong>Platform specific:</strong> Hypervisor dependent</li>
+                            <li>� <strong>Legacy approach:</strong> Traditional virtualization</li>
                           </ul>
                         </div>
                       </div>
@@ -3355,12 +3355,12 @@ export default function DevOpsPage() {
                             Dockerfile Best Practices
                           </h4>
                           <ul className="text-slate-700 space-y-2 text-sm">
-                            <li>• <strong>Use .dockerignore:</strong> Exclude unnecessary files</li>
-                            <li>• <strong>Multi-stage builds:</strong> Reduce final image size</li>
-                            <li>• <strong>Layer optimization:</strong> Order commands by frequency of change</li>
-                            <li>• <strong>Specific versions:</strong> Avoid 'latest' tags</li>
-                            <li>• <strong>Non-root user:</strong> Security best practice</li>
-                            <li>• <strong>Health checks:</strong> Monitor container health</li>
+                            <li>� <strong>Use .dockerignore:</strong> Exclude unnecessary files</li>
+                            <li>� <strong>Multi-stage builds:</strong> Reduce final image size</li>
+                            <li>� <strong>Layer optimization:</strong> Order commands by frequency of change</li>
+                            <li>� <strong>Specific versions:</strong> Avoid 'latest' tags</li>
+                            <li>� <strong>Non-root user:</strong> Security best practice</li>
+                            <li>� <strong>Health checks:</strong> Monitor container health</li>
                           </ul>
                           <div className="mt-4 p-3 bg-white rounded border border-green-100 shadow-sm">
                             <p className="text-sm text-green-800">
@@ -3561,9 +3561,9 @@ export default function DevOpsPage() {
                               <strong className="flex items-center gap-2"><Info className="w-4 h-4" /> Note:</strong><br />
                               <span className="text-slate-600 font-mono text-xs">
                                 Containers can communicate using:<br />
-                                • Container names as hostnames<br />
-                                • Internal IP addresses<br />
-                                • Environment variables (--link)
+                                � Container names as hostnames<br />
+                                � Internal IP addresses<br />
+                                � Environment variables (--link)
                               </span>
                             </p>
                           </div>
@@ -3619,12 +3619,12 @@ export default function DevOpsPage() {
                           Why Compose Matters in DevOps
                         </h4>
                         <ul className="text-slate-700 space-y-2 text-sm">
-                          <li>• <strong>Single Command Deployment:</strong> Start entire application stack</li>
-                          <li>• <strong>Environment Consistency:</strong> Identical dev/staging/prod</li>
-                          <li>• <strong>Service Orchestration:</strong> Automatic dependency management</li>
-                          <li>• <strong>Network Automation:</strong> Service discovery and communication</li>
-                          <li>• <strong>Volume Management:</strong> Persistent data across environments</li>
-                          <li>• <strong>CI/CD Integration:</strong> Perfect for automated deployments</li>
+                          <li>� <strong>Single Command Deployment:</strong> Start entire application stack</li>
+                          <li>� <strong>Environment Consistency:</strong> Identical dev/staging/prod</li>
+                          <li>� <strong>Service Orchestration:</strong> Automatic dependency management</li>
+                          <li>� <strong>Network Automation:</strong> Service discovery and communication</li>
+                          <li>� <strong>Volume Management:</strong> Persistent data across environments</li>
+                          <li>� <strong>CI/CD Integration:</strong> Perfect for automated deployments</li>
                         </ul>
                       </div>
                       <div>
@@ -3633,12 +3633,12 @@ export default function DevOpsPage() {
                           Core Concepts
                         </h4>
                         <ul className="text-slate-700 space-y-2 text-sm">
-                          <li>• <strong>Services:</strong> Container definitions</li>
-                          <li>• <strong>Networks:</strong> Container communication</li>
-                          <li>• <strong>Volumes:</strong> Data persistence</li>
-                          <li>• <strong>Environment Variables:</strong> Configuration management</li>
-                          <li>• <strong>Dependencies:</strong> Service startup ordering</li>
-                          <li>• <strong>Scaling:</strong> Horizontal container scaling</li>
+                          <li>� <strong>Services:</strong> Container definitions</li>
+                          <li>� <strong>Networks:</strong> Container communication</li>
+                          <li>� <strong>Volumes:</strong> Data persistence</li>
+                          <li>� <strong>Environment Variables:</strong> Configuration management</li>
+                          <li>� <strong>Dependencies:</strong> Service startup ordering</li>
+                          <li>� <strong>Scaling:</strong> Horizontal container scaling</li>
                         </ul>
                       </div>
                     </div>
@@ -3665,10 +3665,10 @@ export default function DevOpsPage() {
                           </h4>
                           <p className="text-slate-700 text-sm mb-2">Container definitions with configuration</p>
                           <ul className="text-slate-600 text-xs space-y-1">
-                            <li>• Image or build context</li>
-                            <li>• Port mappings</li>
-                            <li>• Environment variables</li>
-                            <li>• Volume mounts</li>
+                            <li>� Image or build context</li>
+                            <li>� Port mappings</li>
+                            <li>� Environment variables</li>
+                            <li>� Volume mounts</li>
                           </ul>
                         </div>
                         <div className="bg-white p-4 rounded-lg border border-blue-100 shadow-sm">
@@ -3678,10 +3678,10 @@ export default function DevOpsPage() {
                           </h4>
                           <p className="text-slate-700 text-sm mb-2">Container communication setup</p>
                           <ul className="text-slate-600 text-xs space-y-1">
-                            <li>• Custom network creation</li>
-                            <li>• Service discovery</li>
-                            <li>• Network isolation</li>
-                            <li>• External networks</li>
+                            <li>� Custom network creation</li>
+                            <li>� Service discovery</li>
+                            <li>� Network isolation</li>
+                            <li>� External networks</li>
                           </ul>
                         </div>
                         <div className="bg-white p-4 rounded-lg border border-blue-100 shadow-sm">
@@ -3691,10 +3691,10 @@ export default function DevOpsPage() {
                           </h4>
                           <p className="text-slate-700 text-sm mb-2">Persistent data management</p>
                           <ul className="text-slate-600 text-xs space-y-1">
-                            <li>• Named volumes</li>
-                            <li>• Bind mounts</li>
-                            <li>• Volume drivers</li>
-                            <li>• External volumes</li>
+                            <li>� Named volumes</li>
+                            <li>� Bind mounts</li>
+                            <li>� Volume drivers</li>
+                            <li>� External volumes</li>
                           </ul>
                         </div>
                       </div>
@@ -3712,11 +3712,11 @@ export default function DevOpsPage() {
                             Docker Compose
                           </h4>
                           <ul className="text-slate-700 space-y-2 text-sm">
-                            <li>• <strong>Simple:</strong> Single-host orchestration</li>
-                            <li>• <strong>Development:</strong> Perfect for local dev</li>
-                            <li>• <strong>Quick Setup:</strong> Minutes to running</li>
-                            <li>• <strong>YAML Config:</strong> Easy to understand</li>
-                            <li>• <strong>Limited Scale:</strong> Single machine</li>
+                            <li>� <strong>Simple:</strong> Single-host orchestration</li>
+                            <li>� <strong>Development:</strong> Perfect for local dev</li>
+                            <li>� <strong>Quick Setup:</strong> Minutes to running</li>
+                            <li>� <strong>YAML Config:</strong> Easy to understand</li>
+                            <li>� <strong>Limited Scale:</strong> Single machine</li>
                           </ul>
                         </div>
                         <div>
@@ -3725,11 +3725,11 @@ export default function DevOpsPage() {
                             Kubernetes
                           </h4>
                           <ul className="text-slate-700 space-y-2 text-sm">
-                            <li>• <strong>Complex:</strong> Multi-host orchestration</li>
-                            <li>• <strong>Production:</strong> Enterprise-grade</li>
-                            <li>• <strong>Steep Learning:</strong> Complex setup</li>
-                            <li>• <strong>YAML + APIs:</strong> More complex</li>
-                            <li>• <strong>Massive Scale:</strong> Multi-machine</li>
+                            <li>� <strong>Complex:</strong> Multi-host orchestration</li>
+                            <li>� <strong>Production:</strong> Enterprise-grade</li>
+                            <li>� <strong>Steep Learning:</strong> Complex setup</li>
+                            <li>� <strong>YAML + APIs:</strong> More complex</li>
+                            <li>� <strong>Massive Scale:</strong> Multi-machine</li>
                           </ul>
                         </div>
                       </div>
@@ -3955,13 +3955,13 @@ export default function DevOpsPage() {
                             Key Features Explained
                           </h4>
                           <ul className="text-slate-700 space-y-2 text-sm">
-                            <li>• <strong>Multi-service Architecture:</strong> Web, DB, Redis, Nginx</li>
-                            <li>• <strong>Service Dependencies:</strong> Automatic startup ordering</li>
-                            <li>• <strong>Environment Variables:</strong> Configuration management</li>
-                            <li>• <strong>Volume Persistence:</strong> Data survives container restarts</li>
-                            <li>• <strong>Custom Network:</strong> Isolated service communication</li>
-                            <li>• <strong>Restart Policies:</strong> Automatic recovery</li>
-                            <li>• <strong>Load Balancer:</strong> Nginx reverse proxy</li>
+                            <li>� <strong>Multi-service Architecture:</strong> Web, DB, Redis, Nginx</li>
+                            <li>� <strong>Service Dependencies:</strong> Automatic startup ordering</li>
+                            <li>� <strong>Environment Variables:</strong> Configuration management</li>
+                            <li>� <strong>Volume Persistence:</strong> Data survives container restarts</li>
+                            <li>� <strong>Custom Network:</strong> Isolated service communication</li>
+                            <li>� <strong>Restart Policies:</strong> Automatic recovery</li>
+                            <li>� <strong>Load Balancer:</strong> Nginx reverse proxy</li>
                           </ul>
                           <div className="mt-4 p-3 bg-white rounded border border-green-100 shadow-sm">
                             <p className="text-sm text-green-800">
@@ -4178,11 +4178,11 @@ export default function DevOpsPage() {
                           Production Challenges
                         </h4>
                         <ul className="text-slate-700 space-y-2 text-sm">
-                          <li>• <strong>Security Vulnerabilities:</strong> Malicious attacks and data breaches</li>
-                          <li>• <strong>Performance Issues:</strong> Slow startups and resource waste</li>
-                          <li>• <strong>Operational Complexity:</strong> Debugging and monitoring difficulties</li>
-                          <li>• <strong>Scalability Problems:</strong> Resource limits and bottlenecks</li>
-                          <li>• <strong>Maintenance Overhead:</strong> Updates and configuration drift</li>
+                          <li>� <strong>Security Vulnerabilities:</strong> Malicious attacks and data breaches</li>
+                          <li>� <strong>Performance Issues:</strong> Slow startups and resource waste</li>
+                          <li>� <strong>Operational Complexity:</strong> Debugging and monitoring difficulties</li>
+                          <li>� <strong>Scalability Problems:</strong> Resource limits and bottlenecks</li>
+                          <li>� <strong>Maintenance Overhead:</strong> Updates and configuration drift</li>
                         </ul>
                       </div>
                       <div>
@@ -4191,11 +4191,11 @@ export default function DevOpsPage() {
                           Best Practice Benefits
                         </h4>
                         <ul className="text-slate-700 space-y-2 text-sm">
-                          <li>• <strong>Enhanced Security:</strong> Reduced attack surface and vulnerabilities</li>
-                          <li>• <strong>Better Performance:</strong> Optimized resource usage and startup times</li>
-                          <li>• <strong>Improved Reliability:</strong> Consistent behavior and easy debugging</li>
-                          <li>• <strong>Easier Scaling:</strong> Predictable resource requirements</li>
-                          <li>• <strong>Lower Maintenance:</strong> Standardized and documented processes</li>
+                          <li>� <strong>Enhanced Security:</strong> Reduced attack surface and vulnerabilities</li>
+                          <li>� <strong>Better Performance:</strong> Optimized resource usage and startup times</li>
+                          <li>� <strong>Improved Reliability:</strong> Consistent behavior and easy debugging</li>
+                          <li>� <strong>Easier Scaling:</strong> Predictable resource requirements</li>
+                          <li>� <strong>Lower Maintenance:</strong> Standardized and documented processes</li>
                         </ul>
                       </div>
                     </div>
@@ -4617,12 +4617,12 @@ export default function DevOpsPage() {
                             Security
                           </h4>
                           <ul className="text-slate-700 space-y-1 text-sm">
-                            <li>• Non-root user configured</li>
-                            <li>• Minimal base image used</li>
-                            <li>• No secrets in image layers</li>
-                            <li>• Vulnerability scan passed</li>
-                            <li>• Read-only filesystem enabled</li>
-                            <li>• Capabilities dropped</li>
+                            <li>� Non-root user configured</li>
+                            <li>� Minimal base image used</li>
+                            <li>� No secrets in image layers</li>
+                            <li>� Vulnerability scan passed</li>
+                            <li>� Read-only filesystem enabled</li>
+                            <li>� Capabilities dropped</li>
                           </ul>
                         </div>
                         <div className="bg-white p-4 rounded-lg border border-green-100 shadow-sm">
@@ -4631,12 +4631,12 @@ export default function DevOpsPage() {
                             Performance
                           </h4>
                           <ul className="text-slate-700 space-y-1 text-sm">
-                            <li>• Multi-stage build implemented</li>
-                            <li>• .dockerignore configured</li>
-                            <li>• Resource limits set</li>
-                            <li>• Health checks configured</li>
-                            <li>• Image size optimized</li>
-                            <li>• Build cache optimized</li>
+                            <li>� Multi-stage build implemented</li>
+                            <li>� .dockerignore configured</li>
+                            <li>� Resource limits set</li>
+                            <li>� Health checks configured</li>
+                            <li>� Image size optimized</li>
+                            <li>� Build cache optimized</li>
                           </ul>
                         </div>
                         <div className="bg-white p-4 rounded-lg border border-green-100 shadow-sm">
@@ -4645,12 +4645,12 @@ export default function DevOpsPage() {
                             Operations
                           </h4>
                           <ul className="text-slate-700 space-y-1 text-sm">
-                            <li>• Structured logging enabled</li>
-                            <li>• Metrics endpoint configured</li>
-                            <li>• Version tags applied</li>
-                            <li>• Rollback strategy defined</li>
-                            <li>• Monitoring configured</li>
-                            <li>• Documentation updated</li>
+                            <li>� Structured logging enabled</li>
+                            <li>� Metrics endpoint configured</li>
+                            <li>� Version tags applied</li>
+                            <li>� Rollback strategy defined</li>
+                            <li>� Monitoring configured</li>
+                            <li>� Documentation updated</li>
                           </ul>
                         </div>
                       </div>
@@ -4739,13 +4739,13 @@ export default function DevOpsPage() {
                           Why Kubernetes Matters
                         </h4>
                         <ul className="text-slate-700 space-y-2 text-sm">
-                          <li>• <strong>Multi-Cloud Portability:</strong> Run anywhere (AWS, Azure, GCP, on-prem)</li>
-                          <li>• <strong>Auto-Scaling:</strong> Scale based on demand automatically</li>
-                          <li>• <strong>Self-Healing:</strong> Restart failed containers automatically</li>
-                          <li>• <strong>Zero-Downtime Deployments:</strong> Rolling updates with no service interruption</li>
-                          <li>• <strong>Service Discovery:</strong> Automatic DNS and load balancing</li>
-                          <li>• <strong>Resource Optimization:</strong> Efficient resource utilization</li>
-                          <li>• <strong>Declarative Configuration:</strong> Desired state management</li>
+                          <li>� <strong>Multi-Cloud Portability:</strong> Run anywhere (AWS, Azure, GCP, on-prem)</li>
+                          <li>� <strong>Auto-Scaling:</strong> Scale based on demand automatically</li>
+                          <li>� <strong>Self-Healing:</strong> Restart failed containers automatically</li>
+                          <li>� <strong>Zero-Downtime Deployments:</strong> Rolling updates with no service interruption</li>
+                          <li>� <strong>Service Discovery:</strong> Automatic DNS and load balancing</li>
+                          <li>� <strong>Resource Optimization:</strong> Efficient resource utilization</li>
+                          <li>� <strong>Declarative Configuration:</strong> Desired state management</li>
                         </ul>
                       </div>
                       <div>
@@ -4754,13 +4754,13 @@ export default function DevOpsPage() {
                           Core Capabilities
                         </h4>
                         <ul className="text-slate-700 space-y-2 text-sm">
-                          <li>• <strong>Orchestration:</strong> Manages thousands of containers</li>
-                          <li>• <strong>Storage Orchestration:</strong> Auto-mount storage systems</li>
-                          <li>• <strong>Secret Management:</strong> Secure sensitive data</li>
-                          <li>• <strong>Batch Execution:</strong> Run jobs and cron tasks</li>
-                          <li>• <strong>Horizontal Scaling:</strong> Scale with a command</li>
-                          <li>• <strong>IPv4/IPv6 Dual-Stack:</strong> Network flexibility</li>
-                          <li>• <strong>Extensibility:</strong> Custom resources and operators</li>
+                          <li>� <strong>Orchestration:</strong> Manages thousands of containers</li>
+                          <li>� <strong>Storage Orchestration:</strong> Auto-mount storage systems</li>
+                          <li>� <strong>Secret Management:</strong> Secure sensitive data</li>
+                          <li>� <strong>Batch Execution:</strong> Run jobs and cron tasks</li>
+                          <li>� <strong>Horizontal Scaling:</strong> Scale with a command</li>
+                          <li>� <strong>IPv4/IPv6 Dual-Stack:</strong> Network flexibility</li>
+                          <li>� <strong>Extensibility:</strong> Custom resources and operators</li>
                         </ul>
                       </div>
                     </div>
@@ -4791,10 +4791,10 @@ export default function DevOpsPage() {
                           </h4>
                           <p className="text-slate-700 text-sm mb-2">The frontend for Kubernetes control plane</p>
                           <ul className="text-slate-600 text-xs space-y-1">
-                            <li>• Exposes Kubernetes API (RESTful)</li>
-                            <li>• Validates and configures API objects</li>
-                            <li>• Gateway to cluster operations</li>
-                            <li>• Horizontally scalable for HA</li>
+                            <li>� Exposes Kubernetes API (RESTful)</li>
+                            <li>� Validates and configures API objects</li>
+                            <li>� Gateway to cluster operations</li>
+                            <li>� Horizontally scalable for HA</li>
                           </ul>
                         </div>
                         <div className="bg-white p-4 rounded-lg border border-blue-100 shadow-sm hover:shadow-md transition-shadow">
@@ -4804,10 +4804,10 @@ export default function DevOpsPage() {
                           </h4>
                           <p className="text-slate-700 text-sm mb-2">Distributed key-value store for cluster state</p>
                           <ul className="text-slate-600 text-xs space-y-1">
-                            <li>• Stores all cluster data</li>
-                            <li>• Source of truth for cluster state</li>
-                            <li>• Consistent and highly available</li>
-                            <li>• Critical for disaster recovery</li>
+                            <li>� Stores all cluster data</li>
+                            <li>� Source of truth for cluster state</li>
+                            <li>� Consistent and highly available</li>
+                            <li>� Critical for disaster recovery</li>
                           </ul>
                         </div>
                         <div className="bg-white p-4 rounded-lg border border-blue-100 shadow-sm hover:shadow-md transition-shadow">
@@ -4817,10 +4817,10 @@ export default function DevOpsPage() {
                           </h4>
                           <p className="text-slate-700 text-sm mb-2">Assigns Pods to Nodes</p>
                           <ul className="text-slate-600 text-xs space-y-1">
-                            <li>• Watches for new Pods with no node</li>
-                            <li>• Selects optimal node for each Pod</li>
-                            <li>• Considers resource requirements</li>
-                            <li>• Honors constraints and affinity rules</li>
+                            <li>� Watches for new Pods with no node</li>
+                            <li>� Selects optimal node for each Pod</li>
+                            <li>� Considers resource requirements</li>
+                            <li>� Honors constraints and affinity rules</li>
                           </ul>
                         </div>
                         <div className="bg-white p-4 rounded-lg border border-blue-100 shadow-sm hover:shadow-md transition-shadow">
@@ -4830,10 +4830,10 @@ export default function DevOpsPage() {
                           </h4>
                           <p className="text-slate-700 text-sm mb-2">Runs controller processes</p>
                           <ul className="text-slate-600 text-xs space-y-1">
-                            <li>• Node Controller (node health)</li>
-                            <li>• Replication Controller (Pod count)</li>
-                            <li>• Endpoints Controller (services)</li>
-                            <li>• Service Account Controller (auth)</li>
+                            <li>� Node Controller (node health)</li>
+                            <li>� Replication Controller (Pod count)</li>
+                            <li>� Endpoints Controller (services)</li>
+                            <li>� Service Account Controller (auth)</li>
                           </ul>
                         </div>
                       </div>
@@ -4855,10 +4855,10 @@ export default function DevOpsPage() {
                           </h4>
                           <p className="text-slate-700 text-sm mb-2">Agent running on each node</p>
                           <ul className="text-slate-600 text-xs space-y-1">
-                            <li>• Ensures containers are running</li>
-                            <li>• Manages Pod lifecycle</li>
-                            <li>• Reports node health to API server</li>
-                            <li>• Executes container runtime operations</li>
+                            <li>� Ensures containers are running</li>
+                            <li>� Manages Pod lifecycle</li>
+                            <li>� Reports node health to API server</li>
+                            <li>� Executes container runtime operations</li>
                           </ul>
                         </div>
                         <div className="bg-white p-4 rounded-lg border border-green-100 shadow-sm hover:shadow-md transition-shadow">
@@ -4868,10 +4868,10 @@ export default function DevOpsPage() {
                           </h4>
                           <p className="text-slate-700 text-sm mb-2">Network proxy on each node</p>
                           <ul className="text-slate-600 text-xs space-y-1">
-                            <li>• Maintains network rules</li>
-                            <li>• Enables Service abstraction</li>
-                            <li>• Handles load balancing</li>
-                            <li>• Implements iptables/IPVS rules</li>
+                            <li>� Maintains network rules</li>
+                            <li>� Enables Service abstraction</li>
+                            <li>� Handles load balancing</li>
+                            <li>� Implements iptables/IPVS rules</li>
                           </ul>
                         </div>
                         <div className="bg-white p-4 rounded-lg border border-green-100 shadow-sm hover:shadow-md transition-shadow">
@@ -4881,10 +4881,10 @@ export default function DevOpsPage() {
                           </h4>
                           <p className="text-slate-700 text-sm mb-2">Software for running containers</p>
                           <ul className="text-slate-600 text-xs space-y-1">
-                            <li>• Docker (deprecated)</li>
-                            <li>• containerd (recommended)</li>
-                            <li>• CRI-O (Red Hat)</li>
-                            <li>• Implements CRI interface</li>
+                            <li>� Docker (deprecated)</li>
+                            <li>� containerd (recommended)</li>
+                            <li>� CRI-O (Red Hat)</li>
+                            <li>� Implements CRI interface</li>
                           </ul>
                         </div>
                       </div>
@@ -5184,10 +5184,10 @@ export default function DevOpsPage() {
                           </h4>
                           <p className="text-slate-700 text-sm mb-2">Smallest deployable unit in K8s</p>
                           <ul className="text-slate-800 text-xs space-y-1">
-                            <li>• Group of one or more containers</li>
-                            <li>• Share network and storage</li>
-                            <li>• Co-located and co-scheduled</li>
-                            <li>• Ephemeral by nature</li>
+                            <li>� Group of one or more containers</li>
+                            <li>� Share network and storage</li>
+                            <li>� Co-located and co-scheduled</li>
+                            <li>� Ephemeral by nature</li>
                           </ul>
                         </div>
                         <div className="bg-white p-4 rounded-lg border border-blue-100 shadow-sm hover:shadow-md transition-shadow">
@@ -5197,10 +5197,10 @@ export default function DevOpsPage() {
                           </h4>
                           <p className="text-slate-700 text-sm mb-2">Maintains desired Pod count</p>
                           <ul className="text-slate-800 text-xs space-y-1">
-                            <li>• Ensures specified Pod replicas</li>
-                            <li>• Self-healing capabilities</li>
-                            <li>• Selector-based matching</li>
-                            <li>• Usually managed by Deployments</li>
+                            <li>� Ensures specified Pod replicas</li>
+                            <li>� Self-healing capabilities</li>
+                            <li>� Selector-based matching</li>
+                            <li>� Usually managed by Deployments</li>
                           </ul>
                         </div>
                         <div className="bg-white p-4 rounded-lg border border-blue-100 shadow-sm hover:shadow-md transition-shadow">
@@ -5210,10 +5210,10 @@ export default function DevOpsPage() {
                           </h4>
                           <p className="text-slate-700 text-sm mb-2">Declarative Pod management</p>
                           <ul className="text-slate-800 text-xs space-y-1">
-                            <li>• Rolling updates and rollbacks</li>
-                            <li>• Manages ReplicaSets</li>
-                            <li>• Versioned deployments</li>
-                            <li>• Most common workload type</li>
+                            <li>� Rolling updates and rollbacks</li>
+                            <li>� Manages ReplicaSets</li>
+                            <li>� Versioned deployments</li>
+                            <li>� Most common workload type</li>
                           </ul>
                         </div>
                         <div className="bg-white p-4 rounded-lg border border-blue-100 shadow-sm hover:shadow-md transition-shadow">
@@ -5223,10 +5223,10 @@ export default function DevOpsPage() {
                           </h4>
                           <p className="text-slate-700 text-sm mb-2">Stable network endpoint</p>
                           <ul className="text-slate-800 text-xs space-y-1">
-                            <li>• Load balancing across Pods</li>
-                            <li>• ClusterIP (internal)</li>
-                            <li>• NodePort (external access)</li>
-                            <li>• LoadBalancer (cloud integration)</li>
+                            <li>� Load balancing across Pods</li>
+                            <li>� ClusterIP (internal)</li>
+                            <li>� NodePort (external access)</li>
+                            <li>� LoadBalancer (cloud integration)</li>
                           </ul>
                         </div>
                         <div className="bg-white p-4 rounded-lg border border-blue-100 shadow-sm hover:shadow-md transition-shadow">
@@ -5236,10 +5236,10 @@ export default function DevOpsPage() {
                           </h4>
                           <p className="text-slate-700 text-sm mb-2">Configuration data storage</p>
                           <ul className="text-slate-800 text-xs space-y-1">
-                            <li>• Non-confidential key-value pairs</li>
-                            <li>• Environment variables</li>
-                            <li>• Configuration files</li>
-                            <li>• Command-line arguments</li>
+                            <li>� Non-confidential key-value pairs</li>
+                            <li>� Environment variables</li>
+                            <li>� Configuration files</li>
+                            <li>� Command-line arguments</li>
                           </ul>
                         </div>
                         <div className="bg-white p-4 rounded-lg border border-blue-100 shadow-sm hover:shadow-md transition-shadow">
@@ -5249,10 +5249,10 @@ export default function DevOpsPage() {
                           </h4>
                           <p className="text-slate-700 text-sm mb-2">Sensitive data storage</p>
                           <ul className="text-slate-800 text-xs space-y-1">
-                            <li>• Passwords, tokens, keys</li>
-                            <li>• Base64 encoded</li>
-                            <li>• Mounted as volumes or env vars</li>
-                            <li>• Encrypted at rest (optional)</li>
+                            <li>� Passwords, tokens, keys</li>
+                            <li>� Base64 encoded</li>
+                            <li>� Mounted as volumes or env vars</li>
+                            <li>� Encrypted at rest (optional)</li>
                           </ul>
                         </div>
                       </div>
@@ -5273,14 +5273,14 @@ export default function DevOpsPage() {
                         Do's
                       </h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• <strong>Use Namespaces:</strong> Organize resources logically</li>
-                        <li>• <strong>Set Resource Limits:</strong> Prevent resource starvation</li>
-                        <li>• <strong>Use Liveness/Readiness Probes:</strong> Enable self-healing</li>
-                        <li>• <strong>Implement RBAC:</strong> Secure cluster access</li>
-                        <li>• <strong>Use Labels & Selectors:</strong> Organize and query resources</li>
-                        <li>• <strong>Version Control Manifests:</strong> Track infrastructure changes</li>
-                        <li>• <strong>Use ConfigMaps/Secrets:</strong> Externalize configuration</li>
-                        <li>• <strong>Implement Network Policies:</strong> Control Pod communication</li>
+                        <li>� <strong>Use Namespaces:</strong> Organize resources logically</li>
+                        <li>� <strong>Set Resource Limits:</strong> Prevent resource starvation</li>
+                        <li>� <strong>Use Liveness/Readiness Probes:</strong> Enable self-healing</li>
+                        <li>� <strong>Implement RBAC:</strong> Secure cluster access</li>
+                        <li>� <strong>Use Labels & Selectors:</strong> Organize and query resources</li>
+                        <li>� <strong>Version Control Manifests:</strong> Track infrastructure changes</li>
+                        <li>� <strong>Use ConfigMaps/Secrets:</strong> Externalize configuration</li>
+                        <li>� <strong>Implement Network Policies:</strong> Control Pod communication</li>
                       </ul>
                     </div>
                     <div className="bg-red-50 p-6 rounded-xl border border-red-200">
@@ -5289,14 +5289,14 @@ export default function DevOpsPage() {
                         Don'ts
                       </h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• <strong>Don't Run as Root:</strong> Security vulnerability</li>
-                        <li>• <strong>Don't Use 'latest' Tag:</strong> Unpredictable behavior</li>
-                        <li>• <strong>Don't Ignore Resource Limits:</strong> Causes cluster instability</li>
-                        <li>• <strong>Don't Store Secrets in Code:</strong> Security risk</li>
-                        <li>• <strong>Don't Skip Health Checks:</strong> Reduces reliability</li>
-                        <li>• <strong>Don't Use Naked Pods:</strong> Use Deployments instead</li>
-                        <li>• <strong>Don't Ignore Logging:</strong> Makes troubleshooting difficult</li>
-                        <li>• <strong>Don't Hardcode IPs:</strong> Use Service DNS names</li>
+                        <li>� <strong>Don't Run as Root:</strong> Security vulnerability</li>
+                        <li>� <strong>Don't Use 'latest' Tag:</strong> Unpredictable behavior</li>
+                        <li>� <strong>Don't Ignore Resource Limits:</strong> Causes cluster instability</li>
+                        <li>� <strong>Don't Store Secrets in Code:</strong> Security risk</li>
+                        <li>� <strong>Don't Skip Health Checks:</strong> Reduces reliability</li>
+                        <li>� <strong>Don't Use Naked Pods:</strong> Use Deployments instead</li>
+                        <li>� <strong>Don't Ignore Logging:</strong> Makes troubleshooting difficult</li>
+                        <li>� <strong>Don't Hardcode IPs:</strong> Use Service DNS names</li>
                       </ul>
                     </div>
                   </div>
@@ -5346,13 +5346,13 @@ export default function DevOpsPage() {
                           Deployment Benefits
                         </h4>
                         <ul className="text-slate-700 space-y-2 text-sm">
-                          <li>• <strong>Rolling Updates:</strong> Update Pods incrementally with zero downtime</li>
-                          <li>• <strong>Rollback Capability:</strong> Instantly revert to previous versions</li>
-                          <li>• <strong>Scaling:</strong> Easily scale replicas up or down</li>
-                          <li>• <strong>Self-Healing:</strong> Automatically replace failed Pods</li>
-                          <li>• <strong>Version Control:</strong> Track deployment history and revisions</li>
-                          <li>• <strong>Declarative:</strong> Describe desired state, Kubernetes handles the rest</li>
-                          <li>• <strong>Pause/Resume:</strong> Control update flow precisely</li>
+                          <li>� <strong>Rolling Updates:</strong> Update Pods incrementally with zero downtime</li>
+                          <li>� <strong>Rollback Capability:</strong> Instantly revert to previous versions</li>
+                          <li>� <strong>Scaling:</strong> Easily scale replicas up or down</li>
+                          <li>� <strong>Self-Healing:</strong> Automatically replace failed Pods</li>
+                          <li>� <strong>Version Control:</strong> Track deployment history and revisions</li>
+                          <li>� <strong>Declarative:</strong> Describe desired state, Kubernetes handles the rest</li>
+                          <li>� <strong>Pause/Resume:</strong> Control update flow precisely</li>
                         </ul>
                       </div>
                       <div>
@@ -5361,12 +5361,12 @@ export default function DevOpsPage() {
                           Use Cases
                         </h4>
                         <ul className="text-slate-700 space-y-2 text-sm">
-                          <li>• <strong>Web Applications:</strong> Stateless frontend and backend services</li>
-                          <li>• <strong>Microservices:</strong> Independently deployable services</li>
-                          <li>• <strong>API Servers:</strong> RESTful and GraphQL APIs</li>
-                          <li>• <strong>Workers:</strong> Background job processors</li>
-                          <li>• <strong>Cron Jobs:</strong> Scheduled tasks with Job resources</li>
-                          <li>• <strong>CI/CD Pipelines:</strong> Automated deployment workflows</li>
+                          <li>� <strong>Web Applications:</strong> Stateless frontend and backend services</li>
+                          <li>� <strong>Microservices:</strong> Independently deployable services</li>
+                          <li>� <strong>API Servers:</strong> RESTful and GraphQL APIs</li>
+                          <li>� <strong>Workers:</strong> Background job processors</li>
+                          <li>� <strong>Cron Jobs:</strong> Scheduled tasks with Job resources</li>
+                          <li>� <strong>CI/CD Pipelines:</strong> Automated deployment workflows</li>
                         </ul>
                       </div>
                     </div>
@@ -5666,14 +5666,14 @@ export default function DevOpsPage() {
                     <div className="bg-blue-50 p-6 rounded-xl border border-blue-200">
                       <h3 className="text-xl font-bold text-blue-700 mb-3 flex items-center gap-2"><CheckCircle className="w-5 h-5" /> Do's</h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• <strong>Set Resource Limits:</strong> Always define requests and limits</li>
-                        <li>• <strong>Use Liveness/Readiness Probes:</strong> Enable self-healing</li>
-                        <li>• <strong>Configure maxSurge/maxUnavailable:</strong> Control rollout speed</li>
-                        <li>• <strong>Use Labels Wisely:</strong> Organize and query deployments</li>
-                        <li>• <strong>Version Images:</strong> Never use 'latest' tag</li>
-                        <li>• <strong>Track Rollout History:</strong> Document changes with annotations</li>
-                        <li>• <strong>Test Before Production:</strong> Use staging environments</li>
-                        <li>• <strong>Monitor Metrics:</strong> Track CPU, memory, and custom metrics</li>
+                        <li>� <strong>Set Resource Limits:</strong> Always define requests and limits</li>
+                        <li>� <strong>Use Liveness/Readiness Probes:</strong> Enable self-healing</li>
+                        <li>� <strong>Configure maxSurge/maxUnavailable:</strong> Control rollout speed</li>
+                        <li>� <strong>Use Labels Wisely:</strong> Organize and query deployments</li>
+                        <li>� <strong>Version Images:</strong> Never use 'latest' tag</li>
+                        <li>� <strong>Track Rollout History:</strong> Document changes with annotations</li>
+                        <li>� <strong>Test Before Production:</strong> Use staging environments</li>
+                        <li>� <strong>Monitor Metrics:</strong> Track CPU, memory, and custom metrics</li>
                       </ul>
                     </div>
                     <div className="bg-red-50 p-6 rounded-xl border border-red-200">
@@ -5682,14 +5682,14 @@ export default function DevOpsPage() {
                         Don'ts
                       </h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• <strong>Don't Skip Testing:</strong> Always test updates in staging</li>
-                        <li>• <strong>Don't Ignore Failed Pods:</strong> Investigate and fix issues</li>
-                        <li>• <strong>Don't Use Recreate Strategy:</strong> Causes downtime (use RollingUpdate)</li>
-                        <li>• <strong>Don't Ignore Resource Requests:</strong> Leads to scheduling issues</li>
-                        <li>• <strong>Don't Modify ReplicaSets Directly:</strong> Manage via Deployment</li>
-                        <li>• <strong>Don't Forget Rollback Plan:</strong> Always have a backup strategy</li>
-                        <li>• <strong>Don't Hardcode Configuration:</strong> Use ConfigMaps/Secrets</li>
-                        <li>• <strong>Don't Over-Scale:</strong> Right-size based on actual demand</li>
+                        <li>� <strong>Don't Skip Testing:</strong> Always test updates in staging</li>
+                        <li>� <strong>Don't Ignore Failed Pods:</strong> Investigate and fix issues</li>
+                        <li>� <strong>Don't Use Recreate Strategy:</strong> Causes downtime (use RollingUpdate)</li>
+                        <li>� <strong>Don't Ignore Resource Requests:</strong> Leads to scheduling issues</li>
+                        <li>� <strong>Don't Modify ReplicaSets Directly:</strong> Manage via Deployment</li>
+                        <li>� <strong>Don't Forget Rollback Plan:</strong> Always have a backup strategy</li>
+                        <li>� <strong>Don't Hardcode Configuration:</strong> Use ConfigMaps/Secrets</li>
+                        <li>� <strong>Don't Over-Scale:</strong> Right-size based on actual demand</li>
                       </ul>
                     </div>
                   </div>
@@ -5730,23 +5730,23 @@ export default function DevOpsPage() {
                       <div>
                         <h4 className="text-lg font-bold text-blue-600 mb-2">?? Service Benefits</h4>
                         <ul className="text-slate-800 space-y-2 text-sm">
-                          <li>• <strong>Stable Endpoint:</strong> Fixed IP and DNS name for Pods</li>
-                          <li>• <strong>Load Balancing:</strong> Distributes traffic across Pods</li>
-                          <li>• <strong>Service Discovery:</strong> DNS-based service resolution</li>
-                          <li>• <strong>Decoupling:</strong> Pods discover services without hardcoding IPs</li>
-                          <li>• <strong>Zero-Downtime Updates:</strong> Traffic routing during Pod updates</li>
-                          <li>• <strong>Health Checking:</strong> Routes only to healthy Pods</li>
-                          <li>• <strong>Multi-Protocol:</strong> TCP, UDP, HTTP, gRPC support</li>
+                          <li>� <strong>Stable Endpoint:</strong> Fixed IP and DNS name for Pods</li>
+                          <li>� <strong>Load Balancing:</strong> Distributes traffic across Pods</li>
+                          <li>� <strong>Service Discovery:</strong> DNS-based service resolution</li>
+                          <li>� <strong>Decoupling:</strong> Pods discover services without hardcoding IPs</li>
+                          <li>� <strong>Zero-Downtime Updates:</strong> Traffic routing during Pod updates</li>
+                          <li>� <strong>Health Checking:</strong> Routes only to healthy Pods</li>
+                          <li>� <strong>Multi-Protocol:</strong> TCP, UDP, HTTP, gRPC support</li>
                         </ul>
                       </div>
                       <div>
                         <h4 className="text-lg font-bold text-green-600 mb-2">?? Service Types</h4>
                         <ul className="text-slate-800 space-y-2 text-sm">
-                          <li>• <strong>ClusterIP:</strong> Internal cluster access (default)</li>
-                          <li>• <strong>NodePort:</strong> External access via node port</li>
-                          <li>• <strong>LoadBalancer:</strong> Cloud provider load balancer</li>
-                          <li>• <strong>ExternalName:</strong> DNS CNAME record</li>
-                          <li>• <strong>Headless:</strong> Direct Pod IP access (no load balancing)</li>
+                          <li>� <strong>ClusterIP:</strong> Internal cluster access (default)</li>
+                          <li>� <strong>NodePort:</strong> External access via node port</li>
+                          <li>� <strong>LoadBalancer:</strong> Cloud provider load balancer</li>
+                          <li>� <strong>ExternalName:</strong> DNS CNAME record</li>
+                          <li>� <strong>Headless:</strong> Direct Pod IP access (no load balancing)</li>
                         </ul>
                       </div>
                     </div>
@@ -5984,27 +5984,27 @@ export default function DevOpsPage() {
                     <div className="bg-blue-50 p-6 rounded-xl border border-blue-200">
                       <h3 className="text-xl font-bold text-blue-700 mb-3 flex items-center gap-2"><CheckCircle className="w-5 h-5" /> Do's</h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• <strong>Use ClusterIP by Default:</strong> For internal services</li>
-                        <li>• <strong>Label Selectors Carefully:</strong> Ensure proper Pod targeting</li>
-                        <li>• <strong>Use DNS Names:</strong> Never hardcode Service IPs</li>
-                        <li>• <strong>Set Session Affinity:</strong> When needed (sticky sessions)</li>
-                        <li>• <strong>Use Headless Services:</strong> For StatefulSets</li>
-                        <li>• <strong>Monitor Endpoints:</strong> Verify healthy Pod count</li>
-                        <li>• <strong>Use LoadBalancer in Cloud:</strong> For production external access</li>
-                        <li>• <strong>Configure Health Checks:</strong> Readiness probes are critical</li>
+                        <li>� <strong>Use ClusterIP by Default:</strong> For internal services</li>
+                        <li>� <strong>Label Selectors Carefully:</strong> Ensure proper Pod targeting</li>
+                        <li>� <strong>Use DNS Names:</strong> Never hardcode Service IPs</li>
+                        <li>� <strong>Set Session Affinity:</strong> When needed (sticky sessions)</li>
+                        <li>� <strong>Use Headless Services:</strong> For StatefulSets</li>
+                        <li>� <strong>Monitor Endpoints:</strong> Verify healthy Pod count</li>
+                        <li>� <strong>Use LoadBalancer in Cloud:</strong> For production external access</li>
+                        <li>� <strong>Configure Health Checks:</strong> Readiness probes are critical</li>
                       </ul>
                     </div>
                     <div className="bg-red-50 p-6 rounded-xl border border-red-200">
                       <h3 className="text-xl font-bold text-red-700 mb-3">? Don'ts</h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• <strong>Don't Use NodePort in Production:</strong> Security and scalability issues</li>
-                        <li>• <strong>Don't Hardcode Pod IPs:</strong> Pods are ephemeral</li>
-                        <li>• <strong>Don't Ignore Endpoints:</strong> Check if Pods are being selected</li>
-                        <li>• <strong>Don't Skip Readiness Probes:</strong> Prevents routing to unready Pods</li>
-                        <li>• <strong>Don't Expose Unnecessary Ports:</strong> Security risk</li>
-                        <li>• <strong>Don't Use Generic Names:</strong> Use descriptive Service names</li>
-                        <li>• <strong>Don't Forget Namespaces:</strong> Isolate Services properly</li>
-                        <li>• <strong>Don't Mix Service Types:</strong> Use Ingress for HTTP routing</li>
+                        <li>� <strong>Don't Use NodePort in Production:</strong> Security and scalability issues</li>
+                        <li>� <strong>Don't Hardcode Pod IPs:</strong> Pods are ephemeral</li>
+                        <li>� <strong>Don't Ignore Endpoints:</strong> Check if Pods are being selected</li>
+                        <li>� <strong>Don't Skip Readiness Probes:</strong> Prevents routing to unready Pods</li>
+                        <li>� <strong>Don't Expose Unnecessary Ports:</strong> Security risk</li>
+                        <li>� <strong>Don't Use Generic Names:</strong> Use descriptive Service names</li>
+                        <li>� <strong>Don't Forget Namespaces:</strong> Isolate Services properly</li>
+                        <li>� <strong>Don't Mix Service Types:</strong> Use Ingress for HTTP routing</li>
                       </ul>
                     </div>
                   </div>
@@ -6044,24 +6044,24 @@ export default function DevOpsPage() {
                       <div>
                         <h4 className="text-lg font-bold text-blue-600 mb-2">?? What to Monitor</h4>
                         <ul className="text-slate-800 space-y-2 text-sm">
-                          <li>• <strong>Cluster Health:</strong> Node status, control plane components</li>
-                          <li>• <strong>Resource Usage:</strong> CPU, memory, disk, network</li>
-                          <li>• <strong>Pod Health:</strong> Restart counts, readiness, liveness</li>
-                          <li>• <strong>Application Metrics:</strong> Request rates, latency, errors</li>
-                          <li>• <strong>Events:</strong> Cluster events and warnings</li>
-                          <li>• <strong>Logs:</strong> Container and application logs</li>
-                          <li>• <strong>Network:</strong> Service connectivity, ingress traffic</li>
+                          <li>� <strong>Cluster Health:</strong> Node status, control plane components</li>
+                          <li>� <strong>Resource Usage:</strong> CPU, memory, disk, network</li>
+                          <li>� <strong>Pod Health:</strong> Restart counts, readiness, liveness</li>
+                          <li>� <strong>Application Metrics:</strong> Request rates, latency, errors</li>
+                          <li>� <strong>Events:</strong> Cluster events and warnings</li>
+                          <li>� <strong>Logs:</strong> Container and application logs</li>
+                          <li>� <strong>Network:</strong> Service connectivity, ingress traffic</li>
                         </ul>
                       </div>
                       <div>
                         <h4 className="text-lg font-bold text-green-600 mb-2">??? Monitoring Stack</h4>
                         <ul className="text-slate-800 space-y-2 text-sm">
-                          <li>• <strong>Metrics Server:</strong> Built-in resource metrics (kubectl top)</li>
-                          <li>• <strong>Prometheus:</strong> Metrics collection and alerting</li>
-                          <li>• <strong>Grafana:</strong> Metrics visualization and dashboards</li>
-                          <li>• <strong>ELK/EFK:</strong> Centralized logging (Elasticsearch, Logstash/Fluentd, Kibana)</li>
-                          <li>• <strong>Jaeger/Zipkin:</strong> Distributed tracing</li>
-                          <li>• <strong>kube-state-metrics:</strong> Cluster object metrics</li>
+                          <li>� <strong>Metrics Server:</strong> Built-in resource metrics (kubectl top)</li>
+                          <li>� <strong>Prometheus:</strong> Metrics collection and alerting</li>
+                          <li>� <strong>Grafana:</strong> Metrics visualization and dashboards</li>
+                          <li>� <strong>ELK/EFK:</strong> Centralized logging (Elasticsearch, Logstash/Fluentd, Kibana)</li>
+                          <li>� <strong>Jaeger/Zipkin:</strong> Distributed tracing</li>
+                          <li>� <strong>kube-state-metrics:</strong> Cluster object metrics</li>
                         </ul>
                       </div>
                     </div>
@@ -6255,14 +6255,14 @@ export default function DevOpsPage() {
                             <p className="text-sm text-orange-800">
                               <strong>?? Key Dashboards:</strong><br />
                               <span className="text-slate-800">
-                                • Cluster Overview: CPU, memory, disk usage<br />
-                                • Node Metrics: Per-node resource utilization<br />
-                                • Pod Metrics: Container resource usage<br />
-                                • Deployment Status: Replicas, rollouts, health<br />
-                                • Network I/O: Ingress/egress traffic<br />
-                                • Persistent Volume: Storage metrics<br />
-                                • API Server: Request rate, latency<br />
-                                • etcd: Cluster state metrics
+                                � Cluster Overview: CPU, memory, disk usage<br />
+                                � Node Metrics: Per-node resource utilization<br />
+                                � Pod Metrics: Container resource usage<br />
+                                � Deployment Status: Replicas, rollouts, health<br />
+                                � Network I/O: Ingress/egress traffic<br />
+                                � Persistent Volume: Storage metrics<br />
+                                � API Server: Request rate, latency<br />
+                                � etcd: Cluster state metrics
                               </span>
                             </p>
                           </div>
@@ -6300,14 +6300,14 @@ export default function DevOpsPage() {
                         <div>
                           <h4 className="text-lg font-bold text-black mb-3">?? Common Alerts</h4>
                           <ul className="text-slate-700 space-y-2 text-sm">
-                            <li>• <strong>Node Down:</strong> Node becomes unresponsive</li>
-                            <li>• <strong>High CPU:</strong> CPU usage &gt; 80% for 5 minutes</li>
-                            <li>• <strong>High Memory:</strong> Memory usage &gt; 90%</li>
-                            <li>• <strong>Disk Full:</strong> Disk usage &gt; 85%</li>
-                            <li>• <strong>Pod Crash Loop:</strong> Container restarting frequently</li>
-                            <li>• <strong>Deployment Failed:</strong> Rollout stuck/failed</li>
-                            <li>• <strong>API Server Latency:</strong> Request latency &gt; 1s</li>
-                            <li>• <strong>etcd Leader Missing:</strong> No etcd leader elected</li>
+                            <li>� <strong>Node Down:</strong> Node becomes unresponsive</li>
+                            <li>� <strong>High CPU:</strong> CPU usage &gt; 80% for 5 minutes</li>
+                            <li>� <strong>High Memory:</strong> Memory usage &gt; 90%</li>
+                            <li>� <strong>Disk Full:</strong> Disk usage &gt; 85%</li>
+                            <li>� <strong>Pod Crash Loop:</strong> Container restarting frequently</li>
+                            <li>� <strong>Deployment Failed:</strong> Rollout stuck/failed</li>
+                            <li>� <strong>API Server Latency:</strong> Request latency &gt; 1s</li>
+                            <li>� <strong>etcd Leader Missing:</strong> No etcd leader elected</li>
                           </ul>
                           <div className="mt-4 p-3 bg-white rounded border border-red-100 shadow-sm">
                             <p className="text-sm text-red-800">
@@ -6327,27 +6327,27 @@ export default function DevOpsPage() {
                     <div className="bg-blue-50 p-6 rounded-xl border border-blue-200">
                       <h3 className="text-xl font-bold text-blue-700 mb-3 flex items-center gap-2"><CheckCircle className="w-5 h-5" /> Do's</h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• <strong>Monitor the Golden Signals:</strong> Latency, traffic, errors, saturation</li>
-                        <li>• <strong>Set Meaningful Alerts:</strong> Avoid alert fatigue</li>
-                        <li>• <strong>Use Labels Effectively:</strong> For filtering and aggregation</li>
-                        <li>• <strong>Monitor Control Plane:</strong> API server, etcd, scheduler</li>
-                        <li>• <strong>Track Resource Quotas:</strong> Prevent resource exhaustion</li>
-                        <li>• <strong>Centralize Logs:</strong> Use ELK/EFK stack</li>
-                        <li>• <strong>Implement Distributed Tracing:</strong> For microservices</li>
-                        <li>• <strong>Set Up Dashboards:</strong> For quick visibility</li>
+                        <li>� <strong>Monitor the Golden Signals:</strong> Latency, traffic, errors, saturation</li>
+                        <li>� <strong>Set Meaningful Alerts:</strong> Avoid alert fatigue</li>
+                        <li>� <strong>Use Labels Effectively:</strong> For filtering and aggregation</li>
+                        <li>� <strong>Monitor Control Plane:</strong> API server, etcd, scheduler</li>
+                        <li>� <strong>Track Resource Quotas:</strong> Prevent resource exhaustion</li>
+                        <li>� <strong>Centralize Logs:</strong> Use ELK/EFK stack</li>
+                        <li>� <strong>Implement Distributed Tracing:</strong> For microservices</li>
+                        <li>� <strong>Set Up Dashboards:</strong> For quick visibility</li>
                       </ul>
                     </div>
                     <div className="bg-red-50 p-6 rounded-xl border border-red-200">
                       <h3 className="text-xl font-bold text-red-700 mb-3">? Don'ts</h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• <strong>Don't Over-Alert:</strong> Causes alert fatigue and ignored warnings</li>
-                        <li>• <strong>Don't Ignore Metrics Retention:</strong> Set appropriate retention policies</li>
-                        <li>• <strong>Don't Skip Capacity Planning:</strong> Monitor trends for growth</li>
-                        <li>• <strong>Don't Forget Backup Monitoring:</strong> Monitor etcd backups</li>
-                        <li>• <strong>Don't Ignore Slow Queries:</strong> Track database performance</li>
-                        <li>• <strong>Don't Monitor Everything:</strong> Focus on actionable metrics</li>
-                        <li>• <strong>Don't Forget Security Monitoring:</strong> Track authentication failures</li>
-                        <li>• <strong>Don't Leave Metrics Unprotected:</strong> Secure Prometheus endpoints</li>
+                        <li>� <strong>Don't Over-Alert:</strong> Causes alert fatigue and ignored warnings</li>
+                        <li>� <strong>Don't Ignore Metrics Retention:</strong> Set appropriate retention policies</li>
+                        <li>� <strong>Don't Skip Capacity Planning:</strong> Monitor trends for growth</li>
+                        <li>� <strong>Don't Forget Backup Monitoring:</strong> Monitor etcd backups</li>
+                        <li>� <strong>Don't Ignore Slow Queries:</strong> Track database performance</li>
+                        <li>� <strong>Don't Monitor Everything:</strong> Focus on actionable metrics</li>
+                        <li>� <strong>Don't Forget Security Monitoring:</strong> Track authentication failures</li>
+                        <li>� <strong>Don't Leave Metrics Unprotected:</strong> Secure Prometheus endpoints</li>
                       </ul>
                     </div>
                   </div>
@@ -6389,25 +6389,25 @@ export default function DevOpsPage() {
                       <div>
                         <h4 className="text-lg font-bold text-blue-600 mb-2">?? Why Jenkins Dominates CI/CD</h4>
                         <ul className="text-slate-800 space-y-2 text-sm">
-                          <li>• <strong>Open Source:</strong> Free, community-driven, and highly customizable</li>
-                          <li>• <strong>Plugin Ecosystem:</strong> 1,800+ plugins for every tool and platform</li>
-                          <li>• <strong>Extreme Flexibility:</strong> Supports any language, framework, or tool</li>
-                          <li>• <strong>Distributed Architecture:</strong> Scale across multiple machines</li>
-                          <li>• <strong>Pipeline as Code:</strong> Version-controlled, reviewable automation</li>
-                          <li>• <strong>Mature & Stable:</strong> 20+ years of production use</li>
-                          <li>• <strong>Self-Hosted Control:</strong> Complete data and process ownership</li>
+                          <li>� <strong>Open Source:</strong> Free, community-driven, and highly customizable</li>
+                          <li>� <strong>Plugin Ecosystem:</strong> 1,800+ plugins for every tool and platform</li>
+                          <li>� <strong>Extreme Flexibility:</strong> Supports any language, framework, or tool</li>
+                          <li>� <strong>Distributed Architecture:</strong> Scale across multiple machines</li>
+                          <li>� <strong>Pipeline as Code:</strong> Version-controlled, reviewable automation</li>
+                          <li>� <strong>Mature & Stable:</strong> 20+ years of production use</li>
+                          <li>� <strong>Self-Hosted Control:</strong> Complete data and process ownership</li>
                         </ul>
                       </div>
                       <div>
                         <h4 className="text-lg font-bold text-green-600 mb-2">?? Jenkins Use Cases</h4>
                         <ul className="text-slate-800 space-y-2 text-sm">
-                          <li>• <strong>Continuous Integration:</strong> Automated builds and testing</li>
-                          <li>• <strong>Continuous Deployment:</strong> Automated releases to production</li>
-                          <li>• <strong>Infrastructure Automation:</strong> Provisioning and configuration</li>
-                          <li>• <strong>Quality Gates:</strong> Code quality and security scanning</li>
-                          <li>• <strong>Multi-Environment Deployments:</strong> Dev, staging, production</li>
-                          <li>• <strong>Integration Testing:</strong> End-to-end validation</li>
-                          <li>• <strong>Compliance Automation:</strong> Audit trails and reporting</li>
+                          <li>� <strong>Continuous Integration:</strong> Automated builds and testing</li>
+                          <li>� <strong>Continuous Deployment:</strong> Automated releases to production</li>
+                          <li>� <strong>Infrastructure Automation:</strong> Provisioning and configuration</li>
+                          <li>� <strong>Quality Gates:</strong> Code quality and security scanning</li>
+                          <li>� <strong>Multi-Environment Deployments:</strong> Dev, staging, production</li>
+                          <li>� <strong>Integration Testing:</strong> End-to-end validation</li>
+                          <li>� <strong>Compliance Automation:</strong> Audit trails and reporting</li>
                         </ul>
                       </div>
                     </div>
@@ -6429,44 +6429,44 @@ export default function DevOpsPage() {
                           <h4 className="text-lg font-bold text-blue-600 mb-2">?? Master Node (Controller)</h4>
                           <p className="text-slate-800 text-sm mb-2">Central coordination hub</p>
                           <ul className="text-slate-700 text-xs space-y-1">
-                            <li>• Schedules and distributes builds</li>
-                            <li>• Manages build queue and history</li>
-                            <li>• Stores configuration and artifacts</li>
-                            <li>• Provides web UI and API</li>
-                            <li>• Manages user authentication</li>
-                            <li>• Handles plugin management</li>
+                            <li>� Schedules and distributes builds</li>
+                            <li>� Manages build queue and history</li>
+                            <li>� Stores configuration and artifacts</li>
+                            <li>� Provides web UI and API</li>
+                            <li>� Manages user authentication</li>
+                            <li>� Handles plugin management</li>
                           </ul>
                         </div>
                         <div className="bg-white p-4 rounded-lg border border-blue-100 shadow-sm hover:shadow-md transition-shadow">
                           <h4 className="text-lg font-bold text-purple-600 mb-2">?? Agent Nodes (Executors)</h4>
                           <p className="text-slate-800 text-sm mb-2">Build execution workers</p>
                           <ul className="text-slate-700 text-xs space-y-1">
-                            <li>• Execute build jobs assigned by Master</li>
-                            <li>• Can run on different OS platforms</li>
-                            <li>• Support different tools and environments</li>
-                            <li>• Return build results to Master</li>
-                            <li>• Can be temporary (cloud) or permanent</li>
-                            <li>• Isolated build environments</li>
+                            <li>� Execute build jobs assigned by Master</li>
+                            <li>� Can run on different OS platforms</li>
+                            <li>� Support different tools and environments</li>
+                            <li>� Return build results to Master</li>
+                            <li>� Can be temporary (cloud) or permanent</li>
+                            <li>� Isolated build environments</li>
                           </ul>
                         </div>
                         <div className="bg-white p-4 rounded-lg border border-blue-100 shadow-sm hover:shadow-md transition-shadow">
                           <h4 className="text-lg font-bold text-orange-600 mb-2">?? Build Workspace</h4>
                           <p className="text-slate-800 text-sm mb-2">Isolated execution environment</p>
                           <ul className="text-slate-700 text-xs space-y-1">
-                            <li>• Clean directory for each build</li>
-                            <li>• Contains source code and artifacts</li>
-                            <li>• Temporary files and logs</li>
-                            <li>• Environment variables and secrets</li>
+                            <li>� Clean directory for each build</li>
+                            <li>� Contains source code and artifacts</li>
+                            <li>� Temporary files and logs</li>
+                            <li>� Environment variables and secrets</li>
                           </ul>
                         </div>
                         <div className="bg-white p-4 rounded-lg border border-blue-100 shadow-sm hover:shadow-md transition-shadow">
                           <h4 className="text-lg font-bold text-green-600 mb-2">?? Plugin System</h4>
                           <p className="text-slate-800 text-sm mb-2">Extensible functionality</p>
                           <ul className="text-slate-700 text-xs space-y-1">
-                            <li>• 1,800+ community plugins</li>
-                            <li>• Integration with tools and platforms</li>
-                            <li>• Custom functionality development</li>
-                            <li>• Version management and updates</li>
+                            <li>� 1,800+ community plugins</li>
+                            <li>� Integration with tools and platforms</li>
+                            <li>� Custom functionality development</li>
+                            <li>� Version management and updates</li>
                           </ul>
                         </div>
                       </div>
@@ -6485,34 +6485,34 @@ export default function DevOpsPage() {
                             <h5 className="text-md font-bold text-blue-600 mb-2">Declarative Pipeline</h5>
                             <p className="text-slate-800 text-sm mb-2">Structured, opinionated syntax</p>
                             <ul className="text-slate-700 text-xs space-y-1">
-                              <li>• Predefined structure and validation</li>
-                              <li>• Easier to learn and maintain</li>
-                              <li>• Built-in best practices</li>
-                              <li>• IDE support and syntax highlighting</li>
+                              <li>� Predefined structure and validation</li>
+                              <li>� Easier to learn and maintain</li>
+                              <li>� Built-in best practices</li>
+                              <li>� IDE support and syntax highlighting</li>
                             </ul>
                           </div>
                           <div className="bg-white p-4 rounded-lg border border-green-100 shadow-sm hover:shadow-md transition-shadow">
                             <h5 className="text-md font-bold text-green-600 mb-2">Scripted Pipeline</h5>
                             <p className="text-slate-800 text-sm mb-2">Full Groovy programming power</p>
                             <ul className="text-slate-700 text-xs space-y-1">
-                              <li>• Maximum flexibility and control</li>
-                              <li>• Complex logic and conditionals</li>
-                              <li>• Custom DSL development</li>
-                              <li>• Advanced error handling</li>
+                              <li>� Maximum flexibility and control</li>
+                              <li>� Complex logic and conditionals</li>
+                              <li>� Custom DSL development</li>
+                              <li>� Advanced error handling</li>
                             </ul>
                           </div>
                         </div>
                         <div>
                           <h4 className="text-lg font-bold text-black mb-3">?? Pipeline Components</h4>
                           <ul className="text-slate-700 space-y-2 text-sm">
-                            <li>• <strong>Pipeline:</strong> Top-level block defining the entire workflow</li>
-                            <li>• <strong>Agent:</strong> Specifies where the pipeline runs</li>
-                            <li>• <strong>Stages:</strong> Logical divisions of the pipeline</li>
-                            <li>• <strong>Steps:</strong> Individual commands within a stage</li>
-                            <li>• <strong>Post:</strong> Actions to run after stages complete</li>
-                            <li>• <strong>Environment:</strong> Variables available to the pipeline</li>
-                            <li>• <strong>Options:</strong> Pipeline-level configuration</li>
-                            <li>• <strong>Triggers:</strong> Events that start the pipeline</li>
+                            <li>� <strong>Pipeline:</strong> Top-level block defining the entire workflow</li>
+                            <li>� <strong>Agent:</strong> Specifies where the pipeline runs</li>
+                            <li>� <strong>Stages:</strong> Logical divisions of the pipeline</li>
+                            <li>� <strong>Steps:</strong> Individual commands within a stage</li>
+                            <li>� <strong>Post:</strong> Actions to run after stages complete</li>
+                            <li>� <strong>Environment:</strong> Variables available to the pipeline</li>
+                            <li>� <strong>Options:</strong> Pipeline-level configuration</li>
+                            <li>� <strong>Triggers:</strong> Events that start the pipeline</li>
                           </ul>
                         </div>
                       </div>
@@ -6619,16 +6619,16 @@ export default function DevOpsPage() {
                         <div>
                           <h4 className="text-lg font-bold text-black mb-3">?? Essential Plugins</h4>
                           <ul className="text-slate-700 space-y-2 text-sm">
-                            <li>• <strong>Pipeline:</strong> Core pipeline functionality</li>
-                            <li>• <strong>Blue Ocean:</strong> Modern pipeline visualization</li>
-                            <li>• <strong>Git:</strong> Git integration for source control</li>
-                            <li>• <strong>GitHub Integration:</strong> GitHub webhook support</li>
-                            <li>• <strong>Docker Pipeline:</strong> Docker build and deployment</li>
-                            <li>• <strong>Credentials Binding:</strong> Secure credential management</li>
-                            <li>• <strong>Build Timeout:</strong> Prevent hanging builds</li>
-                            <li>• <strong>Timestamper:</strong> Add timestamps to console output</li>
-                            <li>• <strong>Workspace Cleanup:</strong> Clean workspaces after builds</li>
-                            <li>• <strong>Parameterized Trigger:</strong> Pass parameters between jobs</li>
+                            <li>� <strong>Pipeline:</strong> Core pipeline functionality</li>
+                            <li>� <strong>Blue Ocean:</strong> Modern pipeline visualization</li>
+                            <li>� <strong>Git:</strong> Git integration for source control</li>
+                            <li>� <strong>GitHub Integration:</strong> GitHub webhook support</li>
+                            <li>� <strong>Docker Pipeline:</strong> Docker build and deployment</li>
+                            <li>� <strong>Credentials Binding:</strong> Secure credential management</li>
+                            <li>� <strong>Build Timeout:</strong> Prevent hanging builds</li>
+                            <li>� <strong>Timestamper:</strong> Add timestamps to console output</li>
+                            <li>� <strong>Workspace Cleanup:</strong> Clean workspaces after builds</li>
+                            <li>� <strong>Parameterized Trigger:</strong> Pass parameters between jobs</li>
                           </ul>
                         </div>
                       </div>
@@ -6804,31 +6804,31 @@ export default function DevOpsPage() {
                       <div className="bg-blue-50 p-6 rounded-xl border border-blue-200">
                         <h3 className="text-xl font-bold text-blue-700 mb-3 flex items-center gap-2"><CheckCircle className="w-5 h-5" /> Do's</h3>
                         <ul className="text-slate-700 space-y-2 text-sm">
-                          <li>• <strong>Use Pipeline as Code:</strong> Version control your automation</li>
-                          <li>• <strong>Implement Blue-Green Deployments:</strong> Zero-downtime releases</li>
-                          <li>• <strong>Set Build Timeouts:</strong> Prevent hanging builds</li>
-                          <li>• <strong>Use Parallel Stages:</strong> Speed up pipeline execution</li>
-                          <li>• <strong>Implement Proper Error Handling:</strong> Graceful failure management</li>
-                          <li>• <strong>Use Credential Management:</strong> Secure secret storage</li>
-                          <li>• <strong>Monitor Build Health:</strong> Track success rates and trends</li>
-                          <li>• <strong>Clean Workspaces:</strong> Prevent disk space issues</li>
-                          <li>• <strong>Use Appropriate Agents:</strong> Match jobs to node capabilities</li>
-                          <li>• <strong>Implement Code Quality Gates:</strong> Automated quality checks</li>
+                          <li>� <strong>Use Pipeline as Code:</strong> Version control your automation</li>
+                          <li>� <strong>Implement Blue-Green Deployments:</strong> Zero-downtime releases</li>
+                          <li>� <strong>Set Build Timeouts:</strong> Prevent hanging builds</li>
+                          <li>� <strong>Use Parallel Stages:</strong> Speed up pipeline execution</li>
+                          <li>� <strong>Implement Proper Error Handling:</strong> Graceful failure management</li>
+                          <li>� <strong>Use Credential Management:</strong> Secure secret storage</li>
+                          <li>� <strong>Monitor Build Health:</strong> Track success rates and trends</li>
+                          <li>� <strong>Clean Workspaces:</strong> Prevent disk space issues</li>
+                          <li>� <strong>Use Appropriate Agents:</strong> Match jobs to node capabilities</li>
+                          <li>� <strong>Implement Code Quality Gates:</strong> Automated quality checks</li>
                         </ul>
                       </div>
                       <div className="bg-red-50 p-6 rounded-xl border border-red-200">
                         <h3 className="text-xl font-bold text-red-700 mb-3">? Don'ts</h3>
                         <ul className="text-slate-700 space-y-2 text-sm">
-                          <li>• <strong>Don't Store Secrets in Code:</strong> Use Jenkins credential store</li>
-                          <li>• <strong>Don't Run Everything on Master:</strong> Use dedicated agents</li>
-                          <li>• <strong>Don't Ignore Failed Builds:</strong> Fix issues immediately</li>
-                          <li>• <strong>Don't Use Hardcoded Paths:</strong> Use environment variables</li>
-                          <li>• <strong>Don't Skip Backup Strategy:</strong> Regular Jenkins backup</li>
-                          <li>• <strong>Don't Ignore Plugin Updates:</strong> Keep plugins current</li>
-                          <li>• <strong>Don't Over-Complicate Pipelines:</strong> Keep them readable</li>
-                          <li>• <strong>Don't Forget Security:</strong> Regular security audits</li>
-                          <li>• <strong>Don't Ignore Performance:</strong> Monitor and optimize</li>
-                          <li>• <strong>Don't Skip Documentation:</strong> Document pipeline logic</li>
+                          <li>� <strong>Don't Store Secrets in Code:</strong> Use Jenkins credential store</li>
+                          <li>� <strong>Don't Run Everything on Master:</strong> Use dedicated agents</li>
+                          <li>� <strong>Don't Ignore Failed Builds:</strong> Fix issues immediately</li>
+                          <li>� <strong>Don't Use Hardcoded Paths:</strong> Use environment variables</li>
+                          <li>� <strong>Don't Skip Backup Strategy:</strong> Regular Jenkins backup</li>
+                          <li>� <strong>Don't Ignore Plugin Updates:</strong> Keep plugins current</li>
+                          <li>� <strong>Don't Over-Complicate Pipelines:</strong> Keep them readable</li>
+                          <li>� <strong>Don't Forget Security:</strong> Regular security audits</li>
+                          <li>� <strong>Don't Ignore Performance:</strong> Monitor and optimize</li>
+                          <li>� <strong>Don't Skip Documentation:</strong> Document pipeline logic</li>
                         </ul>
                       </div>
                     </div>
@@ -6870,25 +6870,25 @@ export default function DevOpsPage() {
                       <div>
                         <h4 className="text-lg font-bold text-blue-600 mb-2">?? Why Pipelines Matter</h4>
                         <ul className="text-slate-800 space-y-2 text-sm">
-                          <li>• <strong>Pipeline as Code:</strong> Version-controlled automation</li>
-                          <li>• <strong>Complex Workflows:</strong> Multi-stage, conditional logic</li>
-                          <li>• <strong>Parallel Execution:</strong> Faster build times</li>
-                          <li>• <strong>Integration:</strong> Seamless tool chain connectivity</li>
-                          <li>• <strong>Visibility:</strong> Clear workflow visualization</li>
-                          <li>• <strong>Reusability:</strong> Shared libraries and templates</li>
-                          <li>• <strong>Error Handling:</strong> Graceful failure management</li>
+                          <li>� <strong>Pipeline as Code:</strong> Version-controlled automation</li>
+                          <li>� <strong>Complex Workflows:</strong> Multi-stage, conditional logic</li>
+                          <li>� <strong>Parallel Execution:</strong> Faster build times</li>
+                          <li>� <strong>Integration:</strong> Seamless tool chain connectivity</li>
+                          <li>� <strong>Visibility:</strong> Clear workflow visualization</li>
+                          <li>� <strong>Reusability:</strong> Shared libraries and templates</li>
+                          <li>� <strong>Error Handling:</strong> Graceful failure management</li>
                         </ul>
                       </div>
                       <div>
                         <h4 className="text-lg font-bold text-green-600 mb-2">?? Pipeline Benefits</h4>
                         <ul className="text-slate-800 space-y-2 text-sm">
-                          <li>• <strong>Reproducible Builds:</strong> Consistent environments</li>
-                          <li>• <strong>Audit Trail:</strong> Complete build history</li>
-                          <li>• <strong>Collaboration:</strong> Team review and approval</li>
-                          <li>• <strong>Testing:</strong> Validate pipeline changes</li>
-                          <li>• <strong>Rollback:</strong> Easy reversion of changes</li>
-                          <li>• <strong>Monitoring:</strong> Real-time build status</li>
-                          <li>• <strong>Scalability:</strong> Handle complex enterprise needs</li>
+                          <li>� <strong>Reproducible Builds:</strong> Consistent environments</li>
+                          <li>� <strong>Audit Trail:</strong> Complete build history</li>
+                          <li>� <strong>Collaboration:</strong> Team review and approval</li>
+                          <li>� <strong>Testing:</strong> Validate pipeline changes</li>
+                          <li>� <strong>Rollback:</strong> Easy reversion of changes</li>
+                          <li>� <strong>Monitoring:</strong> Real-time build status</li>
+                          <li>� <strong>Scalability:</strong> Handle complex enterprise needs</li>
                         </ul>
                       </div>
                     </div>
@@ -7290,31 +7290,31 @@ export default function DevOpsPage() {
                     <div className="bg-blue-50 p-6 rounded-xl border border-blue-200">
                       <h3 className="text-xl font-bold text-blue-700 mb-3 flex items-center gap-2"><CheckCircle className="w-5 h-5" /> Do's</h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• <strong>Use Declarative Pipelines:</strong> Easier to read and maintain</li>
-                        <li>• <strong>Store Pipelines in SCM:</strong> Version control your automation</li>
-                        <li>• <strong>Use Shared Libraries:</strong> Reuse common functionality</li>
-                        <li>• <strong>Implement Proper Error Handling:</strong> Graceful failure management</li>
-                        <li>• <strong>Use Parallel Execution:</strong> Speed up pipeline execution</li>
-                        <li>• <strong>Set Timeouts:</strong> Prevent hanging builds</li>
-                        <li>• <strong>Clean Workspaces:</strong> Prevent disk space issues</li>
-                        <li>• <strong>Use Environment Variables:</strong> Make pipelines configurable</li>
-                        <li>• <strong>Implement Quality Gates:</strong> Automated quality checks</li>
-                        <li>• <strong>Document Pipeline Logic:</strong> Clear comments and documentation</li>
+                        <li>� <strong>Use Declarative Pipelines:</strong> Easier to read and maintain</li>
+                        <li>� <strong>Store Pipelines in SCM:</strong> Version control your automation</li>
+                        <li>� <strong>Use Shared Libraries:</strong> Reuse common functionality</li>
+                        <li>� <strong>Implement Proper Error Handling:</strong> Graceful failure management</li>
+                        <li>� <strong>Use Parallel Execution:</strong> Speed up pipeline execution</li>
+                        <li>� <strong>Set Timeouts:</strong> Prevent hanging builds</li>
+                        <li>� <strong>Clean Workspaces:</strong> Prevent disk space issues</li>
+                        <li>� <strong>Use Environment Variables:</strong> Make pipelines configurable</li>
+                        <li>� <strong>Implement Quality Gates:</strong> Automated quality checks</li>
+                        <li>� <strong>Document Pipeline Logic:</strong> Clear comments and documentation</li>
                       </ul>
                     </div>
                     <div className="bg-red-50 p-6 rounded-xl border border-red-200">
                       <h3 className="text-xl font-bold text-red-700 mb-3">? Don'ts</h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• <strong>Don't Hardcode Values:</strong> Use parameters and environment variables</li>
-                        <li>• <strong>Don't Skip Error Handling:</strong> Always handle failures gracefully</li>
-                        <li>• <strong>Don't Ignore Security:</strong> Use credentials and secure practices</li>
-                        <li>• <strong>Don't Over-Complicate:</strong> Keep pipelines simple and readable</li>
-                        <li>• <strong>Don't Forget Testing:</strong> Test pipeline changes thoroughly</li>
-                        <li>• <strong>Don't Ignore Performance:</strong> Monitor and optimize execution time</li>
-                        <li>• <strong>Don't Skip Documentation:</strong> Document complex logic</li>
-                        <li>• <strong>Don't Use Blocking Steps:</strong> Avoid unnecessary waits</li>
-                        <li>• <strong>Don't Ignore Artifacts:</strong> Properly manage build artifacts</li>
-                        <li>• <strong>Don't Forget Cleanup:</strong> Clean up resources after builds</li>
+                        <li>� <strong>Don't Hardcode Values:</strong> Use parameters and environment variables</li>
+                        <li>� <strong>Don't Skip Error Handling:</strong> Always handle failures gracefully</li>
+                        <li>� <strong>Don't Ignore Security:</strong> Use credentials and secure practices</li>
+                        <li>� <strong>Don't Over-Complicate:</strong> Keep pipelines simple and readable</li>
+                        <li>� <strong>Don't Forget Testing:</strong> Test pipeline changes thoroughly</li>
+                        <li>� <strong>Don't Ignore Performance:</strong> Monitor and optimize execution time</li>
+                        <li>� <strong>Don't Skip Documentation:</strong> Document complex logic</li>
+                        <li>� <strong>Don't Use Blocking Steps:</strong> Avoid unnecessary waits</li>
+                        <li>� <strong>Don't Ignore Artifacts:</strong> Properly manage build artifacts</li>
+                        <li>� <strong>Don't Forget Cleanup:</strong> Clean up resources after builds</li>
                       </ul>
                     </div>
                   </div>
@@ -7355,25 +7355,25 @@ export default function DevOpsPage() {
                       <div>
                         <h4 className="text-lg font-bold text-blue-600 mb-2">?? Why GitHub Actions Dominates</h4>
                         <ul className="text-slate-800 space-y-2 text-sm">
-                          <li>• <strong>Native Integration:</strong> Built into GitHub's ecosystem</li>
-                          <li>• <strong>Event-Driven:</strong> Triggered by any GitHub event</li>
-                          <li>• <strong>Marketplace:</strong> 10,000+ pre-built actions</li>
-                          <li>• <strong>Free Tier:</strong> Generous free usage limits</li>
-                          <li>• <strong>Matrix Builds:</strong> Test across multiple environments</li>
-                          <li>• <strong>Secrets Management:</strong> Secure credential handling</li>
-                          <li>• <strong>Self-Hosted Runners:</strong> Use your own infrastructure</li>
+                          <li>� <strong>Native Integration:</strong> Built into GitHub's ecosystem</li>
+                          <li>� <strong>Event-Driven:</strong> Triggered by any GitHub event</li>
+                          <li>� <strong>Marketplace:</strong> 10,000+ pre-built actions</li>
+                          <li>� <strong>Free Tier:</strong> Generous free usage limits</li>
+                          <li>� <strong>Matrix Builds:</strong> Test across multiple environments</li>
+                          <li>� <strong>Secrets Management:</strong> Secure credential handling</li>
+                          <li>� <strong>Self-Hosted Runners:</strong> Use your own infrastructure</li>
                         </ul>
                       </div>
                       <div>
                         <h4 className="text-lg font-bold text-green-600 mb-2">?? GitHub Actions Use Cases</h4>
                         <ul className="text-slate-800 space-y-2 text-sm">
-                          <li>• <strong>Continuous Integration:</strong> Build, test, and validate code</li>
-                          <li>• <strong>Continuous Deployment:</strong> Deploy to multiple environments</li>
-                          <li>• <strong>Code Quality:</strong> Linting, formatting, and security scanning</li>
-                          <li>• <strong>Release Management:</strong> Automated versioning and publishing</li>
-                          <li>• <strong>Issue Management:</strong> Automated issue triage and labeling</li>
-                          <li>• <strong>Documentation:</strong> Auto-generate and update docs</li>
-                          <li>• <strong>Dependency Management:</strong> Update and audit dependencies</li>
+                          <li>� <strong>Continuous Integration:</strong> Build, test, and validate code</li>
+                          <li>� <strong>Continuous Deployment:</strong> Deploy to multiple environments</li>
+                          <li>� <strong>Code Quality:</strong> Linting, formatting, and security scanning</li>
+                          <li>� <strong>Release Management:</strong> Automated versioning and publishing</li>
+                          <li>� <strong>Issue Management:</strong> Automated issue triage and labeling</li>
+                          <li>� <strong>Documentation:</strong> Auto-generate and update docs</li>
+                          <li>� <strong>Dependency Management:</strong> Update and audit dependencies</li>
                         </ul>
                       </div>
                     </div>
@@ -7428,36 +7428,36 @@ export default function DevOpsPage() {
                         <div className="bg-white p-4 rounded-lg border border-blue-100 shadow-sm hover:shadow-md transition-shadow">
                           <h4 className="text-lg font-bold text-green-600 mb-2">?? Key Components</h4>
                           <ul className="text-slate-800 space-y-2 text-sm">
-                            <li>• <strong>Events:</strong> Push, PR, issues, releases, schedules</li>
-                            <li>• <strong>Jobs:</strong> Parallel execution units</li>
-                            <li>• <strong>Steps:</strong> Individual commands within jobs</li>
-                            <li>• <strong>Actions:</strong> Reusable automation units</li>
-                            <li>• <strong>Runners:</strong> Virtual machines that execute jobs</li>
-                            <li>• <strong>Secrets:</strong> Encrypted environment variables</li>
-                            <li>• <strong>Artifacts:</strong> Files generated during workflow</li>
-                            <li>• <strong>Matrix:</strong> Run jobs across multiple configurations</li>
+                            <li>� <strong>Events:</strong> Push, PR, issues, releases, schedules</li>
+                            <li>� <strong>Jobs:</strong> Parallel execution units</li>
+                            <li>� <strong>Steps:</strong> Individual commands within jobs</li>
+                            <li>� <strong>Actions:</strong> Reusable automation units</li>
+                            <li>� <strong>Runners:</strong> Virtual machines that execute jobs</li>
+                            <li>� <strong>Secrets:</strong> Encrypted environment variables</li>
+                            <li>� <strong>Artifacts:</strong> Files generated during workflow</li>
+                            <li>� <strong>Matrix:</strong> Run jobs across multiple configurations</li>
                           </ul>
                         </div>
                         <div className="bg-white p-4 rounded-lg border border-blue-100 shadow-sm hover:shadow-md transition-shadow">
                           <h4 className="text-lg font-bold text-purple-600 mb-2">?? Event Triggers</h4>
                           <ul className="text-slate-800 space-y-2 text-sm">
-                            <li>• <strong>push:</strong> Code pushed to repository</li>
-                            <li>• <strong>pull_request:</strong> PR opened, updated, or closed</li>
-                            <li>• <strong>issues:</strong> Issue created, labeled, or assigned</li>
-                            <li>• <strong>release:</strong> Release published or edited</li>
-                            <li>• <strong>schedule:</strong> Cron-based scheduled runs</li>
-                            <li>• <strong>workflow_dispatch:</strong> Manual workflow triggers</li>
-                            <li>• <strong>repository_dispatch:</strong> External API triggers</li>
+                            <li>� <strong>push:</strong> Code pushed to repository</li>
+                            <li>� <strong>pull_request:</strong> PR opened, updated, or closed</li>
+                            <li>� <strong>issues:</strong> Issue created, labeled, or assigned</li>
+                            <li>� <strong>release:</strong> Release published or edited</li>
+                            <li>� <strong>schedule:</strong> Cron-based scheduled runs</li>
+                            <li>� <strong>workflow_dispatch:</strong> Manual workflow triggers</li>
+                            <li>� <strong>repository_dispatch:</strong> External API triggers</li>
                           </ul>
                         </div>
                         <div className="bg-white p-4 rounded-lg border border-blue-100 shadow-sm hover:shadow-md transition-shadow">
                           <h4 className="text-lg font-bold text-orange-600 mb-2">??? Runner Types</h4>
                           <ul className="text-slate-800 space-y-2 text-sm">
-                            <li>• <strong>GitHub-Hosted:</strong> Ubuntu, Windows, macOS</li>
-                            <li>• <strong>Self-Hosted:</strong> Your own infrastructure</li>
-                            <li>• <strong>Container Actions:</strong> Docker-based execution</li>
-                            <li>• <strong>Composite Actions:</strong> Multiple steps combined</li>
-                            <li>• <strong>JavaScript Actions:</strong> Node.js-based actions</li>
+                            <li>� <strong>GitHub-Hosted:</strong> Ubuntu, Windows, macOS</li>
+                            <li>� <strong>Self-Hosted:</strong> Your own infrastructure</li>
+                            <li>� <strong>Container Actions:</strong> Docker-based execution</li>
+                            <li>� <strong>Composite Actions:</strong> Multiple steps combined</li>
+                            <li>� <strong>JavaScript Actions:</strong> Node.js-based actions</li>
                           </ul>
                         </div>
                       </div>
@@ -7477,20 +7477,20 @@ export default function DevOpsPage() {
                             <div className="bg-white p-4 rounded-lg border border-green-100 shadow-sm hover:shadow-md transition-shadow">
                               <h5 className="text-md font-bold text-blue-600 mb-2">??? Build & Deploy</h5>
                               <ul className="text-slate-800 text-sm space-y-1">
-                                <li>• <strong>actions/setup-node:</strong> Node.js environment setup</li>
-                                <li>• <strong>actions/setup-python:</strong> Python environment setup</li>
-                                <li>• <strong>actions/setup-java:</strong> Java environment setup</li>
-                                <li>• <strong>docker/build-push-action:</strong> Docker build and push</li>
-                                <li>• <strong>azure/webapps-deploy:</strong> Deploy to Azure App Service</li>
+                                <li>� <strong>actions/setup-node:</strong> Node.js environment setup</li>
+                                <li>� <strong>actions/setup-python:</strong> Python environment setup</li>
+                                <li>� <strong>actions/setup-java:</strong> Java environment setup</li>
+                                <li>� <strong>docker/build-push-action:</strong> Docker build and push</li>
+                                <li>� <strong>azure/webapps-deploy:</strong> Deploy to Azure App Service</li>
                               </ul>
                             </div>
                             <div className="bg-white p-4 rounded-lg border border-green-100 shadow-sm hover:shadow-md transition-shadow">
                               <h5 className="text-md font-bold text-green-600 mb-2">?? Testing & Quality</h5>
                               <ul className="text-slate-800 text-sm space-y-1">
-                                <li>• <strong>actions/cache:</strong> Cache dependencies</li>
-                                <li>• <strong>codecov/codecov-action:</strong> Code coverage reports</li>
-                                <li>• <strong>sonarqube-quality-gate-action:</strong> SonarQube analysis</li>
-                                <li>• <strong>github/super-linter:</strong> Multi-language linting</li>
+                                <li>� <strong>actions/cache:</strong> Cache dependencies</li>
+                                <li>� <strong>codecov/codecov-action:</strong> Code coverage reports</li>
+                                <li>� <strong>sonarqube-quality-gate-action:</strong> SonarQube analysis</li>
+                                <li>� <strong>github/super-linter:</strong> Multi-language linting</li>
                               </ul>
                             </div>
                           </div>
@@ -7581,7 +7581,7 @@ export default function DevOpsPage() {
                             <p className="text-sm text-blue-800">
                               <strong>?? Output:</strong><br />
                               <span className="text-slate-800">
-                                ? 9 jobs created (3 OS × 3 Node versions)<br />
+                                ? 9 jobs created (3 OS � 3 Node versions)<br />
                                 ? All combinations tested in parallel<br />
                                 ? Reduced testing time by 70%<br />
                                 ? Comprehensive compatibility coverage
@@ -7782,31 +7782,31 @@ export default function DevOpsPage() {
                     <div className="bg-blue-50 p-6 rounded-xl border border-blue-200">
                       <h3 className="text-xl font-bold text-blue-700 mb-3 flex items-center gap-2"><CheckCircle className="w-5 h-5" /> Do's</h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• <strong>Pin Action Versions:</strong> Use specific commit hashes for stability</li>
-                        <li>• <strong>Use Matrix Builds:</strong> Test across multiple environments</li>
-                        <li>• <strong>Cache Dependencies:</strong> Speed up builds with caching</li>
-                        <li>• <strong>Use Environment Variables:</strong> Make workflows configurable</li>
-                        <li>• <strong>Implement Proper Error Handling:</strong> Handle failures gracefully</li>
-                        <li>• <strong>Use Environment Protection:</strong> Secure sensitive deployments</li>
-                        <li>• <strong>Optimize Workflow Performance:</strong> Use parallel jobs when possible</li>
-                        <li>• <strong>Document Workflows:</strong> Add clear comments and descriptions</li>
-                        <li>• <strong>Use Workflow Templates:</strong> Standardize common patterns</li>
-                        <li>• <strong>Monitor Usage:</strong> Track minutes and storage usage</li>
+                        <li>� <strong>Pin Action Versions:</strong> Use specific commit hashes for stability</li>
+                        <li>� <strong>Use Matrix Builds:</strong> Test across multiple environments</li>
+                        <li>� <strong>Cache Dependencies:</strong> Speed up builds with caching</li>
+                        <li>� <strong>Use Environment Variables:</strong> Make workflows configurable</li>
+                        <li>� <strong>Implement Proper Error Handling:</strong> Handle failures gracefully</li>
+                        <li>� <strong>Use Environment Protection:</strong> Secure sensitive deployments</li>
+                        <li>� <strong>Optimize Workflow Performance:</strong> Use parallel jobs when possible</li>
+                        <li>� <strong>Document Workflows:</strong> Add clear comments and descriptions</li>
+                        <li>� <strong>Use Workflow Templates:</strong> Standardize common patterns</li>
+                        <li>� <strong>Monitor Usage:</strong> Track minutes and storage usage</li>
                       </ul>
                     </div>
                     <div className="bg-red-50 p-6 rounded-xl border border-red-200">
                       <h3 className="text-xl font-bold text-red-700 mb-3">? Don'ts</h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• <strong>Don't Use Latest Tags:</strong> Pin to specific versions</li>
-                        <li>• <strong>Don't Hardcode Secrets:</strong> Use GitHub secrets management</li>
-                        <li>• <strong>Don't Ignore Security:</strong> Regular security updates and audits</li>
-                        <li>• <strong>Don't Over-Complicate:</strong> Keep workflows simple and readable</li>
-                        <li>• <strong>Don't Skip Testing:</strong> Test workflow changes thoroughly</li>
-                        <li>• <strong>Don't Ignore Performance:</strong> Optimize for speed and efficiency</li>
-                        <li>• <strong>Don't Forget Cleanup:</strong> Clean up artifacts and temporary files</li>
-                        <li>• <strong>Don't Skip Documentation:</strong> Document complex workflow logic</li>
-                        <li>• <strong>Don't Ignore Costs:</strong> Monitor usage to avoid unexpected charges</li>
-                        <li>• <strong>Don't Use Insecure Actions:</strong> Review third-party actions before use</li>
+                        <li>� <strong>Don't Use Latest Tags:</strong> Pin to specific versions</li>
+                        <li>� <strong>Don't Hardcode Secrets:</strong> Use GitHub secrets management</li>
+                        <li>� <strong>Don't Ignore Security:</strong> Regular security updates and audits</li>
+                        <li>� <strong>Don't Over-Complicate:</strong> Keep workflows simple and readable</li>
+                        <li>� <strong>Don't Skip Testing:</strong> Test workflow changes thoroughly</li>
+                        <li>� <strong>Don't Ignore Performance:</strong> Optimize for speed and efficiency</li>
+                        <li>� <strong>Don't Forget Cleanup:</strong> Clean up artifacts and temporary files</li>
+                        <li>� <strong>Don't Skip Documentation:</strong> Document complex workflow logic</li>
+                        <li>� <strong>Don't Ignore Costs:</strong> Monitor usage to avoid unexpected charges</li>
+                        <li>� <strong>Don't Use Insecure Actions:</strong> Review third-party actions before use</li>
                       </ul>
                     </div>
                   </div>
@@ -7847,25 +7847,25 @@ export default function DevOpsPage() {
                       <div>
                         <h4 className="text-lg font-bold text-blue-600 mb-2">?? GitLab CI/CD Advantages</h4>
                         <ul className="text-slate-800 space-y-2 text-sm">
-                          <li>• <strong>Unified Platform:</strong> Everything in one application</li>
-                          <li>• <strong>Built-in Security:</strong> Security scanning and compliance</li>
-                          <li>• <strong>Auto DevOps:</strong> Zero-configuration CI/CD</li>
-                          <li>• <strong>Container Registry:</strong> Built-in Docker registry</li>
-                          <li>• <strong>Package Registry:</strong> Maven, NPM, PyPI, and more</li>
-                          <li>• <strong>Environment Management:</strong> Staging and production environments</li>
-                          <li>• <strong>Review Apps:</strong> Preview changes before merge</li>
+                          <li>� <strong>Unified Platform:</strong> Everything in one application</li>
+                          <li>� <strong>Built-in Security:</strong> Security scanning and compliance</li>
+                          <li>� <strong>Auto DevOps:</strong> Zero-configuration CI/CD</li>
+                          <li>� <strong>Container Registry:</strong> Built-in Docker registry</li>
+                          <li>� <strong>Package Registry:</strong> Maven, NPM, PyPI, and more</li>
+                          <li>� <strong>Environment Management:</strong> Staging and production environments</li>
+                          <li>� <strong>Review Apps:</strong> Preview changes before merge</li>
                         </ul>
                       </div>
                       <div>
                         <h4 className="text-lg font-bold text-green-600 mb-2">?? GitLab CI/CD Use Cases</h4>
                         <ul className="text-slate-800 space-y-2 text-sm">
-                          <li>• <strong>Full DevOps Lifecycle:</strong> Plan, code, build, test, deploy</li>
-                          <li>• <strong>Multi-Language Support:</strong> Any programming language</li>
-                          <li>• <strong>Cloud Deployment:</strong> AWS, Azure, GCP, Kubernetes</li>
-                          <li>• <strong>Security Integration:</strong> SAST, DAST, dependency scanning</li>
-                          <li>• <strong>Performance Testing:</strong> Built-in load testing</li>
-                          <li>• <strong>Compliance:</strong> Audit trails and reporting</li>
-                          <li>• <strong>Enterprise Features:</strong> Multi-level security and governance</li>
+                          <li>� <strong>Full DevOps Lifecycle:</strong> Plan, code, build, test, deploy</li>
+                          <li>� <strong>Multi-Language Support:</strong> Any programming language</li>
+                          <li>� <strong>Cloud Deployment:</strong> AWS, Azure, GCP, Kubernetes</li>
+                          <li>� <strong>Security Integration:</strong> SAST, DAST, dependency scanning</li>
+                          <li>� <strong>Performance Testing:</strong> Built-in load testing</li>
+                          <li>� <strong>Compliance:</strong> Audit trails and reporting</li>
+                          <li>� <strong>Enterprise Features:</strong> Multi-level security and governance</li>
                         </ul>
                       </div>
                     </div>
@@ -7924,14 +7924,14 @@ export default function DevOpsPage() {
                         <div className="bg-white p-4 rounded-lg border border-blue-100 shadow-sm hover:shadow-md transition-shadow">
                           <h4 className="text-lg font-bold text-green-600 mb-2">?? Pipeline Components</h4>
                           <ul className="text-slate-800 space-y-2 text-sm">
-                            <li>• <strong>Stages:</strong> Sequential execution phases</li>
-                            <li>• <strong>Jobs:</strong> Individual tasks within stages</li>
-                            <li>• <strong>Runners:</strong> Virtual machines executing jobs</li>
-                            <li>• <strong>Variables:</strong> Custom and predefined variables</li>
-                            <li>• <strong>Artifacts:</strong> Files passed between jobs</li>
-                            <li>• <strong>Cache:</strong> Dependencies and build outputs</li>
-                            <li>• <strong>Environments:</strong> Deployment targets</li>
-                            <li>• <strong>Triggers:</strong> Pipeline execution conditions</li>
+                            <li>� <strong>Stages:</strong> Sequential execution phases</li>
+                            <li>� <strong>Jobs:</strong> Individual tasks within stages</li>
+                            <li>� <strong>Runners:</strong> Virtual machines executing jobs</li>
+                            <li>� <strong>Variables:</strong> Custom and predefined variables</li>
+                            <li>� <strong>Artifacts:</strong> Files passed between jobs</li>
+                            <li>� <strong>Cache:</strong> Dependencies and build outputs</li>
+                            <li>� <strong>Environments:</strong> Deployment targets</li>
+                            <li>� <strong>Triggers:</strong> Pipeline execution conditions</li>
                           </ul>
                         </div>
                       </div>
@@ -7946,31 +7946,31 @@ export default function DevOpsPage() {
                     <div className="bg-blue-50 p-6 rounded-xl border border-blue-200">
                       <h3 className="text-xl font-bold text-blue-700 mb-3 flex items-center gap-2"><CheckCircle className="w-5 h-5" /> Do's</h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• <strong>Use Auto DevOps:</strong> Leverage built-in automation</li>
-                        <li>• <strong>Implement Review Apps:</strong> Preview changes before merge</li>
-                        <li>• <strong>Use Environment Variables:</strong> Make pipelines configurable</li>
-                        <li>• <strong>Enable Security Scanning:</strong> Built-in security features</li>
-                        <li>• <strong>Use Artifacts Efficiently:</strong> Pass files between jobs</li>
-                        <li>• <strong>Implement Proper Caching:</strong> Speed up builds</li>
-                        <li>• <strong>Use Parallel Jobs:</strong> Optimize pipeline performance</li>
-                        <li>• <strong>Configure Environment Protection:</strong> Secure deployments</li>
-                        <li>• <strong>Use GitLab Container Registry:</strong> Built-in Docker registry</li>
-                        <li>• <strong>Implement Compliance Checks:</strong> Automated governance</li>
+                        <li>� <strong>Use Auto DevOps:</strong> Leverage built-in automation</li>
+                        <li>� <strong>Implement Review Apps:</strong> Preview changes before merge</li>
+                        <li>� <strong>Use Environment Variables:</strong> Make pipelines configurable</li>
+                        <li>� <strong>Enable Security Scanning:</strong> Built-in security features</li>
+                        <li>� <strong>Use Artifacts Efficiently:</strong> Pass files between jobs</li>
+                        <li>� <strong>Implement Proper Caching:</strong> Speed up builds</li>
+                        <li>� <strong>Use Parallel Jobs:</strong> Optimize pipeline performance</li>
+                        <li>� <strong>Configure Environment Protection:</strong> Secure deployments</li>
+                        <li>� <strong>Use GitLab Container Registry:</strong> Built-in Docker registry</li>
+                        <li>� <strong>Implement Compliance Checks:</strong> Automated governance</li>
                       </ul>
                     </div>
                     <div className="bg-red-50 p-6 rounded-xl border border-red-200">
                       <h3 className="text-xl font-bold text-red-700 mb-3">? Don'ts</h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• <strong>Don't Ignore Security:</strong> Use built-in security scanning</li>
-                        <li>• <strong>Don't Skip Caching:</strong> Configure proper caching strategies</li>
-                        <li>• <strong>Don't Over-Complicate:</strong> Keep pipelines simple and readable</li>
-                        <li>• <strong>Don't Ignore Performance:</strong> Optimize for speed and efficiency</li>
-                        <li>• <strong>Don't Skip Documentation:</strong> Document pipeline logic</li>
-                        <li>• <strong>Don't Ignore Compliance:</strong> Implement governance checks</li>
-                        <li>• <strong>Don't Forget Cleanup:</strong> Clean up resources and environments</li>
-                        <li>• <strong>Don't Ignore Monitoring:</strong> Track pipeline performance</li>
-                        <li>• <strong>Don't Skip Testing:</strong> Test pipeline changes thoroughly</li>
-                        <li>• <strong>Don't Ignore Costs:</strong> Monitor runner usage and costs</li>
+                        <li>� <strong>Don't Ignore Security:</strong> Use built-in security scanning</li>
+                        <li>� <strong>Don't Skip Caching:</strong> Configure proper caching strategies</li>
+                        <li>� <strong>Don't Over-Complicate:</strong> Keep pipelines simple and readable</li>
+                        <li>� <strong>Don't Ignore Performance:</strong> Optimize for speed and efficiency</li>
+                        <li>� <strong>Don't Skip Documentation:</strong> Document pipeline logic</li>
+                        <li>� <strong>Don't Ignore Compliance:</strong> Implement governance checks</li>
+                        <li>� <strong>Don't Forget Cleanup:</strong> Clean up resources and environments</li>
+                        <li>� <strong>Don't Ignore Monitoring:</strong> Track pipeline performance</li>
+                        <li>� <strong>Don't Skip Testing:</strong> Test pipeline changes thoroughly</li>
+                        <li>� <strong>Don't Ignore Costs:</strong> Monitor runner usage and costs</li>
                       </ul>
                     </div>
                   </div>
@@ -8012,25 +8012,25 @@ export default function DevOpsPage() {
                       <div>
                         <h4 className="text-lg font-bold text-blue-600 mb-2">?? Why Prometheus Dominates</h4>
                         <ul className="text-slate-800 space-y-2 text-sm">
-                          <li>• <strong>Pull-Based Architecture:</strong> Reliable metrics collection</li>
-                          <li>• <strong>Dimensional Data Model:</strong> Flexible labeling system</li>
-                          <li>• <strong>PromQL:</strong> Powerful query language</li>
-                          <li>• <strong>Service Discovery:</strong> Automatic target discovery</li>
-                          <li>• <strong>Time-Series Database:</strong> Optimized for metrics storage</li>
-                          <li>• <strong>Cloud-Native:</strong> Built for containerized environments</li>
-                          <li>• <strong>Ecosystem:</strong> Rich exporter and integration ecosystem</li>
+                          <li>� <strong>Pull-Based Architecture:</strong> Reliable metrics collection</li>
+                          <li>� <strong>Dimensional Data Model:</strong> Flexible labeling system</li>
+                          <li>� <strong>PromQL:</strong> Powerful query language</li>
+                          <li>� <strong>Service Discovery:</strong> Automatic target discovery</li>
+                          <li>� <strong>Time-Series Database:</strong> Optimized for metrics storage</li>
+                          <li>� <strong>Cloud-Native:</strong> Built for containerized environments</li>
+                          <li>� <strong>Ecosystem:</strong> Rich exporter and integration ecosystem</li>
                         </ul>
                       </div>
                       <div>
                         <h4 className="text-lg font-bold text-green-600 mb-2">?? Prometheus Use Cases</h4>
                         <ul className="text-slate-800 space-y-2 text-sm">
-                          <li>• <strong>Infrastructure Monitoring:</strong> Servers, containers, Kubernetes</li>
-                          <li>• <strong>Application Metrics:</strong> Custom business and technical metrics</li>
-                          <li>• <strong>Service Monitoring:</strong> API endpoints, microservices</li>
-                          <li>• <strong>Performance Monitoring:</strong> Response times, throughput</li>
-                          <li>• <strong>Alerting:</strong> Proactive incident detection</li>
-                          <li>• <strong>Capacity Planning:</strong> Resource utilization trends</li>
-                          <li>• <strong>SLA Monitoring:</strong> Service level agreement tracking</li>
+                          <li>� <strong>Infrastructure Monitoring:</strong> Servers, containers, Kubernetes</li>
+                          <li>� <strong>Application Metrics:</strong> Custom business and technical metrics</li>
+                          <li>� <strong>Service Monitoring:</strong> API endpoints, microservices</li>
+                          <li>� <strong>Performance Monitoring:</strong> Response times, throughput</li>
+                          <li>� <strong>Alerting:</strong> Proactive incident detection</li>
+                          <li>� <strong>Capacity Planning:</strong> Resource utilization trends</li>
+                          <li>� <strong>SLA Monitoring:</strong> Service level agreement tracking</li>
                         </ul>
                       </div>
                     </div>
@@ -8384,31 +8384,31 @@ export default function DevOpsPage() {
                     <div className="bg-blue-50 p-6 rounded-xl border border-blue-200">
                       <h3 className="text-xl font-bold text-blue-700 mb-3 flex items-center gap-2"><CheckCircle className="w-5 h-5" /> Do's</h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• <strong>Use Descriptive Labels:</strong> Clear, meaningful label names</li>
-                        <li>• <strong>Follow Naming Conventions:</strong> snake_case for metrics, camelCase for labels</li>
-                        <li>• <strong>Implement Proper Retention:</strong> Configure appropriate data retention</li>
-                        <li>• <strong>Use Service Discovery:</strong> Automate target discovery</li>
-                        <li>• <strong>Monitor Cardinality:</strong> Avoid high-cardinality labels</li>
-                        <li>• <strong>Set Up Alerting:</strong> Proactive incident detection</li>
-                        <li>• <strong>Use Recording Rules:</strong> Pre-compute expensive queries</li>
-                        <li>• <strong>Implement Federation:</strong> Scale across multiple Prometheus instances</li>
-                        <li>• <strong>Monitor Prometheus Itself:</strong> Self-monitoring and health checks</li>
-                        <li>• <strong>Use Appropriate Metric Types:</strong> Choose the right type for your data</li>
+                        <li>� <strong>Use Descriptive Labels:</strong> Clear, meaningful label names</li>
+                        <li>� <strong>Follow Naming Conventions:</strong> snake_case for metrics, camelCase for labels</li>
+                        <li>� <strong>Implement Proper Retention:</strong> Configure appropriate data retention</li>
+                        <li>� <strong>Use Service Discovery:</strong> Automate target discovery</li>
+                        <li>� <strong>Monitor Cardinality:</strong> Avoid high-cardinality labels</li>
+                        <li>� <strong>Set Up Alerting:</strong> Proactive incident detection</li>
+                        <li>� <strong>Use Recording Rules:</strong> Pre-compute expensive queries</li>
+                        <li>� <strong>Implement Federation:</strong> Scale across multiple Prometheus instances</li>
+                        <li>� <strong>Monitor Prometheus Itself:</strong> Self-monitoring and health checks</li>
+                        <li>� <strong>Use Appropriate Metric Types:</strong> Choose the right type for your data</li>
                       </ul>
                     </div>
                     <div className="bg-red-50 p-6 rounded-xl border border-red-200">
                       <h3 className="text-xl font-bold text-red-700 mb-3">? Don'ts</h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• <strong>Don't Use High Cardinality:</strong> Avoid user IDs in labels</li>
-                        <li>• <strong>Don't Scrape Too Frequently:</strong> Balance granularity with resource usage</li>
-                        <li>• <strong>Don't Ignore Storage:</strong> Plan for storage growth</li>
-                        <li>• <strong>Don't Skip Alerting Rules:</strong> Test and validate alert rules</li>
-                        <li>• <strong>Don't Use Pushgateway for Metrics:</strong> Only for batch jobs</li>
-                        <li>• <strong>Don't Ignore Security:</strong> Secure Prometheus endpoints</li>
-                        <li>• <strong>Don't Over-Complicate Queries:</strong> Keep PromQL queries simple</li>
-                        <li>• <strong>Don't Ignore Performance:</strong> Monitor query performance</li>
-                        <li>• <strong>Don't Skip Documentation:</strong> Document custom metrics</li>
-                        <li>• <strong>Don't Ignore Backup:</strong> Backup Prometheus data</li>
+                        <li>� <strong>Don't Use High Cardinality:</strong> Avoid user IDs in labels</li>
+                        <li>� <strong>Don't Scrape Too Frequently:</strong> Balance granularity with resource usage</li>
+                        <li>� <strong>Don't Ignore Storage:</strong> Plan for storage growth</li>
+                        <li>� <strong>Don't Skip Alerting Rules:</strong> Test and validate alert rules</li>
+                        <li>� <strong>Don't Use Pushgateway for Metrics:</strong> Only for batch jobs</li>
+                        <li>� <strong>Don't Ignore Security:</strong> Secure Prometheus endpoints</li>
+                        <li>� <strong>Don't Over-Complicate Queries:</strong> Keep PromQL queries simple</li>
+                        <li>� <strong>Don't Ignore Performance:</strong> Monitor query performance</li>
+                        <li>� <strong>Don't Skip Documentation:</strong> Document custom metrics</li>
+                        <li>� <strong>Don't Ignore Backup:</strong> Backup Prometheus data</li>
                       </ul>
                     </div>
                   </div>
@@ -8449,25 +8449,25 @@ export default function DevOpsPage() {
                       <div>
                         <h4 className="text-lg font-bold text-blue-600 mb-2">?? Why Grafana Dominates</h4>
                         <ul className="text-slate-800 space-y-2 text-sm">
-                          <li>• <strong>Multi-Source Support:</strong> Prometheus, InfluxDB, Elasticsearch, and more</li>
-                          <li>• <strong>Rich Visualization:</strong> 40+ panel types and chart options</li>
-                          <li>• <strong>Real-Time Monitoring:</strong> Live data updates and streaming</li>
-                          <li>• <strong>Advanced Alerting:</strong> Intelligent notification system</li>
-                          <li>• <strong>Template Variables:</strong> Dynamic, interactive dashboards</li>
-                          <li>• <strong>Plugin Ecosystem:</strong> 1000+ community plugins</li>
-                          <li>• <strong>Team Collaboration:</strong> Shared dashboards and annotations</li>
+                          <li>� <strong>Multi-Source Support:</strong> Prometheus, InfluxDB, Elasticsearch, and more</li>
+                          <li>� <strong>Rich Visualization:</strong> 40+ panel types and chart options</li>
+                          <li>� <strong>Real-Time Monitoring:</strong> Live data updates and streaming</li>
+                          <li>� <strong>Advanced Alerting:</strong> Intelligent notification system</li>
+                          <li>� <strong>Template Variables:</strong> Dynamic, interactive dashboards</li>
+                          <li>� <strong>Plugin Ecosystem:</strong> 1000+ community plugins</li>
+                          <li>� <strong>Team Collaboration:</strong> Shared dashboards and annotations</li>
                         </ul>
                       </div>
                       <div>
                         <h4 className="text-lg font-bold text-green-600 mb-2">?? Grafana Use Cases</h4>
                         <ul className="text-slate-800 space-y-2 text-sm">
-                          <li>• <strong>Infrastructure Monitoring:</strong> Server, container, and cloud metrics</li>
-                          <li>• <strong>Application Performance:</strong> APM and business metrics</li>
-                          <li>• <strong>Log Analysis:</strong> Centralized log visualization</li>
-                          <li>• <strong>Business Intelligence:</strong> KPI and business metrics</li>
-                          <li>• <strong>Security Monitoring:</strong> Security events and threats</li>
-                          <li>• <strong>Capacity Planning:</strong> Resource utilization trends</li>
-                          <li>• <strong>Incident Response:</strong> Real-time alerting and dashboards</li>
+                          <li>� <strong>Infrastructure Monitoring:</strong> Server, container, and cloud metrics</li>
+                          <li>� <strong>Application Performance:</strong> APM and business metrics</li>
+                          <li>� <strong>Log Analysis:</strong> Centralized log visualization</li>
+                          <li>� <strong>Business Intelligence:</strong> KPI and business metrics</li>
+                          <li>� <strong>Security Monitoring:</strong> Security events and threats</li>
+                          <li>� <strong>Capacity Planning:</strong> Resource utilization trends</li>
+                          <li>� <strong>Incident Response:</strong> Real-time alerting and dashboards</li>
                         </ul>
                       </div>
                     </div>
@@ -8545,27 +8545,27 @@ export default function DevOpsPage() {
                         <div className="bg-white p-4 rounded-lg border border-blue-100 shadow-sm hover:shadow-md transition-shadow">
                           <h4 className="text-lg font-bold text-purple-600 mb-2">?? Panel Types</h4>
                           <ul className="text-slate-800 space-y-2 text-sm">
-                            <li>• <strong>Time Series:</strong> Line, bar, and area charts</li>
-                            <li>• <strong>Stat:</strong> Single value displays</li>
-                            <li>• <strong>Gauge:</strong> Circular progress indicators</li>
-                            <li>• <strong>Bar Gauge:</strong> Horizontal progress bars</li>
-                            <li>• <strong>Heatmap:</strong> Density visualization</li>
-                            <li>• <strong>Histogram:</strong> Distribution charts</li>
-                            <li>• <strong>Logs:</strong> Log message display</li>
-                            <li>• <strong>Table:</strong> Tabular data</li>
+                            <li>� <strong>Time Series:</strong> Line, bar, and area charts</li>
+                            <li>� <strong>Stat:</strong> Single value displays</li>
+                            <li>� <strong>Gauge:</strong> Circular progress indicators</li>
+                            <li>� <strong>Bar Gauge:</strong> Horizontal progress bars</li>
+                            <li>� <strong>Heatmap:</strong> Density visualization</li>
+                            <li>� <strong>Histogram:</strong> Distribution charts</li>
+                            <li>� <strong>Logs:</strong> Log message display</li>
+                            <li>� <strong>Table:</strong> Tabular data</li>
                           </ul>
                         </div>
                         <div className="bg-white p-4 rounded-lg border border-blue-100 shadow-sm hover:shadow-md transition-shadow">
                           <h4 className="text-lg font-bold text-orange-600 mb-2">?? Dashboard Components</h4>
                           <ul className="text-slate-800 space-y-2 text-sm">
-                            <li>• <strong>Panels:</strong> Individual visualizations</li>
-                            <li>• <strong>Rows:</strong> Panel organization</li>
-                            <li>• <strong>Variables:</strong> Dynamic filters</li>
-                            <li>• <strong>Annotations:</strong> Event markers</li>
-                            <li>• <strong>Templating:</strong> Dynamic dashboards</li>
-                            <li>• <strong>Alerting:</strong> Notification rules</li>
-                            <li>• <strong>Playlists:</strong> Rotating dashboards</li>
-                            <li>• <strong>Snapshots:</strong> Dashboard sharing</li>
+                            <li>� <strong>Panels:</strong> Individual visualizations</li>
+                            <li>� <strong>Rows:</strong> Panel organization</li>
+                            <li>� <strong>Variables:</strong> Dynamic filters</li>
+                            <li>� <strong>Annotations:</strong> Event markers</li>
+                            <li>� <strong>Templating:</strong> Dynamic dashboards</li>
+                            <li>� <strong>Alerting:</strong> Notification rules</li>
+                            <li>� <strong>Playlists:</strong> Rotating dashboards</li>
+                            <li>� <strong>Snapshots:</strong> Dashboard sharing</li>
                           </ul>
                         </div>
                       </div>
@@ -8789,16 +8789,16 @@ export default function DevOpsPage() {
                             <code className="text-green-400 font-mono text-sm">
                               # Dashboard folder structure:<br />
                               # +-- Infrastructure/<br />
-                              # ¦   +-- System Overview<br />
-                              # ¦   +-- Network Monitoring<br />
-                              # ¦   +-- Storage Monitoring<br />
+                              # �   +-- System Overview<br />
+                              # �   +-- Network Monitoring<br />
+                              # �   +-- Storage Monitoring<br />
                               # +-- Applications/<br />
-                              # ¦   +-- Web Services<br />
-                              # ¦   +-- API Monitoring<br />
-                              # ¦   +-- Database Performance<br />
+                              # �   +-- Web Services<br />
+                              # �   +-- API Monitoring<br />
+                              # �   +-- Database Performance<br />
                               # +-- Security/<br />
-                              # ¦   +-- Security Events<br />
-                              # ¦   +-- Access Logs<br />
+                              # �   +-- Security Events<br />
+                              # �   +-- Access Logs<br />
                               # +-- Business/<br />
                               #     +-- KPIs<br />
                               #     +-- User Metrics<br /><br />
@@ -8855,31 +8855,31 @@ export default function DevOpsPage() {
                     <div className="bg-blue-50 p-6 rounded-xl border border-blue-200">
                       <h3 className="text-xl font-bold text-blue-700 mb-3 flex items-center gap-2"><CheckCircle className="w-5 h-5" /> Do's</h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• <strong>Use Meaningful Titles:</strong> Clear, descriptive panel and dashboard names</li>
-                        <li>• <strong>Organize with Folders:</strong> Logical grouping of related dashboards</li>
-                        <li>• <strong>Implement Variables:</strong> Make dashboards dynamic and reusable</li>
-                        <li>• <strong>Use Appropriate Visualizations:</strong> Choose the right chart type for your data</li>
-                        <li>• <strong>Set Up Alerting:</strong> Proactive monitoring with intelligent alerts</li>
-                        <li>• <strong>Optimize Queries:</strong> Efficient data retrieval and processing</li>
-                        <li>• <strong>Document Dashboards:</strong> Add descriptions and annotations</li>
-                        <li>• <strong>Use Consistent Styling:</strong> Maintain visual consistency across dashboards</li>
-                        <li>• <strong>Implement Access Controls:</strong> Secure dashboard access and permissions</li>
-                        <li>• <strong>Monitor Grafana Itself:</strong> Track Grafana performance and health</li>
+                        <li>� <strong>Use Meaningful Titles:</strong> Clear, descriptive panel and dashboard names</li>
+                        <li>� <strong>Organize with Folders:</strong> Logical grouping of related dashboards</li>
+                        <li>� <strong>Implement Variables:</strong> Make dashboards dynamic and reusable</li>
+                        <li>� <strong>Use Appropriate Visualizations:</strong> Choose the right chart type for your data</li>
+                        <li>� <strong>Set Up Alerting:</strong> Proactive monitoring with intelligent alerts</li>
+                        <li>� <strong>Optimize Queries:</strong> Efficient data retrieval and processing</li>
+                        <li>� <strong>Document Dashboards:</strong> Add descriptions and annotations</li>
+                        <li>� <strong>Use Consistent Styling:</strong> Maintain visual consistency across dashboards</li>
+                        <li>� <strong>Implement Access Controls:</strong> Secure dashboard access and permissions</li>
+                        <li>� <strong>Monitor Grafana Itself:</strong> Track Grafana performance and health</li>
                       </ul>
                     </div>
                     <div className="bg-red-50 p-6 rounded-xl border border-red-200">
                       <h3 className="text-xl font-bold text-red-700 mb-3">? Don'ts</h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• <strong>Don't Overload Dashboards:</strong> Limit panels to maintain clarity</li>
-                        <li>• <strong>Don't Ignore Performance:</strong> Monitor query and dashboard performance</li>
-                        <li>• <strong>Don't Skip Alerting:</strong> Set up comprehensive alerting rules</li>
-                        <li>• <strong>Don't Use Poor Visualizations:</strong> Choose appropriate chart types</li>
-                        <li>• <strong>Don't Ignore Security:</strong> Secure data sources and access</li>
-                        <li>• <strong>Don't Skip Documentation:</strong> Document dashboard purpose and usage</li>
-                        <li>• <strong>Don't Ignore User Feedback:</strong> Gather and act on user input</li>
-                        <li>• <strong>Don't Over-Complicate:</strong> Keep dashboards simple and focused</li>
-                        <li>• <strong>Don't Ignore Data Quality:</strong> Validate data sources and queries</li>
-                        <li>• <strong>Don't Skip Maintenance:</strong> Regular updates and cleanup</li>
+                        <li>� <strong>Don't Overload Dashboards:</strong> Limit panels to maintain clarity</li>
+                        <li>� <strong>Don't Ignore Performance:</strong> Monitor query and dashboard performance</li>
+                        <li>� <strong>Don't Skip Alerting:</strong> Set up comprehensive alerting rules</li>
+                        <li>� <strong>Don't Use Poor Visualizations:</strong> Choose appropriate chart types</li>
+                        <li>� <strong>Don't Ignore Security:</strong> Secure data sources and access</li>
+                        <li>� <strong>Don't Skip Documentation:</strong> Document dashboard purpose and usage</li>
+                        <li>� <strong>Don't Ignore User Feedback:</strong> Gather and act on user input</li>
+                        <li>� <strong>Don't Over-Complicate:</strong> Keep dashboards simple and focused</li>
+                        <li>� <strong>Don't Ignore Data Quality:</strong> Validate data sources and queries</li>
+                        <li>� <strong>Don't Skip Maintenance:</strong> Regular updates and cleanup</li>
                       </ul>
                     </div>
                   </div>
@@ -8920,25 +8920,25 @@ export default function DevOpsPage() {
                       <div>
                         <h4 className="text-lg font-bold text-blue-600 mb-2">?? Why ELK Stack Dominates</h4>
                         <ul className="text-slate-800 space-y-2 text-sm">
-                          <li>• <strong>Centralized Logging:</strong> Single source of truth for all logs</li>
-                          <li>• <strong>Real-Time Processing:</strong> Immediate log ingestion and analysis</li>
-                          <li>• <strong>Powerful Search:</strong> Full-text search with complex queries</li>
-                          <li>• <strong>Scalable Architecture:</strong> Handles massive log volumes</li>
-                          <li>• <strong>Rich Visualizations:</strong> Interactive dashboards and charts</li>
-                          <li>• <strong>Flexible Data Sources:</strong> Supports 100+ log formats</li>
-                          <li>• <strong>Open Source:</strong> Cost-effective and customizable</li>
+                          <li>� <strong>Centralized Logging:</strong> Single source of truth for all logs</li>
+                          <li>� <strong>Real-Time Processing:</strong> Immediate log ingestion and analysis</li>
+                          <li>� <strong>Powerful Search:</strong> Full-text search with complex queries</li>
+                          <li>� <strong>Scalable Architecture:</strong> Handles massive log volumes</li>
+                          <li>� <strong>Rich Visualizations:</strong> Interactive dashboards and charts</li>
+                          <li>� <strong>Flexible Data Sources:</strong> Supports 100+ log formats</li>
+                          <li>� <strong>Open Source:</strong> Cost-effective and customizable</li>
                         </ul>
                       </div>
                       <div>
                         <h4 className="text-lg font-bold text-green-600 mb-2">?? ELK Stack Use Cases</h4>
                         <ul className="text-slate-800 space-y-2 text-sm">
-                          <li>• <strong>Application Monitoring:</strong> Debug and troubleshoot applications</li>
-                          <li>• <strong>Security Analysis:</strong> Detect threats and security incidents</li>
-                          <li>• <strong>Performance Monitoring:</strong> Track system and application performance</li>
-                          <li>• <strong>Compliance Auditing:</strong> Meet regulatory requirements</li>
-                          <li>• <strong>Business Intelligence:</strong> Extract insights from log data</li>
-                          <li>• <strong>Infrastructure Monitoring:</strong> Monitor servers and network devices</li>
-                          <li>• <strong>DevOps Automation:</strong> Integrate with CI/CD pipelines</li>
+                          <li>� <strong>Application Monitoring:</strong> Debug and troubleshoot applications</li>
+                          <li>� <strong>Security Analysis:</strong> Detect threats and security incidents</li>
+                          <li>� <strong>Performance Monitoring:</strong> Track system and application performance</li>
+                          <li>� <strong>Compliance Auditing:</strong> Meet regulatory requirements</li>
+                          <li>� <strong>Business Intelligence:</strong> Extract insights from log data</li>
+                          <li>� <strong>Infrastructure Monitoring:</strong> Monitor servers and network devices</li>
+                          <li>� <strong>DevOps Automation:</strong> Integrate with CI/CD pipelines</li>
                         </ul>
                       </div>
                     </div>
@@ -8983,12 +8983,12 @@ export default function DevOpsPage() {
                             </p>
                           </div>
                           <ul className="text-slate-800 space-y-1 text-xs mt-2">
-                            <li>• Full-text search capabilities</li>
-                            <li>• Real-time analytics</li>
-                            <li>• Horizontal scaling</li>
-                            <li>• RESTful API</li>
-                            <li>• Document-oriented storage</li>
-                            <li>• Sharding and replication</li>
+                            <li>� Full-text search capabilities</li>
+                            <li>� Real-time analytics</li>
+                            <li>� Horizontal scaling</li>
+                            <li>� RESTful API</li>
+                            <li>� Document-oriented storage</li>
+                            <li>� Sharding and replication</li>
                           </ul>
                         </div>
                         <div className="bg-white p-4 rounded-lg border border-blue-100 shadow-sm hover:shadow-md transition-shadow">
@@ -9016,12 +9016,12 @@ export default function DevOpsPage() {
                             </p>
                           </div>
                           <ul className="text-slate-800 space-y-1 text-xs mt-2">
-                            <li>• Data ingestion from multiple sources</li>
-                            <li>• Log parsing and enrichment</li>
-                            <li>• Data transformation and filtering</li>
-                            <li>• Multiple input/output plugins</li>
-                            <li>• Real-time processing</li>
-                            <li>• Error handling and retry logic</li>
+                            <li>� Data ingestion from multiple sources</li>
+                            <li>� Log parsing and enrichment</li>
+                            <li>� Data transformation and filtering</li>
+                            <li>� Multiple input/output plugins</li>
+                            <li>� Real-time processing</li>
+                            <li>� Error handling and retry logic</li>
                           </ul>
                         </div>
                         <div className="bg-white p-4 rounded-lg border border-blue-100 shadow-sm hover:shadow-md transition-shadow">
@@ -9050,12 +9050,12 @@ export default function DevOpsPage() {
                             </p>
                           </div>
                           <ul className="text-slate-800 space-y-1 text-xs mt-2">
-                            <li>• Interactive data visualization</li>
-                            <li>• Dashboard creation and sharing</li>
-                            <li>• Real-time monitoring</li>
-                            <li>• Advanced search interface</li>
-                            <li>• Machine learning integration</li>
-                            <li>• Alert and notification management</li>
+                            <li>� Interactive data visualization</li>
+                            <li>� Dashboard creation and sharing</li>
+                            <li>� Real-time monitoring</li>
+                            <li>� Advanced search interface</li>
+                            <li>� Machine learning integration</li>
+                            <li>� Alert and notification management</li>
                           </ul>
                         </div>
                       </div>
@@ -9346,31 +9346,31 @@ export default function DevOpsPage() {
                     <div className="bg-blue-50 p-6 rounded-xl border border-blue-200">
                       <h3 className="text-xl font-bold text-blue-700 mb-3 flex items-center gap-2"><CheckCircle className="w-5 h-5" /> Do's</h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• <strong>Use Index Templates:</strong> Consistent index structure and settings</li>
-                        <li>• <strong>Implement ILM Policies:</strong> Automatic index lifecycle management</li>
-                        <li>• <strong>Optimize Mapping:</strong> Proper field types and analyzers</li>
-                        <li>• <strong>Monitor Cluster Health:</strong> Regular health checks and alerts</li>
-                        <li>• <strong>Use Shard Allocation:</strong> Proper shard sizing and distribution</li>
-                        <li>• <strong>Implement Security:</strong> Enable authentication and encryption</li>
-                        <li>• <strong>Regular Backups:</strong> Snapshot and restore strategies</li>
-                        <li>• <strong>Performance Tuning:</strong> Optimize JVM and system settings</li>
-                        <li>• <strong>Log Rotation:</strong> Manage log file sizes and retention</li>
-                        <li>• <strong>Documentation:</strong> Document configurations and procedures</li>
+                        <li>� <strong>Use Index Templates:</strong> Consistent index structure and settings</li>
+                        <li>� <strong>Implement ILM Policies:</strong> Automatic index lifecycle management</li>
+                        <li>� <strong>Optimize Mapping:</strong> Proper field types and analyzers</li>
+                        <li>� <strong>Monitor Cluster Health:</strong> Regular health checks and alerts</li>
+                        <li>� <strong>Use Shard Allocation:</strong> Proper shard sizing and distribution</li>
+                        <li>� <strong>Implement Security:</strong> Enable authentication and encryption</li>
+                        <li>� <strong>Regular Backups:</strong> Snapshot and restore strategies</li>
+                        <li>� <strong>Performance Tuning:</strong> Optimize JVM and system settings</li>
+                        <li>� <strong>Log Rotation:</strong> Manage log file sizes and retention</li>
+                        <li>� <strong>Documentation:</strong> Document configurations and procedures</li>
                       </ul>
                     </div>
                     <div className="bg-red-50 p-6 rounded-xl border border-red-200">
                       <h3 className="text-xl font-bold text-red-700 mb-3">? Don'ts</h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• <strong>Don't Ignore Mapping:</strong> Avoid dynamic mapping issues</li>
-                        <li>• <strong>Don't Over-Shard:</strong> Avoid too many small shards</li>
-                        <li>• <strong>Don't Skip Monitoring:</strong> Monitor cluster performance</li>
-                        <li>• <strong>Don't Ignore Security:</strong> Secure your ELK deployment</li>
-                        <li>• <strong>Don't Over-Index:</strong> Index only necessary fields</li>
-                        <li>• <strong>Don't Ignore Retention:</strong> Implement proper data retention</li>
-                        <li>• <strong>Don't Skip Backups:</strong> Regular backup procedures</li>
-                        <li>• <strong>Don't Ignore Updates:</strong> Keep components updated</li>
-                        <li>• <strong>Don't Over-Complicate:</strong> Keep configurations simple</li>
-                        <li>• <strong>Don't Ignore Performance:</strong> Monitor and optimize performance</li>
+                        <li>� <strong>Don't Ignore Mapping:</strong> Avoid dynamic mapping issues</li>
+                        <li>� <strong>Don't Over-Shard:</strong> Avoid too many small shards</li>
+                        <li>� <strong>Don't Skip Monitoring:</strong> Monitor cluster performance</li>
+                        <li>� <strong>Don't Ignore Security:</strong> Secure your ELK deployment</li>
+                        <li>� <strong>Don't Over-Index:</strong> Index only necessary fields</li>
+                        <li>� <strong>Don't Ignore Retention:</strong> Implement proper data retention</li>
+                        <li>� <strong>Don't Skip Backups:</strong> Regular backup procedures</li>
+                        <li>� <strong>Don't Ignore Updates:</strong> Keep components updated</li>
+                        <li>� <strong>Don't Over-Complicate:</strong> Keep configurations simple</li>
+                        <li>� <strong>Don't Ignore Performance:</strong> Monitor and optimize performance</li>
                       </ul>
                     </div>
                   </div>
@@ -9385,7 +9385,7 @@ export default function DevOpsPage() {
           <main>
             <div className="animate-fade-in-up">
               <h1 id="alerting" className="text-4xl md:text-5xl font-extrabold mb-8 text-center text-slate-800">
-                🚨 Alerting & Incident Response - Proactive Operations
+                ?? Alerting & Incident Response - Proactive Operations
               </h1>
               <p className="text-lg text-slate-800 mb-8 text-center">
                 Master intelligent alerting strategies, incident response workflows, and operational excellence practices
@@ -9393,7 +9393,7 @@ export default function DevOpsPage() {
 
               <div className="max-w-6xl mx-auto">
                 <div className="bg-red-50 p-8 rounded-2xl border border-red-200 mb-8 shadow-sm">
-                  <h2 className="text-3xl font-bold text-red-800 mb-4">📢 What is Alerting & Incident Response?</h2>
+                  <h2 className="text-3xl font-bold text-red-800 mb-4">?? What is Alerting & Incident Response?</h2>
                   <p className="text-slate-900 text-xl mb-6">
                     Alerting and incident response are critical components of modern DevOps operations that ensure
                     system reliability, rapid issue detection, and effective problem resolution. They form the backbone
@@ -9401,7 +9401,7 @@ export default function DevOpsPage() {
                   </p>
 
                   <div className="bg-white p-6 rounded-xl border border-red-100 shadow-sm">
-                    <h3 className="text-xl font-bold text-yellow-600 mb-3">⚡ The Alerting & Incident Response Revolution</h3>
+                    <h3 className="text-xl font-bold text-yellow-600 mb-3">? The Alerting & Incident Response Revolution</h3>
                     <p className="text-slate-800 mb-4">
                       Modern alerting and incident response have evolved from reactive firefighting to proactive,
                       intelligent operations that prevent issues before they impact users. They combine advanced
@@ -9409,27 +9409,27 @@ export default function DevOpsPage() {
                     </p>
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
-                        <h4 className="text-lg font-bold text-blue-600 mb-2">💡 Why Alerting & Incident Response Matter</h4>
+                        <h4 className="text-lg font-bold text-blue-600 mb-2">?? Why Alerting & Incident Response Matter</h4>
                         <ul className="text-slate-800 space-y-2 text-sm">
-                          <li>• <strong>Proactive Monitoring:</strong> Detect issues before user impact</li>
-                          <li>• <strong>Rapid Response:</strong> Minimize mean time to resolution (MTTR)</li>
-                          <li>• <strong>Business Continuity:</strong> Maintain service availability</li>
-                          <li>• <strong>Learning Culture:</strong> Continuous improvement from incidents</li>
-                          <li>• <strong>Automated Remediation:</strong> Self-healing systems</li>
-                          <li>• <strong>Team Collaboration:</strong> Effective communication during crises</li>
-                          <li>• <strong>Compliance:</strong> Meet SLA and regulatory requirements</li>
+                          <li>� <strong>Proactive Monitoring:</strong> Detect issues before user impact</li>
+                          <li>� <strong>Rapid Response:</strong> Minimize mean time to resolution (MTTR)</li>
+                          <li>� <strong>Business Continuity:</strong> Maintain service availability</li>
+                          <li>� <strong>Learning Culture:</strong> Continuous improvement from incidents</li>
+                          <li>� <strong>Automated Remediation:</strong> Self-healing systems</li>
+                          <li>� <strong>Team Collaboration:</strong> Effective communication during crises</li>
+                          <li>� <strong>Compliance:</strong> Meet SLA and regulatory requirements</li>
                         </ul>
                       </div>
                       <div>
-                        <h4 className="text-lg font-bold text-green-600 mb-2">🔑 Key Components</h4>
+                        <h4 className="text-lg font-bold text-green-600 mb-2">?? Key Components</h4>
                         <ul className="text-slate-800 space-y-2 text-sm">
-                          <li>• <strong>Intelligent Alerting:</strong> Smart, actionable notifications</li>
-                          <li>• <strong>Incident Management:</strong> Structured response workflows</li>
-                          <li>• <strong>Escalation Procedures:</strong> Clear escalation paths</li>
-                          <li>• <strong>Communication Channels:</strong> Effective team coordination</li>
-                          <li>• <strong>Post-Incident Reviews:</strong> Learning and improvement</li>
-                          <li>• <strong>Runbooks:</strong> Standardized response procedures</li>
-                          <li>• <strong>Metrics & Analytics:</strong> Performance measurement</li>
+                          <li>� <strong>Intelligent Alerting:</strong> Smart, actionable notifications</li>
+                          <li>� <strong>Incident Management:</strong> Structured response workflows</li>
+                          <li>� <strong>Escalation Procedures:</strong> Clear escalation paths</li>
+                          <li>� <strong>Communication Channels:</strong> Effective team coordination</li>
+                          <li>� <strong>Post-Incident Reviews:</strong> Learning and improvement</li>
+                          <li>� <strong>Runbooks:</strong> Standardized response procedures</li>
+                          <li>� <strong>Metrics & Analytics:</strong> Performance measurement</li>
                         </ul>
                       </div>
                     </div>
@@ -9437,11 +9437,11 @@ export default function DevOpsPage() {
                 </div>
 
                 <div className="bg-white/95 p-8 rounded-2xl border border-slate-200 shadow-xl mb-8">
-                  <h2 className="text-3xl font-bold text-black mb-6">🧠 Intelligent Alerting Strategies</h2>
+                  <h2 className="text-3xl font-bold text-black mb-6">?? Intelligent Alerting Strategies</h2>
 
                   <div className="space-y-8">
                     <div className="bg-red-50 p-6 rounded-xl border border-red-200">
-                      <h3 className="text-2xl font-bold text-red-700 mb-4">🎯 Alert Design Principles</h3>
+                      <h3 className="text-2xl font-bold text-red-700 mb-4">?? Alert Design Principles</h3>
                       <p className="text-slate-900 mb-4">
                         Effective alerting requires careful design to avoid alert fatigue while ensuring critical
                         issues are never missed. The key is creating actionable, relevant alerts that drive immediate response.
@@ -9449,7 +9449,7 @@ export default function DevOpsPage() {
 
                       <div className="grid md:grid-cols-2 gap-6">
                         <div className="bg-white p-4 rounded-lg border border-red-100 shadow-sm hover:shadow-md transition-shadow">
-                          <h4 className="text-lg font-bold text-red-600 mb-2">📊 Alert Classification</h4>
+                          <h4 className="text-lg font-bold text-red-600 mb-2">?? Alert Classification</h4>
                           <div className="bg-slate-900 p-4 rounded mb-3 shadow-inner">
                             <code className="text-green-400 font-mono text-sm">
                               # Alert severity levels<br />
@@ -9469,13 +9469,13 @@ export default function DevOpsPage() {
                         </div>
                         <div className="mt-4 p-3 bg-white rounded border border-red-100 shadow-sm">
                           <p className="text-sm text-red-800">
-                            <strong>📈 Output:</strong><br />
+                            <strong>?? Output:</strong><br />
                             <span className="text-slate-800">
-                              ✓ 15 CRITICAL alerts configured<br />
-                              ✓ 32 HIGH alerts configured<br />
-                              ✓ 45 MEDIUM alerts configured<br />
-                              ✓ 23 LOW alerts configured<br />
-                              ✓ Alert routing configured by severity
+                              ? 15 CRITICAL alerts configured<br />
+                              ? 32 HIGH alerts configured<br />
+                              ? 45 MEDIUM alerts configured<br />
+                              ? 23 LOW alerts configured<br />
+                              ? Alert routing configured by severity
                             </span>
                           </p>
                         </div>
@@ -9483,7 +9483,7 @@ export default function DevOpsPage() {
                     </div>
 
                     <div className="bg-white p-4 rounded-lg border border-red-100 shadow-sm hover:shadow-md transition-shadow">
-                      <h4 className="text-lg font-bold text-red-600 mb-2">⚡ Alert Conditions & Thresholds</h4>
+                      <h4 className="text-lg font-bold text-red-600 mb-2">? Alert Conditions & Thresholds</h4>
                       <div className="bg-slate-900 p-4 rounded mb-3 shadow-inner">
                         <code className="text-green-400 font-mono text-sm">
                           # Prometheus alert rules<br />
@@ -9510,10 +9510,10 @@ export default function DevOpsPage() {
                 </div>
 
                 <div className="bg-green-50 p-6 rounded-xl border border-green-200">
-                  <h3 className="text-2xl font-bold text-green-700 mb-4">🔔 Alert Routing & Notification Channels</h3>
+                  <h3 className="text-2xl font-bold text-green-700 mb-4">?? Alert Routing & Notification Channels</h3>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <h4 className="text-lg font-bold text-green-700 mb-3">📨 Notification Channels</h4>
+                      <h4 className="text-lg font-bold text-green-700 mb-3">?? Notification Channels</h4>
                       <div className="bg-slate-900 p-4 rounded mb-3 shadow-inner">
                         <code className="text-green-400 font-mono text-sm">
                           # Alertmanager configuration<br />
@@ -9544,7 +9544,7 @@ export default function DevOpsPage() {
                       </div>
                     </div>
                     <div>
-                      <h4 className="text-lg font-bold text-green-700 mb-3">⏫ Escalation Procedures</h4>
+                      <h4 className="text-lg font-bold text-green-700 mb-3">? Escalation Procedures</h4>
                       <div className="bg-gray-900 p-4 rounded mb-3">
                         <code className="text-green-400">
                           # Escalation timeline:<br />
@@ -9564,37 +9564,37 @@ export default function DevOpsPage() {
                 </div>
 
                 <div className="bg-white/95 p-8 rounded-2xl border border-slate-200 shadow-xl mb-8">
-                  <h2 className="text-3xl font-bold text-black mb-6">🎓 Alerting & Incident Response Best Practices</h2>
+                  <h2 className="text-3xl font-bold text-black mb-6">?? Alerting & Incident Response Best Practices</h2>
 
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="bg-blue-50 p-6 rounded-xl border border-blue-200">
                       <h3 className="text-xl font-bold text-blue-700 mb-3 flex items-center gap-2"><CheckCircle className="w-5 h-5" /> Do's</h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• <strong>Design Actionable Alerts:</strong> Every alert should have clear next steps</li>
-                        <li>• <strong>Implement Alert Grouping:</strong> Reduce noise with intelligent grouping</li>
-                        <li>• <strong>Use Runbooks:</strong> Standardize response procedures</li>
-                        <li>• <strong>Practice Regularly:</strong> Conduct incident response drills</li>
-                        <li>• <strong>Monitor Alerting Health:</strong> Track alerting system performance</li>
-                        <li>• <strong>Document Everything:</strong> Comprehensive incident documentation</li>
-                        <li>• <strong>Learn from Incidents:</strong> Regular post-mortems and improvements</li>
-                        <li>• <strong>Automate Where Possible:</strong> Reduce manual intervention</li>
-                        <li>• <strong>Communicate Proactively:</strong> Keep stakeholders informed</li>
-                        <li>• <strong>Measure and Improve:</strong> Track KPIs and optimize</li>
+                        <li>� <strong>Design Actionable Alerts:</strong> Every alert should have clear next steps</li>
+                        <li>� <strong>Implement Alert Grouping:</strong> Reduce noise with intelligent grouping</li>
+                        <li>� <strong>Use Runbooks:</strong> Standardize response procedures</li>
+                        <li>� <strong>Practice Regularly:</strong> Conduct incident response drills</li>
+                        <li>� <strong>Monitor Alerting Health:</strong> Track alerting system performance</li>
+                        <li>� <strong>Document Everything:</strong> Comprehensive incident documentation</li>
+                        <li>� <strong>Learn from Incidents:</strong> Regular post-mortems and improvements</li>
+                        <li>� <strong>Automate Where Possible:</strong> Reduce manual intervention</li>
+                        <li>� <strong>Communicate Proactively:</strong> Keep stakeholders informed</li>
+                        <li>� <strong>Measure and Improve:</strong> Track KPIs and optimize</li>
                       </ul>
                     </div>
                     <div className="bg-red-50 p-6 rounded-xl border border-red-200">
-                      <h3 className="text-xl font-bold text-red-700 mb-3">❌ Don'ts</h3>
+                      <h3 className="text-xl font-bold text-red-700 mb-3">? Don'ts</h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• <strong>Don't Create Alert Fatigue:</strong> Avoid too many non-actionable alerts</li>
-                        <li>• <strong>Don't Skip Post-Mortems:</strong> Always learn from incidents</li>
-                        <li>• <strong>Don't Ignore False Positives:</strong> Continuously tune alerting</li>
-                        <li>• <strong>Don't Blame Individuals:</strong> Focus on process improvements</li>
-                        <li>• <strong>Don't Skip Escalation:</strong> Follow proper escalation procedures</li>
-                        <li>• <strong>Don't Ignore Metrics:</strong> Monitor and improve KPIs</li>
-                        <li>• <strong>Don't Over-Automate:</strong> Balance automation with human judgment</li>
-                        <li>• <strong>Don't Skip Communication:</strong> Keep teams and users informed</li>
-                        <li>• <strong>Don't Ignore Documentation:</strong> Maintain up-to-date runbooks</li>
-                        <li>• <strong>Don't Neglect Training:</strong> Regular team training and drills</li>
+                        <li>� <strong>Don't Create Alert Fatigue:</strong> Avoid too many non-actionable alerts</li>
+                        <li>� <strong>Don't Skip Post-Mortems:</strong> Always learn from incidents</li>
+                        <li>� <strong>Don't Ignore False Positives:</strong> Continuously tune alerting</li>
+                        <li>� <strong>Don't Blame Individuals:</strong> Focus on process improvements</li>
+                        <li>� <strong>Don't Skip Escalation:</strong> Follow proper escalation procedures</li>
+                        <li>� <strong>Don't Ignore Metrics:</strong> Monitor and improve KPIs</li>
+                        <li>� <strong>Don't Over-Automate:</strong> Balance automation with human judgment</li>
+                        <li>� <strong>Don't Skip Communication:</strong> Keep teams and users informed</li>
+                        <li>� <strong>Don't Ignore Documentation:</strong> Maintain up-to-date runbooks</li>
+                        <li>� <strong>Don't Neglect Training:</strong> Regular team training and drills</li>
                       </ul>
                     </div>
                   </div>
@@ -9619,14 +9619,14 @@ export default function DevOpsPage() {
               <div className="max-w-6xl mx-auto">
                 <div className="bg-blue-50 p-8 rounded-2xl border border-blue-200 mb-8 shadow-sm">
                   <h2 className="text-3xl font-bold text-blue-800 mb-4">?? Our Linux Learning Goal</h2>
-                  <p className="text-slate-900 text-xl mb-4">Go from zero to intermediate with the Linux command line – the backbone of servers, cloud systems, and automation.</p>
+                  <p className="text-slate-900 text-xl mb-4">Go from zero to intermediate with the Linux command line � the backbone of servers, cloud systems, and automation.</p>
                   <div className="bg-white p-6 rounded-xl border border-blue-100 shadow-sm">
                     <h3 className="text-xl font-bold text-yellow-600 mb-3">What You'll Achieve</h3>
                     <ul className="text-slate-800 space-y-2">
-                      <li>• <strong className="text-slate-900">Command Line Mastery:</strong> Navigate and manage files efficiently</li>
-                      <li>• <strong className="text-slate-900">System Administration:</strong> Manage processes, users, and permissions</li>
-                      <li>• <strong className="text-slate-900">Automation Skills:</strong> Write shell scripts for task automation</li>
-                      <li>• <strong className="text-slate-900">DevOps Foundation:</strong> Build the skills needed for containerization and cloud</li>
+                      <li>� <strong className="text-slate-900">Command Line Mastery:</strong> Navigate and manage files efficiently</li>
+                      <li>� <strong className="text-slate-900">System Administration:</strong> Manage processes, users, and permissions</li>
+                      <li>� <strong className="text-slate-900">Automation Skills:</strong> Write shell scripts for task automation</li>
+                      <li>� <strong className="text-slate-900">DevOps Foundation:</strong> Build the skills needed for containerization and cloud</li>
                     </ul>
                   </div>
                 </div>
@@ -9645,19 +9645,19 @@ export default function DevOpsPage() {
                         <div className="bg-white p-4 rounded-lg border border-blue-100 shadow-sm hover:shadow-md transition-shadow">
                           <h4 className="text-lg font-bold text-blue-600 mb-3">?? Historical Context</h4>
                           <ul className="text-slate-800 space-y-2 text-sm">
-                            <li>• <strong>1991:</strong> Linus Torvalds creates Linux kernel</li>
-                            <li>• <strong>1992:</strong> First distributions (Debian, Slackware)</li>
-                            <li>• <strong>2004:</strong> Ubuntu launches, making Linux user-friendly</li>
-                            <li>• <strong>2010s:</strong> Linux dominates cloud and containers</li>
+                            <li>� <strong>1991:</strong> Linus Torvalds creates Linux kernel</li>
+                            <li>� <strong>1992:</strong> First distributions (Debian, Slackware)</li>
+                            <li>� <strong>2004:</strong> Ubuntu launches, making Linux user-friendly</li>
+                            <li>� <strong>2010s:</strong> Linux dominates cloud and containers</li>
                           </ul>
                         </div>
                         <div className="bg-white p-4 rounded-lg border border-blue-100 shadow-sm hover:shadow-md transition-shadow">
                           <h4 className="text-lg font-bold text-blue-600 mb-3">?? Why DevOps Engineers Need Linux</h4>
                           <ul className="text-slate-800 space-y-2 text-sm">
-                            <li>• <strong>Server Management:</strong> Most servers run Linux</li>
-                            <li>• <strong>Containerization:</strong> Docker and Kubernetes are Linux-native</li>
-                            <li>• <strong>Cloud Platforms:</strong> AWS, Azure, GCP use Linux</li>
-                            <li>• <strong>Automation:</strong> Scripting and configuration management</li>
+                            <li>� <strong>Server Management:</strong> Most servers run Linux</li>
+                            <li>� <strong>Containerization:</strong> Docker and Kubernetes are Linux-native</li>
+                            <li>� <strong>Cloud Platforms:</strong> AWS, Azure, GCP use Linux</li>
+                            <li>� <strong>Automation:</strong> Scripting and configuration management</li>
                           </ul>
                         </div>
                       </div>
@@ -10088,21 +10088,21 @@ export default function DevOpsPage() {
                     <div className="bg-white p-6 rounded-xl border border-blue-100 shadow-sm">
                       <h3 className="text-xl font-bold text-blue-700 mb-3">?? Key Concepts</h3>
                       <ul className="text-slate-800 space-y-2">
-                        <li>• <strong className="text-slate-900">Repository:</strong> Storage for your project and its history</li>
-                        <li>• <strong className="text-slate-900">Commit:</strong> Snapshot of your code at a point in time</li>
-                        <li>• <strong className="text-slate-900">Branch:</strong> Parallel version of your code</li>
-                        <li>• <strong className="text-slate-900">Merge:</strong> Combining changes from different branches</li>
-                        <li>• <strong className="text-slate-900">Remote:</strong> Version of repository hosted elsewhere</li>
+                        <li>� <strong className="text-slate-900">Repository:</strong> Storage for your project and its history</li>
+                        <li>� <strong className="text-slate-900">Commit:</strong> Snapshot of your code at a point in time</li>
+                        <li>� <strong className="text-slate-900">Branch:</strong> Parallel version of your code</li>
+                        <li>� <strong className="text-slate-900">Merge:</strong> Combining changes from different branches</li>
+                        <li>� <strong className="text-slate-900">Remote:</strong> Version of repository hosted elsewhere</li>
                       </ul>
                     </div>
                     <div className="bg-white p-6 rounded-xl border border-blue-100 shadow-sm">
                       <h3 className="text-xl font-bold text-green-700 mb-3">? Why Git Matters in DevOps</h3>
                       <ul className="text-slate-800 space-y-2">
-                        <li>• <strong className="text-slate-900">Collaboration:</strong> Multiple developers working together</li>
-                        <li>• <strong className="text-slate-900">History:</strong> Track all changes and rollback if needed</li>
-                        <li>• <strong className="text-slate-900">Branching:</strong> Feature development without conflicts</li>
-                        <li>• <strong className="text-slate-900">CI/CD Integration:</strong> Automated deployments from code</li>
-                        <li>• <strong className="text-slate-900">Infrastructure as Code:</strong> Version control for infrastructure</li>
+                        <li>� <strong className="text-slate-900">Collaboration:</strong> Multiple developers working together</li>
+                        <li>� <strong className="text-slate-900">History:</strong> Track all changes and rollback if needed</li>
+                        <li>� <strong className="text-slate-900">Branching:</strong> Feature development without conflicts</li>
+                        <li>� <strong className="text-slate-900">CI/CD Integration:</strong> Automated deployments from code</li>
+                        <li>� <strong className="text-slate-900">Infrastructure as Code:</strong> Version control for infrastructure</li>
                       </ul>
                     </div>
                   </div>
@@ -10214,7 +10214,7 @@ export default function DevOpsPage() {
           <main>
             <div className="animate-fade-in-up">
               <h1 id="git-workflows" className="text-4xl md:text-5xl font-extrabold mb-8 text-center text-slate-800">
-                🔄 Git Workflows
+                ?? Git Workflows
               </h1>
               <p className="text-lg text-slate-800 mb-8 text-center">
                 Learn industry-standard Git workflows for team collaboration
@@ -10222,7 +10222,7 @@ export default function DevOpsPage() {
 
               <div className="max-w-6xl mx-auto">
                 <div className="bg-white/95 p-8 rounded-2xl border border-slate-200 shadow-xl mb-8">
-                  <h2 className="text-3xl font-bold text-black mb-6">📘 Popular Git Workflows</h2>
+                  <h2 className="text-3xl font-bold text-black mb-6">?? Popular Git Workflows</h2>
 
                   <div className="space-y-8">
                     <div className="bg-blue-50 p-6 rounded-xl border border-blue-200">
@@ -10235,20 +10235,20 @@ export default function DevOpsPage() {
                         <div>
                           <h4 className="text-lg font-bold text-black mb-2">Branch Types:</h4>
                           <ul className="text-slate-800 space-y-1 text-sm">
-                            <li>• <strong className="text-slate-900">main:</strong> Production-ready code</li>
-                            <li>• <strong className="text-slate-900">develop:</strong> Integration branch</li>
-                            <li>• <strong className="text-slate-900">feature/*:</strong> New features</li>
-                            <li>• <strong className="text-slate-900">release/*:</strong> Release preparation</li>
-                            <li>• <strong className="text-slate-900">hotfix/*:</strong> Emergency fixes</li>
+                            <li>� <strong className="text-slate-900">main:</strong> Production-ready code</li>
+                            <li>� <strong className="text-slate-900">develop:</strong> Integration branch</li>
+                            <li>� <strong className="text-slate-900">feature/*:</strong> New features</li>
+                            <li>� <strong className="text-slate-900">release/*:</strong> Release preparation</li>
+                            <li>� <strong className="text-slate-900">hotfix/*:</strong> Emergency fixes</li>
                           </ul>
                         </div>
                         <div>
                           <h4 className="text-lg font-bold text-black mb-2">Best For:</h4>
                           <ul className="text-slate-800 space-y-1 text-sm">
-                            <li>• Large teams</li>
-                            <li>• Complex projects</li>
-                            <li>• Release-based development</li>
-                            <li>• Multiple environments</li>
+                            <li>� Large teams</li>
+                            <li>� Complex projects</li>
+                            <li>� Release-based development</li>
+                            <li>� Multiple environments</li>
                           </ul>
                         </div>
                       </div>
@@ -10274,17 +10274,17 @@ export default function DevOpsPage() {
                         <div>
                           <h4 className="text-lg font-bold text-black mb-2">Branch Types:</h4>
                           <ul className="text-slate-800 space-y-1 text-sm">
-                            <li>• <strong className="text-slate-900">main:</strong> Deployable code</li>
-                            <li>• <strong className="text-slate-900">feature/*:</strong> Feature branches</li>
+                            <li>� <strong className="text-slate-900">main:</strong> Deployable code</li>
+                            <li>� <strong className="text-slate-900">feature/*:</strong> Feature branches</li>
                           </ul>
                         </div>
                         <div>
                           <h4 className="text-lg font-bold text-black mb-2">Best For:</h4>
                           <ul className="text-slate-800 space-y-1 text-sm">
-                            <li>• Small to medium teams</li>
-                            <li>• Continuous deployment</li>
-                            <li>• Simple projects</li>
-                            <li>• Fast iterations</li>
+                            <li>� Small to medium teams</li>
+                            <li>� Continuous deployment</li>
+                            <li>� Simple projects</li>
+                            <li>� Fast iterations</li>
                           </ul>
                         </div>
                       </div>
@@ -10312,7 +10312,7 @@ export default function DevOpsPage() {
           <main>
             <div className="animate-fade-in-up">
               <h1 id="git-advanced" className="text-4xl md:text-5xl font-extrabold mb-8 text-center text-slate-800">
-                🚀 Advanced Git
+                ?? Advanced Git
               </h1>
               <p className="text-lg text-slate-800 mb-8 text-center">
                 Master advanced Git techniques for professional development
@@ -10320,7 +10320,7 @@ export default function DevOpsPage() {
 
               <div className="max-w-6xl mx-auto">
                 <div className="bg-white/95 p-8 rounded-2xl border border-slate-200 shadow-xl mb-8">
-                  <h2 className="text-3xl font-bold text-black mb-6">🛠️ Advanced Git Commands</h2>
+                  <h2 className="text-3xl font-bold text-black mb-6">??? Advanced Git Commands</h2>
 
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="bg-red-50 p-6 rounded-xl border border-red-200">
@@ -10441,11 +10441,11 @@ export default function DevOpsPage() {
                         <div>
                           <h4 className="text-lg font-bold text-blue-700 mb-2">Key Features:</h4>
                           <ul className="text-slate-800 space-y-1 text-sm">
-                            <li>• Largest code hosting platform</li>
-                            <li>• GitHub Actions for CI/CD</li>
-                            <li>• Pull Requests and code review</li>
-                            <li>• Issues and project management</li>
-                            <li>• GitHub Pages for hosting</li>
+                            <li>� Largest code hosting platform</li>
+                            <li>� GitHub Actions for CI/CD</li>
+                            <li>� Pull Requests and code review</li>
+                            <li>� Issues and project management</li>
+                            <li>� GitHub Pages for hosting</li>
                           </ul>
                         </div>
                         <div className="bg-slate-900 p-4 rounded shadow-inner">
@@ -10466,11 +10466,11 @@ export default function DevOpsPage() {
                         <div>
                           <h4 className="text-lg font-bold text-black mb-2">Key Features:</h4>
                           <ul className="text-slate-800 space-y-1 text-sm">
-                            <li>• Complete DevOps platform</li>
-                            <li>• Built-in CI/CD pipelines</li>
-                            <li>• Container registry</li>
-                            <li>• Self-hosted options</li>
-                            <li>• Advanced project management</li>
+                            <li>� Complete DevOps platform</li>
+                            <li>� Built-in CI/CD pipelines</li>
+                            <li>� Container registry</li>
+                            <li>� Self-hosted options</li>
+                            <li>� Advanced project management</li>
                           </ul>
                         </div>
                         <div className="bg-slate-900 p-4 rounded shadow-inner">
@@ -10544,7 +10544,7 @@ export default function DevOpsPage() {
           <main>
             <div className="animate-fade-in-up">
               <h1 id="ansible-basics" className="text-4xl md:text-5xl font-extrabold mb-8 text-center text-slate-800">
-                🤖 Ansible Basics - The Automation Revolution
+                ?? Ansible Basics - The Automation Revolution
               </h1>
               <p className="text-lg text-slate-800 mb-8 text-center">
                 Master infrastructure automation with Ansible's powerful, agentless configuration management
@@ -10552,7 +10552,7 @@ export default function DevOpsPage() {
 
               <div className="max-w-6xl mx-auto">
                 <div className="bg-blue-50 p-8 rounded-2xl border border-blue-200 mb-8 shadow-sm">
-                  <h2 className="text-3xl font-bold text-blue-800 mb-4">🤔 What is Ansible?</h2>
+                  <h2 className="text-3xl font-bold text-blue-800 mb-4">?? What is Ansible?</h2>
                   <p className="text-slate-900 text-xl mb-6">
                     Ansible is an open-source automation engine that simplifies complex tasks like configuration management,
                     application deployment, and orchestration. It's designed to be simple, powerful, and agentless.
@@ -10568,25 +10568,25 @@ export default function DevOpsPage() {
                       <div>
                         <h4 className="text-lg font-bold text-blue-700 mb-2">?? Why Ansible Dominates</h4>
                         <ul className="text-slate-800 space-y-2 text-sm">
-                          <li>• <strong className="text-slate-900">Agentless:</strong> No software to install on managed nodes</li>
-                          <li>• <strong className="text-slate-900">Simple:</strong> Human-readable YAML playbooks</li>
-                          <li>• <strong className="text-slate-900">Powerful:</strong> Handles complex orchestration</li>
-                          <li>• <strong className="text-slate-900">Idempotent:</strong> Safe to run multiple times</li>
-                          <li>• <strong className="text-slate-900">Cross-Platform:</strong> Works on Linux, Windows, macOS</li>
-                          <li>• <strong className="text-slate-900">Extensible:</strong> Rich ecosystem of modules</li>
-                          <li>• <strong className="text-slate-900">Free:</strong> Open-source with enterprise options</li>
+                          <li>� <strong className="text-slate-900">Agentless:</strong> No software to install on managed nodes</li>
+                          <li>� <strong className="text-slate-900">Simple:</strong> Human-readable YAML playbooks</li>
+                          <li>� <strong className="text-slate-900">Powerful:</strong> Handles complex orchestration</li>
+                          <li>� <strong className="text-slate-900">Idempotent:</strong> Safe to run multiple times</li>
+                          <li>� <strong className="text-slate-900">Cross-Platform:</strong> Works on Linux, Windows, macOS</li>
+                          <li>� <strong className="text-slate-900">Extensible:</strong> Rich ecosystem of modules</li>
+                          <li>� <strong className="text-slate-900">Free:</strong> Open-source with enterprise options</li>
                         </ul>
                       </div>
                       <div>
                         <h4 className="text-lg font-bold text-green-700 mb-2">?? Ansible Use Cases</h4>
                         <ul className="text-slate-800 space-y-2 text-sm">
-                          <li>• <strong className="text-slate-900">Configuration Management:</strong> System configuration</li>
-                          <li>• <strong className="text-slate-900">Application Deployment:</strong> Software deployment</li>
-                          <li>• <strong className="text-slate-900">Orchestration:</strong> Multi-step processes</li>
-                          <li>• <strong className="text-slate-900">Provisioning:</strong> Infrastructure setup</li>
-                          <li>• <strong className="text-slate-900">Security:</strong> Compliance and hardening</li>
-                          <li>• <strong className="text-slate-900">Cloud Management:</strong> Cloud resource automation</li>
-                          <li>• <strong className="text-slate-900">Network Automation:</strong> Network device management</li>
+                          <li>� <strong className="text-slate-900">Configuration Management:</strong> System configuration</li>
+                          <li>� <strong className="text-slate-900">Application Deployment:</strong> Software deployment</li>
+                          <li>� <strong className="text-slate-900">Orchestration:</strong> Multi-step processes</li>
+                          <li>� <strong className="text-slate-900">Provisioning:</strong> Infrastructure setup</li>
+                          <li>� <strong className="text-slate-900">Security:</strong> Compliance and hardening</li>
+                          <li>� <strong className="text-slate-900">Cloud Management:</strong> Cloud resource automation</li>
+                          <li>� <strong className="text-slate-900">Network Automation:</strong> Network device management</li>
                         </ul>
                       </div>
                     </div>
@@ -10991,32 +10991,32 @@ export default function DevOpsPage() {
                     <div className="bg-blue-50 p-6 rounded-xl border border-blue-200">
                       <h3 className="text-xl font-bold text-blue-700 mb-3 flex items-center gap-2"><CheckCircle className="w-5 h-5" /> Do's</h3>
                       <ul className="text-slate-800 space-y-2 text-sm">
-                        <li>• <strong className="text-slate-900">Use Descriptive Names:</strong> Clear, meaningful task and play names</li>
-                        <li>• <strong className="text-slate-900">Organize with Roles:</strong> Structure complex playbooks using roles</li>
-                        <li>• <strong className="text-slate-900">Use Handlers:</strong> Trigger actions only when changes occur</li>
-                        <li>• <strong className="text-slate-900">Version Control:</strong> Keep playbooks in Git repositories</li>
-                        <li>• <strong className="text-slate-900">Use Variables:</strong> Make playbooks flexible and reusable</li>
-                        <li>• <strong className="text-slate-900">Test with Check Mode:</strong> Validate changes before applying</li>
-                        <li>• <strong className="text-slate-900">Use Tags:</strong> Organize and selectively run tasks</li>
-                        <li>• <strong className="text-slate-900">Document Everything:</strong> Add comments and documentation</li>
-                        <li>• <strong className="text-slate-900">Use Vault:</strong> Encrypt sensitive data like passwords</li>
-                        <li>• <strong className="text-slate-900">Keep Idempotent:</strong> Ensure tasks can run multiple times safely</li>
+                        <li>� <strong className="text-slate-900">Use Descriptive Names:</strong> Clear, meaningful task and play names</li>
+                        <li>� <strong className="text-slate-900">Organize with Roles:</strong> Structure complex playbooks using roles</li>
+                        <li>� <strong className="text-slate-900">Use Handlers:</strong> Trigger actions only when changes occur</li>
+                        <li>� <strong className="text-slate-900">Version Control:</strong> Keep playbooks in Git repositories</li>
+                        <li>� <strong className="text-slate-900">Use Variables:</strong> Make playbooks flexible and reusable</li>
+                        <li>� <strong className="text-slate-900">Test with Check Mode:</strong> Validate changes before applying</li>
+                        <li>� <strong className="text-slate-900">Use Tags:</strong> Organize and selectively run tasks</li>
+                        <li>� <strong className="text-slate-900">Document Everything:</strong> Add comments and documentation</li>
+                        <li>� <strong className="text-slate-900">Use Vault:</strong> Encrypt sensitive data like passwords</li>
+                        <li>� <strong className="text-slate-900">Keep Idempotent:</strong> Ensure tasks can run multiple times safely</li>
                       </ul>
                     </div>
                     <div className="bg-red-50 p-6 rounded-xl border border-red-200">
                       <h3 className="text-xl font-bold text-red-700 mb-3">? Don'ts</h3>
                       <ul className="text-slate-800 space-y-2 text-sm">
-                        <li>• <strong className="text-slate-900">Don't Use Shell Unnecessarily:</strong> Prefer specific modules</li>
-                        <li>• <strong className="text-slate-900">Don't Ignore Errors:</strong> Handle failures appropriately</li>
-                        <li>• <strong className="text-slate-900">Don't Hardcode Values:</strong> Use variables for flexibility</li>
-                        <li>• <strong className="text-slate-900">Don't Skip Validation:</strong> Always test in staging first</li>
-                        <li>• <strong className="text-slate-900">Don't Store Secrets in Plain Text:</strong> Use Ansible Vault</li>
-                        <li>• <strong className="text-slate-900">Don't Ignore Idempotency:</strong> Ensure repeatable results</li>
-                        <li>• <strong className="text-slate-900">Don't Use Root by Default:</strong> Use privilege escalation when needed</li>
-                        <li>• <strong className="text-slate-900">Don't Ignore Performance:</strong> Optimize for large inventories</li>
-                        <li>• <strong className="text-slate-900">Don't Skip Documentation:</strong> Document complex logic</li>
+                        <li>� <strong className="text-slate-900">Don't Use Shell Unnecessarily:</strong> Prefer specific modules</li>
+                        <li>� <strong className="text-slate-900">Don't Ignore Errors:</strong> Handle failures appropriately</li>
+                        <li>� <strong className="text-slate-900">Don't Hardcode Values:</strong> Use variables for flexibility</li>
+                        <li>� <strong className="text-slate-900">Don't Skip Validation:</strong> Always test in staging first</li>
+                        <li>� <strong className="text-slate-900">Don't Store Secrets in Plain Text:</strong> Use Ansible Vault</li>
+                        <li>� <strong className="text-slate-900">Don't Ignore Idempotency:</strong> Ensure repeatable results</li>
+                        <li>� <strong className="text-slate-900">Don't Use Root by Default:</strong> Use privilege escalation when needed</li>
+                        <li>� <strong className="text-slate-900">Don't Ignore Performance:</strong> Optimize for large inventories</li>
+                        <li>� <strong className="text-slate-900">Don't Skip Documentation:</strong> Document complex logic</li>
                         ```
-                        <li>• <strong className="text-slate-900">Don't Ignore Security:</strong> Follow security best practices</li>
+                        <li>� <strong className="text-slate-900">Don't Ignore Security:</strong> Follow security best practices</li>
                       </ul>
                     </div>
                   </div>
@@ -11031,7 +11031,7 @@ export default function DevOpsPage() {
           <main>
             <div className="animate-fade-in-up">
               <h1 id="ansible-playbooks" className="text-4xl md:text-5xl font-extrabold mb-8 text-center text-slate-800">
-                📜 Ansible Playbooks - Infrastructure as Code
+                ?? Ansible Playbooks - Infrastructure as Code
               </h1>
               <p className="text-lg text-slate-800 mb-8 text-center">
                 Master Ansible playbooks to automate complex multi-step processes and system configurations
@@ -11040,7 +11040,7 @@ export default function DevOpsPage() {
               <div className="max-w-6xl mx-auto">
 
                 <div className="bg-blue-50 p-8 rounded-2xl border border-blue-200 mb-8 shadow-sm">
-                  <h2 className="text-3xl font-bold text-blue-800 mb-4">🤔 What are Ansible Playbooks?</h2>
+                  <h2 className="text-3xl font-bold text-blue-800 mb-4">?? What are Ansible Playbooks?</h2>
                   <p className="text-slate-900 text-xl mb-6">
                     Playbooks are Ansible's configuration, deployment, and orchestration language. They can describe
                     a policy you want your remote systems to enforce, or a set of steps in a general IT process.
@@ -11057,25 +11057,25 @@ export default function DevOpsPage() {
                       <div>
                         <h4 className="text-lg font-bold text-blue-700 mb-2">?? Key Benefits</h4>
                         <ul className="text-slate-800 space-y-2 text-sm">
-                          <li>• <strong className="text-slate-900">Infrastructure as Code:</strong> Version-controlled infrastructure</li>
-                          <li>• <strong className="text-slate-900">Repeatability:</strong> Consistent deployments every time</li>
-                          <li>• <strong className="text-slate-900">Documentation:</strong> Self-documenting infrastructure</li>
-                          <li>• <strong className="text-slate-900">Rollback Capability:</strong> Easy to revert changes</li>
-                          <li>• <strong className="text-slate-900">Collaboration:</strong> Team-based infrastructure management</li>
-                          <li>• <strong className="text-slate-900">Testing:</strong> Validate changes before production</li>
-                          <li>• <strong className="text-slate-900">Scalability:</strong> Manage hundreds of servers</li>
+                          <li>� <strong className="text-slate-900">Infrastructure as Code:</strong> Version-controlled infrastructure</li>
+                          <li>� <strong className="text-slate-900">Repeatability:</strong> Consistent deployments every time</li>
+                          <li>� <strong className="text-slate-900">Documentation:</strong> Self-documenting infrastructure</li>
+                          <li>� <strong className="text-slate-900">Rollback Capability:</strong> Easy to revert changes</li>
+                          <li>� <strong className="text-slate-900">Collaboration:</strong> Team-based infrastructure management</li>
+                          <li>� <strong className="text-slate-900">Testing:</strong> Validate changes before production</li>
+                          <li>� <strong className="text-slate-900">Scalability:</strong> Manage hundreds of servers</li>
                         </ul>
                       </div>
                       <div>
                         <h4 className="text-lg font-bold text-green-700 mb-2">?? Playbook Components</h4>
                         <ul className="text-slate-800 space-y-2 text-sm">
-                          <li>• <strong className="text-slate-900">Plays:</strong> High-level tasks for specific hosts</li>
-                          <li>• <strong className="text-slate-900">Tasks:</strong> Individual units of work</li>
-                          <li>• <strong className="text-slate-900">Variables:</strong> Dynamic values and configuration</li>
-                          <li>• <strong className="text-slate-900">Handlers:</strong> Tasks triggered by changes</li>
-                          <li>• <strong className="text-slate-900">Templates:</strong> Dynamic configuration files</li>
-                          <li>• <strong className="text-slate-900">Conditionals:</strong> Task execution based on conditions</li>
-                          <li>• <strong className="text-slate-900">Loops:</strong> Repeat tasks with different values</li>
+                          <li>� <strong className="text-slate-900">Plays:</strong> High-level tasks for specific hosts</li>
+                          <li>� <strong className="text-slate-900">Tasks:</strong> Individual units of work</li>
+                          <li>� <strong className="text-slate-900">Variables:</strong> Dynamic values and configuration</li>
+                          <li>� <strong className="text-slate-900">Handlers:</strong> Tasks triggered by changes</li>
+                          <li>� <strong className="text-slate-900">Templates:</strong> Dynamic configuration files</li>
+                          <li>� <strong className="text-slate-900">Conditionals:</strong> Task execution based on conditions</li>
+                          <li>� <strong className="text-slate-900">Loops:</strong> Repeat tasks with different values</li>
                         </ul>
                       </div>
                     </div>
@@ -11256,31 +11256,31 @@ export default function DevOpsPage() {
                     <div className="bg-blue-50 p-6 rounded-xl border border-blue-200">
                       <h3 className="text-xl font-bold text-blue-700 mb-3 flex items-center gap-2"><CheckCircle className="w-5 h-5" /> Do's</h3>
                       <ul className="text-slate-800 space-y-2 text-sm">
-                        <li>• <strong className="text-slate-900">Use Descriptive Names:</strong> Clear, meaningful play and task names</li>
-                        <li>• <strong className="text-slate-900">Organize with Roles:</strong> Structure complex playbooks using roles</li>
-                        <li>• <strong className="text-slate-900">Use Variables:</strong> Make playbooks flexible and reusable</li>
-                        <li>• <strong className="text-slate-900">Validate with Check Mode:</strong> Test changes before applying</li>
-                        <li>• <strong className="text-slate-900">Use Handlers:</strong> Trigger actions only when changes occur</li>
-                        <li>• <strong className="text-slate-900">Version Control:</strong> Keep playbooks in Git repositories</li>
-                        <li>• <strong className="text-slate-900">Use Tags:</strong> Organize and selectively run tasks</li>
-                        <li>• <strong className="text-slate-900">Document Everything:</strong> Add comments and documentation</li>
-                        <li>• <strong className="text-slate-900">Use Vault for Secrets:</strong> Encrypt sensitive data</li>
-                        <li>• <strong className="text-slate-900">Test Incrementally:</strong> Start simple and add complexity</li>
+                        <li>� <strong className="text-slate-900">Use Descriptive Names:</strong> Clear, meaningful play and task names</li>
+                        <li>� <strong className="text-slate-900">Organize with Roles:</strong> Structure complex playbooks using roles</li>
+                        <li>� <strong className="text-slate-900">Use Variables:</strong> Make playbooks flexible and reusable</li>
+                        <li>� <strong className="text-slate-900">Validate with Check Mode:</strong> Test changes before applying</li>
+                        <li>� <strong className="text-slate-900">Use Handlers:</strong> Trigger actions only when changes occur</li>
+                        <li>� <strong className="text-slate-900">Version Control:</strong> Keep playbooks in Git repositories</li>
+                        <li>� <strong className="text-slate-900">Use Tags:</strong> Organize and selectively run tasks</li>
+                        <li>� <strong className="text-slate-900">Document Everything:</strong> Add comments and documentation</li>
+                        <li>� <strong className="text-slate-900">Use Vault for Secrets:</strong> Encrypt sensitive data</li>
+                        <li>� <strong className="text-slate-900">Test Incrementally:</strong> Start simple and add complexity</li>
                       </ul>
                     </div>
                     <div className="bg-red-50 p-6 rounded-xl border border-red-200">
                       <h3 className="text-xl font-bold text-red-700 mb-3">? Don'ts</h3>
                       <ul className="text-slate-800 space-y-2 text-sm">
-                        <li>• <strong className="text-slate-900">Don't Use Shell Unnecessarily:</strong> Prefer specific modules</li>
-                        <li>• <strong className="text-slate-900">Don't Ignore Errors:</strong> Handle failures appropriately</li>
-                        <li>• <strong className="text-slate-900">Don't Hardcode Values:</strong> Use variables for flexibility</li>
-                        <li>• <strong className="text-slate-900">Don't Skip Validation:</strong> Always test in staging first</li>
-                        <li>• <strong className="text-slate-900">Don't Store Secrets in Plain Text:</strong> Use Ansible Vault</li>
-                        <li>• <strong className="text-slate-900">Don't Ignore Idempotency:</strong> Ensure repeatable results</li>
-                        <li>• <strong className="text-slate-900">Don't Use Root by Default:</strong> Use privilege escalation when needed</li>
-                        <li>• <strong className="text-slate-900">Don't Ignore Performance:</strong> Optimize for large inventories</li>
-                        <li>• <strong className="text-slate-900">Don't Skip Documentation:</strong> Document complex logic</li>
-                        <li>• <strong className="text-slate-900">Don't Ignore Security:</strong> Follow security best practices</li>
+                        <li>� <strong className="text-slate-900">Don't Use Shell Unnecessarily:</strong> Prefer specific modules</li>
+                        <li>� <strong className="text-slate-900">Don't Ignore Errors:</strong> Handle failures appropriately</li>
+                        <li>� <strong className="text-slate-900">Don't Hardcode Values:</strong> Use variables for flexibility</li>
+                        <li>� <strong className="text-slate-900">Don't Skip Validation:</strong> Always test in staging first</li>
+                        <li>� <strong className="text-slate-900">Don't Store Secrets in Plain Text:</strong> Use Ansible Vault</li>
+                        <li>� <strong className="text-slate-900">Don't Ignore Idempotency:</strong> Ensure repeatable results</li>
+                        <li>� <strong className="text-slate-900">Don't Use Root by Default:</strong> Use privilege escalation when needed</li>
+                        <li>� <strong className="text-slate-900">Don't Ignore Performance:</strong> Optimize for large inventories</li>
+                        <li>� <strong className="text-slate-900">Don't Skip Documentation:</strong> Document complex logic</li>
+                        <li>� <strong className="text-slate-900">Don't Ignore Security:</strong> Follow security best practices</li>
                       </ul>
                     </div>
                   </div>
@@ -11320,25 +11320,25 @@ export default function DevOpsPage() {
                       <div>
                         <h4 className="text-lg font-bold text-purple-700 mb-2">?? Key Benefits</h4>
                         <ul className="text-slate-800 space-y-2 text-sm">
-                          <li>• <strong className="text-slate-900">Reusability:</strong> Share automation across projects</li>
-                          <li>• <strong className="text-slate-900">Modularity:</strong> Break complex tasks into components</li>
-                          <li>• <strong className="text-slate-900">Maintainability:</strong> Easier to update and debug</li>
-                          <li>• <strong className="text-slate-900">Collaboration:</strong> Team-based role development</li>
-                          <li>• <strong className="text-slate-900">Testing:</strong> Test individual components</li>
-                          <li>• <strong className="text-slate-900">Documentation:</strong> Self-documenting structure</li>
-                          <li>• <strong className="text-slate-900">Version Control:</strong> Track role changes independently</li>
+                          <li>� <strong className="text-slate-900">Reusability:</strong> Share automation across projects</li>
+                          <li>� <strong className="text-slate-900">Modularity:</strong> Break complex tasks into components</li>
+                          <li>� <strong className="text-slate-900">Maintainability:</strong> Easier to update and debug</li>
+                          <li>� <strong className="text-slate-900">Collaboration:</strong> Team-based role development</li>
+                          <li>� <strong className="text-slate-900">Testing:</strong> Test individual components</li>
+                          <li>� <strong className="text-slate-900">Documentation:</strong> Self-documenting structure</li>
+                          <li>� <strong className="text-slate-900">Version Control:</strong> Track role changes independently</li>
                         </ul>
                       </div>
                       <div>
                         <h4 className="text-lg font-bold text-green-700 mb-2">?? Role Components</h4>
                         <ul className="text-slate-800 space-y-2 text-sm">
-                          <li>• <strong className="text-slate-900">tasks/main.yml:</strong> Main task list</li>
-                          <li>• <strong className="text-slate-900">handlers/main.yml:</strong> Event handlers</li>
-                          <li>• <strong className="text-slate-900">vars/main.yml:</strong> Role variables</li>
-                          <li>• <strong className="text-slate-900">defaults/main.yml:</strong> Default variables</li>
-                          <li>• <strong className="text-slate-900">templates/:</strong> Jinja2 templates</li>
-                          <li>• <strong className="text-slate-900">files/:</strong> Static files to copy</li>
-                          <li>• <strong className="text-slate-900">meta/main.yml:</strong> Role metadata</li>
+                          <li>� <strong className="text-slate-900">tasks/main.yml:</strong> Main task list</li>
+                          <li>� <strong className="text-slate-900">handlers/main.yml:</strong> Event handlers</li>
+                          <li>� <strong className="text-slate-900">vars/main.yml:</strong> Role variables</li>
+                          <li>� <strong className="text-slate-900">defaults/main.yml:</strong> Default variables</li>
+                          <li>� <strong className="text-slate-900">templates/:</strong> Jinja2 templates</li>
+                          <li>� <strong className="text-slate-900">files/:</strong> Static files to copy</li>
+                          <li>� <strong className="text-slate-900">meta/main.yml:</strong> Role metadata</li>
                         </ul>
                       </div>
                     </div>
@@ -11361,17 +11361,17 @@ export default function DevOpsPage() {
                           roles/<br />
                           +-- nginx/<br />
                           &nbsp;&nbsp;&nbsp;&nbsp;+-- tasks/<br />
-                          &nbsp;&nbsp;&nbsp;&nbsp;¦&nbsp;&nbsp;&nbsp;&nbsp;+-- main.yml<br />
+                          &nbsp;&nbsp;&nbsp;&nbsp;�&nbsp;&nbsp;&nbsp;&nbsp;+-- main.yml<br />
                           &nbsp;&nbsp;&nbsp;&nbsp;+-- handlers/<br />
-                          &nbsp;&nbsp;&nbsp;&nbsp;¦&nbsp;&nbsp;&nbsp;&nbsp;+-- main.yml<br />
+                          &nbsp;&nbsp;&nbsp;&nbsp;�&nbsp;&nbsp;&nbsp;&nbsp;+-- main.yml<br />
                           &nbsp;&nbsp;&nbsp;&nbsp;+-- vars/<br />
-                          &nbsp;&nbsp;&nbsp;&nbsp;¦&nbsp;&nbsp;&nbsp;&nbsp;+-- main.yml<br />
+                          &nbsp;&nbsp;&nbsp;&nbsp;�&nbsp;&nbsp;&nbsp;&nbsp;+-- main.yml<br />
                           &nbsp;&nbsp;&nbsp;&nbsp;+-- defaults/<br />
-                          &nbsp;&nbsp;&nbsp;&nbsp;¦&nbsp;&nbsp;&nbsp;&nbsp;+-- main.yml<br />
+                          &nbsp;&nbsp;&nbsp;&nbsp;�&nbsp;&nbsp;&nbsp;&nbsp;+-- main.yml<br />
                           &nbsp;&nbsp;&nbsp;&nbsp;+-- templates/<br />
-                          &nbsp;&nbsp;&nbsp;&nbsp;¦&nbsp;&nbsp;&nbsp;&nbsp;+-- nginx.conf.j2<br />
+                          &nbsp;&nbsp;&nbsp;&nbsp;�&nbsp;&nbsp;&nbsp;&nbsp;+-- nginx.conf.j2<br />
                           &nbsp;&nbsp;&nbsp;&nbsp;+-- files/<br />
-                          &nbsp;&nbsp;&nbsp;&nbsp;¦&nbsp;&nbsp;&nbsp;&nbsp;+-- index.html<br />
+                          &nbsp;&nbsp;&nbsp;&nbsp;�&nbsp;&nbsp;&nbsp;&nbsp;+-- index.html<br />
                           &nbsp;&nbsp;&nbsp;&nbsp;+-- meta/<br />
                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+-- main.yml
                         </code>
@@ -11487,31 +11487,31 @@ export default function DevOpsPage() {
                         Do's
                       </h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• <strong className="text-slate-900">Use Descriptive Names:</strong> Clear, meaningful role names</li>
-                        <li>• <strong className="text-slate-900">Follow Directory Structure:</strong> Use standard Ansible role layout</li>
-                        <li>• <strong className="text-slate-900">Use Variables:</strong> Make roles flexible and configurable</li>
-                        <li>• <strong className="text-slate-900">Document Dependencies:</strong> Specify role requirements</li>
-                        <li>• <strong className="text-slate-900">Use Defaults:</strong> Provide sensible default values</li>
-                        <li>• <strong className="text-slate-900">Test Roles:</strong> Validate roles before sharing</li>
-                        <li>• <strong className="text-slate-900">Version Control:</strong> Track role changes in Git</li>
-                        <li>• <strong className="text-slate-900">Use Tags:</strong> Organize and selectively run tasks</li>
-                        <li>• <strong className="text-slate-900">Handle Errors:</strong> Implement proper error handling</li>
-                        <li>• <strong className="text-slate-900">Keep Idempotent:</strong> Ensure roles can run multiple times</li>
+                        <li>� <strong className="text-slate-900">Use Descriptive Names:</strong> Clear, meaningful role names</li>
+                        <li>� <strong className="text-slate-900">Follow Directory Structure:</strong> Use standard Ansible role layout</li>
+                        <li>� <strong className="text-slate-900">Use Variables:</strong> Make roles flexible and configurable</li>
+                        <li>� <strong className="text-slate-900">Document Dependencies:</strong> Specify role requirements</li>
+                        <li>� <strong className="text-slate-900">Use Defaults:</strong> Provide sensible default values</li>
+                        <li>� <strong className="text-slate-900">Test Roles:</strong> Validate roles before sharing</li>
+                        <li>� <strong className="text-slate-900">Version Control:</strong> Track role changes in Git</li>
+                        <li>� <strong className="text-slate-900">Use Tags:</strong> Organize and selectively run tasks</li>
+                        <li>� <strong className="text-slate-900">Handle Errors:</strong> Implement proper error handling</li>
+                        <li>� <strong className="text-slate-900">Keep Idempotent:</strong> Ensure roles can run multiple times</li>
                       </ul>
                     </div>
                     <div className="bg-red-50 p-6 rounded-xl border border-red-200">
                       <h3 className="text-xl font-bold text-red-700 mb-3">? Don'ts</h3>
                       <ul className="text-slate-800 space-y-2 text-sm">
-                        <li>• <strong className="text-slate-900">Don't Hardcode Values:</strong> Use variables for flexibility</li>
-                        <li>• <strong className="text-slate-900">Don't Ignore Dependencies:</strong> Specify all requirements</li>
-                        <li>• <strong className="text-slate-900">Don't Skip Validation:</strong> Test roles thoroughly</li>
-                        <li>• <strong className="text-slate-900">Don't Store Secrets:</strong> Use Ansible Vault for sensitive data</li>
-                        <li>• <strong className="text-slate-900">Don't Ignore Idempotency:</strong> Ensure repeatable results</li>
-                        <li>• <strong className="text-slate-900">Don't Use Root by Default:</strong> Use privilege escalation when needed</li>
-                        <li>• <strong className="text-slate-900">Don't Ignore Performance:</strong> Optimize for large inventories</li>
-                        <li>• <strong className="text-slate-900">Don't Skip Documentation:</strong> Document complex logic</li>
-                        <li>• <strong className="text-slate-900">Don't Ignore Security:</strong> Follow security best practices</li>
-                        <li>• <strong className="text-slate-900">Don't Create Monolithic Roles:</strong> Keep roles focused and modular</li>
+                        <li>� <strong className="text-slate-900">Don't Hardcode Values:</strong> Use variables for flexibility</li>
+                        <li>� <strong className="text-slate-900">Don't Ignore Dependencies:</strong> Specify all requirements</li>
+                        <li>� <strong className="text-slate-900">Don't Skip Validation:</strong> Test roles thoroughly</li>
+                        <li>� <strong className="text-slate-900">Don't Store Secrets:</strong> Use Ansible Vault for sensitive data</li>
+                        <li>� <strong className="text-slate-900">Don't Ignore Idempotency:</strong> Ensure repeatable results</li>
+                        <li>� <strong className="text-slate-900">Don't Use Root by Default:</strong> Use privilege escalation when needed</li>
+                        <li>� <strong className="text-slate-900">Don't Ignore Performance:</strong> Optimize for large inventories</li>
+                        <li>� <strong className="text-slate-900">Don't Skip Documentation:</strong> Document complex logic</li>
+                        <li>� <strong className="text-slate-900">Don't Ignore Security:</strong> Follow security best practices</li>
+                        <li>� <strong className="text-slate-900">Don't Create Monolithic Roles:</strong> Keep roles focused and modular</li>
                       </ul>
                     </div>
                   </div>
@@ -11553,13 +11553,13 @@ export default function DevOpsPage() {
                           Advanced Features
                         </h4>
                         <ul className="text-slate-700 space-y-2 text-sm">
-                          <li>• <strong className="text-slate-900">Performance Optimization:</strong> Parallel execution and optimization</li>
-                          <li>• <strong className="text-slate-900">Dynamic Inventories:</strong> Cloud and external data sources</li>
-                          <li>• <strong className="text-slate-900">Complex Variables:</strong> Advanced variable handling</li>
-                          <li>• <strong className="text-slate-900">Custom Modules:</strong> Extend Ansible functionality</li>
-                          <li>• <strong className="text-slate-900">Collections:</strong> Organize and share content</li>
-                          <li>• <strong className="text-slate-900">AWX/Ansible Tower:</strong> Enterprise automation platform</li>
-                          <li>• <strong className="text-slate-900">Integration:</strong> CI/CD and other enterprise tools</li>
+                          <li>� <strong className="text-slate-900">Performance Optimization:</strong> Parallel execution and optimization</li>
+                          <li>� <strong className="text-slate-900">Dynamic Inventories:</strong> Cloud and external data sources</li>
+                          <li>� <strong className="text-slate-900">Complex Variables:</strong> Advanced variable handling</li>
+                          <li>� <strong className="text-slate-900">Custom Modules:</strong> Extend Ansible functionality</li>
+                          <li>� <strong className="text-slate-900">Collections:</strong> Organize and share content</li>
+                          <li>� <strong className="text-slate-900">AWX/Ansible Tower:</strong> Enterprise automation platform</li>
+                          <li>� <strong className="text-slate-900">Integration:</strong> CI/CD and other enterprise tools</li>
                         </ul>
                       </div>
                       <div>
@@ -11568,13 +11568,13 @@ export default function DevOpsPage() {
                           Enterprise Use Cases
                         </h4>
                         <ul className="text-slate-700 space-y-2 text-sm">
-                          <li>• <strong className="text-slate-900">Large-Scale Deployments:</strong> Thousands of servers</li>
-                          <li>• <strong className="text-slate-900">Multi-Cloud Management:</strong> Cross-cloud automation</li>
-                          <li>• <strong className="text-slate-900">Compliance Automation:</strong> Security and regulatory compliance</li>
-                          <li>• <strong className="text-slate-900">Disaster Recovery:</strong> Automated failover and recovery</li>
-                          <li>• <strong className="text-slate-900">Capacity Management:</strong> Resource optimization</li>
-                          <li>• <strong className="text-slate-900">Change Management:</strong> Controlled infrastructure changes</li>
-                          <li>• <strong className="text-slate-900">Monitoring Integration:</strong> Automated monitoring setup</li>
+                          <li>� <strong className="text-slate-900">Large-Scale Deployments:</strong> Thousands of servers</li>
+                          <li>� <strong className="text-slate-900">Multi-Cloud Management:</strong> Cross-cloud automation</li>
+                          <li>� <strong className="text-slate-900">Compliance Automation:</strong> Security and regulatory compliance</li>
+                          <li>� <strong className="text-slate-900">Disaster Recovery:</strong> Automated failover and recovery</li>
+                          <li>� <strong className="text-slate-900">Capacity Management:</strong> Resource optimization</li>
+                          <li>� <strong className="text-slate-900">Change Management:</strong> Controlled infrastructure changes</li>
+                          <li>� <strong className="text-slate-900">Monitoring Integration:</strong> Automated monitoring setup</li>
                         </ul>
                       </div>
                     </div>
@@ -11720,16 +11720,16 @@ export default function DevOpsPage() {
                         Do's
                       </h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• <strong className="text-slate-900">Optimize Performance:</strong> Use parallel execution and fact caching</li>
-                        <li>• <strong className="text-slate-900">Use Collections:</strong> Organize and share content effectively</li>
-                        <li>• <strong className="text-slate-900">Implement Error Handling:</strong> Robust error handling and recovery</li>
-                        <li>• <strong className="text-slate-900">Use Dynamic Inventories:</strong> Integrate with cloud providers</li>
-                        <li>• <strong className="text-slate-900">Version Control Everything:</strong> Track all automation code</li>
-                        <li>• <strong className="text-slate-900">Test Thoroughly:</strong> Implement comprehensive testing</li>
-                        <li>• <strong className="text-slate-900">Monitor Performance:</strong> Track execution metrics</li>
-                        <li>• <strong className="text-slate-900">Use AWX/Tower:</strong> Enterprise automation platform</li>
-                        <li>• <strong className="text-slate-900">Implement Security:</strong> Follow security best practices</li>
-                        <li>• <strong className="text-slate-900">Document Everything:</strong> Comprehensive documentation</li>
+                        <li>� <strong className="text-slate-900">Optimize Performance:</strong> Use parallel execution and fact caching</li>
+                        <li>� <strong className="text-slate-900">Use Collections:</strong> Organize and share content effectively</li>
+                        <li>� <strong className="text-slate-900">Implement Error Handling:</strong> Robust error handling and recovery</li>
+                        <li>� <strong className="text-slate-900">Use Dynamic Inventories:</strong> Integrate with cloud providers</li>
+                        <li>� <strong className="text-slate-900">Version Control Everything:</strong> Track all automation code</li>
+                        <li>� <strong className="text-slate-900">Test Thoroughly:</strong> Implement comprehensive testing</li>
+                        <li>� <strong className="text-slate-900">Monitor Performance:</strong> Track execution metrics</li>
+                        <li>� <strong className="text-slate-900">Use AWX/Tower:</strong> Enterprise automation platform</li>
+                        <li>� <strong className="text-slate-900">Implement Security:</strong> Follow security best practices</li>
+                        <li>� <strong className="text-slate-900">Document Everything:</strong> Comprehensive documentation</li>
                       </ul>
                     </div>
                     <div className="bg-red-50 p-6 rounded-xl border border-red-200">
@@ -11738,16 +11738,16 @@ export default function DevOpsPage() {
                         Don'ts
                       </h3>
                       <ul className="text-slate-700 space-y-2 text-sm">
-                        <li>• <strong className="text-slate-900">Don't Ignore Performance:</strong> Optimize for large-scale deployments</li>
-                        <li>• <strong className="text-slate-900">Don't Skip Testing:</strong> Test all automation thoroughly</li>
-                        <li>• <strong className="text-slate-900">Don't Ignore Security:</strong> Implement proper security measures</li>
-                        <li>• <strong className="text-slate-900">Don't Hardcode Values:</strong> Use variables and external data</li>
-                        <li>• <strong className="text-slate-900">Don't Ignore Error Handling:</strong> Implement robust error handling</li>
-                        <li>• <strong className="text-slate-900">Don't Skip Monitoring:</strong> Monitor automation execution</li>
-                        <li>• <strong className="text-slate-900">Don't Ignore Compliance:</strong> Follow regulatory requirements</li>
-                        <li>• <strong className="text-slate-900">Don't Skip Documentation:</strong> Document all automation</li>
-                        <li>• <strong className="text-slate-900">Don't Ignore Backup:</strong> Implement backup and recovery</li>
-                        <li>• <strong className="text-slate-900">Don't Skip Training:</strong> Train team on advanced features</li>
+                        <li>� <strong className="text-slate-900">Don't Ignore Performance:</strong> Optimize for large-scale deployments</li>
+                        <li>� <strong className="text-slate-900">Don't Skip Testing:</strong> Test all automation thoroughly</li>
+                        <li>� <strong className="text-slate-900">Don't Ignore Security:</strong> Implement proper security measures</li>
+                        <li>� <strong className="text-slate-900">Don't Hardcode Values:</strong> Use variables and external data</li>
+                        <li>� <strong className="text-slate-900">Don't Ignore Error Handling:</strong> Implement robust error handling</li>
+                        <li>� <strong className="text-slate-900">Don't Skip Monitoring:</strong> Monitor automation execution</li>
+                        <li>� <strong className="text-slate-900">Don't Ignore Compliance:</strong> Follow regulatory requirements</li>
+                        <li>� <strong className="text-slate-900">Don't Skip Documentation:</strong> Document all automation</li>
+                        <li>� <strong className="text-slate-900">Don't Ignore Backup:</strong> Implement backup and recovery</li>
+                        <li>� <strong className="text-slate-900">Don't Skip Training:</strong> Train team on advanced features</li>
                       </ul>
                     </div>
                   </div>
@@ -11774,7 +11774,7 @@ export default function DevOpsPage() {
                     What is Docker?
                   </h2>
                   <p className="text-lg text-slate-700 mb-6">
-                    Docker is an open-source platform that enables developers to build, deploy, run, update, and manage containers—standardized, executable components that combine application source code with the operating system (OS) libraries and dependencies required to run that code in any environment.
+                    Docker is an open-source platform that enables developers to build, deploy, run, update, and manage containers�standardized, executable components that combine application source code with the operating system (OS) libraries and dependencies required to run that code in any environment.
                   </p>
 
                   {/* VM vs Containers */}
@@ -11785,18 +11785,18 @@ export default function DevOpsPage() {
                         <h4 className="font-bold text-lg text-slate-800 mb-2">Virtual Machines (VMs)</h4>
                         <p className="text-sm text-slate-800 mb-3">VMs emulate an entire computer system, including the hardware. Each VM runs a full OS kernel.</p>
                         <ul className="text-sm text-slate-700 space-y-1">
-                          <li>• Heavyweight (GBs)</li>
-                          <li>• Slow startup (minutes)</li>
-                          <li>• Low density on host</li>
+                          <li>� Heavyweight (GBs)</li>
+                          <li>� Slow startup (minutes)</li>
+                          <li>� Low density on host</li>
                         </ul>
                       </div>
                       <div className="bg-white p-4 rounded-lg shadow-sm border-2 border-blue-100">
                         <h4 className="font-bold text-lg text-blue-600 mb-2">Containers (Docker)</h4>
                         <p className="text-sm text-slate-700 mb-3">Containers share the host OS kernel and isolate the application processes from the rest of the system.</p>
                         <ul className="text-sm text-slate-700 space-y-1">
-                          <li>• Lightweight (MBs)</li>
-                          <li>• Fast startup (seconds)</li>
-                          <li>• High density on host</li>
+                          <li>� Lightweight (MBs)</li>
+                          <li>� Fast startup (seconds)</li>
+                          <li>� High density on host</li>
                         </ul>
                       </div>
                     </div>
@@ -12061,13 +12061,13 @@ services:
   return (
     <TechLayout onThisPage={pageHeadings} technology="devops" activeSection={activeSection} setActiveSection={setActiveSection} background="white">
       <div
-        className="min-h-screen rounded-3xl p-8 text-slate-900 border transition-all duration-300"
+        className="min-h-screen rounded-none p-8 text-slate-900 border transition-all duration-300"
         style={{
           backgroundColor: 'rgba(255, 255, 255, 0.7)',
           backdropFilter: 'blur(12px)',
           WebkitBackdropFilter: 'blur(12px)',
-          borderColor: 'rgba(255, 255, 255, 0.5)',
-          boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.15)'
+          borderColor: 'black',
+          
         }}
       >
         {renderContent()}
@@ -12075,3 +12075,4 @@ services:
     </TechLayout>
   );
 }
+

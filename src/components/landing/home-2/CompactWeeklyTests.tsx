@@ -9,36 +9,36 @@ export default function CompactWeeklyTests() {
       backgroundColor="#ffffff"
     >
       {/* Weekly Test System Section */}
-      <div className="text-center max-w-3xl mx-auto mb-8 space-y-4">
-        <div className="text-xs font-bold uppercase tracking-wider" style={{ color: '#7A94A5' }}>
+      <div className="text-center w-full max-w-3xl mx-auto mb-[var(--space-md)] space-y-[var(--space-sm)] px-4">
+        <div className="text-[10px] md:text-xs font-bold uppercase tracking-widest" style={{ color: '#7A94A5' }}>
           Weekly Assessment System
         </div>
-        <h3 className="text-2xl md:text-3xl font-bold" style={{ color: 'var(--text-primary)' }}>
+        <h3 className="font-bold leading-tight" style={{ color: 'var(--text-primary)', fontSize: 'clamp(1.5rem, 4vw, 2.25rem)' }}>
           Three-tier ranking system with Bronze, Silver, and Gold levels
         </h3>
-        <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+        <p className="leading-relaxed" style={{ color: 'var(--text-secondary)', fontSize: 'clamp(0.875rem, 2vw, 1rem)' }}>
           Track your progress through our unique three-tier ranking system and compete with hundreds of aspirants to achieve your target level.
         </p>
       </div>
 
 
       {/* Test Levels Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[var(--space-lg)] w-full max-w-7xl mx-auto px-[var(--space-md)]">
         {/* Bronze Level Card */}
         <div
-          className="rounded-xl p-6 shadow-2xl transition-all duration-300 h-full flex flex-col border border-gray-200 dark:border-white/10 bg-white dark:bg-white/5 relative overflow-visible mt-8"
+          className="rounded-2xl p-[var(--space-md)] shadow-2xl transition-all duration-300 h-full flex flex-col border border-gray-200 dark:border-white/10 bg-white dark:bg-white/5 relative overflow-visible mt-12"
         >
           <div
-            className="flex items-center justify-center mb-4 flex-shrink-0 absolute -top-10 left-1/2 -translate-x-1/2 animate-pulse"
+            className="flex items-center justify-center mb-4 flex-shrink-0 absolute -top-10 left-1/2 -translate-x-1/2 animate-bounce"
           >
-            <span className="text-6xl">🥉</span>
+            <span className="text-5xl md:text-6xl">🥉</span>
           </div>
           <div className="w-fit px-5 py-1.5 rounded-full bg-black border border-black mb-4 mt-6">
-            <h3 className="text-lg font-bold text-[#ffffff] ">
+            <h3 className="text-base md:text-lg font-bold text-[#ffffff] ">
               Bronze Level
             </h3>
           </div>
-          <p className="text-sm mb-4 leading-relaxed min-h-[60px] !text-black dark:text-white">
+          <p className="mb-4 leading-relaxed min-h-[60px] !text-black dark:text-white" style={{ fontSize: 'clamp(0.8rem, 2vw, 0.875rem)' }}>
             Perfect for beginners. Score 40-60% to achieve Bronze level and build your foundation with comprehensive study materials.
           </p>
           <ul className="space-y-2 mb-6 flex-1">
@@ -48,7 +48,7 @@ export default function CompactWeeklyTests() {
               'Progress tracking and analytics',
               'Beginner-friendly study materials'
             ].map((item, index) => (
-              <li key={index} className="flex items-start text-sm !text-black dark:text-white">
+              <li key={index} className="flex items-start !text-black dark:text-white" style={{ fontSize: 'clamp(0.75rem, 2vw, 0.875rem)' }}>
                 <svg className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 !text-gray-600 dark:!text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                 </svg>
@@ -58,7 +58,7 @@ export default function CompactWeeklyTests() {
           </ul>
           <Link
             href="/tutorials/government-jobs"
-            className="inline-flex items-center justify-center w-full font-semibold px-5 py-2.5 rounded-lg transition-all duration-300 text-sm"
+            className="inline-flex items-center justify-center w-full font-bold px-5 py-3 rounded-xl transition-all duration-300 text-sm shadow-md"
             style={{
               background: '#87CEFA',
               color: '#083D77',
@@ -81,19 +81,19 @@ export default function CompactWeeklyTests() {
 
         {/* Silver Level Card */}
         <div
-          className="rounded-xl p-6 shadow-2xl transition-all duration-300 h-full flex flex-col border border-gray-200 dark:border-white/10 bg-white dark:bg-white/5 relative overflow-visible mt-8"
+          className="rounded-2xl p-[var(--space-md)] shadow-2xl transition-all duration-300 h-full flex flex-col border border-gray-200 dark:border-white/10 bg-white dark:bg-white/5 relative overflow-visible mt-12"
         >
           <div
-            className="flex items-center justify-center mb-4 flex-shrink-0 absolute -top-10 left-1/2 -translate-x-1/2 animate-pulse"
+            className="flex items-center justify-center mb-4 flex-shrink-0 absolute -top-10 left-1/2 -translate-x-1/2 animate-bounce"
           >
-            <span className="text-6xl">🥈</span>
+            <span className="text-5xl md:text-6xl">🥈</span>
           </div>
           <div className="w-fit px-5 py-1.5 rounded-full bg-black border border-black mb-4 mt-6">
-            <h3 className="text-lg font-bold text-[#ffffff]">
+            <h3 className="text-base md:text-lg font-bold text-[#ffffff]">
               Silver Level
             </h3>
           </div>
-          <p className="text-sm mb-4 leading-relaxed min-h-[60px] !text-black dark:text-white">
+          <p className="mb-4 leading-relaxed min-h-[60px] !text-black dark:text-white" style={{ fontSize: 'clamp(0.8rem, 2vw, 0.875rem)' }}>
             Intermediate level. Score 60-80% to achieve Silver level and demonstrate solid understanding of exam patterns.
           </p>
           <ul className="space-y-2 mb-6 flex-1">
@@ -103,7 +103,7 @@ export default function CompactWeeklyTests() {
               'Comparative performance analysis',
               'Mock test series access'
             ].map((item, index) => (
-              <li key={index} className="flex items-start text-sm !text-black dark:text-white">
+              <li key={index} className="flex items-start !text-black dark:text-white" style={{ fontSize: 'clamp(0.75rem, 2vw, 0.875rem)' }}>
                 <svg className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 !text-gray-600 dark:!text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                 </svg>
@@ -113,7 +113,7 @@ export default function CompactWeeklyTests() {
           </ul>
           <Link
             href="/tutorials/government-jobs"
-            className="inline-flex items-center justify-center w-full font-semibold px-5 py-2.5 rounded-lg transition-all duration-300 text-sm shadow-md hover:shadow-lg"
+            className="inline-flex items-center justify-center w-full font-bold px-5 py-3 rounded-xl transition-all duration-300 text-sm shadow-md"
             style={{
               background: '#87CEFA',
               color: '#083D77',
@@ -136,19 +136,19 @@ export default function CompactWeeklyTests() {
 
         {/* Gold Level Card */}
         <div
-          className="rounded-xl p-6 shadow-2xl transition-all duration-300 h-full flex flex-col border border-gray-200 dark:border-white/10 bg-white dark:bg-white/5 relative overflow-visible mt-8"
+          className="rounded-2xl p-[var(--space-md)] shadow-2xl transition-all duration-300 h-full flex flex-col border border-gray-200 dark:border-white/10 bg-white dark:bg-white/5 relative overflow-visible mt-12"
         >
           <div
-            className="flex items-center justify-center mb-4 flex-shrink-0 absolute -top-10 left-1/2 -translate-x-1/2 animate-pulse"
+            className="flex items-center justify-center mb-4 flex-shrink-0 absolute -top-10 left-1/2 -translate-x-1/2 animate-bounce"
           >
-            <span className="text-6xl">🥇</span>
+            <span className="text-5xl md:text-6xl">🥇</span>
           </div>
           <div className="w-fit px-5 py-1.5 rounded-full bg-black border border-black mb-4 mt-6">
-            <h3 className="text-lg font-bold text-[#ffffff] ">
+            <h3 className="text-base md:text-lg font-bold text-[#ffffff] ">
               Gold Level
             </h3>
           </div>
-          <p className="text-sm mb-4 leading-relaxed min-h-[60px] !text-black dark:text-white">
+          <p className="mb-4 leading-relaxed min-h-[60px] !text-black dark:text-white" style={{ fontSize: 'clamp(0.8rem, 2vw, 0.875rem)' }}>
             Expert level. Score 80%+ to achieve Gold level and join the elite group of top performers with exclusive benefits.
           </p>
           <ul className="space-y-2 mb-6 flex-1">
@@ -158,7 +158,7 @@ export default function CompactWeeklyTests() {
               'Leaderboard recognition',
               'Mentorship from experts'
             ].map((item, index) => (
-              <li key={index} className="flex items-start text-sm !text-black dark:text-white">
+              <li key={index} className="flex items-start !text-black dark:text-white" style={{ fontSize: 'clamp(0.75rem, 2vw, 0.875rem)' }}>
                 <svg className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 !text-gray-600 dark:!text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                 </svg>
@@ -168,7 +168,7 @@ export default function CompactWeeklyTests() {
           </ul>
           <Link
             href="/tutorials/government-jobs"
-            className="inline-flex items-center justify-center w-full font-semibold px-5 py-2.5 rounded-lg transition-all duration-300 text-sm shadow-md hover:shadow-lg"
+            className="inline-flex items-center justify-center w-full font-bold px-5 py-3 rounded-xl transition-all duration-300 text-sm shadow-md"
             style={{
               background: '#87CEFA',
               color: '#083D77',

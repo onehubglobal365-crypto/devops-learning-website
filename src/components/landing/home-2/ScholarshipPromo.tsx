@@ -21,7 +21,7 @@ export default function ScholarshipPromo() {
             onDragEnd={() => {
                 setTimeout(() => setIsDragging(false), 100);
             }}
-            className="fixed bottom-28 right-8 z-50 touch-none origin-bottom-right cursor-grab"
+            className="fixed bottom-[140px] right-[var(--space-md)] lg:right-[var(--space-lg)] z-50 touch-none origin-bottom-right cursor-grab"
         >
             <div className="relative group">
                 {/* Cross mark at right-out-side */}
@@ -32,11 +32,10 @@ export default function ScholarshipPromo() {
                         setIsVisible(false);
                     }}
                     onPointerDown={(e) => e.stopPropagation()}
-                    className="absolute -top-4 -right-4 bg-black text-white p-1.5 rounded-full hover:bg-red-500 transition-colors border-2 border-white shadow-lg cursor-pointer flex items-center justify-center z-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-
+                    className="absolute -top-2 -right-2 bg-red-500 text-white p-2 rounded-full hover:bg-red-600 transition-all border-2 border-white shadow-xl cursor-pointer flex items-center justify-center z-[60] opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 scale-110 lg:scale-100"
                     aria-label="Close"
                 >
-                    <X size={16} />
+                    <X size={18} />
                 </button>
 
                 <a

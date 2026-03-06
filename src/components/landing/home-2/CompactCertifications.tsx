@@ -10,10 +10,10 @@ export default function CompactCertifications() {
       subtitle="Earn industry-recognized credentials and gain real-world experience"
       backgroundColor="#bae6fd"
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-md)] lg:gap-[var(--space-lg)] w-full max-w-7xl mx-auto px-[var(--space-md)]">
         {/* Professional Certifications Card */}
         <div
-          className="relative rounded-xl p-6 card-hover-effect hover-glow-soft cursor-pointer overflow-hidden group"
+          className="relative rounded-2xl p-[var(--space-md)] lg:p-[var(--space-lg)] card-hover-effect hover-glow-soft cursor-pointer overflow-hidden group"
           style={{
             background: '#ffffff',
             border: '2px solid rgba(8, 61, 119, 0.2)',
@@ -91,7 +91,7 @@ export default function CompactCertifications() {
 
         {/* Internship Opportunities Card */}
         <div
-          className="relative rounded-xl p-6 card-hover-effect hover-glow-soft cursor-pointer overflow-hidden group"
+          className="relative rounded-2xl p-[var(--space-md)] lg:p-[var(--space-lg)] card-hover-effect hover-glow-soft cursor-pointer overflow-hidden group"
           style={{
             background: '#ffffff',
             border: '2px solid rgba(8, 61, 119, 0.2)',

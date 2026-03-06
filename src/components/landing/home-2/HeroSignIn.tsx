@@ -72,132 +72,130 @@ export default function HeroSignIn() {
   };
 
   return (
-    <div className="w-full max-w-md">
+    <div className="w-full max-w-md mx-auto">
       <div
-        className="glass-dark rounded-xl p-6 backdrop-blur-xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] border border-white/60"
+        className="glass-dark rounded-[2.5rem] p-[var(--space-md)] md:p-[var(--space-lg)] backdrop-blur-xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] border border-white/60"
         style={{
-          background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(240, 249, 255, 0.9) 100%)',
+          background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.85) 0%, rgba(240, 249, 255, 0.95) 100%)',
         }}
       >
         <h2
-          className="text-2xl font-bold mb-2 text-center"
-          style={{ color: '#2c666e' }}
+          className="font-bold mb-2 text-center"
+          style={{ color: '#2c666e', fontSize: 'clamp(1.25rem, 4vw, 1.75rem)' }}
         >
           Sign In
         </h2>
         <p
-          className="text-sm text-center mb-6"
-          style={{ color: '#4b5563' }}
+          className="text-center mb-[var(--space-md)]"
+          style={{ color: '#4b5563', fontSize: 'clamp(0.8125rem, 2vw, 0.875rem)' }}
         >
           Welcome back! Please sign in to continue.
         </p>
 
         {loginError && (
           <div
-            className="mb-4 p-3 rounded-lg flex items-center gap-2"
+            className="mb-4 p-3 rounded-xl flex items-center gap-2"
             style={{
               backgroundColor: 'rgba(239, 68, 68, 0.1)',
               border: '1px solid rgba(239, 68, 68, 0.3)',
             }}
           >
-            <AlertCircle className="w-4 h-4 text-red-400 flex-shrink-0" />
-            <p className="text-xs text-red-400">{loginError}</p>
+            <AlertCircle className="w-4 h-4 text-red-500 flex-shrink-0" />
+            <p className="text-red-500 font-medium" style={{ fontSize: 'clamp(0.7rem, 2vw, 0.75rem)' }}>{loginError}</p>
           </div>
         )}
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-[var(--space-sm)]">
           <div>
             <label
               htmlFor="hero-email"
-              className="block text-sm font-medium mb-2"
-              style={{ color: '#1f2937' }}
+              className="block font-semibold mb-2"
+              style={{ color: '#1f2937', fontSize: 'clamp(0.8125rem, 2vw, 0.875rem)' }}
             >
               Email
             </label>
             <div className="relative">
-              <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4" style={{ color: '#6b7280' }} />
+              <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 w-4 h-4" style={{ color: '#6b7280' }} />
               <input
                 id="hero-email"
                 name="email"
                 type="email"
                 value={formData.email}
                 onChange={handleInputChange}
-                className={`w-full pl-10 pr-4 py-2.5 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 transition-all text-sm ${errors.email
+                className={`w-full pl-12 pr-4 py-3 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 transition-all shadow-sm ${errors.email
                   ? 'border-2 border-red-400'
-                  : 'border border-gray-300 focus:border-sky-400'
+                  : 'border border-gray-200 focus:border-sky-400'
                   }`}
                 style={{
-                  backgroundColor: 'rgba(255, 255, 255, 0.6)',
+                  backgroundColor: 'rgba(255, 255, 255, 0.7)',
                   backdropFilter: 'blur(10px)',
+                  fontSize: 'clamp(0.8125rem, 2vw, 0.875rem)'
                 }}
                 placeholder="Enter your email"
               />
             </div>
             {errors.email && (
-              <p className="mt-1 text-xs text-red-400">{errors.email}</p>
+              <p className="mt-1 text-red-500 font-medium" style={{ fontSize: '0.7rem' }}>{errors.email}</p>
             )}
           </div>
 
           <div>
             <label
               htmlFor="hero-password"
-              className="block text-sm font-medium mb-2"
-              style={{ color: '#1f2937' }}
+              className="block font-semibold mb-2"
+              style={{ color: '#1f2937', fontSize: 'clamp(0.8125rem, 2vw, 0.875rem)' }}
             >
               Password
             </label>
             <div className="relative">
-              <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4" style={{ color: '#6b7280' }} />
+              <Lock className="absolute left-4 top-1/2 transform -translate-y-1/2 w-4 h-4" style={{ color: '#6b7280' }} />
               <input
                 id="hero-password"
                 name="password"
                 type={showPassword ? 'text' : 'password'}
                 value={formData.password}
                 onChange={handleInputChange}
-                className={`w-full pl-10 pr-12 py-2.5 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 transition-all text-sm ${errors.password
+                className={`w-full pl-12 pr-12 py-3 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 transition-all shadow-sm ${errors.password
                   ? 'border-2 border-red-400'
-                  : 'border border-gray-300 focus:border-sky-400'
+                  : 'border border-gray-200 focus:border-sky-400'
                   }`}
                 style={{
-                  backgroundColor: 'rgba(255, 255, 255, 0.6)',
+                  backgroundColor: 'rgba(255, 255, 255, 0.7)',
                   backdropFilter: 'blur(10px)',
+                  fontSize: 'clamp(0.8125rem, 2vw, 0.875rem)'
                 }}
                 placeholder="Enter your password"
               />
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-sm"
+                className="absolute right-4 top-1/2 transform -translate-y-1/2"
                 style={{ color: '#4b5563' }}
               >
                 {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
               </button>
             </div>
             {errors.password && (
-              <p className="mt-1 text-xs text-red-400">{errors.password}</p>
+              <p className="mt-1 text-red-500 font-medium" style={{ fontSize: '0.7rem' }}>{errors.password}</p>
             )}
           </div>
 
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full py-2.5 rounded-lg font-semibold text-sm transition-all hover-lift disabled:opacity-50 disabled:cursor-not-allowed"
-            style={{
-              backgroundColor: isLoading ? 'rgba(14, 165, 233, 0.5)' : '#0ea5e9',
-              color: '#000000',
-            }}
+            className="w-full py-3.5 mt-4 rounded-xl font-bold bg-[#0ea5e9] text-white transition-all hover:bg-[#0284c7] hover:shadow-lg hover:shadow-sky-500/30 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+            style={{ fontSize: 'clamp(0.875rem, 2vw, 1rem)' }}
           >
             {isLoading ? 'Signing in...' : 'Sign In'}
           </button>
         </form>
 
-        <div className="mt-4 text-center">
-          <p className="text-xs" style={{ color: '#4b5563' }}>
+        <div className="mt-6 text-center">
+          <p style={{ color: '#4b5563', fontSize: 'clamp(0.75rem, 2vw, 0.8125rem)' }}>
             Don't have an account?{' '}
             <a
               href="/register"
-              className="font-semibold hover:underline transition-all"
-              style={{ color: '#0284c7' }}
+              className="font-bold text-[#0284c7] hover:underline transition-all"
             >
               Sign Up
             </a>

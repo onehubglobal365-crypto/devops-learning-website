@@ -22,12 +22,14 @@ export default function HeroWithNav() {
         <SharedNav isScrolled={isScrolled} showAnimatedLine={true} isFixed={true} />
       </Suspense>
 
-      <section className="relative flex flex-col overflow-hidden" style={{ zIndex: 1 }}>
+      <section className="fixed top-0 left-0 w-full h-[100dvh] overflow-hidden" style={{ zIndex: 0 }}>
 
         {/* Hero Content */}
         <HeroContent />
       </section>
+
+      {/* Invisible spacer so the content starts after the hero height */}
+      <div className="relative h-[100dvh] pointer-events-none" style={{ zIndex: 10 }} />
     </>
   );
 }
-

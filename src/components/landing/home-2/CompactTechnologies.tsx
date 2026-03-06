@@ -14,14 +14,14 @@ export default function CompactTechnologies() {
       backgroundColor="var(--bg-primary)"
     >
       <div
-        className="relative glass rounded-lg p-6 card-hover-effect hover-glow-soft bg-white/90 dark:bg-slate-900/90 hover:bg-white/95 dark:hover:bg-slate-900/95 border-2 border-[rgba(8,61,119,0.3)] hover:border-[rgba(8,61,119,0.5)] dark:border-white/10 dark:hover:border-white/20 transition-all duration-300"
+        className="relative glass rounded-xl p-[var(--space-md)] card-hover-effect hover-glow-soft bg-white/90 dark:bg-slate-900/90 hover:bg-white/95 dark:hover:bg-slate-900/95 border-2 border-[rgba(8,61,119,0.3)] hover:border-[rgba(8,61,119,0.5)] dark:border-white/10 dark:hover:border-white/20 transition-all duration-300 w-full max-w-7xl mx-auto"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         style={{
           boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
         }}
       >
-        <LogoLoop speed={isHovered ? 80 : 60} logoHeight={40} className="max-w-5xl mx-auto" />
+        <LogoLoop speed={isHovered ? 80 : 60} logoHeight={50} className="w-full" />
       </div>
     </CompactSection>
   );

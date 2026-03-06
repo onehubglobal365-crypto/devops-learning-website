@@ -2,16 +2,17 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { TUTORIALS_NAV } from '@/data/tutorials-nav';
 
 import React, { useState, useEffect, useMemo } from 'react';
 import Sidebar from './sidebar';
-import { Rocket, Terminal, GitBranch, Settings, Box, Share2, RefreshCw, Activity, Zap, BookOpen, Briefcase, X } from 'lucide-react';
+import { Rocket, Terminal, GitBranch, Settings, Box, Share2, RefreshCw, Activity, Zap, BookOpen, Briefcase, X, ArrowRight } from 'lucide-react';
 
 // Define the types for the props
 interface TechLayoutProps {
   children: React.ReactNode;
   onThisPage?: { id: string; title: string }[];
-  technology: 'java' | 'python' | 'sql' | 'web-dev' | 'data-science' | 'code-terminal' | 'devops' | 'linux' | 'azure-data-engineer' | 'artificial-intelligence' | 'medical-coding' | 'powerbi';
+  technology: 'java' | 'python' | 'sql' | 'web-dev' | 'data-science' | 'code-terminal' | 'devops' | 'linux' | 'azure-data-engineer' | 'artificial-intelligence' | 'medical-coding' | 'powerbi' | 'excel';
   activeSection?: string;
   setActiveSection?: (section: string) => void;
   activeSubsection?: string | null;
@@ -184,6 +185,28 @@ const getTechNavigationItems = (tech: string): SidebarItem[] => {
       { id: 'insert', title: 'INSERT-table', href: '/sql#insert' },
       { id: 'drop', title: 'DROP-table', href: '/sql#drop' }
     ],
+    powerbi: [
+      { id: 'introduction', title: 'Power BI Introduction', href: '/powerbi#introduction' },
+      { id: 'module2', title: 'overview and comparision', href: '/powerbi#module2' },
+      { id: 'module3', title: 'power bi installation', href: '/powerbi#module3' },
+      { id: 'module4', title: 'Understanding interface', href: '/powerbi#module4' },
+      { id: 'module5', title: 'Datasource & Power Query', href: '/powerbi#module5' },
+      { id: 'module6', title: 'Datamodeling', href: '/powerbi#module6' },
+      { id: 'module7', title: 'DAX', href: '/powerbi#module7' },
+      { id: 'module8', title: 'Data Visualization', href: '/powerbi#module8' },
+      { id: 'module9', title: 'patterns', href: '/powerbi#module9' },
+      { id: 'module10', title: 'publishing', href: '/powerbi#module10' },
+      { id: 'module11', title: 'services', href: '/powerbi#module11' },
+
+    ],
+    excel: [
+      { id: 'introduction', title: 'Excel Introduction', href: '/excel#introduction' },
+      { id: 'basics', title: 'Basic Concepts', href: '/excel#basics' },
+      { id: 'formulas', title: 'Formulas & Functions', href: '/excel#formulas' },
+      { id: 'module4', title: 'interface', href: '/excel#module4' },
+      { id: 'module5', title: 'import & export', href: '/excel#module5' },
+    ],
+
     'web-dev': [
       {
         id: 'frontend',
@@ -251,13 +274,8 @@ const getTechNavigationItems = (tech: string): SidebarItem[] => {
         ]
       }
     ],
-    powerbi: [
-      
-          { id: 'introduction', title: 'Introduction', href: '/powerbi#introduction' },
-          { id: 'module2', title: 'overview and comparision', href: '/pwerbi#module2' },
-      
-    
-    ],
+    // powerbi: TUTORIALS_NAV.powerbi,
+
     devops: [
       {
         id: 'devops-foundation',
@@ -414,75 +432,13 @@ const getTechNavigationItems = (tech: string): SidebarItem[] => {
       }
     ],
     'azure-data-engineer': [
-      {
-        id: 'azure-basics',
-        title: 'Azure Basics',
-        href: '/tutorials/azure-data-engineer#azure-basics',
-        icon: '',
-        children: [
-          { id: 'azure-hierarchy', title: 'Azure Hierarchy', href: '/tutorials/azure-data-engineer#azure-hierarchy' },
-          { id: 'resource-group', title: 'Resource Group', href: '/tutorials/azure-data-engineer#resource-group' },
-          { id: 'azure-blob-storage', title: 'Azure Blob Storage', href: '/tutorials/azure-data-engineer#azure-blob-storage' },
-          { id: 'azure-data-lake', title: 'Azure Data Lake Storage Gen2', href: '/tutorials/azure-data-engineer#azure-data-lake' }
-        ]
-      },
-      {
-        id: 'azure-databricks',
-        title: 'Azure Databricks',
-        href: '/tutorials/azure-data-engineer#azure-databricks',
-        icon: '',
-        children: [
-          { id: 'introduction-to-azure-databricks', title: 'Introduction to Azure Databricks', href: '/tutorials/azure-data-engineer#introduction-to-azure-databricks' },
-          { id: 'databricks-architecture', title: 'Databricks Architecture', href: '/tutorials/azure-data-engineer#databricks-architecture' },
-          { id: 'common-use-cases', title: 'Common Use Cases', href: '/tutorials/azure-data-engineer#common-use-cases' },
-          { id: 'core-components', title: 'Core Components', href: '/tutorials/azure-data-engineer#core-components' },
-          { id: 'advantages', title: 'Advantages', href: '/tutorials/azure-data-engineer#advantages' },
-          { id: 'databricks-overview', title: 'Databricks Overview', href: '/tutorials/azure-data-engineer#databricks-overview' },
-          { id: 'how-to-create', title: 'How to Create Azure Databricks', href: '/tutorials/azure-data-engineer#how-to-create' },
-          { id: 'workspace-overview', title: 'Workspace Overview', href: '/tutorials/azure-data-engineer#workspace-overview' },
-          { id: 'databricks-features', title: 'Databricks Features', href: '/tutorials/azure-data-engineer#databricks-features' }
-        ]
-      },
-      {
-        id: 'databricks-sql',
-        title: 'Databricks SQL',
-        href: '/tutorials/azure-data-engineer#databricks-sql',
-        icon: '',
-        children: [
-          { id: 'sql-editor', title: 'SQL Editor', href: '/tutorials/azure-data-engineer#sql-editor' },
-          { id: 'queries', title: 'Queries', href: '/tutorials/azure-data-engineer#queries' },
-          { id: 'dashboards', title: 'Dashboards', href: '/tutorials/azure-data-engineer#dashboards' },
-          { id: 'genie', title: 'Genie', href: '/tutorials/azure-data-engineer#genie' },
-          { id: 'alerts', title: 'Alerts', href: '/tutorials/azure-data-engineer#alerts' },
-          { id: 'query-history', title: 'Query History', href: '/tutorials/azure-data-engineer#query-history' },
-          { id: 'sql-data-warehouse', title: 'SQL Data Warehouse', href: '/tutorials/azure-data-engineer#sql-data-warehouse' }
-        ]
-      },
-      {
-        id: 'azure-databricks-1',
-        title: 'Data Engineering',
-        href: '/tutorials/azure-data-engineer#azure-databricks-1',
-        icon: '',
-        children: [
-          { id: 'data-engineering', title: 'Overview', href: '/tutorials/azure-data-engineer#data-engineering' },
-          { id: 'jobs-runs', title: "Jobs run's", href: '/tutorials/azure-data-engineer#jobs-runs' },
-          { id: 'data-ingestion', title: 'Data Ingestion', href: '/tutorials/azure-data-engineer#data-ingestion' },
-          { id: 'ai-ml', title: 'AI/ML', href: '/tutorials/azure-data-engineer#ai-ml' },
-          { id: 'playground', title: 'Playground', href: '/tutorials/azure-data-engineer#playground' },
-          { id: 'experiments', title: 'Experiments', href: '/tutorials/azure-data-engineer#experiments' },
-          { id: 'features', title: 'Features', href: '/tutorials/azure-data-engineer#features' },
-          { id: 'models', title: 'Models', href: '/tutorials/azure-data-engineer#models' },
-          { id: 'serving', title: 'Serving', href: '/tutorials/azure-data-engineer#serving' },
-          { id: 'notebook-level-features', title: 'Notebook-level features', href: '/tutorials/azure-data-engineer#notebook-level-features' },
-          { id: 'file-level-features', title: 'File-level Features', href: '/tutorials/azure-data-engineer#file-level-features' },
-          { id: 'edit-level-features', title: 'Edit level features', href: '/tutorials/azure-data-engineer#edit-level-features' },
-          { id: 'view-level-features', title: 'View level features', href: '/tutorials/azure-data-engineer#view-level-features' },
-          { id: 'run-level-features', title: 'Run-level features', href: '/tutorials/azure-data-engineer#run-level-features' },
-          { id: 'help-level-features', title: 'Help-level features', href: '/tutorials/azure-data-engineer#help-level-features' },
-          { id: 'language-level-features', title: 'Language-level features', href: '/tutorials/azure-data-engineer#language-level-features' },
-          { id: 'others-features', title: 'Others features', href: '/tutorials/azure-data-engineer#others-features' }
-        ]
-      }
+      
+      { id: 'module1', title: 'Resources', href: '/tutorials/azure-data-engineer#module1' },
+    { id: 'module2', title: 'Module 2', href: '/tutorials/azure-data-engineer#module2' },
+    { id: 'module3', title: 'Module 3', href: '/tutorials/azure-data-engineer#module3' },
+    { id: 'module4', title: 'Module 4', href: '/tutorials/azure-data-engineer#module4' },
+    { id: 'module5', title: 'Module 5', href: '/tutorials/azure-data-engineer#module5' },
+    {id: 'module6', title:'module 6', href: '/tutorials/azure-data-engineer#module6'}
     ],
     'artificial-intelligence': [
       {
@@ -631,42 +587,12 @@ export default function TechLayout({ children, onThisPage = [], technology, acti
   }, [sectionList, setActiveSection, setActiveSubsection, externalActiveSection]);
 
   const sidebarStyle = sidebarTheme === 'light'
-    ? { backgroundColor: 'rgba(255, 255, 255, 0.65)', border: '1px solid rgba(255, 255, 255, 0.5)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.15)' }
-    : { backgroundColor: 'var(--glass-bg)', border: '1px solid var(--glass-border)', backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)', boxShadow: '0 8px 32px 0 var(--glass-shadow)' };
+    ? { backgroundColor: 'rgba(255, 255, 255, 0.65)', border: '1px solid rgba(255, 255, 255, 0.5)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }
+    : { backgroundColor: 'var(--glass-bg)', border: '1px solid var(--glass-border)', backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)' };
 
   return (
     <div className="flex min-h-screen relative w-full overflow-x-hidden" style={{ background: background }}>
-      {/* Top-Left Floating Brand Logo */}
-      <div className="fixed top-2 left-6 z-[70] hidden lg:block">
-        <Link href="/" className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-md rounded-full px-3 py-1.5 shadow-lg border border-white/50 group transition-all hover:shadow-xl hover:scale-105">
-          <div className="flex items-center justify-center w-10 h-10 rounded-full overflow-hidden bg-white shadow-inner">
-            <Image
-              src="/logo_new.jpg"
-              alt="OHG365 Logo"
-              width={40}
-              height={40}
-              className="object-contain"
-              priority
-            />
-          </div>
-          <div className="flex flex-col pr-2">
-            <div
-              className="flex items-center text-base font-black tracking-tight leading-none"
-              style={{ fontFamily: 'var(--font-orbitron), sans-serif', letterSpacing: '0.02em' }}
-            >
-              <span className="text-[#083D77]">ONE</span>
-              <span className="text-orange-500">HUB</span>
-              <span className="text-cyan-500">GLOBAL</span>
-            </div>
-            <div
-              className="text-[7px] font-bold tracking-[0.15em] uppercase leading-tight text-center mt-0.5 text-[#083D77]"
-              style={{ fontFamily: 'var(--font-orbitron), sans-serif' }}
-            >
-              SKILLS TO SUCCESS
-            </div>
-          </div>
-        </Link>
-      </div>
+      {/* Brand logo moved to right sidebar */}
 
       {/* Berry & Sky Static Background - Removed */}
 
@@ -682,11 +608,11 @@ export default function TechLayout({ children, onThisPage = [], technology, acti
       {!hideSidebar && (
         <aside
           className={`
-            fixed left-0 z-50 w-full max-w-xs sm:max-w-sm lg:w-[280px] shadow-2xl
+            fixed left-0 z-50 w-full max-w-xs sm:max-w-sm lg:w-[280px]
             transform transition-transform duration-300 ease-in-out
             top-0 h-screen
-            lg:top-[70px] lg:h-[calc(100vh-5rem)]
-            lg:left-2 lg:rounded-[30px]
+            lg:top-0 lg:h-screen
+            lg:left-0 lg:rounded-none
             lg:translate-x-0 lg:z-30
             ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}
             overflow-hidden
@@ -713,14 +639,55 @@ export default function TechLayout({ children, onThisPage = [], technology, acti
 
           {/* SQL Specific Sidebar Header */}
           {technology === 'sql' && (
-            <div className="w-full bg-white border-b border-gray-700 pt-4">
-              <div className="relative w-full h-24">
+            <div className="w-full bg-white border-b border-gray-100 p-0">
+              <div className="relative w-full h-36">
                 <Image
                   src="/images/sql_logo.png"
                   alt="SQL Logo"
                   fill
                   className="object-contain"
                   priority
+                />
+              </div>
+            </div>
+          )}
+          {technology === 'powerbi' && (
+            <div className="w-full bg-white border-b border-gray-100 p-0">
+              <div className="relative w-full h-36">
+                <Image
+                  src="/images/powerbi.png"
+                  alt="PowerBI Logo"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
+            </div>
+          )}
+          {technology === 'excel' && (
+            <div className="w-full bg-white border-b border-gray-100 p-0">
+              <div className="relative w-full h-36">
+                <Image
+                  src="https://xplorexcel.com/wp-content/uploads/2021/01/excel.jpg"
+                  alt="Excel Logo"
+                  fill
+                  className="object-cover"
+                  priority
+                  unoptimized
+                />
+              </div>
+            </div>
+          )}
+          {technology === 'azure-data-engineer' && (
+            <div className="w-full bg-white border-b border-gray-100 p-0">
+              <div className="relative w-full h-36">
+                <Image
+                  src="/images/azure.png"
+                  alt="Azure Logo"
+                  fill
+                  className="object-contain p-6"
+                  priority
+                  unoptimized
                 />
               </div>
             </div>
@@ -746,7 +713,7 @@ export default function TechLayout({ children, onThisPage = [], technology, acti
       )}
 
       {/* Main Content - scrolls independently, sidebar stays fixed */}
-      <div className={`flex-1 flex flex-col ${!hideSidebar ? 'lg:ml-[295px]' : ''} min-h-screen w-full`}>
+      <div className={`flex-1 flex flex-col ${!hideSidebar ? 'lg:ml-[280px]' : ''} min-h-screen w-full`}>
         {/* Mobile header */}
         <header className="lg:hidden bg-[#1a1a1a] border-b border-gray-600">
           <div className="flex items-center justify-between px-4 py-4">
@@ -764,13 +731,14 @@ export default function TechLayout({ children, onThisPage = [], technology, acti
             <h1 className="text-xl font-bold text-white">
               {technology === 'java' ? 'Java Programming' :
                 technology === 'python' ? 'Python Programming' :
-                  technology === 'sql' ? 'SQL & Databases' :
+                  technology === 'sql' ? 'SQL' :
                     technology === 'web-dev' ? 'Web Development' :
                       technology === 'data-science' ? 'Data Science' :
                         technology === 'code-terminal' ? 'Code Terminal' :
                           technology === 'devops' ? 'DevOps' :
                             technology === 'azure-data-engineer' ? 'Azure Data Engineer' :
-                              technology === 'medical-coding' ? 'Medical Coding' : 'OneHubGlobal'}
+                              technology === 'medical-coding' ? 'Medical Coding' :
+                                technology === 'powerbi' ? 'Power BI' : 'OneHubGlobal'}
             </h1>
             <div className="w-10" /> {/* Spacer for centering */}
           </div>
@@ -840,119 +808,134 @@ export default function TechLayout({ children, onThisPage = [], technology, acti
             </div>
 
             {/* Right Side Advertisements - Fixed and not scrolling */}
-            <aside className="hidden xl:flex flex-col gap-0 w-64 fixed top-0 right-0 h-screen overflow-y-auto scrollbar-hide pb-8 border-l border-gray-200 bg-white z-20">
-              {/* Assuming visibleAds and setVisibleAds are defined in the parent component */}
-              {/* For example: const [visibleAds, setVisibleAds] = useState({ ad1: true, ad2: true, ad3: true }); */}
-              {/* And the handleCloseAd function would be defined like this: */}
-              {/*
-              const handleCloseAd = (adId) => {
-                setVisibleAds(prev => ({ ...prev, [adId]: false }));
-                setTimeout(() => {
-                  setVisibleAds(prev => ({ ...prev, [adId]: true }));
-                }, 3 * 60 * 1000); // 3 minutes
-              };
-              */}
-              {visibleAds.ad1 && (
-                <div className="relative bg-white border-b border-gray-200 overflow-hidden">
-                  <button
-                    onClick={() => handleCloseAd('ad1')}
-                    className="absolute top-2 right-2 z-30 flex items-center justify-center w-6 h-6 rounded-full bg-gray-100 text-gray-500 hover:bg-gray-200"
-                  >
-                    <X className="w-3.5 h-3.5" />
-                  </button>
-                  <div className="relative h-28 bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden">
-                    <video
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      className="absolute inset-0 w-full h-full object-cover opacity-80"
+            <aside className="hidden xl:flex flex-col w-64 fixed top-0 right-0 h-screen border-l border-gray-200 bg-white z-[150]">
+              {/* Brand Logo Header */}
+              <div className="p-6 flex items-center justify-center flex-shrink-0">
+                <Link href="/" className="inline-flex items-center gap-3 bg-gray-50 rounded-full px-6 py-3 border border-gray-100 group transition-all hover:scale-105 shadow-sm">
+                  <div className="flex items-center justify-center w-10 h-10 rounded-full overflow-hidden bg-white shadow-sm group-hover:rotate-12 transition-transform">
+                    <Image
+                      src="/logo_new.jpg"
+                      alt="OHG365 Logo"
+                      width={40}
+                      height={40}
+                      className="object-contain"
+                    />
+                  </div>
+                  <div className="flex flex-col pr-1">
+                    <div
+                      className="flex items-center text-xs font-black tracking-tight leading-none"
+                      style={{ fontFamily: 'var(--font-orbitron), sans-serif' }}
                     >
-                      <source src="/assets/ads/career_guidance.mp4" type="video/mp4" />
-                    </video>
-                    <div className="relative z-10 p-2 text-center">
-                      <div className="bg-[#083D77] p-2 rounded-full inline-block mb-1 shadow-sm">
-                        <Rocket className="w-4 h-4 text-white" />
-                      </div>
+                      <span className="text-[#083D77]">ONE</span>
+                      <span className="text-orange-500">HUB</span>
+                      <span className="text-cyan-500">GLOBAL</span>
                     </div>
                   </div>
-                  <div className="p-4">
-                    <h3 className="text-sm font-bold mb-1 text-[#083D77]">Career Guidance</h3>
-                    <p className="text-[10px] text-gray-500 mb-2 leading-tight">
-                      Expert advice on your tech career path from industry professionals.
-                    </p>
-                    <Link href="tel:+919059450707" className="inline-block w-full text-center bg-orange-500 hover:bg-orange-600 text-white px-3 py-1.5 rounded-lg text-[10px] font-bold transition-all">
-                      Contact Expert
-                    </Link>
-                  </div>
-                </div>
-              )}
+                </Link>
+              </div>
 
-              {visibleAds.ad2 && (
-                <div className="relative bg-white border-b border-gray-200 overflow-hidden">
-                  <button
-                    onClick={() => handleCloseAd('ad2')}
-                    className="absolute top-2 right-2 z-30 flex items-center justify-center w-6 h-6 rounded-full bg-gray-100 text-gray-500 hover:bg-gray-200"
-                  >
-                    <X className="w-3.5 h-3.5" />
-                  </button>
-                  <div className="relative h-28 bg-gradient-to-br from-cyan-50 to-cyan-100 overflow-hidden">
-                    <Image
-                      src="/assets/ads/ai_interviewer.jpg"
-                      alt="AI Interviewer"
-                      fill
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-black/30 flex items-end p-3">
-                      <div className="flex items-center gap-2 text-white">
-                        <Activity className="w-3.5 h-3.5 text-cyan-400" />
-                        <span className="text-xs font-bold uppercase tracking-wider">AI Mock Interviews</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="p-4">
-                    <p className="text-[10px] text-gray-500 mb-2 leading-tight">
-                      Practice for your next big interview with our AI-powered tool.
-                    </p>
-                    <Link href="https://ohg-ai-interviewer.vercel.app/" target="_blank" className="flex items-center justify-center gap-2 w-full bg-cyan-600 hover:bg-cyan-700 text-white px-3 py-1.5 rounded-lg text-[10px] font-bold transition-all">
-                      Try for Free
-                    </Link>
-                  </div>
-                </div>
-              )}
+              {/* Ads Container - Fills remaining space */}
+              <div className="flex-1 flex flex-col min-h-0">
+                {visibleAds.ad1 && (
+                  <div className="flex-1 relative bg-white border-b border-gray-100 overflow-hidden group min-h-[160px]">
+                    <button
+                      onClick={() => handleCloseAd('ad1')}
+                      className="absolute top-4 right-4 z-30 flex items-center justify-center w-8 h-8 rounded-full bg-black/20 text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/40 backdrop-blur-md"
+                    >
+                      <X className="w-4 h-4" />
+                    </button>
+                    <Link href="tel:+919059450707" className="block h-full cursor-pointer">
+                      <div className="h-full relative bg-gradient-to-br from-[#083D77] to-blue-900 flex flex-col items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-700">
+                        {/* Background Decoration */}
+                        <div className="absolute top-[-20%] right-[-20%] w-40 h-40 bg-white/5 rounded-full blur-2xl group-hover:bg-white/10 transition-colors" />
+                        <div className="absolute bottom-[-20%] left-[-20%] w-40 h-40 bg-orange-500/5 rounded-full blur-2xl flex-shrink-0" />
 
-              {visibleAds.ad3 && (
-                <div className="relative bg-white border-b border-gray-200 overflow-hidden">
-                  <button
-                    onClick={() => handleCloseAd('ad3')}
-                    className="absolute top-2 right-2 z-30 flex items-center justify-center w-6 h-6 rounded-full bg-gray-100 text-gray-500 hover:bg-gray-200"
-                  >
-                    <X className="w-3.5 h-3.5" />
-                  </button>
-                  <div className="relative h-28 bg-gradient-to-br from-green-50 to-green-100 overflow-hidden">
-                    <Image
-                      src="/assets/ads/apply_jobs.jpg"
-                      alt="Job Portal"
-                      fill
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-black/30 flex items-end p-3">
-                      <div className="flex items-center gap-2 text-white">
-                        <Briefcase className="w-3.5 h-3.5 text-green-400" />
-                        <span className="text-xs font-bold uppercase tracking-wider">Hire & Be Hired</span>
+                        <div className="relative z-10 flex flex-col items-center gap-4">
+                          <div className="w-20 h-20 rounded-3xl bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20 shadow-2xl group-hover:rotate-6 transition-transform">
+                            <Rocket className="w-10 h-10 text-white" />
+                          </div>
+                          <div className="flex flex-col items-center text-center px-4">
+                            <span className="text-white text-sm font-black uppercase tracking-[0.2em] mb-1">Career</span>
+                            <span className="text-orange-400 text-lg font-black uppercase tracking-widest">Guidance</span>
+                          </div>
+                        </div>
+
+                        {/* Bottom Label */}
+                        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full border border-white/10 opacity-0 group-hover:opacity-100 transition-all group-hover:bottom-6">
+                          <span className="text-[10px] text-white font-bold whitespace-nowrap uppercase tracking-tighter">Talk to Experts</span>
+                          <ArrowRight className="w-3 h-3 text-orange-400" />
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                  <div className="p-4">
-                    <p className="text-[10px] text-gray-500 mb-2 leading-tight">
-                      Find your dream developer role on KonnectHere. Join 1000+ companies.
-                    </p>
-                    <Link href="https://konnecthere.com/" target="_blank" className="flex items-center justify-center gap-2 w-full border border-green-600 text-green-600 hover:bg-green-600 hover:text-white px-3 py-1.5 rounded-lg text-[10px] font-bold transition-all">
-                      Browse Jobs
                     </Link>
                   </div>
-                </div>
-              )}
+                )}
+
+                {visibleAds.ad2 && (
+                  <div className="flex-1 relative bg-white border-b border-gray-100 overflow-hidden group min-h-[160px]">
+                    <button
+                      onClick={() => handleCloseAd('ad2')}
+                      className="absolute top-4 right-4 z-30 flex items-center justify-center w-8 h-8 rounded-full bg-black/20 text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/40 backdrop-blur-md"
+                    >
+                      <X className="w-4 h-4" />
+                    </button>
+                    <Link href="https://ohg-ai-interviewer.vercel.app/" target="_blank" className="block h-full cursor-pointer">
+                      <div className="h-full relative bg-gradient-to-br from-cyan-500 to-blue-600 flex flex-col items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-700">
+                        {/* Background Decoration */}
+                        <div className="absolute top-[-20%] left-[-20%] w-40 h-40 bg-white/5 rounded-full blur-2xl group-hover:bg-white/10 transition-colors" />
+
+                        <div className="relative z-10 flex flex-col items-center gap-4">
+                          <div className="w-20 h-20 rounded-3xl bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20 shadow-2xl group-hover:-rotate-6 transition-transform">
+                            <Activity className="w-10 h-10 text-white" />
+                          </div>
+                          <div className="flex flex-col items-center text-center px-4">
+                            <span className="text-white text-sm font-black uppercase tracking-[0.2em] mb-1">AI Mock</span>
+                            <span className="text-cyan-200 text-lg font-black uppercase tracking-widest">Interviews</span>
+                          </div>
+                        </div>
+
+                        {/* Bottom Label */}
+                        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full border border-white/10 opacity-0 group-hover:opacity-100 transition-all group-hover:bottom-6">
+                          <span className="text-[10px] text-white font-bold whitespace-nowrap uppercase tracking-tighter">Start Practice</span>
+                          <ArrowRight className="w-3 h-3 text-cyan-200" />
+                        </div>
+                      </div>
+                    </Link>
+                  </div>
+                )}
+
+                {visibleAds.ad3 && (
+                  <div className="flex-1 relative bg-white overflow-hidden group min-h-[160px]">
+                    <button
+                      onClick={() => handleCloseAd('ad3')}
+                      className="absolute top-4 right-4 z-30 flex items-center justify-center w-8 h-8 rounded-full bg-black/20 text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/40 backdrop-blur-md"
+                    >
+                      <X className="w-4 h-4" />
+                    </button>
+                    <Link href="https://konnecthere.com/" target="_blank" className="block h-full cursor-pointer">
+                      <div className="h-full relative bg-gradient-to-br from-green-500 to-emerald-700 flex flex-col items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-700">
+                        {/* Background Decoration */}
+                        <div className="absolute bottom-[-10%] right-[-10%] w-48 h-48 bg-white/5 rounded-full blur-3xl group-hover:bg-white/10 transition-colors" />
+
+                        <div className="relative z-10 flex flex-col items-center gap-4">
+                          <div className="w-20 h-20 rounded-3xl bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20 shadow-2xl group-hover:rotate-12 transition-transform">
+                            <Briefcase className="w-10 h-10 text-white" />
+                          </div>
+                          <div className="flex flex-col items-center text-center px-4">
+                            <span className="text-white text-sm font-black uppercase tracking-[0.2em] mb-1">Hire & Be</span>
+                            <span className="text-green-200 text-lg font-black uppercase tracking-widest">Hired</span>
+                          </div>
+                        </div>
+
+                        {/* Bottom Label */}
+                        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full border border-white/10 opacity-0 group-hover:opacity-100 transition-all group-hover:bottom-6">
+                          <span className="text-[10px] text-white font-bold whitespace-nowrap uppercase tracking-tighter">View Portals</span>
+                          <ArrowRight className="w-3 h-3 text-green-200" />
+                        </div>
+                      </div>
+                    </Link>
+                  </div>
+                )}
+              </div>
             </aside>
           </div>
         </main>

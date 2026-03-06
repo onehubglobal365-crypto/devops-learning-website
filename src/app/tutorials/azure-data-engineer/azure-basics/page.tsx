@@ -425,13 +425,13 @@ export default function AzureDataEngineerPage() {
       background="white"
     >
       <div
-        className="min-h-screen rounded-3xl p-8 text-slate-900 border transition-all duration-300"
+        className="min-h-screen rounded-none p-8 text-slate-900 border transition-all duration-300"
         style={{
           backgroundColor: 'rgba(255, 255, 255, 0.7)',
           backdropFilter: 'blur(12px)',
           WebkitBackdropFilter: 'blur(12px)',
-          borderColor: 'rgba(255, 255, 255, 0.5)',
-          boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.15)'
+          borderColor: 'black',
+          
         }}
       >
         <div className="text-center mb-12 sm:mb-16 relative z-10">
@@ -521,3 +521,4 @@ export default function AzureDataEngineerPage() {
     </TechLayout>
   );
 }
+

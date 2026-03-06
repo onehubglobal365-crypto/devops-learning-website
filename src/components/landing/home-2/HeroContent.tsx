@@ -33,7 +33,7 @@ export default function HeroContent() {
   return (
     <div
       ref={ref}
-      className="relative min-h-[60vh] md:min-h-screen flex items-center pt-32 md:pt-48 lg:pt-80 pb-10 overflow-hidden"
+      className="relative min-h-[100dvh] w-full flex flex-col items-center justify-center pt-[calc(4rem+var(--space-2xl))] pb-[var(--space-xl)] overflow-hidden"
     >
       {/* Background Slideshow - Original Clarity */}
       <div className="absolute inset-0 z-0">

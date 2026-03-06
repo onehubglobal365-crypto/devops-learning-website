@@ -16,18 +16,11 @@ export function ConditionalNav() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Hide ConditionalNav on home, login, and signup routes
-  if (pathname === '/' || pathname.startsWith('/login') || pathname.startsWith('/signup')) {
-    return null;
-  }
-
   // Normalize pathname (remove trailing slash for comparison)
   const normalizedPath = pathname.endsWith('/') && pathname.length > 1 ? pathname.slice(0, -1) : pathname;
 
-  // Check if the page uses a sidebar (TechLayout or DocsLayout)
-  // Pages with sidebars: /java, /web-dev, /sql, /python, /devops, /linux, /data-science, 
-  // /tutorials/azure-data-engineer/*, /tutorials/artificial-intelligence/*, /docs/*
-  const hasSidebar =
+  // Check if the page uses a sidebar OR is a specialized content page that handles its own nav
+  const isContentPage =
     normalizedPath === '/java' ||
     normalizedPath === '/web-dev' ||
     normalizedPath === '/sql' ||
@@ -36,30 +29,32 @@ export function ConditionalNav() {
     normalizedPath === '/linux' ||
     normalizedPath === '/data-science' ||
     normalizedPath === '/code-terminal' ||
-    pathname.startsWith('/tutorials/azure-data-engineer') ||
-    pathname.startsWith('/tutorials/artificial-intelligence') ||
+    normalizedPath === '/powerbi' ||
+    normalizedPath === '/excel' ||
+    normalizedPath === '/medical-coding' ||
+    normalizedPath === '/tutorials/medical-coding' ||
+    normalizedPath === '/tutorials/azure-data-engineer' ||
+    normalizedPath === '/tutorials/artificial-intelligence' ||
     pathname.startsWith('/docs/');
 
-  // Pages that need fixed nav (sidebar pages + tutorials pages + courses page + project pages)
-  const needsFixedNav =
-    hasSidebar ||
-    normalizedPath === '/courses' ||
-    normalizedPath === '/tutorials' ||
-    pathname.startsWith('/tutorials/') ||
-    pathname.startsWith('/menu/projects/');
+  // Hide ConditionalNav on home (it has its own HeroWithNav), login/signup, and content pages
+  if (pathname === '/' || pathname.startsWith('/login') || pathname.startsWith('/signup') || isContentPage) {
+    return null;
+  }
 
-  // Check if page should have gradient blue navbar (tutorials, courses, and project pages)
-  const hasGradientBlueNav =
-    normalizedPath === '/courses' ||
-    normalizedPath === '/tutorials' ||
-    pathname.startsWith('/tutorials/') ||
-    pathname.startsWith('/menu/projects/');
+  // Check if page should have gradient blue navbar (currently disabled for consistency)
+  const hasGradientBlueNav = false;
 
-  // Hide theme toggle on tutorials, courses, and project pages (always use dark theme)
-  // MODIFIED: Enabled globally as per user request to remove dark theme section
+  // Hide theme toggle (constant value as per project style)
   const hideThemeToggle = true;
 
   return (
-    <SharedNav isScrolled={isScrolled} showAnimatedLine={false} isFixed={true} hasGradientBlueNav={hasGradientBlueNav} hideThemeToggle={hideThemeToggle} />
+    <SharedNav
+      isScrolled={isScrolled}
+      showAnimatedLine={false}
+      isFixed={true}
+      hasGradientBlueNav={hasGradientBlueNav}
+      hideThemeToggle={hideThemeToggle}
+    />
   );
 }

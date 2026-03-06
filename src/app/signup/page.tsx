@@ -367,17 +367,7 @@ function ActiveSignupForm() {
 }
 
 export default function SignupPage() {
-    const router = useRouter();
-
-    useEffect(() => {
-        router.replace('/?auth=signup');
-    }, [router]);
-
-    return (
-        <div className="min-h-screen bg-[#f3f4f6] flex items-center justify-center">
-            <div className="w-10 h-10 border-4 border-blue-500 border-t-transparent rounded-full animate-spin" />
-        </div>
-    );
+    return <SignupForm />;
 }
 
 function SignupForm() {
@@ -390,3 +380,4 @@ function SignupForm() {
         </Suspense>
     );
 }
+
