@@ -9,34 +9,41 @@ export default function AzureDataEngineerPage() {
   const [activeSection, setActiveSection] = useState('module1');
 
   const pageHeadings = [
-    { id: 'module1', title: 'module 1' },
+    { id: 'module1', title: 'Module 1' },
     { id: 'module2', title: 'Module 2' },
     { id: 'module3', title: 'Module 3' },
     { id: 'module4', title: 'Module 4' },
     { id: 'module5', title: 'Module 5' },
-    { id: 'module6', title: 'module 6' },
-    { id: 'module7', title: 'module 7' },
-    { id: 'module8', title: 'module 8' },
-    { id: 'module9', title: 'module 9' },
-    { id: 'module10', title: 'module 10' },
-    { id: 'module11', title: 'module 11' },
-    { id: 'module12', title: 'module 12' },
-    { id: 'module13', title: 'module 13' },
-    { id: 'module14', title: 'module 14' },
-    { id: 'module15', title: 'module 15' },
-    { id: 'module16', title: 'module 16' },
-    { id: 'module17', title: 'module 17' },
-    { id: 'module18', title: 'module 18' },
-    { id: 'module19', title: 'module 19' },
-    { id: 'module20', title: 'module 20' },
-    { id: 'module21', title: 'module 21' },
-    { id: 'module22', title: 'module 22' },
-    { id: 'module23', title: 'module 23' },
-    { id: 'module24', title: 'module 24' },
-    { id: 'module25', title: 'module 25' },
-    { id: 'module26', title: 'module 26' },
-    // { id: 'module27', title: 'module 27' },
-    // { id: 'module28', title: 'module 28' },
+    { id: 'module6', title: 'Module 6' },
+    { id: 'module7', title: 'Module 7' },
+    { id: 'module8', title: 'Module 8' },
+    { id: 'module9', title: 'Module 9' },
+    { id: 'module10', title: 'Module 10' },
+    { id: 'module11', title: 'Module 11' },
+    { id: 'module12', title: 'Module 12' },
+    { id: 'module13', title: 'Module 13' },
+    { id: 'module14', title: 'Module 14' },
+    { id: 'module15', title: 'Module 15' },
+    { id: 'module16', title: 'Module 16' },
+    { id: 'module17', title: 'Module 17' },
+    { id: 'module18', title: 'Module 18' },
+    { id: 'module19', title: 'Module 19' },
+    { id: 'module20', title: 'Module 20' },
+    { id: 'module21', title: 'Module 21' },
+    { id: 'module22', title: 'Module 22' },
+    { id: 'module23', title: 'Module 23' },
+    { id: 'module24', title: 'Module 24' },
+    { id: 'module25', title: 'Module 25' },
+    { id: 'module26', title: 'Module 26' },
+    { id: 'module27', title: 'module 27' },
+    { id: 'module28', title: 'module 28' },
+    { id: 'module29', title: 'Module 29' },
+    { id: 'module30', title: 'Module 30' },
+    { id: 'module31', title: 'Module 31' },
+    { id: 'module32', title: 'Module 32' },
+    { id: 'module33', title: 'module 33' },
+    { id: 'module34', title: 'module 34' },
+    { id: 'module35', title: 'module 35' },
   ];
 
   // Handle URL hash changes to set active section
@@ -4801,7 +4808,1715 @@ Example: mg-ohg365-db-dev
                       </div>
                     </main>
                   );
-                
+
+
+                   case 'module27':
+                  return(
+                    <main>
+                      <div  className="animate-fade-in-up">
+                        <h1 id="module27" className="text-4xl md:text-5xl font-extra-bold mb-8 text-center">
+                         View level Features
+
+                       </h1>
+                        <div className="max-w-6xl mx-auto">
+                          <h2 className="text-3xl font-bold text-slate-900 mb-3">
+                          View level features
+                          </h2>
+                          <div className='text-lg text-gray-700 leading-relaxed mb-6'>
+                            View menu allows you to:
+                            <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-6'>
+                              <li>Customize notebook interface and theme</li>
+                              <li>Control code and output visibility</li>
+                              <li>Manage cluster tools and developer options</li>
+                              <li>Access reusable SQL query snippets</li>
+                            </ul>
+                            <h3 className='text-2xl font-bold text-slate-900 mb-3'>Databricks Notebook – View Menu Overview</h3>
+                            The View menu allows you to customize the notebook interface, control UI layout, and access developer or cluster tools.
+
+                          </div>
+                          
+                <h2 className="text-2xl font-bold text-slate-900 mb-3">
+                  Views
+                </h2>
+               <p className='tetx-lg text-gray-700 leading-relaxed mb-6'>This submenu lets you switch between various Databricks notebook views.</p>
+                          
+                <div className="table-container border border-slate-400">
+                  <table className="w-full border-collapse">
+                    <thead className="bg-slate-100">
+                      <tr>
+                        <th className="border border-slate-400 p-3 text-left">Option</th>
+                        <th className="border border-slate-400 p-3 text-left">Description</th>
+                        
+                      </tr>
+                    </thead>
+                    <tbody className="bg-white">
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Command Mode / Edit Mode</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Switch between cell editing (Enter) and command mode (Esc).</td>
+                        
+                      </tr>
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Presentation Mode</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Displays notebook in a clean, full-screen layout — useful for demos or teaching.</td>
+                        
+                      </tr>
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Code-only / Results-only view</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Toggle between hiding code cells or outputs for a focused view.</td>
+                        
+                      </tr>
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Show Line Numbers</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Enables/disables line numbers in code cells for easier debugging.</td>
+                        
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+                </div>
+
+                <h2 className="text-2xl font-bold text-slate-900 mb-3">
+                  Notebook Layout
+                </h2>
+               <p className='tetx-lg text-gray-700 leading-relaxed mb-6'>
+                Adjusts the overall layout of your Databricks notebook window.
+               </p>
+                          
+                <div className="table-container border border-slate-400">
+                  <table className="w-full border-collapse">
+                    <thead className="bg-slate-100">
+                      <tr>
+                        <th className="border border-slate-400 p-3 text-left">Option</th>
+                        <th className="border border-slate-400 p-3 text-left">Description</th>
+                        
+                      </tr>
+                    </thead>
+                    <tbody className="bg-white">
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Default layout</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Standard view with toolbar, output, and code cells visible.</td>
+                        
+                      </tr>
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Compact layout</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Reduces padding and spacing for denser code display.</td>
+                        
+                      </tr>
+                       <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Wide layout</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Expands notebook width — useful for long code lines or wide tables.</td>
+                        
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+                </div>
+
+                <h2 className="text-3xl font-bold text-slate-900 mb-3">
+                  Cell Layout
+                </h2>
+               <p className='tetx-lg text-gray-700 leading-relaxed mb-6'>
+                Controls how individual notebook cells appear.
+               </p>
+                          
+                <div className="table-container border border-slate-400">
+                  <table className="w-full border-collapse">
+                    <thead className="bg-slate-100">
+                      <tr>
+                        <th className="border border-slate-400 p-3 text-left">Option</th>
+                        <th className="border border-slate-400 p-3 text-left">Description</th>
+                        
+                      </tr>
+                    </thead>
+                    <tbody className="bg-white">
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Show cell toolbar</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Enables a toolbar on each cell for easy access to actions (move, delete, edit).</td>
+                        
+                      </tr>
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Show output by default</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Displays the output section for all cells after execution.</td>
+                        
+                      </tr>
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Collapse code/output</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Collapses code or output areas — useful for large notebooks.</td>
+                        
+                      </tr>
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Show execution time</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Displays how long each cell took to execute.</td>
+                        
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+                </div>
+
+                <h2 className="text-3xl font-bold text-slate-900 mb-3">
+                  Workspace Theme
+                </h2>
+               <p className='tetx-lg text-gray-700 leading-relaxed mb-6'>
+                Controls the Databricks workspace UI color theme.
+               </p>
+                          
+                <div className="table-container border border-slate-400">
+                  <table className="w-full border-collapse">
+                    <thead className="bg-slate-100">
+                      <tr>
+                        <th className="border border-slate-400 p-3 text-left">Option</th>
+                        <th className="border border-slate-400 p-3 text-left">Description</th>
+                        
+                      </tr>
+                    </thead>
+                    <tbody className="bg-white">
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Light Theme</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Bright background; default mode.</td>
+                        
+                      </tr>
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Dark Theme</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Dark background; reduces eye strain during long sessions.</td>
+                        
+                      </tr>
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">System Default</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Adapts to your OS theme setting automatically.</td>
+                        
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+                </div>
+
+                <h2 className="text-3xl font-bold text-slate-900 mb-3">
+                  Editor Theme
+                </h2>
+               <p className='tetx-lg text-gray-700 leading-relaxed mb-6'>
+                Changes the theme used inside the code editor (cell area).
+               </p>
+                          
+                <div className="table-container border border-slate-400">
+                  <table className="w-full border-collapse">
+                    <thead className="bg-slate-100">
+                      <tr>
+                        <th className="border border-slate-400 p-3 text-left">Option</th>
+                        <th className="border border-slate-400 p-3 text-left">Description</th>
+                        
+                      </tr>
+                    </thead>
+                    <tbody className="bg-white">
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Monokai / Solarized / Light / Dark</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Various syntax-highlighting color schemes for the code editor.</td>
+                        
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <h2 className="text-3xl font-bold text-slate-900 mb-3">
+                  Side Panel
+                </h2>
+               <p className='tetx-lg text-gray-700 leading-relaxed mb-6'>
+                Controls the visibility and behavior of the left sidebar (Workspace, Recents, Catalog, etc.).
+               </p>
+                          
+                <div className="table-container border border-slate-400">
+                  <table className="w-full border-collapse">
+                    <thead className="bg-slate-100">
+                      <tr>
+                        <th className="border border-slate-400 p-3 text-left">Option</th>
+                        <th className="border border-slate-400 p-3 text-left">Description</th>
+                        
+                      </tr>
+                    </thead>
+                    <tbody className="bg-white">
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Show / Hide side panel</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Toggles the entire left sidebar.</td>
+                        
+                      </tr>
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Pin / Unpin panel</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Keeps the sidebar visible or allows it to auto-hide.</td>
+                        
+                      </tr>
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Resize panel</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Adjusts the sidebar width.</td>
+                        
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+                </div>
+                <h2 className="text-3xl font-bold text-slate-900 mb-3">
+                  Appearance
+                </h2>
+               <p className='tetx-lg text-gray-700 leading-relaxed mb-6'>
+                Manages minor UI preferences.
+               </p>
+                          
+                <div className="table-container border border-slate-400">
+                  <table className="w-full border-collapse">
+                    <thead className="bg-slate-100">
+                      <tr>
+                        <th className="border border-slate-400 p-3 text-left">Option</th>
+                        <th className="border border-slate-400 p-3 text-left">Description</th>
+                        
+                      </tr>
+                    </thead>
+                    <tbody className="bg-white">
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Show toolbars</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Toggles the notebook’s top toolbar (Run, Connect, Share buttons).</td>
+                        
+                      </tr>
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Show command palette shortcut tips</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Enables small shortcut hints under the notebook.</td>
+                        
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+                </div>
+                <h2 className="text-3xl font-bold text-slate-900 mb-3">
+                  Cluster Tools
+                </h2>
+               <p className='tetx-lg text-gray-700 leading-relaxed mb-6'>
+                Provides quick access to Databricks cluster monitoring and management.
+               </p>
+                          
+                <div className="table-container border border-slate-400">
+                  <table className="w-full border-collapse">
+                    <thead className="bg-slate-100">
+                      <tr>
+                        <th className="border border-slate-400 p-3 text-left">Option</th>
+                        <th className="border border-slate-400 p-3 text-left">Description</th>
+                        
+                      </tr>
+                    </thead>
+                    <tbody className="bg-white">
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">View Cluster Logs</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Opens logs for the currently attached compute cluster.</td>
+                        
+                      </tr>
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Cluster Details</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Opens the attached cluster’s configuration (runtime, libraries, etc.).</td>
+                        
+                      </tr>
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Driver & Worker info</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Displays performance metrics for driver and worker nodes.</td>
+                        
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+                </div>
+                <h2 className="text-3xl font-bold text-slate-900 mb-3">
+                  Developer Settings
+                </h2>
+               <p className='tetx-lg text-gray-700 leading-relaxed mb-6'>
+                Used for advanced users or developers to customize notebook behavior.
+               </p>
+                          
+                <div className="table-container border border-slate-400">
+                  <table className="w-full border-collapse">
+                    <thead className="bg-slate-100">
+                      <tr>
+                        <th className="border border-slate-400 p-3 text-left">Option</th>
+                        <th className="border border-slate-400 p-3 text-left">Description</th>
+                        
+                      </tr>
+                    </thead>
+                    <tbody className="bg-white">
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Enable Developer Mode</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Turns on advanced tools such as HTML inspector, custom scripts, etc.</td>
+                        
+                      </tr>
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Show debug console</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Displays developer console for debugging front-end issues.</td>
+                        
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+                </div>
+                <h2 className="text-3xl font-bold text-slate-900 mb-3">
+                  Query Snippets
+                </h2>
+               <p className='tetx-lg text-gray-700 leading-relaxed mb-6'>
+                Opens Databricks’ reusable SQL code snippets library.
+               </p>
+                          
+                <div className="table-container border border-slate-400">
+                  <table className="w-full border-collapse">
+                    <thead className="bg-slate-100">
+                      <tr>
+                        <th className="border border-slate-400 p-3 text-left">Option</th>
+                        <th className="border border-slate-400 p-3 text-left">Description</th>
+                        
+                      </tr>
+                    </thead>
+                    <tbody className="bg-white">
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Query Snippets window</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Opens a new panel with predefined or custom SQL templates for queries.</td>
+                        
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+                </div>
+                <ol className='list-disc pl-6 space-y-2 text-gray-700 mb-6'>
+                  <li className='font-bold text-xl'>Views</li>
+                  <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-6'>
+                    <li>Provides options to change the overall view of your notebook interface.</li>
+                    <li>Common options:</li>
+                    <ul className='list-[circle] pl-6 space-y-2 text-gray-700 mb-6'>
+                      <li><strong>Command mode view:</strong> shows toolbar and menus.</li>
+                      <li><strong>Presentation view:</strong> hides toolbars and shows only notebook content for presentations.</li>
+                      <li><strong>Full-screen view:</strong> expands the notebook to use full display space.</li>
+                    </ul>
+                    <li><em>Best for teaching sessions, demos, or focusing on code.</em></li>
+                    
+                  </ul>
+                  <li className='font-bold text-xl'>Notebook Layout</li>
+                  <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-6'>
+                    <li>Controls how your notebook’s interface is displayed.</li>
+                    <li>Options include:</li>
+                    <ul className='list-[circle] pl-6 space-y-2 text-gray-700 mb-6'>
+                      <li><strong>Show/Hide Cell Toolbar –</strong> toggle visibility of the toolbar above each cell.</li>
+                      <li><strong>Show Line Numbers –</strong> display line numbers inside code cells.</li>
+                      <li><strong>Collapse/Expand Output –</strong> hide or show outputs (plots, tables, etc.).</li>
+                      <li><strong>Enable Output Scrolling –</strong> adds scrollbars for long outputs instead of overflowing.</li>
+                    </ul>
+                    <li><em>Helps declutter large notebooks or improve visual clarity.</em></li>
+                    
+                  </ul>
+                  <li className='font-bold text-xl'>Cell Layout</li>
+                  <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-6'>
+                    <li>Adjusts the way individual cells are displayed and interacted with.</li>
+                    <li>Options include:</li>
+                    <ul className='list-[circle] pl-6 space-y-2 text-gray-700 mb-6'>
+                      <li><strong>Toggle Input Visibility –</strong> hide or show the input (code) area of a cell.</li>
+                      <li><strong>Toggle Output Visibility –</strong> hide or show only the results/output area.</li>
+                      <li><strong>Wrap Text in Cells –</strong> wraps long lines instead of horizontal scrolling.</li>
+                    </ul>
+                    <li><em>Ideal when reviewing code or hiding logic for visual focus.</em></li>
+                  
+                  </ul>
+                  <li className='font-bold text-xl'>Workspace Theme</li>
+                  <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-6'>
+                    <li>Change the overall Databricks interface color scheme.</li>
+                    <li>Options:</li>
+                    <ul className='list-[circle] pl-6 space-y-2 text-gray-700 mb-6'>
+                      <li>Light Theme</li>
+                      <li>Dark Theme</li>
+                      
+                    </ul>
+                    <li><em>Switch depending on comfort or lighting conditions.</em></li>
+                    
+                  </ul>
+                  <li className='font-bold text-xl'>Editor Theme</li>
+                  <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-6'>
+                    <li>Changes the syntax highlighting style inside the code editor only.
+                    (Independent of workspace theme.)</li>
+                    <li>Options often include:</li>
+                    <ul className='list-[circle] pl-6 space-y-2 text-gray-700 mb-6'>
+                      <li>Default</li>
+                      <li>Monokai</li>
+                      <li>Solarized Light/Dark</li>
+                    <li>High Contrast</li>
+                    </ul>
+                    <li><em>Useful for developers who prefer specific color styles.</em></li>
+                  </ul>
+                  <li className='font-bold text-xl'>Side Panel</li>
+                  <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-6'>
+                    <li>Manage visibility of left-hand and right-hand navigation panels.</li>
+                    <li>Options:</li>
+                    <ul className='list-[circle] pl-6 space-y-2 text-gray-700 mb-6'>
+                      <li><strong>Show/Hide Sidebar –</strong> toggle workspace navigation bar.</li>
+                      <li><strong>Show File Browser / Data / Clusters / Jobs</strong> panels.</li>
+                      <li><strong>Show Comments / Insights Panel</strong> on right side.</li>
+                    </ul>
+                    <li><em>Helpful for focusing or expanding workspace tools.</em></li>
+                    {/* <li></li> */}
+                  </ul>
+                  <li className='font-bold text-xl'>Appearance</li>
+                  <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-6'>
+                    <li>Fine-tunes display settings related to text size and spacing.</li>
+                    <li>Options:</li>
+                    <ul className='list-[circle] pl-6 space-y-2 text-gray-700 mb-6'>
+                      <li><strong>Zoom In / Zoom Out –</strong> increase or decrease text size.</li>
+                      <li><strong>Reset Zoom –</strong> return to default.</li>
+                      <li><strong>Toggle Compact Mode –</strong> reduce spacing between cells.</li>
+                    </ul>
+                    <li><em>Improves readability or space management.</em></li>
+                    {/* <li></li> */}
+                  </ul>
+                  <li className='font-bold text-xl'>Cluster Tools</li>
+                  <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-6'>
+                    <li>Allows quick visibility of cluster-related panels.</li>
+                    <li>Options:</li>
+                    <ul className='list-[circle] pl-6 space-y-2 text-gray-700 mb-6'>
+                      <li><strong>Show Cluster Info Panel –</strong> view current attached cluster details.</li>
+                      <li><strong>Show Logs / Metrics –</strong> open cluster monitoring or Spark UI links.</li>
+                      {/* <li></li> */}
+                    </ul>
+                    <li><em>Useful for debugging job or runtime issues directly from notebook.</em></li>
+                    {/* <li></li> */}
+                  </ul>
+                  <li className='font-bold text-xl'>Developer Settings</li>
+                  <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-6'>
+                    <li>Opens advanced options for developers such as:</li>
+                    {/* <li></li> */}
+                    <ul className='list-[circle] pl-6 space-y-2 text-gray-700 mb-6'>
+                      <li><strong>Enable Experimental Features</strong></li>
+                      <li><strong>Enable Command Palette Shortcuts</strong></li>
+                      <li><strong>Enable AI Assistant Beta (if available)</strong></li>
+                    </ul>
+                    {/* <li></li> */}
+                    <li><em>For developers testing new Databricks capabilities.</em></li>
+                  </ul>
+                  <li className='font-bold text-xl'>Query Snippets</li>
+                  <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-6'>
+                    <li>Opens pre-saved reusable SQL or Python code snippets.</li>
+                    <li>You can view, insert, or manage snippets for faster notebook development.</li>
+                    
+                    <li><em>Saves time by reusing common queries or functions.</em></li>
+                  </ul>
+                </ol>
+                        </div>
+                      </div>
+                    </main>
+                  );
+
+
+
+                  case 'module28':
+                  return(
+                    <main>
+                      <div  className="animate-fade-in-up">
+                        <h1 id="module28" className="text-4xl md:text-5xl font-extra-bold mb-8 text-center">
+                          Run-level features
+
+                       </h1>
+                        <div className="max-w-6xl mx-auto">
+                          <h2 className="text-3xl font-bold text-slate-900 mb-3">
+                          Run-level features
+                          </h2>
+                          <div className='text-lg text-gray-700 leading-relaxed mb-6'>
+                            The Run menu in Databricks allows you to execute, debug, clear outputs, and control compute sessions in your notebook. <br />
+                            It’s primarily used for running code cells and managing the execution environment. 
+                   </div>
+                   <h3 className="text-2xl font-bold text-slate-900 mb-3">
+                          Run and Debug
+                          </h3>
+                          <div className='text-lg text-gray-700 leading-relaxed mb-6'>
+                            This section provides options to execute cells in different ways. <br />
+                            Options:
+                            <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-6'>
+                              <li>Run Cell / Run All Cells &rarr; Executes the selected or all notebook cells sequentially.</li>
+                              <li>Run Cell and Move to Next &rarr; Runs the current cell, then automatically jumps to the next one.</li>
+                              <li>Run Above / Run Below &rarr; Executes all cells either above or below the currently selected cell.</li>
+                              <li>Debug Cell (if enabled) &rarr; Allows step-by-step execution for debugging purposes.</li>
+                            </ul>
+                            <em>Use when testing logic or running the whole notebook for analysis or data processing.</em>
+                   </div>
+                   <h3 className="text-2xl font-bold text-slate-900 mb-3">
+                          Clear
+                          </h3>
+                          <div className='text-lg text-gray-700 leading-relaxed mb-6'>
+                            This section helps you remove outputs or states from the notebook. <br />
+                            Option:
+                            <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-6'>
+                              <li>Clear Output of Current Cell &rarr; Removes the result/output displayed for the current cell.</li>
+                              <li>Clear Output of All Cells &rarr; Clears all results throughout the notebook (code remains intact).</li>
+                              <li>Clear State &rarr; Resets notebook variables or execution state (optional in some setups).</li>
+                            </ul>
+                            <em> Useful before re-running code to avoid confusion from old outputs.</em>
+                   </div>
+                   <h3 className="text-2xl font-bold text-slate-900 mb-3">
+                          Go to Last Run Cell
+                          </h3>
+                          <div className='text-lg text-gray-700 leading-relaxed mb-6'>
+                            <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-6'>
+                              <li>Jumps directly to the last executed cell in the notebook.</li>
+                              <li>Helps quickly find where you last left off in a long notebook.</li>
+                            </ul>
+                            <em>Very handy for debugging or when resuming work after a pause.</em>
+                   </div>
+                   <h3 className="text-2xl font-bold text-slate-900 mb-3">
+                          Interrupt Execution (Shortcut: I, I)
+                          </h3>
+                          <div className='text-lg text-gray-700 leading-relaxed mb-6'>
+                            <ul  className='list-disc pl-6 space-y-2 text-gray-700 mb-6'>
+                              <li>Immediately stops a running cell or notebook execution.</li>
+                              <li>Similar to “Stop” or “Cancel” in other IDEs.</li>
+                              <li>Use this if a cell is taking too long or stuck in an infinite loop.</li>
+                            </ul>
+                            <em>Prevents resource wastage or cluster overload.</em>
+                   </div>
+                   <h3 className="text-2xl font-bold text-slate-900 mb-3">
+                          Detach from Compute Resource
+                          </h3>
+                          <div className='text-lg text-gray-700 leading-relaxed mb-6'>
+                            <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-6'>
+                              <li>Disconnects the notebook from the currently attached Databricks cluster or compute resource.</li>
+                              <li>After detaching, no code execution can occur until reconnected.</li>
+                            </ul>
+                            <em>Used when switching clusters, stopping resources, or cleaning up sessions.</em>
+                   </div>
+                   <h3 className="text-2xl font-bold text-slate-900 mb-3">
+                          New Session in Compute Resource
+                          </h3>
+                          <div className='text-lg text-gray-700 leading-relaxed mb-6'>
+                            <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-6'>
+                              <li>Starts a fresh session within the currently attached cluster.</li>
+                              <li>Clears the existing Python/Scala/R environment (variables, imports, etc.).</li>
+                              <li>Essentially “restarts the kernel” for a clean state.</li>
+                            </ul>
+                            <em>Useful when environment corruption or dependency conflicts occur.</em>
+                   </div>
+
+                   <div className="table-container border border-slate-400">
+                  <table className="w-full border-collapse">
+                    <thead className="bg-slate-100">
+                      <tr>
+                        <th className="border border-slate-400 p-3 text-left">Menu Option</th>
+                        <th className="border border-slate-400 p-3 text-left">Purpose</th>
+                        <th className="border border-slate-400 p-3 text-left">Key Use Case</th>
+                        
+                      </tr>
+                    </thead>
+                    <tbody className="bg-white">
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Run and Debug</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Execute selected/all cells</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Run or debug code interactively</td>
+                        
+                      </tr>
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Clear</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Remove outputs or execution states</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Clean notebook before rerun</td>
+                        
+                      </tr>
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Go to Last Run Cell</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Jump to last executed cell</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Resume work or debug flow</td>
+                        
+                      </tr>
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Interrupt Execution (I, I)</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Stop current execution</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Abort long or stuck runs</td>
+                        
+                      </tr>
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Detach from Compute Resource</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Disconnect cluster</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Switch or stop compute</td>
+                        
+                      </tr>
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">New Session in Compute Resource</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Restart environment</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Start fresh session for clean execution</td>
+                        
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+                </div>
+
+                   <h3 className="text-2xl font-bold text-slate-900 mb-3">Help-level features</h3>
+                   <ul className='pl-6 space-y-2 text-grauy-700 mb-6'>
+                    <li className='text-xl font-bold'>Search actions</li>
+                    <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-6'>
+                      <li><strong className='text-xl'>Purpose:</strong> Opens a search bar to quickly find and execute commands or actions within the notebook.</li>
+                      <li><strong className='text-xl'>Shortcut:</strong> Ctrl + Shift + P</li>
+                      <li><strong className='text-xl'>Use:</strong> This allows users to rapidly search through available actions or commands without navigating through menus.</li>
+                    </ul>
+                    <li className='text-xl font-bold'>Keyboard shortcuts</li>
+                    <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-6'>
+                      <li><strong className='text-xl'>Purpose:</strong> Displays a list of all available keyboard shortcuts for the notebook.</li>
+                      <li><strong className='text-xl'>Shortcut:</strong> H (when "Help" is active)</li>
+                      <li><strong className='text-xl'>Use:</strong> This is a helpful guide for users to quickly learn and use shortcuts, speeding up the workflow. Shortcuts might include things like running cells or navigating between them.</li>
+                    </ul>
+                    <li className='text-xl font-bold'>Provide feedback</li>
+                    <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-6'>
+                      <li><strong className='text-xl'>Purpose:</strong> Opens a prompt where users can provide feedback about their experience with Databricks.</li>
+                      <li><strong className='text-xl'>Use:</strong> This allows users to share their thoughts or report issues they have encountered while using Databricks.</li>
+                      {/* <li><strong className='text-xl'>Use:</strong></li> */}
+                    </ul>
+                    <li className='text-xl font-bold'>Ask the Databricks community</li>
+                    <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-6'>
+                      <li><strong className='text-xl'>Purpose:</strong> Opens a link to the Databricks community forum or help center where users can ask questions or browse discussions.</li>
+                      {/* <li><strong className='text-xl'>Shortcut:</strong></li> */}
+                      <li><strong className='text-xl'>Use:</strong> This connects users to the community for support, troubleshooting, or knowledge sharing.</li>
+                    </ul>
+                    <li className='text-xl font-bold'>Databricks support</li>
+                    <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-6'>
+                      <li><strong className='text-xl'>Purpose:</strong> Provides a link to official Databricks support resources, including contact information or technical assistance options.</li>
+                      {/* <li><strong className='text-xl'>Shortcut:</strong></li> */}
+                      <li><strong className='text-xl'>Use:</strong> This feature is for users who need direct, official support for their Databricks environment or facing issues that community help may not address.</li>
+                    </ul>
+                   </ul>
+
+
+
+                   </div>
+                   </div>
+                   </main>
+                   );
+                    case 'module29':
+                  return(
+                    <main>
+                      <div  className="animate-fade-in-up">
+                        <h1 id="module29" className="text-4xl md:text-5xl font-extra-bold mb-8 text-center">
+                          Language-level features
+
+                       </h1>
+                        <div className="max-w-6xl mx-auto">
+                          <h2 className="text-3xl font-bold text-slate-900 mb-3">
+                          Language-level features
+
+                          </h2>
+                          <div className='text-lg text-gray-700 leading-relaxed mb-6'>
+                            Purpose: <br />
+                          Sets the default programming language for the current notebook.
+                          All new cells you create will use the selected language automatically, though you can still override it in individual cells.
+                          <ul className='pl-6 space-y-2 text-gray-700 mb-6'>
+                            <li>Available options:</li>
+                            <ol className='list-decimal pl-6 space-y-2 text-gray-700'>
+                              <li>Python</li>
+                              <ul className='list-[circle] pl-6 space-y-2 text-gray-700 mb-6'>
+                                <li>Default and most commonly used option.</li>
+                                <li>Supports libraries like PySpark, pandas, NumPy, matplotlib, etc.</li>
+                                <li>Used for data processing, machine learning, and automation tasks.</li>
+                              </ul>
+                              <li>SQL</li>
+                              <ul className='list-[circle] pl-6 space-y-2 text-gray-700 mb-6'>
+                                <li>Allows you to write SQL queries directly within the notebook.</li>
+                                <li>Often used for querying data from Delta tables or databases.</li>
+                                <li>Integrates well with Databricks’ data management and visualization tools.</li>
+                              </ul>
+                              <li>Scala</li>
+                              <ul className='list-[circle] pl-6 space-y-2 text-gray-700 mb-6'>
+                                <li>Used for working directly with Apache Spark’s core language.</li>
+                                <li>Offers performance advantages and full access to Spark APIs.</li>
+                                <li>Often preferred by data engineers for large-scale data transformations.</li>
+                              </ul>
+                              <li>R</li>
+                              <ul className='list-[circle] pl-6 space-y-2 text-gray-700 mb-6'>
+                                <li>For data analysis and statistical modeling.</li>
+                                <li>Ideal for data scientists working in R environments.</li>
+                                <li>Supports packages like ggplot2 and dplyr.</li>
+                              </ul>
+                            </ol>
+                            <li>Usage Tip: <br />You can mix languages in a single notebook by prefixing a cell with:</li>
+                            <ul className='list-[circle] pl-6 space-y-2 text-gray-700 mb-6'>
+                                <li>%python</li>
+                                <li>%sql</li>
+                                <li>%scala</li>
+                                <li>%r</li>
+                              </ul>
+                          </ul>
+
+                          </div>
+                          <h3 className="text-2xl font-bold text-slate-900 mb-3">Others features</h3>
+                          <ul className='pl-6 space-y-2 text-gray-700 mb-6'>
+                            <li className='text-lg font-bold'>Grid/Outline View Icon</li>
+                            <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-6'>
+                              <li><strong>Purpose:</strong> Opens the notebook’s table of contents or cell outline view.</li>
+                              <li><strong>Use:</strong> Lets you navigate quickly between notebook cells or sections especially helpful in long notebooks.</li>
+                            </ul>
+                            <li className='text-lg font-bold'>Run all</li>
+                            <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-6'>
+                              <li><strong>Purpose:</strong> Executes all code cells in the notebook sequentially from top to bottom.</li>
+                              <li><strong>Use:</strong> Used when you want to rerun the entire notebook (e.g., after making changes to inputs or variables).</li>
+                            </ul>
+                            <li className='text-lg font-bold'>Connect</li>
+                            <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-6'>
+                              <li><strong>Purpose:</strong> Manages your cluster connection.</li>
+                              <li><strong>Use:</strong></li>
+                              <ul className='list-[circle] pl-6 space-y-2 text-gray-700 mb-6'>
+                                <li>Shows which cluster the notebook is currently attached to.</li>
+                                <li>Lets you connect, disconnect, or switch clusters.</li>
+                                <li>The blue dot next to it means it’s currently connected.</li>
+                              </ul>
+                            </ul>
+                            <li className='text-lg font-bold'>Schedule</li>
+                            <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-6'>
+                              <li><strong>Purpose:</strong> Used to automate notebook runs.</li>
+                              <li><strong>Use:</strong></li>
+                              <ul className='list-[circle] pl-6 space-y-2 text-gray-700 mb-6'>
+                                <li>You can set up recurring runs (daily, weekly, etc.).</li>
+                                <li>Often used for production tasks like data refreshes or batch jobs.</li>
+                                {/* <li></li> */}
+                              </ul>
+                            </ul>
+                            <li className='text-lg font-bold'>Share</li>
+                            <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-6'>
+                              <li><strong>Purpose:</strong> Manages collaboration and access permissions.</li>
+                              <li><strong>Use:</strong></li>
+                              <ul className='list-[circle] pl-6 space-y-2 text-gray-700 mb-6'>
+                                <li>Lets you share the notebook with teammates.</li>
+                                <li>You can give view, edit, or run permissions.</li>
+                                {/* <li></li> */}
+                              </ul>
+                            </ul>
+                          </ul>
+                          <ol className='list-decimal pl-6 space-y-2 text-gray-700 mb-6'>
+                            <li className='text-lg font-bold'>Comments</li>
+                            <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-6'>
+                              <li><strong>Feature:</strong> Comments allow users to add notes, feedback, or annotations to cells in the notebook. It's an important feature for collaboration.</li>
+                              <li><strong>Functionality:</strong> You can click on the comment icon, add comments, and reply to other users' comments. This helps teams work together on the notebook without modifying the actual code.</li>
+                            </ul>
+                            <li className='font-bold texyt-lg'>MLflow</li>
+                            <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-6'>
+                              <li><strong>Feature:</strong> MLflow is an open-source platform used for managing the machine learning lifecycle. In Databricks, MLflow allows you to track experiments, organize models, and manage versioning and deployment.</li>
+                              <li><strong>Functionality:</strong> You can use it to log model parameters, metrics, artifacts, and even manage model registry, which can be useful for tracking different versions of models and their performance.</li>
+                            </ul>
+                            <li className='text-lg font-bold'>Version History</li>
+                            <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-6'>
+                              <li><strong>Feature:</strong> This allows you to view previous versions of the notebook, track changes, and revert to earlier versions if needed.</li>
+                              <li><strong>Functionality:</strong> You can see the notebook’s change history, who made the changes, and when. You can roll back to a specific version if necessary, which is great for tracking progress and restoring work in case of mistakes.</li>
+                            </ul>
+                            <li className='text-lg font-bold'>Variables</li>
+                            <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-6'>
+                              <li><strong>Feature:</strong> In Databricks, variables show the current session's defined variables, including their values. This helps you track what’s available in the current environment (e.g., the output of cells, the current state of dataframes, etc.).</li>
+                              <li><strong>Functionality:</strong> It helps to inspect and manage variables directly from the sidebar. You can view the current state of variables, which is useful when working with large datasets or complex computations.</li>
+                            </ul>
+                            <li className='text-lg font-bold'>Environment</li>
+                            <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-6'>
+                              <li><strong>Feature:</strong> The environment shows the runtime or environment context in which the notebook is executing. This can include the libraries installed, the Python/Scala/SQL environment, and the cluster configuration.</li>
+                              <li><strong>Functionality:</strong> It allows you to see which cluster or environment the notebook is using, including the versions of libraries that are installed. If you need a different environment (e.g., upgrading libraries or switching clusters), you can manage this from here.</li>
+                            </ul>
+                            <li className='text-lg font-bold'>Assistant</li>
+                            <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-6'>
+                              <li><strong>Feature:</strong> The assistant likely refers to an AI or virtual assistant integrated into Databricks to help with code suggestions, troubleshooting, and providing guidance within the notebook.</li>
+                              <li><strong>Functionality:</strong> You can ask the assistant questions related to the notebook, such as asking for code completion, debugging help, or natural language translation of data queries. It's a helpful tool for improving productivity, especially when working with complex data science tasks.</li>
+                            </ul>
+                          </ol>
+
+
+
+                   </div>
+                   </div>
+                   </main>
+                  );
+                  case 'module30':
+                  return(
+                    <main>
+                      <div  className="animate-fade-in-up">
+                        <h1 id="module30" className="text-4xl md:text-5xl font-extra-bold mb-8 text-center">
+                          Data Lakehouse
+
+                       </h1>
+                        <div className="max-w-6xl mx-auto">
+                          <h2 className="text-3xl font-bold text-slate-900 mb-3">
+                          What is a Data Lakehouse?
+
+                          </h2>
+                          <div className='text-lg text-gray-700 leading-relaxed mb-6'>
+                            A data lakehouse is a modern way to store and manage data. It brings together the best parts of data lakes and data warehouses into one system.
+                            <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-6'>
+                              <li>From data lakes, it takes flexibility, large-scale storage, and low cost.</li>
+                              <li>From data warehouses, it adds strong data management, reliability, and support for ACID transactions (which make sure data stays accurate and consistent).</li>
+                            </ul>
+                            In simple terms, a data lakehouse lets you store all kinds of data structured or unstructured—in one place, and then use that same data for business intelligence (BI) reports, analytics, or machine learning (ML) without moving it around. <br />
+                            On Azure Databricks, you can build and manage a lakehouse to easily collect, clean, process, and analyze your data all within one platform.
+                          </div>
+                          <h3 className="text-2xl font-bold text-slate-900 mb-3">Why the Need for a Lakehouse?</h3>
+                          <div className='text-lg text-gray-700 leading-relaxed mb-6'>
+                            Traditionally, organizations used:
+
+                          <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-6'>
+                            <li><strong>Data Lakes &rarr;</strong> for storing raw, unprocessed data cheaply.</li>
+                            <li><strong>Data Warehouses &rarr;</strong> for structured, cleaned data used in analytics and BI.</li>
+                          </ul> 
+                          You had to copy and transform data from one system to the other, which caused:
+                          <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-6'>
+                            <li>Data duplication</li>
+                            <li>High maintenance cost</li>
+                            <li>Delays in getting insights</li>
+                            <li>Data inconsistency</li>
+                          </ul>
+                          The lakehouse solves this by combining both into one unified system.
+
+
+                          </div>
+
+                          <h3 className="text-2xl font-bold text-slate-900 mb-3">Core Features of a Data Lakehouse</h3>
+                          <div className='lext-lg texty-gray-700 leading-relaxed mb-6'>Here are the main features that make a lakehouse powerful:</div>
+                <div className="table-container border border-slate-400">
+                  <table className="w-full border-collapse">
+                    <thead className="bg-slate-100">
+                      <tr>
+                        <th className="border border-slate-400 p-3 text-left">Feature</th>
+                        <th className="border border-slate-400 p-3 text-left">Description</th>
+                        {/* <th className="border border-slate-400 p-3 text-left">Key Use Case</th> */}
+                        
+                      </tr>
+                    </thead>
+                    <tbody className="bg-white">
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Unified Storage</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">All data (raw, semi-structured, structured) is stored in one place.</td>
+                        {/* <td className="border border-slate-400 p-3 text-gray-900">Run or debug code interactively</td> */}
+                        
+                      </tr>
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">ACID Transactions</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Ensures data accuracy and reliability even during concurrent operations.</td>
+                        {/* <td className="border border-slate-400 p-3 text-gray-900">Clean notebook before rerun</td> */}
+                        
+                      </tr>
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Schema Enforcement</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Automatically validates and maintains data consistency.</td>
+                        {/* <td className="border border-slate-400 p-3 text-gray-900">Resume work or debug flow</td> */}
+                        
+                      </tr>
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Time Travel / Versioning</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">You can access previous versions of data for audit or rollback.</td>
+                        {/* <td className="border border-slate-400 p-3 text-gray-900">Abort long or stuck runs</td> */}
+                        
+                      </tr>
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Data Governance & Security</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Centralized access control, auditing, and data lineage.</td>
+                        {/* <td className="border border-slate-400 p-3 text-gray-900">Switch or stop compute</td> */}
+                        
+                      </tr>
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Open Format (like Delta Lake)</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Built on open-source formats like Parquet and Delta for compatibility.</td>
+                        {/* <td className="border border-slate-400 p-3 text-gray-900">Start fresh session for clean execution</td> */}
+                        
+                      </tr>
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Performance Optimization</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Uses caching, indexing, and query optimization for faster analytics.</td>
+                        {/* <td className="border border-slate-400 p-3 text-gray-900">Start fresh session for clean execution</td> */}
+                        
+                      </tr>
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Support for BI & ML</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Enables analysts and data scientists to work directly on the same data.</td>
+                        {/* <td className="border border-slate-400 p-3 text-gray-900">Start fresh session for clean execution</td> */}
+                        
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+                </div>
+
+                         <h3 className="text-2xl font-bold text-slate-900 mb-3">Lakehouse Architecture Overview</h3>
+                          <div className='lext-lg texty-gray-700 leading-relaxed mb-6'>A typical data lakehouse architecture has three main layers:
+                            <ol className='list-decimal pl-6 space-y-2 text-gray-700 mb-6'>
+                              <li className='text-xl font-bold'>Storage Layer (Data Lake)</li>
+                              <ul className='list-[circle] pl-6 space-y-2 text-gray-700 mb-6'>
+                                <li>Stores all raw data at scale (in formats like Parquet or Delta).</li>
+                                <li>Example: Azure Data Lake Storage (ADLS).</li>
+                              </ul>
+                              <li className='text-xl font-bold'></li>
+                              <ul className='list-[circle] pl-6 space-y-2 text-gray-700 mb-6'>
+                                <li>Adds schema, metadata management, and ACID transaction control.</li>
+                                <li>Example: Delta Lake or Unity Catalog in Azure Databricks.</li>
+                              </ul>
+                              <li className='text-xl font-bold'>Consumption Layer (Analytics & ML)</li>
+                              <ul className='list-[circle] pl-6 space-y-2 text-gray-700 mb-6'>
+                                <li>Data is consumed for reporting, dashboards, machine learning, and AI.</li>
+                                <li>Example: Power BI, MLflow, Databricks notebooks, or Azure Synapse.</li>
+                              </ul>
+                            </ol>
+                          </div>
+                          <h3 className="text-2xl font-bold text-slate-900 mb-3">Benefits of a Data Lakehouse</h3>
+                          <div className='lext-lg texty-gray-700 leading-relaxed mb-6'>A lakehouse provides several advantages over traditional data systems:
+                            <ul className='list-[square] pl-6 space-y-2 text-gray-700 mb-6'>
+                              <li><strong>Single Source of Truth &rarr;</strong> All teams work on the same consistent data.</li>
+                              <li><strong>Cost Efficiency &rarr;</strong> Uses low-cost object storage instead of expensive warehouse storage.</li>
+                              <li><strong>Flexibility &rarr;</strong> Supports all data types and use cases (BI + AI + ML).</li>
+                              <li><strong>Scalability &rarr;</strong> Handles huge volumes of data seamlessly.</li>
+                              <li><strong>Data Reliability &rarr;</strong> ACID transactions prevent corruption or data loss.</li>
+                              <li><strong>Faster Insights &rarr;</strong> Unified architecture means less movement and faster analysis.</li>
+                            </ul>
+                          </div>
+
+                          </div>
+                          </div>
+                          </main>
+                          );
+
+
+              case 'module31':
+                  return(
+                    <main>
+                      <div  className="animate-fade-in-up">
+                        <h1 id="module31" className="text-4xl md:text-5xl font-extra-bold mb-8 text-center">
+                          Data Lakehouse on Azure Databricks
+
+                       </h1>
+                        <div className="max-w-6xl mx-auto">
+                          <h2 className="text-3xl font-bold text-slate-900 mb-3">
+                          Data Lakehouse on Azure Databricks
+
+                          </h2>
+                          <div className='text-lg text-gray-700 leading-relaxed mb-6'>
+                            <ul className='pl-6 space-y-2 text-gray-700 mb-6'>
+                              <li>Data Lakehouse on Azure Databricks</li>
+                              <ul className='list-[circle] pl-6 space-y-2 text-gray-700 mb-6'>
+                                <li><strong>Apache Spark</strong> for distributed data processing,</li>
+                                <li><strong>Delta Lake</strong> for ACID-compliant storage,</li>
+                                <li><strong>Unity Catalog</strong> for centralized governance and security.</li>
+                              </ul>
+                              <li className='text-xl font-bold'>Key components:</li>
+                              <ul className='list-[circle] pl-6 space-y-2 text-gray-700 mb-6'>
+                                <li><strong>Data Ingestion:</strong> Load data from multiple sources (Azure Blob, SQL, APIs).</li>
+                                <li><strong>Data Processing:</strong> Clean, transform, and enrich data using PySpark or SQL.</li>
+                                <li><strong>Data Storage:</strong> Store data in Delta Lake format for reliability and performance.</li>
+                                <li><strong>Data Governance:</strong> Manage permissions, lineage, and audit using Unity Catalog.</li>
+                                <li><strong>Data Consumption:</strong> Use Power BI, MLflow, or Databricks notebooks for analytics and AI.</li>
+                              </ul>
+                              <li><strong>Example Use Cases</strong><br />A data lakehouse can be used for:</li>
+                              <ul className='list-[circle] pl-6 space-y-2 text-gray-700 mb-6'>
+                                <li>Business dashboards and analytics</li>
+                                <li>Real-time data streaming and reporting</li>
+                                <li>Predictive analytics and machine learning</li>
+                                <li>Customer behavior analysis</li>
+                                <li>IoT and sensor data processing</li>
+                              </ul>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </main>
+                  );
+
+
+                  case 'module32':
+                  return(
+                    <main>
+                      <div  className="animate-fade-in-up">
+                        <h1 id="module32" className="text-4xl md:text-5xl font-extra-bold mb-8 text-center">
+                          Lakehouse vs Data Lake vs Data Warehouse
+
+                       </h1>
+                        <div className="max-w-6xl mx-auto">
+                          <h2 className="text-3xl font-bold text-slate-900 mb-3">
+                          Lakehouse vs Data Lake vs Data Warehouse
+
+                          </h2>
+                          <div className='text-lg text-gray-700 leading-relaxed mb-6'>
+                            Over the years, data management systems have evolved from data warehouses, to data lakes, and now to data lakehouses — each solving different challenges and enabling new ways to use data for analytics, business intelligence (BI), and machine learning (ML). <br />
+                            Let’s understand how these three systems differ and how they complement each other.
+
+
+                          </div>
+                          <h2 className="text-2xl font-bold text-slate-900 mb-3">
+                          Data Warehouse
+
+                          </h2>
+                          <div className='text-lg text-gray-700 leading-relaxed mb-6'>
+                            A data warehouse is a structured storage system built mainly for business intelligence (BI) and reporting. <br />
+                            It organizes data into predefined tables and schemas so that it’s clean, consistent, and easy to query using tools like SQL.
+                            <ul className='pl-6 space-y-2 text-gray-700 mb-6'>
+                              <li>Key ideas:</li>
+                              <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-6'>
+                                <li>Designed for stable and historical data that doesn’t change often.</li>
+                                <li>Ideal for running BI dashboards and reports that summarize key business metrics.</li>
+                                <li>Queries are optimized for accuracy and reliability but can take time when dealing with large datasets.</li>
+                                <li>Often uses proprietary formats managed by vendors, which can limit flexibility for machine learning or advanced analytics.</li>
+                                <li>On Azure Databricks, data warehousing is enhanced through Databricks SQL, combining warehouse performance with the scalability of the lakehouse.</li>
+                              </ul>
+                              <li>Best for: <br />
+                               Structured data, business reporting, and decision-making dashboards.
+                              </li>
+                            </ul>
+
+                            
+                          </div>
+                          <h2 className="text-2xl font-bold text-slate-900 mb-3">
+                            Data Lake
+
+                          </h2>
+                          <div className='text-lg text-gray-700 leading-relaxed mb-6'>
+                            A data lake is a large, low-cost repository that stores all kinds of data — structured, semi-structured, or unstructured in its raw form.
+                            <ul className='pl-6 space-y-2 text-gray-700 mb-6'>
+                              <li>Key ideas:</li>
+                              <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-6'>
+                                <li>Can hold massive amounts of data from various sources: applications, sensors, mobile apps, social media, and more.</li>
+                                <li>Uses a schema-on-read approach — meaning data structure is applied only when it’s used.</li>
+                                <li>Highly scalable and affordable, perfect for big data processing, data exploration, and machine learning.</li>
+                                <li>However, since data isn’t cleaned or validated upfront, it may not be ideal for business reporting that needs trusted, structured data.</li>
+                              </ul>
+                              <li>Best for: <br />
+                              	Data science, machine learning, and storing large volumes of raw data.
+                              </li>
+                            </ul>
+                            
+                          </div>
+                          <h2 className="text-2xl font-bold text-slate-900 mb-3">
+                          Data Lakehouse
+
+                          </h2>
+                          <div className='text-lg text-gray-700 leading-relaxed mb-6'>
+                            A data lakehouse is a modern architecture that combines the strengths of both data lakes and data warehouses into one unified system. <br />
+                            It allows you to work with structured and unstructured data together, supporting both business intelligence and machine learning without needing separate systems.
+                            <ul className='pl-6 space-y-2 text-gray-700 mb-6'>
+                              <li>Key ideas:</li>
+                              <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-6'>
+                                <li>Built on open and standard file formats (like Parquet or Delta Lake) for flexibility and compatibility.</li>
+                                <li>Uses advanced indexing, caching, and metadata management for faster queries and consistent performance.</li>
+                                <li>Supports ACID transactions (ensuring data reliability and accuracy).</li>
+                                <li>Enables low-latency queries for BI, while still providing the scale and flexibility required for data science.</li>
+                                <li>On Azure Databricks, the lakehouse architecture makes it possible to analyze all your data from a single platform using Databricks SQL and Delta Lake.</li>
+                              </ul>
+                              <li>Best for: <br />Unified analytics — combining BI, AI, and ML on one consistent, governed data foundation.</li>
+                            </ul>
+                            
+                          </div>
+                   <div className="table-container border border-slate-400">
+                  <table className="w-full border-collapse">
+                    <thead className="bg-slate-100">
+                      <tr>
+                        <th className="border border-slate-400 p-3 text-left">Feature</th>
+                        <th className="border border-slate-400 p-3 text-left">Data Lake</th>
+                        <th className="border border-slate-400 p-3 text-left">Data Lakehouse</th>
+                        <th className="border border-slate-400 p-3 text-left">Data Warehouse</th>
+                        
+                      </tr>
+                    </thead>
+                    <tbody className="bg-white">
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Types of Data</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Can store any kind of data — structured, semi-structured, or unstructured (raw) data.</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Handles all types of data — structured, semi-structured, and unstructured — in one place.</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Mainly stores structured and processed data only.</td>
+                        
+                      </tr>
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Cost</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Very cost-effective for large storage needs.</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Cost-efficient and scalable for all workloads.</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Expensive to scale and maintain due to licensing and vendor costs.</td>
+                        
+                      </tr>
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Data Format</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Uses open and flexible file formats (like Parquet, JSON, CSV).</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Uses open and modern formats (like Delta or Parquet) for compatibility.</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Usually based on closed or proprietary formats tied to the vendor.</td>
+                        
+                      </tr>
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Scalability</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Easily scales to store massive amounts of data at a low cost.</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Scales efficiently while maintaining performance and governance.</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Scaling is possible but becomes costly as data volume grows.</td>
+                        
+                      </tr>
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Main Users</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Mostly used by data engineers and data scientists who can handle raw data.</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Designed for everyone — data analysts, data scientists, and machine learning teams.</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Primarily used by business analysts for structured reporting.</td>
+                        
+                      </tr>
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Data Quality & Reliability</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Can become messy or inconsistent without strong management (sometimes called a “data swamp”).</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Delivers reliable, high-quality, well-managed data.</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Provides high-quality and consistent data with strict schema control.</td>
+                        
+                      </tr>
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Ease of Use</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Harder to use directly — raw data requires preparation and organization.</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Easy to use — combines the simplicity of a warehouse with the flexibility of a lake.</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Easy to query and report on, but limited to structured data only.</td>
+                        
+                      </tr>
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Performance</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Slower for analytics since data is raw and unoptimized.</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">High performance — optimized for both analytics and AI workloads.</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">High performance for traditional analytics and BI.</td>
+                        
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+                </div>
+                <h3 className='text-2xl font-bold text-slate-900 mb-6'>Capabilities of a Databricks Lakehouse</h3>
+                <div className='text-lg text-gray-700 leading-relaxed mb-6'>
+                  A Databricks Lakehouse brings together the best features of data lakes and data warehouses into a single, powerful platform. <br />
+                  It removes the need to maintain separate systems for analytics, machine learning (ML), and business intelligence (BI), helping organizations manage all their data workloads in one unified environment. <br />
+                  Here are the major capabilities that make the Databricks Lakehouse stand out:
+
+                  <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-6'>
+                    <li><strong className='text-xl'>Real-Time Data Processing</strong><br />
+                    Process and analyze streaming data in real time whether it’s coming from IoT devices, logs, or event streams. <br />
+                    This allows instant insights and faster decision-making instead of waiting for batch jobs to complete.
+                    </li>
+                    <li><strong className='text-xl'>Unified Data Integration</strong><br />
+                    Bring all your organization’s data — structured, semi-structured, and unstructured — into a single, centralized platform. <br />
+                    This creates a single source of truth, improves collaboration between teams, and reduces data silos.
+                    </li>
+                    <li><strong className='text-xl'>Schema Evolution</strong><br />
+                    Easily modify and update data schemas as your business changes, without breaking existing pipelines. <br />
+                    Databricks automatically adapts to evolving data structures, ensuring flexibility and smooth operations over time.
+
+                    </li>
+                    <li><strong className='text-xl'>Fast and Reliable Data Transformations</strong><br />
+                    With Apache Spark and Delta Lake, you can perform large-scale data transformations quickly and reliably. <br />
+                    This makes data preparation, cleaning, and enrichment faster and more efficient for analytics and ML workflows.
+
+                    </li>
+                    <li><strong className='text-xl'>Advanced Data Analysis and Reporting</strong><br />
+                    Run complex analytical queries with performance comparable to a traditional data warehouse. <br />
+                    Databricks’ query engine is optimized for data warehousing workloads, enabling fast dashboards and deep analysis.
+
+                    </li>
+                    <li><strong className='text-xl'>Machine Learning and AI</strong><br />
+                    Apply machine learning and artificial intelligence directly on your data within the same platform. <br />
+                    You can train, test, and deploy ML models using Databricks’ built-in integrations with MLflow, Delta Lake, and other AI frameworks.
+
+                    </li>
+                    <li><strong className='text-xl'>Data Versioning and Lineage</strong><br />
+                    Databricks supports data version control, allowing you to access or roll back to previous versions of a dataset. <br />
+                    You can also track data lineage, ensuring full transparency about where data comes from and how it has changed over time.
+
+                    </li>
+                    <li><strong className='text-xl'>Data Governance and Security</strong><br />
+                    Manage permissions, access control, and auditing from one place using Unity Catalog. <br />
+                    This ensures compliance, security, and proper governance across all teams and workloads.
+
+                    </li>
+                    <li><strong className='text-xl'>Data Sharing and Collaboration</strong><br />
+                    Share curated datasets, dashboards, and insights securely across departments or with external partners. <br />
+                    The lakehouse supports controlled, real-time data sharing — no need for data duplication or exports.
+
+                    </li>
+                    <li><strong className='text-xl'>Operational Analytics and Monitoring</strong><br />
+                    Continuously monitor data quality, model accuracy, and performance drift using built-in data quality tools. <br />
+                    This helps maintain reliability and trust in your analytics and machine learning outputs.
+
+                    </li>
+                  </ul>
+                </div>
+
+                        </div>
+                      </div>
+                    </main>
+                  );
+
+               case 'module33':
+                  return(
+                    <main>
+                      <div  className="animate-fade-in-up">
+                        <h1 id="module33" className="text-4xl md:text-5xl font-extra-bold mb-8 text-center">
+                          scope of the Lakehouse
+
+                       </h1>
+                        <div className="max-w-6xl mx-auto">
+                          <h2 className="text-3xl font-bold text-slate-900 mb-3">
+                          scope of the Lakehouse platform
+
+                          </h2>
+                          <div className='text-lg text-gray-700 leading-relaxed mb-6'>
+                            <ul className='pl-6 space-y-2 text-gray-700 mb-6'>
+                              <li><strong className='text-xl'>End-to-End Data Management</strong><br />
+                              The lakehouse covers the entire data lifecycle — from ingestion and storage to transformation, analysis, and advanced AI. <br />
+                              This means all types of workloads can run on a single platform:
+
+                              <ul className='list-[circle] pl-6 space-y-2 text-gray-700 mb-3'>
+                                <li>Batch and streaming data processing</li>
+                                <li>Data preparation and cleaning</li>
+                                <li>Business intelligence dashboards</li>
+                                <li>Machine learning and predictive analytics</li>
+                                <li>Data governance and compliance</li>
+                              </ul>It’s not just a storage system — it’s a comprehensive data ecosystem.</li>
+                              <li><strong className='text-xl'>Unified Architecture</strong><br />
+                              A key part of the lakehouse’s scope is unification. <br />
+                              It brings together multiple data roles and technologies — data engineers, analysts, data scientists, and business teams — under one shared platform. <br />
+                              This allows everyone to:
+                              <ul className='list-[circle] pl-6 space-y-2 text-gray-700 mb-3'>
+                                <li>Work from the same source of truth</li>
+                                <li>Avoid data duplication between systems</li>
+                                <li>Improve collaboration across departments</li>
+                              </ul>
+                              The lakehouse bridges the gap between data lakes’ flexibility and warehouses’ reliability.
+                              </li>
+                              <li><strong className='text-xl'>Scalability and Performance</strong><br />
+                              The lakehouse is designed to handle data of any size or type, from gigabytes to petabytes. <br />
+                              It scales automatically as data grows, while maintaining high performance for both:
+                              <ul className='list-[circle] pl-6 space-y-2 text-gray-700 mb-3'>
+                                <li>Analytical queries (fast, optimized SQL)</li>
+                                <li>AI/ML workloads (large-scale distributed computing)</li>
+                              </ul>
+                              This makes it suitable for everything from small data projects to large enterprise analytics systems.
+
+                              </li>
+                              <li><strong className='text-xl'>Governance, Security, and Compliance</strong><br />
+                              The lakehouse includes built-in capabilities for data governance — a critical part of its scope. <br />
+                              It provides:
+                              <ul className='list-[circle] pl-6 space-y-2 text-gray-700 mb-3'>
+                                <li>Access control and permissions through systems like Unity Catalog</li>
+                                <li>Data lineage and audit trails for transparency</li>
+                                <li>Data quality management and version control</li>
+                                <li>Compliance with organizational and industry regulations</li>
+                              </ul>
+                              This ensures that data remains secure, reliable, and properly managed at all stages.
+
+                              </li>
+                              <li><strong className='text-xl'>Advanced Analytics and AI Integration</strong><br />
+                              Unlike traditional systems, the lakehouse is built to natively support AI and machine learning. <br />
+                              It allows data scientists to:
+                              <ul className='list-[circle] pl-6 space-y-2 text-gray-700 mb-3'>
+                                <li>Work directly on raw and curated data</li>
+                                <li>Build and deploy ML models with tools like MLflow</li>
+                                <li>Integrate with AI frameworks (TensorFlow, PyTorch, etc.)
+                                    This seamless integration shortens the time from data collection to actionable insight.
+                                </li>
+                              </ul>
+                              </li>
+                              <li><strong className='text-xl'>Real-Time and Batch Processing</strong><br />
+                              The lakehouse supports both real-time streaming and batch workloads, giving organizations flexibility in how they process data. <br />
+                              You can:
+                              <ul className='list-[circle] pl-6 space-y-2 text-gray-700 mb-3'>
+                                <li>Stream live events for immediate analytics</li>
+                                <li>Schedule periodic data updates for reports and dashboards <br />
+                                This dual capability broadens its scope across different use cases — from IoT monitoring to enterprise BI.
+                                </li>
+                              </ul>
+                              </li>
+                              <li><strong className='text-xl'>Multi-Use Collaboration</strong><br />The platform supports collaboration between:
+                              <ul className='list-[circle] pl-6 space-y-2 text-gray-700 mb-3'>
+                                <li><strong>Data Engineers –</strong> building pipelines and managing ETL workflows</li>
+                                <li><strong>Data Scientists –</strong> training and deploying models</li>
+                                <li><strong>Analysts –</strong> running queries and creating dashboards</li>
+                                <li><strong>Business Teams –</strong> making decisions based on real-time insights</li>
+                              </ul>All these roles can work together efficiently within the same environment.</li>
+                              <li><strong className='text-xl'>Industry and Business Applications</strong><br />
+                              The lakehouse architecture is versatile across industries:
+                              <ul className='list-[circle] pl-6 space-y-2 text-gray-700 mb-3'>
+                                <li><strong>Finance:</strong> Fraud detection, real-time risk monitoring</li>
+                                <li><strong>Retail:</strong> Personalized recommendations, demand forecasting</li>
+                                <li><strong>Healthcare:</strong> Patient data analytics, predictive diagnostics</li>
+                                <li><strong>Manufacturing:</strong> Supply chain optimization, IoT analytics</li>
+                                <li><strong>Telecom:</strong> Customer churn prediction, network performance analysis</li>
+                              </ul>This wide applicability is part of what makes the scope of the lakehouse so broad and transformative.
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </main>
+                  );
+
+
+
+                  case 'module34':
+                  return(
+                    <main>
+                      <div  className="animate-fade-in-up">
+                        <h1 id="module34" className="text-4xl md:text-5xl font-extra-bold mb-8 text-center">
+                          Principles for the Lakehouse
+                       </h1>
+                        <div className="max-w-6xl mx-auto">
+                          <h2 className="text-3xl font-bold text-slate-900 mb-3">
+                          Principles for the Lakehouse
+                          </h2>
+                          <div className='text-lg text-gray-700 leading-relaxed mb-6'>
+                            A Lakehouse is built on a set of guiding principles that blend the flexibility of data lakes with the reliability and performance of data warehouses. <br />
+                            These principles ensure that data can be stored, managed, and analyzed efficiently in a single, unified platform — without the need for separate systems.
+
+                            <ul className='pl-6 space-y-2 text-gray-700 mb-6'>
+                              <li><strong className="text-xl">Unified Data Platform</strong><br />
+                              At the heart of the Lakehouse is unification combining all data types and workloads in one environment. <br />
+                              It supports structured, semi-structured, and unstructured data, allowing teams to use the same platform for:
+                              <ul className='list-[circle] pl-6 space-y-2 text-gray-700 mb-3'>
+                                <li>Data engineering</li>
+                                <li>Data analytics</li>
+                                <li>Machine learning and AI</li>
+                                <li>Business intelligence (BI)</li>
+                              </ul>
+                              This eliminates data silos and ensures a single source of truth for all users.
+                              </li>
+                              <li><strong className="text-xl">Open Data Storage and Standard Formats</strong><br />
+                              The Lakehouse relies on open file formats like Parquet, Delta, or ORC stored in cloud object storage (such as ADLS, S3, or GCS). <br />
+                              This openness ensures:
+                              <ul className='list-[circle] pl-6 space-y-2 text-gray-700 mb-3'>
+                                <li>Portability across platforms</li>
+                                <li>Easy integration with other tools and engines</li>
+                                <li>Avoidance of vendor lock-in</li>
+                                <li>Transparency and long-term accessibility</li>
+                              </ul>
+                              In other words, your data remains yours — always accessible and usable.
+                              </li>
+                              <li><strong className="text-xl">Separation of Storage and Compute</strong><br />
+                              A key architectural principle is decoupling storage from compute. <br />
+                              This means that:
+                              <ul className='list-[circle] pl-6 space-y-2 text-gray-700 mb-3'>
+                                <li>Data is stored independently of the processing engines</li>
+                                <li>Multiple compute layers (Spark, SQL, ML, BI tools) can access the same data</li>
+                                <li>Scaling storage or compute can happen independently</li>
+                              </ul>
+                              This provides flexibility, cost efficiency, and elastic scalability for different workloads.
+                              </li>
+                              <li><strong className="text-xl">Reliable Data Management with ACID Transactions</strong><br />
+                              The Lakehouse ensures data reliability by supporting ACID (Atomicity, Consistency, Isolation, Durability) transactions — similar to databases. <br />
+                              This guarantees:
+                              <ul className='list-[circle] pl-6 space-y-2 text-gray-700 mb-3'>
+                                <li>No partial writes or corrupt data</li>
+                                <li>Consistent results across concurrent operations</li>
+                                <li>Reliable updates even during complex transformations</li>
+                              </ul>
+                              Technologies like Delta Lake make this possible by maintaining transaction logs for every operation.
+                              </li>
+                              <li><strong className="text-xl">Unified Governance and Security</strong><br />
+                              A Lakehouse includes centralized governance, which defines how data is accessed, managed, and audited.
+                              With systems like Unity Catalog (in Databricks), you can:
+                              <ul className='list-[circle] pl-6 space-y-2 text-gray-700 mb-3'>
+                                <li>Set access controls and permissions</li>
+                                <li>Track data lineage and versioning</li>
+                                <li>Ensure compliance with organizational policies</li>
+                                <li>Manage metadata centrally</li>
+                                This creates a secure and well-governed environment for data collaboration.
+                              </ul>
+                              </li>
+                              <li><strong className="text-xl">Support for Machine Learning and AI</strong><br />
+                              Unlike traditional warehouses, the Lakehouse is AI-ready by design. <br />
+                              It supports:
+                              <ul className='list-[circle] pl-6 space-y-2 text-gray-700 mb-3'>
+                              <li>Direct access to raw and curated data for model training</li>
+                              <li>Integration with ML frameworks (MLflow, TensorFlow, PyTorch)</li>
+                              <li>Scalable compute for distributed model training</li>
+                              <li>Reproducibility and experiment tracking</li>
+                              </ul>
+                              This principle bridges data analytics and data science within a single ecosystem.
+                              </li>
+                              <li><strong className="text-xl">High Performance for All Workloads</strong><br />
+                              The Lakehouse uses advanced techniques like:
+                              <ul className='list-[circle] pl-6 space-y-2 text-gray-700 mb-3'>
+                                <li>Caching and indexing</li>
+                                <li>Query optimization</li>
+                                <li>Data skipping and column pruning</li>
+                              </ul>
+                              These deliver warehouse-level performance while maintaining lake-level flexibility, ensuring both batch and real-time workloads run efficiently.
+                              </li>
+                              <li><strong className="text-xl">Versioning and Data Lineage</strong><br />
+                              Every change made to a dataset in a Lakehouse is tracked and versioned.
+                              This allows you to:
+                              <ul className='list-[circle] pl-6 space-y-2 text-gray-700 mb-3'>
+                              <li>Roll back to previous versions</li>
+                              <li>Reproduce past experiments or reports</li>
+                              <li>Audit how data has evolved over time</li>
+                              <li>Understand data dependencies and transformations</li>
+                              </ul>
+                              Version control enhances trust, traceability, and data quality.
+                              </li>
+                              <li><strong className="text-xl">Schema Enforcement and Evolution</strong><br />
+                              The Lakehouse can automatically enforce and adapt schemas as data changes. <br />
+                              It ensures:
+                              <ul className='list-[circle] pl-6 space-y-2 text-gray-700 mb-3'>
+                                <li>Data consistency during ingestion</li>
+                                <li>Schema evolution as business requirements grow</li>
+                                <li>Prevention of data corruption from mismatched types</li>
+                              </ul>
+                              This principle helps maintain data integrity while still allowing flexibility.
+                              </li>
+                              <li><strong className="text-xl">Collaboration Across Teams</strong><br />
+                              The Lakehouse fosters cross-functional collaboration between:
+                              <ul className='list-[circle] pl-6 space-y-2 text-gray-700 mb-3'>
+                                <li>Data engineers</li>
+                                <li>Analysts</li>
+                                <li>Data scientists</li>
+                                <li>Business stakeholders</li>
+                              </ul>
+                              Since everyone works on the same underlying data, it reduces duplication and improves productivity.
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </main>
+                  );
+
+
+
+
+                case 'module35':
+                  return(
+                    <main>
+                      <div  className="animate-fade-in-up">
+                        <h1 id="module35" className="text-4xl md:text-5xl font-extra-bold mb-8 text-center">
+                          Data Lakehouse architecture
+                       </h1>
+                        <div className="max-w-6xl mx-auto">
+                          <h2 className="text-3xl font-bold text-slate-900 mb-3">
+                          Data Lakehouse architecture
+                          </h2>
+                          <div className='text-lg text-gray-700 leading-relaxed mb-6'>
+                            A Data Lakehouse is a modern data architecture that blends the best parts of data lakes and data warehouses. <br />
+                            It provides the flexibility, scalability, and low cost of data lakes, while also offering the performance, data management, and reliability of data warehouses — all within a single unified platform. <br />
+                            This architecture eliminates the need to maintain separate systems for storage, analytics, and machine learning.
+                          </div>
+                          <h3 className="text-3xl font-bold text-slate-900 mb-3">Key Layers of the Data Lakehouse Architecture</h3>
+                          <div className='text-lg text-gray-700 leading-relaxed mb-6'>
+                            A lakehouse architecture is typically built in five core layers, each serving a distinct function but working together seamlessly.
+                            <ul className='pl-6 space-y-2 text-gray-700 mb-6'>
+                              <li><strong className="text-xl">Data Ingestion Layer</strong><br />
+                              <ul className='pl-6 space-y-2 text-gray-700 mb-3'>
+                                <li><strong>Purpose:</strong><br /> Collect and bring data from multiple sources into the lakehouse.</li>
+                                <li><strong>Description:</strong><br />This layer handles the movement of data from different systems such as:
+                                <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-3'>
+                                  <li>Databases (e.g., SQL Server, Oracle, MySQL)</li>
+                                  <li>Applications (CRM, ERP, SaaS tools)</li>
+                                  <li>IoT devices and sensors</li>
+                                  <li>Logs, events, and streaming sources (Kafka, Azure Event Hub)</li>
+                                </ul>Data can arrive in batch or real-time mode.</li>
+                                <li><strong>Tools:</strong><br />Databricks Auto Loader, Azure Data Factory, Kafka, Apache NiFi, AWS Glue, etc.</li>
+                                {/* <li><strong></strong></li> */}
+                              </ul>
+                              </li>
+                              <li><strong className="text-xl">Storage Layer</strong>
+                              <ul className='pl-6 space-y-2 text-gray-700 mb-3'>
+                                <li><strong>Purpose:</strong><br />Store all types of data efficiently in open, scalable cloud storage.</li>
+                                <li><strong>Description:</strong><br />
+                                This layer serves as the foundation of the Lakehouse. <br />
+                                It stores:
+                                <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-3'>
+                                  <li>Raw data (unprocessed)</li>
+                                  <li>Processed data</li>
+                                  <li>Aggregated and curated data</li>
+                                </ul>
+                                </li>
+                                <li>It supports structured, semi-structured, and unstructured formats (e.g., Parquet, JSON, Avro, images, videos, etc.). <br />
+                                The data is stored in open formats for interoperability and long-term accessibility.</li>
+                                <li><strong>Tools / Technologies:</strong><br />Delta Lake, Apache Parquet, ORC, Cloud Object Storage (ADLS, S3, GCS).</li>
+                              </ul>
+                              </li>
+                              <li><strong className="text-xl">Metadata and Transaction Layer</strong>
+                              <ul className='pl-6 space-y-2 text-gray-700 mb-3'>
+                                <li><strong>Purpose:</strong> Manage reliability, schema, and version control.</li>
+                                <li><strong>Description:</strong><br />
+                                This layer introduces ACID transaction support and metadata management over the data lake, turning it into a “Lakehouse.” <br />
+                                It tracks every operation — insert, update, delete — ensuring consistency and data integrity.
+                                </li>
+                                <li><strong>Capabilities include:</strong>
+                                <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-6'>
+                                  <li>Schema enforcement and evolution</li>
+                                  <li>Time travel (data versioning)</li>
+                                  <li>Data indexing for fast queries</li>
+                                  <li>Optimized performance through caching and Z-ordering</li>
+                                </ul>
+                                </li>
+                                <li><strong>Tools:</strong><br />Delta Lake, Apache Iceberg, Apache Hudi.</li>
+                              </ul>
+                              </li>
+                              <li><strong className="text-xl">Processing and Compute Layer</strong>
+                              <ul className='pl-6 space-y-2 text-gray-700 mb-3'>
+                                <li><strong>Purpose:</strong> Transform, clean, and prepare data for analytics and machine learning.</li>
+                                <li><strong>Description:</strong><br />In this layer, raw data is processed and refined for various workloads:
+                                <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-6'>
+                                  <li>Data cleaning and transformations</li>
+                                  <li>Aggregations and feature engineering</li>
+                                  <li>Real-time stream processing</li>
+                                  <li>Batch and interactive query processing</li>
+                                </ul>
+                                The separation of compute and storage allows scaling compute independently for efficiency.
+                                </li>
+                                <li><strong>Tools:</strong><br />
+                                Apache Spark, Databricks Runtime, SQL engines, PySpark, MLflow.</li>
+                                
+                              </ul>
+                              </li>
+                              <li><strong className="text-xl">Serving and Consumption Layer</strong>
+                              <ul className='pl-6 space-y-2 text-gray-700 mb-3'>
+                                <li><strong>Purpose:</strong><br /> Deliver ready-to-use data for analytics, BI, and machine learning.</li>
+                                <li><strong>Description:</strong><br />This layer provides optimized access to curated data for:
+                                <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-6'>
+                                  <li>Dashboards and visualizations (Power BI, Tableau, Looker)</li>
+                                  <li>Ad-hoc SQL queries</li>
+                                  <li>Data science and AI models</li>
+                                  <li>API-driven applications</li>
+                                </ul>
+                                Users can interact with the same underlying data, ensuring a single source of truth across teams.
+                                </li>
+                                <li><strong>Tools:</strong><br />Databricks SQL, Power BI, Tableau, Jupyter, MLflow, APIs.</li>
+                              </ul>
+                              </li>
+                              <li><strong className="text-xl">Governance and Security Layer (Spanning All Layers)</strong>
+                              <ul className='pl-6 space-y-2 text-gray-700 mb-3'>
+                                <li><strong>Purpose:</strong><br /> Enforce control, compliance, and data protection.</li>
+                                <li><strong>Description:</strong><br />This is a horizontal layer across all stages of the architecture. It manages:
+                                <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-6'>
+                                  <li>Access control (role-based and attribute-based)</li>
+                                  <li>Data lineage and cataloging</li>
+                                  <li>Audit logs and compliance tracking</li>
+                                  <li>Data masking and encryption</li>
+                                </ul>
+                                </li>
+                                <li><strong>Tools:</strong><br />Unity Catalog (Databricks), Purview, Ranger, AWS Lake Formation.</li>
+                              </ul>
+                              </li>                          
+                                </ul>
+                          </div>
+
+
+                          <h3 className="text-2xl font-bold text-slate-900 mb-3">How the Lakehouse Architecture Works Together</h3>
+                          {/* <div className='lext-lg texty-gray-700 leading-relaxed mb-6'>Here are the main features that make a lakehouse powerful:</div> */}
+                <div className="table-container border border-slate-400">
+                  <table className="w-full border-collapse">
+                    <thead className="bg-slate-100">
+                      <tr>
+                        <th className="border border-slate-400 p-3 text-left">Stage</th>
+                        <th className="border border-slate-400 p-3 text-left">Function</th>
+                        <th className="border border-slate-400 p-3 text-left">Output</th>
+                        
+                      </tr>
+                    </thead>
+                    <tbody className="bg-white">
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Data Ingestion</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Collect data from multiple sources</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Raw data zone</td>
+                        
+                      </tr>
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Storage</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Store data in open formats</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Scalable data lake</td>
+                        
+                      </tr>
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Metadata & Transaction</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Add schema, ACID, and governance</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Reliable data layer</td>
+                        
+                      </tr>
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Processing</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Transform and prepare data</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Clean, curated data</td>
+                        
+                      </tr>
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Serving</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Expose data for BI, ML, AI</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Reports, models, insights</td>
+                        
+                      </tr>
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Governance</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Secure, audit, and manage metadata</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Compliance and trust</td>
+                        
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-3">Core Advantages of the Lakehouse Architecture</h3>
+                  {/* <p className=''></p> */}
+                  <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-6'>
+                    <li><strong>Unified platform:</strong> Combines data lake + warehouse capabilities.</li>
+                    <li><strong>Open and flexible:</strong> Uses open file formats (no vendor lock-in).</li>
+                    <li><strong>Reliable and consistent:</strong> ACID transactions ensure data correctness.</li>
+                    <li><strong>Cost-efficient:</strong> Storage and compute separation reduces costs.</li>
+                    <li><strong>Machine learning-ready:</strong> Supports AI and ML workloads natively.</li>
+                    <li><strong>Real-time analytics:</strong> Handles both streaming and batch data.</li>
+                    <li><strong>Governance built-in:</strong> Centralized catalog and access control.</li>
+                  </ul>
+
+
+
+                  {/* <h3 className="text-2xl font-bold text-slate-900 mb-3">Core Features of a Data Lakehouse</h3> */}
+                          {/* <div className='lext-lg texty-gray-700 leading-relaxed mb-6'>Here are the main features that make a lakehouse powerful:</div> */}
+                <div className="table-container border border-slate-400 ">
+                  <table className="w-full border-collapse">
+                    <thead className="bg-slate-100">
+                      <tr>
+                        <th className="border border-slate-400 p-3 text-left">Aspect</th>
+                        <th className="border border-slate-400 p-3 text-left">Traditional Data Lake</th>
+                        <th className="border border-slate-400 p-3 text-left">Data Warehouse</th>
+                        <th className="border border-slate-400 p-3 text-left">Data Lakehouse</th>
+                        
+                      </tr>
+                    </thead>
+                    <tbody className="bg-white">
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Data types</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">All (raw, structured, unstructured)</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Structured only</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">All (with structure management)</td>
+                        
+                      </tr>
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Performance</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Low to moderate</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">High</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">High</td>
+                        
+                      </tr>
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Cost</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Low</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">High</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Moderate</td>
+                        
+                      </tr>
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Reliability</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Low</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">High</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">High (with ACID)</td>
+                        
+                      </tr>
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">ML/AI support</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Strong</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Limited</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Strong</td>
+                        
+                      </tr>
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Governance</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Limited</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Strong</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Strong (with Unity Catalog)</td>
+                        
+                      </tr>
+                      <tr>
+                        <td className="border border-slate-400 p-3 text-gray-900 font-bold">Scalability</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">High</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">Limited</td>
+                        <td className="border border-slate-400 p-3 text-gray-900">High</td>
+                        
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                        </div>
+                      </div>
+                    </main>
+                  );
 
 
 
