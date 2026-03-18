@@ -12,13 +12,19 @@ interface TechnologyCardProps {
   link: string;
   gradient: string;
   iconBg?: string; // New optional prop for icon background color
+  onClick?: (e: React.MouseEvent) => void;
 }
 
-export function TechnologyCard({ title, description, icon, link, gradient, iconBg }: TechnologyCardProps) {
+export function TechnologyCard({ title, description, icon, link, gradient, iconBg, onClick }: TechnologyCardProps) {
   const [showLoginModal, setShowLoginModal] = React.useState(false);
   const router = useRouter();
 
   const handleClick = (e: React.MouseEvent) => {
+    if (onClick) {
+      onClick(e);
+      return;
+    }
+
     // Authentication Paused Check
     if (!AUTH_SYSTEM_AVAILABLE) {
       router.push(link);
@@ -53,13 +59,15 @@ export function TechnologyCard({ title, description, icon, link, gradient, iconB
           <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-[2.5rem]`}></div>
 
           {/* Floating Icon Container */}
-          <div className={`absolute -top-6 -left-4 sm:-left-6 w-16 h-16 sm:w-20 sm:h-20 rounded-2xl flex items-center justify-center ${iconBg || 'bg-white'} shadow-xl border border-gray-100 dark:border-gray-800 z-20 transform group-hover:scale-110 transition-transform duration-500`}>
-            <div className="flex items-center justify-center w-full h-full p-4 animate-pulse">
-              {typeof icon === 'string' ? <span className="text-2xl sm:text-3xl">{icon}</span> : icon}
+          {icon && (
+            <div className={`absolute -top-6 -left-4 sm:-left-6 w-16 h-16 sm:w-20 sm:h-20 rounded-2xl flex items-center justify-center ${iconBg || 'bg-white'} shadow-xl border border-gray-100 dark:border-gray-800 z-20 transform group-hover:scale-110 transition-transform duration-500`}>
+              <div className="flex items-center justify-center w-full h-full p-4 animate-pulse">
+                {typeof icon === 'string' ? <span className="text-2xl sm:text-3xl">{icon}</span> : icon}
+              </div>
             </div>
-          </div>
+          )}
 
-          <div className="relative z-10 text-left flex flex-col flex-1 mt-6 sm:mt-8 ml-2">
+          <div className={`relative z-10 text-left flex flex-col flex-1 ${icon ? 'mt-6 sm:mt-8' : 'mt-2'} ml-2`}>
             <h3 className="font-bold mb-3 transition-colors duration-300 text-gray-900" style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.5rem)' }}>
               {title}
             </h3>

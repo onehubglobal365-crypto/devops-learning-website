@@ -3,7 +3,8 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { FileText, Laptop, Landmark, Cloud, Code2, Coffee, Layout, Database, BarChart3, Terminal, Lock } from 'lucide-react';
+import { FileText, Laptop, Landmark, Code2, Coffee, Layout, Database, BarChart3, Terminal, Lock } from 'lucide-react';
+import { motion } from 'framer-motion';
 import UniqueHero from '@/components/landing/unique-hero';
 import { AUTH_SYSTEM_AVAILABLE } from '@/config/authStatus';
 
@@ -85,12 +86,10 @@ const courses: Course[] = [
     title: 'Azure Data Engineer',
     description: 'Master Azure data engineering, data pipelines, and cloud data solutions',
     icon: <div className="p-1 w-full h-full relative"><Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure" fill className="object-contain" unoptimized /></div>,
-    href: '/tutorials/azure-data-engineer',
+    href: '/tutorials/azure-modules',
     gradient: 'from-blue-600 to-cyan-600',
   },
 ];
-
-import { motion } from 'framer-motion';
 
 import { TechnologyCard, CardGrid } from '@/components/common/technology-card';
 

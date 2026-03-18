@@ -168,5 +168,61 @@ export const roadmaps: Record<string, RoadmapData> = {
             { time: 'Module 4', title: 'Pathology & Pharmacology', description: 'Disease processes and drug classifications' },
             { time: 'Module 5', title: 'Coding Application', description: 'Applying terminology to ICD-10 and CPT coding' }
         ]
+    },
+    'azure-data-engineer': {
+        id: 'azure-data-engineer',
+        title: 'Azure Data Engineer',
+        description: 'Complete path to becoming a Microsoft Certified: Azure Data Engineer Associate (DP-203).',
+        buttonText: 'Start Azure Journey',
+        buttonLink: '/tutorials/azure-data-engineer',
+        roadmap: [
+            { time: 'Phase 1', title: 'Azure Core Services', description: 'Storage accounts, Virtual Networks, and Security' },
+            { time: 'Phase 2', title: 'Data Storage', description: 'Data Lake Storage Gen2, Cosmos DB, and SQL Database' },
+            { time: 'Phase 3', title: 'Data Processing', description: 'Azure Data Factory, Synapse Analytics, and Databricks' },
+            { time: 'Phase 4', title: 'Monitoring & Optimization', description: 'Log Analytics, Monitor, and performance tuning' },
+            { time: 'Phase 5', title: 'Certification Prep', description: 'DP-203 exam focus and practice cases' }
+        ]
+    },
+    'azure-basics': {
+        id: 'azure-basics',
+        title: 'Azure Basics',
+        description: 'Master the fundamentals of cloud computing and core Azure services (AZ-900).',
+        buttonText: 'Learn Azure Basics',
+        buttonLink: '/tutorials/azure-data-engineer',
+        roadmap: [
+            { time: 'Week 1', title: 'Cloud Concepts', description: 'Benefits of cloud, IaaS vs PaaS vs SaaS' },
+            { time: 'Week 2', title: 'Azure Architecture', description: 'Regions, Availability Zones, and Resource Groups' },
+            { time: 'Week 3', title: 'Core Services', description: 'Compute, Networking, and Storage essentials' },
+            { time: 'Week 4', title: 'Security & Governance', description: 'Identity, Privacy, and Compliance features' },
+            { time: 'Week 5', title: 'Pricing & Support', description: 'TCO calculator, Cost Management, and SLAs' }
+        ]
+    },
+    'azure-databricks': {
+        id: 'azure-databricks',
+        title: 'Azure Databricks',
+        description: 'Master Apache Spark on Azure for large-scale data processing and machine learning.',
+        buttonText: 'Explore Databricks',
+        buttonLink: '/tutorials/azure-data-engineer',
+        roadmap: [
+            { time: 'Phase 1', title: 'Workspace Setup', description: 'Clusters, notebooks, and libraries configuration' },
+            { time: 'Phase 2', title: 'Spark Fundamentals', description: 'DataFrames, Datasets, and Spark SQL operations' },
+            { time: 'Phase 3', title: 'Data Engineering', description: 'Delta Lake, Structured Streaming, and ETL pipelines' },
+            { time: 'Phase 4', title: 'Machine Learning', description: 'MLflow, model training, and deployment on Spark' },
+            { time: 'Phase 5', title: 'Optimization', description: 'Caching, partitioning, and cluster performance tuning' }
+        ]
+    },
+    'azure-data-factory': {
+        id: 'azure-data-factory',
+        title: 'Azure Data Factory',
+        description: 'Learn to build and manage automated data integration pipelines at scale.',
+        buttonText: 'Master Data Factory',
+        buttonLink: '/tutorials/azure-data-engineer',
+        roadmap: [
+            { time: 'Module 1', title: 'Introduction', description: 'ADF components, linked services, and datasets' },
+            { time: 'Module 2', title: 'Copy Activity', description: 'Data movement from various sources to Azure' },
+            { time: 'Module 3', title: 'Mapping Data Flows', description: 'Transforming data without writing code' },
+            { time: 'Module 4', title: 'Control Flow', description: 'Pipelines, parameters, variables, and lookups' },
+            { time: 'Module 5', title: 'Triggering & Monitor', description: 'Schedules, tumbling windows, and alert setup' }
+        ]
     }
 };

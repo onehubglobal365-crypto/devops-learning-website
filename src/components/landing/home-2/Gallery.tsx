@@ -22,20 +22,20 @@ const selectedMainImages = [
 ];
 
 const galleryImages = [
-    // "/website-pics/IMG20251222105938.jpg",
+    "/website-pics/IMG20251222105938.jpg",
     // "/website-pics/IMG20251222105938_Kadpa_District.jpg",
     // "/website-pics/IMG20251222105939.jpg",
     // "/website-pics/IMG20251222105939_Kadpa_District.jpg",
     // "/website-pics/IMG20251222110540.jpg",
     // "/website-pics/IMG20251222110540_Kadpa_District.jpg",
-    // "/website-pics/IMG20251222110544.jpg",
+    "/website-pics/IMG20251222110544.jpg",
     // "/website-pics/IMG20251222110544_Kadpa_District.jpg",
     // "/website-pics/IMG20251222111741.jpg",
     // "/website-pics/IMG20251222111741_Kadpa_District.jpg",
     // "/website-pics/IMG20251222111741_Womens_Degree_College.jpg",
-    // "/website-pics/IMG20251222111754.jpg",
+    "/website-pics/IMG20251222111754.jpg",
     // "/website-pics/IMG20251222111754_Kadpa_District.jpg",
-    // "/website-pics/IMG20251222112207.jpg",
+    "/website-pics/IMG20251222112207.jpg",
     // "/website-pics/IMG20251222112207_Kadpa_District.jpg",
     // "/website-pics/IMG20251222112212.jpg",
     // "/website-pics/IMG20251222112212_Womens_Degree_College.jpg",
@@ -241,8 +241,8 @@ const galleryImages = [
     // "/website-pics/IMG_20260122_160338973_HDR.jpg",
     // "/website-pics/IMG_20260122_160339805_HDR.jpg",
     // "/website-pics/IMG_20260122_160450312_HDR.jpg",
-    // "/website-pics/IMG_20260122_160452473_HDR.jpg",
-    "/website-pics/IMG_20260123_133300356_HDR.jpg",
+    "/website-pics/IMG_20260122_160452473_HDR.jpg",
+    // "/website-pics/IMG_20260123_133300356_HDR.jpg",
     // "/website-pics/IMG_20260123_133302341_HDR.jpg"
 ];
 

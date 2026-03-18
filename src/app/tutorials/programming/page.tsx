@@ -176,7 +176,9 @@ export default function ProgrammingPage() {
           <TechnologyCard
             title="DevOps"
             description="Learn containerization, CI/CD, infrastructure automation, and cloud platforms"
-            icon={<Rocket className="w-12 h-12 text-rose-500" />}
+            // icon={<Rocket className="w-12 h-12 text-rose-500" />}
+            icon={ <div className="p-1 w-full h-full relative"><Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuredevops/azuredevops-original.svg" alt="DevOps" fill className="object-contain" unoptimized /></div>}
+            
             link="/devops"
             gradient="from-rose-500 to-red-600"
             iconBg="bg-white"
@@ -184,7 +186,8 @@ export default function ProgrammingPage() {
           <TechnologyCard
             title="Java"
             description="Master Java programming, Spring Framework, and enterprise development"
-            icon={<Coffee className="w-12 h-12 text-orange-500" />}
+            // icon={<Coffee className="w-12 h-12 text-orange-500" />}
+            icon={<div className="p-1 w-full h-full relative"><Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" fill className="object-contain" unoptimized /></div>}
             link="/java"
             gradient="from-orange-500 to-red-500"
             iconBg="bg-white"
@@ -192,7 +195,9 @@ export default function ProgrammingPage() {
           <TechnologyCard
             title="Python"
             description="Learn Python programming, data science, web development, and automation"
-            icon={<FileCode className="w-12 h-12 text-yellow-500" />}
+            // icon={<FileCode className="w-12 h-12 text-yellow-500" />}
+            icon={<div className="p-1 w-full h-full relative"><Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" fill className="object-contain" unoptimized /></div>}
+            
             link="/python"
             gradient="from-yellow-500 to-amber-500"
             iconBg="bg-white"
@@ -200,7 +205,8 @@ export default function ProgrammingPage() {
           <TechnologyCard
             title="SQL"
             description="Database design, SQL queries, optimization, and modern database technologies"
-            icon={<Database className="w-12 h-12 text-purple-500" />}
+            // icon={<Database className="w-12 h-12 text-purple-500" />}
+            icon={ <div className="p-1 w-full h-full relative"><Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" fill className="object-contain" unoptimized /></div>}
             link="/sql"
             gradient="from-purple-500 to-indigo-600"
             iconBg="bg-white"
@@ -208,7 +214,7 @@ export default function ProgrammingPage() {
           <TechnologyCard
             title="Power BI"
             description="Master Data Visualization and Business Intelligence with Power BI"
-            icon={<div className="p-1 w-full h-full relative"><Image src="/images/powerbi.jpg" alt="Power BI" fill className="object-contain" unoptimized /></div>}
+            icon={<div className="p-1 w-full h-full relative"><Image src="/images/powerbicard.png" alt="Power BI" fill className="object-contain" unoptimized /></div>}
             link="/powerbi"
             gradient="from-yellow-400 to-yellow-600"
             iconBg="bg-white"
@@ -216,7 +222,8 @@ export default function ProgrammingPage() {
           <TechnologyCard
             title="Web Development"
             description="HTML, CSS, JavaScript, React, and full-stack web development"
-            icon={<Globe className="w-12 h-12 text-green-500" />}
+            // icon={<Globe className="w-12 h-12 text-green-500" />}
+            icon={<div className="p-1 w-full h-full relative"><Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="Web Dev" fill className="object-contain" unoptimized /></div>}
             link="/web-dev"
             gradient="from-green-500 to-teal-500"
             iconBg="bg-white"
@@ -224,11 +231,33 @@ export default function ProgrammingPage() {
           <TechnologyCard
             title="Data Science"
             description="Data analysis, machine learning, statistics, and visualization"
-            icon={<BarChart className="w-12 h-12 text-blue-500" />}
+            // icon={<BarChart className="w-12 h-12 text-blue-500" />}
+            icon={ <div className="p-1 w-full h-full relative"><Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Data Science" fill className="object-contain" unoptimized /></div>}
             link="/data-science"
             gradient="from-blue-500 to-cyan-500"
             iconBg="bg-white"
           />
+          <TechnologyCard
+            title="Azure Data Engineer"
+            description="Professional cloud data engineering certification path & tools"
+            // icon={<div className="p-1 w-full h-full relative"><Image src="/images/azure.png" alt="azure" fill className="object-contain" unoptimized /></div>}
+            icon={ <div className="p-1 w-full h-full relative"><Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure" fill className="object-contain" unoptimized /></div>}
+            
+            link="/tutorials/azure-modules"
+            gradient="from-blue-500 to-cyan-500"
+            iconBg="bg-blue-50"
+          />
+          <TechnologyCard
+              title="Excel"
+              description="Master Microsoft Excel for data entry, analysis, and visualization"
+            icon={ <div className="p-1 w-full h-full relative"><Image src="/images/excel.jpg" alt="Excel" fill className="object-contain" unoptimized /></div>}
+
+              // icon=''
+              // {<Calculator className="w-12 h-12 text-emerald-600" />}
+              link="/excel"
+              gradient="from-emerald-500 to-green-600"
+              iconBg="bg-emerald-50"
+            />
         </CardGrid>
       </div>
     </main>

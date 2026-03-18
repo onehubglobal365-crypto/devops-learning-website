@@ -433,24 +433,24 @@ const getTechNavigationItems = (tech: string): SidebarItem[] => {
     ],
     'azure-data-engineer': [
       {
-        id: 'azure-data-engineer-course',
+        id: 'azure-data-engineer-basics',
         title: 'Azure Basics',
         href: '/tutorials/azure-data-engineer',
         icon: '',
         children: [
-          { id: 'module1', title: 'Module 1', href: '/tutorials/azure-data-engineer#module1' },
-          { id: 'module2', title: 'Module 2', href: '/tutorials/azure-data-engineer#module2' },
-          { id: 'module3', title: 'Module 3', href: '/tutorials/azure-data-engineer#module3' },
-          { id: 'module4', title: 'Module 4', href: '/tutorials/azure-data-engineer#module4' },
-          { id: 'module5', title: 'Module 5', href: '/tutorials/azure-data-engineer#module5' },
-          { id: 'module6', title: 'Module 6', href: '/tutorials/azure-data-engineer#module6' },
-          { id: 'module7', title: 'Module 7', href: '/tutorials/azure-data-engineer#module7' },
-          { id: 'module8', title: 'Module 8', href: '/tutorials/azure-data-engineer#module8' },
-          { id: 'module9', title: 'Module 9', href: '/tutorials/azure-data-engineer#module9' },
-          { id: 'module10', title: 'Module 10', href: '/tutorials/azure-data-engineer#module10' },
+          { id: 'module1', title: 'Resources Hierarchy', href: '/tutorials/azure-data-engineer#module1' },
+          { id: 'module2', title: 'Resource Groups', href: '/tutorials/azure-data-engineer#module2' },
+          { id: 'module3', title: 'Storage Services in BLOB', href: '/tutorials/azure-data-engineer#module3' },
+          { id: 'module4', title: 'Types of Blobs in BLOB', href: '/tutorials/azure-data-engineer#module4' },
+          { id: 'module5', title: 'Access Tiers in BLOB', href: '/tutorials/azure-data-engineer#module5' },
+          { id: 'module6', title: 'Blob Storage', href: '/tutorials/azure-data-engineer#module6' },
+          { id: 'module7', title: 'Storage Services in ADLS', href: '/tutorials/azure-data-engineer#module7' },
+          { id: 'module8', title: 'Blobs in ADLS', href: '/tutorials/azure-data-engineer#module8' },
+          { id: 'module9', title: 'Access Tiers in ADLS', href: '/tutorials/azure-data-engineer#module9' },
+          { id: 'module10', title: 'ADLS Gen2', href: '/tutorials/azure-data-engineer#module10' },
         ]},
         {
-          id: 'azure-data-engineer-resources',
+          id: 'azure-data-engineer-databricks',
           title: 'Azure DataBricks',
           href: '/tutorials/azure-data-engineer',
           icon: '',
@@ -482,6 +482,21 @@ const getTechNavigationItems = (tech: string): SidebarItem[] => {
           { id: 'module35', title: 'module 35', href: '/tutorials/azure-data-engineer#module35' },
         ]
       },
+       {
+          id: 'azure-data-engineer-datafactory',
+          title: 'Azure Data Factory',
+          href: '/tutorials/azure-data-engineer',
+          icon: '',
+          children: [
+          { id: 'module36', title: 'module 36', href: '/tutorials/azure-data-engineer#module36'},
+          { id: 'module37', title: 'module 37', href: '/tutorials/azure-data-engineer#module37'},
+          { id: 'module38', title: 'module 38', href: '/tutorials/azure-data-engineer#module38'},
+          { id: 'module39', title: 'module 39', href: '/tutorials/azure-data-engineer#module39'},
+          { id: 'module40', title: 'module 40', href: '/tutorials/azure-data-engineer#module40'},
+          { id: 'module41', title: 'module 41', href: '/tutorials/azure-data-engineer#module41'},
+          { id: 'module42', title: 'module 42', href: '/tutorials/azure-data-engineer#module42'},
+          { id: 'module43', title: 'module 43', href: '/tutorials/azure-data-engineer#module43'},
+        ]},
     ],
     'artificial-intelligence': [
       {

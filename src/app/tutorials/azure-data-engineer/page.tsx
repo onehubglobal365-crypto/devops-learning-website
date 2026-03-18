@@ -1,24 +1,107 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { Suspense, useState, useEffect, useMemo } from 'react';
+import { useSearchParams } from 'next/navigation';
 import TechLayout from '@/components/layout/tech-layout';
 import VideoSection from '@/components/video/VideoSection';
 import { videoTutorialsData, getVideosForTopic } from '@/data/videoTutorials';
+import { Cloud, Workflow, Factory } from 'lucide-react';
 
-export default function AzureDataEngineerPage() {
+function AzureDataEngineerContent() {
+  const searchParams = useSearchParams();
+  const group = searchParams.get('group');
   const [activeSection, setActiveSection] = useState('module1');
 
-  const pageHeadings = [
-    { id: 'module1', title: 'Module 1' },
-    { id: 'module2', title: 'Module 2' },
-    { id: 'module3', title: 'Module 3' },
-    { id: 'module4', title: 'Module 4' },
-    { id: 'module5', title: 'Module 5' },
-    { id: 'module6', title: 'Module 6' },
-    { id: 'module7', title: 'Module 7' },
-    { id: 'module8', title: 'Module 8' },
-    { id: 'module9', title: 'Module 9' },
-    { id: 'module10', title: 'Module 10' },
+  // Define full navigation structure
+  const allNavItems = useMemo(() => [
+    {
+      id: 'azure-data-engineer-basics',
+      title: 'Azure Basics',
+      href: '/tutorials/azure-data-engineer',
+      // icon: <Cloud className="w-5 h-5" />,
+      children: [
+        { id: 'module1', title: 'Resources Hierarchy', href: '/tutorials/azure-data-engineer?group=basics#module1' },
+        { id: 'module2', title: 'Resource Groups', href: '/tutorials/azure-data-engineer?group=basics#module2' },
+        { id: 'module3', title: 'Storage Services in BLOB', href: '/tutorials/azure-data-engineer?group=basics#module3' },
+        { id: 'module4', title: 'Types of Blobs in BLOB', href: '/tutorials/azure-data-engineer?group=basics#module4' },
+        { id: 'module5', title: 'Access Tiers in BLOB', href: '/tutorials/azure-data-engineer?group=basics#module5' },
+        { id: 'module6', title: 'Blob Storage', href: '/tutorials/azure-data-engineer?group=basics#module6' },
+        { id: 'module7', title: 'Storage Services in ADLS', href: '/tutorials/azure-data-engineer?group=basics#module7' },
+        { id: 'module8', title: 'Blobs in ADLS', href: '/tutorials/azure-data-engineer?group=basics#module8' },
+        { id: 'module9', title: 'Access Tiers in ADLS', href: '/tutorials/azure-data-engineer?group=basics#module9' },
+        { id: 'module10', title: 'ADLS Gen2', href: '/tutorials/azure-data-engineer?group=basics#module10' },
+      ]
+    },
+    {
+      id: 'azure-data-engineer-databricks',
+      title: 'Azure DataBricks',
+      href: '/tutorials/azure-data-engineer',
+      // icon: <Workflow className="w-5 h-5" />,
+      children: [
+        { id: 'module11', title: 'Module 11', href: '/tutorials/azure-data-engineer?group=databricks#module11' },
+        { id: 'module12', title: 'Module 12', href: '/tutorials/azure-data-engineer?group=databricks#module12' },
+        { id: 'module13', title: 'Module 13', href: '/tutorials/azure-data-engineer?group=databricks#module13' },
+        { id: 'module14', title: 'Module 14', href: '/tutorials/azure-data-engineer?group=databricks#module14' },
+        { id: 'module15', title: 'Module 15', href: '/tutorials/azure-data-engineer?group=databricks#module15' },
+        { id: 'module16', title: 'Module 16', href: '/tutorials/azure-data-engineer?group=databricks#module16' },
+        { id: 'module17', title: 'Module 17', href: '/tutorials/azure-data-engineer?group=databricks#module17' },
+        { id: 'module18', title: 'Module 18', href: '/tutorials/azure-data-engineer?group=databricks#module18' },
+        { id: 'module19', title: 'Module 19', href: '/tutorials/azure-data-engineer?group=databricks#module19' },
+        { id: 'module20', title: 'Module 20', href: '/tutorials/azure-data-engineer?group=databricks#module20' },
+        { id: 'module21', title: 'Module 21', href: '/tutorials/azure-data-engineer?group=databricks#module21' },
+        { id: 'module22', title: 'Module 22', href: '/tutorials/azure-data-engineer?group=databricks#module22' },
+        { id: 'module23', title: 'Module 23', href: '/tutorials/azure-data-engineer?group=databricks#module23' },
+        { id: 'module24', title: 'Module 24', href: '/tutorials/azure-data-engineer?group=databricks#module24' },
+        { id: 'module25', title: 'Module 25', href: '/tutorials/azure-data-engineer?group=databricks#module25' },
+        { id: 'module26', title: 'Module 26', href: '/tutorials/azure-data-engineer?group=databricks#module26' },
+        { id: 'module27', title: 'Module 27', href: '/tutorials/azure-data-engineer?group=databricks#module27' },
+        { id: 'module28', title: 'Module 28', href: '/tutorials/azure-data-engineer?group=databricks#module28' },
+        { id: 'module29', title: 'Module 29', href: '/tutorials/azure-data-engineer?group=databricks#module29' },
+        { id: 'module30', title: 'Module 30', href: '/tutorials/azure-data-engineer?group=databricks#module30' },
+        { id: 'module31', title: 'Module 31', href: '/tutorials/azure-data-engineer?group=databricks#module31' },
+        { id: 'module32', title: 'Module 32', href: '/tutorials/azure-data-engineer?group=databricks#module32' },
+        { id: 'module33', title: 'Module 33', href: '/tutorials/azure-data-engineer?group=databricks#module33' },
+        { id: 'module34', title: 'Module 34', href: '/tutorials/azure-data-engineer?group=databricks#module34' },
+        { id: 'module35', title: 'Module 35', href: '/tutorials/azure-data-engineer?group=databricks#module35' },
+      ]
+    },
+    {
+      id: 'azure-data-engineer-datafactory',
+      title: 'Azure Data Factory',
+      href: '/tutorials/azure-data-engineer',
+      // icon: <Factory className="w-5 h-5" />,
+      children: [
+        { id: 'module36', title: 'module 36', href: '/tutorials/azure-data-engineer?group=datafactory#module36' },
+        { id: 'module37', title: 'module 37', href: '/tutorials/azure-data-engineer?group=datafactory#module37' },
+        { id: 'module38', title: 'module 38', href: '/tutorials/azure-data-engineer?group=datafactory#module38' },
+        { id: 'module39', title: 'module 39', href: '/tutorials/azure-data-engineer?group=datafactory#module39' },
+        { id: 'module40', title: 'module 40', href: '/tutorials/azure-data-engineer?group=datafactory#module40' },
+        { id: 'module41', title: 'module 41', href: '/tutorials/azure-data-engineer?group=datafactory#module41' },
+        { id: 'module42', title: 'module 42', href: '/tutorials/azure-data-engineer?group=datafactory#module42' },
+        { id: 'module43', title: 'module 43', href: '/tutorials/azure-data-engineer?group=datafactory#module43' },
+      ]
+    }
+  ], []);
+
+  // Filtered navigation items based on group
+  const navItems = useMemo(() => {
+    if (group === 'basics') return [allNavItems[0]];
+    if (group === 'databricks') return [allNavItems[1]];
+    if (group === 'datafactory') return [allNavItems[2]];
+    return allNavItems;
+  }, [group, allNavItems]);
+
+  const allHeadings = useMemo(() => [
+    { id: 'module1', title: 'Resources Hierarchy' },
+    { id: 'module2', title: 'Resource Groups' },
+    { id: 'module3', title: 'Storage Services in BLOB' },
+    { id: 'module4', title: 'Types of Blobs in BLOB' },
+    { id: 'module5', title: 'Access Tiers in BLOB' },
+    { id: 'module6', title: 'Blob Storage' },
+    { id: 'module7', title: 'Storage Services in ADLS' },
+    { id: 'module8', title: 'Blobs in ADLS' },
+    { id: 'module9', title: 'Access Tiers in ADLS' },
+    { id: 'module10', title: 'ADLS Gen2' },
     { id: 'module11', title: 'Module 11' },
     { id: 'module12', title: 'Module 12' },
     { id: 'module13', title: 'Module 13' },
@@ -44,13 +127,29 @@ export default function AzureDataEngineerPage() {
     { id: 'module33', title: 'module 33' },
     { id: 'module34', title: 'module 34' },
     { id: 'module35', title: 'module 35' },
-  ];
+    { id: 'module36', title: 'module 36' },
+    { id: 'module37', title: 'module 37' },
+    { id: 'module38', title: 'module 38' },
+    { id: 'module39', title: 'module 39' },
+    { id: 'module40', title: 'module 40' },
+    { id: 'module41', title: 'module 41' },
+    { id: 'module42', title: 'module 42' },
+    { id: 'module43', title: 'module 43' },
+  ], []);
 
-  // Handle URL hash changes to set active section
+  // Filtered page headings for pagination
+  const filteredHeadings = useMemo(() => {
+    if (group === 'basics') return allHeadings.slice(0, 10);
+    if (group === 'databricks') return allHeadings.slice(10, 35);
+    if (group === 'datafactory') return allHeadings.slice(35);
+    return allHeadings;
+  }, [group, allHeadings]);
+
+  // Set default active section if group is provided
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.slice(1);
-      if (hash && pageHeadings.some(heading => heading.id === hash)) {
+      if (hash && allHeadings.some(heading => heading.id === hash)) {
         setActiveSection(hash);
       }
     };
@@ -59,6 +158,15 @@ export default function AzureDataEngineerPage() {
     window.addEventListener('hashchange', handleHashChange);
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
+
+  // Set default active section if group is provided
+  useEffect(() => {
+    if (group === 'databricks' && activeSection === 'module1') {
+      setActiveSection('module11');
+    } else if (group === 'datafactory' && activeSection === 'module1') {
+      setActiveSection('module36');
+    }
+  }, [group]);
 
   const renderContent = () => {
     switch (activeSection) {
@@ -6520,6 +6628,531 @@ Example: mg-ohg365-db-dev
 
 
 
+                  case 'module36':
+                  return(
+                    <main>
+                      <div  className="animate-fade-in-up">
+                        <h1 id="module36" className="text-4xl md:text-5xl font-extra-bold mb-8 text-center">
+                        Azure Data Factory
+                       </h1>
+                        <div className="max-w-6xl mx-auto">
+                          <h2 className="text-3xl font-bold text-slate-900 mb-3">
+                          Introduction to Azure Data Factory
+                          </h2>
+                          <div className='text-lg text-gray-700 leading-relaxed mb-6'>
+                          <h3 className="text-2xl font-bold text-slate-900 mb-3">
+                          What is Azure Data Factory?
+                          </h3>
+                          <div className='text-lg text-gray-700 leading-relaxed mb-6'>
+                            <strong>Azure Data Factory (ADF)</strong> is a cloud-based data integration and ETL service from Microsoft Azure. It allows you to collect, move, and transform data from various sources into a ready-to-use format for analysis, storage, or reporting. With its simple, no-code drag-and-drop interface, you can easily build and monitor data pipelines without managing any servers. ADF also supports running existing SSIS packages in the cloud, eliminating the need for infrastructure setup or maintenance. 
+                          </div>
+
+                          <h3 className="text-2xl font-bold text-slate-900 mb-3">
+                          How does Azure Data Factory work?
+                          </h3>
+                          <div className='text-lg text-gray-700 leading-relaxed mb-6'>
+                                 Azure Data Factory (ADF) helps you collect, move, and transform data from different sources to your target destination. You start by creating pipelines, which are step-by-step workflows that define how data is moved and processed. Each pipeline contains activities that perform specific tasks, such as copying, transforming, or loading data. ADF connects to both on-premises and cloud data sources using linked services and executes these workflows through an Integration Runtime, which acts as the processing engine. In short, Azure Data Factory automates the entire data flow process, turning raw data into useful, ready-to-analyse information.
+                            </div>
+
+                          <h3 className="text-2xl font-bold text-slate-900 mb-3">
+                          Key features of Azure Data Factory
+                          </h3>
+                          <div className='text-lg text-gray-700 leading-relaxed mb-6'>
+                            <ol className='list-decimal pl-6 space-y-2 text-gray-700 mb-6'>
+                              <li><strong>Data Compression –</strong> Reduces data size during transfer to save bandwidth and improve performance.</li>
+                              <li><strong>Data Movement (Copy Activity) –</strong> Copies data efficiently between different sources and destinations.</li>
+                              <li><strong>Data Integration –</strong> Connects and combines data from multiple cloud and on-premises sources.</li>
+                              <li><strong>Pipeline Orchestration –</strong> Automates data workflows by organizing and running multiple activities in sequence.</li>
+                              <li><strong>Built-in Security –</strong> Protects data with Azure security, encryption, and role-based access control.</li>
+                              <li><strong>Data Transformation –</strong> Cleans, reshapes, and prepares data for analysis using mapping data flows or external tools.</li>
+                              <li><strong>Home –</strong> The main dashboard for accessing recent activities, quick actions, and workflow overviews.</li>
+                              <li><strong>Author –</strong> The workspace for creating and editing data pipelines, datasets, and data flows.</li>
+                              <li><strong>Monitor –</strong> The section for tracking, reviewing, and troubleshooting pipeline runs in real time.</li>
+                              <li><strong>Manage –</strong> The control panel for configuring linked services, triggers, runtimes, and permissions.</li>
+                              <li><strong>Learning Center –</strong> A built-in area offering tutorials, documentation, and learning resources.</li>
+                              <li><strong>Integration Runtime (IR) –</strong> The processing engine that executes data movement and transformation operations.</li>
+                              <li><strong>Datasets –</strong> Define the structure, format, and location of data used as inputs and outputs in pipelines.</li>
+                              <li><strong>Linked Services –</strong> Store secure connection details that allow ADF to connect to external data sources.</li>
+                            </ol>
+                          </div>
+
+                          <h3 className="text-2xl font-bold text-slate-900 mb-3">
+                          Architecture of Azure Data Factory (ADF)
+                          </h3>
+                          <div className='text-lg text-gray-700 leading-relaxed mb-6'>
+                          <ul className='list-[square] pl-6 space-y-2 text-gray-700 mb-6'>
+                            <li><strong className='text-xl'>Azure Data Factory (ADF)</strong>
+                            <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-3'>
+                              <li>This is the main cloud service where you design and manage your data workflows.</li>
+                              <li>Think of it as the “factory building” where all the data processing happens.</li>
+                              {/* <li></li> */}
+                            </ul>
+                            </li>
+                            <li><strong className='text-xl'>Pipeline</strong>
+                            <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-3'>
+                              <li>It defines the sequence of tasks to move and transform data.</li>
+                              <li>Pipelines can include multiple activities and handle complex workflows.</li>
+                              {/* <li></li> */}
+                            </ul>
+                            </li>
+                            <li><strong className='text-xl'>Activities</strong>
+                            <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-3'>
+                              <li>Activities are the individual tasks inside a pipeline.</li>
+                              <li>Examples: Copying data, transforming data, or running a stored procedure.</li>
+                              <li>Each activity is like a machine in the assembly line doing a specific job.</li>
+                            </ul>
+                            </li>
+                            <li><strong className='text-xl'>Datasets</strong>
+                            <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-3'>
+                              <li>Datasets represent the data you want to work with.</li>
+                              <li>Think of datasets as the raw materials that go through the factory.</li>
+                              {/* <li></li> */}
+                            </ul>
+                            </li>
+                            <li><strong className='text-xl'>Linked Services</strong>
+                            <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-3'>
+                              <li>Linked Services are connections to your data sources.</li>
+                              <li>They act like pipelines supplying raw materials to the factory.</li>
+                              {/* <li></li> */}
+                            </ul>
+                            </li>
+                            <li><strong className='text-xl'>Integration Runtime (IR)</strong>
+                            <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-3'>
+                              <li>The Integration Runtime is the engine that runs your pipelines and activities.</li>
+                              <li>It can move data between sources, transform it, and handle cloud or on-premises tasks.</li>
+                              {/* <li></li> */}
+                            </ul>
+                            </li>
+                            <li><strong className='text-xl'>Monitoring</strong>
+                            <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-3'>
+                              <li>Monitoring lets you track the progress and performance of your pipelines and activities.</li>
+                              <li>You can see which tasks succeeded, failed, or are running.</li>
+                              <li>It’s like the control room of the factory where supervisors check everything is working smoothly.</li>
+                            </ul>
+                            </li>
+                          </ul>
+                          </div>
+
+                          <h3 className="text-2xl font-bold text-slate-900 mb-3">
+                          Benefits of using Azure Data Factory
+                          </h3>
+                          <div className='text-lg text-gray-700 leading-relaxed mb-6'>
+                           Azure Data Factory (ADF) is a cloud tool that helps organizations collect, move, and organize data from different sources in one place. It can automatically manage data workflows, which reduces manual work and mistakes. ADF can handle large amounts of data and works with many types of systems, making it very flexible. It separates moving data from changing data, which makes workflows easier to manage. ADF also lets you monitor processes to ensure everything runs smoothly. Since it is cloud-based, you only pay for what you use. It can connect data from on-premises systems, cloud services, and SaaS applications, helping businesses keep all their data organized in one place.
+                          </div>
+                           
+                          </div>
+                        </div>
+                      </div>
+                    </main>
+                  );
+
+
+
+                case 'module37':
+                  return(
+                    <main>
+                      <div  className="animate-fade-in-up">
+                        <h1 id="module37" className="text-4xl md:text-5xl font-extra-bold mb-8 text-center">
+                        Azure Data Factory Overview
+                       </h1>
+                        <div className="max-w-6xl mx-auto">
+                          <h2 className="text-3xl font-bold text-slate-900 mb-3">
+                          {/* Azure Data Factory Overview */}
+                          </h2>
+                          <div className='text-lg text-gray-700 leading-relaxed mb-6'>
+                          <h3 className="text-2xl font-bold text-slate-900 mb-3">
+                          Creating an Azure Data Factory
+                          </h3>
+                          <div className='text-lg text-gray-700 leading-relaxed mb-6'>
+                          <ol className='list-none pl-6 space-y-2 text-gray-700 mb-6'>
+                            <li><strong className='text-xl'>Step1:</strong> Search for the Data Factory tab, and it will display as shown below.</li>
+                            <li><strong className='text-xl'>Step2:</strong> Next, we need to create the Data Factory by clicking the Create option.</li>
+                            <li><strong className='text-xl'>Step3:</strong> In this step, first select the resource group, then enter a name for the Data Factory, and finally click on ‘Review and Create’ to proceed</li>
+                            <li><strong className='text-xl'>Step4:</strong> after that click on create</li>
+                            <li><strong className='text-xl'>Step5:</strong> Once the Data Factory is created, the interface will appear as shown below</li>
+                            <li><strong className='text-xl'>Step6:</strong> Next, click the Launch Studio button to open Azure Data Factory Studio.</li>
+                            <li><strong className='text-xl'>Step7:</strong> After clicking on Launch Studio, the Data Factory dashboard will appear like this.</li>
+                          </ol>
+                          </div>
+                           <h3 className="text-2xl font-bold text-slate-900 mb-3">
+                           Overview of Azure Data Factory
+                         </h3>
+                          <div className='text-lg text-gray-700 leading-relaxed mb-6'>
+                            In the world of big data, raw, unorganized data is often stored in relational, non-relational, and other storage systems. On its own, this raw data lacks context and meaning, making it difficult for analysts, data scientists, or business decision-makers to derive valuable insights. <br />
+                            Big data requires a service that can orchestrate and operationalize processes to refine these vast stores of raw data into actionable business insights. Azure Data Factory (ADF) is a managed, cloud-based data integration service designed for complex hybrid extract-transform-load (ETL), extract-load-transform (ELT), and data integration projects. It enables organizations to collect, store, and process data from multiple sources in a unified environment through pipelines—automated workflows that efficiently move and transform data.
+                           <h3 className="text-2xl font-bold text-slate-900 mb-3">Key capabilities of ADF include:</h3>
+                           <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-6'>
+                            <li><strong>Data Ingestion:</strong> Seamlessly bring data from on-premises systems, cloud storage, or SaaS applications.</li>
+                            <li><strong>Data Transformation:</strong> Convert raw data into structured formats suitable for analysis or reporting.</li>
+                            <li><strong>Workflow Automation:</strong> Automate repetitive data movement and transformation tasks.</li>
+                            <li><strong>Low-Code Interface:</strong>Build and manage pipelines using an intuitive drag-and-drop interface.</li>
+                            <li><strong>Scalability and Reliability:</strong> Handle large volumes of data efficiently with cloud-based performance and resilience.</li>
+                           </ul>
+                           
+                          
+                          </div>
+                        </div>
+                        <h3 className="text-2xl font-bold text-slate-900 mb-3">Key capabilities of ADF include:</h3>
+                          <div className='text-lg text-gray-700 leading-relaxed mb-6'>
+                            <ul className='list-none pl-6 space-y-2 text-gray-700 mb-6'>
+                              <li>In azure data factory we have five types of key components they are: 
+                                <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-3'>
+                                  <li>Home</li>
+                                  <li>Author</li>
+                                  <li>Monitor</li>
+                                  <li>Manage</li>
+                                  <li>Learning centre</li>
+                                </ul>
+                              </li>
+                              <li><strong>Home :</strong> The Home page looks like this — it gives an overview of Azure Data Factory and allows you to Ingest, Orchestrate, Transform data, and Configure SSIS easily</li>
+                              <ol className='list-decimal pl-6 space-y-2 text-gray-700 mb-3'>
+                                <li>Azure Data Factory (ADF) is a cloud tool used to move and manage data easily.</li>
+                                <li>The Home page shows main options like Ingest, Orchestrate, and Transform data.</li>
+                                <li>Ingest copies data, Orchestrate builds workflows, and Transform cleans data.</li>
+                                <li>You can also run SSIS packages and monitor your pipelines here.</li>
+                                <li>ADF helps you handle all your data tasks in one simple platform.</li>
+                              </ol>
+                              <li><strong>Author:</strong> The Author section looks like this — it allows you to create and manage pipelines, datasets, data flows, Change Data Capture, and Power Query in Azure Data Factory.</li>
+                              <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-3'>
+                                <li>The Author section in Azure Data Factory is where you build and design data workflows</li>
+                                <li><strong>Change Data Capture (CDC):</strong> Tracks and captures only new or changed data to keep your data updated efficiently.</li>
+                                <li><strong>Datasets:</strong> define the data you use in your pipelines.</li>
+                                <li><strong>Data flows:</strong> help you transform and clean data visually.</li>
+                                <li><strong>Power Query:</strong> Lets you connect, clean, and shape data easily without writing code.</li>
+                                <li>This area lets you organize and manage all your data tasks in one place.</li>
+                              </ul>
+                              <li><strong>Monitor:</strong> The Monitor section looks like this — it helps you track and check the progress of your pipelines, trigger runs, and data flows. You can see if they succeeded or failed, view run details, and monitor alerts or errors in real time to make sure everything runs smoothly in Azure Data Factory.</li>
+                              <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-3'>
+                                <li>The Monitor section in Azure Data Factory helps you track and manage your data pipeline activities.</li>
+                                <li>You can view the status of pipeline runs, trigger runs, and data flows in real time.</li>
+                                <li>It shows details like start time, end time, and duration of each run.</li>
+                                <li>You can also monitor alerts, errors, and performance issues easily.</li>
+                                <li>This section helps ensure your data processes run smoothly and efficiently.</li>
+                              </ul>
+                              <li> <strong>Manage:</strong> The Manage section is where you control and configure all the important settings for your Data Factory.It’s like the control center for connections, security, and other resources.</li>
+                              <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-3'>
+                                <li><strong>Set up linked services –</strong> connect to databases, storage accounts, or other data sources.</li>
+                                <li><strong>Create integration runtimes –</strong> decide how and where your data pipelines will run (cloud or on-premises).</li>
+                                <li><strong>Manage triggers –</strong> control when your pipelines start automatically.</li>
+                                <li><strong>Handle security and access –</strong> manage user permissions and roles.</li>
+                                <li><strong>Monitor and organize resources –</strong> keep your Data Factory well-structured and easy to maintain.</li>
+                              </ul>
+                              <li>Learning centre: The Learning Center is a helpful space where you can learn how to use Azure Data Factory effectively. <br />
+                              It provides guides, tutorials, videos, and documentation to help you understand how to build, manage, and monitor data pipelines.
+                              </li>
+                              <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-3'>
+                                <li><strong>Explore tutorials –</strong> Step-by-step lessons to learn ADF basics.</li>
+                                <li><strong>Watch videos –</strong> Visual guides to understand how features work.</li>
+                                <li><strong> Read documentation –</strong> Detailed articles about tools and settings.</li>
+                                <li><strong> Get tips and best practices –</strong> Learn how to design better data workflows.</li>
+                              </ul>
+                            </ul>
+                          </div>
+
+                      </div>
+                     </div>
+                    </main>
+                  );
+
+
+
+                  case 'module38':
+                  return(
+                    <main>
+                      <div  className="animate-fade-in-up">
+                        <h1 id="module38" className="text-4xl md:text-5xl font-extra-bold mb-8 text-center">
+                        Activities
+                       </h1>
+                        <div className="max-w-6xl mx-auto">
+                          <h2 className="text-3xl font-bold text-slate-900 mb-3">
+                          {/* Azure Data Factory Overview */}
+                          </h2>
+                          <div className='lext-lg text-gray-700 leading-relaxed mb-3'>
+                            When you create a new pipeline, you can see all the available activities
+                            <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-3'>
+                              <li><strong className='text-xl'>In move and transform we have </strong></li>
+                              <ol className='list-decimal pl-6 space-y-2 text-gray-700 mb-3'>
+                                <li><strong>copy activity:</strong> The Copy Activity in Azure Data Factory is used to copy data from one place to another. <br />
+                                It helps you move data between different sources, like from a database, file, or cloud storage.
+                                </li>
+                                <li><strong>Data flow:</strong> Data Flow in Azure Data Factory is a visual tool used to transform, clean, and organize data without writing code before loading it to the destination. You can use it to join, filter, aggregate, or modify data easily within your pipelines</li>
+                                {/* <li><strong></strong></li> */}
+                              </ol>
+                              <li><strong className='text-xl'>In synapse we have :</strong></li>
+                              <ol className='list-decimal pl-6 space-y-2 text-gray-700 mb-3'>
+                                <li><strong>Notebook :</strong> "In Azure Data Factory, a Notebook lets you write and test code step by step, using languages like Python, SQL, or Scala, to work with and understand your data."</li>
+                                <li><strong>Spark job definition:</strong>A Spark job definition tells Spark what code to run and on which data. <br />
+                                It is used for tasks like data processing, transformation, and machine learning.
+                                </li>
+                                {/* <li><strong></strong></li> */}
+                              </ol>
+                              <li><strong className='text-xl'>Azure data explorer :</strong></li>
+                              <ol className='list-decimal pl-6 space-y-2 text-gray-700 mb-3'>
+                                <li><strong>Azure data explorer commanad:</strong> Azure Data Explorer commands are used to query, analyze, and manage large datasets quickly. <br />
+                                 They help you filter, aggregate, visualize, and transform data for insights and reporting
+                                </li>
+                                {/* <li><strong></strong></li> */}
+                                {/* <li><strong></strong></li> */}
+                              </ol>
+                              <li><strong className='text-xl'>Azure Function:</strong></li>
+                              <ol className='list-decimal pl-6 space-y-2 text-gray-700 mb-3'>
+                                <li><strong>Azure function:</strong> An Azure Function is a small piece of code that runs in the cloud when triggered by an event.It helps automate tasks, process data, or connect different services—without managing servers.</li>
+                                {/* <li><strong></strong></li> */}
+                                {/* <li><strong></strong></li> */}
+                              </ol>
+                              <li><strong className='text-xl'>Batch service:</strong></li>
+                              <ol className='list-decimal pl-6 space-y-2 text-gray-700 mb-3'>
+                                <li><strong>Custom:</strong> Custom activities in Azure Data Factory let you run your own code in a pipeline. They handle tasks that built-in activities can’t, like calling APIs or running scripts.</li>
+                                {/* <li><strong></strong></li> */}
+                                {/* <li><strong></strong></li> */}
+                              </ol>
+                              <li><strong className='text-xl'>Data bricks</strong></li>
+                              <ol className='list-decimal pl-6 space-y-2 text-gray-700 mb-3'>
+                                <li><strong>Notebook –</strong> Runs a Databricks notebook to execute code interactively (Python, SQL, Scala, R) for tasks like data transformation, analysis, or machine learning.</li>
+                                <li><strong>Jar –</strong> Runs a compiled Java or Scala JAR file on a Databricks cluster, useful for custom Spark applications.</li>
+                                <li><strong>Python –</strong> Executes a Python file (.py) on a Databricks cluster, often for data processing or machine learning scripts.</li>
+                                <li><strong>Job –</strong> Runs a Databricks job that can include notebooks, JARs, or Python scripts, allowing scheduled or triggered execution of workflows.</li>
+                              </ol>
+                              <li><strong className='text-xl'>Data lake analytics:</strong></li>
+                              <ol className='list-decimal pl-6 space-y-2 text-gray-700 mb-3'>
+                                <li><strong>U SQL:</strong> U-SQL is a data processing language used in Azure Data Lake Analytics.It combines SQL and C# to query, clean, and transform large amounts of data. <br />
+                                  In Azure Data Factory, U-SQL activity lets you run U-SQL scripts as part of your data pipeline.
+                                </li>
+                                {/* <li><strong></strong></li> */}
+                                {/* <li><strong></strong></li> */}
+                              </ol>
+                              <li><strong className='text-xl'>General:</strong></li>
+                              <ol className='list-decimal pl-6 space-y-2 text-gray-700 mb-3'>
+                                <li><strong>Append Variable –</strong> Adds a new value to an existing array variable in a pipeline.</li>
+                                <li><strong>Delete –</strong> Deletes files or folders from a data store.</li>
+                                <li><strong>Execute Pipeline –</strong> Runs another pipeline from the current one (helps in modular design).</li>
+                                <li><strong>Execute SSIS Package –</strong> Runs SQL Server Integration Services (SSIS) packages in Azure.</li>
+                                <li><strong>Fail –</strong> Stops the pipeline and marks it as failed (useful for error handling).</li>
+                                <li><strong>Get Metadata –</strong> Retrieves information about data, like file name, size, or last modified date.</li>
+                                <li><strong>Lookup –</strong> Reads and returns data from a source (e.g., a table or file).</li>
+                                <li><strong>Stored Procedure –</strong> Runs a stored procedure in a database.</li>
+                                <li><strong>Script –</strong> Executes SQL scripts for data operations.</li>
+                                <li><strong>Set Variable –</strong> Used to store a value in a variable that you can reuse later in your pipeline.</li>
+                                <li><strong>Validation –</strong> Checks whether your data source is ready or if a file exists before processing.</li>
+                                <li><strong>Web –</strong> Lets you call a web service or REST API from your pipeline.</li>
+                                <li><strong>WebHook –</strong> Triggers external systems or services to perform an action using a callback URL.</li>
+                                <li><strong>Wait –</strong> Adds a delay or pause in your pipeline for a specific time before continuing.</li>
+                                
+                              </ol>
+                              <li><strong className='text-xl'>HD sight:</strong></li>
+                              <ol className='list-decimal pl-6 space-y-2 text-gray-700 mb-3'>
+                                <li><strong>Hive –</strong> Used to run Hive queries on big data stored in Hadoop clusters. It helps analyze data using SQL-like commands.</li>
+                                <li><strong>MapReduce –</strong> Processes large data sets by dividing them into smaller tasks and combining the results.</li>
+                                <li><strong>Pig –</strong> Executes Pig scripts to transform and analyze big data easily without complex coding.</li>
+                                <li><strong>Spark –</strong> Runs fast, large-scale data processing and analytics using Apache Spark.</li>
+                                <li><strong>Streaming –</strong> Processes real-time or continuous data streams, like live logs or sensor data.</li>
+                              </ol>
+                              <li><strong className='text-xl'>Iteration & conditional:</strong></li>
+                              <ol className='list-decimal pl-6 space-y-2 text-gray-700 mb-3'>
+                                <li><strong>Filter –</strong> Selects specific items from a list based on a given condition.</li>
+                                <li><strong>ForEach –</strong> Repeats a set of activities for each item in a list or collection.</li>
+                                <li><strong>If Condition –</strong> Runs different activities depending on whether a condition is true or false.</li>
+                                <li><strong>Switch –</strong> Chooses one activity path from multiple options based on a value.</li>
+                                <li><strong>Until –</strong> Repeats activities until a certain condition is met.</li>
+                              </ol>
+                              <li><strong className='text-xl'>Machine learning:</strong></li>
+                              <ul className='list-[circle] pl-6 space-y-2 text-gray-700 mb-3'>
+                                <li><strong>Machine Learning Execute:</strong> This is the tool used to run or test a machine learning model.</li>
+                                {/* <li><strong></strong></li> */}
+                                {/* <li><strong></strong></li> */}
+                              </ul>
+                              <li><strong className='text-xl'>Power query :</strong></li>
+                              <ol className='list-[circle] pl-6 space-y-2 text-gray-700 mb-3'>
+                                <li><strong>Power Query:</strong> This section helps you get, clean, and prepare your data from different sources (like Excel or databases).</li>
+                              </ol>
+                              
+                            </ul>
+                          </div>
+
+
+                        </div>
+                      </div>
+                    </main>
+                  );
+
+
+                case 'module39':
+                  return(
+                    <main>
+                      <div  className="animate-fade-in-up">
+                        <h1 id="module39" className="text-4xl md:text-5xl font-extra-bold mb-8 text-center">
+                        Linked services
+                       </h1>
+                        <div className="max-w-6xl mx-auto">
+                          <h2 className="text-3xl font-bold text-slate-900 mb-3">
+                          {/* Azure Data Factory Overview */}
+                          </h2>
+                          <div className='text-lg text-gray-700 leading-relaxed mb-6'>
+                            A Linked Service is like a connection or bridge that lets your tool (like Azure Data Factory or Synapse) connect to other places where your data is stored. <br />
+                            Creation of linked services for blob: In the Manage section, we can create linked services to connect to our data sources,
+                            <ul className='list-none pl-6 space-y-2 text-gray-700 mb-6'>
+                              <li><strong className="text-xl">Step1:</strong> To create a linked service, click the ‘New’ button in the Manage section.</li>
+                              <li><strong className="text-xl">Step2:</strong> After clicking ‘New’, the Data store tab appears search for “Blob”. <br />
+                              Select Azure Blob Storage and click ‘Continue’ to proceed
+                              </li>
+                              <li><strong className="text-xl">Step3:</strong> Enter a name for the linked service. <br />
+                              For cloud The default integration runtime is auto-resolved select your subscription, choose the Blob storage account, and click ‘Create’.
+                              </li>
+                              <li><strong className="text-xl">Step4:</strong> Once the linked service is created, it will be displayed in the list below.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </main>
+                  );
+
+
+                  case 'module40':
+                  return(
+                    <main>
+                      <div  className="animate-fade-in-up">
+                        <h1 id="module40" className="text-4xl md:text-5xl font-extra-bold mb-8 text-center">
+                        datasets
+                       </h1>
+                        <div className="max-w-6xl mx-auto">
+                          <h2 className="text-3xl font-bold text-slate-900 mb-3">
+                          datasets :
+                          </h2>
+                          <div className='text-lg text-gray-700 leading-relaxed mb-3'>
+                            A dataset is a group of related information stored together, usually in a table format. <br />
+                            It looks like a spreadsheet with:
+
+                            <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-5'>
+                              <li><strong>Rows =</strong> individual records (like one person, one product, one sale)</li>
+                              <li><strong>Columns =</strong> types of data (like name, age, price)</li>
+                            </ul>
+                            <p className='text-lg text-gray-700 leading-relaxed mb-3'><strong>Create the dataset for blob:</strong> To create a dataset for Blob Storage, go to the Author section where you can connect to your data source.</p>
+                            <ul className='list-none pl-6 space-y-2 text-gray-700 mb-3'>
+                              <li><strong className='text-xl'>Step1:</strong> To create a dataset, click the ‘New’ button in the author section</li>
+                              <li><strong className='text-xl'>Step2:</strong> In the "New dataset" window, search for "Blob" and select Azure Blob Storage. <br />
+                              Then click "Continue" to move on to dataset configuration
+                              </li>
+                              <li><strong className='text-xl'>Step3:</strong> here we have to select the format of dataset and click on continue</li>
+                              <li><strong className='text-xl'>Step4:</strong> Enter the name of the dataset, select the linked service, and provide the file path. <br />
+                              Then, click “OK” to create the dataset.
+                              </li>
+                              <li><strong className='text-xl'>Step5:</strong> After creating the dataset, it will appear like this in the Author section.</li>
+                            </ul>
+
+                          </div>
+                        </div>
+                      </div>
+                    </main>
+                  );
+
+
+
+                case 'module41':
+                  return(
+                    <main>
+                      <div  className="animate-fade-in-up">
+                        <h1 id="module41" className="text-4xl md:text-5xl font-extra-bold mb-8 text-center">
+                        Parameters
+                       </h1>
+                        <div className="max-w-6xl mx-auto">
+                          <h2 className="text-3xl font-bold text-slate-900 mb-3">
+                          Parameters:
+                          </h2>
+                          <div className='text-lg text-gray-700 leading-relaxed mb-6'>
+                            <ul className='list-none pl-6 space-y-2 text-gray-700 mb-6'>
+                              <li><strong className="text-xl">Pipeline level parameter:</strong> Pipeline-level parameters allow you to pass dynamic values (like <em>filename</em> and <em>foldername</em>) into your pipeline at runtime. You can set default values or override them when triggering the pipeline.</li>
+                              <li><strong className="text-xl">Dataset level parameter:</strong>
+                              <ul className='list-disc pl-6 space-y-2 text-gray-700 mb-3'>
+                                <li>Dataset-level parameters let you pass dynamic values (e.g., file name or path) into a dataset at runtime.</li>
+                                <li>You define them in the dataset's Parameters tab and reference them in dataset properties like file path or table name</li>
+                                <li> Here in the dataset, to create parameters, go to the Parameters tab and click + New to add them for dynamic use.</li>
+                              </ul>
+                              </li>
+                            </ul>
+                          <h3 className="text-2xl font-bold text-slate-900 mb-3">variable</h3>
+                          <div className='text-lg text-gray-700 leading-relaxed mb-3'>
+                            <ul className='list-none pl-6 space-y-2 text-gray-700 mb-3'>
+                              <li><strong className="text-xl">Step1:</strong> In Variables, click on + New, then give your variable a name, choose the type (like String or Boolean), and optionally set a default value.</li>
+                              <li><strong className="text-xl">Step2:</strong> In Azure Data Factory, the Set variable activity assigns or updates the value of a pipeline variable during execution. You select the variable name and specify its value in the Settings tab to use it dynamically in your pipeline.</li>
+                            </ul>
+                          </div>
+                          </div>
+                        </div>
+                      </div>
+                    </main>
+                  );
+
+
+                  case 'module42':
+                  return(
+                    <main>
+                      <div  className="animate-fade-in-up">
+                        <h1 id="module42" className="text-4xl md:text-5xl font-extra-bold mb-8 text-center">
+                        Integration runtimes
+                       </h1>
+                        <div className="max-w-6xl mx-auto">
+                          <h2 className="text-3xl font-bold text-slate-900 mb-3">
+                          Integration runtimes
+                          </h2>
+                          <div className='text-lg text-gray-700 leading-relaxed mb-6'>
+                             in Azure Data Factory is the tool that connects and transfers data between different systems. The integration run time is three types 
+                            <ol className='list-decimal pl-6 space-y-2 text-gray-700 mb-3'>
+                              <li className='font-bold text-xl'>Auto resolved integration run time</li>
+                              <li className='font-bold text-xl'>Self hosted integration run time</li>
+                              <li className='font-bold text-xl'>Azure SSIS</li>
+                            </ol>
+                          </div>
+                          <ol className='list-decimal pl-6 space-y-2 text-gray-700 mb-3'>
+                            <li><strong className="text-xl">Auto resolved integration run time:</strong><br /> Azure Integration Runtime is used for copying, moving, and transforming data in the cloud. <br />
+                            It runs within Azure and connects to various cloud services or public data sources. <br />
+                            Ideal for cloud-to-cloud data transfers and transformations.
+                            </li>
+                            <li><strong className="text-xl">Self hosted integration run time:</strong><br />Self-hosted Integration Runtime is installed on your own machines or servers.It allows secure data movement between on-premises systems and the cloud.Ideal for accessing data in private networks or behind firewalls.</li>
+                            <li><strong className="text-xl">Azure SSIS:</strong><br />  Azure-SSIS Integration Runtime is a managed service to run SSIS packages in the cloud. <br />
+                            It allows you to move your existing on-premises SSIS workloads to Azure without changes. <br />
+                            Used for data integration tasks using SQL Server Integration Services in a cloud environment.
+                            </li>
+                          </ol>
+                        </div>
+                      </div>
+                    </main>
+                  );
+
+
+                  case 'module43':
+                  return(
+                    <main>
+                      <div  className="animate-fade-in-up">
+                        <h1 id="module43" className="text-4xl md:text-5xl font-extra-bold mb-8 text-center">
+                        triggers
+                       </h1>
+                        <div className="max-w-6xl mx-auto">
+                          <h2 className="text-3xl font-bold text-slate-900 mb-3">
+                          triggers
+                          </h2>
+                          <div className='text-lg text-gray-700 leading-relaxed mb-6'>
+                             Triggers in Azure Data Factory are used to automatically start pipelines.
+                             Instead of running a pipeline manually, a trigger tells it when to run — for example, at a specific time or when something happens.
+                          <h3 className="text-2xl font-bold text-slate-900 mb-3">Types of Triggers</h3>
+                          <ol className='list-decimal pl-6 space-y-2 text-gray-700 mb-3'>
+                            <li><strong className='text-xl'>Schedule Trigger</strong><br />Runs the pipeline at a fixed time or repeat interval.</li>
+                            <li><strong className='text-xl'>Tumbling Window Trigger</strong><br />Runs the pipeline in continuous time blocks (windows)..</li>
+                            <li><strong className='text-xl'>Event Trigger</strong><br />Starts the pipeline when an event happens  like when a new file is added to Blob Storage.</li>
+                            <li><strong className='text-xl'>Manual Trigger</strong><br />You start the pipeline yourself (not automatic).</li>
+                          </ol>
+
+                          </div>
+                          <h3 className="text-2xl font-bold text-slate-900 mb-3">data flows:</h3>
+                          <p className='text-lg text-gray-700 leading-relaxed mb-6'>Dataflow is a visual tool in Azure Data Factory used to transform data without writing code.You can drag and drop steps to clean, join, filter, and shape data before loading it to a destination.</p>
+
+                        </div>
+                      </div>
+                    </main>
+                  );
+
+
+
+
 
 
 
@@ -6531,10 +7164,11 @@ Example: mg-ohg365-db-dev
 
   return (
     <TechLayout
-      onThisPage={pageHeadings}
+      onThisPage={filteredHeadings}
       technology="azure-data-engineer"
       activeSection={activeSection}
       setActiveSection={setActiveSection}
+      customNavigationItems={navItems}
       background="white"
     >
       <div
@@ -6549,5 +7183,13 @@ Example: mg-ohg365-db-dev
         {renderContent()}
       </div>
     </TechLayout>
+  );
+}
+
+export default function AzureDataEngineerPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center text-slate-900 font-bold bg-white">Loading Azure Tutorial...</div>}>
+      <AzureDataEngineerContent />
+    </Suspense>
   );
 }
