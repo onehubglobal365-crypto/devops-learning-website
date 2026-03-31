@@ -11,7 +11,8 @@ import {
     ArrowDownRight,
     Clock,
     Eye,
-    CheckCircle2
+    CheckCircle2,
+    UserPlus
 } from "lucide-react";
 
 export default function AdminDashboard() {
@@ -165,79 +166,53 @@ export default function AdminDashboard() {
                 </div>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                {/* Recent Placements Table */}
-                <div className="lg:col-span-2 bg-white rounded-none border border-gray-100 shadow-sm overflow-hidden">
-                    <div className="p-6 border-b border-gray-50 flex items-center justify-between">
-                        <h2 className="font-bold text-lg text-gray-900">Recent Success Stories</h2>
-                        <button className="text-blue-600 text-sm font-bold hover:underline">View All</button>
-                    </div>
-                    <div className="overflow-x-auto">
-                        <table className="w-full text-left">
-                            <thead>
-                                <tr className="bg-gray-50/50 text-[10px] uppercase tracking-wider text-gray-400 font-bold">
-                                    <th className="px-6 py-4">Student</th>
-                                    <th className="px-6 py-4">Company</th>
-                                    <th className="px-6 py-4">Package</th>
-                                    <th className="px-6 py-4">Date</th>
-                                    <th className="px-6 py-4">Status</th>
-                                </tr>
-                            </thead>
-                            <tbody className="divide-y divide-gray-50 text-sm">
-                                {recentPlacements.map((p, i) => (
-                                    <tr key={i} className="hover:bg-gray-50/50 transition-colors">
-                                        <td className="px-6 py-4 font-bold text-gray-900">{p.name}</td>
-                                        <td className="px-6 py-4 text-gray-600">
-                                            <div className="flex items-center gap-2">
-                                                <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center text-[10px] font-bold text-blue-600">
-                                                    {p.company[0]}
-                                                </div>
-                                                {p.company}
-                                            </div>
-                                        </td>
-                                        <td className="px-6 py-4">
-                                            <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full font-bold text-xs">
-                                                {p.package}
-                                            </span>
-                                        </td>
-                                        <td className="px-6 py-4 text-gray-400">
-                                            <div className="flex items-center gap-1">
-                                                <Clock className="w-3 h-3" />
-                                                {p.date}
-                                            </div>
-                                        </td>
-                                        <td className="px-6 py-4 text-green-500">
-                                            <CheckCircle2 className="w-5 h-5" />
-                                        </td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+            <div className="grid grid-cols-1 gap-8">
+                {/* Dynamic Live Activity Feed */}
+                <div className="bg-white rounded-none border border-gray-100 shadow-sm p-8">
+                    <h2 className="font-bold text-2xl text-gray-900 mb-8 flex items-center gap-3">
+                        <TrendingUp className="w-8 h-8 text-orange-500" />
+                        Recent Platform Interactions
+                    </h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {users.slice(0, 6).map((user, i) => {
+                            // Assign a dynamic icon and event type based on profile status
+                            const isNewSignup = i % 2 === 0; // Alternating for visual variety in demo, or use actual logic
+                            const EventIcon = isNewSignup ? <UserPlus className="w-6 h-6 text-blue-600" /> : <GraduationCap className="w-6 h-6 text-purple-600" />;
+                            const eventLabel = isNewSignup ? "New Registration" : "Course Enrollment";
+                            const iconBg = isNewSignup ? "bg-blue-100" : "bg-purple-100";
 
-                {/* Activity Feed */}
-                <div className="bg-white rounded-none border border-gray-100 shadow-sm p-6">
-                    <h2 className="font-bold text-lg text-gray-900 mb-6">Live Activity</h2>
-                    <div className="space-y-6">
-                        {[1, 2, 3, 4, 5].map((_, i) => (
-                            <div key={i} className="flex gap-4">
-                                <div className="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center shrink-0">
-                                    <TrendingUp className="w-5 h-5 text-orange-600" />
-                                </div>
-                                <div>
-                                    <div className="text-sm font-bold text-gray-800">
-                                        {["Course Purchase", "New Signup", "Quiz Completed", "New Application", "Feedback Received"][i]}
+                            return (
+                                <div key={user._id} className="flex gap-4 p-5 rounded-2xl bg-gray-50/50 border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all group">
+                                    <div className={`w-12 h-12 rounded-full ${iconBg} flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform`}>
+                                        {EventIcon}
                                     </div>
-                                    <div className="text-xs text-gray-500">User #842{i} completed Python Fundamentals.</div>
-                                    <div className="text-[10px] text-gray-400 mt-1 uppercase font-bold tracking-tight">3 mins ago</div>
+                                    <div className="flex-1 min-w-0">
+                                        <div className="text-[10px] font-black uppercase tracking-widest text-[#083D77] mb-1 opacity-70">
+                                            {eventLabel}
+                                        </div>
+                                        <div className="text-sm font-black text-gray-800 truncate">
+                                            {user.name}
+                                        </div>
+                                        <p className="text-xs text-gray-500 mt-1 line-clamp-1 italic">
+                                            {isNewSignup ? `Joined from ${user.email.split('@')[1]}` : `Secured path in ${user.preferredCourse || 'Development'}`}
+                                        </p>
+                                        <div className="text-[9px] text-gray-400 mt-3 font-bold uppercase tracking-tighter flex items-center gap-1">
+                                            <Clock className="w-2.5 h-2.5" />
+                                            Active Profile Status: Verified
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
+                            );
+                        })}
                     </div>
-                    <button className="w-full mt-8 py-3 bg-gray-50 text-gray-600 text-sm font-bold rounded-xl hover:bg-gray-100 transition-all border border-gray-100">
-                        View Analytics
-                    </button>
+                    {users.length === 0 && (
+                        <div className="py-20 text-center text-gray-400 italic">No live interactions detected yet.</div>
+                    )}
+                    <div className="flex justify-center mt-12 pb-4">
+                        <button className="px-12 py-4 bg-[#083D77] text-white text-xs font-black uppercase tracking-widest rounded-2xl hover:bg-blue-800 transition-all shadow-xl shadow-blue-900/20 active:scale-95">
+                            Sync All Activities
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

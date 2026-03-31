@@ -24,6 +24,8 @@ export default function MobileMenu({ isOpen, onClose, triggerRef, isLoggedIn, on
     initial: 'U'
   });
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
+  const [showHyderabadFull, setShowHyderabadFull] = useState(false);
+  const [showWarangalFull, setShowWarangalFull] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
 
@@ -260,15 +262,73 @@ export default function MobileMenu({ isOpen, onClose, triggerRef, isLoggedIn, on
               )}
             </div>
 
-            <Link
-              href="/about/branches"
-              onClick={onClose}
-              className={`block px-[var(--space-md)] py-3 rounded-2xl transition-all duration-200 mb-2 min-h-[44px] flex items-center font-bold text-[clamp(0.875rem,2.5vw,1rem)] ${pathname === '/about/branches' ? 'bg-white shadow-lg text-orange-500' : 'text-[#083D77] hover:bg-white hover:shadow-sm'}`}
-              role="menuitem"
-            >
-              <Building2 className="w-5 h-5 mr-3" />
-              Branches
-            </Link>
+            {/* Branches Dropdown */}
+            <div className="mb-2">
+              <button
+                onClick={() => {
+                  setActiveSubmenu(activeSubmenu === 'branches' ? null : 'branches');
+                  // Reset expansions when opening/closing main submenu
+                  setShowHyderabadFull(false);
+                  setShowWarangalFull(false);
+                }}
+                className={`w-full px-[var(--space-md)] py-3 text-left rounded-2xl transition-all duration-200 flex items-center justify-between min-h-[44px] focus:outline-none font-bold text-[clamp(0.875rem,2.5vw,1rem)] ${activeSubmenu === 'branches' ? 'bg-white/70 text-orange-500 shadow-sm' : 'text-[#083D77] hover:bg-white hover:shadow-sm'}`}
+                aria-expanded={activeSubmenu === 'branches'}
+                aria-haspopup="true"
+              >
+                <div className="flex items-center">
+                  <Building2 className="w-5 h-5 mr-3" />
+                  <span>Branches</span>
+                </div>
+                <svg
+                  className={`w-4 h-4 transition-transform duration-300 ${activeSubmenu === 'branches' ? 'rotate-90' : ''}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+              {activeSubmenu === 'branches' && (
+                <div className="ml-4 mt-2 space-y-4 border-l-2 border-[#083D77]/10 pl-2 pr-2">
+                  {/* Hyderabad Branch */}
+                  <div className="p-4 rounded-2xl bg-white/40 border border-white/50">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-[#083D77] font-bold text-sm">Hyderabad Address</span>
+                      <button 
+                        onClick={() => setShowHyderabadFull(!showHyderabadFull)}
+                        className="text-[10px] bg-[#083D77] text-white px-2.5 py-1 rounded-full font-bold uppercase transition-all active:scale-95"
+                      >
+                        {showHyderabadFull ? 'Less' : 'More'}
+                      </button>
+                    </div>
+                    {showHyderabadFull && (
+                      <p className="text-gray-600 text-xs leading-relaxed font-semibold animate-in fade-in slide-in-from-top-2">
+                        3rd floor, 25/529, Rd Number 1, opp. GHMC Park, above HDFC BANK, Kukatpally Housing Board Colony, KPHB Phase 2, Kukatpally, Hyderabad, Telangana 500072
+                      </p>
+                    )}
+                  </div>
+
+                  {/* Warangal Branch */}
+                  <div className="p-4 rounded-2xl bg-white/40 border border-white/50">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-orange-600 font-bold text-sm">Warangal Address</span>
+                      <button 
+                        onClick={() => setShowWarangalFull(!showWarangalFull)}
+                        className="text-[10px] bg-orange-500 text-white px-2.5 py-1 rounded-full font-bold uppercase transition-all active:scale-95"
+                      >
+                        {showWarangalFull ? 'Less' : 'More'}
+                      </button>
+                    </div>
+                    {showWarangalFull && (
+                      <div className="text-gray-600 text-xs leading-relaxed font-semibold animate-in fade-in slide-in-from-top-2">
+                        <p className="font-extrabold text-[#083D77] mb-0.5">IQ Technologies Building</p>
+                        <p>Pochamma Maidan, Vasavi Colony, Kothawada, Jakotias Grand Central, Warangal, Telangana 506002</p>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
+            </div>
 
             <Link
               href="/courses"

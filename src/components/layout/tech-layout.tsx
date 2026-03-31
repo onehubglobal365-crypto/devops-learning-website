@@ -12,7 +12,7 @@ import { Rocket, Terminal, GitBranch, Settings, Box, Share2, RefreshCw, Activity
 interface TechLayoutProps {
   children: React.ReactNode;
   onThisPage?: { id: string; title: string }[];
-  technology: 'java' | 'python' | 'sql' | 'web-dev' | 'data-science' | 'code-terminal' | 'devops' | 'linux' | 'azure-data-engineer' | 'artificial-intelligence' | 'medical-coding' | 'powerbi' | 'excel';
+  technology: 'java' | 'python' | 'sql' | 'web-dev' | 'data-science' | 'code-terminal' | 'devops' | 'linux' | 'azure-data-engineer' | 'artificial-intelligence' | 'medical-coding' | 'powerbi' | 'excel' | 'html' | 'css' | 'javascript';
   activeSection?: string;
   setActiveSection?: (section: string) => void;
   activeSubsection?: string | null;
@@ -208,27 +208,85 @@ const getTechNavigationItems = (tech: string): SidebarItem[] => {
     ],
 
     'web-dev': [
-      {
-        id: 'frontend',
-        title: 'Frontend Development',
-        href: '/web-dev',
-        icon: '',
-        children: [
-          { id: 'html', title: 'HTML', href: '/web-dev' },
-          { id: 'css', title: 'CSS', href: '/web-dev' },
-          { id: 'javascript', title: 'JavaScript', href: '/web-dev' }
-        ]
-      },
-      {
-        id: 'backend',
-        title: 'Backend Development',
-        href: '/web-dev',
-        icon: '',
-        children: [
-          { id: 'nodejs', title: 'Node.js', href: '/web-dev' },
-          { id: 'express', title: 'Express.js', href: '/web-dev' }
-        ]
-      }
+      {id: 'm1', title: 'm1', href:'/web-dev#m1'},
+      {id: 'm2', title: 'm2', href:'/web-dev#m2'},
+      {id: 'm3', title: 'm3', href:'/web-dev#m3'},
+      {id: 'm4', title: 'm4', href:'/web-dev#m4'},
+      {id: 'm5', title: 'm5', href:'/web-dev#m5'},
+      {id: 'm6', title: 'm6', href:'/web-dev#m6'},
+      {id: 'm7', title: 'm7', href:'/web-dev#m7'},
+      {id: 'm8', title: 'm8', href:'/web-dev#m8'},
+      {id: 'm9', title: 'm9', href:'/web-dev#m9'},
+      {id: 'm10', title: 'm10', href:'/web-dev#m10'},
+      {id: 'm11', title: 'm11', href:'/web-dev#m11'},
+      {id: 'm12', title: 'm12', href:'/web-dev#m12'},
+    ],
+    html: [
+      { id: 'm1', title: 'intoduction to HTML'         , href:'/tutorials/html#m1'  },
+    { id: 'm2', title: 'HTML - Heading Tags'           , href:'/tutorials/html#m2'  },
+    { id: 'm3', title: 'HTML - Multimedia Tags'        , href:'/tutorials/html#m3'  },
+    { id: 'm4', title: 'HTML - List Tags'              , href:'/tutorials/html#m4'  },
+    { id: 'm5', title: 'HTML - Text Tags'              , href:'/tutorials/html#m5'  },
+    { id: 'm6', title: 'HTML - Table Tags'             , href:'/tutorials/html#m6'  },
+    { id: 'm7', title: 'HTML - Paragraph Tags'         , href:'/tutorials/html#m7'  },
+    { id: 'm8', title: 'Introduction to front-end'     , href:'/tutorials/html#m8'  },
+    { id: 'm9', title: 'HTML - Semantic tags'          , href:'/tutorials/html#m9'  },
+    { id: 'm10', title: 'HTML - div,section,nav,footer', href:'/tutorials/html#m10'  },
+    ],
+    css: [
+    { id: 'm11', title: 'CSS - Introduction'  ,  href:'/tutorial/css#m11'     },
+    { id: 'm12', title: 'CSS - Flexbox'  ,  href:'/tutorial/css#m12'     },
+    { id: 'm13', title: 'CSS - Flex Container Properties'  ,  href:'/tutorial/css#m13'     },
+    { id: 'm14', title: 'CSS - Flex Item Properties'  ,  href:'/tutorial/css#m14'     },
+    { id: 'm15', title: 'CSS - Classic Flexbox Patterns'  ,  href:'/tutorial/css#m15'     },
+    { id: 'm16', title: 'CSS - GRID'  ,  href:'/tutorial/css#m16'     },
+    { id: 'm17', title: 'CSS - Grid Structure'  ,  href:'/tutorial/css#m17'     },
+    { id: 'm18', title: 'CSS - Placing Items on the Grid'  ,  href:'/tutorial/css#m18'     },
+    { id: 'm19', title: 'CSS - Grid Alignment'  ,  href:'/tutorial/css#m19'     },
+    { id: 'm20', title: 'CSS - Grid Patterns'  ,  href:'/tutorial/css#m20'     },
+    { id: 'm21', title: 'CSS - Flexbox vs Grid'  ,  href:'/tutorial/css#m21'     },
+    { id: 'm22', title: 'CSS - Quick Reference'  ,  href:'/tutorial/css#m22'     },
+    { id: 'm23', title: 'CSS - Colors'  ,  href:'/tutorial/css#m23'     },
+    { id: 'm24', title: 'CSS - Background Colors'  ,  href:'/tutorial/css#m24'     },
+    { id: 'm25', title: 'CSS - Opacity'  ,  href:'/tutorial/css#m25'     },
+    { id: 'm26', title: 'CSS - Transparency'  ,  href:'/tutorial/css#m26'     },
+    { id: 'm27', title: 'CSS - Summary'  ,  href:'/tutorial/css#m27'     },
+    { id: 'm28', title: 'CSS - Box Model'  ,  href:'/tutorial/css#m28'     },
+    { id: 'm29', title: 'CSS - Padding'  ,  href:'/tutorial/css#m29'     },
+    { id: 'm30', title: 'CSS - Margins'  ,  href:'/tutorial/css#m30'     },
+    { id: 'm31', title: 'CSS - Width'  ,  href:'/tutorial/css#m31'     },
+    { id: 'm32', title: 'CSS - Height'  ,  href:'/tutorial/css#m32'     },
+    { id: 'm33', title: 'CSS - Handling Overflow'  ,  href:'/tutorial/css#m33'     },
+    { id: 'm34', title: 'CSS - box-sizing'  ,  href:'/tutorial/css#m34'     },
+    { id: 'm35', title: 'CSS - Quick Reference'  ,  href:'/tutorial/css#m35'     },
+    { id: 'm36', title: 'CSS - Background'  ,  href:'/tutorial/css#m36'     },
+    { id: 'm37', title: 'CSS - Background-Repeat'  ,  href:'/tutorial/css#m37'     },
+    { id: 'm38', title: 'CSS - background-position'  ,  href:'/tutorial/css#m38'     },
+    { id: 'm39', title: 'CSS - background-size'  ,  href:'/tutorial/css#m39'     },
+    { id: 'm40', title: 'CSS - background-origin'  ,  href:'/tutorial/css#m40'     },
+    { id: 'm41', title: 'CSS - background-clip'  ,  href:'/tutorial/css#m41'     },
+    { id: 'm42', title: 'CSS - background-attachment'  ,  href:'/tutorial/css#m42'     },
+    { id: 'm43', title: 'CSS - background-blend-mode'  ,  href:'/tutorial/css#m43'     },
+    { id: 'm44', title: 'CSS - background Shorthand'  ,  href:'/tutorial/css#m44'     },
+    { id: 'm45', title: 'CSS - Multiple Backgrounds'  ,  href:'/tutorial/css#m45'     },
+    { id: 'm46', title: 'CSS - Transitions'  ,  href:'/tutorial/css#m46'     },
+    { id: 'm47', title: 'CSS - Animations'  ,  href:'/tutorial/css#m47'     },
+    { id: 'm48', title: 'CSS - Quick Reference'  ,  href:'/tutorial/css#m48'     },
+    
+    ],
+    javascript: [
+      { id: 'm49', title: 'Introduction', href: '/tutorials/javascript#m49' },
+      { id: 'm50', title: 'Where To', href: '/tutorials/javascript#m50' },
+      { id: 'm51', title: 'Output', href: '/tutorials/javascript#m51' },
+      { id: 'm52', title: 'Statements', href: '/tutorials/javascript#m52' },
+      { id: 'm53', title: 'Syntax', href: '/tutorials/javascript#m53' },
+      { id: 'm54', title: 'Comments', href: '/tutorials/javascript#m54' },
+      { id: 'm55', title: 'Variables', href: '/tutorials/javascript#m55' },
+      { id: 'm56', title: 'Let', href: '/tutorials/javascript#m56' },
+      { id: 'm57', title: 'Const', href: '/tutorials/javascript#m57' },
+      { id: 'm58', title: 'Operators', href: '/tutorials/javascript#m58' },
+      { id: 'm59', title: 'Arithmetic', href: '/tutorials/javascript#m59' },
+      { id: 'm60', title: 'Data Types', href: '/tutorials/javascript#m60' },
     ],
     'data-science': [
       {
@@ -796,7 +854,9 @@ export default function TechLayout({ children, onThisPage = [], technology, acti
                           technology === 'devops' ? 'DevOps' :
                             technology === 'azure-data-engineer' ? 'Azure Data Engineer' :
                               technology === 'medical-coding' ? 'Medical Coding' :
-                                technology === 'powerbi' ? 'Power BI' : 'OneHubGlobal'}
+                                technology === 'powerbi' ? 'Power BI' :
+                                  technology === 'css' ? 'CSS' :
+                                    technology === 'javascript' ? 'JavaScript' : 'OneHubGlobal'}
             </h1>
             <div className="w-10" /> {/* Spacer for centering */}
           </div>

@@ -138,9 +138,9 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
     const menuItems = [
         { name: "Overview", icon: <LayoutDashboard />, href: "/admin" },
         { name: "Students", icon: <Users />, href: "/admin/students" },
+        { name: "Offline Students", icon: <Users />, href: "/admin/offline-students" },
         { name: "Alumni Success", icon: <UserCheck />, href: "/admin/alumni" },
         { name: "Course Tracker", icon: <GraduationCap />, href: "/admin/courses" },
-        { name: "Job Board", icon: <Briefcase />, href: "/admin/jobs" },
     ];
 
     const externalLinks = [
@@ -164,34 +164,53 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
                     } bg-[#083D77] text-white transition-all duration-300 flex flex-col z-50 fixed lg:relative h-full ${isMobile && !isSidebarOpen ? "-translate-x-full" : "translate-x-0"
                     }`}
             >
-                <div className="p-6 flex items-center gap-3">
-                    <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center shrink-0">
+                <Link href="/admin" className="p-6 flex items-center gap-3 hover:opacity-80 transition-opacity">
+                    <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center shrink-0 shadow-lg">
                         <Image src="/logo_new.jpg" alt="Logo" width={32} height={32} />
                     </div>
                     {isSidebarOpen && <span className="font-bold text-xl tracking-tight">OHG Admin</span>}
-                </div>
+                </Link>
 
-                <nav className="flex-1 px-4 py-6 space-y-2 overflow-y-auto">
-                    <div className="text-[10px] uppercase tracking-wider text-blue-300 font-bold mb-4 px-2">
+                <nav className="flex-1 px-4 py-6 space-y-2 overflow-y-auto hide-scrollbar">
+                    {/* <div className="text-[10px] uppercase text-xl text-blue-300 mb-4 px-2 opacity-60">
                         Main Management
-                    </div>
-                    {menuItems.map((item) => (
-                        <Link
-                            key={item.href}
-                            href={item.href}
-                            className={`flex items-center gap-4 px-3 py-3 rounded-xl transition-all ${pathname === item.href
-                                ? "bg-white/20 text-white shadow-lg shadow-black/10"
-                                : "text-blue-100 hover:bg-white/10 hover:text-white"
-                                }`}
-                        >
-                            <span className="w-6 h-6">{item.icon}</span>
-                            {isSidebarOpen && <span className="font-medium">{item.name}</span>}
-                        </Link>
-                    ))}
+                    </div> */}
+                    {menuItems.map((item) => {
+                        const isActive = item.href === "/admin" 
+                            ? (pathname === "/admin" || pathname === "/admin/") 
+                            : (pathname === item.href || pathname.startsWith(item.href + "/"));
+                        
+                        return (
+                            <Link
+                                key={item.href}
+                                href={item.href}
+                                className={`group relative flex items-center gap-4 px-3 py-3 rounded-2xl transition-all duration-500 ${isActive
+                                    ? "bg-white/10 text-white shadow-xl shadow-black/10 translate-x-1.5"
+                                    : "text-blue-100 hover:bg-white/10 hover:text-white hover:translate-x-1.5"
+                                    }`}
+                            >
+                                {/* Premium Glass Active Marker */}
+                                {isActive && (
+                                    <div className="absolute left-0 w-1.5 h-8 bg-white rounded-full -translate-x-[6px] shadow-[0_0_15px_rgba(255,255,255,0.8)]" />
+                                )}
+                                
+                                <div className={`w-10 h-10 flex items-center justify-center rounded-xl transition-all duration-500 ${isActive 
+                                    ? "bg-white text-[#083D77] scale-105 shadow-xl shadow-black/20 rotate-0" 
+                                    : "bg-white/5 text-blue-200 group-hover:scale-105 group-hover:text-white group-hover:bg-white/20 group-hover:rotate-6"} [&>svg]:w-5 [&>svg]:h-5`}>
+                                    {item.icon}
+                                </div>
+                                {isSidebarOpen && (
+                                    <span className={`text-lg transition-all duration-500 ${isActive ? "opacity-100" : "opacity-70 group-hover:opacity-100"}`}>
+                                        {item.name}
+                                    </span>
+                                )}
+                            </Link>
+                        );
+                    })}
 
-                    <div className="pt-8 text-[10px] uppercase tracking-wider text-blue-300 font-bold mb-4 px-2">
+                    {/* <div className="pt-8 text-[10px] uppercase text-blue-300 mb-4 px-2">
                         External Dashboards
-                    </div>
+                    </div> */}
                     {externalLinks.map((item) => (
                         <Link
                             key={item.href}
@@ -200,61 +219,35 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
                             className="flex items-center gap-4 px-3 py-3 rounded-xl text-blue-100 hover:bg-white/10 hover:text-white transition-all"
                         >
                             <span className="w-6 h-6">{item.icon}</span>
-                            {isSidebarOpen && <span className="font-medium">{item.name}</span>}
-                            {isSidebarOpen && <ChevronRight className="w-4 h-4 ml-auto opacity-50" />}
+                            {isSidebarOpen && <span className="text-xl">{item.name}</span>}
                         </Link>
                     ))}
                 </nav>
 
-                <div className="p-4 border-t border-white/10">
+                <div className="p-4 mt-auto border-t border-white/10 flex justify-center">
                     <button
                         onClick={handleLogout}
-                        className="flex items-center gap-4 px-3 py-3 w-full rounded-xl text-red-300 hover:bg-red-500/10 hover:text-red-100 transition-all"
+                        className="flex items-center gap-4 px-4 py-3 w-[90%] mx-auto rounded-2xl bg-red-500/90 text-white shadow-lg shadow-red-900/20 hover:bg-red-600 hover:scale-[1.02] active:scale-[0.98] transition-all"
                     >
-                        <LogOut className="w-6 h-6" />
-                        {isSidebarOpen && <span className="font-medium">Logout</span>}
+                        <div className="w-10 h-10 flex items-center justify-center rounded-xl bg-white/20 shrink-0">
+                            <LogOut className="w-5 h-5 text-white" />
+                        </div>
+                        {isSidebarOpen && <span className="font-black text-sm uppercase tracking-wide">Sign Out</span>}
                     </button>
                 </div>
             </aside>
 
             {/* Main Content */}
-            <div className="flex-1 flex flex-col overflow-hidden">
-                {/* Top Header */}
-                <header className="h-20 bg-white border-b border-gray-100 flex items-center justify-between px-8 z-40">
-                    <div className="flex items-center gap-4">
-                        <button
-                            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-                            className="p-2 hover:bg-gray-100 rounded-lg"
-                        >
-                            {isSidebarOpen && isMobile ? <X className="w-6 h-6 text-gray-600" /> : <Menu className="w-6 h-6 text-gray-600" />}
-                        </button>
-                        <div className="hidden lg:flex items-center bg-gray-100 rounded-xl px-4 py-2 w-full max-w-md">
-                            <Search className="w-4 h-4 text-gray-400 mr-2" />
-                            <input
-                                type="text"
-                                placeholder="Search students, courses..."
-                                className="bg-transparent border-none focus:outline-none text-sm w-full"
-                            />
-                        </div>
-                    </div>
-
-                    <div className="flex items-center gap-2 md:gap-6">
-                        <button className="relative p-2 hover:bg-gray-100 rounded-lg transition-all">
-                            <Bell className="w-6 h-6 text-gray-600" />
-                            <span className="absolute top-1.5 right-2 w-2 h-2 bg-orange-500 rounded-full border-2 border-white"></span>
-                        </button>
-                        <div className="w-px h-8 bg-gray-100"></div>
-                        <div className="flex items-center gap-3">
-                            <div className="text-right">
-                                <div className="text-sm font-bold text-gray-900">Admin Panel</div>
-                                <div className="text-xs text-green-500 font-bold">Main Website</div>
-                            </div>
-                            <div className="w-10 h-10 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center font-bold shadow-inner">
-                                AD
-                            </div>
-                        </div>
-                    </div>
-                </header>
+            <div className="flex-1 flex flex-col overflow-hidden relative">
+                {/* Mobile Sidebar Toggle (Visible only on mobile when sidebar is closed) */}
+                {isMobile && !isSidebarOpen && (
+                    <button
+                        onClick={() => setIsSidebarOpen(true)}
+                        className="fixed top-4 left-4 z-50 p-3 bg-[#083D77] text-white rounded-xl shadow-lg shadow-blue-900/20"
+                    >
+                        <Menu className="w-6 h-6" />
+                    </button>
+                )}
 
                 {/* Dynamic Page Content */}
                 <main className="flex-1 overflow-y-auto p-4 md:p-8 relative">

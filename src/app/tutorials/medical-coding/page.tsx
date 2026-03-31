@@ -17,7 +17,7 @@ export default function MedicalCodingLandingPage() {
       title: 'Anatomy and Medical Terminology',
       description: 'Learn the fundamentals of medical coding, anatomy, and medical terminology essential for medical coding professionals',
       icon: <Stethoscope className="w-12 h-12 text-sky-400" />,
-      href: '/roadmap?courseId=medical-coding-anatomy',
+      href: '/tutorials/medical-coding/anatomy-medical-terminology',
       topics: ['Medical Coding Basics', 'Anatomy Fundamentals', 'Medical Terminology', 'ICD-10-CM', 'CPT', 'HCPCS']
     }
   ];

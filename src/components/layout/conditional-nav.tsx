@@ -20,30 +20,40 @@ export function ConditionalNav() {
   const normalizedPath = pathname.endsWith('/') && pathname.length > 1 ? pathname.slice(0, -1) : pathname;
 
   // Check if the page uses a sidebar OR is a specialized content page that handles its own nav
-  const isContentPage =
-    normalizedPath === '/java' ||
-    normalizedPath === '/web-dev' ||
-    normalizedPath === '/sql' ||
-    normalizedPath === '/python' ||
-    normalizedPath === '/devops' ||
-    normalizedPath === '/linux' ||
-    normalizedPath === '/data-science' ||
-    normalizedPath === '/code-terminal' ||
-    normalizedPath === '/powerbi' ||
-    normalizedPath === '/excel' ||
-    normalizedPath === '/medical-coding' ||
+  // Define which pages are "Hubs" or "Landing Pages" (they SHOULD show the navbar)
+  const isHubPage =
+    normalizedPath === '/tutorials' ||
+    normalizedPath === '/tutorials/programming' ||
+    normalizedPath === '/tutorials/data-engineering' ||
     normalizedPath === '/tutorials/medical-coding' ||
-    normalizedPath === '/tutorials/azure-data-engineer' ||
-    normalizedPath === '/tutorials/artificial-intelligence' ||
-    pathname.startsWith('/docs/');
+    normalizedPath === '/web-dev';
 
-  // Hide ConditionalNav on home (it has its own HeroWithNav), login/signup, and content pages
-  if (pathname === '/' || pathname.startsWith('/login') || pathname.startsWith('/signup') || isContentPage) {
+  // Define which pages are "Content" or "Modular" pages (they SHOULD HIDE the navbar)
+  const isContentPage =
+    !isHubPage && (
+      normalizedPath === '/java' ||
+      normalizedPath === '/sql' ||
+      normalizedPath === '/python' ||
+      normalizedPath === '/devops' ||
+      normalizedPath === '/linux' ||
+      normalizedPath === '/data-science' ||
+      normalizedPath === '/code-terminal' ||
+      normalizedPath === '/powerbi' ||
+      normalizedPath === '/excel' ||
+      normalizedPath.startsWith('/tutorials/') ||
+      normalizedPath.startsWith('/docs/')
+    );
+
+  // Hide ConditionalNav ONLY on specialized content pages that have their own sidebar/layout
+  if (isContentPage || normalizedPath.startsWith('/admin')) {
     return null;
   }
 
-  // Check if page should have gradient blue navbar (currently disabled for consistency)
-  const hasGradientBlueNav = false;
+  // Handle page-specific navbar styles
+  const isHome = pathname === '/';
+  const isDashboard = pathname === '/dashboard';
+  const showAnimatedLine = isHome;
+  const hasGradientBlueNav = isDashboard;
 
   // Hide theme toggle (constant value as per project style)
   const hideThemeToggle = true;
@@ -51,7 +61,7 @@ export function ConditionalNav() {
   return (
     <SharedNav
       isScrolled={isScrolled}
-      showAnimatedLine={false}
+      showAnimatedLine={showAnimatedLine}
       isFixed={true}
       hasGradientBlueNav={hasGradientBlueNav}
       hideThemeToggle={hideThemeToggle}

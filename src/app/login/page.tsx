@@ -174,42 +174,8 @@ function ActiveLoginForm() {
     }
   };
 
-  return (
+    return (
     <div className="min-h-screen flex items-center justify-center bg-[#f3f4f6] p-4 transition-colors duration-300 relative overflow-hidden">
-      {/* Top-Left Pill Logo */}
-      <Link
-        href="/"
-        className="fixed top-4 left-6 z-[100001] flex items-center gap-3 bg-[#f3f4f6] px-2.5 py-2.5 rounded-full shadow-[6px_6px_12px_#d1d9e6,-6px_-6px_12px_#ffffff] border border-white/20 hover:scale-105 transition-all group pointer-events-auto"
-      >
-        <div className="flex items-center justify-center w-12 h-12 rounded-full overflow-hidden relative bg-white shadow-inner">
-          <Image
-            src="/logo_new.jpg"
-            alt="OHG365 Logo"
-            width={48}
-            height={48}
-            className="object-contain"
-            priority
-          />
-        </div>
-        <div className="flex flex-col pr-1 pt-0.5">
-          <div
-            className="flex items-center text-[20px] font-black tracking-tight leading-none"
-            style={{ fontFamily: 'var(--font-orbitron), sans-serif', letterSpacing: '0.05em' }}
-          >
-            <span className="text-[#083D77]">ONE</span>
-            <span className="text-orange-500">HUB</span>
-            <span className="text-cyan-500">GLOBAL</span>
-          </div>
-          <div className="flex items-center justify-center w-full mt-1">
-            <span
-              className="text-[7px] font-bold tracking-[0.1em] uppercase leading-tight text-center px-1 text-[#083D77]"
-              style={{ fontFamily: 'var(--font-orbitron), sans-serif' }}
-            >
-              SKILLS TO SUCCESS
-            </span>
-          </div>
-        </div>
-      </Link>
 
       <div
         className="w-full max-w-4xl grid lg:grid-cols-2 rounded-[50px] overflow-hidden min-h-[500px] relative z-10 transition-all duration-500 border-2 border-white/50"

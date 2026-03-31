@@ -112,9 +112,6 @@ export default function DashboardPage() {
 
     return (
         <div className="min-h-screen bg-gray-50 flex flex-col font-sans text-gray-900">
-            <Suspense fallback={null}>
-                <SharedNav hasGradientBlueNav hideThemeToggle={false} />
-            </Suspense>
 
             <div className="container mx-auto px-[var(--space-sm)] pt-[calc(var(--space-xl)*2)] pb-[var(--space-xl)] flex-grow flex flex-col items-center">
 

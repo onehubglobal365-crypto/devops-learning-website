@@ -264,7 +264,6 @@ export default function StudentsPage() {
                                 <th className="px-6 py-4">Student Profile</th>
                                 <th className="px-6 py-4">Contact Information</th>
                                 <th className="px-6 py-4">Course Assignment</th>
-                                <th className="px-6 py-4">Security</th>
                                 <th className="px-6 py-4 text-right">Actions</th>
                             </tr>
                         </thead>
@@ -275,7 +274,6 @@ export default function StudentsPage() {
                                         <td className="px-6 py-4"><div className="h-10 bg-gray-100 rounded w-40"></div></td>
                                         <td className="px-6 py-4"><div className="h-10 bg-gray-100 rounded w-40"></div></td>
                                         <td className="px-6 py-4"><div className="h-10 bg-gray-100 rounded w-32"></div></td>
-                                        <td className="px-6 py-4"><div className="h-6 bg-gray-100 rounded w-20"></div></td>
                                         <td className="px-6 py-4"><div className="h-8 bg-gray-100 rounded w-8 ml-auto"></div></td>
                                     </tr>
                                 ))
@@ -345,12 +343,6 @@ export default function StudentsPage() {
                                                 <div className="absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none text-blue-400">
                                                     <RefreshCw className="w-3 h-3 animate-pulse opacity-0 group-hover/sel:opacity-100" />
                                                 </div>
-                                            </div>
-                                        </td>
-                                        <td className="px-6 py-4">
-                                            <div className="flex items-center gap-2 text-[10px] font-mono bg-gray-50 px-2 py-1.5 rounded-lg border border-gray-100 max-w-[120px]">
-                                                <Lock className="w-3 h-3 text-gray-400 shrink-0" />
-                                                <span className="truncate opacity-50">{user.password?.slice(0, 10)}...</span>
                                             </div>
                                         </td>
                                         <td className="px-6 py-4 text-right">

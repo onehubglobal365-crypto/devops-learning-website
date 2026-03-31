@@ -45,6 +45,8 @@ export default function SharedNav({ isScrolled = false, showAnimatedLine = true,
   const [branchDropdownPosition, setBranchDropdownPosition] = useState<{ top: number; left: number } | null>(null);
   const branchButtonRef = useRef<HTMLDivElement>(null);
   const branchTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const [showHyderabadFull, setShowHyderabadFull] = useState(false);
+  const [showWarangalFull, setShowWarangalFull] = useState(false);
 
   // Auth Modal State
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
@@ -131,6 +133,9 @@ export default function SharedNav({ isScrolled = false, showAnimatedLine = true,
   const openBranchDropdown = useCallback(() => {
     if (branchTimeoutRef.current) clearTimeout(branchTimeoutRef.current);
     setShowBranchDropdown(true);
+    // Reset full address visibility when opening dropdown
+    setShowHyderabadFull(false);
+    setShowWarangalFull(false);
     if (branchButtonRef.current) {
       const rect = branchButtonRef.current.getBoundingClientRect();
       setBranchDropdownPosition({
@@ -243,28 +248,13 @@ export default function SharedNav({ isScrolled = false, showAnimatedLine = true,
   // Normalize pathname (remove trailing slash for comparison)
   const normalizedPath = pathname.endsWith('/') && pathname.length > 1 ? pathname.slice(0, -1) : pathname;
 
-  // This triggers the simplified "Logo-only + Burger Menu" layout
-  const isContentPage =
-    normalizedPath === '/python' ||
-    normalizedPath === '/java' ||
-    normalizedPath === '/sql' ||
-    normalizedPath === '/web-dev' ||
-    normalizedPath === '/devops' ||
-    normalizedPath === '/linux' ||
-    normalizedPath === '/data-science' ||
-    normalizedPath === '/code-terminal' ||
-    normalizedPath === '/powerbi' ||
-    normalizedPath === '/excel' ||
-    normalizedPath === '/medical-coding' ||
-    normalizedPath === '/tutorials/azure-data-engineer' ||
-    pathname.startsWith('/docs/');
-
   return (
     <>
       <div
         className={`fixed top-0 left-0 right-0 z-[100000] transition-all duration-300 pointer-events-none flex flex-col`}
       >
         {/* Top Bar - Only on Desktop Home Page and not scrolled */}
+        {/*
         {(!contentScrolled && isHomePage) && (
           <div className="bg-white border-b border-gray-100 py-2 hidden md:block transition-all duration-300 opacity-100">
             <div className="container mx-auto flex flex-wrap items-center justify-between px-4 lg:px-[var(--space-md)] py-2 gap-4 pointer-events-auto">
@@ -303,6 +293,7 @@ export default function SharedNav({ isScrolled = false, showAnimatedLine = true,
             </div>
           </div>
         )}
+        */}
 
         {/* Main Navbar Area (Logo + Navigation) - Sticky to top */}
         <div className={`flex flex-row items-center justify-between px-[var(--space-sm)] md:px-[var(--space-md)] py-2 w-full relative transition-all duration-300 pointer-events-auto ${(contentScrolled || !isHomePage) ? 'bg-white mt-0 border-b border-gray-100' : 'bg-transparent mt-0'}`}>
@@ -320,33 +311,30 @@ export default function SharedNav({ isScrolled = false, showAnimatedLine = true,
                 priority
               />
             </div>
-            {/* Logo Text - Hidden on Content Pages */}
-            {!isContentPage && (
-              <div className="flex flex-col hidden sm:flex">
-                <div
-                  className="flex items-center text-xl font-black tracking-tight leading-none group-hover:opacity-90 transition-opacity"
-                  style={{ fontFamily: 'var(--font-orbitron), sans-serif', letterSpacing: '0.05em' }}
-                >
-                  <span className="text-[#083D77]">ONE</span>
-                  <span className="text-orange-500">HUB</span>
-                  <span className="text-cyan-500">GLOBAL</span>
-                </div>
-                <div className="flex items-center justify-center w-full mt-1">
-                  <span
-                    className="text-[7px] font-bold tracking-[0.1em] uppercase leading-tight text-center px-1 text-[#083D77]"
-                    style={{ fontFamily: 'var(--font-orbitron), sans-serif' }}
-                  >
-                    SKILLS TO SUCCESS
-                  </span>
-                </div>
+            {/* Logo Text */}
+            <div className="flex flex-col hidden sm:flex">
+              <div
+                className="flex items-center text-xl font-black tracking-tight leading-none group-hover:opacity-90 transition-opacity"
+                style={{ fontFamily: 'var(--font-orbitron), sans-serif', letterSpacing: '0.05em' }}
+              >
+                <span className="text-[#083D77]">ONE</span>
+                <span className="text-orange-500">HUB</span>
+                <span className="text-cyan-500">GLOBAL</span>
               </div>
-            )}
+              <div className="flex items-center justify-center w-full mt-1">
+                <span
+                  className="text-[7px] font-bold tracking-[0.1em] uppercase leading-tight text-center px-1 text-[#083D77]"
+                  style={{ fontFamily: 'var(--font-orbitron), sans-serif' }}
+                >
+                  SKILLS TO SUCCESS
+                </span>
+              </div>
+            </div>
           </Link>
 
           <nav className="flex items-center">
             {/* Desktop Navigation Links */}
-            {(!isContentPage || isMobileMenuOpen) && (
-              <div className="hidden md:flex items-center space-x-2 text-sm font-bold">
+            <div className="hidden md:flex items-center space-x-2 text-sm font-bold">
                 <Link
                   href="/"
                   className={`px-4 py-2 rounded-full font-bold transition-all duration-300 ${isHomePage
@@ -403,10 +391,10 @@ export default function SharedNav({ isScrolled = false, showAnimatedLine = true,
 
                 <Link
                   href="/courses"
-                  className={`px-4 py-2 rounded-full font-bold transition-all duration-300 ${(pathname === '/courses' || pathname?.startsWith('/courses/') || pathname?.startsWith('/roadmap'))
-                    ? 'text-orange-500 bg-orange-50 shadow-sm'
-                    : `${(contentScrolled || !isHomePage) ? 'text-[#083D77] hover:text-orange-500 hover:bg-orange-50' : 'text-white hover:bg-white/20'} active:scale-95`
-                    }`}
+                  className={`px-4 py-2 rounded-full font-bold transition-all duration-300 ${(pathname === '/courses' || pathname?.startsWith('/courses/'))
+                      ? 'text-orange-500 bg-orange-50 shadow-sm'
+                      : `${(contentScrolled || !isHomePage) ? 'text-[#083D77] hover:text-orange-500 hover:bg-orange-50' : 'text-white hover:bg-white/20'} active:scale-95`
+                      }`}
                 >
                   Courses
                 </Link>
@@ -484,20 +472,12 @@ export default function SharedNav({ isScrolled = false, showAnimatedLine = true,
                 )}
                 */}
               </div>
-            )}
-
-            {/* Content Page Header Title - Optional Center Element */}
-            {isContentPage && (
-              <div className="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                {/* Optional title element */}
-              </div>
-            )}
 
             {/* Mobile Menu Button */}
             <button
               ref={mobileMenuButtonRef}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`${isContentPage ? 'flex' : 'md:hidden'} relative z-50 p-2 text-[#083D77] hover:bg-[#083D77]/10 rounded-full transition-colors`}
+              className="md:hidden relative z-50 p-2 text-[#083D77] hover:bg-[#083D77]/10 rounded-full transition-colors"
               aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -605,29 +585,49 @@ export default function SharedNav({ isScrolled = false, showAnimatedLine = true,
             <div className="flex flex-col gap-5">
               {/* Hyderabad Box */}
               <div className="group relative p-5 rounded-3xl bg-gradient-to-br from-blue-50/50 to-white border border-blue-100/50 shadow-sm hover:shadow-md transition-all duration-300">
-                <div className="flex items-center gap-3 mb-2.5">
-                  <div className="w-2.5 h-2.5 bg-[#083D77] rounded-full animate-pulse shadow-[0_0_8px_rgba(8,61,119,0.5)]" />
-                  <h4 className="text-[#083D77] font-black text-sm uppercase tracking-widest">
-                    Hyderabad Address
-                  </h4>
+                <div className="flex items-center justify-between gap-3 mb-2.5">
+                  <div className="flex items-center gap-3">
+                    <div className="w-2.5 h-2.5 bg-[#083D77] rounded-full animate-pulse shadow-[0_0_8px_rgba(8,61,119,0.5)]" />
+                    <h4 className="text-[#083D77] font-black text-sm uppercase tracking-widest">
+                      Hyderabad Address
+                    </h4>
+                  </div>
+                  <button 
+                    onClick={() => setShowHyderabadFull(!showHyderabadFull)}
+                    className="text-[10px] bg-[#083D77] text-white px-3 py-1 rounded-full font-bold hover:bg-orange-500 transition-colors uppercase tracking-wider"
+                  >
+                    {showHyderabadFull ? 'Less' : 'More'}
+                  </button>
                 </div>
-                <p className="text-gray-600 text-[13px] leading-relaxed font-semibold">
-                  3rd floor, 25/529, Rd Number 1, opp. GHMC Park, above HDFC BANK, Kukatpally Housing Board Colony, KPHB Phase 2, Kukatpally, Hyderabad, Telangana 500072
-                </p>
+                {showHyderabadFull && (
+                   <p className="text-gray-600 text-[13px] mt-3 leading-relaxed font-semibold animate-in fade-in slide-in-from-top-2 duration-300">
+                    3rd floor, 25/529, Rd Number 1, opp. GHMC Park, above HDFC BANK, Kukatpally Housing Board Colony, KPHB Phase 2, Kukatpally, Hyderabad, Telangana 500072
+                  </p>
+                )}
               </div>
 
               {/* Warangal Box */}
               <div className="group relative p-5 rounded-3xl bg-gradient-to-br from-orange-50/50 to-white border border-orange-100/50 shadow-sm hover:shadow-md transition-all duration-300">
-                <div className="flex items-center gap-3 mb-2.5">
-                  <div className="w-2.5 h-2.5 bg-orange-500 rounded-full animate-pulse shadow-[0_0_8px_rgba(249,115,22,0.5)]" />
-                  <h4 className="text-orange-600 font-black text-sm uppercase tracking-widest">
-                    Warangal Address
-                  </h4>
+                <div className="flex items-center justify-between gap-3 mb-2.5">
+                  <div className="flex items-center gap-3">
+                    <div className="w-2.5 h-2.5 bg-orange-500 rounded-full animate-pulse shadow-[0_0_8px_rgba(249,115,22,0.5)]" />
+                    <h4 className="text-orange-600 font-black text-sm uppercase tracking-widest">
+                      Warangal Address
+                    </h4>
+                  </div>
+                  <button 
+                    onClick={() => setShowWarangalFull(!showWarangalFull)}
+                    className="text-[10px] bg-orange-500 text-white px-3 py-1 rounded-full font-bold hover:bg-[#083D77] transition-colors uppercase tracking-wider"
+                  >
+                    {showWarangalFull ? 'Less' : 'More'}
+                  </button>
                 </div>
-                <div className="text-gray-600 text-[13px] leading-relaxed font-semibold">
-                  <p className="font-extrabold text-[#083D77] mb-1">IQ Technologies Building</p>
-                  <p>Pochamma Maidan, Vasavi Colony, Kothawada, Jakotias Grand Central, Warangal, Telangana 506002</p>
-                </div>
+                {showWarangalFull && (
+                  <div className="text-gray-600 text-[13px] mt-3 leading-relaxed font-semibold animate-in fade-in slide-in-from-top-2 duration-300">
+                    <p className="font-extrabold text-[#083D77] mb-1">IQ Technologies Building</p>
+                    <p>Pochamma Maidan, Vasavi Colony, Kothawada, Jakotias Grand Central, Warangal, Telangana 506002</p>
+                  </div>
+                )}
               </div>
             </div>
           </div>,

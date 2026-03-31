@@ -98,11 +98,6 @@
           "href": "/menu/resources/notes"
         },
         {
-          "label": "Roadmaps",
-          "slug": "roadmaps",
-          "href": "/menu/resources/roadmaps"
-        },
-        {
           "label": "PDFs / Downloads",
           "slug": "downloads",
           "href": "/menu/resources/downloads"

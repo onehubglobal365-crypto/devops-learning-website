@@ -30,4 +30,20 @@ export const TUTORIALS_NAV: Record<string, NavItem[]> = {
         { id: 'formatting', title: 'Cell Formatting', href: '/excel#formatting' },
         { id: 'charts', title: 'Charts & Visualization', href: '/excel#charts' },
     ],
+    html: [
+        { id: 'm1', title: 'Introduction', href: '/tutorials/html#m1' },
+        { id: 'm2', title: 'Elements', href: '/tutorials/html#m2' },
+        { id: 'm3', title: 'Attributes', href: '/tutorials/html#m3' },
+        { id: 'm4', title: 'Headings', href: '/tutorials/html#m4' },
+    ],
+    css: [
+        { id: 'm1', title: 'Introduction', href: '/tutorials/css#m1' },
+        { id: 'm2', title: 'Syntax', href: '/tutorials/css#m2' },
+        { id: 'm3', title: 'Selectors', href: '/tutorials/css#m3' },
+    ],
+    javascript: [
+        { id: 'm49', title: 'Introduction', href: '/tutorials/javascript#m49' },
+        { id: 'm50', title: 'Where To', href: '/tutorials/javascript#m50' },
+        { id: 'm51', title: 'Output', href: '/tutorials/javascript#m51' },
+    ],
 };

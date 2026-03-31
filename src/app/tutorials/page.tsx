@@ -101,7 +101,7 @@ export default function TutorialsPage() {
               // icon={<Rocket className="w-12 h-12 text-rose-500" />}
               icon={ <div className="p-1 w-full h-full relative"><Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuredevops/azuredevops-original.svg" alt="DevOps" fill className="object-contain" unoptimized /></div>}
               
-              link="/roadmap?courseId=devops"
+              link="/devops"
               gradient="from-rose-500 to-red-600"
               iconBg="bg-rose-50"
             />
@@ -111,7 +111,7 @@ export default function TutorialsPage() {
               // icon={<Coffee className="w-12 h-12 text-orange-500" />}
                   icon={<div className="p-1 w-full h-full relative"><Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" fill className="object-contain" unoptimized /></div>}
               
-              link="/roadmap?courseId=java-fullstack"
+              link="/java"
               gradient="from-orange-500 to-red-500"
               iconBg="bg-orange-50"
             />
@@ -121,7 +121,7 @@ export default function TutorialsPage() {
               // icon={<FileCode className="w-12 h-12 text-yellow-500" />}
               icon={<div className="p-1 w-full h-full relative"><Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" fill className="object-contain" unoptimized /></div>}
               
-              link="/roadmap?courseId=python-fullstack"
+              link="/python"
               gradient="from-yellow-500 to-amber-500"
               iconBg="bg-yellow-50"
             />
@@ -131,7 +131,7 @@ export default function TutorialsPage() {
               // icon={<Database className="w-12 h-12 text-purple-500" />}
               icon={ <div className="p-1 w-full h-full relative"><Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" fill className="object-contain" unoptimized /></div>}
               
-              link="/roadmap?courseId=sql"
+              link="/sql"
               gradient="from-purple-500 to-indigo-600"
               iconBg="bg-purple-50"
             />
@@ -139,7 +139,7 @@ export default function TutorialsPage() {
               title="Power BI"
               description="Master Data Visualization and Business Intelligence with Power BI"
               icon={ <div className="p-1 w-full h-full relative"><Image src="/images/powerbicard.png" alt="Power BI" fill className="object-contain" unoptimized /></div> }
-              link="/roadmap?courseId=powerbi"
+              link="/powerbi"
               gradient="from-yellow-400 to-yellow-600"
               iconBg="bg-yellow-50"
             />
@@ -149,7 +149,7 @@ export default function TutorialsPage() {
               // icon={<Globe className="w-12 h-12 text-green-500" />}
                   icon={<div className="p-1 w-full h-full relative"><Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="Web Dev" fill className="object-contain" unoptimized /></div>}
               
-              link="/roadmap?courseId=web-dev"
+              link="/web-dev"
               gradient="from-green-500 to-teal-500"
               iconBg="bg-green-50"
             />
@@ -167,7 +167,7 @@ export default function TutorialsPage() {
               // icon={<BarChart2 className="w-12 h-12 text-blue-500" />}
               icon={ <div className="p-1 w-full h-full relative"><Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Data Science" fill className="object-contain" unoptimized /></div>}
               
-              link="/roadmap?courseId=data-science"
+              link="/data-science"
               gradient="from-blue-500 to-cyan-500"
               iconBg="bg-blue-50"
             />
@@ -188,22 +188,6 @@ export default function TutorialsPage() {
               link="/code-terminal"
               gradient="from-emerald-500 to-teal-600"
               iconBg="bg-emerald-50"
-            /> */}
-            {/* <TechnologyCard
-              title="Linux"
-              description="Linux system administration, commands, and shell scripting"
-              icon={<Server className="w-12 h-12 text-slate-700" />}
-              link="/roadmap?courseId=linux"
-              gradient="from-slate-700 to-gray-900"
-              iconBg="bg-slate-50"
-            />
-            <TechnologyCard
-              title="Terminal"
-              description="Interactive terminal environment for practicing commands and shell scripting"
-              icon={<Command className="w-12 h-12 text-gray-700" />}
-              link="/terminal"
-              gradient="from-gray-700 to-black"
-              iconBg="bg-gray-100"
             /> */}
           </CardGrid>
 
@@ -241,7 +225,7 @@ export default function TutorialsPage() {
               title="Medical Coding Basics"
               description="Introduction to ICD-10, CPT, and HCPCS coding systems"
               icon={<ClipboardList className="w-12 h-12 text-sky-500" />}
-              link="/roadmap?courseId=medical-coding"
+              link="/tutorials/medical-coding"
               gradient="from-sky-400 to-blue-500"
               iconBg="bg-sky-50"
             />
@@ -249,7 +233,7 @@ export default function TutorialsPage() {
               title="Healthcare IT"
               description="Electronic Health Records (EHR) and healthcare information systems"
               icon={<Stethoscope className="w-12 h-12 text-teal-500" />}
-              link="/roadmap?courseId=medical-coding"
+              link="/tutorials/medical-coding"
               gradient="from-teal-400 to-emerald-500"
               iconBg="bg-teal-50"
             />
@@ -257,7 +241,7 @@ export default function TutorialsPage() {
               title="Medical Terminology"
               description="Essential medical terms and anatomy for coders"
               icon={<BookOpen className="w-12 h-12 text-indigo-500" />}
-              link="/roadmap?courseId=medical-coding"
+              link="/tutorials/medical-coding"
               gradient="from-indigo-400 to-purple-500"
               iconBg="bg-indigo-50"
             />

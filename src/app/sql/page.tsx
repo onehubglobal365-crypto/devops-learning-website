@@ -4,6 +4,7 @@
 import Link from 'next/link';
 import TechLayout from '@/components/layout/tech-layout';
 import VideoSection from '@/components/video/VideoSection';
+import Image from 'next/image' 
 import { videoTutorialsData, getVideosForTopic } from '@/data/videoTutorials';
 import { useState, useEffect } from 'react';
 import { AUTH_SYSTEM_AVAILABLE } from '@/config/authStatus';
@@ -1533,6 +1534,46 @@ export default function SQLPage() {
 
                   </div>
                 </div>
+
+                {/* import Image from 'next/image' */}
+
+{/* <Image 
+  src="https://res.cloudinary.com/dyuounp0c/image/upload/v1774955787/PHOTO_1-01.jpg_ygenaz.jpg"
+  width={500}
+  height={300}
+  alt="img"
+/> */}
+                {/* import Image from 'next/image' */}
+
+{/* <Image 
+  src="https://res.cloudinary.com/dyuounp0c/image/upload/v1774955787/PHOTO_1-01.jpg_ygenaz.jpg"
+  width={500}
+  height={300}
+  alt="img"
+/> */}
+
+{/* function ImageViewer() { */}
+  {/* return ( */}
+    {/* <div style={{ textAlign: "center" }}>
+      <h2>My Image</h2>
+      
+      <img
+        src="https://res.cloudinary.com/dyuounp0c/image/upload/v1774955787/PHOTO_1-01.jpg_ygenaz.jpg"
+        alt="Cloudinary Image"
+        style={{
+          width: "100%",
+          maxWidth: "720px",
+          height: "auto",
+          borderRadius: "10px",
+          objectFit: "cover"
+        }}
+      />
+
+    </div> */}
+  {/* ); */}
+{/* } */}
+
+{/* export default ImageViewer; */}
               </div>
             </div>
           </main>

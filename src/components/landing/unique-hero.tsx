@@ -17,7 +17,7 @@ const slides = [
         subtitle: '< AWS, Azure & GCP',
         description: 'Master DevOps across all major cloud platforms. Learn Docker, Kubernetes, CI/CD pipelines, and infrastructure automation with real-world projects.',
         buttonText: 'Learn DevOps',
-        buttonLink: '/roadmap?courseId=devops',
+        buttonLink: '/devops',
         icon: <div className="w-16 h-16 relative"><Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuredevops/azuredevops-original.svg" alt="DevOps" fill className="object-contain" unoptimized /></div>,
         color: '#1e3a8a', // blue-900 (Deep Blue)
         gradient: 'from-blue-600 to-indigo-700',
@@ -35,7 +35,7 @@ const slides = [
         subtitle: '< Build Modern Web Apps',
         description: 'Master Python full stack development with Django, Flask, React, and modern frameworks. Build complete web applications from database to UI.',
         buttonText: 'Explore Python',
-        buttonLink: '/roadmap?courseId=python-fullstack',
+        buttonLink: '/python',
         icon: <div className="w-16 h-16 relative"><Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" fill className="object-contain" unoptimized /></div>,
         color: '#15803d', // green-700 (Forest Green)
         gradient: 'from-emerald-600 to-teal-700',
@@ -53,7 +53,7 @@ const slides = [
         subtitle: '< Enterprise Development',
         description: 'Master Java full stack development from frontend to backend. Learn Spring Boot, React, microservices, and build scalable enterprise applications.',
         buttonText: 'Learn Java',
-        buttonLink: '/roadmap?courseId=java-fullstack',
+        buttonLink: '/java',
         icon: <div className="w-16 h-16 relative"><Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" fill className="object-contain" unoptimized /></div>,
         color: '#c2410c', // orange-700 (Burnt Orange)
         gradient: 'from-orange-600 to-red-700',
@@ -71,7 +71,7 @@ const slides = [
         subtitle: '< Create Stunning Websites',
         description: 'Build modern, responsive web applications with React, Node.js, and cutting-edge technologies. From frontend to full-stack development.',
         buttonText: 'Start Web Dev',
-        buttonLink: '/roadmap?courseId=web-dev',
+        buttonLink: '/web-dev',
         icon: <div className="w-16 h-16 relative"><Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="Web Dev" fill className="object-contain" unoptimized /></div>,
         color: '#6d28d9', // violet-700 (Deep Violet)
         gradient: 'from-purple-600 to-pink-700',
@@ -89,7 +89,7 @@ const slides = [
         subtitle: '< SQL & NoSQL Mastery',
         description: 'Master database design, optimization, and management. Learn SQL, NoSQL databases, data modeling, and advanced querying techniques.',
         buttonText: 'Explore Databases',
-        buttonLink: '/roadmap?courseId=sql',
+        buttonLink: '/sql',
         icon: <div className="w-16 h-16 relative"><Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" fill className="object-contain" unoptimized /></div>,
         color: '#0e7490', // cyan-700 (Teal-ish Cyan)
         gradient: 'from-blue-600 to-cyan-700',
@@ -107,7 +107,7 @@ const slides = [
         subtitle: '< Any Cloud Platform',
         description: 'Become a data engineering expert across cloud platforms. Master data pipelines, ETL processes, data warehousing, and big data technologies.',
         buttonText: 'Start Learning',
-        buttonLink: '/roadmap?courseId=data-engineering',
+        buttonLink: '/tutorials/data-engineering',
         icon: <div className="w-16 h-16 relative"><Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachespark/apachespark-original.svg" alt="Data Engineering" fill className="object-contain" unoptimized /></div>,
         color: '#be185d', // pink-700 (Raspberry)
         gradient: 'from-fuchsia-600 to-purple-700',
@@ -125,7 +125,7 @@ const slides = [
         subtitle: '< Analytics & ML',
         description: 'Master data science and analytics. Learn machine learning, data analysis, visualization, and build data-driven applications.',
         buttonText: 'Explore Data Science',
-        buttonLink: '/roadmap?courseId=data-science',
+        buttonLink: '/data-science',
         icon: <div className="w-16 h-16 relative"><Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Data Science" fill className="object-contain" unoptimized /></div>,
         color: '#4338ca', // indigo-700
         gradient: 'from-indigo-600 to-violet-700',
@@ -143,7 +143,7 @@ const slides = [
         subtitle: '< Future of Tech',
         description: 'Dive deep into artificial intelligence. Learn neural networks, deep learning, natural language processing, computer vision, and build AI solutions.',
         buttonText: 'Learn AI',
-        buttonLink: '/roadmap?courseId=artificial-intelligence',
+        buttonLink: '/tutorials/artificial-intelligence',
         icon: <Brain className="w-12 h-12 text-teal-600" />,
         color: '#0f766e', // teal-700
         gradient: 'from-cyan-600 to-blue-700',
@@ -161,7 +161,7 @@ const slides = [
         subtitle: '< Enterprise Solutions',
         description: 'Master SAP systems and enterprise resource planning. Learn SAP modules, implementation, configuration, and become a certified SAP professional.',
         buttonText: 'Explore SAP',
-        buttonLink: '/roadmap?courseId=sap',
+        buttonLink: '/tutorials/sap',
         icon: <Briefcase className="w-12 h-12 text-blue-900" />,
         color: '#0f172a', // slate-900 (Midnight)
         gradient: 'from-yellow-600 to-amber-700',
@@ -179,7 +179,7 @@ const slides = [
         subtitle: '< Unified Analytics',
         description: 'Master Microsoft Fabric for modern analytics. Learn data integration, warehousing, real-time analytics, and build comprehensive data solutions.',
         buttonText: 'Start Learning',
-        buttonLink: '/roadmap?courseId=microsoft-fabric',
+        buttonLink: '/tutorials/microsoft-fabric',
         icon: <Activity className="w-12 h-12 text-slate-600" />,
         color: '#334155', // slate-700 (Corporate Gray)
         gradient: 'from-sky-600 to-blue-700',
@@ -197,7 +197,7 @@ const slides = [
         subtitle: '< Healthcare Docs',
         description: 'Master medical coding and billing. Learn ICD-10, CPT codes, healthcare documentation, and become a certified medical coding professional.',
         buttonText: 'Learn Med Coding',
-        buttonLink: '/roadmap?courseId=medical-coding',
+        buttonLink: '/tutorials/medical-coding',
         icon: <div className="w-16 h-16 relative"><Image src="/medical-coding-logo-v2.jpg" alt="Medical Coding" fill className="object-contain rounded-xl" unoptimized /></div>,
         color: '#b91c1c', // red-700
         gradient: 'from-red-600 to-rose-700',
@@ -327,8 +327,7 @@ export default function UniqueHero() {
     const viewRoadmap = (e: React.MouseEvent | React.TouchEvent) => {
         e.preventDefault();
         e.stopPropagation();
-        setIsPaused(true);
-        setShowRoadmap(true);
+        handleAction(e, currentData.buttonLink);
     }
 
     const currentData = slides[currentSlide];
