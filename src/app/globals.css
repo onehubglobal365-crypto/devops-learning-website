@@ -2630,6 +2630,14 @@ body::before {
   overflow: visible;
 }
 
+@media (max-width: 768px) {
+  .loader-wrapper {
+    width: 110px;
+    height: 110px;
+    font-size: 0.85em;
+  }
+}
+
 .loader {
   position: absolute;
   top: -12px;

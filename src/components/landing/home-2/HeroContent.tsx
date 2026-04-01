@@ -5,6 +5,7 @@ import Link from 'next/link';
 import TypingText from './TypingText';
 import { Mail, Star, Maximize2, X, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
+import { createPortal } from 'react-dom';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 export default function HeroContent() {
@@ -96,47 +97,48 @@ export default function HeroContent() {
 
       </div>
 
-      {/* WhatsApp Form Modal (Minimal Logic) */}
-      {showForm && (
+      {/* WhatsApp Form Modal (Using Portal for absolute overlay) */}
+      {showForm && typeof document !== 'undefined' && createPortal(
         <div 
           onClick={() => setShowForm(false)}
-          className="fixed inset-0 z-[200000] flex items-center justify-center bg-black/70 backdrop-blur-xl p-4 sm:p-6"
+          className="fixed inset-0 z-[999999] flex items-center justify-center bg-black/70 backdrop-blur-xl p-4 sm:p-6"
         >
           <form 
             onClick={e => e.stopPropagation()}
             onSubmit={handleWhatsAppSubmit} 
-            className="bg-white p-5 sm:p-8 rounded-[2rem] w-full max-w-lg shadow-[0_32px_64px_rgba(0,0,0,0.3)] space-y-4 relative animate-in zoom-in-95 duration-200 max-h-[90vh] overflow-y-auto"
+            className="bg-white p-5 sm:p-8 rounded-[2.5rem] w-full max-w-lg shadow-[0_32px_64px_rgba(0,0,0,0.4)] space-y-4 relative animate-in zoom-in-95 duration-200 max-h-[90vh] overflow-y-auto"
           >
             {/* Close Icon Button */}
             <button 
               type="button"
               onClick={() => setShowForm(false)}
-              className="absolute top-6 right-6 p-2 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded-full transition-all"
+              className="absolute top-4 right-4 sm:top-6 sm:right-6 p-2 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded-full transition-all"
             >
-              <X className="w-6 h-6" />
+              <X className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
 
             <div className="space-y-1">
-              <h2 className="text-3xl font-bold text-[#083D77]">Quick Registration</h2>
-              <p className="text-gray-500 font-medium">Join our next batch today!</p>
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#083D77]">Quick Registration</h2>
+              <p className="text-sm sm:text-base text-gray-500 font-medium">Join our next batch today!</p>
             </div>
 
-            <div className="space-y-4">
-              <input required type="text" placeholder="Full Name" className="w-full p-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-2 focus:ring-orange-500 outline-none transition-all placeholder:text-gray-400 font-medium" onChange={e => setFormData({...formData, name: e.target.value})} />
-              <input required type="tel" placeholder="Mobile Number" className="w-full p-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-2 focus:ring-orange-500 outline-none transition-all placeholder:text-gray-400 font-medium" onChange={e => setFormData({...formData, mobile: e.target.value})} />
-              <input required type="email" placeholder="Email Address" className="w-full p-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-2 focus:ring-orange-500 outline-none transition-all placeholder:text-gray-400 font-medium" onChange={e => setFormData({...formData, email: e.target.value})} />
-              <div className="grid grid-cols-2 gap-4">
-                <input required type="text" placeholder="Location" className="w-full p-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-2 focus:ring-orange-500 outline-none transition-all placeholder:text-gray-400 font-medium" onChange={e => setFormData({...formData, location: e.target.value})} />
-                <input required type="text" placeholder="Course" className="w-full p-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-2 focus:ring-orange-500 outline-none transition-all placeholder:text-gray-400 font-medium" onChange={e => setFormData({...formData, course: e.target.value})} />
+            <div className="space-y-3 sm:space-y-4">
+              <input required type="text" placeholder="Full Name" className="w-full p-3 sm:p-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-2 focus:ring-orange-500 outline-none transition-all placeholder:text-gray-400 font-medium text-sm sm:text-base" onChange={e => setFormData({...formData, name: e.target.value})} />
+              <input required type="tel" placeholder="Mobile Number" className="w-full p-3 sm:p-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-2 focus:ring-orange-500 outline-none transition-all placeholder:text-gray-400 font-medium text-sm sm:text-base" onChange={e => setFormData({...formData, mobile: e.target.value})} />
+              <input required type="email" placeholder="Email Address" className="w-full p-3 sm:p-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-2 focus:ring-orange-500 outline-none transition-all placeholder:text-gray-400 font-medium text-sm sm:text-base" onChange={e => setFormData({...formData, email: e.target.value})} />
+              <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                <input required type="text" placeholder="Location" className="w-full p-3 sm:p-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-2 focus:ring-orange-500 outline-none transition-all placeholder:text-gray-400 font-medium text-sm sm:text-base" onChange={e => setFormData({...formData, location: e.target.value})} />
+                <input required type="text" placeholder="Course" className="w-full p-3 sm:p-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-2 focus:ring-orange-500 outline-none transition-all placeholder:text-gray-400 font-medium text-sm sm:text-base" onChange={e => setFormData({...formData, course: e.target.value})} />
               </div>
             </div>
             
-            <div className="flex gap-4 pt-4">
-              <button type="button" onClick={() => setShowForm(false)} className="flex-1 p-5 text-gray-400 font-bold hover:text-gray-600 transition-colors">Cancel</button>
-              <button type="submit" className="flex-1 p-5 bg-green-500 text-white font-bold rounded-2xl shadow-xl shadow-green-200 hover:bg-green-600 active:scale-95 transition-all">Submit Now</button>
+            <div className="flex gap-3 sm:gap-4 pt-2 sm:pt-4">
+              <button type="button" onClick={() => setShowForm(false)} className="flex-1 p-4 sm:p-5 text-gray-400 font-bold hover:text-gray-600 transition-colors text-sm sm:text-base">Cancel</button>
+              <button type="submit" className="flex-1 p-4 sm:p-5 bg-green-500 text-white font-bold rounded-2xl shadow-xl shadow-green-200 hover:bg-green-600 active:scale-95 transition-all text-sm sm:text-base">Submit Now</button>
             </div>
           </form>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   );

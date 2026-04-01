@@ -296,7 +296,7 @@ export default function SharedNav({ isScrolled = false, showAnimatedLine = true,
             {/* Logo Text */}
             <div className="flex flex-col">
               <div
-                className="flex items-center text-xl font-black tracking-tight leading-none group-hover:opacity-90 transition-opacity"
+                className="flex items-center text-lg sm:text-xl font-black tracking-tight leading-none group-hover:opacity-90 transition-opacity"
                 style={{ fontFamily: 'var(--font-orbitron), sans-serif', letterSpacing: '0.05em' }}
               >
                 <span className="text-[#083D77]">ONE</span>
