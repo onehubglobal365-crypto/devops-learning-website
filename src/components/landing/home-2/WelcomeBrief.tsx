@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 export default function WelcomeBrief() {
     return (
-        <section className="py-[var(--space-md)] lg:py-[var(--space-xl)] bg-white relative overflow-hidden">
+        <section className="pt-0 pb-4 lg:pt-0 lg:pb-8 bg-white relative overflow-hidden">
             {/* Decorative Geometric Shapes (matching the image style) */}
             <div className="absolute bottom-0 left-0 w-64 h-64 opacity-10 pointer-events-none">
                 <svg viewBox="0 0 200 200" className="w-full h-full text-blue-100">
@@ -67,7 +67,7 @@ export default function WelcomeBrief() {
                             </p>
                         </div>
 
-                        <Link href="/about" className="mt-8 inline-block w-full sm:w-auto">
+                        <Link href="/about" className="mt-4 inline-block w-full sm:w-auto">
                             <button className="w-full sm:w-auto px-10 py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl shadow-lg hover:shadow-orange-500/30 transition-all duration-300 hover:-translate-y-1 active:scale-95 text-base md:text-lg">
                                 Know More
                             </button>

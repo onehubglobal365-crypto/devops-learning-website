@@ -2731,3 +2731,111 @@ body::before {
     transform: translateY(0);
   }
 }
+
+/* Premium Register Button Styles (Uiverse.io by satyamchaudharydev) */
+.register-btn-premium {
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  padding: 12px 32px;
+  background-color: #f97316; /* Brand Orange */
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  gap: 10px;
+  font-weight: 800;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  outline: none;
+  overflow: hidden;
+  font-size: 1.125rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.register-btn-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: scroll-arrow-right 1s infinite linear;
+}
+
+.register-btn-premium:hover {
+  transform: scale(1.05);
+  border-color: rgba(255, 255, 255, 0.6);
+  background-color: #ea580c;
+}
+
+.register-btn-premium:hover .register-btn-icon {
+  animation: scroll-arrow-right 1s infinite linear;
+}
+
+.register-btn-premium:hover::before {
+  animation: shine-beam 1.5s ease-out infinite;
+}
+
+.register-btn-premium::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100%;
+  background-image: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0) 70%
+  );
+  top: 0;
+  left: -100px;
+  opacity: 0.6;
+}
+
+@keyframes scroll-arrow-right {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  49% {
+    transform: translateX(10px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes shine-beam {
+  0% {
+    left: -100px;
+  }
+  60% {
+    left: 100%;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .register-btn-premium {
+    padding: 8px 24px;
+    font-size: 0.875rem;
+    border-width: 2px;
+    gap: 8px;
+  }
+  .register-btn-icon {
+    width: 18px;
+    height: 18px;
+  }
+}

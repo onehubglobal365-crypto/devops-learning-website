@@ -31,23 +31,6 @@ export function TechnologyCard({ title, description, icon, link, gradient, iconB
       return;
     }
 
-    /* Original Authentication Logic - Paused for Guest Mode
-    // Check authentication
-    const token = typeof window !== 'undefined' ? localStorage.getItem('token') : null;
-    const loggedInFlag = typeof window !== 'undefined' ? localStorage.getItem('isLoggedIn') : null;
-
-    const hasToken = token && token !== 'null' && token !== 'undefined';
-    const hasFlag = loggedInFlag === 'true';
-
-    const isLoggedIn = hasToken || hasFlag;
-
-    if (!isLoggedIn) {
-      e.preventDefault();
-      setShowLoginModal(true);
-    } else {
-      router.push(link);
-    }
-    */
     router.push(link);
   };
 
@@ -90,10 +73,36 @@ export function TechnologyCard({ title, description, icon, link, gradient, iconB
   );
 }
 
+export function CompactTechnologyCard({ title, icon, link, gradient, iconBg, onClick }: Omit<TechnologyCardProps, 'description'>) {
+  const router = useRouter();
+
+  const handleClick = (e: React.MouseEvent) => {
+    if (onClick) {
+      onClick(e);
+      return;
+    }
+    router.push(link);
+  };
+
+  return (
+    <div onClick={handleClick} className="group relative bg-white border border-gray-100 rounded-3xl p-3 sm:p-5 flex flex-col items-center justify-center gap-3 cursor-pointer hover:shadow-xl hover:border-blue-500 transition-all duration-300 hover:-translate-y-1 h-full shadow-md">
+      <div className={`w-14 h-14 sm:w-16 h-16 rounded-2xl flex items-center justify-center ${iconBg || 'bg-white'} group-hover:scale-105 transition-transform duration-500`}>
+        <div className="w-10 h-10 sm:w-12 h-12 relative">
+          {icon}
+        </div>
+      </div>
+      <h3 className="font-bold text-gray-900 text-center tracking-tight text-xs sm:text-sm group-hover:text-blue-600 transition-colors">
+        {title}
+      </h3>
+      <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-[0.03] transition-opacity duration-500 rounded-3xl`}></div>
+    </div>
+  );
+}
+
 // Card Grid wrapper for consistent spacing
 interface CardGridProps {
   children: React.ReactNode;
-  columns?: 2 | 3 | 4;
+  columns?: 2 | 3 | 4 | 5;
   className?: string;
 }
 
@@ -102,6 +111,7 @@ export function CardGrid({ children, columns = 3, className = '' }: CardGridProp
     2: 'grid-cols-1 md:grid-cols-2',
     3: 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3',
     4: 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4',
+    5: 'grid-cols-2 md:grid-cols-3 lg:grid-cols-5',
   };
 
   return (
@@ -110,3 +120,4 @@ export function CardGrid({ children, columns = 3, className = '' }: CardGridProp
     </div>
   );
 }
+

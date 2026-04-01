@@ -118,7 +118,7 @@ export default function CoursesPage() {
   const accessibleCourses = courses;
 
   return (
-    <main className="min-h-screen overflow-x-hidden transition-colors duration-300 relative" style={{ background: 'linear-gradient(to bottom right, #dcfce7, #d1fae5, #ccfbf1)' }}>
+    <main className="min-h-screen overflow-x-hidden transition-colors duration-300 relative bg-[#f8fafc]">
       <div className="relative z-10">
         <section className="w-full -mt-0">
           <UniqueHero />

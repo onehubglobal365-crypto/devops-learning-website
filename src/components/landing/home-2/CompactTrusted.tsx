@@ -10,18 +10,19 @@ const isoImages = [
   { id: 3, src: '/images/3.png', alt: 'Certification 3' },
   { id: 4, src: '/images/4.png', alt: 'Certification 4' },
   { id: 5, src: '/images/5.png', alt: 'Certification 5' },
-  { id: 6, src: '/images/6.png', alt: 'certification 6' }
+  { id: 6, src: '/images/6.png', alt: 'certification 6' },
+  { id: 7, src: '/images/7.png', alt: 'certification 7' }
 ];
 
 export default function CompactTrusted() {
   return (
     <CompactSection
-      title="Trusted & Certified"
-      subtitle="Globally recognized excellence in education and training"
-      backgroundColor="#f8fafc"
+      // title="Trusted & Certified"
+      // subtitle="Globally recognized excellence in education and training"
+      // backgroundColor="#f8fafc"
     >
-      <div className="max-w-7xl mx-auto overflow-hidden">
-        <div className="animate-marquee flex items-center gap-6 md:gap-12 py-2">
+      <div className="max-w-7xl mx-auto">
+        <div className="animate-marquee bg-slate-100 flex items-center gap-6 md:gap-12 py-2">
           {[...isoImages, ...isoImages, ...isoImages].map((iso, index) => (
             <div
               key={`${iso.id}-${index}`}

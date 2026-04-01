@@ -213,26 +213,8 @@ export default function SharedNav({ isScrolled = false, showAnimatedLine = true,
 
 
 
-  // Internal scroll state for global consistency
-  const [internalScrolled, setInternalScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setInternalScrolled(window.scrollY > 20);
-    };
-
-    // Initial check
-    if (typeof window !== 'undefined') {
-      handleScroll();
-    }
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  const contentScrolled = isScrolled || internalScrolled;
+  // Internal scroll state removed - Navbar is now static
+  const contentScrolled = true;
 
   const aboutLinks = [
     { href: '/about', label: 'About Us', icon: <Info className="w-4 h-4" /> },
@@ -296,13 +278,13 @@ export default function SharedNav({ isScrolled = false, showAnimatedLine = true,
         */}
 
         {/* Main Navbar Area (Logo + Navigation) - Sticky to top */}
-        <div className={`flex flex-row items-center justify-between px-[var(--space-sm)] md:px-[var(--space-md)] py-2 w-full relative transition-all duration-300 pointer-events-auto ${(contentScrolled || !isHomePage) ? 'bg-white mt-0 border-b border-gray-100' : 'bg-transparent mt-0'}`}>
+        <div className={`flex flex-row items-center justify-between px-[var(--space-sm)] md:px-[var(--space-md)] py-1 w-full relative transition-all duration-300 pointer-events-auto bg-white border-b border-gray-100`}>
           {/* Logo - Separate & Fixed Left */}
           <Link
             href="/"
-            className={`flex items-center gap-2 sm:gap-3 hover:opacity-95 transition-all group z-[150002] rounded-full p-1.5 pr-2 pl-2 shrink-0 ${!(contentScrolled || !isHomePage) ? 'bg-white border border-white/50' : ''}`}
+            className={`flex items-center gap-2 hover:opacity-95 transition-all group z-[150002] p-1 shrink-0`}
           >
-            <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden relative bg-white shadow-inner shrink-0">
+            <div className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 relative shrink-0">
               <Image
                 src="/logo_new.jpg"
                 alt="OHG365 Logo"
@@ -312,7 +294,7 @@ export default function SharedNav({ isScrolled = false, showAnimatedLine = true,
               />
             </div>
             {/* Logo Text */}
-            <div className="flex flex-col hidden sm:flex">
+            <div className="flex flex-col">
               <div
                 className="flex items-center text-xl font-black tracking-tight leading-none group-hover:opacity-90 transition-opacity"
                 style={{ fontFamily: 'var(--font-orbitron), sans-serif', letterSpacing: '0.05em' }}
@@ -334,12 +316,12 @@ export default function SharedNav({ isScrolled = false, showAnimatedLine = true,
 
           <nav className="flex items-center">
             {/* Desktop Navigation Links */}
-            <div className="hidden md:flex items-center space-x-2 text-sm font-bold">
+            <div className="hidden md:flex items-center space-x-1 text-sm font-bold">
                 <Link
                   href="/"
                   className={`px-4 py-2 rounded-full font-bold transition-all duration-300 ${isHomePage
                     ? 'text-orange-500 bg-orange-50 shadow-sm'
-                    : `${(contentScrolled || !isHomePage) ? 'text-[#083D77] hover:text-orange-500 hover:bg-orange-50' : 'text-white hover:bg-white/20'} active:scale-95`
+                    : 'text-[#083D77] hover:text-orange-500 hover:bg-orange-50 active:scale-95'
                     }`}
                 >
                   Home
@@ -381,11 +363,11 @@ export default function SharedNav({ isScrolled = false, showAnimatedLine = true,
                     }}
                     className={`flex items-center gap-1 px-4 py-2 rounded-full font-bold transition-all duration-300 ${pathname === '/about/branches'
                       ? 'text-orange-500 bg-orange-50 shadow-sm'
-                      : `${(contentScrolled || !isHomePage) ? 'text-[#083D77] hover:text-orange-500 hover:bg-orange-50' : 'text-white hover:bg-white/20'} active:scale-95`
+                      : 'text-[#083D77] hover:text-orange-500 hover:bg-orange-50 active:scale-95'
                       }`}
                   >
                     Branches
-                    <ChevronDown className={`w-4 h-4 transition-colors ${(contentScrolled || !isHomePage) ? 'text-[#083D77]' : 'text-white'}`} />
+                    <ChevronDown className="w-4 h-4 transition-colors text-[#083D77]" />
                   </button>
                 </div>
 
@@ -393,20 +375,20 @@ export default function SharedNav({ isScrolled = false, showAnimatedLine = true,
                   href="/courses"
                   className={`px-4 py-2 rounded-full font-bold transition-all duration-300 ${(pathname === '/courses' || pathname?.startsWith('/courses/'))
                       ? 'text-orange-500 bg-orange-50 shadow-sm'
-                      : `${(contentScrolled || !isHomePage) ? 'text-[#083D77] hover:text-orange-500 hover:bg-orange-50' : 'text-white hover:bg-white/20'} active:scale-95`
+                      : 'text-[#083D77] hover:text-orange-500 hover:bg-orange-50 active:scale-95'
                       }`}
                 >
                   Courses
                 </Link>
 
-                <MenuDropdown scrolled={contentScrolled || !isHomePage} />
+                <MenuDropdown scrolled={true} />
 
                 {/* Tutorials Dropdown Trigger */}
                 <Link
                   href="/tutorials"
                   className={`px-4 py-2 rounded-full font-bold transition-all duration-300 ${(pathname.startsWith('/tutorials') || pathname.startsWith('/java') || pathname.startsWith('/python') || pathname.startsWith('/sql') || pathname.startsWith('/web-dev') || pathname.startsWith('/devops') || pathname.startsWith('/linux') || pathname.startsWith('/data-science') || pathname.startsWith('/code-terminal') || pathname.startsWith('/challenges'))
                     ? 'text-orange-500 bg-orange-50 shadow-sm'
-                    : `${(contentScrolled || !isHomePage) ? 'text-[#083D77] hover:text-orange-500 hover:bg-orange-50' : 'text-white hover:bg-white/20'} active:scale-95`
+                    : 'text-[#083D77] hover:text-orange-500 hover:bg-orange-50 active:scale-95'
                     }`}
                 >
                   Tutorials
@@ -436,7 +418,7 @@ export default function SharedNav({ isScrolled = false, showAnimatedLine = true,
                   href="https://ohg-ai-interviewer.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`px-4 py-2 rounded-full font-bold transition-all duration-300 ${(contentScrolled || !isHomePage) ? 'text-[#083D77] hover:text-orange-500 hover:bg-orange-50' : 'text-white hover:bg-white/20'} active:scale-95`}
+                  className="px-4 py-2 rounded-full font-bold transition-all duration-300 text-[#083D77] hover:text-orange-500 hover:bg-orange-50 active:scale-95"
                 >
                   AI Interview
                 </Link>

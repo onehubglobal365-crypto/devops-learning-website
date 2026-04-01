@@ -47,9 +47,9 @@ const logoRows = [
 
 export default function HiringPartners() {
     return (
-        <section className="py-[var(--space-md)] lg:py-[var(--space-xl)] overflow-hidden relative">
+        <section className="pt-0 pb-[var(--space-md)] lg:pt-0 lg:pb-[var(--space-xl)] overflow-hidden relative">
             <div className="w-full max-w-7xl mx-auto px-[var(--space-md)] lg:px-[var(--space-lg)]">
-                <h2 className='font-bold text-black mb-[var(--space-md)] md:mb-[var(--space-lg)] leading-tight text-center px-4' style={{ fontSize: 'clamp(1.5rem, 5vw, 2.5rem)' }}>
+                <h2 className='font-bold text-black mb-4 md:mb-6 leading-tight text-center px-4' style={{ fontSize: 'clamp(1.5rem, 5vw, 2.5rem)' }}>
                     Companies That Believe in Our Talent
                 </h2>
                 <div className="flex flex-col lg:flex-row items-center gap-[var(--space-lg)] lg:gap-[var(--space-xl)]">
@@ -71,7 +71,7 @@ export default function HiringPartners() {
 
                     {/* Right Content - Scrolling Logos */}
                     <div className="w-full lg:w-[70%] relative">
-                        <div className="flex flex-col gap-[var(--space-sm)] md:gap-[var(--space-md)] py-4">
+                        <div className="flex flex-col gap-[var(--space-sm)] md:gap-[var(--space-md)]">
                             {logoRows.map((row, rowIndex) => (
                                 <div key={rowIndex} className="relative flex overflow-hidden group">
                                     <motion.div

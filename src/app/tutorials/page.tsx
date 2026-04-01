@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { AUTH_SYSTEM_AVAILABLE } from '@/config/authStatus';
-import { TechnologyCard, CardGrid } from '@/components/common/technology-card';
+import { TechnologyCard, CardGrid, CompactTechnologyCard } from '@/components/common/technology-card';
 import {
   Stethoscope, ClipboardList, Building2, BookOpen,
   Code2, Rocket, Coffee, FileCode, Database, Globe, BarChart2, Terminal, Server, Command,
@@ -58,11 +58,10 @@ export default function TutorialsPage() {
   return (
     <main className="min-h-screen overflow-x-hidden transition-colors duration-300 relative bg-[#f8fafc]" style={{ paddingTop: 'calc(var(--space-xl) * 1.2)' }}>
       {/* Premium Background Decoration */}
-      <div className="absolute top-0 left-0 w-full h-[1000px] bg-gradient-to-br from-blue-50 via-sky-50 to-transparent pointer-events-none -z-10"></div>
 
       <div className="relative z-10 px-[var(--space-sm)]">
         {/* Hero Section */}
-        <section className="relative text-center py-[var(--space-lg)] px-[var(--space-md)] overflow-hidden bg-white/80 backdrop-blur-md rounded-[3rem] max-w-7xl mx-auto border border-white">
+        <section className="relative text-center py-[var(--space-lg)] px-[var(--space-md)] overflow-hidden bg-white/80 backdrop-blur-md rounded-full border border-gray-100 shadow-sm max-w-5xl mx-auto">
           <div className="container mx-auto relative z-10">
             <h1 className="font-extrabold mb-4 tracking-tight leading-tight" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.75rem)' }}>
               <span className="text-gray-900 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-blue-900 to-gray-800">
@@ -75,6 +74,84 @@ export default function TutorialsPage() {
           </div>
         </section>
 
+        {/* Core Technologies Category */}
+        <section className="container mx-auto px-[var(--space-md)] py-[var(--space-xl)] bg-white border border-gray-100 rounded-[3rem] my-[var(--space-xl)] shadow-lg relative pt-12 mt-20">
+          {/* Floating Category Header */}
+          <div className="absolute -top-10 left-1/2 -translate-x-1/2 md:left-12 md:translate-x-0 bg-white px-8 py-5 rounded-3xl shadow-xl border border-gray-100 flex items-center gap-4 z-20 min-w-[280px]">
+            <div className="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-blue-500/30">
+              <Code2 className="w-7 h-7" />
+            </div>
+            <div className="flex flex-col">
+              <h2 className="font-bold text-gray-900 tracking-tight text-xl md:text-2xl">
+                Core Technologies
+              </h2>
+            </div>
+          </div>
+
+          <CardGrid columns={5} className="mb-0">
+            <CompactTechnologyCard
+              title="Python Tutorial"
+              icon={<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" fill className="object-contain" unoptimized />}
+              link="/python"
+              gradient="from-yellow-400 to-amber-500"
+            />
+            <CompactTechnologyCard
+              title="Java Tutorial"
+              icon={<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" fill className="object-contain" unoptimized />}
+              link="/java"
+              gradient="from-orange-500 to-red-500"
+            />
+            <CompactTechnologyCard
+              title="JavaScript"
+              icon={<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" fill className="object-contain" unoptimized />}
+              link="/tutorials/javascript"
+              gradient="from-yellow-300 to-orange-400"
+            />
+            <CompactTechnologyCard
+              title="TypeScript"
+              icon={<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript" fill className="object-contain" unoptimized />}
+              link="/coming-soon"
+              gradient="from-blue-400 to-indigo-600"
+            />
+            <CompactTechnologyCard
+              title="HTML Tutorial"
+              icon={<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5" fill className="object-contain" unoptimized />}
+              link="/tutorials/html"
+              gradient="from-orange-500 to-red-600"
+            />
+            <CompactTechnologyCard
+              title="CSS Tutorial"
+              icon={<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3" fill className="object-contain" unoptimized />}
+              link="/tutorials/css"
+              gradient="from-blue-500 to-cyan-600"
+            />
+            <CompactTechnologyCard
+              title="SQL Tutorial"
+              icon={<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" fill className="object-contain" unoptimized />}
+              link="/sql"
+              gradient="from-blue-600 to-indigo-700"
+            />
+            <CompactTechnologyCard
+              title="Azure Tutorial"
+              icon={<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure" fill className="object-contain" unoptimized />}
+              link="/tutorials/azure-modules"
+              gradient="from-sky-400 to-blue-600"
+            />
+            <CompactTechnologyCard
+              title="DevOps Tutorial"
+              icon={<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuredevops/azuredevops-original.svg" alt="DevOps" fill className="object-contain" unoptimized />}
+              link="/devops"
+              gradient="from-blue-500 to-indigo-600"
+            />
+            <CompactTechnologyCard
+              title="AWS Tutorial"
+              icon={<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" fill className="object-contain" unoptimized />}
+              link="/coming-soon"
+              gradient="from-orange-400 to-yellow-600"
+            />
+          </CardGrid>
+        </section>
+
         {/* Programming Category */}
         <section className="container mx-auto px-[var(--space-md)] py-[var(--space-xl)] bg-white border border-gray-100 rounded-[3rem] my-[var(--space-xl)] shadow-lg relative pt-12 mt-20">
           {/* Floating Category Header */}
@@ -83,8 +160,8 @@ export default function TutorialsPage() {
               <Code2 className="w-7 h-7" />
             </div>
             <div className="flex flex-col">
-              <span className="text-[10px] uppercase font-black tracking-[0.2em] text-blue-600">Category</span>
-              <h2 className="font-black text-gray-900 tracking-tight text-xl md:text-2xl">
+              {/* <span className="text-[10px] uppercase font-black tracking-[0.2em] text-blue-600">Category</span> */}
+              <h2 className="font-bold text-gray-900 tracking-tight text-xl md:text-2xl">
                 Programming
               </h2>
             </div>
@@ -104,36 +181,6 @@ export default function TutorialsPage() {
               link="/devops"
               gradient="from-rose-500 to-red-600"
               iconBg="bg-rose-50"
-            />
-            <TechnologyCard
-              title="Java"
-              description="Master Java programming, Spring Framework, and enterprise development"
-              // icon={<Coffee className="w-12 h-12 text-orange-500" />}
-                  icon={<div className="p-1 w-full h-full relative"><Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" fill className="object-contain" unoptimized /></div>}
-              
-              link="/java"
-              gradient="from-orange-500 to-red-500"
-              iconBg="bg-orange-50"
-            />
-            <TechnologyCard
-              title="Python"
-              description="Learn Python programming, data science, web development, and automation"
-              // icon={<FileCode className="w-12 h-12 text-yellow-500" />}
-              icon={<div className="p-1 w-full h-full relative"><Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" fill className="object-contain" unoptimized /></div>}
-              
-              link="/python"
-              gradient="from-yellow-500 to-amber-500"
-              iconBg="bg-yellow-50"
-            />
-            <TechnologyCard
-              title="SQL"
-              description="Database design, SQL queries, optimization, and modern database technologies"
-              // icon={<Database className="w-12 h-12 text-purple-500" />}
-              icon={ <div className="p-1 w-full h-full relative"><Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" fill className="object-contain" unoptimized /></div>}
-              
-              link="/sql"
-              gradient="from-purple-500 to-indigo-600"
-              iconBg="bg-purple-50"
             />
             <TechnologyCard
               title="Power BI"
@@ -194,9 +241,9 @@ export default function TutorialsPage() {
           <div className="text-center mt-12">
             <Link
               href="/tutorials/programming"
-              className="inline-block px-12 py-5 bg-blue-600 text-white font-black rounded-2xl shadow-xl shadow-blue-500/20 hover:bg-blue-700 transform hover:-translate-y-1 transition-all duration-300 uppercase tracking-widest text-xs"
+              className="inline-block px-12 py-5 bg-blue-600 text-white rounded-2xl shadow-xl shadow-blue-500/20 hover:bg-blue-700 transform hover:-translate-y-1 transition-all duration-300 text-lg"
             >
-              View All Programming Tutorials →
+              View All Programming Tutorials &rarr;
             </Link>
           </div>
         </section>
@@ -209,8 +256,8 @@ export default function TutorialsPage() {
               <Building2 className="w-7 h-7" />
             </div>
             <div className="flex flex-col">
-              <span className="text-[10px] uppercase font-black tracking-[0.2em] text-teal-600">Category</span>
-              <h2 className="font-black text-gray-900 tracking-tight text-xl md:text-2xl">
+              {/* <span className="text-[10px] uppercase font-black tracking-[0.2em] text-teal-600">Category</span> */}
+              <h2 className="font-bold text-gray-900 tracking-tight text-xl md:text-2xl">
                 Medical Coding
               </h2>
             </div>
@@ -250,7 +297,7 @@ export default function TutorialsPage() {
           <div className="text-center mt-12">
             <Link
               href="/tutorials/medical-coding"
-              className="inline-block px-12 py-5 bg-teal-600 text-white font-black rounded-2xl shadow-xl shadow-teal-500/20 hover:bg-teal-700 transform hover:-translate-y-1 transition-all duration-300 uppercase tracking-widest text-xs"
+              className="inline-block px-12 py-5 bg-teal-600 text-white rounded-2xl shadow-xl shadow-teal-500/20 hover:bg-teal-700 transform hover:-translate-y-1 transition-all duration-300 text-lg"
             >
               View All Medical Coding Tutorials →
             </Link>
