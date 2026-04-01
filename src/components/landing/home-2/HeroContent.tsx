@@ -100,7 +100,7 @@ export default function HeroContent() {
       {showForm && (
         <div 
           onClick={() => setShowForm(false)}
-          className="fixed inset-0 z-[200000] flex items-center justify-center bg-black/60 backdrop-blur-md p-4 sm:p-6"
+          className="fixed inset-0 z-[200000] flex items-center justify-center bg-black/70 backdrop-blur-xl p-4 sm:p-6"
         >
           <form 
             onClick={e => e.stopPropagation()}
